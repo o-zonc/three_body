@@ -1,0 +1,43 @@
+{
+    "has_skylight": true,
+    "has_ceiling": false,
+    "has_ender_dragon_fight": false,
+    "ambient_light": 0.0,
+    "monster_spawn_light_level": 7,
+    "monster_spawn_block_light_limit": 0,
+    "min_y": -64,
+    "height": 384,
+    "logical_height": 384,
+    "coordinate_scale": 1.0,
+    "infiniburn": "#minecraft:infiniburn_overworld",
+    "skybox": "overworld",
+    "cardinal_light": "default",
+    "default_clock": "minecraft:overworld",
+    "attributes": {
+		"minecraft:audio/background_music": {
+			"default": {
+				"sound": "music.nether.soul_sand_valley",
+				"max_delay": 2400,
+				"min_delay": 1200,
+				"replace_current_music": false
+			}
+		},
+        
+        "minecraft:visual/ambient_light_color": "#00A0A0",
+        "minecraft:visual/sunrise_sunset_color": "#FFAA0A0A",
+        "minecraft:visual/cloud_color": "#FFFFFFFF",
+        "minecraft:visual/cloud_fog_end_distance": 32.0,
+        "minecraft:visual/cloud_height": 192.0,
+        "minecraft:visual/sky_color": "#e20d06",
+        "minecraft:visual/sky_fog_end_distance": 32.0,
+        "minecraft:visual/sky_light_color": "#e20d06",
+        "minecraft:visual/sky_light_factor": 1.0,
+        "minecraft:visual/star_angle": {
+            "modifier": "multiply",
+            "argument": 2.0
+        },
+        "minecraft:visual/star_brightness": 1.0,
+        "minecraft:gameplay/water_evaporates": false,
+        "minecraft:gameplay/fast_lava": false
+    }
+}

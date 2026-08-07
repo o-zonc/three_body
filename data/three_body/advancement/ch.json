@@ -1,0 +1,18 @@
+{
+  "parent": "three_body:root",
+  "display": {
+    "icon": "minecraft:nether_star",
+    "title": "차원 압축 돌파",
+    "description": "세 개의 태양의 시련을 이겨내고 문명의 위대한 도약을 이루어내십시오.",
+    "background": "minecraft:block/stone",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "epic_clear": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

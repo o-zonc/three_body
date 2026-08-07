@@ -1,0 +1,15 @@
+{
+  "type": "three_body:dawn",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "minecraft:desert",
+      "layers": [
+          { "block": "minecraft:bedrock", "height": 1 },
+          { "block": "minecraft:air", "height": 122 },
+          { "block": "minecraft:deepslate_diamond_ore", "height": 2 },
+          { "block": "minecraft:deepslate", "height": 3 }
+      ]
+    }
+  }
+}
