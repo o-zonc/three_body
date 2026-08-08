@@ -33,17 +33,17 @@ scoreboard players set #20_CONSTANT timer_sec 20
 bossbar add three_body:bossbar_frozen {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
 bossbar set three_body:bossbar_frozen color blue
 bossbar set three_body:bossbar_frozen style notched_6
-bossbar set three_body:bossbar_frozen visible false
+bossbar set three_body:bossbar_frozen visible true
 bossbar set three_body:bossbar_frozen max 6000
 
 bossbar add three_body:bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
 bossbar set three_body:bossbar_dried color yellow
 bossbar set three_body:bossbar_dried style notched_10
-bossbar set three_body:bossbar_dried visible false
+bossbar set three_body:bossbar_dried visible true
 bossbar set three_body:bossbar_dried max 6000
 
 bossbar add three_body:bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color": "dark_green"}
 bossbar set three_body:bossbar_overworld color green
 bossbar set three_body:bossbar_overworld style progress
-bossbar set three_body:bossbar_overworld visible false
+bossbar set three_body:bossbar_overworld visible true
 bossbar set three_body:bossbar_overworld max 6000

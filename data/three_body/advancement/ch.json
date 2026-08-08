@@ -1,18 +1,18 @@
 {
-  "parent": "three_body:root",
-  "display": {
-    "icon": "minecraft:spyglass",
-    "title": "천문관이 되다",
-    "description": "난세기의 주기 예측에 성공했습니다. 해당 차원에서의 다음 난세기를 예측할 수 있습니다.",
-    "background": "minecraft:block/stone",
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "epic_clear": {
-      "trigger": "minecraft:impossible"
-    }
-  }
+	"parent": "three_body:root",
+	"display": {
+		"icon": "minecraft:spyglass",
+		"title": "천문관이 되다",
+		"description": "난세기의 주기 예측에 성공했습니다. 해당 차원에서의 다음 난세기를 예측할 수 있습니다.",
+		"background": "minecraft:block/stone",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"epic_clear": {
+			"trigger": "minecraft:impossible"
+		}
+	}
 }

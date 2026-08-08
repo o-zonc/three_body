@@ -13,12 +13,7 @@ execute if entity @a[nbt={Dimension: "three_body:frozen"}] run bossbar set three
 scoreboard players remove #GLOBAL timer_frozen 1
 execute if score #GLOBAL timer_frozen matches ..0 run function three_body:common/roll_frozen
 
-# [얼음 차원 - 항성기 (0)]
-execute as @a at @s if entity @s[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL state_frozen matches 0 run effect clear @s minecraft:slowness
-
-# [얼음 차원 - 난세기 (1)] - 80%
-execute as @a at @s if entity @s[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL state_frozen matches 1 run effect give @s slowness 2 1 false
-
+execute as @a at @s if entity @s[nbt={Dimension:"three_body:frozen"}] run function three_body:common/chaos_frozen
 
 # ==========================================
 # 2. 건조 차원 (three_body:dried)
@@ -35,12 +30,7 @@ execute if entity @a[nbt={Dimension: "three_body:dried"}] run bossbar set three_
 scoreboard players remove #GLOBAL timer_dried 1
 execute if score #GLOBAL timer_dried matches ..0 run function three_body:common/roll_dried
 
-# [건조 차원 - 항성기 (0)]
-execute as @a at @s if entity @s[nbt={Dimension:"three_body:dried"}] if score #GLOBAL state_dried matches 0 if block ~ ~ ~ minecraft:air run data modify entity @s Fire set value 0
-
-# [건조 차원 - 난세기 (1)] - 5%
-execute as @a at @s if entity @s[nbt={Dimension:"three_body:dried"}] if score #GLOBAL state_dried matches 1 if block ~ ~ ~ minecraft:air run data modify entity @s Fire set value 60
-
+execute as @a at @s if entity @s[nbt={Dimension:"three_body:dried"}] run function three_body:common/chaos_dried
 
 # ==========================================
 # 3. 오버월드 (minecraft:overworld)
@@ -57,9 +47,12 @@ execute if entity @a[nbt={Dimension: "minecraft:overworld"}] run bossbar set thr
 scoreboard players remove #GLOBAL timer_overworld 1
 execute if score #GLOBAL timer_overworld matches ..0 run function three_body:common/roll_overworld
 
-# [오버월드 - 항성기 (0)]
-execute if score #GLOBAL state_overworld matches 0 run gamerule advance_time true
+execute as @a at @s if entity @s[nbt={Dimension:"minecraft:overworld"}] run function three_body:common/chaos_overworld
 
-# [오버월드 - 난세기 (1)] - 3%
-execute if score #GLOBAL state_overworld matches 1 run gamerule advance_time false
-execute if score #GLOBAL state_overworld matches 1 run time add 20
+# ==========================================
+# 4. 멸망 (disaster)
+# ==========================================
+
+execute if score #GLOBAL state_frozen matches 2 run function three_body:common/disaster_frozen
+execute if score #GLOBAL state_dried matches 2 run function three_body:common/disaster_dried
+execute if score #GLOBAL state_overworld matches 2 run function three_body:common/disaster_overworld
