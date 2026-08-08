@@ -1,5 +1,5 @@
 {
-	"parent": "three_body:frozen/root",
+	"parent": "three_body:frozen/00_root",
 	"display": {
 	"icon": "minecraft:blue_ice",
 	"title": "파괴되지 않은 세계",

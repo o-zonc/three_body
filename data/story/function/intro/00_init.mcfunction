@@ -6,7 +6,10 @@
 scoreboard players set #done story 1
 scoreboard players set #t story 0
 
+time set noon
 time pause
+weather clear
+gamerule advance_weather false
 
 # 모든 플레이어를 스펙테이터로 전환 → 조작 완전 차단
 gamemode spectator @a

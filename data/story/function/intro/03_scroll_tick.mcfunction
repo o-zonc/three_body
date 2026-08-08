@@ -40,7 +40,7 @@ execute if score #t story matches 735 as @n[tag=story_camera] at @s run summon t
 execute if score #t story matches 780 as @n[tag=story_camera] at @s run summon text_display ~ ~-2 ~9 {Tags:["story_text","story_intro"],Rotation:[180,0],background:0,transformation:[1.6f,0f,0f,0f, 0f,1.6f,0f,0f, 0f,0f,1f,0f, 0f,0f,0f,1f], text:{text:"\"삼체\"",color:"dark_red"}}
 execute if score #t story matches 825 as @n[tag=story_camera] at @s run summon text_display ~ ~-2 ~9 {Tags:["story_text","story_intro"],Rotation:[180,0],background:0,text:{text:"도대체 어떤 경로로 이 게임이 배포되었는지는",color:"white"}}
 execute if score #t story matches 870 as @n[tag=story_camera] at @s run summon text_display ~ ~-2 ~9 {Tags:["story_text","story_intro"],Rotation:[180,0],background:0,text:{text:"알 수 없다.",color:"white"}}
-execute if score #t story matches 915 as @n[tag=story_camera] at @s run summon text_display ~ ~-2 ~9 {Tags:["story_text","story_intro"],Rotation:[180,0],background:0,text:{text:"확실한 것은",color:"white"}}
+execute if score #t story matches 915 as @n[tag=story_camera] at @s run summon text_display ~ ~-2 ~9 {Tags:["story_text","story_intro"],Rotation:[180,0],background:0,text:{text:"다만 한 가지 확실한 것은",color:"white"}}
 execute if score #t story matches 960 as @n[tag=story_camera] at @s run summon text_display ~ ~-2 ~9 {Tags:["story_text","story_intro"],Rotation:[180,0],background:0,text:{text:"사라진 과학자들은 이 게임을 플레이하고 있었다는 사실뿐.",color:"white"}}
 
 # ---- 마무리 질문 (강조: 크게) ----

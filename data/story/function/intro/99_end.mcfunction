@@ -14,4 +14,6 @@ gamemode adventure @a
 
 # TODO: 여기에 실제 게임 시작 로직(스폰 위치 이동 등)을 연결하세요.
 effect give @a slow_falling 20 2 true
-advancement grant @a only three_body:overworld/root
+advancement grant @a only three_body:overworld/00_root
+gamerule advance_weather true
+time resume

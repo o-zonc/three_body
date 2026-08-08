@@ -1,5 +1,5 @@
 {
-	"parent": "three_body:overworld/root",
+	"parent": "three_body:overworld/00_root",
 		"display": {
 		"icon": "minecraft:oak_log",
 		"title": "첫 번째 자원 채집",

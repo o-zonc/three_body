@@ -1,5 +1,5 @@
 {
-	"parent": "three_body:polarnight/root",
+	"parent": "three_body:polarnight/00_root",
 		"display": {
 		"icon": "minecraft:oak_log",
 		"title": "여명",
