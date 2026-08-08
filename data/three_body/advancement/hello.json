@@ -1,6 +1,6 @@
 {
-  "parent": "three_body:root",
-  "display": {
+	"parent": "three_body:root",
+	"display": {
     "icon": "minecraft:oak_log",
     "title": "첫 번째 자원 채집",
     "description": "불안정한 대지 위에서 생존을 위한 첫 번째 자원을 확보하세요.",
@@ -8,19 +8,19 @@
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
-  },
-  "criteria": {
+	},
+	"criteria": {
     "get_wood": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
+    	"trigger": "minecraft:inventory_changed",
+		"conditions": {
         "items": [
-          {
-            "items": [
-              "minecraft:oak_log"
+        	{
+            	"items": [
+            	"minecraft:oak_log"
             ]
-          }
+        	}
         ]
-      }
+    	}
     }
-  }
+	}
 }
