@@ -8,6 +8,10 @@ execute store result bossbar three_body:bossbar_frozen value run scoreboard play
 bossbar set three_body:bossbar_frozen visible false
 bossbar set three_body:bossbar_frozen players @a[nbt={Dimension: "three_body:frozen"}]
 execute if entity @a[nbt={Dimension: "three_body:frozen"}] run bossbar set three_body:bossbar_frozen visible true
+execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL state_frozen matches 0 run bossbar set three_body:bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
+execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL state_frozen matches 0 run bossbar set three_body:bossbar_frozen color blue
+execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL state_frozen matches 1 run bossbar set three_body:bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 난세기!","color": "dark_red"}
+execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL state_frozen matches 1 run bossbar set three_body:bossbar_frozen color red
 
 # (3) 타이머 감소 및 난세기 롤렛 실행
 scoreboard players remove #GLOBAL timer_frozen 1
@@ -25,6 +29,10 @@ execute store result bossbar three_body:bossbar_dried value run scoreboard playe
 bossbar set three_body:bossbar_dried visible false
 bossbar set three_body:bossbar_dried players @a[nbt={Dimension: "three_body:dried"}]
 execute if entity @a[nbt={Dimension: "three_body:dried"}] run bossbar set three_body:bossbar_dried visible true
+execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 0 run bossbar set three_body:bossbar_dried name {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
+execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 0 run bossbar set three_body:bossbar_dried color yellow
+execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 1 run bossbar set three_body:bossbar_dried name {"text":"[ 메마른 세계 ] 난세기!","color": "dark_red"}
+execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 1 run bossbar set three_body:bossbar_dried color red
 
 # (3) 타이머 감소 및 난세기 롤렛 실행
 scoreboard players remove #GLOBAL timer_dried 1
@@ -42,6 +50,10 @@ execute store result bossbar three_body:bossbar_overworld value run scoreboard p
 bossbar set three_body:bossbar_overworld visible false
 bossbar set three_body:bossbar_overworld players @a[nbt={Dimension: "minecraft:overworld"}]
 execute if entity @a[nbt={Dimension: "minecraft:overworld"}] run bossbar set three_body:bossbar_overworld visible true
+execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 0 run bossbar set three_body:bossbar_overworld name {"text":"[ 오버월드 ] 다음 난세기까지","color":"dark_green"}
+execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 0 run bossbar set three_body:bossbar_overworld color green
+execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 1 run bossbar set three_body:bossbar_overworld name {"text":"[ 오버월드 ] 난세기!","color": "dark_red"}
+execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 1 run bossbar set three_body:bossbar_overworld color red
 
 # (3) 타이머 감소 및 난세기 롤렛 실행
 scoreboard players remove #GLOBAL timer_overworld 1

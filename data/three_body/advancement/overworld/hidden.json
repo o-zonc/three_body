@@ -1,5 +1,5 @@
 {
-	"parent": "three_body:root",
+	"parent": "three_body:overworld/root",
 	"display": {
 		"icon": "minecraft:dragon_egg",
 		"title": "삼체의 비밀",

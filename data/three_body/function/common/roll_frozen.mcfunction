@@ -4,13 +4,11 @@ execute store result score #ROLL_EXTREME roll_chance run random value 0..99
 # [난세기 중 멸망: 98% (0~97)]
 execute if entity @a[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL state_frozen matches 1 if score #ROLL_EXTREME roll_chance matches 0..97 run tellraw @a[nbt={Dimension:"three_body:frozen"}] [{"text":"[얼어붙은 세계] 난세기 중 멸망!","color":"dark_aqua"}]
 execute if entity @a[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL state_frozen matches 1 if score #ROLL_EXTREME roll_chance matches 0..97 run scoreboard players set #GLOBAL state_frozen 2
+execute if entity @a[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL state_frozen matches 1 if score #ROLL_EXTREME roll_chance matches 98..99 run advancement grant @a only three_body:frozen/chaotic
 
 # [난세기 발동: 80% (0~79)]
 execute if score #GLOBAL state_frozen matches 0 if score #ROLL roll_chance matches 0..79 run tellraw @a[nbt={Dimension:"three_body:frozen"}] [{"text":"[얼어붙은 세계] 난세기 시작!","color":"aqua"}]
 execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance matches 0..79 run scoreboard players set #GLOBAL state_frozen 1
-
-execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance matches 0..79 run bossbar set three_body:bossbar_frozen color red
-execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance matches 0..79 run bossbar set three_body:bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 난세기!","color": "dark_red"}
 
 #  [난세기 지속 시간 랜덤]
 execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance matches 0..19 run scoreboard players set #GLOBAL timer_frozen 4000
@@ -25,9 +23,6 @@ execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance m
 # [항성기 복귀: 20% (80~99)]
 execute if score #GLOBAL state_frozen matches 1 if score #ROLL roll_chance matches 80..99 run tellraw @a[nbt={Dimension:"three_body:frozen"}] [{"text":"[얼어붙은 세계] 평화로운 항성기 도래","color":"green"}]
 execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance matches 80..99 run scoreboard players set #GLOBAL state_frozen 0
-
-execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance matches 80..99 run bossbar set three_body:bossbar_frozen color blue
-execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance matches 80..99 run bossbar set three_body:bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color": "dark_aqua"}
 
 execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance matches 80..99 run scoreboard players set #GLOBAL timer_frozen 4000
 execute unless score #GLOBAL state_frozen matches 2 if score #ROLL roll_chance matches 80..99 run bossbar set three_body:bossbar_frozen max 4000

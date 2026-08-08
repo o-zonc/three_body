@@ -9,9 +9,6 @@ execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL sta
 execute if score #GLOBAL state_overworld matches 0 if score #ROLL roll_chance matches 0..4 run tellraw @a[nbt={Dimension:"minecraft:overworld"}] [{"text":"[오버월드] 난세기 시작!","color":"red"}]
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 0..4 run scoreboard players set #GLOBAL state_overworld 1
 
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 0..4 run bossbar set three_body:bossbar_overworld color red
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 0..4 run bossbar set three_body:bossbar_overworld name {"text":"[ 오버월드 ] 난세기!","color": "dark_red"}
-
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 0 run scoreboard players set #GLOBAL timer_overworld 300
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 0 run bossbar set three_body:bossbar_overworld max 300
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 1 run scoreboard players set #GLOBAL timer_overworld 600
@@ -26,9 +23,6 @@ execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chanc
 # [항성기 복귀: 95% (5~99)]
 execute if score #GLOBAL state_overworld matches 1 if score #ROLL roll_chance matches 5..99 run tellraw @a[nbt={Dimension:"minecraft:overworld"}] [{"text":"[오버월드] 평화로운 항성기 도래","color":"green"}]
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 5..99 run scoreboard players set #GLOBAL state_overworld 0
-
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 5..99 run bossbar set three_body:bossbar_overworld color green
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 5..99 run bossbar set three_body:bossbar_overworld name {"text":"[ 오버월드 ] 다음 난세기까지","color": "dark_green"}
 
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 5..23 run scoreboard players set #GLOBAL timer_overworld 300
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 5..23 run bossbar set three_body:bossbar_overworld max 300
