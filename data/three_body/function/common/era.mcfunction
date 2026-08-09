@@ -33,17 +33,36 @@ scoreboard players set #20_CONSTANT timer_sec 20
 bossbar add three_body:bossbar_frozen {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
 bossbar set three_body:bossbar_frozen color blue
 bossbar set three_body:bossbar_frozen style notched_6
-bossbar set three_body:bossbar_frozen visible true
+bossbar set three_body:bossbar_frozen visible false
 bossbar set three_body:bossbar_frozen max 6000
 
 bossbar add three_body:bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
 bossbar set three_body:bossbar_dried color yellow
 bossbar set three_body:bossbar_dried style notched_10
-bossbar set three_body:bossbar_dried visible true
+bossbar set three_body:bossbar_dried visible false
 bossbar set three_body:bossbar_dried max 6000
 
 bossbar add three_body:bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color": "dark_green"}
 bossbar set three_body:bossbar_overworld color green
 bossbar set three_body:bossbar_overworld style progress
-bossbar set three_body:bossbar_overworld visible true
+bossbar set three_body:bossbar_overworld visible false
 bossbar set three_body:bossbar_overworld max 6000
+
+# 6. 차원 방문 스코어보드
+scoreboard objectives add visited_overworld dummy
+scoreboard objectives add visited_frozen dummy
+scoreboard objectives add visited_dried dummy
+scoreboard objectives add visited_polar dummy
+
+scoreboard players set #GLOBAL visited_dried 0
+scoreboard players set #GLOBAL visited_frozen 0
+scoreboard players set #GLOBAL visited_overworld 0
+scoreboard players set #GLOBAL visited_polar 0
+
+scoreboard objectives add first_frozen dummy
+scoreboard objectives add first_dried dummy
+
+scoreboard objectives add n_civil dummy
+
+scoreboard objectives add current_dim dummy
+scoreboard players set #GLOBAL current_dim 0

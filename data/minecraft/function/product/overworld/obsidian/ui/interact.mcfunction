@@ -1,0 +1,1 @@
+function product/overworld/obsidian/ui/info

@@ -26,12 +26,14 @@ kill @e[tag=story_intro]
 summon item_display 0 100 0 {Tags:["story_camera","story_intro"],teleport_duration:1,Rotation:[0.0f,0.0f],item:{id:"minecraft:barrier",count:1}}
 
 # 카메라를 플레이어 시점에 고정 (매틱마다 tick.mcfunction 쪽에서 계속 재적용됨)
-execute as @a run spectate @n[tag=story_camera]
+# @n은 잘못된 선택자입니다. @e[tag=...,limit=1]을 사용해야 카메라에 시점이 정상적으로 고정됩니다.
+execute as @a run spectate @e[tag=story_camera,limit=1]
 
 # 뒤쪽을 채우는 검은 배경판
 # transformation 행렬은 [가로scale,0,0,가로이동, 0,세로scale,0,세로이동, 0,0,두께scale,두께이동, 0,0,0,1] 순서입니다.
 # (이전 버전은 가로/세로/두께 값이 뒤섞여서 얇은 막대기처럼 보였던 버그가 있었음 → 수정됨)
-execute as @n[tag=story_camera] at @s run summon item_display ~ ~ ~10 {Tags:["story_bg","story_intro"],item:{id:"black_concrete",count:1},transformation:[48f,0f,0f,0f, 0f,24f,0f,0f, 0f,0f,0.1f,0f, 0f,0f,0f,1f],billboard:"fixed",Glowing:0b}
+# @n 선택자 오류를 수정합니다.
+execute as @e[type=item_display,tag=story_camera,limit=1] at @s run summon item_display ~ ~ ~10 {Tags:["story_bg","story_intro"],item:{id:"black_concrete",count:1},transformation:[48f,0f,0f,0f, 0f,24f,0f,0f, 0f,0f,0.1f,0f, 0f,0f,0f,1f],billboard:"fixed",Glowing:0b}
 
 # 타이틀 로고
 title @a title {"text":"삼체 (三體)","color":"dark_red","bold":true}
