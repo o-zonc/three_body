@@ -1,4 +1,3 @@
-playsound entity.ender_dragon.growl master @a ~ ~ ~ 1.0 0.5
 playsound entity.generic.explode master @a ~ ~ ~ 1.0 0.1
 
 title @a title {"text": "문명 멸망", "color": "red", "bold": true}

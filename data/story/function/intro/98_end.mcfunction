@@ -17,11 +17,11 @@ kill @e[tag=story_intro]
 # 20초간 모든 조작(키보드, 마우스)을 완벽하게 막습니다.
 execute as @a at @s run gamemode spectator @s
 execute as @a at @s run summon armor_stand ~ ~ ~ {Tags:["fall_anchor"], Invisible:1b}
-effect give @e[type=armor_stand,tag=fall_anchor] slow_falling 20 2 true
+effect give @e[type=armor_stand,tag=fall_anchor] slow_falling 19 2 true
 execute as @a at @s run spectate @e[type=armor_stand,tag=fall_anchor,sort=nearest,limit=1] @s
 
 # 20초 후에 플레이어 조작을 복구하는 함수를 예약합니다.
-schedule function story:intro/99_release_player 20s
+schedule function story:intro/99_release_player 19s
 
 gamerule advance_weather true
 time resume

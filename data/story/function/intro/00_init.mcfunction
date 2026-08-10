@@ -23,7 +23,7 @@ title @a times 0 1 0
 # yaw 0 = 남쪽을 보는 상태로 맞춰두면 아래 텍스트 회전값과 잘 맞습니다.
 # ------------------------------------------------------------
 kill @e[tag=story_intro]
-summon item_display 0 100 0 {Tags:["story_camera","story_intro"],teleport_duration:1,Rotation:[0.0f,0.0f],item:{id:"minecraft:barrier",count:1}}
+execute in minecraft:overworld run summon item_display 0 100 0 {Tags:["story_camera","story_intro"],teleport_duration:1,Rotation:[0.0f,0.0f],item:{id:"minecraft:barrier",count:1}}
 
 # 카메라를 플레이어 시점에 고정 (매틱마다 tick.mcfunction 쪽에서 계속 재적용됨)
 # @n은 잘못된 선택자입니다. @e[tag=...,limit=1]을 사용해야 카메라에 시점이 정상적으로 고정됩니다.
@@ -36,7 +36,7 @@ execute as @a run spectate @e[tag=story_camera,limit=1]
 execute as @e[type=item_display,tag=story_camera,limit=1] at @s run summon item_display ~ ~ ~10 {Tags:["story_bg","story_intro"],item:{id:"black_concrete",count:1},transformation:[48f,0f,0f,0f, 0f,24f,0f,0f, 0f,0f,0.1f,0f, 0f,0f,0f,1f],billboard:"fixed",Glowing:0b}
 
 # 타이틀 로고
-title @a title {"text":"삼체 (三體)","color":"dark_red","bold":true}
+title @a title {"text":"삼체 (三體)","color":"#F971BE"}
 title @a subtitle {"text":"The Three Body","color":"gray","italic":true}
 title @a times 20 60 20
 

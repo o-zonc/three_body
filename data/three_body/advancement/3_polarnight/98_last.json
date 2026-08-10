@@ -1,9 +1,9 @@
 {
-	"parent": "three_body:3_polarnight/98_last",
+	"parent": "three_body:3_polarnight/00_root",
 		"display": {
-		"icon": "minecraft:light",
-		"title": "여명",
-		"description": "아침이 찾아오려나 봅니다.",
+		"icon": "minecraft:written_book",
+		"title": "깨달음",
+		"description": "이 문명은 깨달음을 얻었습니다.",
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true,
