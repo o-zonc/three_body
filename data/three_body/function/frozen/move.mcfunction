@@ -1,3 +1,8 @@
+# 새 차원 진입 시 이전 멸망 효과가 남아 있지 않도록 안전하게 제거
+effect clear @a blindness
+effect clear @a darkness
+title @a clear
+
 execute in three_body:frozen run tp @a ~ 64 ~
 gamerule minecraft:advance_time true
 
@@ -5,5 +10,7 @@ gamerule minecraft:advance_time true
 scoreboard players set #GLOBAL visited_frozen 1
 scoreboard players add #GLOBAL first_frozen 1
 scoreboard players set #GLOBAL current_dim 2
+
+scoreboard players set #GLOBAL era_paused 0
 
 schedule function three_body:frozen/weather 1t

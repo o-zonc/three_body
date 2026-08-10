@@ -43,7 +43,7 @@ scoreboard players set #GLOBAL n_civil 1
 scoreboard players set #GLOBAL current_dim 0
 
 # 6. 문명 전환 시스템 관리 스코어보드 초기화
-scoreboard players set #GLOBAL era_paused 0
+scoreboard players set #GLOBAL era_paused 1
 
 # 7. 스토리 관리 스코어보드 초기화
 scoreboard players set #done intro 0
