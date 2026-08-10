@@ -42,4 +42,4 @@ execute if score #GLOBAL state_frozen matches 2 if entity @a[nbt={Dimension:"thr
 # ==========================================
 # 멸망 연출 종료 예약
 # ==========================================
-schedule function three_body:common/disaster/finish 125t
+schedule function three_body:common/disaster/finish 120t
