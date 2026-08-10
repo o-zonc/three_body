@@ -12,9 +12,12 @@ execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL stat
 execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL state_frozen matches 0 run bossbar set three_body:bossbar_frozen color blue
 execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL state_frozen matches 1 run bossbar set three_body:bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 난세기!","color": "dark_red"}
 execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL state_frozen matches 1 run bossbar set three_body:bossbar_frozen color red
+execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL state_frozen matches 2 run bossbar set three_body:bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 멸망","color": "dark_aqua"}
+execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL state_frozen matches 2 run bossbar set three_body:bossbar_frozen color blue
+
 
 # (3) 타이머 감소 및 난세기 롤렛 실행
-scoreboard players remove #GLOBAL timer_frozen 1
+execute if score #GLOBAL era_paused matches 0 run scoreboard players remove #GLOBAL timer_frozen 1
 execute if score #GLOBAL timer_frozen matches ..0 run function three_body:common/roll/frozen
 
 execute as @a at @s if entity @s[nbt={Dimension:"three_body:frozen"}] run function three_body:common/chaos/frozen
@@ -33,9 +36,11 @@ execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state
 execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 0 run bossbar set three_body:bossbar_dried color yellow
 execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 1 run bossbar set three_body:bossbar_dried name {"text":"[ 메마른 세계 ] 난세기!","color": "dark_red"}
 execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 1 run bossbar set three_body:bossbar_dried color red
+execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 2 run bossbar set three_body:bossbar_dried name {"text":"[ 메마른 세계 ] 멸망","color": "#D48E00"}
+execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 2 run bossbar set three_body:bossbar_dried color yellow
 
 # (3) 타이머 감소 및 난세기 롤렛 실행
-scoreboard players remove #GLOBAL timer_dried 1
+execute if score #GLOBAL era_paused matches 0 run scoreboard players remove #GLOBAL timer_dried 1
 execute if score #GLOBAL timer_dried matches ..0 run function three_body:common/roll/dried
 
 execute as @a at @s if entity @s[nbt={Dimension:"three_body:dried"}] run function three_body:common/chaos/dried
@@ -54,9 +59,11 @@ execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL st
 execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 0 run bossbar set three_body:bossbar_overworld color green
 execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 1 run bossbar set three_body:bossbar_overworld name {"text":"[ 오버월드 ] 난세기!","color": "dark_red"}
 execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 1 run bossbar set three_body:bossbar_overworld color red
+execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 2 run bossbar set three_body:bossbar_overworld name {"text":"[ 오버월드 ] 멸망","color": "#006300"}
+execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 2 run bossbar set three_body:bossbar_overworld color green
 
 # (3) 타이머 감소 및 난세기 롤렛 실행
-scoreboard players remove #GLOBAL timer_overworld 1
+execute if score #GLOBAL era_paused matches 0 run scoreboard players remove #GLOBAL timer_overworld 1
 execute if score #GLOBAL timer_overworld matches ..0 run function three_body:common/roll/overworld
 
 execute as @a at @s if entity @s[nbt={Dimension:"minecraft:overworld"}] run function three_body:common/chaos/overworld

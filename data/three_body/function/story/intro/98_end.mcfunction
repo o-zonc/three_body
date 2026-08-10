@@ -21,7 +21,7 @@ effect give @e[type=armor_stand,tag=fall_anchor] slow_falling 19 2 true
 execute as @a at @s run spectate @e[type=armor_stand,tag=fall_anchor,sort=nearest,limit=1] @s
 
 # 20초 후에 플레이어 조작을 복구하는 함수를 예약합니다.
-schedule function story:intro/99_release_player 19s
+schedule function three_body:story/intro/99_release_player 20s
 
 gamerule advance_weather true
 time resume

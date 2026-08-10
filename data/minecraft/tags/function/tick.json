@@ -1,6 +1,6 @@
 {
 	"values": [
-		"story:story",
+		"three_body:story/intro",
 		"three_body:common/random"
 	]
 }

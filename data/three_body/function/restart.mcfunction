@@ -10,12 +10,12 @@ schedule clear three_body:common/next
 
 schedule clear three_body:frozen/weather
 
-schedule clear story:intro/00_init
-schedule clear story:intro/01_quote1
-schedule clear story:intro/02_scroll_start
-schedule clear story:intro/03_scroll_tick
-schedule clear story:intro/98_end
-schedule clear story:intro/99_release_player
+schedule clear three_body:story/intro/00_init
+schedule clear three_body:story/intro/01_quote1
+schedule clear three_body:story/intro/02_scroll_start
+schedule clear three_body:story/intro/03_scroll_tick
+schedule clear three_body:story/intro/98_end
+schedule clear three_body:story/intro/99_release_player
 
 
 # ------------------------------------------------------------
@@ -36,45 +36,14 @@ execute in minecraft:overworld run tp @a 0 100 0
 
 
 # ------------------------------------------------------------
-# 4. 게임 진행 scoreboard 초기화
+# 4. 스코어보드 초기화
 # ------------------------------------------------------------
 
-scoreboard players set #GLOBAL current_dim 0
-
-scoreboard players set #GLOBAL visited_overworld 0
-scoreboard players set #GLOBAL visited_dried 0
-scoreboard players set #GLOBAL visited_frozen 0
-scoreboard players set #GLOBAL visited_polar 0
-
-scoreboard players set #GLOBAL state_overworld 0
-scoreboard players set #GLOBAL state_dried 0
-scoreboard players set #GLOBAL state_frozen 0
-
-scoreboard players set #GLOBAL n_civil 0
+function three_body:reset_state
 
 
 # ------------------------------------------------------------
-# 5. 각종 타이머 초기화
-# ------------------------------------------------------------
-
-scoreboard players set #GLOBAL timer_overworld 0
-scoreboard players set #GLOBAL timer_dried 0
-scoreboard players set #GLOBAL timer_frozen 0
-scoreboard players set #GLOBAL timer_sec 0
-
-scoreboard players set #t story 0
-
-
-# ------------------------------------------------------------
-# 6. 방문/진행 관련 값 초기화
-# ------------------------------------------------------------
-
-scoreboard players set #GLOBAL first_dried 0
-scoreboard players set #GLOBAL first_frozen 0
-
-
-# ------------------------------------------------------------
-# 7. 시간 배율 복구
+# 5. 시간 배율 복구
 # ------------------------------------------------------------
 
 execute in minecraft:overworld run time rate 1
@@ -85,7 +54,7 @@ execute in three_body:dawn run time rate 1
 
 
 # ------------------------------------------------------------
-# 8. 날씨 초기화
+# 6. 날씨 초기화
 # ------------------------------------------------------------
 
 execute in minecraft:overworld run weather clear
@@ -96,7 +65,7 @@ execute in three_body:dawn run weather clear
 
 
 # ------------------------------------------------------------
-# 9. 기존 인트로/게임용 엔티티 제거
+# 7. 기존 인트로/게임용 엔티티 제거
 # ------------------------------------------------------------
 
 kill @e[type=marker,tag=next_dim_selector]
@@ -113,7 +82,14 @@ kill @e[type=text_display,tag=story_intro]
 
 
 # ------------------------------------------------------------
-# 10. 인트로 시작
+# 8. 도전과제 회수
 # ------------------------------------------------------------
 
-function story:intro/00_init
+advancement revoke @a everything
+
+
+# ------------------------------------------------------------
+# 9. 인트로 시작
+# ------------------------------------------------------------
+
+function three_body:story/intro/00_init

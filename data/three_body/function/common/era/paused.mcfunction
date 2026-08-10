@@ -1,0 +1,1 @@
+scoreboard players set #GLOBAL era_paused 1

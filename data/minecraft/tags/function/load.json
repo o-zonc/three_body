@@ -1,6 +1,5 @@
 {
 	"values": [
-		"three_body:common/era",
-		"story:init"
+		"three_body:init"
 	]
 }

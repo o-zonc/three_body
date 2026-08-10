@@ -6,5 +6,6 @@ scoreboard players set #GLOBAL visited_dried 0
 scoreboard players set #GLOBAL visited_frozen 0
 scoreboard players set #GLOBAL visited_overworld 0
 scoreboard players add #GLOBAL visited_polar 1
+scoreboard players set #GLOBAL current_dim 3
 
 return 1

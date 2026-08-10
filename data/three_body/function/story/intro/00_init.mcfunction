@@ -3,8 +3,8 @@
 #  이 함수는 map load 시 tick.mcfunction에 의해 딱 한 번만 호출됩니다.
 # ============================================================
 
-scoreboard players set #done story 1
-scoreboard players set #t story 0
+scoreboard players set #done intro 1
+scoreboard players set #t intro 0
 
 time set noon
 time pause
@@ -26,13 +26,10 @@ kill @e[tag=story_intro]
 execute in minecraft:overworld run summon item_display 0 100 0 {Tags:["story_camera","story_intro"],teleport_duration:1,Rotation:[0.0f,0.0f],item:{id:"minecraft:barrier",count:1}}
 
 # 카메라를 플레이어 시점에 고정 (매틱마다 tick.mcfunction 쪽에서 계속 재적용됨)
-# @n은 잘못된 선택자입니다. @e[tag=...,limit=1]을 사용해야 카메라에 시점이 정상적으로 고정됩니다.
 execute as @a run spectate @e[tag=story_camera,limit=1]
 
 # 뒤쪽을 채우는 검은 배경판
 # transformation 행렬은 [가로scale,0,0,가로이동, 0,세로scale,0,세로이동, 0,0,두께scale,두께이동, 0,0,0,1] 순서입니다.
-# (이전 버전은 가로/세로/두께 값이 뒤섞여서 얇은 막대기처럼 보였던 버그가 있었음 → 수정됨)
-# @n 선택자 오류를 수정합니다.
 execute as @e[type=item_display,tag=story_camera,limit=1] at @s run summon item_display ~ ~ ~10 {Tags:["story_bg","story_intro"],item:{id:"black_concrete",count:1},transformation:[48f,0f,0f,0f, 0f,24f,0f,0f, 0f,0f,0.1f,0f, 0f,0f,0f,1f],billboard:"fixed",Glowing:0b}
 
 # 타이틀 로고
@@ -40,4 +37,4 @@ title @a title {"text":"삼체 (三體)","color":"#F971BE"}
 title @a subtitle {"text":"The Three Body","color":"gray","italic":true}
 title @a times 20 60 20
 
-schedule function story:intro/01_quote1 100t
+schedule function three_body:story/intro/01_quote1 100t
