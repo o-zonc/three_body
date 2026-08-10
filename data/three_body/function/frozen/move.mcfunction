@@ -11,6 +11,11 @@ scoreboard players set #GLOBAL visited_frozen 1
 scoreboard players add #GLOBAL first_frozen 1
 scoreboard players set #GLOBAL current_dim 2
 
+# 새 차원은 항상 항성기에서 시작하며, 첫 시대의 타이머를 1200틱으로 초기화합니다.
+scoreboard players set #GLOBAL state_frozen 0
+scoreboard players set #GLOBAL timer_frozen 1200
+bossbar set three_body:bossbar_frozen max 1200
+
 scoreboard players set #GLOBAL era_paused 0
 
 schedule function three_body:frozen/weather 1t
