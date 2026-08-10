@@ -2,14 +2,21 @@
 # TEST: 멸망 연출
 # ==========================================
 
-# 현재 차원에서 멸망을 강제로 시작합니다.
-# 실제 게임과 동일하게 disaster/do가 era_paused를 1로 설정하도록 합니다.
+# 현재 플레이어가 있는 차원을 대상으로 멸망을 강제로 시작합니다.
+# 멸망 테스트에서는 해당 차원의 타이머를 0으로 만들어
+# 실제 타이머 만료 직후의 상태를 재현합니다.
 
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run scoreboard players set #GLOBAL state_overworld 2
+execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run scoreboard players set #GLOBAL timer_overworld 0
+
 execute if entity @a[nbt={Dimension:"three_body:dried"}] run scoreboard players set #GLOBAL state_dried 2
+execute if entity @a[nbt={Dimension:"three_body:dried"}] run scoreboard players set #GLOBAL timer_dried 0
+
 execute if entity @a[nbt={Dimension:"three_body:frozen"}] run scoreboard players set #GLOBAL state_frozen 2
+execute if entity @a[nbt={Dimension:"three_body:frozen"}] run scoreboard players set #GLOBAL timer_frozen 0
 
 function three_body:common/disaster/do
 
 tellraw @a {"text":"[TEST] disaster/do 실행 완료","color":"gold"}
+tellraw @a {"text":"[TEST] 현재 차원의 timer = 0 상태에서 멸망 연출을 테스트했습니다.","color":"yellow"}
 tellraw @a {"text":"[TEST] 멸망 연출 종료 후 next/transition 흐름을 확인하세요.","color":"yellow"}
