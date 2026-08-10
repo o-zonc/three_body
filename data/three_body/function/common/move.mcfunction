@@ -11,6 +11,11 @@ gamerule minecraft:advance_time true
 scoreboard players set #GLOBAL visited_overworld 1
 scoreboard players set #GLOBAL current_dim 0
 
+# 새 차원은 항상 항성기에서 시작하며, 첫 시대의 타이머를 1200틱으로 초기화합니다.
+scoreboard players set #GLOBAL state_overworld 0
+scoreboard players set #GLOBAL timer_overworld 1200
+bossbar set three_body:bossbar_overworld max 1200
+
 function three_body:common/weather
 
 gamemode adventure @a
