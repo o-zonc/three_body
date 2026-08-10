@@ -22,7 +22,8 @@ execute if entity @a[nbt={Dimension: "three_body:frozen"}] if score #GLOBAL stat
 
 # (3) 시대 진행
 # era_paused = 0일 때만 타이머 감소 / 롤렛 / 난세기 로직 실행
-execute if score #GLOBAL era_paused matches 0 run scoreboard players remove #GLOBAL timer_frozen 1
+# 타이머는 0에서 더 이상 감소하지 않도록 1 이상일 때만 감소시킵니다.
+execute if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_frozen matches 1.. run scoreboard players remove #GLOBAL timer_frozen 1
 execute if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_frozen matches ..0 run function three_body:common/roll/frozen
 
 execute if score #GLOBAL era_paused matches 0 as @a at @s if entity @s[nbt={Dimension:"three_body:frozen"}] run function three_body:common/chaos/frozen
@@ -51,7 +52,8 @@ execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state
 execute if entity @a[nbt={Dimension: "three_body:dried"}] if score #GLOBAL state_dried matches 2 run bossbar set three_body:bossbar_dried color yellow
 
 # (3) 시대 진행
-execute if score #GLOBAL era_paused matches 0 run scoreboard players remove #GLOBAL timer_dried 1
+# 타이머는 0에서 더 이상 감소하지 않도록 1 이상일 때만 감소시킵니다.
+execute if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_dried matches 1.. run scoreboard players remove #GLOBAL timer_dried 1
 execute if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_dried matches ..0 run function three_body:common/roll/dried
 
 execute if score #GLOBAL era_paused matches 0 as @a at @s if entity @s[nbt={Dimension:"three_body:dried"}] run function three_body:common/chaos/dried
@@ -80,7 +82,8 @@ execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL st
 execute if entity @a[nbt={Dimension: "minecraft:overworld"}] if score #GLOBAL state_overworld matches 2 run bossbar set three_body:bossbar_overworld color green
 
 # (3) 시대 진행
-execute if score #GLOBAL era_paused matches 0 run scoreboard players remove #GLOBAL timer_overworld 1
+# 타이머는 0에서 더 이상 감소하지 않도록 1 이상일 때만 감소시킵니다.
+execute if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_overworld matches 1.. run scoreboard players remove #GLOBAL timer_overworld 1
 execute if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_overworld matches ..0 run function three_body:common/roll/overworld
 
 execute if score #GLOBAL era_paused matches 0 as @a at @s if entity @s[nbt={Dimension:"minecraft:overworld"}] run function three_body:common/chaos/overworld
