@@ -21,5 +21,5 @@ function three_body:common/bossbar/update
 function three_body:common/disaster/do
 
 tellraw @a {"text":"[TEST] disaster/do 실행 완료","color":"gold"}
-tellraw @a {"text":"[TEST] 현재 차원의 timer = 0 상태에서 멸망 연출을 테스트했습니다.","color":"yellow"}
-tellraw @a {"text":"[TEST] 멸망 연출 종료 후 next/transition 흐름을 확인하세요.","color":"yellow"}
+tellraw @a {"text":"[TIP] 현재 차원의 timer = 0 상태에서 멸망 연출을 테스트했습니다.","color":"gray"}
+tellraw @a {"text":"멸망 연출 종료 후 next/transition 흐름을 확인하세요.","color":"gray"}

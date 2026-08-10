@@ -8,4 +8,4 @@
 function three_body:common/disaster/finish
 
 tellraw @a {"text":"[TEST] disaster/finish 실행 완료","color":"gold"}
-tellraw @a {"text":"[TEST] 차원 이동 및 새 차원 초기화를 확인하세요.","color":"yellow"}
+tellraw @a {"text":"[TIP] 차원 이동 및 새 차원 초기화를 확인하세요.","color":"gray"}

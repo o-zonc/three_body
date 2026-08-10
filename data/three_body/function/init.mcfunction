@@ -10,6 +10,14 @@ scoreboard objectives add timer_frozen dummy
 scoreboard objectives add timer_dried dummy
 scoreboard objectives add timer_overworld dummy
 
+scoreboard objectives add timer_frozen_before dummy
+scoreboard objectives add timer_dried_before dummy
+scoreboard objectives add timer_overworld_before dummy
+
+scoreboard objectives add timer_frozen_after dummy
+scoreboard objectives add timer_dried_after dummy
+scoreboard objectives add timer_overworld_after dummy
+
 # 3. 확률 연산용 공용 변수
 scoreboard objectives add roll_chance dummy
 scoreboard objectives add timer_sec dummy
