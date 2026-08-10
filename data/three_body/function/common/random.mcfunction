@@ -93,8 +93,8 @@ execute if score #GLOBAL era_paused matches 0 as @a at @s if entity @s[nbt={Dime
 # 원래는 차원별로 멸망 함수가 따로 있었는데 하나로 합쳐둠.
 # 극야 차원에서 문명 초월도 문명 멸망의 변종으로 취급해서 코드 진행.
 
-execute if score #GLOBAL state_frozen matches 2 if entity @a[nbt={Dimension:"three_body:frozen"}] run function three_body:common/disaster/do
+execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_frozen matches 2 if entity @a[nbt={Dimension:"three_body:frozen"}] run function three_body:common/disaster/do
 
-execute if score #GLOBAL state_dried matches 2 if entity @a[nbt={Dimension:"three_body:dried"}] run function three_body:common/disaster/do
+execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_dried matches 2 if entity @a[nbt={Dimension:"three_body:dried"}] run function three_body:common/disaster/do
 
-execute if score #GLOBAL state_overworld matches 2 if entity @a[nbt={Dimension:"minecraft:overworld"}] run function three_body:common/disaster/do
+execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_overworld matches 2 if entity @a[nbt={Dimension:"minecraft:overworld"}] run function three_body:common/disaster/do

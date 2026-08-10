@@ -6,8 +6,8 @@
 scoreboard players set #GLOBAL era_paused 1
 
 # 화면 연출
-effect give @a blindness 6 1 true
-effect give @a darkness 6 1 true
+effect give @a blindness 7 1 true
+effect give @a darkness 7 1 true
 
 title @a times 20 60 20
 
