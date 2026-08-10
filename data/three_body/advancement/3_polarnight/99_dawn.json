@@ -1,8 +1,8 @@
 {
 	"parent": "three_body:3_polarnight/98_last",
 		"display": {
-		"icon": "minecraft:light",
-		"title": "여명",
+		"icon": "minecraft:soul_lantern",
+		"title": "박명",
 		"description": "아침이 찾아오려나 봅니다.",
 		"frame": "task",
 		"show_toast": true,

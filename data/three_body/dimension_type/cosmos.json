@@ -2,36 +2,63 @@
     "has_skylight": false,
     "has_ceiling": false,
     "has_ender_dragon_fight": false,
-    "ambient_light": 0.25,
-    "has_fixed_time": false,
-    "monster_spawn_light_level": 7,
+
+    "ambient_light": 0.0,
+
+    "has_fixed_time": true,
+
+    "monster_spawn_light_level": 15,
     "monster_spawn_block_light_limit": 0,
+
     "min_y": -64,
     "height": 384,
     "logical_height": 384,
+
     "coordinate_scale": 1.0,
+
     "infiniburn": "#minecraft:infiniburn_overworld",
-    "skybox": "end",
+
+    "skybox": "overworld",
     "cardinal_light": "default",
+    "default_clock": "minecraft:overworld",
+
     "attributes": {
-		"minecraft:audio/background_music": {
-			"default": {
-				"sound": "music.end",
-				"max_delay": 2400,
-				"min_delay": 1200,
-				"replace_current_music": false
-			}
-		},
-        "minecraft:visual/ambient_light_color": "#FFFFFF",
-        "minecraft:visual/fog_color": "#140C1C",
+        "minecraft:audio/background_music": {
+            "default": {
+                "sound": "music.end",
+                "max_delay": 2400,
+                "min_delay": 1200,
+                "replace_current_music": false
+            }
+        },
+
+        "minecraft:visual/ambient_light_color": "#000000",
+
+        "minecraft:visual/cloud_color": "#00000000",
+        "minecraft:visual/cloud_fog_end_distance": 0.0,
+        "minecraft:visual/cloud_height": 192.0,
+
         "minecraft:visual/sky_color": "#000000",
-        "minecraft:visual/sky_light_color": "#0A0A0A",
-        "minecraft:visual/sky_light_factor": 0.25,
+
+        "minecraft:visual/fog_color": "#000000",
+        "minecraft:visual/sky_fog_end_distance": 0.0,
+
+        "minecraft:visual/sky_light_color": "#000000",
+        "minecraft:visual/sky_light_factor": 0.0,
+
+        "minecraft:visual/sun_angle": 128.0,
+        "minecraft:visual/sunrise_sunset_color": "#00000000",
+
+        "minecraft:visual/moon_angle": 325.8,
+        "minecraft:visual/moon_phase": "full_moon",
+
         "minecraft:visual/star_angle": {
             "modifier": "multiply",
-            "argument": 2.0
+            "argument": 1.0
         },
+
         "minecraft:visual/star_brightness": 1.0,
+
         "minecraft:gameplay/water_evaporates": false,
         "minecraft:gameplay/fast_lava": false
     }

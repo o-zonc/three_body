@@ -1,6 +1,6 @@
 {
 	"values": [
 		"three_body:common/era",
-		"three_body:common/disaster/dawn_init"
+		"story:init"
 	]
 }

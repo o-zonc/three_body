@@ -7,3 +7,5 @@ scoreboard players set #GLOBAL visited_overworld 1
 scoreboard players set #GLOBAL current_dim 0
 
 function three_body:common/weather
+
+gamemode adventure @a
