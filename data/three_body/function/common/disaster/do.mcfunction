@@ -31,13 +31,8 @@ execute if entity @a[nbt={Dimension:"three_body:polarnight"}, advancements={thre
 # 다른 차원을 한 번도 방문하지 않은 상태에서 오버월드가 멸망하는 경우
 execute if score #GLOBAL first_frozen matches 0 if score #GLOBAL first_dried matches 0 if score #GLOBAL state_overworld matches 2 run advancement grant @a only three_body:0_overworld/11_unluck
 
-# ==========================================
-# 현재 차원의 멸망 상태 초기화
-# ==========================================
-# 멸망 이벤트가 반복 실행되지 않도록, 해당 차원의 상태를 '항성기'(0)로 초기화합니다.
-execute if score #GLOBAL state_overworld matches 2 if entity @a[nbt={Dimension:"minecraft:overworld"}] run scoreboard players set #GLOBAL state_overworld 0
-execute if score #GLOBAL state_dried matches 2 if entity @a[nbt={Dimension:"three_body:dried"}] run scoreboard players set #GLOBAL state_dried 0
-execute if score #GLOBAL state_frozen matches 2 if entity @a[nbt={Dimension:"three_body:frozen"}] run scoreboard players set #GLOBAL state_frozen 0
+# 멸망 상태는 연출이 완전히 끝날 때까지 유지합니다.
+# state_* 초기화는 disaster/finish에서 다음 차원으로 이동한 뒤 처리합니다.
 
 # ==========================================
 # 멸망 연출 종료 예약
