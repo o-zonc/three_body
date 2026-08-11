@@ -10,5 +10,5 @@
 #
 # The caller is responsible for supplying a valid material ID.
 
-execute store result storage three_body:resource output.amount int 1 run scoreboard players get #$(type) material
+$execute store result storage three_body:resource output.amount int 1 run scoreboard players get #$(type) material
 return 1
