@@ -39,5 +39,5 @@ execute unless score #information material_unlocked matches 1 run scoreboard pla
 execute if score #time material_unlocked matches 1 run scoreboard players operation "시간" material_display = #time material
 execute unless score #time material_unlocked matches 1 run scoreboard players reset "시간" material_display
 
-execute if score #world_eye material_unlocked matches 1 run scoreboard players operation "세계의 눈" material_display = #world_eye material
-execute unless score #world_eye material_unlocked matches 1 run scoreboard players reset "세계의 눈" material_display
+execute if score #world_eye material_unlocked matches 1 run scoreboard players operation "세계의_눈" material_display = #world_eye material
+execute unless score #world_eye material_unlocked matches 1 run scoreboard players reset "세계의_눈" material_display

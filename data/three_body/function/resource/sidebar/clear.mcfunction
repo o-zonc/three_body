@@ -13,4 +13,4 @@ scoreboard players reset "열기" material_display
 scoreboard players reset "냉기" material_display
 scoreboard players reset "정보" material_display
 scoreboard players reset "시간" material_display
-scoreboard players reset "세계의 눈" material_display
+scoreboard players reset "세계의_눈" material_display
