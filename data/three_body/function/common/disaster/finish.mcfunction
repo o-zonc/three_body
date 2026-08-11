@@ -42,3 +42,6 @@ function three_body:common/next
 scoreboard players set #GLOBAL era_paused 0
 scoreboard players set #GLOBAL user_disaster 0
 scoreboard players set #disaster_running run 0
+
+# 멸망 연출 종료 후 자원 사이드바 복구
+function three_body:resource/sidebar/show
