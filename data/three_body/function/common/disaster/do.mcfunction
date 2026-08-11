@@ -42,7 +42,8 @@ execute if entity @a[nbt={Dimension:"three_body:dried"}, advancements={three_bod
 execute if entity @a[nbt={Dimension:"three_body:polarnight"}, advancements={three_body:3_polarnight/98_last=false}] run advancement grant @a only three_body:3_polarnight/98_last
 
 # 다른 차원을 한 번도 방문하지 않은 상태에서 오버월드가 멸망하는 경우
-execute if score #GLOBAL first_frozen matches 0 if score #GLOBAL first_dried matches 0 if score #GLOBAL state_overworld matches 2 run advancement grant @a only three_body:0_overworld/11_unluck
+# 자동 난세기 멸망(state_overworld=2)뿐 아니라 차원 이동기로 직접 멸망시키는 경우도 포함합니다.
+execute if score #GLOBAL current_dim matches 0 if score #GLOBAL first_frozen matches 0 if score #GLOBAL first_dried matches 0 run advancement grant @a only three_body:0_overworld/11_unluck
 
 # 멸망 상태는 연출이 완전히 끝날 때까지 유지합니다.
 # state_* 초기화는 disaster/finish에서 다음 차원으로 이동한 뒤 처리합니다.
