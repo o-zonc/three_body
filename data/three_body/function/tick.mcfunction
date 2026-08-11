@@ -4,7 +4,7 @@ execute as @a unless predicate three_body:player/sneaking run tag @s remove shif
 
 # 차원 이동기: 극야에서는 사용 제한
 # 웅크린 상태에서 극야의 차원 이동기를 사용하려고 하면 한 번만 경고를 표시
-execute as @a at @s if entity @s[tag=shift] if predicate three_body:item/dimension_mover if dimension three_body:polarnight unless entity @s[tag=dimension_mover_blocked] run title @s title {"text":"이곳에서는 사용이 제한됩니다!","color":"red","bold":true}
+execute as @a at @s if entity @s[tag=shift] if predicate three_body:item/dimension_mover if dimension three_body:polarnight unless entity @s[tag=dimension_mover_blocked] run title @s actionbar {"text":"이곳에서는 사용이 제한됩니다!","color":"white","bold":false,"italic":true}
 execute as @a if predicate three_body:player/sneaking if predicate three_body:item/dimension_mover if dimension three_body:polarnight run tag @s add dimension_mover_blocked
 execute as @a unless entity @s[tag=shift] run tag @s remove dimension_mover_blocked
 execute as @a unless predicate three_body:item/dimension_mover run tag @s remove dimension_mover_blocked
