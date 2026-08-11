@@ -11,6 +11,10 @@ execute if score #disaster_running run matches 1 run return 0
 scoreboard players set #GLOBAL era_paused 1
 scoreboard players set #disaster_running run 1
 
+# 플레이어가 직접 멸망을 실행했음을 표시
+# bossbar/update에서 user_disaster=1일 때 '지속 포기' 상태로 표시합니다.
+scoreboard players set #GLOBAL user_disaster 1
+
 # 화면 연출
 effect give @a blindness 7 1 true
 effect give @a darkness 7 1 true
