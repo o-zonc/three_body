@@ -1,4 +1,4 @@
 # 오버월드 이동기
 execute if dimension three_body:polarnight run title @a actionbar {"text":"이곳에서는 사용이 제한됩니다!","color":"white","bold":false,"italic":true}
 execute if dimension minecraft:overworld run title @a actionbar {"text":"이곳에서는 사용이 제한됩니다!","color":"white","bold":false,"italic":true}
-execute unless dimension three_body:polarnight run function three_body:common/move
+execute unless dimension three_body:polarnight unless dimension minecraft:overworld run function three_body:common/move
