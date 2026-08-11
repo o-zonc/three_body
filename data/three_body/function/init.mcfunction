@@ -52,3 +52,7 @@ scoreboard players enable @a intro_skip
 
 # 8. 자원 관리 스코어보드
 scoreboard objectives add material dummy
+scoreboard objectives add material_unlocked dummy
+scoreboard objectives add material_display dummy
+scoreboard objectives modify material_display displayName {"text":"자원","color":"gold"}
+scoreboard objectives setdisplay sidebar material_display
