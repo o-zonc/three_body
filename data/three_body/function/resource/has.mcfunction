@@ -5,5 +5,5 @@
 #
 # Returns 1 when the resource amount is sufficient, otherwise 0.
 
-$execute if score #$(type) material >= $(amount) run return 1
+$execute if score #$(type) material matches $(amount).. run return 1
 return 0
