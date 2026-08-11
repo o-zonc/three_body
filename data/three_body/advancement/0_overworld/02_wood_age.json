@@ -9,13 +9,8 @@
 		"announce_to_chat": true
 	},
 	"criteria": {
-		"get_wood": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{"items": ["minecraft:oak_log", "minecraft:spruce_log", "minecraft:birch_log", "minecraft:jungle_log", "minecraft:acacia_log", "minecraft:dark_oak_log", "minecraft:mangrove_log", "minecraft:cherry_log"]}
-				]
-			}
+		"manual_test": {
+			"trigger": "minecraft:impossible"
 		}
 	},
 	"rewards": {

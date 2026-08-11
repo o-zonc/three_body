@@ -9,9 +9,8 @@
 		"announce_to_chat": true
 	},
 	"criteria": {
-		"build_observer": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {"items": [{"items": ["minecraft:observer"]}]}
+		"manual_test": {
+			"trigger": "minecraft:impossible"
 		}
 	},
 	"rewards": {"function": "three_body:story/overworld/age/26_contemporary_age"}

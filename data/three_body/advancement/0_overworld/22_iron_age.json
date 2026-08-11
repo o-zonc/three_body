@@ -9,9 +9,8 @@
 		"announce_to_chat": true
 	},
 	"criteria": {
-		"get_iron": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {"items": [{"items": ["minecraft:iron_ingot"]}]}
+		"manual_test": {
+			"trigger": "minecraft:impossible"
 		}
 	},
 	"rewards": {"function": "three_body:story/overworld/age/22_iron_age"}

@@ -9,8 +9,8 @@
 		"announce_to_chat": true
 	},
 	"criteria": {
-		"enchant": {
-			"trigger": "minecraft:enchanted_item"
+		"manual_test": {
+			"trigger": "minecraft:impossible"
 		}
 	},
 	"rewards": {"function": "three_body:story/overworld/age/23_ancient_age"}

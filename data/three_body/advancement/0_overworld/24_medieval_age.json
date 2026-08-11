@@ -9,8 +9,8 @@
 		"announce_to_chat": true
 	},
 	"criteria": {
-		"trade": {
-			"trigger": "minecraft:villager_trade"
+		"manual_test": {
+			"trigger": "minecraft:impossible"
 		}
 	},
 	"rewards": {"function": "three_body:story/overworld/age/24_medieval_age"}
