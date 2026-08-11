@@ -1,0 +1,18 @@
+{
+	"parent": "three_body:0_overworld/25_modern_age",
+	"display": {
+		"icon": "minecraft:observer",
+		"title": "현대",
+		"description": "정보를 기록하고 자동화된 기술을 발전시킵니다.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"build_observer": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {"items": [{"items": ["minecraft:observer"]}]}
+		}
+	},
+	"rewards": {"function": "three_body:story/overworld/age/26_contemporary_age"}
+}
