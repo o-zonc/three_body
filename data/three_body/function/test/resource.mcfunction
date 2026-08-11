@@ -6,7 +6,7 @@
 # Expected final state:
 #   #iron material = 80
 #
-# The test reports PASS/FAIL for every operation.
+# API return values are captured with `execute store result`.
 
 # Test-only objective.
 scoreboard objectives add resource_test dummy
@@ -15,6 +15,8 @@ scoreboard objectives add resource_test dummy
 scoreboard players set #resource_test_total resource_test 0
 scoreboard players set #resource_test_pass resource_test 0
 scoreboard players set #resource_test_fail resource_test 0
+scoreboard players set #resource_test_result resource_test 0
+scoreboard players set #resource_test_get resource_test 0
 
 # Initialize material entries.
 function three_body:resource/init
@@ -28,31 +30,35 @@ tellraw @a {"text":"========================================","color":"dark_gray
 # SET: iron = 100
 # --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:100}
-function three_body:resource/set with storage three_body:resource input
+execute store result score #resource_test_result resource_test run function three_body:resource/set with storage three_body:resource input
 
-execute if score #iron material matches 100 run scoreboard players add #resource_test_pass resource_test 1
-execute unless score #iron material matches 100 run scoreboard players add #resource_test_fail resource_test 1
+execute if score #resource_test_result resource_test matches 1 if score #iron material matches 100 run scoreboard players add #resource_test_pass resource_test 1
+execute unless score #resource_test_result resource_test matches 1 run scoreboard players add #resource_test_fail resource_test 1
+execute if score #resource_test_result resource_test matches 1 unless score #iron material matches 100 run scoreboard players add #resource_test_fail resource_test 1
 scoreboard players add #resource_test_total resource_test 1
-execute if score #iron material matches 100 run tellraw @a {"text":"[SET]    iron = 100                 PASS","color":"green"}
-execute unless score #iron material matches 100 run tellraw @a {"text":"[SET]    iron = 100                 FAIL","color":"red"}
+execute if score #resource_test_result resource_test matches 1 if score #iron material matches 100 run tellraw @a {"text":"[SET]    iron = 100                 PASS","color":"green"}
+execute unless score #resource_test_result resource_test matches 1 run tellraw @a {"text":"[SET]    iron = 100                 FAIL","color":"red"}
+execute if score #resource_test_result resource_test matches 1 unless score #iron material matches 100 run tellraw @a {"text":"[SET]    iron = 100                 FAIL","color":"red"}
 
 # --------------------------------------------------
 # ADD: iron + 10 -> 110
 # --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:10}
-function three_body:resource/add with storage three_body:resource input
+execute store result score #resource_test_result resource_test run function three_body:resource/add with storage three_body:resource input
 
-execute if score #iron material matches 110 run scoreboard players add #resource_test_pass resource_test 1
-execute unless score #iron material matches 110 run scoreboard players add #resource_test_fail resource_test 1
+execute if score #resource_test_result resource_test matches 1 if score #iron material matches 110 run scoreboard players add #resource_test_pass resource_test 1
+execute unless score #resource_test_result resource_test matches 1 run scoreboard players add #resource_test_fail resource_test 1
+execute if score #resource_test_result resource_test matches 1 unless score #iron material matches 110 run scoreboard players add #resource_test_fail resource_test 1
 scoreboard players add #resource_test_total resource_test 1
-execute if score #iron material matches 110 run tellraw @a {"text":"[ADD]    iron + 10 -> 110          PASS","color":"green"}
-execute unless score #iron material matches 110 run tellraw @a {"text":"[ADD]    iron + 10 -> 110          FAIL","color":"red"}
+execute if score #resource_test_result resource_test matches 1 if score #iron material matches 110 run tellraw @a {"text":"[ADD]    iron + 10 -> 110          PASS","color":"green"}
+execute unless score #resource_test_result resource_test matches 1 run tellraw @a {"text":"[ADD]    iron + 10 -> 110          FAIL","color":"red"}
+execute if score #resource_test_result resource_test matches 1 unless score #iron material matches 110 run tellraw @a {"text":"[ADD]    iron + 10 -> 110          FAIL","color":"red"}
 
 # --------------------------------------------------
-# HAS: iron >= 100 -> success
+# HAS: iron >= 100 -> return 1
 # --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:100}
-execute store success score #resource_test_result resource_test run function three_body:resource/has with storage three_body:resource input
+execute store result score #resource_test_result resource_test run function three_body:resource/has with storage three_body:resource input
 
 execute if score #resource_test_result resource_test matches 1 run scoreboard players add #resource_test_pass resource_test 1
 execute unless score #resource_test_result resource_test matches 1 run scoreboard players add #resource_test_fail resource_test 1
@@ -64,21 +70,23 @@ execute unless score #resource_test_result resource_test matches 1 run tellraw @
 # REMOVE: iron - 30 -> 80
 # --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:30}
-execute store success score #resource_test_result resource_test run function three_body:resource/remove with storage three_body:resource input
+execute store result score #resource_test_result resource_test run function three_body:resource/remove with storage three_body:resource input
 
-execute if score #resource_test_result resource_test matches 1 if score #iron material matches 80 run scoreboard players add #resource_test_pass resource_test 1
-execute unless score #resource_test_result resource_test matches 1 run scoreboard players add #resource_test_fail resource_test 1
-execute if score #resource_test_result resource_test matches 1 unless score #iron material matches 80 run scoreboard players add #resource_test_fail resource_test 1
+# The current remove API returns the result of the scoreboard removal.
+# Therefore 30 is expected for a successful removal of 30 points.
+execute if score #resource_test_result resource_test matches 30 if score #iron material matches 80 run scoreboard players add #resource_test_pass resource_test 1
+execute unless score #resource_test_result resource_test matches 30 run scoreboard players add #resource_test_fail resource_test 1
+execute if score #resource_test_result resource_test matches 30 unless score #iron material matches 80 run scoreboard players add #resource_test_fail resource_test 1
 scoreboard players add #resource_test_total resource_test 1
-execute if score #resource_test_result resource_test matches 1 if score #iron material matches 80 run tellraw @a {"text":"[REMOVE] iron - 30 -> 80       PASS","color":"green"}
-execute unless score #resource_test_result resource_test matches 1 run tellraw @a {"text":"[REMOVE] iron - 30 -> 80       FAIL","color":"red"}
-execute if score #resource_test_result resource_test matches 1 unless score #iron material matches 80 run tellraw @a {"text":"[REMOVE] iron - 30 -> 80       FAIL","color":"red"}
+execute if score #resource_test_result resource_test matches 30 if score #iron material matches 80 run tellraw @a {"text":"[REMOVE] iron - 30 -> 80       PASS","color":"green"}
+execute unless score #resource_test_result resource_test matches 30 run tellraw @a {"text":"[REMOVE] iron - 30 -> 80       FAIL","color":"red"}
+execute if score #resource_test_result resource_test matches 30 unless score #iron material matches 80 run tellraw @a {"text":"[REMOVE] iron - 30 -> 80       FAIL","color":"red"}
 
 # --------------------------------------------------
-# REMOVE FAILURE: iron - 100 -> must fail, remain 80
+# REMOVE FAILURE: iron - 100 -> return 0, remain 80
 # --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:100}
-execute store success score #resource_test_result resource_test run function three_body:resource/remove with storage three_body:resource input
+execute store result score #resource_test_result resource_test run function three_body:resource/remove with storage three_body:resource input
 
 execute if score #resource_test_result resource_test matches 0 if score #iron material matches 80 run scoreboard players add #resource_test_pass resource_test 1
 execute unless score #resource_test_result resource_test matches 0 run scoreboard players add #resource_test_fail resource_test 1
@@ -89,16 +97,19 @@ execute unless score #resource_test_result resource_test matches 0 run tellraw @
 execute if score #resource_test_result resource_test matches 0 unless score #iron material matches 80 run tellraw @a {"text":"[REMOVE] iron - 100 -> FAIL      FAIL","color":"red"}
 
 # --------------------------------------------------
-# GET: iron -> 80
+# GET: iron -> output.amount = 80
 # --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron"}
 function three_body:resource/get with storage three_body:resource input
 
-execute if data storage three_body:resource output{amount:80} run scoreboard players add #resource_test_pass resource_test 1
-execute unless data storage three_body:resource output{amount:80} run scoreboard players add #resource_test_fail resource_test 1
+# Read the returned storage value into a test scoreboard.
+execute store result score #resource_test_get resource_test run data get storage three_body:resource output.amount 1
+
+execute if score #resource_test_get resource_test matches 80 run scoreboard players add #resource_test_pass resource_test 1
+execute unless score #resource_test_get resource_test matches 80 run scoreboard players add #resource_test_fail resource_test 1
 scoreboard players add #resource_test_total resource_test 1
-execute if data storage three_body:resource output{amount:80} run tellraw @a {"text":"[GET]     iron = 80                 PASS","color":"green"}
-execute unless data storage three_body:resource output{amount:80} run tellraw @a {"text":"[GET]     iron = 80                 FAIL","color":"red"}
+execute if score #resource_test_get resource_test matches 80 run tellraw @a {"text":"[GET]     iron = 80                 PASS","color":"green"}
+execute unless score #resource_test_get resource_test matches 80 run tellraw @a {"text":"[GET]     iron = 80                 FAIL","color":"red"}
 
 # --------------------------------------------------
 # Summary
