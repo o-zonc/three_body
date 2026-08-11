@@ -6,6 +6,8 @@
 scoreboard players set #done intro 1
 scoreboard players set #t intro 0
 
+gamerule send_command_feedback false
+
 # 인트로 동안 자원 사이드바 숨김
 function three_body:resource/sidebar/hide
 

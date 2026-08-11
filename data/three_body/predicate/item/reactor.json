@@ -4,10 +4,10 @@
     "predicate": {
         "equipment": {
             "mainhand": {
-                "items": "minecraft:black_dye",
+                "items": "minecraft:gray_dye",
                 "components": {
                     "minecraft:custom_data": {
-                        "overworld_move": 1
+                        "reactor": 1
                     }
                 }
             }
