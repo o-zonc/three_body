@@ -1,8 +1,3 @@
-# 스토리 trigger는 플레이어마다 항상 다시 활성화
-# trigger는 사용 후 자동으로 비활성화되므로 tick에서 보장한다.
-scoreboard players enable @a intro_skip
-scoreboard players enable @a tutorial
-
 # 플레이어 상태
 execute as @a if predicate three_body:player/sneaking run tag @s add shift
 execute as @a unless predicate three_body:player/sneaking run tag @s remove shift

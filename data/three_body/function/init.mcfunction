@@ -50,10 +50,7 @@ scoreboard objectives add run dummy
 scoreboard objectives add intro dummy
 
 scoreboard objectives add intro_skip trigger
-scoreboard players enable @a intro_skip
-
 scoreboard objectives add tutorial trigger
-scoreboard players enable @a tutorial
 
 # 8. 자원 관리 스코어보드
 scoreboard objectives add material dummy
