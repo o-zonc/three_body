@@ -6,6 +6,9 @@
 # 플레이어의 게임 모드를 '모험'으로 되돌립니다.
 gamemode adventure @a
 
+# 인트로 종료 후 자원 사이드바 복구
+function three_body:resource/sidebar/show
+
 # 차원 전환 시스템 가동
 scoreboard players set #GLOBAL era_paused 0
 
