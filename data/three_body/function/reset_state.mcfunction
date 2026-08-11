@@ -29,6 +29,8 @@ bossbar set three_body:bossbar_overworld style progress
 bossbar set three_body:bossbar_overworld visible false
 bossbar set three_body:bossbar_overworld max 6000
 
+scoreboard players set #GLOBAL user_disaster 0
+
 # 5. 차원 방문 스코어보드 초기화
 scoreboard players set #GLOBAL visited_dried 0
 scoreboard players set #GLOBAL visited_frozen 0

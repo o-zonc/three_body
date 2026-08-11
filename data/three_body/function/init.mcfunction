@@ -27,6 +27,8 @@ bossbar add three_body:bossbar_frozen {"text":"[ 얼어붙은 세계 ] 다음 �
 bossbar add three_body:bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
 bossbar add three_body:bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color": "dark_green"}
 
+scoreboard objectives add user_disaster dummy
+
 # 5. 차원 방문 스코어보드
 scoreboard objectives add visited_overworld dummy
 scoreboard objectives add visited_frozen dummy

@@ -24,6 +24,9 @@ execute if entity @a[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL state
 execute if entity @a[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL state_frozen matches 2 run bossbar set three_body:bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 멸망","color":"dark_aqua"}
 execute if entity @a[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL state_frozen matches 2 run bossbar set three_body:bossbar_frozen color blue
 
+execute if entity @a[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL user_disaster matches 1 run bossbar set three_body:bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 지속 포기","color":"white"}
+execute if entity @a[nbt={Dimension:"three_body:frozen"}] if score #GLOBAL user_disaster matches 1 run bossbar set three_body:bossbar_frozen color white
+
 # ==========================================
 # 2. 건조 차원 (three_body:dried)
 # ==========================================
@@ -44,6 +47,9 @@ execute if entity @a[nbt={Dimension:"three_body:dried"}] if score #GLOBAL state_
 execute if entity @a[nbt={Dimension:"three_body:dried"}] if score #GLOBAL state_dried matches 2 run bossbar set three_body:bossbar_dried name {"text":"[ 메마른 세계 ] 멸망","color":"#D48E00"}
 execute if entity @a[nbt={Dimension:"three_body:dried"}] if score #GLOBAL state_dried matches 2 run bossbar set three_body:bossbar_dried color yellow
 
+execute if entity @a[nbt={Dimension:"three_body:dried"}] if score #GLOBAL user_disaster matches 1 run bossbar set three_body:bossbar_dried name {"text":"[ 메마른 세계 ] 지속 포기","color":"white"}
+execute if entity @a[nbt={Dimension:"three_body:dried"}] if score #GLOBAL user_disaster matches 1 run bossbar set three_body:bossbar_dried color white
+
 # ==========================================
 # 3. 오버월드 (minecraft:overworld)
 # ==========================================
@@ -63,3 +69,6 @@ execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL sta
 
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL state_overworld matches 2 run bossbar set three_body:bossbar_overworld name {"text":"[ 오버월드 ] 멸망","color":"#006300"}
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL state_overworld matches 2 run bossbar set three_body:bossbar_overworld color green
+
+execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL user_disaster matches 1 run bossbar set three_body:bossbar_overworld name {"text":"[ 오버월드 ] 지속 포기","color":"white"}
+execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL user_disaster matches 1 run bossbar set three_body:bossbar_overworld color white

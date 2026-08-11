@@ -1,0 +1,1 @@
+execute if predicate three_body:player/sneaking if predicate three_body:item/dimension_mover run function three_body:common/disaster/do
