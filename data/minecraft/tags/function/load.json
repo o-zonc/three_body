@@ -1,6 +1,5 @@
 {
 	"values": [
-		"three_body:init",
-		"three_body:resource/init"
+		"three_body:init"
 	]
 }

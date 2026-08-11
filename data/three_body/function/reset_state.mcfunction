@@ -48,3 +48,19 @@ scoreboard players set #GLOBAL era_paused 1
 # 7. 스토리 관리 스코어보드 초기화
 scoreboard players set #done intro 0
 scoreboard players set #t intro 0
+
+# 8. 자원 스코어보드 초기화
+scoreboard players set #wood material 0
+scoreboard players set #stone material 0
+scoreboard players set #coal material 0
+scoreboard players set #copper material 0
+scoreboard players set #iron material 0
+scoreboard players set #gold material 0
+scoreboard players set #diamond material 0
+scoreboard players set #emerald material 0
+scoreboard players set #lapis material 0
+scoreboard players set #heat material 0
+scoreboard players set #cold material 0
+scoreboard players set #information material 0
+scoreboard players set #time material 0
+scoreboard players set #world_eye material 0
