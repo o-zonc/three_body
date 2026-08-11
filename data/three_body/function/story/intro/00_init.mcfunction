@@ -33,7 +33,7 @@ execute as @a run spectate @e[tag=story_camera,limit=1]
 execute as @e[type=item_display,tag=story_camera,limit=1] at @s run summon item_display ~ ~ ~10 {Tags:["story_bg","story_intro"],item:{id:"black_concrete",count:1},transformation:[48f,0f,0f,0f, 0f,24f,0f,0f, 0f,0f,0.1f,0f, 0f,0f,0f,1f],billboard:"fixed",Glowing:0b}
 
 # 타이틀 로고
-title @a title {"text":"삼체 (三體)","color":"#F971BE"}
+title @a title {"text":"삼체 (三體)","color":"#F971BE","shadow_color":[0.44, 0.8, 0.98, 1.0]}
 title @a subtitle {"text":"The Three Body","color":"gray","italic":true}
 title @a times 20 60 20
 

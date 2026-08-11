@@ -1,4 +1,0 @@
-scoreboard players reset #blaze_remain generate
-
-execute positioned -76.5 1.9375 13.5 unless entity @e[tag=blaze,distance=..0.2,type=item_display] run summon minecraft:item_display ~ ~ ~ {Tags:[mob,blaze], item: {components: {"minecraft:profile": {id: [I; -1770111665, -1009563463, -1719043784, 2061287404], name: "TheVoidBlock", properties: [{name: "textures", value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzZlYmI0ZDkzZmViNDlkOTA0YzYxYThmYTBlYWVhYzQxZmUzNDQ0MmNhZmVhNzgwMTAzOGViZjdjMzgxYzgzOTcifX19"}]}}, count: 1, id: "minecraft:player_head"}, transformation: {left_rotation: [0.0f, -0.7071068f, 0.0f, 0.7071068f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.7499995f, 1.75f, 1.7499994f], translation: [0.0f, 0.0f, 0.0f]}}
-playsound item.firecharge.use weather @a[tag=player] -76.5 1.5 13.5 0.8 2

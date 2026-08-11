@@ -1,9 +1,15 @@
 # ==========================================
+# 재실행 방어 코드
+# ==========================================
+execute if score #disaster_running run matches 1 run return 0
+
+# ==========================================
 # 멸망 이벤트 시작
 # ==========================================
 
 # 멸망 연출 동안 시스템 일시정지
 scoreboard players set #GLOBAL era_paused 1
+scoreboard players set #disaster_running run 1
 
 # 화면 연출
 effect give @a blindness 7 1 true

@@ -44,6 +44,7 @@ scoreboard players set #GLOBAL current_dim 0
 
 # 6. 문명 전환 시스템 관리 스코어보드 초기화
 scoreboard players set #GLOBAL era_paused 1
+scoreboard players set #disaster_running run 0
 
 # 7. 스토리 관리 스코어보드 초기화
 scoreboard players set #done intro 0
