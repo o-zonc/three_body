@@ -1,0 +1,18 @@
+{
+	"parent": "three_body:0_overworld/26_contemporary_age",
+	"display": {
+		"icon": "minecraft:nether_star",
+		"title": "미래",
+		"description": "문명은 마침내 지구의 한계를 넘어섭니다.",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"obtain_nether_star": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {"items": [{"items": ["minecraft:nether_star"]}]}
+		}
+	},
+	"rewards": {"function": "three_body:story/overworld/age/27_future_age"}
+}
