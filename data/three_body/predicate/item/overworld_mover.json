@@ -7,7 +7,7 @@
                 "items": "minecraft:green_dye",
                 "components": {
                     "minecraft:custom_data": {
-                        "cosmos_move": 1
+                        "overworld_move": 1
                     }
                 }
             }
