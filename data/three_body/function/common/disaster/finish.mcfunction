@@ -40,4 +40,5 @@ function three_body:common/next
 # ==========================================
 
 scoreboard players set #GLOBAL era_paused 0
+scoreboard players set #GLOBAL user_disaster 0
 scoreboard players set #disaster_running run 0
