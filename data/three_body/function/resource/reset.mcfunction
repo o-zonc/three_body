@@ -16,3 +16,5 @@ scoreboard players set #cold material 0
 scoreboard players set #information material 0
 scoreboard players set #time material 0
 scoreboard players set #world_eye material 0
+
+function three_body:resource/sidebar/update
