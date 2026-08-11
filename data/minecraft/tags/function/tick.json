@@ -1,6 +1,6 @@
 {
 	"values": [
-		"three_body:story/intro",
+		"three_body:story/story",
 		"three_body:common/random",
 		"three_body:tick"
 	]

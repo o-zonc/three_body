@@ -15,3 +15,5 @@ scoreboard players set #GLOBAL era_paused 0
 # 낙하에 사용된 아머 스탠드를 제거하고 시작 발전과제를 부여합니다.
 kill @e[type=armor_stand,tag=fall_anchor]
 advancement grant @a only three_body:0_overworld/00_root
+
+function three_body:story/tutorial/00_tutorial
