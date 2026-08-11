@@ -1,20 +1,17 @@
 {
 	"display": {
-		"icon": "minecraft:oak_sapling",
-		"title": "문명의 시작",
-		"description": "아무것도 없던 세계에서 문명이 시작됩니다.",
-		"background": "minecraft:block/oak_log",
+		"icon": "minecraft:allay_spawn_egg",
+		"title": "삼체",
+		"description": "세 개의 태양이 지배하는 행성에서 살아남아 문명을 재건하세요.",
+		"background": "minecraft:block/stone",
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true,
 		"hidden": false
 	},
 	"criteria": {
-		"enter_overworld": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"dimension": "minecraft:overworld"
-			}
+		"manual_test": {
+			"trigger": "minecraft:impossible"
 		}
 	}
 }
