@@ -1,3 +1,5 @@
+gamerule send_command_feedback false
+
 # 3. 초기값 설정 (시작은 모두 항성기, 5분 뒤 첫 판정)
 scoreboard players set #GLOBAL state_frozen 0
 scoreboard players set #GLOBAL timer_frozen 6000
