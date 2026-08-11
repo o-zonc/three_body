@@ -8,6 +8,5 @@
 # Returns 1 when the resource was removed, 0 when the amount was insufficient.
 # The caller is responsible for supplying a valid material ID and a non-negative amount.
 
-execute if score #$(type) material matches $(amount).. run scoreboard players remove #$(type) material $(amount)
-execute if score #$(type) material matches $(amount).. run return 1
+execute if score #$(type) material matches $(amount).. run return run scoreboard players remove #$(type) material $(amount)
 return 0
