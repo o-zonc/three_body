@@ -1,0 +1,1 @@
+# Material API - get resource
