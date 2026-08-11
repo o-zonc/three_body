@@ -1,58 +1,115 @@
 # ==========================================
 # RESOURCE API TEST
 # ==========================================
+# Run with: /function three_body:test/resource
 #
-# Tests the material API using macro arguments.
-# Run with:
-#   /function three_body:test/resource
+# Expected final state:
+#   #iron material = 80
 #
-# Expected flow:
-#   1. Initialize material entries.
-#   2. Set iron to 100.
-#   3. Add 10 iron -> 110.
-#   4. Check 100 iron -> success.
-#   5. Remove 30 iron -> 80.
-#   6. Attempt to remove 100 iron -> failure, remains 80.
-#   7. Get iron amount -> output.amount = 80.
-#
+# The test reports PASS/FAIL for every operation.
 
+# Test-only objective.
+scoreboard objectives add resource_test dummy
+
+# Reset test state.
+scoreboard players set #resource_test_total resource_test 0
+scoreboard players set #resource_test_pass resource_test 0
+scoreboard players set #resource_test_fail resource_test 0
+
+# Initialize material entries.
 function three_body:resource/init
 
-# Set iron to 100
+# Header.
+tellraw @a {"text":"========================================","color":"dark_gray"}
+tellraw @a {"text":"        RESOURCE API TEST","color":"gold","bold":true}
+tellraw @a {"text":"========================================","color":"dark_gray"}
+
+# --------------------------------------------------
+# SET: iron = 100
+# --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:100}
 function three_body:resource/set with storage three_body:resource input
 
-tellraw @a {"text":"[Resource Test] set iron = 100","color":"gold"}
+execute if score #iron material matches 100 run scoreboard players add #resource_test_pass resource_test 1
+execute unless score #iron material matches 100 run scoreboard players add #resource_test_fail resource_test 1
+scoreboard players add #resource_test_total resource_test 1
+execute if score #iron material matches 100 run tellraw @a {"text":"[SET]    iron = 100                 PASS","color":"green"}
+execute unless score #iron material matches 100 run tellraw @a {"text":"[SET]    iron = 100                 FAIL","color":"red"}
 
-# Add 10 iron
+# --------------------------------------------------
+# ADD: iron + 10 -> 110
+# --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:10}
 function three_body:resource/add with storage three_body:resource input
 
-tellraw @a {"text":"[Resource Test] add iron +10 (expected 110)","color":"yellow"}
+execute if score #iron material matches 110 run scoreboard players add #resource_test_pass resource_test 1
+execute unless score #iron material matches 110 run scoreboard players add #resource_test_fail resource_test 1
+scoreboard players add #resource_test_total resource_test 1
+execute if score #iron material matches 110 run tellraw @a {"text":"[ADD]    iron + 10 -> 110          PASS","color":"green"}
+execute unless score #iron material matches 110 run tellraw @a {"text":"[ADD]    iron + 10 -> 110          FAIL","color":"red"}
 
-# Check whether we have at least 100 iron
+# --------------------------------------------------
+# HAS: iron >= 100 -> success
+# --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:100}
-execute store success score #resource_test_has resource_test run function three_body:resource/has with storage three_body:resource input
+execute store success score #resource_test_result resource_test run function three_body:resource/has with storage three_body:resource input
 
-tellraw @a [{"text":"[Resource Test] has iron >= 100: ","color":"yellow"},{"score":{"name":"#resource_test_has","objective":"resource_test"}}]
+execute if score #resource_test_result resource_test matches 1 run scoreboard players add #resource_test_pass resource_test 1
+execute unless score #resource_test_result resource_test matches 1 run scoreboard players add #resource_test_fail resource_test 1
+scoreboard players add #resource_test_total resource_test 1
+execute if score #resource_test_result resource_test matches 1 run tellraw @a {"text":"[HAS]    iron >= 100              PASS","color":"green"}
+execute unless score #resource_test_result resource_test matches 1 run tellraw @a {"text":"[HAS]    iron >= 100              FAIL","color":"red"}
 
-# Remove 30 iron
+# --------------------------------------------------
+# REMOVE: iron - 30 -> 80
+# --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:30}
-execute store success score #resource_test_remove resource_test run function three_body:resource/remove with storage three_body:resource input
+execute store success score #resource_test_result resource_test run function three_body:resource/remove with storage three_body:resource input
 
-tellraw @a [{"text":"[Resource Test] remove iron 30: ","color":"yellow"},{"score":{"name":"#resource_test_remove","objective":"resource_test"}},{"text":" (expected 1, remaining 80)","color":"gray"}]
+execute if score #resource_test_result resource_test matches 1 if score #iron material matches 80 run scoreboard players add #resource_test_pass resource_test 1
+execute unless score #resource_test_result resource_test matches 1 run scoreboard players add #resource_test_fail resource_test 1
+execute if score #resource_test_result resource_test matches 1 unless score #iron material matches 80 run scoreboard players add #resource_test_fail resource_test 1
+scoreboard players add #resource_test_total resource_test 1
+execute if score #resource_test_result resource_test matches 1 if score #iron material matches 80 run tellraw @a {"text":"[REMOVE] iron - 30 -> 80       PASS","color":"green"}
+execute unless score #resource_test_result resource_test matches 1 run tellraw @a {"text":"[REMOVE] iron - 30 -> 80       FAIL","color":"red"}
+execute if score #resource_test_result resource_test matches 1 unless score #iron material matches 80 run tellraw @a {"text":"[REMOVE] iron - 30 -> 80       FAIL","color":"red"}
 
-# Attempt to remove more than available
+# --------------------------------------------------
+# REMOVE FAILURE: iron - 100 -> must fail, remain 80
+# --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron",amount:100}
-execute store success score #resource_test_remove_fail resource_test run function three_body:resource/remove with storage three_body:resource input
+execute store success score #resource_test_result resource_test run function three_body:resource/remove with storage three_body:resource input
 
-tellraw @a [{"text":"[Resource Test] remove iron 100: ","color":"yellow"},{"score":{"name":"#resource_test_remove_fail","objective":"resource_test"}},{"text":" (expected 0, remaining 80)","color":"gray"}]
+execute if score #resource_test_result resource_test matches 0 if score #iron material matches 80 run scoreboard players add #resource_test_pass resource_test 1
+execute unless score #resource_test_result resource_test matches 0 run scoreboard players add #resource_test_fail resource_test 1
+execute if score #resource_test_result resource_test matches 0 unless score #iron material matches 80 run scoreboard players add #resource_test_fail resource_test 1
+scoreboard players add #resource_test_total resource_test 1
+execute if score #resource_test_result resource_test matches 0 if score #iron material matches 80 run tellraw @a {"text":"[REMOVE] iron - 100 -> FAIL      PASS","color":"green"}
+execute unless score #resource_test_result resource_test matches 0 run tellraw @a {"text":"[REMOVE] iron - 100 -> FAIL      FAIL","color":"red"}
+execute if score #resource_test_result resource_test matches 0 unless score #iron material matches 80 run tellraw @a {"text":"[REMOVE] iron - 100 -> FAIL      FAIL","color":"red"}
 
-# Get current iron amount
+# --------------------------------------------------
+# GET: iron -> 80
+# --------------------------------------------------
 data modify storage three_body:resource input set value {type:"iron"}
 function three_body:resource/get with storage three_body:resource input
 
-tellraw @a [{"text":"[Resource Test] get iron = ","color":"yellow"},{"nbt":"output.amount","storage":"three_body:resource"},{"text":" (expected 80)","color":"gray"}]
+execute if data storage three_body:resource output{amount:80} run scoreboard players add #resource_test_pass resource_test 1
+execute unless data storage three_body:resource output{amount:80} run scoreboard players add #resource_test_fail resource_test 1
+scoreboard players add #resource_test_total resource_test 1
+execute if data storage three_body:resource output{amount:80} run tellraw @a {"text":"[GET]     iron = 80                 PASS","color":"green"}
+execute unless data storage three_body:resource output{amount:80} run tellraw @a {"text":"[GET]     iron = 80                 FAIL","color":"red"}
 
-# Final direct scoreboard display
-tellraw @a [{"text":"[Resource Test] #iron material = ","color":"gold"},{"score":{"name":"#iron","objective":"material"}},{"text":" (expected 80)","color":"gray"}]
+# --------------------------------------------------
+# Summary
+# --------------------------------------------------
+tellraw @a {"text":"----------------------------------------","color":"dark_gray"}
+tellraw @a [{"text":"TOTAL:  ","color":"gray"},{"score":{"name":"#resource_test_total","objective":"resource_test"}}]
+tellraw @a [{"text":"PASSED: ","color":"green"},{"score":{"name":"#resource_test_pass","objective":"resource_test"}}]
+tellraw @a [{"text":"FAILED: ","color":"red"},{"score":{"name":"#resource_test_fail","objective":"resource_test"}}]
+
+execute if score #resource_test_fail resource_test matches 0 run tellraw @a {"text":"RESULT: ALL TESTS PASSED","color":"green","bold":true}
+execute unless score #resource_test_fail resource_test matches 0 run tellraw @a {"text":"RESULT: TEST FAILED","color":"red","bold":true}
+
+tellraw @a [{"text":"FINAL: #iron material = ","color":"gold"},{"score":{"name":"#iron","objective":"material"}},{"text":" (expected 80)","color":"gray"}]
+tellraw @a {"text":"========================================","color":"dark_gray"}
