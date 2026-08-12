@@ -3,7 +3,7 @@ effect clear @a blindness
 effect clear @a darkness
 title @a clear
 
-execute in overworld run tp @a ~ -60 ~
+execute in overworld run tp @a 0 -59 0
 gamerule minecraft:advance_time true
 
 # 방문 기록을 남기고, 현재 차원 상태를 '오버월드'로 갱신합니다.
