@@ -35,9 +35,9 @@ execute if score #GLOBAL era_paused matches 0 as @a[nbt={Dimension:"minecraft:ov
 # 4. 멸망 (disaster)
 # ==========================================
 
-# 멸망 연출 역시 플레이어가 해당 차원에 있고 시대가 일시정지되지 않았을 때만 시작합니다.
-execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_frozen matches 2 if entity @a[nbt={Dimension:"three_body:frozen"}] run function three_body:common/disaster/do
+# 실행 주체를 실제 해당 차원의 플레이어로 설정해 disaster/do가 현재 차원을 올바르게 인식하도록 합니다.
+execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_frozen matches 2 as @a[nbt={Dimension:"three_body:frozen"},limit=1] at @s run function three_body:common/disaster/do
 
-execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_dried matches 2 if entity @a[nbt={Dimension:"three_body:dried"}] run function three_body:common/disaster/do
+execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_dried matches 2 as @a[nbt={Dimension:"three_body:dried"},limit=1] at @s run function three_body:common/disaster/do
 
-execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_overworld matches 2 if entity @a[nbt={Dimension:"minecraft:overworld"}] run function three_body:common/disaster/do
+execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_overworld matches 2 as @a[nbt={Dimension:"minecraft:overworld"},limit=1] at @s run function three_body:common/disaster/do
