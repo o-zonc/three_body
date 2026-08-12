@@ -1,0 +1,17 @@
+{
+	"parent": "three_body:0_overworld/23_ancient_age",
+	"display": {
+		"icon": "minecraft:emerald",
+		"title": "중세",
+		"description": "교역과 사회의 체계를 발전시킵니다.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"rewards": {"function": "three_body:story/overworld/age/24_medieval_age"}
+}

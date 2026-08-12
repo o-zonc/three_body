@@ -25,24 +25,25 @@ effect give @a darkness 7 1 true
 title @a times 20 60 20
 
 # ==========================================
-# 현재 차원에 맞는 멸망 이벤트
+# 현재 차원의 플레이어를 executor로 지정한 뒤 멸망 이벤트 실행
 # ==========================================
-execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run function three_body:common/disaster/overworld/random
-execute if entity @a[nbt={Dimension:"three_body:frozen"}] run function three_body:common/disaster/frozen/random
-execute if entity @a[nbt={Dimension:"three_body:dried"}] run function three_body:common/disaster/dried/random
-execute if entity @a[nbt={Dimension:"three_body:polarnight"}] run function three_body:common/disaster/polar
-execute if entity @a[nbt={Dimension:"three_body:dawn"}] run function three_body:common/disaster/dawn
+execute as @a[nbt={Dimension:"minecraft:overworld"},limit=1] at @s run function three_body:common/disaster/overworld/random
+execute as @a[nbt={Dimension:"three_body:frozen"},limit=1] at @s run function three_body:common/disaster/frozen/random
+execute as @a[nbt={Dimension:"three_body:dried"},limit=1] at @s run function three_body:common/disaster/dried/random
+execute as @a[nbt={Dimension:"three_body:polarnight"},limit=1] at @s run function three_body:common/disaster/polar
+execute as @a[nbt={Dimension:"three_body:dawn"},limit=1] at @s run function three_body:common/disaster/dawn
 
 # 극야를 제외하고는 문명 수 1 증가
 execute unless entity @a[nbt={Dimension:"three_body:polarnight"}] run scoreboard players add #GLOBAL n_civil 1
 
-execute if entity @a[nbt={Dimension:"minecraft:overworld"}, advancements={three_body:0_overworld/10_disaster=false}] run advancement grant @a only three_body:0_overworld/10_disaster
-execute if entity @a[nbt={Dimension:"three_body:frozen"}, advancements={three_body:1_frozen/03_disaster=false}] run advancement grant @a only three_body:1_frozen/03_disaster
-execute if entity @a[nbt={Dimension:"three_body:dried"}, advancements={three_body:2_dried/01_disaster=false}] run advancement grant @a only three_body:2_dried/01_disaster
-execute if entity @a[nbt={Dimension:"three_body:polarnight"}, advancements={three_body:3_polarnight/98_last=false}] run advancement grant @a only three_body:3_polarnight/98_last
+execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run advancement grant @a only three_body:0_overworld/10_disaster
+execute if entity @a[nbt={Dimension:"three_body:frozen"}] run advancement grant @a only three_body:1_frozen/03_disaster
+execute if entity @a[nbt={Dimension:"three_body:dried"}] run advancement grant @a only three_body:2_dried/01_disaster
+execute if entity @a[nbt={Dimension:"three_body:polarnight"}] run advancement grant @a only three_body:3_polarnight/98_last
 
 # 다른 차원을 한 번도 방문하지 않은 상태에서 오버월드가 멸망하는 경우
-execute if score #GLOBAL first_frozen matches 0 if score #GLOBAL first_dried matches 0 if score #GLOBAL state_overworld matches 2 run advancement grant @a only three_body:0_overworld/11_unluck
+# 자동 난세기 멸망(state_overworld=2)뿐 아니라 차원 이동기로 직접 멸망시키는 경우도 포함합니다.
+execute if score #GLOBAL current_dim matches 0 if score #GLOBAL first_frozen matches 0 if score #GLOBAL first_dried matches 0 run advancement grant @a only three_body:0_overworld/11_unluck
 
 # 멸망 상태는 연출이 완전히 끝날 때까지 유지합니다.
 # state_* 초기화는 disaster/finish에서 다음 차원으로 이동한 뒤 처리합니다.

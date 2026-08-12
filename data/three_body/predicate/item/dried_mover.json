@@ -1,13 +1,13 @@
 {
-    "type": "entity_properties",
+    "condition": "entity_properties",
     "entity": "this",
     "predicate": {
         "equipment": {
             "mainhand": {
-                "items": "minecraft:brick",
+                "items": "minecraft:orange_dye",
                 "components": {
                     "minecraft:custom_data": {
-                        "disaster": 1
+                        "dried_move": 1
                     }
                 }
             }

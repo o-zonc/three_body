@@ -1,0 +1,16 @@
+{
+    "condition": "entity_properties",
+    "entity": "this",
+    "predicate": {
+        "equipment": {
+            "mainhand": {
+                "items": "minecraft:white_dye",
+                "components": {
+                    "minecraft:custom_data": {
+                        "epiphany": 1
+                    }
+                }
+            }
+        }
+    }
+}

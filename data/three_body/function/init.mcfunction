@@ -42,6 +42,9 @@ scoreboard objectives add n_civil dummy
 
 scoreboard objectives add current_dim dummy
 
+# 웅크리기 edge 감지
+scoreboard objectives add sneaking_prev dummy
+
 # 6. 문명 전환 시스템 관리 스코어보드
 scoreboard objectives add era_paused dummy
 scoreboard objectives add run dummy
@@ -50,7 +53,7 @@ scoreboard objectives add run dummy
 scoreboard objectives add intro dummy
 
 scoreboard objectives add intro_skip trigger
-scoreboard players enable @a intro_skip
+scoreboard objectives add tutorial trigger
 
 # 8. 자원 관리 스코어보드
 scoreboard objectives add material dummy

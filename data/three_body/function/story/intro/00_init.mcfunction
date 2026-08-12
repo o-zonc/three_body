@@ -6,6 +6,8 @@
 scoreboard players set #done intro 1
 scoreboard players set #t intro 0
 
+gamerule send_command_feedback false
+
 # 인트로 동안 자원 사이드바 숨김
 function three_body:resource/sidebar/hide
 
@@ -26,7 +28,7 @@ title @a times 0 1 0
 # yaw 0 = 남쪽을 보는 상태로 맞춰두면 아래 텍스트 회전값과 잘 맞습니다.
 # ------------------------------------------------------------
 kill @e[tag=story_intro]
-execute in minecraft:overworld run summon item_display 0 100 0 {Tags:["story_camera","story_intro"],teleport_duration:1,Rotation:[0.0f,0.0f],item:{id:"minecraft:barrier",count:1}}
+execute as @a[nbt={Dimension:"minecraft:overworld"},limit=1] at @s run summon item_display 0 100 0 {Tags:["story_camera","story_intro"],teleport_duration:1,Rotation:[0.0f,0.0f],item:{id:"minecraft:barrier",count:1}}
 
 # 카메라를 플레이어 시점에 고정 (매틱마다 tick.mcfunction 쪽에서 계속 재적용됨)
 execute as @a run spectate @e[tag=story_camera,limit=1]

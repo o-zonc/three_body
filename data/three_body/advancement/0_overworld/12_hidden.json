@@ -10,7 +10,7 @@
 		"hidden": true
 	},
 	"criteria": {
-		"epic_clear": {
+		"manual_test": {
 			"trigger": "minecraft:impossible"
 		}
 	}

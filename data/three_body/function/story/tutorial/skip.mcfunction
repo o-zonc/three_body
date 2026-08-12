@@ -1,0 +1,1 @@
+tellraw @a {"text":"[§kgod§r] 모든 역사에는 튜토리얼 같은 것은 없다!","color":"gray"}
