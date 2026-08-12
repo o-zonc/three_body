@@ -1,2 +1,2 @@
-execute as @s at @s run playsound minecraft:entity.experience_orb.pickup master @a ~ ~ ~ 1 2
-title @a actionbar {"text":"머리 위의 별들을 바라보세요.","color":"white",bold:false,"italic":true}
+execute as @s at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 1 0.5
+title @a actionbar {"text":"이미 우주에 있습니다!","color":"white","bold":false,"italic":true}
