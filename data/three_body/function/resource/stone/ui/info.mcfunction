@@ -1,0 +1,1 @@
+# Stone resource information UI
