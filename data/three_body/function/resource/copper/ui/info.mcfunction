@@ -1,0 +1,1 @@
+# Copper resource information UI
