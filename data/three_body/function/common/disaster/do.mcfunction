@@ -27,11 +27,11 @@ title @a times 20 60 20
 # ==========================================
 # 현재 차원에 맞는 멸망 이벤트
 # ==========================================
-execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run function three_body:common/disaster/overworld/random
-execute if entity @a[nbt={Dimension:"three_body:frozen"}] run function three_body:common/disaster/frozen/random
-execute if entity @a[nbt={Dimension:"three_body:dried"}] run function three_body:common/disaster/dried/random
-execute if entity @a[nbt={Dimension:"three_body:polarnight"}] run function three_body:common/disaster/polar
-execute if entity @a[nbt={Dimension:"three_body:dawn"}] run function three_body:common/disaster/dawn
+execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run execute in minecraft:overworld run function three_body:common/disaster/overworld/random
+execute if entity @a[nbt={Dimension:"three_body:frozen"}] run execute in three_body:frozen run function three_body:common/disaster/frozen/random
+execute if entity @a[nbt={Dimension:"three_body:dried"}] run execute in three_body:dried run function three_body:common/disaster/dried/random
+execute if entity @a[nbt={Dimension:"three_body:polarnight"}] run execute in three_body:polarnight run function three_body:common/disaster/polar
+execute if entity @a[nbt={Dimension:"three_body:dawn"}] run execute in three_body:dawn run function three_body:common/disaster/dawn
 
 # 극야를 제외하고는 문명 수 1 증가
 execute unless entity @a[nbt={Dimension:"three_body:polarnight"}] run scoreboard players add #GLOBAL n_civil 1
