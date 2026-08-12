@@ -27,19 +27,19 @@ title @a times 20 60 20
 # ==========================================
 # 현재 차원에 맞는 멸망 이벤트
 # ==========================================
-execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run function three_body:common/disaster/overworld/random
-execute if entity @a[nbt={Dimension:"three_body:frozen"}] run function three_body:common/disaster/frozen/random
-execute if entity @a[nbt={Dimension:"three_body:dried"}] run function three_body:common/disaster/dried/random
-execute if entity @a[nbt={Dimension:"three_body:polarnight"}] run function three_body:common/disaster/polar
-execute if entity @a[nbt={Dimension:"three_body:dawn"}] run function three_body:common/disaster/dawn
+execute if dimension minecraft:overworld run function three_body:common/disaster/overworld/random
+execute if dimension three_body:frozen run function three_body:common/disaster/frozen/random
+execute if dimension three_body:dried run function three_body:common/disaster/dried/random
+execute if dimension three_body:polarnight run function three_body:common/disaster/polar
+execute if dimension three_body:dawn run function three_body:common/disaster/dawn
 
 # 극야를 제외하고는 문명 수 1 증가
-execute unless entity @a[nbt={Dimension:"three_body:polarnight"}] run scoreboard players add #GLOBAL n_civil 1
+execute unless dimension three_body:polarnight run scoreboard players add #GLOBAL n_civil 1
 
-execute if entity @a[nbt={Dimension:"minecraft:overworld"}, advancements={three_body:0_overworld/10_disaster=false}] run advancement grant @a only three_body:0_overworld/10_disaster
-execute if entity @a[nbt={Dimension:"three_body:frozen"}, advancements={three_body:1_frozen/03_disaster=false}] run advancement grant @a only three_body:1_frozen/03_disaster
-execute if entity @a[nbt={Dimension:"three_body:dried"}, advancements={three_body:2_dried/01_disaster=false}] run advancement grant @a only three_body:2_dried/01_disaster
-execute if entity @a[nbt={Dimension:"three_body:polarnight"}, advancements={three_body:3_polarnight/98_last=false}] run advancement grant @a only three_body:3_polarnight/98_last
+execute if dimension minecraft:overworld run advancement grant @a only three_body:0_overworld/10_disaster
+execute if dimension three_body:frozen run advancement grant @a only three_body:1_frozen/03_disaster
+execute if dimension three_body:dried run advancement grant @a only three_body:2_dried/01_disaster
+execute if dimension three_body:polarnight run advancement grant @a only three_body:3_polarnight/98_last
 
 # 다른 차원을 한 번도 방문하지 않은 상태에서 오버월드가 멸망하는 경우
 # 자동 난세기 멸망(state_overworld=2)뿐 아니라 차원 이동기로 직접 멸망시키는 경우도 포함합니다.
