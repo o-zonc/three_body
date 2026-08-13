@@ -7,6 +7,9 @@ execute as @a if predicate three_body:player/sneaking unless score @s sneaking_p
 execute as @a if predicate three_body:player/sneaking run scoreboard players set @s sneaking_prev 1
 execute as @a unless predicate three_body:player/sneaking run scoreboard players set @s sneaking_prev 0
 
+# 3층 엘리베이터
+function three_body:elevator/tick
+
 # 차원 이동기 API
 function three_body:mover/tick
 
