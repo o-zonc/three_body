@@ -13,5 +13,8 @@
 		"epic_clear": {
 			"trigger": "minecraft:impossible"
 		}
+	},
+	"rewards": {
+		"function": "three_body:common/structure/observatory/on"
 	}
 }

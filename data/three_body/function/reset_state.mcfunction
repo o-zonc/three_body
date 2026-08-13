@@ -67,3 +67,6 @@ scoreboard players set #cold material 0
 scoreboard players set #information material 0
 scoreboard players set #time material 0
 scoreboard players set #world_eye material 0
+
+# 9. 엘리베이터 스코어보드 초기화
+scoreboard players set #GLOBAL elevator_unlocked 0
