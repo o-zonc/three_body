@@ -61,3 +61,7 @@ scoreboard objectives add material_unlocked dummy
 scoreboard objectives add material_display dummy
 scoreboard objectives modify material_display displayname {"text":"자원","color":"gold"}
 scoreboard objectives setdisplay sidebar material_display
+
+# 9. 엘리베이터 스코어보드
+scoreboard objectives add elevator_jump minecraft.custom:minecraft.jump
+scoreboard objectives add elevator_jump_prev dummy

@@ -3,10 +3,10 @@
 # Jump 입력은 minecraft.custom:minecraft.jump 통계의 증가를 감지합니다.
 
 # 웅크리기: 2층 -> 1층
-execute as @a[tag=shift] at @s if entity @s[x=23,y=-49,z=-25,dx=2,dy=0,dz=2] run tp @s 24 -63 -24
+execute as @s[tag=shift] at @s if entity @s[x=23,y=-49,z=-25,dx=2,dy=0,dz=2] run tp @s 24 -63 -24
 
 # 웅크리기: 3층 -> 2층
-execute as @a[tag=shift] at @s if entity @s[x=23,y=-41,z=-25,dx=2,dy=0,dz=2] run tp @s 24 -49 -24
+execute as @s[tag=shift] at @s if entity @s[x=23,y=-41,z=-25,dx=2,dy=0,dz=2] run tp @s 24 -49 -24
 
 # 점프: 1층 -> 2층
 execute as @a if score @s elevator_jump > @s elevator_jump_prev at @s if entity @s[x=23,y=-63,z=-25,dx=2,dy=0,dz=2] run tp @s 24 -49 -24
