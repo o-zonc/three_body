@@ -22,18 +22,18 @@ execute as @a[x=23,y=-41,z=-25,dx=2,dy=0,dz=2] run tag @s add elevator_floor_3
 # ─────────────────────────────
 
 # 2층 -> 1층
-execute as @a[tag=shift,elevator_floor_2] at @s run particle minecraft:end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=shift,elevator_floor_2] at @s run playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.8 0.75
-execute as @a[tag=shift,elevator_floor_2] run tp @s 24 -63 -24
-execute as @a[tag=shift,elevator_floor_2] at @s run particle minecraft:end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=shift,elevator_floor_2] at @s run playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.8 1.0
+execute as @a[tag=shift,tag=elevator_floor_2] at @s run particle minecraft:end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
+execute as @a[tag=shift,tag=elevator_floor_2] at @s run playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.8 0.75
+execute as @a[tag=shift,tag=elevator_floor_2] run tp @s 24 -63 -24
+execute as @a[tag=shift,tag=elevator_floor_2] at @s run particle minecraft:end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
+execute as @a[tag=shift,tag=elevator_floor_2] at @s run playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.8 1.0
 
 # 3층 -> 2층
-execute as @a[tag=shift,elevator_floor_3] at @s run particle minecraft:end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=shift,elevator_floor_3] at @s run playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.8 0.75
-execute as @a[tag=shift,elevator_floor_3] run tp @s 24 -49 -24
-execute as @a[tag=shift,elevator_floor_3] at @s run particle minecraft:end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=shift,elevator_floor_3] at @s run playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.8 1.0
+execute as @a[tag=shift,tag=elevator_floor_3] at @s run particle minecraft:end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
+execute as @a[tag=shift,tag=elevator_floor_3] at @s run playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.8 0.75
+execute as @a[tag=shift,tag=elevator_floor_3] run tp @s 24 -49 -24
+execute as @a[tag=shift,tag=elevator_floor_3] at @s run particle minecraft:end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
+execute as @a[tag=shift,tag=elevator_floor_3] at @s run playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.8 1.0
 
 # ─────────────────────────────
 # 점프: 위층 이동
