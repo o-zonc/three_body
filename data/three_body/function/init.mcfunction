@@ -25,7 +25,7 @@ scoreboard objectives add timer_sec dummy
 # 4. 보스바 로드
 bossbar add three_body:bossbar_frozen {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
 bossbar add three_body:bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
-bossbar add three_body:bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color": "dark_green"}
+bossbar add three_body:bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color":"dark_green"}
 
 scoreboard objectives add user_disaster dummy
 
@@ -62,7 +62,10 @@ scoreboard objectives add material_display dummy
 scoreboard objectives modify material_display displayname {"text":"자원","color":"gold"}
 scoreboard objectives setdisplay sidebar material_display
 
-# 9. 엘리베이터 스코어보드
+# 9. 해금 시스템
+function three_body:unlock/init
+
+# 10. 엘리베이터 스코어보드
 scoreboard objectives add elevator_unlocked dummy
 
 scoreboard objectives add elevator_jump minecraft.custom:minecraft.jump
