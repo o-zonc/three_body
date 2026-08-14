@@ -12,4 +12,5 @@ data modify storage three_body:resource temp.type set value "diamond"
 execute store result storage three_body:resource temp.lvl int 1 run scoreboard players get #diamond_regen_lvl_next tmp
 data modify storage three_body:resource input set value {type:"diamond",amount:0}
 
-execute store result storage three_body:resource input.amount int 1 run function three_body:resource/internal/regen_upgrade_cost with storage three_body:resource temp
+# Ask the generic API for the next level's configured cost.
+execute store result storage three_body:resource input.amount int 1 run function three_body:resource/internal/regen_upgrade_cost with storage three_body:resource
