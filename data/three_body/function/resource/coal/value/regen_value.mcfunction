@@ -1,2 +1,3 @@
-# Get coal regeneration value
-# TODO: return the amount/time value defined for the current coal level.
+# Return current coal regeneration duration in ticks.
+function three_body:resource/coal/value/now_regen_data
+return run data get storage three_body:resource.temp.regen.ticks 1
