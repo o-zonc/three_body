@@ -11,8 +11,7 @@ scoreboard objectives add timer_dried dummy
 scoreboard objectives add timer_overworld dummy
 scoreboard objectives add timer_frozen_before dummy
 scoreboard objectives add timer_dried_before dummy
-scoreboard objectives add timer_overworld_before dummy
-scoreboard objectives add timer_frozen_after dummy
+scoreboard objectives add timer_overworld_before dummy\ nscoreboard objectives add timer_frozen_after dummy
 scoreboard objectives add timer_dried_after dummy
 scoreboard objectives add timer_overworld_after dummy
 
@@ -58,6 +57,9 @@ scoreboard objectives setdisplay sidebar material_display
 scoreboard objectives add resource_test dummy
 scoreboard objectives add generate dummy
 scoreboard objectives add upgrade dummy
+
+# Resource configuration
+function three_body:resource/config/init
 
 # 9. 해금 시스템
 function three_body:unlock/init
