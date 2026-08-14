@@ -7,6 +7,9 @@ execute as @a if predicate three_body:player/sneaking unless score @s sneaking_p
 execute as @a if predicate three_body:player/sneaking run scoreboard players set @s sneaking_prev 1
 execute as @a unless predicate three_body:player/sneaking run scoreboard players set @s sneaking_prev 0
 
+# 플레이어가 직접 던진 아이템 제거
+function three_body:common/remove_item
+
 # 엘리베이터
 function three_body:elevator/tick
 
