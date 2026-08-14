@@ -1,4 +1,2 @@
-# Return coal regeneration data for the requested level.
-# Input: storage three_body:resource.temp {lvl:<level>}
-data modify storage three_body:resource.temp.type set value "coal"
-function three_body:resource/internal/regen_data_by_lvl with storage three_body:resource.temp
+# Get coal regeneration data for the requested level.
+$data modify storage three_body:resource.temp.regen set from storage three_body:resource.config.coal.regen[$(lvl)]
