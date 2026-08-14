@@ -1,24 +1,19 @@
 # ==================================================
-# Break / collect wood resource
+# Wood resource collection
 # ==================================================
 
-# 현재 wood 보유량
-scoreboard players operation #wood_before tmp = #wood material
+# Material API input
+# three_body:resource input {type:"wood",amount:<amount>}
+data modify storage three_body:resource input.type set value "wood"
 
-# 이번에 얻을 wood 양 계산
-execute store result score #wood_gain tmp \
-    run function three_body:resource/wood/value/regen_value
+# 이번 채취량 계산
+execute store result storage three_body:resource input.amount int 1 run function three_body:resource/wood/value/regen_value
 
-# 자원 지급량 설정
-scoreboard players operation #material_add_value tmp = #wood_gain tmp
-
-# Material API를 통한 지급
-function three_body:resource/add_material/wood
+# Material API를 통해 wood 지급
+function three_body:resource/add
 
 # 생성 지점 제거
-# TODO:
-# setblock <X> <Y> <Z> air
+# TODO: 실제 wood 생성 좌표가 정해지면 setblock <x> <y> <z> air
 
 # 다음 재생성까지의 값 계산
-execute store result score #wood_remain generate \
-    run function three_body:resource/wood/value/regen_value
+execute store result score #wood_remain generate run function three_body:resource/wood/value/regen_value
