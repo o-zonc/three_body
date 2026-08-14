@@ -11,4 +11,4 @@ execute if score #wood_remain generate matches 1.. run return 0
 
 # remain이 0이 된 뒤 실제 생성 지점이 비어 있는지 확인한다.
 # TODO: 실제 wood 생성 좌표를 확정하면 아래 조건을 활성화한다.
-# execute if block <x> <y> <z> air run function three_body:resource/wood/regen/place
+execute if block 0 -59 35 air run function three_body:resource/wood/regen/place
