@@ -58,6 +58,7 @@ scoreboard objectives setdisplay sidebar material_display
 scoreboard objectives add resource_test dummy
 scoreboard objectives add generate dummy
 scoreboard objectives add upgrade dummy
+scoreboard objectives add tmp dummy
 
 # Resource configuration
 function three_body:resource/config/init
