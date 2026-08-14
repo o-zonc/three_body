@@ -6,16 +6,22 @@
 # Tests the wood regeneration API and prepares the existing resource
 # scoreboard display to show the result.
 #
-# This test intentionally does not require a real resource block position.
-# It tests config lookup, current-level data, upgrade-cost lookup, and the
-# upgrade transaction itself.
+# The test prepares a deterministic environment first, then restores the
+# original wood amount and regeneration level at the end.
 
 scoreboard objectives add resource_test dummy
 scoreboard players set #wood_test_pass resource_test 0
 scoreboard players set #wood_test_fail resource_test 0
 scoreboard players set #wood_test_value resource_test 0
 scoreboard players set #wood_test_initial upgrade 0
+scoreboard players set #wood_test_initial_value resource_test 0
 scoreboard players operation #wood_test_initial upgrade = #wood_regen_lvl upgrade
+execute store result score #wood_test_initial_value resource_test run scoreboard players get #wood material
+
+# Prepare a deterministic test environment.
+scoreboard players set #wood unlock 1
+scoreboard players set #wood_regen_lvl upgrade 0
+scoreboard players set #wood material 0
 
 # Header.
 tellraw @a {"text":"========================================","color":"dark_gray"}
@@ -25,7 +31,8 @@ tellraw @a {"text":"========================================","color":"dark_gray
 # --------------------------------------------------
 # TEST 1: current regen value
 # --------------------------------------------------
-function three_body:resource/wood/value/regen_value
+# Populate temp.regen before asking regen_value for the current ticks.
+function three_body:resource/wood/value/now_regen_data
 execute store result score #wood_test_value resource_test run function three_body:resource/wood/value/regen_value
 execute if score #wood_test_value resource_test matches 1.. run scoreboard players add #wood_test_pass resource_test 1
 execute unless score #wood_test_value resource_test matches 1.. run scoreboard players add #wood_test_fail resource_test 1
@@ -36,17 +43,15 @@ execute unless score #wood_test_value resource_test matches 1.. run tellraw @a {
 # TEST 2: next-level upgrade cost
 # --------------------------------------------------
 function three_body:resource/wood/value/regen_upgrade_cost
-execute store result score #wood_test_value resource_test run data get storage three_body:resource.input amount 1
-execute if data storage three_body:resource.input amount run scoreboard players add #wood_test_pass resource_test 1
-execute unless data storage three_body:resource.input amount run scoreboard players add #wood_test_fail resource_test 1
-execute if data storage three_body:resource.input amount run tellraw @a [{"text":"[UPGRADE COST] expected=config actual=","color":"yellow"},{"score":{"name":"#wood_test_value","objective":"resource_test"}},{"text":" PASS","color":"green"}]
-execute unless data storage three_body:resource.input amount run tellraw @a {"text":"[UPGRADE COST] missing cost FAIL","color":"red"}
+execute store result score #wood_test_value resource_test run data get storage three_body:resource input.amount 1
+execute if data storage three_body:resource input.amount run scoreboard players add #wood_test_pass resource_test 1
+execute unless data storage three_body:resource input.amount run scoreboard players add #wood_test_fail resource_test 1
+execute if data storage three_body:resource input.amount run tellraw @a [{"text":"[UPGRADE COST] expected=config actual=","color":"yellow"},{"score":{"name":"#wood_test_value","objective":"resource_test"}},{"text":" PASS","color":"green"}]
+execute unless data storage three_body:resource input.amount run tellraw @a {"text":"[UPGRADE COST] missing cost FAIL","color":"red"}
 
 # --------------------------------------------------
 # TEST 3: scoreboard display data
 # --------------------------------------------------
-# Show the current level and calculated cost through the existing sidebar.
-# The display function itself remains responsible for formatting.
 function three_body:resource/wood/ui/info
 
 tellraw @a [{"text":"[DISPLAY] wood regen level = ","color":"aqua"},{"score":{"name":"#wood_regen_lvl","objective":"upgrade"}}]
@@ -54,14 +59,10 @@ tellraw @a [{"text":"[DISPLAY] wood regen level = ","color":"aqua"},{"score":{"n
 # --------------------------------------------------
 # TEST 4: upgrade transaction
 # --------------------------------------------------
-# Give the test account enough wood for the configured next-level cost.
-# Save the current wood amount so it can be restored afterwards.
-scoreboard players set #wood_test_initial_value resource_test 0
-execute store result score #wood_test_initial_value resource_test run scoreboard players get #wood material
-execute store result score #wood_test_value resource_test run data get storage three_body:resource.input amount 1
-
-# Add exactly the required amount, then run the real upgrade API.
-scoreboard players operation #wood material += #wood_test_value resource_test
+# Give the test account exactly the configured next-level cost.
+scoreboard players set #wood material 0
+execute store result score #wood_test_value resource_test run data get storage three_body:resource input.amount 1
+scoreboard players operation #wood material = #wood_test_value resource_test
 function three_body:resource/wood/trigger/upgrade
 
 execute if score #wood_regen_lvl upgrade > #wood_test_initial upgrade run scoreboard players add #wood_test_pass resource_test 1
@@ -69,7 +70,7 @@ execute unless score #wood_regen_lvl upgrade > #wood_test_initial upgrade run sc
 execute if score #wood_regen_lvl upgrade > #wood_test_initial upgrade run tellraw @a {"text":"[UPGRADE]      level increased PASS","color":"green"}
 execute unless score #wood_regen_lvl upgrade > #wood_test_initial upgrade run tellraw @a {"text":"[UPGRADE]      level did not increase FAIL","color":"red"}
 
-# Restore original level and wood amount.
+# Restore original test state.
 scoreboard players operation #wood_regen_lvl upgrade = #wood_test_initial upgrade
 scoreboard players operation #wood material = #wood_test_initial_value resource_test
 
