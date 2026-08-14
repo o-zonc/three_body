@@ -3,7 +3,7 @@ effect clear @a blindness
 effect clear @a darkness
 title @a clear
 
-execute in three_body:frozen run tp @a ~ 67 ~
+execute in three_body:frozen run tp @a 0 67 0
 gamerule minecraft:advance_time true
 
 # 방문 기록을 남기고, 현재 차원 상태를 '얼어붙은 차원'으로 갱신합니다.
