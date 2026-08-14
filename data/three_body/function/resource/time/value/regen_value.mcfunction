@@ -1,2 +1,3 @@
-# Get time regeneration value
-# TODO: return the amount/time value defined for the current time level.
+# Return current time regeneration duration in ticks.
+function three_body:resource/time/value/now_regen_data
+return run data get storage three_body:resource.temp.regen.ticks 1
