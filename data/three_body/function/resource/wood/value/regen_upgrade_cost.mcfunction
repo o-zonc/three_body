@@ -3,7 +3,7 @@
 scoreboard players reset #wood_regen_lvl_next tmp
 scoreboard players reset #wood_regen_count tmp
 
-aexecute store result score #wood_regen_lvl_next tmp run scoreboard players get #wood_regen_lvl upgrade
+execute store result score #wood_regen_lvl_next tmp run scoreboard players get #wood_regen_lvl upgrade
 scoreboard players add #wood_regen_lvl_next tmp 1
 
 # Read the number of configured regeneration levels.
