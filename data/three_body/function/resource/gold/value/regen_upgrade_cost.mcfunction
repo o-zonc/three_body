@@ -1,9 +1,10 @@
-# Return the next gold regeneration upgrade cost.
-data remove storage three_body:resource.temp.cost
-execute store result storage three_body:resource.temp.lvl int 1 run scoreboard players get #gold_regen_lvl upgrade
-scoreboard players set #resource_next_lvl tmp 0
-execute store result score #resource_next_lvl tmp run data get storage three_body:resource.temp.lvl 1
-scoreboard players add #resource_next_lvl tmp 1
-execute store result storage three_body:resource.temp.lvl int 1 run scoreboard players get #resource_next_lvl tmp
-data modify storage three_body:resource.temp.type set value "gold"
-function three_body:resource/internal/regen_upgrade_cost with storage three_body:resource.temp
+# Prepare the next gold regeneration upgrade cost.
+scoreboard players reset #gold_regen_lvl_next tmp
+execute store result score #gold_regen_max tmp run data get storage three_body:resource.config.gold.regen
+execute store result score #gold_regen_lvl_next tmp run scoreboard players get #gold_regen_lvl upgrade
+scoreboard players add #gold_regen_lvl_next tmp 1
+execute if score #gold_regen_lvl_next tmp >= #gold_regen_max tmp run return 0
+execute store result storage three_body:resource.temp.lvl int 1 run scoreboard players get #gold_regen_lvl_next tmp
+function three_body:resource/gold/value/regen_data_by_lvl with storage three_body:resource.temp
+data modify storage three_body:resource.input set value {type:"gold",amount:0}
+data modify storage three_body:resource.input.amount set from storage three_body:resource.temp.regen.cost
