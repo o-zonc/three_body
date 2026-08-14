@@ -4,7 +4,7 @@
 
 scoreboard objectives add unlock dummy
 
-# 자원 해금 상태
+# 일반 자원
 scoreboard players set #wood unlock 0
 scoreboard players set #stone unlock 0
 scoreboard players set #coal unlock 0
@@ -14,3 +14,10 @@ scoreboard players set #gold unlock 0
 scoreboard players set #diamond unlock 0
 scoreboard players set #emerald unlock 0
 scoreboard players set #lapis unlock 0
+
+# 특수 자원
+scoreboard players set #heat unlock 0
+scoreboard players set #cold unlock 0
+scoreboard players set #information unlock 0
+scoreboard players set #time unlock 0
+scoreboard players set #world_eye unlock 0
