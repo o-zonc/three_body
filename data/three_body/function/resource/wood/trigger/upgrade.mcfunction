@@ -1,28 +1,20 @@
-# ==================================================
-# Upgrade wood regeneration
-# ==================================================
+# Upgrade wood regeneration.
+execute unless score #wood unlock matches 1.. run return 0
+execute if score #wood_regen_lvl upgrade matches 4.. run return 0
 
-# 현재 레벨
-scoreboard players get #wood_regen_lvl upgrade
-
-# 업그레이드 비용 계산
+# Prepare the next-level cost in the Material API input storage.
 function three_body:resource/wood/value/regen_upgrade_cost
 
-# TODO:
-# 비용 검사
+# Abort when the required wood is not available.
+execute store result score #wood_upgrade_has_cost resource_test run function three_body:resource/has with storage three_body:resource.input
+execute unless score #wood_upgrade_has_cost resource_test matches 1 run return 0
 
-function three_body:resource/check_cost
+# Pay the cost.
+function three_body:resource/remove with storage three_body:resource.input
+execute unless score #resource_remove_success resource_test matches 1 run return 0
 
-# 비용 부족
-execute unless score #cost_check tmp matches 1 run return 0
-
-# 비용 차감
-function three_body:resource/take_cost
-
-# 레벨 증가
+# Increase regeneration level.
 scoreboard players add #wood_regen_lvl upgrade 1
 
-# TODO:
-# 업그레이드 효과음
-# TODO:
-# 파티클
+# Feedback.
+playsound minecraft:block.note_block.pling master @a ~ ~ ~ 0.8 1.2
