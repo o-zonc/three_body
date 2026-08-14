@@ -3,7 +3,7 @@
 data remove storage three_body:resource temp.regen
 
 # Store the current regeneration level in temp.lvl.
-execute store result storage three_body:resource.temp.lvl int 1 run scoreboard players get #wood_regen_lvl upgrade
+execute store result storage three_body:resource temp.lvl int 1 run scoreboard players get #wood_regen_lvl upgrade
 
-# Pass the temp object itself so the $(lvl) macro receives the expected field.
-function three_body:resource/wood/value/regen_data_by_lvl with storage three_body:resource.temp
+# Pass temp.lvl to the macro function as $(lvl).
+function three_body:resource/wood/value/regen_data_by_lvl with storage three_body:resource temp
