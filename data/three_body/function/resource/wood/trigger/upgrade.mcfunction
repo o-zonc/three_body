@@ -1,6 +1,13 @@
 # Upgrade wood regeneration.
 execute unless score #wood unlock matches 1.. run return 0
-execute if score #wood_regen_lvl upgrade matches 4.. run return 0
+
+# The config list is the source of truth for the maximum level.
+scoreboard players reset #wood_regen_count tmp
+scoreboard players reset #wood_regen_next tmp
+execute store result score #wood_regen_count tmp run data get storage three_body:resource.config.wood.regen
+execute store result score #wood_regen_next tmp run scoreboard players get #wood_regen_lvl upgrade
+scoreboard players add #wood_regen_next tmp 1
+execute if score #wood_regen_next tmp >= #wood_regen_count tmp run return 0
 
 # Prepare the next-level cost in the Material API input storage.
 function three_body:resource/wood/value/regen_upgrade_cost
