@@ -1,19 +1,15 @@
 # Prepare the next wood regeneration upgrade cost in Material API storage.
-# The config list is the source of truth for the maximum level.
-scoreboard players reset #wood_regen_lvl_next tmp
-scoreboard players reset #wood_regen_count tmp
+# The resource config is the source of truth for available levels.
 
-execute store result score #wood_regen_lvl_next tmp run scoreboard players get #wood_regen_lvl upgrade
+data remove storage three_body:resource.input
+data remove storage three_body:resource.temp cost
+
+execute store result storage three_body:resource.temp.lvl int 1 run scoreboard players get #wood_regen_lvl upgrade
 scoreboard players add #wood_regen_lvl_next tmp 1
 
-# Read the number of configured regeneration levels.
-execute store result score #wood_regen_count tmp run data get storage three_body:resource.config.wood.regen
+# Prepare the generic API input.
+data modify storage three_body:resource.temp.type set value "wood"
+data modify storage three_body:resource.input set value {type:"wood",amount:0}
 
-# No next entry means the current level is the maximum level.
-execute if score #wood_regen_lvl_next tmp >= #wood_regen_count tmp run return fail
-
-execute store result storage three_body:resource.temp.lvl int 1 run scoreboard players get #wood_regen_lvl_next tmp
-function three_body:resource/wood/value/regen_data_by_lvl with storage three_body:resource.temp
-
-$data modify storage three_body:resource.input set value {type:"wood",amount:0}
-$data modify storage three_body:resource.input.amount set from storage three_body:resource.temp.regen.cost
+# Ask the generic API for the next level's configured cost.
+execute store result storage three_body:resource.input.amount int 1 run function three_body:resource/internal/regen_upgrade_cost with storage three_body:resource.temp
