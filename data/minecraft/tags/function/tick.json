@@ -3,6 +3,7 @@
 		"three_body:story/story",
 		"three_body:common/random",
 		"three_body:tick",
-		"three_body:elevator/tick"
+		"three_body:elevator/tick",
+		"three_body:resource/config/tick"
 	]
 }

@@ -1,0 +1,13 @@
+function three_body:resource/coal/regen/ticking
+function three_body:resource/cold/regen/ticking
+function three_body:resource/time/regen/ticking
+function three_body:resource/heat/regen/ticking
+function three_body:resource/information/regen/ticking
+function three_body:resource/emerald/regen/ticking
+function three_body:resource/lapis/regen/ticking
+function three_body:resource/diamond/regen/ticking
+function three_body:resource/gold/regen/ticking
+function three_body:resource/iron/regen/ticking
+function three_body:resource/copper/regen/ticking
+function three_body:resource/wood/regen/ticking
+function three_body:resource/stone/regen/ticking
