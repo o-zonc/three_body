@@ -1,9 +1,10 @@
-# Return the next stone regeneration upgrade cost.
-data remove storage three_body:resource.temp.cost
-execute store result storage three_body:resource.temp.lvl int 1 run scoreboard players get #stone_regen_lvl upgrade
-scoreboard players set #resource_next_lvl tmp 0
-execute store result score #resource_next_lvl tmp run data get storage three_body:resource.temp.lvl 1
-scoreboard players add #resource_next_lvl tmp 1
-execute store result storage three_body:resource.temp.lvl int 1 run scoreboard players get #resource_next_lvl tmp
-data modify storage three_body:resource.temp.type set value "stone"
-function three_body:resource/internal/regen_upgrade_cost with storage three_body:resource.temp
+# Prepare the next stone regeneration upgrade cost.
+scoreboard players reset #stone_regen_lvl_next tmp
+execute store result score #stone_regen_max tmp run data get storage three_body:resource.config.stone.regen
+execute store result score #stone_regen_lvl_next tmp run scoreboard players get #stone_regen_lvl upgrade
+scoreboard players add #stone_regen_lvl_next tmp 1
+execute if score #stone_regen_lvl_next tmp >= #stone_regen_max tmp run return 0
+execute store result storage three_body:resource.temp.lvl int 1 run scoreboard players get #stone_regen_lvl_next tmp
+function three_body:resource/stone/value/regen_data_by_lvl with storage three_body:resource.temp
+data modify storage three_body:resource.input set value {type:"stone",amount:0}
+data modify storage three_body:resource.input.amount set from storage three_body:resource.temp.regen.cost
