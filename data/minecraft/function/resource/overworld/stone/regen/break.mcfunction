@@ -7,11 +7,6 @@ scoreboard players operation #emotion_before_stone tmp = #stone material
 execute store result score #stone_gain tmp run function dimensions/overworld/shop/material_shop/value/stone_value
 scoreboard players operation #material_add_value tmp = #stone_gain tmp
 function resource/add_material/stone
-scoreboard players operation #emotion_delta tmp = #stone material
-scoreboard players operation #emotion_delta tmp -= #emotion_before_stone tmp
-scoreboard players set #emotion_weight tmp 2
-scoreboard players operation #emotion_delta tmp *= #emotion_weight tmp
-function trial/emotion/add_fervor
 
 # 돌 재생산 카운트 설정
 execute store result score #stone_remain generate run function resource/overworld/stone/value/regen_value
