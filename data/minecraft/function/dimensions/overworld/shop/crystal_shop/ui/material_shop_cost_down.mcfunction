@@ -2,7 +2,7 @@ function dimensions/overworld/shop/crystal_shop/value/now_material_shop_cost_dow
 execute store result score #material_shop_cost_down_display tmp run data get storage data tmp.crystal_shop.material_shop_cost_down.now.value 100
 
 function dimensions/overworld/shop/crystal_shop/value/material_shop_cost_down_upgrade_cost
-function product/convert_upgrade_cost_to_text_named {id:"crystal_shop_material_shop_cost_down",insertion:", "}
+function resource/convert_upgrade_cost_to_text_named {id:"crystal_shop_material_shop_cost_down",insertion:", "}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

@@ -18,7 +18,7 @@ scoreboard players operation #obsidian material -= #obsidian_storage_store_amoun
 scoreboard players operation #obsidian_storage_amount var += #obsidian_storage_store_amount tmp
 function dimensions/nether/obsidian_storage/update_milestone
 
-function product/overworld/obsidian/lock/update
+function resource/overworld/obsidian/lock/update
 title @s actionbar ["", "§d흑요석 ", {score:{name:"#obsidian_storage_store_amount",objective:"tmp"}, color:"light_purple"}, "§d개를 저장했습니다."]
 function dimensions/nether/obsidian_storage/ui/info
 return 1

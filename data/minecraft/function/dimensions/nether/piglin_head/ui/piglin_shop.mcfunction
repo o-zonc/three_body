@@ -1,5 +1,5 @@
 function dimensions/nether/piglin_head/value/piglin_shop_upgrade_cost
-function product/convert_upgrade_cost_to_text_named {id:"piglin_shop",insertion:", "}
+function resource/convert_upgrade_cost_to_text_named {id:"piglin_shop",insertion:", "}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

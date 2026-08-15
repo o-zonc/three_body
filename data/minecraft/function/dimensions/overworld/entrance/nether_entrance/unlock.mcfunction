@@ -4,9 +4,9 @@ data remove storage data tmp.cost
 data remove storage data tmp.cost_original
 data modify storage data tmp.cost set from storage data const.dimensions.overworld.entrance[{id:"nether_entrance"}].cost
 
-execute store result score #nether_entrance_unlock_cost_check tmp run function product/check_cost
+execute store result score #nether_entrance_unlock_cost_check tmp run function resource/check_cost
 
-execute if score #nether_entrance_unlock_cost_check tmp matches 1 run function product/take_cost
+execute if score #nether_entrance_unlock_cost_check tmp matches 1 run function resource/take_cost
 execute if score #nether_entrance_unlock_cost_check tmp matches 1 run scoreboard players set #nether_entrance unlock 1
 execute if score #nether_entrance_unlock_cost_check tmp matches 1 run setblock -18 4 -15 redstone_block replace
 execute if score #nether_entrance_unlock_cost_check tmp matches 1 run return 1

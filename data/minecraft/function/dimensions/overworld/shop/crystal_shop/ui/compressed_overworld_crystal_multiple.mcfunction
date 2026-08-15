@@ -2,7 +2,7 @@ function dimensions/overworld/shop/crystal_shop/value/now_compressed_overworld_c
 execute store result score #compressed_overworld_crystal_multiple_display tmp run data get storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.now.value 100
 
 function dimensions/overworld/shop/crystal_shop/value/compressed_overworld_crystal_multiple_upgrade_cost
-function product/convert_upgrade_cost_to_text_named {id:"crystal_shop_compressed_overworld_crystal_multiple",insertion:", "}
+function resource/convert_upgrade_cost_to_text_named {id:"crystal_shop_compressed_overworld_crystal_multiple",insertion:", "}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

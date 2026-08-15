@@ -7,5 +7,5 @@ execute unless score #obsidian material matches 1.. run return 0
 scoreboard players remove #obsidian material 1
 scoreboard players add #obsidian_storage_amount var 1
 function dimensions/nether/obsidian_storage/update_milestone
-function product/overworld/obsidian/lock/update
+function resource/overworld/obsidian/lock/update
 return 1

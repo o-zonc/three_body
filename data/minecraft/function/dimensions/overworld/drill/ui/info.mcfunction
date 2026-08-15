@@ -26,10 +26,10 @@ scoreboard players operation #drill_limit_lvl_int tmp /= #y_cor tmp
 
 
 function dimensions/overworld/drill/value/speed_upgrade_cost
-function product/convert_upgrade_cost_to_text_named {id:"drill_speed",insertion:", "}
+function resource/convert_upgrade_cost_to_text_named {id:"drill_speed",insertion:", "}
 
 function dimensions/overworld/drill/value/limit_upgrade_cost
-function product/convert_upgrade_cost_to_text_named {id:"drill_limit",insertion:", "}
+function resource/convert_upgrade_cost_to_text_named {id:"drill_limit",insertion:", "}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

@@ -2,7 +2,7 @@ function dimensions/overworld/shop/crystal_shop/value/now_dig_speed_up_data
 execute store result score #dig_speed_up_display tmp run data get storage data tmp.crystal_shop.dig_speed_up.now.value 100
 
 function dimensions/overworld/shop/crystal_shop/value/dig_speed_up_upgrade_cost
-function product/convert_upgrade_cost_to_text_named {id:"crystal_shop_dig_speed_up",insertion:", "}
+function resource/convert_upgrade_cost_to_text_named {id:"crystal_shop_dig_speed_up",insertion:", "}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

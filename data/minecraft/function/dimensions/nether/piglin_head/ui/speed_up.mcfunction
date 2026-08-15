@@ -1,6 +1,6 @@
 execute store result score #piglin_head_speed_value tmp run function dimensions/nether/piglin_head/value/speed_up_value
 function dimensions/nether/piglin_head/value/speed_up_upgrade_cost
-function product/convert_upgrade_cost_to_text_named {id:"piglin_head_speed_up",insertion:", "}
+function resource/convert_upgrade_cost_to_text_named {id:"piglin_head_speed_up",insertion:", "}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

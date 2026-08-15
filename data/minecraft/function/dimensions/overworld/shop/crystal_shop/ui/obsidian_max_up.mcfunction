@@ -9,7 +9,7 @@ execute unless score #obsidian_max_up_storage_effect tmp matches 1 run data modi
 execute if score #obsidian_max_up_storage_effect tmp matches 1 run data modify storage data tmp.crystal_shop.obsidian_max_up.display set value [{ score: { name: "#obsidian_max_up_value_base", objective: "tmp" }, color:white }, { text: "§7개 §8→ §f" }, { score: { name: "#obsidian_max_up_value", objective: "tmp" }, color:white }, { text: "§7개 §8(흑요석 저장고 이정표 영향 적용)" }]
 
 function dimensions/overworld/shop/crystal_shop/value/obsidian_max_up_upgrade_cost
-function product/convert_upgrade_cost_to_text_named {id:"crystal_shop_obsidian_max_up",insertion:", "}
+function resource/convert_upgrade_cost_to_text_named {id:"crystal_shop_obsidian_max_up",insertion:", "}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

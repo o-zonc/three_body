@@ -1,4 +1,4 @@
-execute if score #disable_compressed_overworld_crystal_production var matches 1 run return 0
+execute if score #disable_compressed_overworld_crystal_resourceion var matches 1 run return 0
 execute unless score #compressed_overworld_crystal material = #compressed_overworld_crystal material run scoreboard players set #compressed_overworld_crystal material 0
 execute unless score #10_1_overworld_crystal_remainder var = #10_1_overworld_crystal_remainder var run scoreboard players set #10_1_overworld_crystal_remainder var 0
 

@@ -5,10 +5,10 @@ data remove storage data tmp.cost_original
 data modify storage data tmp.cost set from storage data const.dimensions.overworld.entrance[{id:"material_shop"}].cost
 
 # 해금 재료 소지 여부 확인
-execute store result score #unlock_cost_check tmp run function product/check_cost
+execute store result score #unlock_cost_check tmp run function resource/check_cost
 
 # 소지 시 해금
-execute if score #unlock_cost_check tmp matches 1 run function product/take_cost
+execute if score #unlock_cost_check tmp matches 1 run function resource/take_cost
 execute if score #unlock_cost_check tmp matches 1 run scoreboard players set #material_shop unlock 1
 execute if score #unlock_cost_check tmp matches 1 as @a[tag=player] run function util/blank
 execute if score #unlock_cost_check tmp matches 1 run return 1

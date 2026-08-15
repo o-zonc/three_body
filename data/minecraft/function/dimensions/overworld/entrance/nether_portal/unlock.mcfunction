@@ -4,9 +4,9 @@ data remove storage data tmp.cost
 data remove storage data tmp.cost_original
 data modify storage data tmp.cost set from storage data const.dimensions.overworld.entrance[{id:"nether_portal"}].cost
 
-execute store result score #nether_portal_unlock_cost_check tmp run function product/check_cost
+execute store result score #nether_portal_unlock_cost_check tmp run function resource/check_cost
 
-execute if score #nether_portal_unlock_cost_check tmp matches 1 run function product/take_cost
+execute if score #nether_portal_unlock_cost_check tmp matches 1 run function resource/take_cost
 execute if score #nether_portal_unlock_cost_check tmp matches 1 run scoreboard players set #nether_portal unlock 1
 execute if score #nether_portal_unlock_cost_check tmp matches 1 at @s run playsound block.portal.trigger weather @a[tag=player] ~ ~ ~ 0.8 1.0
 execute if score #nether_portal_unlock_cost_check tmp matches 1 at @s run particle reverse_portal ~ ~1 ~ 1 1 1 0.08 120 force @a[tag=player]
