@@ -26,16 +26,22 @@ execute if data storage data tmp.cost[{type:"gold"}].amount store result score #
 execute if data storage data tmp.cost[{type:"blaze_powder"}].amount store result score #cost_blaze_powder cost run data get storage data tmp.cost[{type:"blaze_powder"}].amount
 execute if data storage data tmp.cost[{type:"spirit"}].amount store result score #cost_spirit cost run data get storage data tmp.cost[{type:"spirit"}].amount
 
-# 자원 차감
-scoreboard players operation #wood material -= #cost_wood cost
-scoreboard players operation #stone material -= #cost_stone cost
-scoreboard players operation #coal material -= #cost_coal cost
+# 작업대 2-1 효과: 석탄과 금의 비용을 면제
+scoreboard players set #2_1_cost_effective tmp 0
+execute if score #2_1 nether_workshop matches 1 run scoreboard players set #2_1_cost_effective tmp 1
+
+# 발전과제 overworld_13 달성 시 나무/돌은 차감되지 않음
+execute unless score #overworld_13 advancement matches 1 run scoreboard players operation #wood material -= #cost_wood cost
+execute if score #overworld_13 advancement matches 1 if score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #wood material -= #cost_wood cost
+execute unless score #overworld_13 advancement matches 1 run scoreboard players operation #stone material -= #cost_stone cost
+execute if score #overworld_13 advancement matches 1 if score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #stone material -= #cost_stone cost
+execute unless score #2_1_cost_effective tmp matches 1 run scoreboard players operation #coal material -= #cost_coal cost
 scoreboard players operation #iron material -= #cost_iron cost
 scoreboard players operation #obsidian material -= #cost_obsidian cost
 scoreboard players operation #compressed_overworld_crystal material -= #cost_compressed_overworld_crystal cost
 scoreboard players operation #compressed_nether_crystal material -= #cost_compressed_nether_crystal cost
 scoreboard players operation #quartz material -= #cost_quartz cost
-scoreboard players operation #gold material -= #cost_gold cost
+execute unless score #2_1_cost_effective tmp matches 1 run scoreboard players operation #gold material -= #cost_gold cost
 scoreboard players operation #blaze_powder material -= #cost_blaze_powder cost
 scoreboard players operation #spirit material -= #cost_spirit cost
 
