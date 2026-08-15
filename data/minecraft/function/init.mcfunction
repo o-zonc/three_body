@@ -61,7 +61,6 @@ scoreboard objectives add var dummy
 scoreboard objectives add generate dummy
 scoreboard objectives add upgrade dummy
 
-scoreboard objectives add trial dummy
 scoreboard objectives add nether_workshop dummy
 scoreboard objectives add unlock_trigger dummy
 scoreboard objectives add upgrade_trigger dummy
