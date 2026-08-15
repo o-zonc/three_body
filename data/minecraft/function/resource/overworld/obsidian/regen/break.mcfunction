@@ -1,5 +1,4 @@
 execute if score #disable_obsidian_resourceion var matches 1 run return 0
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_obsidian_resourceion trial matches 1 run return 0
 execute unless score #cave unlock matches 1 run return 0
 # 흑요석 파괴 시
 
@@ -18,7 +17,6 @@ scoreboard players operation #emotion_delta tmp = #obsidian material
 scoreboard players operation #emotion_delta tmp -= #emotion_before_obsidian tmp
 scoreboard players set #emotion_weight tmp 80
 scoreboard players operation #emotion_delta tmp *= #emotion_weight tmp
-function trial/emotion/add_fervor
 scoreboard players set #obsidian_present generate 0
 
 execute store result score #obsidian_remain generate run function resource/overworld/obsidian/value/regen_value
