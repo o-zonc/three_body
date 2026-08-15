@@ -1,0 +1,16 @@
+{
+	"type": "frozen",
+	"generator": {
+		"type": "flat",
+		"settings": {
+			"biome": "snowy_plains",
+			"layers": [
+				{ "block": "bedrock", "height": 1 },
+				{ "block": "air", "height": 123 },
+				{ "block": "dirt", "height": 2 },
+				{ "block": "grass_block", "height": 1 },
+				{ "block": "snow_block", "height": 1 }
+			]
+		}
+	}
+}

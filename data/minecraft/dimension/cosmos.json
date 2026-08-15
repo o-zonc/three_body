@@ -1,0 +1,10 @@
+{
+	"type": "cosmos",
+	"generator": {
+		"type": "flat",
+		"settings": {
+			"biome": "the_void",
+			"layers": []
+		}
+	}
+}

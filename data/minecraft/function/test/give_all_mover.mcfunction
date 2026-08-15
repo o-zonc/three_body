@@ -1,0 +1,7 @@
+function item/give/dimension_mover
+function item/give/overworld_mover
+function item/give/frozen_mover
+function item/give/dried_mover
+function item/give/epiphany
+function item/give/reactor
+function item/give/cosmos_mover

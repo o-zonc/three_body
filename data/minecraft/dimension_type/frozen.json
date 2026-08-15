@@ -1,0 +1,36 @@
+{
+    "has_skylight": true,
+    "has_ceiling": false,
+    "has_ender_dragon_fight": false,
+    "ambient_light": 0.0,
+    "has_fixed_time": false,
+    "monster_spawn_light_level": 7,
+    "monster_spawn_block_light_limit": 0,
+    "min_y": -64,
+    "height": 384,
+    "logical_height": 384,
+    "coordinate_scale": 1.0,
+    "infiniburn": "#infiniburn_overworld",
+    "skybox": "overworld",
+    "cardinal_light": "default",
+    "default_clock": "overworld",
+    "timelines": ["day"],
+    "attributes": {
+		"audio/background_music": {
+			"default": {
+				"sound": "music.overworld.snowy_slopes",
+				"max_delay": 2400,
+				"min_delay": 1200,
+				"replace_current_music": false
+			}
+		},
+        "visual/ambient_light_color": "#0B111A",
+        "visual/block_light_tint": "#9EB0C2",
+        "visual/cloud_color": "#CCFFFFFF",
+        "visual/sky_color": "#9EB0C2",
+		"visual/sky_light_color" : "#9EB0C2",
+        "visual/fog_color": "#D6E2E8",
+        "visual/fog_start_distance": 32,
+        "visual/fog_end_distance": 128
+    }
+}

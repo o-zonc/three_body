@@ -1,0 +1,8 @@
+function util/blank
+execute if score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"2_1",slot:"발전성 중화",effect:"§f§l석탄§7과 §f§l금§7이 필요한 구매를 할 때 해당 자원을 §6§l소모하지 않습니다.§r\n§8→ 요구량만큼의 석탄과 금 보유는 필요합니다."}
+execute at @s run playsound minecraft:block.copper_bulb.place weather @s ~ ~ ~ 1 0.7
+execute unless score #trial_active trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"2_1",slot:"발전성 중화",effect:"§f§l석탄§7과 §f§l금§7이 필요한 구매를 할 때 해당 자원을 §6§l소모하지 않습니다.§r\n§8→ 요구량만큼의 석탄과 금 보유는 필요합니다."}
+execute if score #trial_active trial matches 1 if score #trial_1 advancement matches 1 unless score #trial_advancement_reward_disabled var matches 1 unless score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"2_1",slot:"발전성 중화",effect:"§f§l석탄§7과 §f§l금§7이 필요한 구매를 할 때 해당 자원을 §6§l소모하지 않습니다.§r\n§8→ 요구량만큼의 석탄과 금 보유는 필요합니다.\n\n§c§l§o인간의 뒤치다꺼리라니... 절망적이군."}
+execute if score #trial_active trial matches 1 unless score #trial_1 advancement matches 1 unless score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"2_1",slot:"발전성 중화",effect:"§7§m석탄과 금이 필요한 구매를 할 때 해당 자원을 소모하지 않습니다.\n→ 요구량만큼의 석탄과 금 보유는 필요합니다."}
+
+execute if score #trial_active trial matches 1 if score #trial_1 advancement matches 1 if score #trial_advancement_reward_disabled var matches 1 unless score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"2_1",slot:"발전성 중화",effect:"§7§m석탄과 금이 필요한 구매를 할 때 해당 자원을 소모하지 않습니다.\n→ 요구량만큼의 석탄과 금 보유는 필요합니다."}

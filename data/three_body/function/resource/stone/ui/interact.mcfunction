@@ -1,1 +1,0 @@
-# Stone resource interaction

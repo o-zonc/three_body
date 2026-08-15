@@ -1,1 +1,0 @@
-# Gold resource information UI

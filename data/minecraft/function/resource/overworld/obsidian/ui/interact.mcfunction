@@ -1,0 +1,1 @@
+function resource/overworld/obsidian/ui/info

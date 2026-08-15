@@ -1,1 +1,0 @@
-# Diamond resource information UI

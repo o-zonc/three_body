@@ -1,0 +1,2 @@
+function resource/overworld_resource_managing_by_tick
+function resource/nether_resource_managing_by_tick

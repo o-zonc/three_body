@@ -1,1 +1,0 @@
-# Emerald resource information UI

@@ -1,0 +1,59 @@
+{
+    "has_skylight": true,
+    "has_ceiling": false,
+    "has_ender_dragon_fight": false,
+
+    "ambient_light": 0.0,
+
+    "monster_spawn_light_level": 7,
+    "monster_spawn_block_light_limit": 0,
+
+    "min_y": -64,
+    "height": 384,
+    "logical_height": 384,
+
+    "coordinate_scale": 1.0,
+
+    "infiniburn": "#infiniburn_overworld",
+
+    "skybox": "overworld",
+    "cardinal_light": "default",
+    "default_clock": "overworld",
+
+    "attributes": {
+        "audio/background_music": {
+            "default": {
+                "sound": "music.overworld.deep_dark",
+                "max_delay": 2400,
+                "min_delay": 1200,
+                "replace_current_music": false
+            }
+        },
+
+        "visual/ambient_light_color": "#71CDF9",
+
+        "visual/cloud_color": "#CC182830",
+        "visual/cloud_fog_end_distance": 48.0,
+        "visual/cloud_height": 192.0,
+
+        "visual/sky_color": "#07131C",
+
+        "visual/fog_color": "#486370",
+        "visual/sky_fog_end_distance": 96.0,
+
+        "visual/sky_light_color": "#222b30",
+        "visual/sky_light_factor": 0.20,
+
+        "visual/sun_angle": 180.0,
+        "visual/sunrise_sunset_color": "#00000000",
+
+        "visual/moon_angle": 0.0,
+        "visual/moon_phase": "full_moon",
+
+        "visual/star_angle": 0.0,
+        "visual/star_brightness": 0.89,
+
+        "gameplay/water_evaporates": false,
+        "gameplay/fast_lava": false
+    }
+}

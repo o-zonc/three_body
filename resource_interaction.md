@@ -19,7 +19,7 @@
 
 - 아래의 반 블록은 자원 오브젝트의 시각적인 받침대이자 플레이어가 우클릭하는 위치이다.
 - 실제로 획득 가능한 자원 블록은 반 블록보다 한 칸 위에 설치한다.
-- 반 블록의 클릭을 처리하기 위해 보이지 않는 `minecraft:interaction` 엔티티를 같은 영역에 배치한다.
+- 반 블록의 클릭을 처리하기 위해 보이지 않는 `interaction` 엔티티를 같은 영역에 배치한다.
 - 플레이어가 보는 관점에서는 반 블록을 우클릭하지만, 데이터팩에서는 `interaction` 엔티티가 우클릭 이벤트를 받는다.
 
 ## 2. Interaction 엔티티
@@ -29,7 +29,7 @@
 각 엔티티에는 최소한 다음과 같은 태그를 부여한다.
 
 ```text
-product/resource
+resource/resource
 <material>
 ```
 
@@ -53,7 +53,7 @@ interaction 엔티티 우클릭
         ↓
 interaction.player 감지
         ↓
-three_body:interaction/right
+interaction/right
         ↓
 resource/interaction/manager
         ↓
@@ -167,7 +167,7 @@ oak_log
 
 ### Step 3. Interaction 엔티티 배치
 
-반 블록의 클릭 영역을 덮도록 `minecraft:interaction` 엔티티를 배치한다.
+반 블록의 클릭 영역을 덮도록 `interaction` 엔티티를 배치한다.
 
 엔티티에는 해당 Material을 식별할 수 있는 태그를 부여한다.
 

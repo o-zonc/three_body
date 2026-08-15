@@ -1,0 +1,1 @@
+execute as @a[tag=player] run function dimensions/overworld/shop/crystal_shop/apply/dig_speed

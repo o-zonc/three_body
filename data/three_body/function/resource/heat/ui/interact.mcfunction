@@ -1,1 +1,0 @@
-# Heat resource interaction

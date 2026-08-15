@@ -1,1 +1,0 @@
-# World Eye resource interaction

@@ -1,5 +1,6 @@
 {
 	"values": [
-		"three_body:init"
+		"init",
+		"const_def"
 	]
 }

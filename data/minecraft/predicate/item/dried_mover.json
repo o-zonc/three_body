@@ -1,0 +1,16 @@
+{
+    "condition": "entity_properties",
+    "entity": "this",
+    "predicate": {
+        "equipment": {
+            "mainhand": {
+                "items": "orange_dye",
+                "components": {
+                    "custom_data": {
+                        "dried_move": 1
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": "sulfur_cube_spawn_egg",
+		"title": "극야",
+		"description": "세계가 끝나지 않는 어둠에 휩싸였습니다.",
+		"background": "block/pale_moss_block",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"enter_polarnight": {
+			"trigger": "changed_dimension",
+			"conditions": {
+				"to": "polarnight"
+			}
+		}
+	}
+}

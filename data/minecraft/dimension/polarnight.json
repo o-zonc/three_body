@@ -1,0 +1,14 @@
+{
+	"type": "polarnight",
+	"generator": {
+		"type": "flat",
+		"settings": {
+			"biome": "stony_shore",
+			"layers": [
+				{ "block": "bedrock", "height": 1 },
+				{ "block": "air", "height": 122 },
+				{ "block": "stone", "height": 5 }
+			]
+		}
+	}
+}

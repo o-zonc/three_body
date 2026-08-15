@@ -1,0 +1,1 @@
+execute if entity @s[tag=overworld_tool_upgrade] on target run function npc/overworld_tool_upgrade/interact

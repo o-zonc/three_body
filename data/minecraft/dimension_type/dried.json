@@ -1,0 +1,36 @@
+{
+    "has_skylight": true,
+    "has_ceiling": false,
+    "has_ender_dragon_fight": false,
+    "ambient_light": 0.0,
+    "has_fixed_time": false,
+    "monster_spawn_light_level": 7,
+    "monster_spawn_block_light_limit": 0,
+    "min_y": -64,
+    "height": 384,
+    "logical_height": 384,
+    "coordinate_scale": 1.0,
+    "infiniburn": "#infiniburn_overworld",
+    "skybox": "overworld",
+    "cardinal_light": "default",
+    "default_clock": "overworld",
+    "timelines": ["day"],
+    "attributes": {
+		"audio/background_music": {
+			"default": {
+				"sound": "music.overworld.badlands",
+				"max_delay": 2400,
+				"min_delay": 1200,
+				"replace_current_music": false
+			}
+		},
+        "visual/ambient_light_color": "#12100D",
+        "visual/block_light_tint": "#D3C29D",
+        "visual/cloud_color": "#00FFFFFF",
+        "visual/sky_light_color": "#FFFFFF",
+        "visual/sky_color": "#8BB1E8",
+        "visual/fog_color": "#D3C29D",
+        "gameplay/water_evaporates": true,
+        "gameplay/fast_lava": false
+    }
+}

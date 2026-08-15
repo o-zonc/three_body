@@ -1,0 +1,1 @@
+$return run function dimensions/nether/workshop/enable {id:"$(id)",previous_tier:$(previous_tier),cost:$(cost)}

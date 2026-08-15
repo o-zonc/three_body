@@ -1,0 +1,9 @@
+scoreboard players reset #remain piglin_head
+scoreboard players reset #remain_wood piglin_head
+scoreboard players reset #remain_stone piglin_head
+scoreboard players reset #remain_mob piglin_head
+scoreboard players reset #remain_coal piglin_head
+scoreboard players reset #remain_iron piglin_head
+scoreboard players reset #remain_obsidian piglin_head
+scoreboard players reset #remain_quartz piglin_head
+scoreboard players reset #remain_blaze piglin_head

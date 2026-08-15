@@ -1,1 +1,0 @@
-# Cold resource information UI
