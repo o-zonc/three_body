@@ -1,0 +1,5 @@
+execute at @s run playsound minecraft:block.copper_bulb.place weather @s ~ ~ ~ 1 0.7
+function util/blank
+execute unless score #trial_active trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"1_1",slot:"아차원 초월",effect:"§8경험치를 필요로 하는 경우를 제외하고,\n§7현재 §3§l구매 가능한 요소§7가 있을 때 §6§l자동으로 구매됩니다.§r\n\n§8(네더 차원 압축 결정 공방에는 적용되지 않음)"}
+execute if score #trial_active trial matches 1 unless score #trial_id trial matches 4..5 run function dimensions/nether/workshop/info/show_from_const {id:"1_1",slot:"아차원 초월",effect:"§8경험치를 필요로 하는 경우를 제외하고,\n§7현재 §3§l구매 가능한 요소§7가 있을 때 §6§l자동으로 구매됩니다.§r\n\n§8(네더 차원 압축 결정 공방에는 적용되지 않음)"}
+execute if score #trial_active trial matches 1 if score #trial_id trial matches 4..5 run function dimensions/nether/workshop/info/show_from_const {id:"1_1",slot:"아차원 초월",effect:"§7§m경험치를 필요로 하는 경우를 제외하고,\n현재 구매 가능한 요소가 있을 때 자동으로 구매됩니다.\n\n(네더 차원 압축 결정 공방에는 적용되지 않음)"}

@@ -9,8 +9,6 @@ scoreboard players operation #material_add_value tmp = #wood_gain tmp
 function resource/add_material/wood
 scoreboard players operation #emotion_delta tmp = #wood material
 scoreboard players operation #emotion_delta tmp -= #emotion_before_wood tmp
-function trial/emotion/add_fervor
-
 
 
 # 나무 재생산 대기시간 시작

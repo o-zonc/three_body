@@ -1,0 +1,10 @@
+# 현재 compressed_overworld_crystal_multiple 상점 업그레이드 데이터를 tmp.crystal_shop.compressed_overworld_crystal_multiple.now에 저장
+
+execute unless score #compressed_overworld_crystal_multiple_lvl crystal_shop = #compressed_overworld_crystal_multiple_lvl crystal_shop run scoreboard players set #compressed_overworld_crystal_multiple_lvl crystal_shop 0
+
+execute store result storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.lvl int 1 run scoreboard players get #compressed_overworld_crystal_multiple_lvl crystal_shop
+function dimensions/overworld/shop/crystal_shop/value/compressed_overworld_crystal_multiple_data_by_lvl with storage data tmp.crystal_shop.compressed_overworld_crystal_multiple
+data remove storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.now
+data modify storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.now set from storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.tmp
+data remove storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.lvl
+data remove storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.tmp

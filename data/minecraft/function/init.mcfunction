@@ -59,6 +59,7 @@ scoreboard objectives add tmp dummy
 scoreboard objectives add advancement dummy
 scoreboard objectives add var dummy
 scoreboard objectives add generate dummy
+scoreboard objectives add upgrade dummy
 
 scoreboard objectives add trial dummy
 scoreboard objectives add nether_workshop dummy

@@ -18,3 +18,14 @@ function mover/tick
 
 # 인터랙션 이벤트
 function interaction/detect
+
+# 자원 API
+function resource/nether/gold/regen/ticking
+function resource/nether/blaze/regen/ticking
+function resource/nether/quartz/regen/ticking
+function resource/overworld/mob/regen/ticking
+function resource/overworld/coal/regen/ticking
+function resource/overworld/iron/regen/ticking
+function resource/overworld/obsidian/regen/ticking
+function resource/overworld/wood/regen/ticking
+function resource/overworld/stone/regen/ticking

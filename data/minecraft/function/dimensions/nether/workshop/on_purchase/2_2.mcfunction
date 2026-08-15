@@ -1,0 +1,1 @@
+scoreboard players set #2_2_quartz_overdrive_remain var 300

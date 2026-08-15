@@ -1,0 +1,5 @@
+execute at @s run playsound minecraft:block.copper_bulb.place weather @s ~ ~ ~ 1 0.7
+function util/blank
+execute if score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"9_2",slot:"초열의 선회",effect:"§b§l차원 압축 §7후 §3§l에리어 존§7, §3§l금§7, §3§l블레이즈§7가 §6§l즉시 해금됩니다.§7\n\n또한 §f§l블레이즈 가루§7 보유량 §6§l100§7개마다 §f§l석영§7 수급량이 추가로 §6§l1§7개 상승합니다.\n\n§8(이 효과로 추가되는 석영 수급량은 최대 5개입니다.)"}
+execute unless score #trial_active trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"9_2",slot:"초열의 선회",effect:"§b§l차원 압축 §7후 §3§l에리어 존§7, §3§l금§7, §3§l블레이즈§7가 §6§l즉시 해금됩니다.§7\n\n또한 §f§l블레이즈 가루§7 보유량 §6§l100§7개마다 §f§l석영§7 수급량이 추가로 §6§l1§7개 상승합니다.\n\n§8(이 효과로 추가되는 석영 수급량은 최대 5개입니다.)"}
+execute if score #trial_active trial matches 1 unless score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"9_2",slot:"초열의 선회",effect:"§7§m차원 압축 후 에리어 존, 금, 블레이즈가 즉시 해금됩니다.\n\n또한 블레이즈 가루 보유량 100개마다 석영 수급량이 추가로 1개 상승합니다.\n\n(이 효과로 추가되는 석영 수급량은 최대 5개입니다.)"}
