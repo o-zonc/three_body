@@ -59,55 +59,5 @@ scoreboard players set #information material 0
 scoreboard players set #time material 0
 scoreboard players set #world_eye material 0
 
-# 자원 해금 상태
-scoreboard players set #wood unlock 0
-scoreboard players set #stone unlock 0
-scoreboard players set #coal unlock 0
-scoreboard players set #copper unlock 0
-scoreboard players set #iron unlock 0
-scoreboard players set #gold unlock 0
-scoreboard players set #diamond unlock 0
-scoreboard players set #emerald unlock 0
-scoreboard players set #lapis unlock 0
-scoreboard players set #heat unlock 0
-scoreboard players set #cold unlock 0
-scoreboard players set #information unlock 0
-scoreboard players set #time unlock 0
-scoreboard players set #world_eye unlock 0
-
-# 자원 regen/upgrade 상태 초기화
-scoreboard players reset #wood_remain generate
-scoreboard players reset #stone_remain generate
-scoreboard players reset #coal_remain generate
-scoreboard players reset #copper_remain generate
-scoreboard players reset #iron_remain generate
-scoreboard players reset #gold_remain generate
-scoreboard players reset #diamond_remain generate
-scoreboard players reset #emerald_remain generate
-scoreboard players reset #lapis_remain generate
-scoreboard players reset #heat_remain generate
-scoreboard players reset #cold_remain generate
-scoreboard players reset #information_remain generate
-scoreboard players reset #time_remain generate
-scoreboard players reset #world_eye_remain generate
-
-scoreboard players set #wood_regen_lvl upgrade 0
-scoreboard players set #stone_regen_lvl upgrade 0
-scoreboard players set #coal_regen_lvl upgrade 0
-scoreboard players set #copper_regen_lvl upgrade 0
-scoreboard players set #iron_regen_lvl upgrade 0
-scoreboard players set #gold_regen_lvl upgrade 0
-scoreboard players set #diamond_regen_lvl upgrade 0
-scoreboard players set #emerald_regen_lvl upgrade 0
-scoreboard players set #lapis_regen_lvl upgrade 0
-scoreboard players set #heat_regen_lvl upgrade 0
-scoreboard players set #cold_regen_lvl upgrade 0
-scoreboard players set #information_regen_lvl upgrade 0
-scoreboard players set #time_regen_lvl upgrade 0
-scoreboard players set #world_eye_regen_lvl upgrade 0
-
-# Material API 테스트용 상태 초기화
-scoreboard players set #resource_remove_success resource_test 0
-
 # 9. 엘리베이터 스코어보드 초기화
 scoreboard players set #GLOBAL elevator_unlocked 0

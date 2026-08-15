@@ -54,17 +54,16 @@ scoreboard objectives add material_display dummy
 scoreboard objectives modify material_display displayname {"text":"자원","color":"gold"}
 scoreboard objectives setdisplay sidebar material_display
 
-# Material API / resource system working state
-scoreboard objectives add resource_test dummy
-scoreboard objectives add generate dummy
-scoreboard objectives add upgrade dummy
+scoreboard objectives add cost dummy
 scoreboard objectives add tmp dummy
+scoreboard objectives add advancement dummy
+scoreboard objectives add var dummy
+scoreboard objectives add generate dummy
 
-# Resource configuration
-function three_body:resource/config/init
-
-# 9. 해금 시스템
-function three_body:unlock/init
+scoreboard objectives add trial dummy
+scoreboard objectives add nether_workshop dummy
+scoreboard objectives add unlock_trigger dummy
+scoreboard objectives add upgrade_trigger dummy
 
 # 10. 엘리베이터 스코어보드
 scoreboard objectives add elevator_unlocked dummy
