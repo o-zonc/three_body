@@ -1,4 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 4..5 run return 0
 execute if score #1_1_stop var matches 1 run return 0
 
 scoreboard players add #1_1_tick tmp 1

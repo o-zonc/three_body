@@ -6,6 +6,5 @@ execute store result storage data tmp.material_shop.wood.lvl int 1 run scoreboar
 function dimensions/overworld/shop/material_shop/value/wood_data_by_lvl with storage data tmp.material_shop.wood
 data remove storage data tmp.material_shop.wood.now
 data modify storage data tmp.material_shop.wood.now set from storage data tmp.material_shop.wood.tmp
-function trial/creation/material_shop/transform_wood_value
 data remove storage data tmp.material_shop.wood.lvl
 data remove storage data tmp.material_shop.wood.tmp

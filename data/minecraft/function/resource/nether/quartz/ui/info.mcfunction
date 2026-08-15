@@ -1,13 +1,8 @@
 execute store result score #quartz_restore_base_cooldown tmp run function resource/nether/quartz/value/regen_base_value
 execute store result score #quartz_restore_cooldown tmp run function resource/nether/quartz/value/regen_value
 scoreboard players set #nether_workshop_effects_disabled tmp 0
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_restored trial matches 1 run scoreboard players set #nether_workshop_effects_disabled tmp 1
 scoreboard players set #quartz_workshop_effects_enabled tmp 1
-execute if score #trial_active trial matches 1 run scoreboard players set #quartz_workshop_effects_enabled tmp 0
-execute if score #creation_restored trial matches 1 run scoreboard players set #quartz_workshop_effects_enabled tmp 1
 
-scoreboard players set #quartz_regen_trial_3_effect tmp 0
-execute if score #trial_3 advancement matches 1 unless score #trial_advancement_reward_disabled var matches 1 run scoreboard players set #quartz_regen_trial_3_effect tmp 1
 
 data modify storage data tmp.resource.quartz.operation_display set value [{ text: "§a작동 중" }]
 
@@ -28,8 +23,6 @@ execute if score #11_1 nether_workshop matches 1 unless score #nether_workshop_e
 execute if score #11_1 nether_workshop matches 1 unless score #nether_workshop_effects_disabled tmp matches 1 run scoreboard players operation #11_1_quartz_regen_reduce_percent tmp *= #nine tmp
 execute if score #11_1 nether_workshop matches 1 unless score #nether_workshop_effects_disabled tmp matches 1 run scoreboard players set #quartz_regen_workshop_effect tmp 1
 execute if score #11_1 nether_workshop matches 1 unless score #nether_workshop_effects_disabled tmp matches 1 run data modify storage data tmp.resource.quartz.regen_effects append value { text: "", extra: [{ text: "§6🍀 " }, { text: "저장고 잔향", color:aqua, bold:true, shadow_color:-1426128896 }, { text: "§7: §e" }, { score: { name: "#11_1_quartz_regen_reduce_percent", objective: "tmp" }, color:yellow }, { text: "%§7 감소 §8(오버월드 결정 100,000,000개마다 9%)" }] }
-execute if score #quartz_regen_workshop_effect tmp matches 1 unless score #quartz_regen_trial_3_effect tmp matches 1 run data modify storage data tmp.resource.quartz.regen_display set value [{ score: { name: "#quartz_restore_base_cooldown", objective: "tmp" }, color:gray }, { text: "§7틱 §8→ " }, { score: { name: "#quartz_restore_cooldown", objective: "tmp" }, color:white }, { text: "§7틱 " }, { text: "§6🍀 ", hover_event: { action: "show_text", value: { storage: "data", nbt: "tmp.resource.quartz.regen_effects[]", interpret: true, separator: "\n" } } }]
-execute if score #quartz_regen_trial_3_effect tmp matches 1 run data modify storage data tmp.resource.quartz.regen_display set value [{ score: { name: "#quartz_restore_base_cooldown", objective: "tmp" }, color:gray }, { text: "§7틱 §8→ " }, { score: { name: "#quartz_restore_cooldown", objective: "tmp" }, color:white }, { text: "§7틱 "}, {"text":"⚡","color":"dark_purple","shadow_color":-1428043265,"bold":true,hover_event:{action:"show_text",value:{text:"§d§l§o이제... 조금 더 가치 있어졌어."}}}, { text: " §8(발전 과제 영향 적용)" }]
 
 data modify storage data tmp.resource.quartz.drop_display set value [{ text: "§f3∼6개" }]
 

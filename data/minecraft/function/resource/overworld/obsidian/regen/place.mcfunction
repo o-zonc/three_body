@@ -1,4 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_obsidian_resourceion trial matches 1 run return 0
 setblock -17 1 5 obsidian replace
 scoreboard players set #obsidian_present generate 1
 scoreboard players reset #obsidian_remain generate

@@ -1,5 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_drill_speed trial matches 1 run function trial/creation/lost
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_drill_speed trial matches 1 run return 0
 # drill 속도 업그레이드
 
 function dimensions/overworld/drill/value/speed_upgrade_cost

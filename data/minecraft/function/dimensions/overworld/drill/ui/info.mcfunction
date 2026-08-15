@@ -2,7 +2,6 @@ function dimensions/overworld/drill/value/y_text
 
 execute store result score #drill_speed_value tmp run function dimensions/overworld/drill/value/speed_value
 execute store result score #drill_effective_speed tmp run function dimensions/overworld/drill/value/effective_speed
-scoreboard players operation #drill_trial_speed tmp = #drill_effective_speed tmp
 function dimensions/overworld/shop/crystal_shop/apply/drill_speed
 execute store result score #drill_limit_value tmp run function dimensions/overworld/drill/value/limit_value
 
@@ -15,12 +14,6 @@ execute if score #y var matches -64000 run data modify storage data tmp.y_text_c
 # 깊이, 시련, 결정 상점에 따른 최종 속력 표시 컴포넌트
 data modify storage data tmp.drill_speed_component set value ["",{score:{name:"#drill_effective_speed",objective:"tmp"},color:"white"},"  §8(드릴이 정상 속도로 작동 중)"]
 execute unless score #drill_depth_speed tmp = #drill_speed_value tmp run data modify storage data tmp.drill_speed_component set value ["",{score:{name:"#drill_speed_value",objective:"tmp"},color:"white"},{text:" §8→ "},{score:{name:"#drill_depth_speed",objective:"tmp"},color:"red"},{text:" §8(깊이에 의해 감속됨)"}]
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 1..2 if score #drill_depth_speed tmp = #drill_speed_value tmp run data modify storage data tmp.drill_speed_component set value ["",{score:{name:"#drill_speed_value",objective:"tmp"},color:"white"},{text:" §8→ "},{score:{name:"#drill_trial_speed",objective:"tmp"},color:"gold"},{text:" §8(시련 영향 적용)"}]
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 1..2 unless score #drill_depth_speed tmp = #drill_speed_value tmp run data modify storage data tmp.drill_speed_component set value ["",{score:{name:"#drill_speed_value",objective:"tmp"},color:"white"},{text:" §8→ "},{score:{name:"#drill_depth_speed",objective:"tmp"},color:"red"},{text:" §8→ "},{score:{name:"#drill_trial_speed",objective:"tmp"},color:"gold"},{text:" §8(깊이 감속, 시련 영향 적용)"}]
-execute unless score #trial_id trial matches 1..2 if score #drill_depth_speed tmp = #drill_speed_value tmp unless score #drill_effective_speed tmp = #drill_trial_speed tmp run data modify storage data tmp.drill_speed_component set value ["",{score:{name:"#drill_trial_speed",objective:"tmp"},color:"white"},{text:" §8→ "},{score:{name:"#drill_effective_speed",objective:"tmp"},color:"aqua"},{text:" §8(결정 상점 증폭 적용)"}]
-execute unless score #trial_id trial matches 1..2 unless score #drill_depth_speed tmp = #drill_speed_value tmp unless score #drill_effective_speed tmp = #drill_trial_speed tmp run data modify storage data tmp.drill_speed_component set value ["",{score:{name:"#drill_speed_value",objective:"tmp"},color:"white"},{text:" §8→ "},{score:{name:"#drill_depth_speed",objective:"tmp"},color:"red"},{text:" §8→ "},{score:{name:"#drill_effective_speed",objective:"tmp"},color:"aqua"},{text:" §8(깊이 감속, 결정 상점 증폭 적용)"}]
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 1..2 unless score #drill_effective_speed tmp = #drill_trial_speed tmp run data modify storage data tmp.drill_speed_component set value ["",{score:{name:"#drill_speed_value",objective:"tmp"},color:"white"},{text:" §8→ "},{score:{name:"#drill_depth_speed",objective:"tmp"},color:"red"},{text:" §8→ "},{score:{name:"#drill_trial_speed",objective:"tmp"},color:"gold"},{text:" §8→ "},{score:{name:"#drill_effective_speed",objective:"tmp"},color:"aqua"},{text:" §8(깊이 감속, 시련 영향, 결정 상점 증폭 적용)"}]
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 run data modify storage data tmp.drill_speed_component set value {text:"§8손실되어 작동하지 않음",hover_event:{action:"show_text",value:{text:"그것은 손실되었습니다.",color:"dark_gray",shadow_color:-1428043265,bold:true}}}
 
 
 
@@ -42,9 +35,7 @@ execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
 
 data modify storage data tmp.creation_ui.drill_speed set value {text:"§b§l[ 속도 업그레이드 ]",hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.drill_speed.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger upgrade_trigger set 1104"}}
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_drill_speed trial matches 1 run data modify storage data tmp.creation_ui.drill_speed set value {text:"[ 손실됨 ]",color:"dark_gray",shadow_color:-1428043265,bold:true,hover_event:{action:"show_text",value:{text:"그것은 손실되었습니다.",color:"dark_gray",shadow_color:-1428043265,bold:true}}}
 data modify storage data tmp.creation_ui.drill_limit set value {text:"§b§l[ 높이 제한 업그레이드 ]",hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.drill_limit.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger upgrade_trigger set 1105"}}
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_drill_limit trial matches 1 run data modify storage data tmp.creation_ui.drill_limit set value {text:"[ 손실됨 ]",color:"dark_gray",shadow_color:-1428043265,bold:true,hover_event:{action:"show_text",value:{text:"그것은 손실되었습니다.",color:"dark_gray",shadow_color:-1428043265,bold:true}}}
 tellraw @s ["", \
   { text: "  §e§l{ 드릴 }§r" },\
   { text: "\n" },\

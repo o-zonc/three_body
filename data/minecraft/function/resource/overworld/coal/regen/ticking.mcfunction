@@ -1,8 +1,5 @@
 execute if score #disable_coal_resourceion var matches 1 run return 0
-# D의 시련에서 석탄 생산이 손실된 상태면 작동하지 않음
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_coal_resourceion trial matches 1 run setblock -15 1 3 air replace
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_coal_resourceion trial matches 1 run scoreboard players reset #coal_remain generate
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_coal_resourceion trial matches 1 run return 0
+
 # 동굴 해금 전에는 미작동
 execute unless score #cave unlock matches 1 run setblock -15 1 3 air replace
 execute unless score #cave unlock matches 1 run return 0

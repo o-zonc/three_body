@@ -3,12 +3,6 @@ execute if score #disable_obsidian_resourceion var matches 1 run return 0
 
 function resource/overworld/obsidian/lock/update
 
-# D의 시련에서 흑요석 생산이 손실된 상태면 작동하지 않음
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_obsidian_resourceion trial matches 1 run setblock -17 1 5 air replace
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_obsidian_resourceion trial matches 1 run scoreboard players set #obsidian_present generate 0
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_obsidian_resourceion trial matches 1 run scoreboard players reset #obsidian_remain generate
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_obsidian_resourceion trial matches 1 run return 0
-
 # 동굴 해금 전에는 미작동
 execute unless score #cave unlock matches 1 run return 0
 execute unless score #y var = #y var run return 0

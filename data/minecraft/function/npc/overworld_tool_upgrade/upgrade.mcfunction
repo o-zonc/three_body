@@ -1,5 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_tool trial matches 1 run function trial/creation/lost
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_tool trial matches 1 run return 0
 function tool/get_now_tool_data
 
 # cost 값이 없다면 더 이상 업그레이드가 불가능하다는 뜻
@@ -19,7 +17,6 @@ execute if score #tool_upgrade_cost_check tmp matches 1 run scoreboard players a
 execute if score #tool_upgrade_cost_check tmp matches 1 run clear @a[tag=player] *[custom_data~{tool:{}}]
 execute if score #tool_upgrade_cost_check tmp matches 1 as @a[tag=player] at @s run playsound block.anvil.use weather @s ~ ~ ~ 1 2
 execute if score #tool_upgrade_cost_check tmp matches 1 as @a[tag=player] at @s run playsound block.beacon.power_select weather @s ~ ~ ~ 0.7 2
-execute if score #tool_upgrade_cost_check tmp matches 1 as @a[tag=player] at @s run particle trial_spawner_detection ~ ~0.5 ~ 0.3 0.3 0.3 0 30 force @a[tag=player]
 execute if score #tool_upgrade_cost_check tmp matches 1 run return 1
 
 # 미소지 시 

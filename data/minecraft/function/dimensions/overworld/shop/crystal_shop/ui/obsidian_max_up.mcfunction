@@ -15,7 +15,6 @@ execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
 
 data modify storage data tmp.creation_ui.crystal_obsidian_max set value {text:"§b§l[ 업그레이드 ]",hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.crystal_shop_obsidian_max_up.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1201"}}
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_crystal_obsidian_max trial matches 1 run data modify storage data tmp.creation_ui.crystal_obsidian_max set value {text:"[ 손실됨 ]",color:"dark_gray",shadow_color:-1428043265,bold:true,hover_event:{action:"show_text",value:{text:"그것은 손실되었습니다.",color:"dark_gray",shadow_color:-1428043265,bold:true}}}
 tellraw @s ["", \
   { text: "  §b§l[ 결정 상점 - 흑요석 최대 소지량 증가 ]§r", shadow_color: -1429069738 },\
   { text: "\n" },\

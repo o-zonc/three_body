@@ -1,6 +1,4 @@
 function dimensions/nether/workshop/effect/5_1/effective
-execute unless score #trial_2 advancement matches 1 run return 0
-execute if score #trial_advancement_reward_disabled var matches 1 run return 0
 execute if score #5_1_effective tmp matches 1 run scoreboard players set #wood material 1000
 execute if score #5_1_effective tmp matches 1 run scoreboard players set #stone material 300
 execute if score #5_1_effective tmp matches 1 run scoreboard players set #coal material 100

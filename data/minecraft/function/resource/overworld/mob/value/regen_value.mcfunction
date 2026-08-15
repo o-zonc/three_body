@@ -1,4 +1,3 @@
-function trial/possibility/effective_level/mob_regen
 execute store result storage data tmp.regen_data.lvl int 1 run scoreboard players get #poss_effective_lvl tmp
 function resource/overworld/mob/value/regen_data_by_lvl with storage data tmp.regen_data
 data remove storage data tmp.regen_data.now

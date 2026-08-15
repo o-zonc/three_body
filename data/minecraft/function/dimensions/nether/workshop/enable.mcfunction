@@ -1,6 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_restored trial matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_restored trial matches 1 run title @s actionbar "§8D의 시련에서는 공방 효과를 사용할 수 없습니다."
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_restored trial matches 1 run return 0
 function dimensions/nether/workshop/update_tier_flags
 
 $execute if score #$(id) nether_workshop matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5

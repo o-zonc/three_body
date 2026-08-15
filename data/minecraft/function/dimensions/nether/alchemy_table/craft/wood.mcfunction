@@ -1,5 +1,3 @@
-execute if score #trial_id trial matches 5 run return 0
-
 data modify storage data tmp.cost set value [{type:"quartz",amount:30},{type:"gold",amount:3}]
 execute store result score #alchemy_cost_check tmp run function product/check_cost
 execute unless score #alchemy_cost_check tmp matches 1 run return 0

@@ -1,5 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_piglin_shop trial matches 1 run function trial/creation/lost
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_piglin_shop trial matches 1 run return 0
 function dimensions/nether/piglin_head/value/piglin_shop_upgrade_cost
 
 execute unless data storage data tmp.cost at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5

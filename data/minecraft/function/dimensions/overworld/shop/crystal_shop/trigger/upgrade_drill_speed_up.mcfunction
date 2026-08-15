@@ -1,5 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_crystal_drill_speed trial matches 1 run function trial/creation/lost
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_crystal_drill_speed trial matches 1 run return 0
 # 결정 상점 드릴 속도 증폭 업그레이드
 
 function dimensions/overworld/shop/crystal_shop/value/drill_speed_up_upgrade_cost

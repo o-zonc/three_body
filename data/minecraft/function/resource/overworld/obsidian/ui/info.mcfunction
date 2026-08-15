@@ -30,7 +30,6 @@ scoreboard players operation #obsidian_restore_second_decimal tmp %= #ten tmp
 
 data modify storage data tmp.resource.obsidian.restore_display set value [{ score: { name: "#obsidian_restore_second_int", objective: "tmp" }, color:white }, { text: "§7." }, { score: { name: "#obsidian_restore_second_decimal", objective: "tmp" }, color:white }, { text: "§7초 §8(Y -56 이하부터 급격히 빨라짐)" }]
 execute if score #5_1_effective tmp matches 1 run data modify storage data tmp.resource.obsidian.restore_display set value [{ score: { name: "#obsidian_restore_second_int", objective: "tmp" }, color:white }, { text: "§7." }, { score: { name: "#obsidian_restore_second_decimal", objective: "tmp" }, color:white }, { text: "§7초 " }, { text: "§6🍀", hover_event: { action: "show_text", value: ["", { text: "§6🍀 " }, { text: "심계층 간섭", color:aqua, bold:true, shadow_color:-1426128896 }, { text: "§7 효과로 인해 오버월드 Y 좌표가 -64로 고정됩니다." }] } }]
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_obsidian_resourceion trial matches 1 run data modify storage data tmp.resource.obsidian.restore_display set value [{text:"[ 손실됨 ]",color:"dark_gray",shadow_color:-1428043265,bold:true,hover_event:{action:"show_text",value:{text:"그것은 손실되었습니다.",color:"dark_gray",shadow_color:-1428043265,bold:true}}}]
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

@@ -4,14 +4,6 @@
 data remove storage data const
 data merge storage data {\
   const:{\
-    trial: {\
-      exit: [\
-        { id: 1, cost: [{ type: "trial_crystal", amount: 1 }] },\
-        { id: 2, cost: [{ type: "spirit", amount: 1 }] },\
-        { id: 3, cost: [{ type: "trial_crystal", amount: 1 }, { type: "spirit", amount: 1 }] },\
-        { id: 4, cost: [{ type: "compressed_overworld_crystal", amount: 1 }, { type: "compressed_nether_crystal", amount: 1 }] },\
-      ]\
-    },\
     dimensions: {\
       overworld: {\
         drill: {\

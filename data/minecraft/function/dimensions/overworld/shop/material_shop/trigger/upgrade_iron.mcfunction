@@ -1,5 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_material_shop_iron trial matches 1 run function trial/creation/lost
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_material_shop_iron trial matches 1 run return 0
 # 자원 상점 철 업그레이드
 function dimensions/overworld/shop/material_shop/value/iron_upgrade_cost
 function dimensions/overworld/shop/crystal_shop/value/apply_material_shop_cost_down
@@ -14,7 +12,6 @@ execute if score #iron_upgrade_cost_check tmp matches 1 run function dimensions/
 execute if score #iron_upgrade_cost_check tmp matches 1 run scoreboard players add #iron_lvl material_shop 1
 execute if score #iron_upgrade_cost_check tmp matches 1 at @s run playsound entity.ender_eye.death weather @s ~ ~ ~ 0.5 1.5
 execute if score #iron_upgrade_cost_check tmp matches 1 run function dimensions/overworld/shop/material_shop/ui/iron
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 4 if score #iron_upgrade_cost_check tmp matches 1 run function trial/possibility/on_upgrade {id:8}
 execute if score #iron_upgrade_cost_check tmp matches 1 run return 1
 
 execute unless score #iron_upgrade_cost_check tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5

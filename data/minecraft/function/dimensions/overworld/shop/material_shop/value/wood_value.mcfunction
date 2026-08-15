@@ -1,9 +1,7 @@
-function trial/possibility/effective_level/mat_wood
 execute store result storage data tmp.material_shop.wood.lvl int 1 run scoreboard players get #poss_effective_lvl tmp
 function dimensions/overworld/shop/material_shop/value/wood_data_by_lvl with storage data tmp.material_shop.wood
 data remove storage data tmp.material_shop.wood.now
 data modify storage data tmp.material_shop.wood.now set from storage data tmp.material_shop.wood.tmp
-function trial/creation/material_shop/transform_wood_value
 data remove storage data tmp.material_shop.wood.lvl
 data remove storage data tmp.material_shop.wood.tmp
 execute store result score #wood_value tmp run data get storage data tmp.material_shop.wood.now.value

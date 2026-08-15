@@ -1,6 +1,2 @@
 execute at @s run playsound minecraft:block.copper_bulb.place weather @s ~ ~ ~ 1 0.7
 function util/blank
-execute if score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"12_1",slot:"초차원 정박",effect:"§b§l네더 차원 압축 결정§7 보유량의 §6§l0.1%§7 만큼 §e§l흑요석 저장고 최대 저장량§7이 증가합니다.\n\n§8(흑요석 저장고 최대 저장량은 10,000개보다 많아질 수 없음)"}
-execute unless score #trial_active trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"12_1",slot:"초차원 정박",effect:"§b§l네더 차원 압축 결정§7 보유량의 §6§l0.1%§7 만큼 §e§l흑요석 저장고 최대 저장량§7이 증가합니다.\n\n§8(흑요석 저장고 최대 저장량은 10,000개보다 많아질 수 없음)"}
-execute if score #trial_active trial matches 1 unless score #trial_id trial matches 5 unless score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"12_1",slot:"초차원 정박",effect:"§b§l네더 차원 압축 결정§7 보유량의 §6§l0.1%§7 만큼 §e§l흑요석 저장고 최대 저장량§7이 증가합니다.\n\n§8(흑요석 저장고 최대 저장량은 10,000개보다 많아질 수 없음)"}
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"12_1",slot:"초차원 정박",effect:"§7§m네더 차원 압축 결정 보유량의 0.1% 만큼 흑요석 저장고 최대 저장량이 증가합니다.\n\n(흑요석 저장고 최대 저장량은 10,000개보다 많아질 수 없음)"}

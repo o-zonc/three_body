@@ -1,8 +1,4 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_nether_portal trial matches 1 run function trial/creation/lost
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_nether_portal trial matches 1 run return 0
 execute if score #nether_portal unlock matches 1 run return 0
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 1 run title @s actionbar "§c케찰의 시련 중에는 이 구역을 해금할 수 없습니다."
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 1 run return 0
 
 data remove storage data tmp.cost
 data remove storage data tmp.cost_original

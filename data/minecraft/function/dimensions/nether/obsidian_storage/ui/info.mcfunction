@@ -1,16 +1,8 @@
 execute unless score #obsidian_storage_amount var = #obsidian_storage_amount var run scoreboard players set #obsidian_storage_amount var 0
 function dimensions/nether/obsidian_storage/effective_milestone
 scoreboard players set #obsidian_storage_9_2_effective tmp 0
-execute if score #9_2 nether_workshop matches 1 unless score #trial_active trial matches 1 run scoreboard players set #obsidian_storage_9_2_effective tmp 1
-execute if score #9_2 nether_workshop matches 1 if score #creation_restored trial matches 1 run scoreboard players set #obsidian_storage_9_2_effective tmp 1
 scoreboard players set #obsidian_storage_11_1_effective tmp 0
-execute if score #11_1 nether_workshop matches 1 unless score #trial_active trial matches 1 run scoreboard players set #obsidian_storage_11_1_effective tmp 1
-execute if score #11_1 nether_workshop matches 1 if score #trial_active trial matches 1 unless score #trial_id trial matches 5 run scoreboard players set #obsidian_storage_11_1_effective tmp 1
-execute if score #11_1 nether_workshop matches 1 if score #creation_restored trial matches 1 run scoreboard players set #obsidian_storage_11_1_effective tmp 1
 scoreboard players set #obsidian_storage_12_1_effective tmp 0
-execute if score #12_1 nether_workshop matches 1 unless score #trial_active trial matches 1 run scoreboard players set #obsidian_storage_12_1_effective tmp 1
-execute if score #12_1 nether_workshop matches 1 if score #trial_active trial matches 1 unless score #trial_id trial matches 5 run scoreboard players set #obsidian_storage_12_1_effective tmp 1
-execute if score #12_1 nether_workshop matches 1 if score #creation_restored trial matches 1 run scoreboard players set #obsidian_storage_12_1_effective tmp 1
 
 
 data modify storage data tmp.obsidian_storage.text.goal.1 set value "1개 → '석영' 해금"
@@ -66,8 +58,6 @@ execute if score #obsidian_storage_effective_milestone tmp matches 10000.. run d
 execute unless score #obsidian_storage_effective_milestone tmp matches 10000.. run data modify storage data tmp.obsidian_storage.text.goals append value { storage: "data", nbt: "tmp.obsidian_storage.text.goal.14", interpret: true, color: dark_gray }
 data modify storage data tmp.obsidian_storage.button.store_one set value { text: "§5§l[ 흑요석 1개 저장 ]", shadow_color: -721419265, hover_event: { action: "show_text", value: ["", { text: "흑요석 1개 저장하기" }] }, click_event: { action: "run_command", command: "/trigger obsidian_storage_trigger set 1" } }
 data modify storage data tmp.obsidian_storage.button.store_all set value { text: "§5§l[ 보유 흑요석 전부 저장 ]", shadow_color: -721419265, hover_event: { action: "show_text", value: ["", { text: "보유 중인 흑요석을 가능한 만큼 저장하기\n최대 저장량: " }, { score: { name: "#obsidian_storage_capacity", objective: "tmp" } }, { text: "개" }] }, click_event: { action: "run_command", command: "/trigger obsidian_storage_trigger set 2" } }
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_obsidian_storage_store trial matches 1 run data modify storage data tmp.obsidian_storage.button.store_one set value {text:"[ 손실됨 ]",color:"dark_gray",shadow_color:-1428043265,bold:true,hover_event:{action:"show_text",value:{text:"그것은 손실되었습니다.",color:"dark_gray",shadow_color:-1428043265,bold:true}}}
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_obsidian_storage_store trial matches 1 run data modify storage data tmp.obsidian_storage.button.store_all set value {text:"[ 손실됨 ]",color:"dark_gray",shadow_color:-1428043265,bold:true,hover_event:{action:"show_text",value:{text:"그것은 손실되었습니다.",color:"dark_gray",shadow_color:-1428043265,bold:true}}}
 execute at @s run playsound block.shroomlight.place weather @s ~ ~ ~ 1 0.5
 execute at @s run playsound block.sculk.place weather @s ~ ~ ~ 1 0.5
 function util/blank

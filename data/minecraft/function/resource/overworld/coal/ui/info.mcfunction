@@ -22,7 +22,6 @@ scoreboard players operation #coal_restore_second_decimal tmp = #coal_restore_se
 scoreboard players operation #coal_restore_second_decimal tmp %= #ten tmp
 data modify storage data tmp.coal_restore_component set value ["",{score:{name:"#coal_restore_second_int",objective:"tmp"},color:"white"},{text:"§7."},{score:{name:"#coal_restore_second_decimal",objective:"tmp"},color:"white"},{text:"§7초 §8(Y 좌표가 낮아질 수록 빨리 재생산됨)"}]
 execute unless score #coal_restore_base_cooldown tmp = #coal_restore_cooldown tmp run data modify storage data tmp.coal_restore_component set value ["",{score:{name:"#coal_restore_base_second_int",objective:"tmp"},color:"white"},{text:"§7."},{score:{name:"#coal_restore_base_second_decimal",objective:"tmp"},color:"white"},{text:"§7초 §8→ "},{score:{name:"#coal_restore_second_int",objective:"tmp"},color:"aqua"},{text:"§7."},{score:{name:"#coal_restore_second_decimal",objective:"tmp"},color:"aqua"},{text:"§7초 §8(결정 상점 영향 적용, Y 좌표가 낮아질 수록 빨리 재생산됨)"}]
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_coal_resourceion trial matches 1 run data modify storage data tmp.coal_restore_component set value {text:"[ 손실됨 ]",color:"dark_gray",shadow_color:-1428043265,bold:true,hover_event:{action:"show_text",value:{text:"그것은 손실되었습니다.",color:"dark_gray",shadow_color:-1428043265,bold:true}}}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

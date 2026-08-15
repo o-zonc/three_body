@@ -16,17 +16,3 @@ execute as @a[tag=player] if score @s entrance_trigger matches 1104 run function
 
 # 네더 (12XX)
 execute as @a[tag=player] if score @s entrance_trigger matches 1201 run function dimensions/nether/entrance/area_zone/unlock
-
-
-
-# 엔드 (13XX)
-
-
-
-
-# D의 시련 통로 (15XX)
-execute as @a[tag=player] if score @s entrance_trigger matches 1501 run function trial/creation/exit/unlock/1
-execute as @a[tag=player] if score @s entrance_trigger matches 1502 run function trial/creation/exit/unlock/2
-execute as @a[tag=player] if score @s entrance_trigger matches 1503 run function trial/creation/exit/unlock/3
-execute as @a[tag=player] if score @s entrance_trigger matches 1504 run function trial/creation/exit/unlock/4
-execute as @a[tag=player] if score @s entrance_trigger matches 1.. run scoreboard players reset @s entrance_trigger

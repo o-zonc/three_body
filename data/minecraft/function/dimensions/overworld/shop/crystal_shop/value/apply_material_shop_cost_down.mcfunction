@@ -2,7 +2,6 @@
 
 execute unless data storage data tmp.cost run return 0
 data modify storage data tmp.cost_original set from storage data tmp.cost
-function trial/possibility/effective_level/mat_shop_cost
 execute store result storage data tmp.crystal_shop.material_shop_cost_down.lvl int 1 run scoreboard players get #poss_effective_lvl tmp
 function dimensions/overworld/shop/crystal_shop/value/material_shop_cost_down_data_by_lvl with storage data tmp.crystal_shop.material_shop_cost_down
 data remove storage data tmp.crystal_shop.material_shop_cost_down.now
@@ -19,5 +18,3 @@ execute if data storage data tmp.cost[{type:"coal"}].amount run scoreboard playe
 execute if data storage data tmp.cost[{type:"coal"}].amount run scoreboard players operation #cost_down_amount tmp /= #cost_down_divisor tmp
 execute if data storage data tmp.cost[{type:"coal"}].amount if score #cost_down_amount tmp matches ..0 run scoreboard players set #cost_down_amount tmp 1
 execute if data storage data tmp.cost[{type:"coal"}].amount store result storage data tmp.cost[{type:"coal"}].amount int 1 run scoreboard players get #cost_down_amount tmp
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 if data storage data tmp.cost[{type:"coal"}] run data modify storage data tmp.cost[{type:"coal"}].type set value "trial_crystal"
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 if data storage data tmp.cost_original[{type:"coal"}] run data modify storage data tmp.cost_original[{type:"coal"}].type set value "trial_crystal"

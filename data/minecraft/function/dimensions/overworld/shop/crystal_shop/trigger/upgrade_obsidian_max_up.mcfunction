@@ -1,5 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_crystal_obsidian_max trial matches 1 run function trial/creation/lost
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_crystal_obsidian_max trial matches 1 run return 0
 # 결정 상점 흑요석 최대 보유량 업그레이드
 
 function dimensions/overworld/shop/crystal_shop/value/obsidian_max_up_upgrade_cost

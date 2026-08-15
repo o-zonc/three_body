@@ -1,6 +1,3 @@
-# D의 시련에서는 드릴이 손실되어 진행하지 않음
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 run return 0
-
 # 동굴 해금 전에는 드릴을 진행하지 않음
 execute unless score #cave unlock matches 1 run return 0
 

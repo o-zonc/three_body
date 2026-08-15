@@ -1,5 +1,3 @@
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_nether_entrance trial matches 1 run function trial/creation/lost
-execute if score #trial_active trial matches 1 if score #trial_id trial matches 5 unless score #creation_available_nether_entrance trial matches 1 run return 0
 execute if score #nether_entrance unlock matches 1 run return 0
 
 data remove storage data tmp.cost

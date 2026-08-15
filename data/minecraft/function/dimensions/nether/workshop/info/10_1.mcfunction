@@ -1,5 +1,2 @@
 execute at @s run playsound minecraft:block.copper_bulb.place weather @s ~ ~ ~ 1 0.7
 function util/blank
-execute if score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"10_1",slot:"고대의 회귀",effect:"§e§l석영의 재생산 대기 시간§7이 추가로 §6§l30%§7 감소합니다.\n\n또한 §f§l석영§7 보유량의 §6§l0.1%§7 만큼 §f§l석탄§7과 §f§l돌§7의 수급량이 증폭됩니다.\n\n그리고 매 틱, 현재 §b§l오버월드 차원 압축§7 시 획득할 수 있는 §f§l오버월드 차원 압축 결정§7의 §6§l0.01%§7를 획득합니다."}
-execute unless score #trial_active trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"10_1",slot:"고대의 회귀",effect:"§e§l석영의 재생산 대기 시간§7이 추가로 §6§l30%§7 감소합니다.\n\n또한 §f§l석영§7 보유량의 §6§l0.1%§7 만큼 §f§l석탄§7과 §f§l돌§7의 수급량이 증폭됩니다.\n\n그리고 매 틱, 현재 §b§l오버월드 차원 압축§7 시 획득할 수 있는 §f§l오버월드 차원 압축 결정§7의 §6§l0.01%§7를 획득합니다."}
-execute if score #trial_active trial matches 1 unless score #creation_restored trial matches 1 run function dimensions/nether/workshop/info/show_from_const {id:"10_1",slot:"고대의 회귀",effect:"§7§m석영의 재생산 대기 시간이 추가로 30% 감소합니다.\n\n또한 석영 보유량의 0.1% 만큼 석탄과 돌의 수급량이 증폭됩니다.\n\n그리고 매 틱, 현재 오버월드 차원 압축 시 획득할 수 있는 오버월드 차원 압축 결정의 0.01%를 획득합니다."}

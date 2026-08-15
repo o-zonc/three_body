@@ -15,7 +15,6 @@ execute unless score #coal material = #coal material run scoreboard players set 
 execute unless score #iron material = #iron material run scoreboard players set #iron material 0
 execute unless score #obsidian material = #obsidian material run scoreboard players set #obsidian material 0
 execute unless score #compressed_overworld_crystal material = #compressed_overworld_crystal material run scoreboard players set #compressed_overworld_crystal material 0
-execute unless score #trial_crystal material = #trial_crystal material run scoreboard players set #trial_crystal material 0
 execute unless score #spirit material = #spirit material run scoreboard players set #spirit material 0
 
 
