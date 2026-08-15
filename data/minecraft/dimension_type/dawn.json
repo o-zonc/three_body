@@ -2,50 +2,50 @@
     "ambient_light": 0.08,
 
     "attributes": {
-        "minecraft:audio/background_music": {
+        "audio/background_music": {
         "default": {
-            "sound": "minecraft:music.nether.soul_sand_valley",
+            "sound": "music.nether.soul_sand_valley",
             "min_delay": 1200,
             "max_delay": 2400,
             "replace_current_music": false
         }
         },
 
-        "minecraft:visual/ambient_light_color": "#71CDF9",
+        "visual/ambient_light_color": "#71CDF9",
 
-        "minecraft:visual/fog_color": "#B8DDF2",
+        "visual/fog_color": "#B8DDF2",
 
-        "minecraft:visual/fog_start_distance": 0.0,
+        "visual/fog_start_distance": 0.0,
 
-        "minecraft:visual/fog_end_distance": 192.0,
+        "visual/fog_end_distance": 192.0,
 
-        "minecraft:visual/cloud_color": "#CC71CDF9",
+        "visual/cloud_color": "#CC71CDF9",
 
-        "minecraft:visual/cloud_height": 192.0,
+        "visual/cloud_height": 192.0,
 
-        "minecraft:visual/cloud_fog_end_distance": 48.0,
+        "visual/cloud_fog_end_distance": 48.0,
 
-        "minecraft:visual/sky_color": "#F971BE",
+        "visual/sky_color": "#F971BE",
 
-        "minecraft:visual/sky_light_color": "#71CDF9",
+        "visual/sky_light_color": "#71CDF9",
 
-        "minecraft:visual/sky_light_factor": 0.82,
+        "visual/sky_light_factor": 0.82,
 
-        "minecraft:visual/sunrise_sunset_color": "#FFF971BE",
+        "visual/sunrise_sunset_color": "#FFF971BE",
 
-        "minecraft:visual/sun_angle": 270.0,
+        "visual/sun_angle": 270.0,
 
-        "minecraft:visual/moon_angle": 180.0,
+        "visual/moon_angle": 180.0,
 
-        "minecraft:visual/moon_phase": "full_moon",
+        "visual/moon_phase": "full_moon",
 
-        "minecraft:visual/star_angle": 90.0,
+        "visual/star_angle": 90.0,
 
-        "minecraft:visual/star_brightness": 0.72,
+        "visual/star_brightness": 0.72,
 
-        "minecraft:gameplay/water_evaporates": false,
+        "gameplay/water_evaporates": false,
 
-        "minecraft:gameplay/fast_lava": false
+        "gameplay/fast_lava": false
     },
 
     "has_ceiling": false,
@@ -58,7 +58,7 @@
 
     "height": 384,
 
-    "infiniburn": "#minecraft:infiniburn_overworld",
+    "infiniburn": "#infiniburn_overworld",
 
     "logical_height": 384,
 
@@ -70,7 +70,7 @@
 
     "coordinate_scale": 1.0,
 
-    "default_clock": "minecraft:overworld",
+    "default_clock": "overworld",
 
     "skybox": "overworld",
 

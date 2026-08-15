@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:0_overworld/01_chaos",
+	"parent": "0_overworld/01_chaos",
 	"display": {
-		"icon": "minecraft:vindicator_spawn_egg",
+		"icon": "vindicator_spawn_egg",
 		"title": "이른 멸망",
 		"description": "불운하시군요.\n\n§7§kdot§r§7의 권능으로 세계가 예정보다 일찍 멸망했습니다. 게임 진행 속도가 약간 증가합니다.",
 		"frame": "challenge",
@@ -11,7 +11,7 @@
 	},
 	"criteria": {
 		"epic_clear": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	}
 }

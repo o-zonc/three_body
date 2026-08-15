@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:3_polarnight/98_last",
+	"parent": "3_polarnight/98_last",
 		"display": {
-		"icon": "minecraft:soul_lantern",
+		"icon": "soul_lantern",
 		"title": "박명",
 		"description": "아침이 찾아오려나 봅니다.",
 		"frame": "task",
@@ -11,12 +11,12 @@
 		},
 	"criteria": {
 		"get_stick": {
-			"trigger": "minecraft:inventory_changed",
+			"trigger": "inventory_changed",
 			"conditions": {
 				"items": [
 					{
 						"items": [
-					"minecraft:stick"
+					"stick"
 						]
 					}
 				]

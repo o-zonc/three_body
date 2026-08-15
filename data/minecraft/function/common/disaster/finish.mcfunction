@@ -14,10 +14,10 @@ title @a clear
 # ==========================================
 
 # 얼어붙은 세계의 지속적인 날씨 함수
-schedule clear minecraft:frozen/weather
+schedule clear frozen/weather
 
 # 혹시 남아 있는 이전 차원의 전환 예약 제거
-schedule clear minecraft:common/next
+schedule clear common/next
 
 # ==========================================
 # 멸망한 이전 차원의 상태 초기화
@@ -33,7 +33,7 @@ execute if score #GLOBAL current_dim matches 2 if score #GLOBAL state_frozen mat
 # 다음 차원으로 이동
 # ==========================================
 
-function minecraft:common/next
+function common/next
 
 # ==========================================
 # 새 차원에서 시대 시스템 재개
@@ -42,6 +42,3 @@ function minecraft:common/next
 scoreboard players set #GLOBAL era_paused 0
 scoreboard players set #GLOBAL user_disaster 0
 scoreboard players set #disaster_running run 0
-
-# 멸망 연출 종료 후 자원 사이드바 복구
-function minecraft:resource/sidebar/show

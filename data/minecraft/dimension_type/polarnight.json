@@ -14,14 +14,14 @@
 
     "coordinate_scale": 1.0,
 
-    "infiniburn": "#minecraft:infiniburn_overworld",
+    "infiniburn": "#infiniburn_overworld",
 
     "skybox": "overworld",
     "cardinal_light": "default",
-    "default_clock": "minecraft:overworld",
+    "default_clock": "overworld",
 
     "attributes": {
-        "minecraft:audio/background_music": {
+        "audio/background_music": {
             "default": {
                 "sound": "music.overworld.deep_dark",
                 "max_delay": 2400,
@@ -30,30 +30,30 @@
             }
         },
 
-        "minecraft:visual/ambient_light_color": "#71CDF9",
+        "visual/ambient_light_color": "#71CDF9",
 
-        "minecraft:visual/cloud_color": "#CC182830",
-        "minecraft:visual/cloud_fog_end_distance": 48.0,
-        "minecraft:visual/cloud_height": 192.0,
+        "visual/cloud_color": "#CC182830",
+        "visual/cloud_fog_end_distance": 48.0,
+        "visual/cloud_height": 192.0,
 
-        "minecraft:visual/sky_color": "#07131C",
+        "visual/sky_color": "#07131C",
 
-        "minecraft:visual/fog_color": "#486370",
-        "minecraft:visual/sky_fog_end_distance": 96.0,
+        "visual/fog_color": "#486370",
+        "visual/sky_fog_end_distance": 96.0,
 
-        "minecraft:visual/sky_light_color": "#222b30",
-        "minecraft:visual/sky_light_factor": 0.20,
+        "visual/sky_light_color": "#222b30",
+        "visual/sky_light_factor": 0.20,
 
-        "minecraft:visual/sun_angle": 180.0,
-        "minecraft:visual/sunrise_sunset_color": "#00000000",
+        "visual/sun_angle": 180.0,
+        "visual/sunrise_sunset_color": "#00000000",
 
-        "minecraft:visual/moon_angle": 0.0,
-        "minecraft:visual/moon_phase": "full_moon",
+        "visual/moon_angle": 0.0,
+        "visual/moon_phase": "full_moon",
 
-        "minecraft:visual/star_angle": 0.0,
-        "minecraft:visual/star_brightness": 0.89,
+        "visual/star_angle": 0.0,
+        "visual/star_brightness": 0.89,
 
-        "minecraft:gameplay/water_evaporates": false,
-        "minecraft:gameplay/fast_lava": false
+        "gameplay/water_evaporates": false,
+        "gameplay/fast_lava": false
     }
 }

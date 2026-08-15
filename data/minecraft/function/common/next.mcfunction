@@ -1,8 +1,8 @@
-schedule clear minecraft:frozen/weather
+schedule clear frozen/weather
 
 # Check if all three primary dimensions have been visited. If so, move to polarnight.
-execute if score #GLOBAL visited_polar matches 1.. run return run function minecraft:dawn/move
-execute if score #GLOBAL visited_dried matches 1.. if score #GLOBAL visited_frozen matches 1.. if score #GLOBAL visited_overworld matches 1.. run return run function minecraft:polarnight/move
+execute if score #GLOBAL visited_polar matches 1.. run return run function dawn/move
+execute if score #GLOBAL visited_dried matches 1.. if score #GLOBAL visited_frozen matches 1.. if score #GLOBAL visited_overworld matches 1.. run return run function polarnight/move
 
 # Summon markers to represent unvisited dimensions
 execute at @a[limit=1] run summon marker ~ ~ ~ {Tags:["next_dim_selector", "dim_dried"]}
@@ -17,7 +17,7 @@ execute if score #GLOBAL current_dim matches 1 run tag @e[type=marker,tag=next_d
 execute if score #GLOBAL current_dim matches 2 run tag @e[type=marker,tag=next_dim_selector,tag=dim_frozen,limit=1] add current
 
 # 'current' 태그가 없는 나머지 마커 중에서 무작위로 하나를 골라 이동 함수를 실행합니다.
-execute as @e[type=marker,tag=next_dim_selector,tag=!current,sort=random,limit=1] run function minecraft:common/run_move
+execute as @e[type=marker,tag=next_dim_selector,tag=!current,sort=random,limit=1] run function common/run_move
 
 # Clean up the markers
 kill @e[type=marker,tag=next_dim_selector]

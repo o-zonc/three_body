@@ -3,10 +3,10 @@ effect clear @a blindness
 effect clear @a darkness
 title @a clear
 
-execute in minecraft:dawn run tp @a ~ 64 ~
+execute in dawn run tp @a ~ 64 ~
 
-execute in minecraft:dawn run time set 23000
-gamerule minecraft:advance_time false
+execute in dawn run time set 23000
+gamerule advance_time false
 
 scoreboard players set #GLOBAL visited_polar 0
 scoreboard players set #GLOBAL current_dim 4

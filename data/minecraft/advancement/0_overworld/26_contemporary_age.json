@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:0_overworld/25_modern_age",
+	"parent": "0_overworld/25_modern_age",
 	"display": {
-		"icon": "minecraft:observer",
+		"icon": "observer",
 		"title": "현대",
 		"description": "정보를 기록하고 자동화된 기술을 발전시킵니다.",
 		"frame": "task",
@@ -10,8 +10,8 @@
 	},
 	"criteria": {
 		"manual_test": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	},
-	"rewards": {"function": "minecraft:story/overworld/age/26_contemporary_age"}
+	"rewards": {"function": "story/overworld/age/26_contemporary_age"}
 }

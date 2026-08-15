@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:1_frozen/00_root",
+	"parent": "1_frozen/00_root",
 	"display": {
-		"icon": "minecraft:dragon_egg",
+		"icon": "dragon_egg",
 		"title": "삼체의 비밀",
 		"description": "얼어붙은 세계 밑바닥에서 고대의 진실을 마주했습니다.",
 		"frame": "task",
@@ -11,12 +11,12 @@
 	},
 	"criteria": {
 		"get_wood": {
-			"trigger": "minecraft:inventory_changed",
+			"trigger": "inventory_changed",
 			"conditions": {
 				"items": [
 					{
 						"items": [
-							"minecraft:oak_log"
+							"oak_log"
 						]
 					}
 				]

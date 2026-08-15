@@ -4,9 +4,9 @@
     "predicate": {
         "equipment": {
             "mainhand": {
-                "items": "minecraft:green_dye",
+                "items": "green_dye",
                 "components": {
-                    "minecraft:custom_data": {
+                    "custom_data": {
                         "overworld_move": 1
                     }
                 }

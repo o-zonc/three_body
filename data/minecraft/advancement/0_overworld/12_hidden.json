@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:0_overworld/10_disaster",
+	"parent": "0_overworld/10_disaster",
 	"display": {
-		"icon": "minecraft:book",
+		"icon": "book",
 		"title": "숨겨진 메시지: 오버월드",
 		"description": "숨겨진 메시지를 찾았습니다.\n\n§7\"이 문명은 카운터에게 개조당했습니다.\"\n\n§6§o르프라 사라디움! - 상추를 닮은 누군가",
 		"frame": "challenge",
@@ -11,7 +11,7 @@
 	},
 	"criteria": {
 		"manual_test": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	}
 }

@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:0_overworld/00_root",
+	"parent": "0_overworld/00_root",
 	"display": {
-		"icon": "minecraft:spyglass",
+		"icon": "spyglass",
 		"title": "천문관이 되다",
 		"description": "난세기의 주기 예측에 성공했습니다.\n\n이제 다음 난세기를 예측할 수 있습니다.",
 		"frame": "task",
@@ -11,10 +11,10 @@
 	},
 	"criteria": {
 		"epic_clear": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	},
 	"rewards": {
-		"function": "minecraft:common/structure/observatory/on"
+		"function": "common/structure/observatory/on"
 	}
 }

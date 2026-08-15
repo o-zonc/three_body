@@ -6,9 +6,9 @@
 # 실제 게임 상태를 변경하지 않고 현재 시대 상태를 확인합니다.
 #
 # 개별 테스트:
-#   /function minecraft:test/pause
-#   /function minecraft:test/disaster
-#   /function minecraft:test/transition
+#   /function test/pause
+#   /function test/disaster
+#   /function test/transition
 #
 # pause 테스트는 5초 후 자동으로 pause_check를 실행합니다.
 #

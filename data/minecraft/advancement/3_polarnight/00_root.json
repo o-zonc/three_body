@@ -1,9 +1,9 @@
 {
 	"display": {
-		"icon": "minecraft:sulfur_cube_spawn_egg",
+		"icon": "sulfur_cube_spawn_egg",
 		"title": "극야",
 		"description": "세계가 끝나지 않는 어둠에 휩싸였습니다.",
-		"background": "minecraft:block/pale_moss_block",
+		"background": "block/pale_moss_block",
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true,
@@ -11,9 +11,9 @@
 	},
 	"criteria": {
 		"enter_polarnight": {
-			"trigger": "minecraft:changed_dimension",
+			"trigger": "changed_dimension",
 			"conditions": {
-				"to": "minecraft:polarnight"
+				"to": "polarnight"
 			}
 		}
 	}

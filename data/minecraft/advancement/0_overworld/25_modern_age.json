@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:0_overworld/24_medieval_age",
+	"parent": "0_overworld/24_medieval_age",
 	"display": {
-		"icon": "minecraft:redstone",
+		"icon": "redstone",
 		"title": "근대",
 		"description": "과학과 기계의 힘을 이용하기 시작합니다.",
 		"frame": "task",
@@ -10,8 +10,8 @@
 	},
 	"criteria": {
 		"manual_test": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	},
-	"rewards": {"function": "minecraft:story/overworld/age/25_modern_age"}
+	"rewards": {"function": "story/overworld/age/25_modern_age"}
 }

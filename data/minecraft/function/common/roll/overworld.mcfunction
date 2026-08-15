@@ -10,27 +10,27 @@ execute if score #GLOBAL state_overworld matches 0 if score #ROLL roll_chance ma
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 0..9 run scoreboard players set #GLOBAL state_overworld 1
 
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 0..1 run scoreboard players set #GLOBAL timer_overworld 300
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 0..1 run bossbar set minecraft:bossbar_overworld max 300
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 0..1 run bossbar set bossbar_overworld max 300
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 2..3 run scoreboard players set #GLOBAL timer_overworld 600
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 2..3 run bossbar set minecraft:bossbar_overworld max 600
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 2..3 run bossbar set bossbar_overworld max 600
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 4..5 run scoreboard players set #GLOBAL timer_overworld 900
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 4..5 run bossbar set minecraft:bossbar_overworld max 900
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 4..5 run bossbar set bossbar_overworld max 900
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 6..7 run scoreboard players set #GLOBAL timer_overworld 1200
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 6..7 run bossbar set minecraft:bossbar_overworld max 1200
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 6..7 run bossbar set bossbar_overworld max 1200
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 8..9 run scoreboard players set #GLOBAL timer_overworld 1800
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 8..9 run bossbar set minecraft:bossbar_overworld max 1800
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 8..9 run bossbar set bossbar_overworld max 1800
 
 # [항성기 복귀: 90% (10~99)]
 execute if score #GLOBAL state_overworld matches 1 if score #ROLL roll_chance matches 10..99 run tellraw @a[nbt={Dimension:"minecraft:overworld"}] [{"text":"[오버월드] 평화로운 항성기 도래","color":"green"}]
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 10..99 run scoreboard players set #GLOBAL state_overworld 0
 
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 10..27 run scoreboard players set #GLOBAL timer_overworld 300
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 10..27 run bossbar set minecraft:bossbar_overworld max 300
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 10..27 run bossbar set bossbar_overworld max 300
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 28..45 run scoreboard players set #GLOBAL timer_overworld 600
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 28..45 run bossbar set minecraft:bossbar_overworld max 600
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 28..45 run bossbar set bossbar_overworld max 600
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 46..63 run scoreboard players set #GLOBAL timer_overworld 1200
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 46..63 run bossbar set minecraft:bossbar_overworld max 1200
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 46..63 run bossbar set bossbar_overworld max 1200
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 64..81 run scoreboard players set #GLOBAL timer_overworld 1800
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 64..81 run bossbar set minecraft:bossbar_overworld max 1800
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 64..81 run bossbar set bossbar_overworld max 1800
 execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 82..99 run scoreboard players set #GLOBAL timer_overworld 2400
-execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 82..99 run bossbar set minecraft:bossbar_overworld max 2400
+execute unless score #GLOBAL state_overworld matches 2 if score #ROLL roll_chance matches 82..99 run bossbar set bossbar_overworld max 2400

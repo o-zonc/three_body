@@ -1,12 +1,12 @@
 # ==========================================
 # RESOURCE API TEST
 # ==========================================
-# Run with: /function minecraft:test/resource
+# Run with: /function test/resource
 #
 # IMPORTANT:
 # This test does not create, initialize, reset, or modify the material
 # scoreboard/objective outside of the API calls being tested.
-# The game must already have completed minecraft:init.
+# The game must already have completed init.
 #
 # The test starts from the current #iron value and restores that value
 # after the test so running the test does not alter game state.
@@ -27,13 +27,13 @@ execute store result score #resource_test_initial resource_test run scoreboard p
 tellraw @a {"text":"========================================","color":"dark_gray"}
 tellraw @a {"text":"        RESOURCE API TEST","color":"gold","bold":true}
 tellraw @a {"text":"========================================","color":"dark_gray"}
-tellraw @a {"text":"Requires: minecraft:init already executed","color":"gray"}
+tellraw @a {"text":"Requires: init already executed","color":"gray"}
 
 # --------------------------------------------------
 # SET: iron = 100
 # --------------------------------------------------
-data modify storage minecraft:resource input set value {type:"iron",amount:100}
-function minecraft:resource/set with storage minecraft:resource input
+data modify storage resource input set value {type:"iron",amount:100}
+function resource/set with storage resource input
 execute store result score #resource_test_value resource_test run scoreboard players get #iron material
 
 scoreboard players add #resource_test_total resource_test 1
@@ -45,8 +45,8 @@ execute unless score #resource_test_value resource_test matches 100 run tellraw 
 # --------------------------------------------------
 # ADD: iron + 10 = 110
 # --------------------------------------------------
-data modify storage minecraft:resource input set value {type:"iron",amount:10}
-function minecraft:resource/add with storage minecraft:resource input
+data modify storage resource input set value {type:"iron",amount:10}
+function resource/add with storage resource input
 execute store result score #resource_test_value resource_test run scoreboard players get #iron material
 
 scoreboard players add #resource_test_total resource_test 1
@@ -58,8 +58,8 @@ execute unless score #resource_test_value resource_test matches 110 run tellraw 
 # --------------------------------------------------
 # HAS: iron >= 100 = true
 # --------------------------------------------------
-data modify storage minecraft:resource input set value {type:"iron",amount:100}
-execute store result score #resource_test_result resource_test run function minecraft:resource/has with storage minecraft:resource input
+data modify storage resource input set value {type:"iron",amount:100}
+execute store result score #resource_test_result resource_test run function resource/has with storage resource input
 
 scoreboard players add #resource_test_total resource_test 1
 execute if score #resource_test_result resource_test matches 1 run scoreboard players add #resource_test_pass resource_test 1
@@ -70,8 +70,8 @@ execute unless score #resource_test_result resource_test matches 1 run tellraw @
 # --------------------------------------------------
 # REMOVE: iron - 30 = 80
 # --------------------------------------------------
-data modify storage minecraft:resource input set value {type:"iron",amount:30}
-function minecraft:resource/remove with storage minecraft:resource input
+data modify storage resource input set value {type:"iron",amount:30}
+function resource/remove with storage resource input
 execute store result score #resource_test_value resource_test run scoreboard players get #iron material
 
 scoreboard players add #resource_test_total resource_test 1
@@ -83,8 +83,8 @@ execute unless score #resource_test_value resource_test matches 80 run tellraw @
 # --------------------------------------------------
 # REMOVE: iron - 100 must fail and remain 80
 # --------------------------------------------------
-data modify storage minecraft:resource input set value {type:"iron",amount:100}
-function minecraft:resource/remove with storage minecraft:resource input
+data modify storage resource input set value {type:"iron",amount:100}
+function resource/remove with storage resource input
 execute store result score #resource_test_value resource_test run scoreboard players get #iron material
 
 scoreboard players add #resource_test_total resource_test 1
@@ -96,9 +96,9 @@ execute unless score #resource_test_value resource_test matches 80 run tellraw @
 # --------------------------------------------------
 # GET: output.amount must be 80
 # --------------------------------------------------
-data modify storage minecraft:resource input set value {type:"iron"}
-function minecraft:resource/get with storage minecraft:resource input
-execute store result score #resource_test_value resource_test run data get storage minecraft:resource output.amount 1
+data modify storage resource input set value {type:"iron"}
+function resource/get with storage resource input
+execute store result score #resource_test_value resource_test run data get storage resource output.amount 1
 
 scoreboard players add #resource_test_total resource_test 1
 execute if score #resource_test_value resource_test matches 80 run scoreboard players add #resource_test_pass resource_test 1

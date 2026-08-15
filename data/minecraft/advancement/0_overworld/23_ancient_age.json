@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:0_overworld/22_iron_age",
+	"parent": "0_overworld/22_iron_age",
 	"display": {
-		"icon": "minecraft:enchanting_table",
+		"icon": "enchanting_table",
 		"title": "고대",
 		"description": "지식과 기술을 체계적으로 축적하기 시작합니다.",
 		"frame": "task",
@@ -10,8 +10,8 @@
 	},
 	"criteria": {
 		"manual_test": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	},
-	"rewards": {"function": "minecraft:story/overworld/age/23_ancient_age"}
+	"rewards": {"function": "story/overworld/age/23_ancient_age"}
 }

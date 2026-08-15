@@ -4,4 +4,4 @@
 
 title @a clear
 scoreboard players set #t intro 0
-schedule function minecraft:story/intro/03_scroll_tick 1t
+schedule function story/intro/03_scroll_tick 1t

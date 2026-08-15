@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:0_overworld/20_stone_age",
+	"parent": "0_overworld/20_stone_age",
 	"display": {
-		"icon": "minecraft:copper_ingot",
+		"icon": "copper_ingot",
 		"title": "청동기 시대",
 		"description": "금속을 다루는 법을 깨닫고 새로운 문명의 문을 엽니다.",
 		"frame": "task",
@@ -10,8 +10,8 @@
 	},
 	"criteria": {
 		"manual_test": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	},
-	"rewards": {"function": "minecraft:story/overworld/age/21_bronze_age"}
+	"rewards": {"function": "story/overworld/age/21_bronze_age"}
 }

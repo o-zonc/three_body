@@ -235,12 +235,12 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
+              "oak_log",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 1.0f }\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 1.0f }\
             ]\
           },\
         }\
@@ -255,12 +255,12 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
+              "oak_log",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 1.5f }\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 1.5f }\
             ]\
           },\
         }\
@@ -275,12 +275,12 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
+              "oak_log",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 3.0f }\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 3.0f }\
             ]\
           },\
         }\
@@ -295,12 +295,12 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
+              "oak_log",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 6.0f }\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 6.0f }\
             ]\
           },\
         }\
@@ -316,14 +316,14 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
+              "oak_log",\
+              "stone",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 12.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 0.75f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 12.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 0.75f },\
             ]\
           },\
         }\
@@ -339,14 +339,14 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
+              "oak_log",\
+              "stone",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 1.5f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 1.5f },\
             ]\
           },\
         }\
@@ -365,18 +365,18 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 3.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 1.5f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 0.9f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 3.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 1.5f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 0.9f },\
             ]\
           },\
         }\
@@ -395,18 +395,18 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 3.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 1.5f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 3.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 1.5f },\
             ]\
           },\
         }\
@@ -425,18 +425,18 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 9.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 3.0f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 9.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 3.0f },\
             ]\
           },\
         }\
@@ -454,20 +454,20 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
-              "minecraft:obsidian",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
+              "obsidian",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 9.0f },\
-              { blocks: "minecraft:obsidian", correct_for_drops: 1b, speed: 15.0f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 9.0f },\
+              { blocks: "obsidian", correct_for_drops: 1b, speed: 15.0f },\
             ]\
           },\
         }\
@@ -484,20 +484,20 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
-              "minecraft:obsidian",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
+              "obsidian",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:obsidian", correct_for_drops: 1b, speed: 30.0f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "obsidian", correct_for_drops: 1b, speed: 30.0f },\
             ]\
           },\
         }\
@@ -515,22 +515,22 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
-              "minecraft:obsidian",\
-              "minecraft:nether_quartz_ore",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
+              "obsidian",\
+              "nether_quartz_ore",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:obsidian", correct_for_drops: 1b, speed: 50.0f },\
-              { blocks: "minecraft:nether_quartz_ore", correct_for_drops: 1b, speed: 0.5625f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "obsidian", correct_for_drops: 1b, speed: 50.0f },\
+              { blocks: "nether_quartz_ore", correct_for_drops: 1b, speed: 0.5625f },\
             ]\
           },\
         }\
@@ -548,22 +548,22 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
-              "minecraft:obsidian",\
-              "minecraft:nether_quartz_ore",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
+              "obsidian",\
+              "nether_quartz_ore",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:obsidian", correct_for_drops: 1b, speed: 100.0f },\
-              { blocks: "minecraft:nether_quartz_ore", correct_for_drops: 1b, speed: 0.75f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "obsidian", correct_for_drops: 1b, speed: 100.0f },\
+              { blocks: "nether_quartz_ore", correct_for_drops: 1b, speed: 0.75f },\
             ]\
           },\
         }\
@@ -582,24 +582,24 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
-              "minecraft:obsidian",\
-              "minecraft:nether_quartz_ore",\
-              "minecraft:gilded_blackstone",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
+              "obsidian",\
+              "nether_quartz_ore",\
+              "gilded_blackstone",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:obsidian", correct_for_drops: 1b, speed: 300.0f },\
-              { blocks: "minecraft:nether_quartz_ore", correct_for_drops: 1b, speed: 1.5f },\
-              { blocks: "minecraft:gilded_blackstone", correct_for_drops: 1b, speed: 1.5f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "obsidian", correct_for_drops: 1b, speed: 300.0f },\
+              { blocks: "nether_quartz_ore", correct_for_drops: 1b, speed: 1.5f },\
+              { blocks: "gilded_blackstone", correct_for_drops: 1b, speed: 1.5f },\
             ]\
           },\
         }\
@@ -617,24 +617,24 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
-              "minecraft:obsidian",\
-              "minecraft:nether_quartz_ore",\
-              "minecraft:gilded_blackstone",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
+              "obsidian",\
+              "nether_quartz_ore",\
+              "gilded_blackstone",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:obsidian", correct_for_drops: 1b, speed: 1500.0f },\
-              { blocks: "minecraft:nether_quartz_ore", correct_for_drops: 1b, speed: 3f },\
-              { blocks: "minecraft:gilded_blackstone", correct_for_drops: 1b, speed: 2.25f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "obsidian", correct_for_drops: 1b, speed: 1500.0f },\
+              { blocks: "nether_quartz_ore", correct_for_drops: 1b, speed: 3f },\
+              { blocks: "gilded_blackstone", correct_for_drops: 1b, speed: 2.25f },\
             ]\
           },\
         }\
@@ -652,24 +652,24 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
-              "minecraft:obsidian",\
-              "minecraft:nether_quartz_ore",\
-              "minecraft:gilded_blackstone",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
+              "obsidian",\
+              "nether_quartz_ore",\
+              "gilded_blackstone",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:obsidian", correct_for_drops: 1b, speed: 1500.0f },\
-              { blocks: "minecraft:nether_quartz_ore", correct_for_drops: 1b, speed: 90f },\
-              { blocks: "minecraft:gilded_blackstone", correct_for_drops: 1b, speed: 4.5f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "obsidian", correct_for_drops: 1b, speed: 1500.0f },\
+              { blocks: "nether_quartz_ore", correct_for_drops: 1b, speed: 90f },\
+              { blocks: "gilded_blackstone", correct_for_drops: 1b, speed: 4.5f },\
             ]\
           },\
         }\
@@ -685,30 +685,30 @@ data merge storage data {\
           ],\
           can_break: {\
             blocks: [\
-              "minecraft:oak_log",\
-              "minecraft:stone",\
-              "minecraft:coal_ore",\
-              "minecraft:iron_ore",\
-              "minecraft:obsidian",\
-              "minecraft:nether_quartz_ore",\
-              "minecraft:gilded_blackstone",\
+              "oak_log",\
+              "stone",\
+              "coal_ore",\
+              "iron_ore",\
+              "obsidian",\
+              "nether_quartz_ore",\
+              "gilded_blackstone",\
             ]\
           },\
           tool: {\
             rules: [\
-              { blocks: "minecraft:oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "minecraft:stone", correct_for_drops: 1b, speed: 45.0f },\
-              { blocks: "minecraft:coal_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:iron_ore", correct_for_drops: 1b, speed: 90.0f },\
-              { blocks: "minecraft:obsidian", correct_for_drops: 1b, speed: 1500.0f },\
-              { blocks: "minecraft:nether_quartz_ore", correct_for_drops: 1b, speed: 90f },\
-              { blocks: "minecraft:gilded_blackstone", correct_for_drops: 1b, speed: 90f },\
+              { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "coal_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "iron_ore", correct_for_drops: 1b, speed: 90.0f },\
+              { blocks: "obsidian", correct_for_drops: 1b, speed: 1500.0f },\
+              { blocks: "nether_quartz_ore", correct_for_drops: 1b, speed: 90f },\
+              { blocks: "gilded_blackstone", correct_for_drops: 1b, speed: 90f },\
             ]\
           },\
         }\
       },\
     ],\
-    product: {\
+    resource: {\
       wood: {\
         regen:[\
           { lvl: 0, value: 40, cost: [{ type: "stone", amount: 3 }] },\

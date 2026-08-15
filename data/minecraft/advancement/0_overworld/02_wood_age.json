@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:0_overworld/00_root",
+	"parent": "0_overworld/00_root",
 	"display": {
-		"icon": "minecraft:oak_log",
+		"icon": "oak_log",
 		"title": "목기 시대",
 		"description": "나무를 손에 넣고 문명의 첫걸음을 내디뎠습니다.",
 		"frame": "task",
@@ -10,10 +10,10 @@
 	},
 	"criteria": {
 		"manual_test": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	},
 	"rewards": {
-		"function": "minecraft:story/overworld/age/02_wood_age"
+		"function": "story/overworld/age/02_wood_age"
 	}
 }

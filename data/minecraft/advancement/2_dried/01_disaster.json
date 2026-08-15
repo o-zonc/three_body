@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:2_dried/00_root",
+	"parent": "2_dried/00_root",
 	"display": {
-		"icon": "minecraft:sand",
+		"icon": "sand",
 		"title": "멸망: 메마른 세계",
 		"description": "이 세계는 더 이상 존재하지 않습니다.\n\n§7혹시 텍스트를 잘 읽어보고 계신가요?",
 		"frame": "task",
@@ -11,7 +11,7 @@
 	},
 	"criteria": {
 		"epic_clear": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	}
 }

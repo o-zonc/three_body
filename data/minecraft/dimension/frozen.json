@@ -1,15 +1,15 @@
 {
-	"type": "minecraft:frozen",
+	"type": "frozen",
 	"generator": {
-		"type": "minecraft:flat",
+		"type": "flat",
 		"settings": {
-			"biome": "minecraft:snowy_plains",
+			"biome": "snowy_plains",
 			"layers": [
-				{ "block": "minecraft:bedrock", "height": 1 },
-				{ "block": "minecraft:air", "height": 123 },
-				{ "block": "minecraft:dirt", "height": 2 },
-				{ "block": "minecraft:grass_block", "height": 1 },
-				{ "block": "minecraft:snow_block", "height": 1 }
+				{ "block": "bedrock", "height": 1 },
+				{ "block": "air", "height": 123 },
+				{ "block": "dirt", "height": 2 },
+				{ "block": "grass_block", "height": 1 },
+				{ "block": "snow_block", "height": 1 }
 			]
 		}
 	}

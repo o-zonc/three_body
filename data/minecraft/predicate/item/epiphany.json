@@ -4,9 +4,9 @@
     "predicate": {
         "equipment": {
             "mainhand": {
-                "items": "minecraft:white_dye",
+                "items": "white_dye",
                 "components": {
-                    "minecraft:custom_data": {
+                    "custom_data": {
                         "epiphany": 1
                     }
                 }

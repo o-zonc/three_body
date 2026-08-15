@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:3_polarnight/00_root",
+	"parent": "3_polarnight/00_root",
 		"display": {
-		"icon": "minecraft:written_book",
+		"icon": "written_book",
 		"title": "깨달음",
 		"description": "이 문명은 깨달음을 얻었습니다.",
 		"frame": "task",
@@ -11,12 +11,12 @@
 		},
 	"criteria": {
 		"get_stick": {
-			"trigger": "minecraft:inventory_changed",
+			"trigger": "inventory_changed",
 			"conditions": {
 				"items": [
 					{
 						"items": [
-					"minecraft:stick"
+					"stick"
 						]
 					}
 				]

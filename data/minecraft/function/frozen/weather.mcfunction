@@ -1,3 +1,3 @@
-execute in minecraft:frozen run weather rain 100
+execute in frozen run weather rain 100
 
-schedule function minecraft:frozen/weather 1t
+schedule function frozen/weather 1t

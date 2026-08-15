@@ -11,10 +11,10 @@ execute unless data storage data tmp.tool.now.cost run return 0
 data remove storage data tmp.cost
 data remove storage data tmp.cost_original
 data modify storage data tmp.cost set from storage data tmp.tool.now.cost
-execute store result score #tool_upgrade_cost_check tmp run function product/check_cost
+execute store result score #tool_upgrade_cost_check tmp run function resource/check_cost
 
 # 소지 시 업그레이드
-execute if score #tool_upgrade_cost_check tmp matches 1 run function product/take_upgrade_cost
+execute if score #tool_upgrade_cost_check tmp matches 1 run function resource/take_upgrade_cost
 execute if score #tool_upgrade_cost_check tmp matches 1 run scoreboard players add #tool upgrade 1
 execute if score #tool_upgrade_cost_check tmp matches 1 run clear @a[tag=player] *[custom_data~{tool:{}}]
 execute if score #tool_upgrade_cost_check tmp matches 1 as @a[tag=player] at @s run playsound block.anvil.use weather @s ~ ~ ~ 1 2

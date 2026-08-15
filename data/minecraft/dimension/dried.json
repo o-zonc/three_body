@@ -1,14 +1,14 @@
 {
-	"type": "minecraft:dried",
+	"type": "dried",
 	"generator": {
-		"type": "minecraft:flat",
+		"type": "flat",
 		"settings": {
-			"biome": "minecraft:desert",
+			"biome": "desert",
 			"layers": [
-				{ "block": "minecraft:bedrock", "height": 1 },
-				{ "block": "minecraft:air", "height": 122 },
-				{ "block": "minecraft:sandstone", "height": 2 },
-				{ "block": "minecraft:sand", "height": 3 }
+				{ "block": "bedrock", "height": 1 },
+				{ "block": "air", "height": 122 },
+				{ "block": "sandstone", "height": 2 },
+				{ "block": "sand", "height": 3 }
 			]
 		}
 	}

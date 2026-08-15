@@ -21,9 +21,9 @@ scoreboard objectives add roll_chance dummy
 scoreboard objectives add timer_sec dummy
 
 # 4. 보스바 로드
-bossbar add minecraft:bossbar_frozen {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
-bossbar add minecraft:bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
-bossbar add minecraft:bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color":"dark_green"}
+bossbar add bossbar_frozen {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
+bossbar add bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
+bossbar add bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color":"dark_green"}
 
 scoreboard objectives add user_disaster dummy
 

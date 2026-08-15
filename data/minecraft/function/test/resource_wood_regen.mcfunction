@@ -1,7 +1,7 @@
 # ==========================================
 # WOOD REGEN / SCOREBOARD DISPLAY TEST
 # ==========================================
-# Run with: /function minecraft:test/resource_wood_regen
+# Run with: /function test/resource_wood_regen
 #
 # Tests the wood regeneration API and prepares the existing resource
 # scoreboard display to show the result.
@@ -32,8 +32,8 @@ tellraw @a {"text":"========================================","color":"dark_gray
 # TEST 1: current regen value
 # --------------------------------------------------
 # Populate temp.regen before asking regen_value for the current ticks.
-function minecraft:resource/wood/value/now_regen_data
-execute store result score #wood_test_value resource_test run function minecraft:resource/wood/value/regen_value
+function resource/wood/value/now_regen_data
+execute store result score #wood_test_value resource_test run function resource/wood/value/regen_value
 execute if score #wood_test_value resource_test matches 1.. run scoreboard players add #wood_test_pass resource_test 1
 execute unless score #wood_test_value resource_test matches 1.. run scoreboard players add #wood_test_fail resource_test 1
 execute if score #wood_test_value resource_test matches 1.. run tellraw @a [{"text":"[REGEN VALUE]  ticks=","color":"yellow"},{"score":{"name":"#wood_test_value","objective":"resource_test"}},{"text":" PASS","color":"green"}]
@@ -42,17 +42,17 @@ execute unless score #wood_test_value resource_test matches 1.. run tellraw @a {
 # --------------------------------------------------
 # TEST 2: next-level upgrade cost
 # --------------------------------------------------
-function minecraft:resource/wood/value/regen_upgrade_cost
-execute store result score #wood_test_value resource_test run data get storage minecraft:resource input.amount 1
-execute if data storage minecraft:resource input.amount run scoreboard players add #wood_test_pass resource_test 1
-execute unless data storage minecraft:resource input.amount run scoreboard players add #wood_test_fail resource_test 1
-execute if data storage minecraft:resource input.amount run tellraw @a [{"text":"[UPGRADE COST] expected=config actual=","color":"yellow"},{"score":{"name":"#wood_test_value","objective":"resource_test"}},{"text":" PASS","color":"green"}]
-execute unless data storage minecraft:resource input.amount run tellraw @a {"text":"[UPGRADE COST] missing cost FAIL","color":"red"}
+function resource/wood/value/regen_upgrade_cost
+execute store result score #wood_test_value resource_test run data get storage resource input.amount 1
+execute if data storage resource input.amount run scoreboard players add #wood_test_pass resource_test 1
+execute unless data storage resource input.amount run scoreboard players add #wood_test_fail resource_test 1
+execute if data storage resource input.amount run tellraw @a [{"text":"[UPGRADE COST] expected=config actual=","color":"yellow"},{"score":{"name":"#wood_test_value","objective":"resource_test"}},{"text":" PASS","color":"green"}]
+execute unless data storage resource input.amount run tellraw @a {"text":"[UPGRADE COST] missing cost FAIL","color":"red"}
 
 # --------------------------------------------------
 # TEST 3: scoreboard display data
 # --------------------------------------------------
-function minecraft:resource/wood/ui/info
+function resource/wood/ui/info
 
 tellraw @a [{"text":"[DISPLAY] wood regen level = ","color":"aqua"},{"score":{"name":"#wood_regen_lvl","objective":"upgrade"}}]
 
@@ -61,9 +61,9 @@ tellraw @a [{"text":"[DISPLAY] wood regen level = ","color":"aqua"},{"score":{"n
 # --------------------------------------------------
 # Give the test account exactly the configured next-level cost.
 scoreboard players set #wood material 0
-execute store result score #wood_test_value resource_test run data get storage minecraft:resource input.amount 1
+execute store result score #wood_test_value resource_test run data get storage resource input.amount 1
 scoreboard players operation #wood material = #wood_test_value resource_test
-function minecraft:resource/wood/trigger/upgrade
+function resource/wood/trigger/upgrade
 
 execute if score #wood_regen_lvl upgrade > #wood_test_initial upgrade run scoreboard players add #wood_test_pass resource_test 1
 execute unless score #wood_regen_lvl upgrade > #wood_test_initial upgrade run scoreboard players add #wood_test_fail resource_test 1
@@ -75,7 +75,7 @@ scoreboard players operation #wood_regen_lvl upgrade = #wood_test_initial upgrad
 scoreboard players operation #wood material = #wood_test_initial_value resource_test
 
 # Refresh the existing scoreboard display.
-function minecraft:resource/wood/ui/info
+function resource/wood/ui/info
 
 # Summary.
 tellraw @a {"text":"----------------------------------------","color":"dark_gray"}

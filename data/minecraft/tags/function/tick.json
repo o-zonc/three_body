@@ -1,9 +1,8 @@
 {
 	"values": [
-		"minecraft:story/story",
-		"minecraft:common/random",
-		"minecraft:tick",
-		"minecraft:elevator/tick",
-		"minecraft:resource/config/tick"
+		"story/story",
+		"common/random",
+		"tick",
+		"elevator/tick"
 	]
 }

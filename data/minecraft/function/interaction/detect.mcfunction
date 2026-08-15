@@ -1,5 +1,5 @@
 # 우클릭
-execute as @e[type=interaction] if data entity @s interaction run function minecraft:interaction/right
+execute as @e[type=interaction] if data entity @s interaction run function interaction/right
 
 # 좌클릭
-execute as @e[type=interaction] if data entity @s attack run function minecraft:interaction/left
+execute as @e[type=interaction] if data entity @s attack run function interaction/left

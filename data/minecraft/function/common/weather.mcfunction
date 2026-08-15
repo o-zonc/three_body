@@ -1,2 +1,2 @@
-schedule clear minecraft:frozen/weather
+schedule clear frozen/weather
 weather clear

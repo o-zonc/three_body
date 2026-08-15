@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:0_overworld/26_contemporary_age",
+	"parent": "0_overworld/26_contemporary_age",
 	"display": {
-		"icon": "minecraft:nether_star",
+		"icon": "nether_star",
 		"title": "미래",
 		"description": "문명은 마침내 지구의 한계를 넘어섭니다.",
 		"frame": "challenge",
@@ -10,8 +10,8 @@
 	},
 	"criteria": {
 		"manual_test": {
-			"trigger": "minecraft:impossible"
+			"trigger": "impossible"
 		}
 	},
-	"rewards": {"function": "minecraft:story/overworld/age/27_future_age"}
+	"rewards": {"function": "story/overworld/age/27_future_age"}
 }

@@ -11,11 +11,11 @@ scoreboard players operation #TEST timer_dried_before = #GLOBAL timer_dried
 scoreboard players operation #TEST timer_overworld_before = #GLOBAL timer_overworld
 
 # 테스트 중 다른 테스트 예약과 충돌하지 않도록 기존 검사 예약을 제거합니다.
-schedule clear minecraft:test/pause_check
+schedule clear test/pause_check
 
 # 5초 후 동일한 값을 비교합니다.
-schedule function minecraft:test/pause_check 5s
+schedule function test/pause_check 5s
 
 tellraw @a {"text":"[TEST] era_paused = 1","color":"gold"}
 tellraw @a {"text":"[TEST] 5초 동안 모든 시대 타이머가 유지되어야 합니다.","color":"yellow"}
-tellraw @a {"text":"[TEST] /function minecraft:test/pause_check 를 직접 실행해도 됩니다.","color":"gray"}
+tellraw @a {"text":"[TEST] /function test/pause_check 를 직접 실행해도 됩니다.","color":"gray"}

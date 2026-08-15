@@ -10,27 +10,27 @@
     "height": 384,
     "logical_height": 384,
     "coordinate_scale": 1.0,
-    "infiniburn": "#minecraft:infiniburn_overworld",
+    "infiniburn": "#infiniburn_overworld",
     "skybox": "overworld",
     "cardinal_light": "default",
-    "default_clock": "minecraft:overworld",
-    "timelines": ["minecraft:day"],
+    "default_clock": "overworld",
+    "timelines": ["day"],
     "attributes": {
-		"minecraft:audio/background_music": {
+		"audio/background_music": {
 			"default": {
-				"sound": "minecraft:music.overworld.snowy_slopes",
+				"sound": "music.overworld.snowy_slopes",
 				"max_delay": 2400,
 				"min_delay": 1200,
 				"replace_current_music": false
 			}
 		},
-        "minecraft:visual/ambient_light_color": "#0B111A",
-        "minecraft:visual/block_light_tint": "#9EB0C2",
-        "minecraft:visual/cloud_color": "#CCFFFFFF",
-        "minecraft:visual/sky_color": "#9EB0C2",
-		"minecraft:visual/sky_light_color" : "#9EB0C2",
-        "minecraft:visual/fog_color": "#D6E2E8",
-        "minecraft:visual/fog_start_distance": 32,
-        "minecraft:visual/fog_end_distance": 128
+        "visual/ambient_light_color": "#0B111A",
+        "visual/block_light_tint": "#9EB0C2",
+        "visual/cloud_color": "#CCFFFFFF",
+        "visual/sky_color": "#9EB0C2",
+		"visual/sky_light_color" : "#9EB0C2",
+        "visual/fog_color": "#D6E2E8",
+        "visual/fog_start_distance": 32,
+        "visual/fog_end_distance": 128
     }
 }

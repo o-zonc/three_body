@@ -6,16 +6,16 @@
 # 1. 예약된 함수 제거
 # ------------------------------------------------------------
 
-schedule clear minecraft:common/next
+schedule clear common/next
 
-schedule clear minecraft:frozen/weather
+schedule clear frozen/weather
 
-schedule clear minecraft:story/intro/00_init
-schedule clear minecraft:story/intro/01_quote1
-schedule clear minecraft:story/intro/02_scroll_start
-schedule clear minecraft:story/intro/03_scroll_tick
-schedule clear minecraft:story/intro/98_end
-schedule clear minecraft:story/intro/99_release_player
+schedule clear story/intro/00_init
+schedule clear story/intro/01_quote1
+schedule clear story/intro/02_scroll_start
+schedule clear story/intro/03_scroll_tick
+schedule clear story/intro/98_end
+schedule clear story/intro/99_release_player
 
 
 # ------------------------------------------------------------
@@ -32,36 +32,36 @@ gamemode adventure @a
 # 3. 플레이어를 오버월드로 복귀
 # ------------------------------------------------------------
 
-execute in minecraft:overworld run tp @a 0 100 0
+execute in overworld run tp @a 0 100 0
 
 
 # ------------------------------------------------------------
 # 4. 스코어보드 초기화
 # ------------------------------------------------------------
 
-function minecraft:reset_state
+function reset_state
 
 
 # ------------------------------------------------------------
 # 5. 시간 배율 복구
 # ------------------------------------------------------------
 
-execute in minecraft:overworld run time rate 1
-execute in minecraft:dried run time rate 1
-execute in minecraft:frozen run time rate 1
-execute in minecraft:polarnight run time rate 1
-execute in minecraft:dawn run time rate 1
+execute in overworld run time rate 1
+execute in dried run time rate 1
+execute in frozen run time rate 1
+execute in polarnight run time rate 1
+execute in dawn run time rate 1
 
 
 # ------------------------------------------------------------
 # 6. 날씨 초기화
 # ------------------------------------------------------------
 
-execute in minecraft:overworld run weather clear
-execute in minecraft:dried run weather clear
-execute in minecraft:frozen run weather clear
-execute in minecraft:polarnight run weather clear
-execute in minecraft:dawn run weather clear
+execute in overworld run weather clear
+execute in dried run weather clear
+execute in frozen run weather clear
+execute in polarnight run weather clear
+execute in dawn run weather clear
 
 
 # ------------------------------------------------------------
@@ -95,12 +95,12 @@ xp set @a 0 points
 # 9. 시설물 철거
 # ------------------------------------------------------------
 
-function minecraft:common/structure/observatory/off
-function minecraft:common/structure/beacon/off
+function common/structure/observatory/off
+function common/structure/beacon/off
 
 
 # ------------------------------------------------------------
 # 99. 인트로 시작
 # ------------------------------------------------------------
 
-function minecraft:story/intro/00_init
+function story/intro/00_init

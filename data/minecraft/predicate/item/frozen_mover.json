@@ -4,9 +4,9 @@
     "predicate": {
         "equipment": {
             "mainhand": {
-                "items": "minecraft:light_blue_dye",
+                "items": "light_blue_dye",
                 "components": {
-                    "minecraft:custom_data": {
+                    "custom_data": {
                         "frozen_move": 1
                     }
                 }

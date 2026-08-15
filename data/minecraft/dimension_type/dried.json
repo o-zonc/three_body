@@ -10,13 +10,13 @@
     "height": 384,
     "logical_height": 384,
     "coordinate_scale": 1.0,
-    "infiniburn": "#minecraft:infiniburn_overworld",
+    "infiniburn": "#infiniburn_overworld",
     "skybox": "overworld",
     "cardinal_light": "default",
-    "default_clock": "minecraft:overworld",
-    "timelines": ["minecraft:day"],
+    "default_clock": "overworld",
+    "timelines": ["day"],
     "attributes": {
-		"minecraft:audio/background_music": {
+		"audio/background_music": {
 			"default": {
 				"sound": "music.overworld.badlands",
 				"max_delay": 2400,
@@ -24,13 +24,13 @@
 				"replace_current_music": false
 			}
 		},
-        "minecraft:visual/ambient_light_color": "#12100D",
-        "minecraft:visual/block_light_tint": "#D3C29D",
-        "minecraft:visual/cloud_color": "#00FFFFFF",
-        "minecraft:visual/sky_light_color": "#FFFFFF",
-        "minecraft:visual/sky_color": "#8BB1E8",
-        "minecraft:visual/fog_color": "#D3C29D",
-        "minecraft:gameplay/water_evaporates": true,
-        "minecraft:gameplay/fast_lava": false
+        "visual/ambient_light_color": "#12100D",
+        "visual/block_light_tint": "#D3C29D",
+        "visual/cloud_color": "#00FFFFFF",
+        "visual/sky_light_color": "#FFFFFF",
+        "visual/sky_color": "#8BB1E8",
+        "visual/fog_color": "#D3C29D",
+        "gameplay/water_evaporates": true,
+        "gameplay/fast_lava": false
     }
 }

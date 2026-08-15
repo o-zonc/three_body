@@ -10,18 +10,18 @@ scoreboard players set #GLOBAL state_dawn 0
 scoreboard players set #20_CONSTANT timer_sec 20
 
 # 4. 보스바 설정
-bossbar set minecraft:bossbar_frozen color blue
-bossbar set minecraft:bossbar_frozen style notched_6
-bossbar set minecraft:bossbar_frozen visible false
-bossbar set minecraft:bossbar_frozen max 6000
-bossbar set minecraft:bossbar_dried color yellow
-bossbar set minecraft:bossbar_dried style notched_10
-bossbar set minecraft:bossbar_dried visible false
-bossbar set minecraft:bossbar_dried max 6000
-bossbar set minecraft:bossbar_overworld color green
-bossbar set minecraft:bossbar_overworld style progress
-bossbar set minecraft:bossbar_overworld visible false
-bossbar set minecraft:bossbar_overworld max 6000
+bossbar set bossbar_frozen color blue
+bossbar set bossbar_frozen style notched_6
+bossbar set bossbar_frozen visible false
+bossbar set bossbar_frozen max 6000
+bossbar set bossbar_dried color yellow
+bossbar set bossbar_dried style notched_10
+bossbar set bossbar_dried visible false
+bossbar set bossbar_dried max 6000
+bossbar set bossbar_overworld color green
+bossbar set bossbar_overworld style progress
+bossbar set bossbar_overworld visible false
+bossbar set bossbar_overworld max 6000
 
 scoreboard players set #GLOBAL user_disaster 0
 

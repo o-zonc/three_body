@@ -1,12 +1,12 @@
 {
-    "condition": "minecraft:entity_properties",
+    "condition": "entity_properties",
     "entity": "this",
     "predicate": {
         "equipment": {
             "mainhand": {
-                "items": "minecraft:brick",
+                "items": "brick",
                 "components": {
-                    "minecraft:custom_data": {
+                    "custom_data": {
                         "disaster": 1
                     }
                 }

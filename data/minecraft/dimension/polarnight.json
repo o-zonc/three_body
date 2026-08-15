@@ -1,13 +1,13 @@
 {
-	"type": "minecraft:polarnight",
+	"type": "polarnight",
 	"generator": {
-		"type": "minecraft:flat",
+		"type": "flat",
 		"settings": {
-			"biome": "minecraft:stony_shore",
+			"biome": "stony_shore",
 			"layers": [
-				{ "block": "minecraft:bedrock", "height": 1 },
-				{ "block": "minecraft:air", "height": 122 },
-				{ "block": "minecraft:stone", "height": 5 }
+				{ "block": "bedrock", "height": 1 },
+				{ "block": "air", "height": 122 },
+				{ "block": "stone", "height": 5 }
 			]
 		}
 	}

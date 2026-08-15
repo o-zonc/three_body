@@ -49,7 +49,7 @@ execute if score #t intro matches 1030 as @e[tag=story_camera,limit=1] at @s run
 execute if score #t intro matches 1075 as @e[tag=story_camera,limit=1] at @s run summon text_display ~ ~-2 ~9 {Tags:["story_text","story_intro"],Rotation:[180,0],background:0,transformation:[1.6f,0f,0f,0f, 0f,1.6f,0f,0f, 0f,0f,1f,0f, 0f,0f,0f,1f],text:{text:"살아남을 수 있을까요?",color:"gold",bold:true}}
 
 # 스크롤 계속 진행
-execute if score #t intro matches ..1200 run schedule function minecraft:story/intro/03_scroll_tick 1t
+execute if score #t intro matches ..1200 run schedule function story/intro/03_scroll_tick 1t
 
 # 스크롤 종료 → 마무리로
-execute if score #t intro matches 1200.. run function minecraft:story/intro/98_end
+execute if score #t intro matches 1200.. run function story/intro/98_end

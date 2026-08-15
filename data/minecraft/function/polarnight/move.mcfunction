@@ -3,9 +3,9 @@ effect clear @a blindness
 effect clear @a darkness
 title @a clear
 
-execute in minecraft:polarnight run tp @a ~ 64 ~
-gamerule minecraft:advance_time false
-execute in minecraft:polarnight run time set 18000
+execute in polarnight run tp @a ~ 64 ~
+gamerule advance_time false
+execute in polarnight run time set 18000
 
 scoreboard players set #GLOBAL visited_dried 0
 scoreboard players set #GLOBAL visited_frozen 0

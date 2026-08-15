@@ -1,7 +1,7 @@
-function minecraft:item/give/dimension_mover
-function minecraft:item/give/overworld_mover
-function minecraft:item/give/frozen_mover
-function minecraft:item/give/dried_mover
-function minecraft:item/give/epiphany
-function minecraft:item/give/reactor
-function minecraft:item/give/cosmos_mover
+function item/give/dimension_mover
+function item/give/overworld_mover
+function item/give/frozen_mover
+function item/give/dried_mover
+function item/give/epiphany
+function item/give/reactor
+function item/give/cosmos_mover
