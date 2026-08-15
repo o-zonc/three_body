@@ -1,6 +1,6 @@
 # Get current wood regeneration data.
-# Clear the previous result so an invalid level cannot leave stale data behind.
-data remove storage three_body:resource temp.regen
+# Ensure the regeneration level exists before reading it.
+execute unless score #wood_regen_lvl upgrade = #wood_regen_lvl upgrade run scoreboard players set #wood_regen_lvl upgrade 0
 
 # Store the current regeneration level in temp.lvl.
 execute store result storage three_body:resource temp.lvl int 1 run scoreboard players get #wood_regen_lvl upgrade
