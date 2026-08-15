@@ -8,9 +8,7 @@ execute if score #obsidian material matches ..-1 run scoreboard players set #obs
 execute if score #quartz material matches ..-1 run scoreboard players set #quartz material 0
 execute if score #gold material matches ..-1 run scoreboard players set #gold material 0
 execute if score #blaze_powder material matches ..-1 run scoreboard players set #blaze_powder material 0
-execute if score #trial_crystal material matches ..-1 run scoreboard players set #trial_crystal material 0
 execute if score #spirit material matches ..-1 run scoreboard players set #spirit material 0
-execute if score #trial_crystal material matches 1.. run scoreboard players set #trial_crystal_sidebar var 1
 execute if score #spirit material matches 1.. run scoreboard players set #spirit_sidebar var 1
 
 execute if score #wood material > #material_max tmp run scoreboard players operation #wood material = #material_max tmp
@@ -21,5 +19,4 @@ execute if score #obsidian material > #material_max tmp run scoreboard players o
 execute if score #quartz material > #material_max tmp run scoreboard players operation #quartz material = #material_max tmp
 execute if score #gold material > #material_max tmp run scoreboard players operation #gold material = #material_max tmp
 execute if score #blaze_powder material > #material_max tmp run scoreboard players operation #blaze_powder material = #material_max tmp
-execute if score #trial_crystal material > #material_max tmp run scoreboard players operation #trial_crystal material = #material_max tmp
 execute if score #spirit material > #material_max tmp run scoreboard players operation #spirit material = #material_max tmp
