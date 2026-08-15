@@ -1,5 +1,15 @@
-# Gold resource information UI
-data modify storage three_body:resource input.type set value "gold"
-function three_body:resource/get
+# 금(gold) resource information UI.
+data modify storage three_body:resource input set value {type:"gold"}
+function three_body:resource/get with storage three_body:resource.input
 function three_body:resource/gold/value/now_regen_data
-# TODO: display amount, regeneration data, level, and upgrade cost.
+
+# Current amount.
+tellraw @s [{"text":"[ 금 ] ","color":"yellow","bold":true},{"text":"보유량: ","color":"gray"},{"nbt":"amount","storage":"three_body:resource.output","color":"white"}]
+
+# Current regeneration level and duration.
+tellraw @s [{"text":"재생 레벨: ","color":"gray"},{"score":{"name":"#gold_regen_lvl","objective":"upgrade"}},{"text":"  /  재생 시간: ","color":"gray"},{"nbt":"ticks","storage":"three_body:resource.temp.regen","color":"white"},{"text":" ticks","color":"gray"}]
+
+# The upgrade-cost API determines whether a next level exists.
+function three_body:resource/gold/value/regen_upgrade_cost
+execute if data storage three_body:resource.input amount run tellraw @s [{"text":"다음 업그레이드 비용: ","color":"gray"},{"nbt":"amount","storage":"three_body:resource.input","color":"yellow"},{"text":" 금","color":"yellow"}]
+execute unless data storage three_body:resource.input amount run tellraw @s {"text":"재생 속도: 최대 레벨","color":"gold"}

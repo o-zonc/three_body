@@ -5,5 +5,5 @@
 #
 # Returns 1 when unlocked, otherwise 0.
 
-$execute if score #$(type) material_unlocked matches 1 run return 1
+$execute if score #$(type) unlock matches 1.. run return 1
 return 0

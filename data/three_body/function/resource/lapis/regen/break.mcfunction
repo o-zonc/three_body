@@ -1,10 +1,11 @@
 # ==================================================
-# Lapis resource collection
+# Lapis regeneration break
 # ==================================================
 
-data modify storage three_body:resource input.type set value "lapis"
-execute store result storage three_body:resource input.amount int 1 run function three_body:resource/lapis/value/regen_value
-function three_body:resource/add
+# 청금석 파괴 시 자원 1개를 지급한다.
+data modify storage three_body:resource input set value {type:"lapis",amount:1}
+function three_body:resource/add with storage three_body:resource.input
 
-# TODO: remove the hard-coded lapis node here.
+# 청금석가 파괴된 순간 현재 regeneration level의 쿨타임을 설정한다.
+function three_body:resource/lapis/value/now_regen_data
 execute store result score #lapis_remain generate run function three_body:resource/lapis/value/regen_value
