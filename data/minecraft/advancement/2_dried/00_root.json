@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": "minecraft:dead_bush",
+		"title": "메마른 세계",
+		"description": "영원히 비가 오지 않는 곳",
+		"background": "minecraft:block/cut_sandstone",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"enter_dried": {
+			"trigger": "minecraft:changed_dimension",
+			"conditions": {
+				"to": "minecraft:dried"
+			}
+		}
+	}
+}

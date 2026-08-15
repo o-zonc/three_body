@@ -1,0 +1,17 @@
+{
+	"parent": "minecraft:1_frozen/03_disaster",
+	"display": {
+		"icon": "minecraft:book",
+		"title": "숨겨진 메시지: 얼어붙은 세계",
+		"description": "숨겨진 메시지를 찾았습니다.\n\n§7\"이 문명은 파크모가 홀라당 마셔버렸습니다.\"\n\n§6§o시원하다! - 물방울을 닮은 누군가",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"epic_clear": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

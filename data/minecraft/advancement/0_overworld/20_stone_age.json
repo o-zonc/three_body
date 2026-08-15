@@ -1,0 +1,17 @@
+{
+	"parent": "minecraft:0_overworld/02_wood_age",
+	"display": {
+		"icon": "minecraft:cobblestone",
+		"title": "석기 시대",
+		"description": "돌을 다루며 문명의 기반을 다집니다.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"rewards": {"function": "minecraft:story/overworld/age/20_stone_age"}
+}

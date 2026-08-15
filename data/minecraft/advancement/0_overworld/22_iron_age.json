@@ -1,0 +1,17 @@
+{
+	"parent": "minecraft:0_overworld/21_bronze_age",
+	"display": {
+		"icon": "minecraft:iron_ingot",
+		"title": "철기 시대",
+		"description": "철을 제련하고 더 단단한 도구와 무기를 만들어 냅니다.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"rewards": {"function": "minecraft:story/overworld/age/22_iron_age"}
+}
