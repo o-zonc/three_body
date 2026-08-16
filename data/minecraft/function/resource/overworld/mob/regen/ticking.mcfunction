@@ -1,4 +1,4 @@
-execute if score #disable_mob_resourceion var matches 1 run return 0
+execute if score #disable_mob_production var matches 1 run return 0
 execute unless score #mob unlock matches 1 positioned 3.5 1.9375 4.5 run kill @e[tag=mob,tag=!blaze,type=item_display,distance=..0.2]
 execute unless score #mob unlock matches 1 run return 0
 

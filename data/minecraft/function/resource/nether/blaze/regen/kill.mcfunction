@@ -1,4 +1,4 @@
-execute if score #disable_blaze_resourceion var matches 1 run return 0
+execute if score #disable_blaze_production var matches 1 run return 0
 # Ignore while blaze is regenerating.
 execute if score #blaze_remain generate matches 1.. run return 0
 

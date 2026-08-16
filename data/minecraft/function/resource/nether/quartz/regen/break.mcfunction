@@ -1,4 +1,4 @@
-execute if score #disable_quartz_resourceion var matches 1 run return 0
+execute if score #disable_quartz_production var matches 1 run return 0
 execute unless score #4_2 nether_workshop matches 1 store result score #quartz_drop tmp run random value 3..6
 
 scoreboard players set #7_1_quartz_storage_bonus tmp 0

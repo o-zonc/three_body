@@ -1,4 +1,4 @@
-execute if score #disable_quartz_resourceion var matches 1 run return 0
+execute if score #disable_quartz_production var matches 1 run return 0
 execute unless score #quartz unlock matches 1 run setblock -47 1 4 air replace
 execute unless score #quartz unlock matches 1 run return 0
 

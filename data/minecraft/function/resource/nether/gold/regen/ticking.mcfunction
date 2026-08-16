@@ -1,4 +1,4 @@
-execute if score #disable_gold_resourceion var matches 1 run return 0
+execute if score #disable_gold_production var matches 1 run return 0
 execute unless score #area_zone unlock matches 1 run setblock -74 1 -5 air replace
 execute unless score #area_zone unlock matches 1 run return 0
 execute unless score #gold unlock matches 1 run setblock -74 1 -5 air replace

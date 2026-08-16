@@ -1,4 +1,4 @@
-execute if score #disable_blaze_resourceion var matches 1 run return 0
+execute if score #disable_blaze_production var matches 1 run return 0
 execute unless score #area_zone unlock matches 1 positioned -76.5 1.9375 13.5 run kill @e[tag=blaze,type=item_display,distance=..0.2]
 execute unless score #area_zone unlock matches 1 run return 0
 execute unless score #blaze unlock matches 1 positioned -76.5 1.9375 13.5 run kill @e[tag=blaze,type=item_display,distance=..0.2]

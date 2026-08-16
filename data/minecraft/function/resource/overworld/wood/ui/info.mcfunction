@@ -1,7 +1,7 @@
 execute store result score #wood_restore_cooldown tmp run function resource/overworld/wood/value/regen_value
 
 function resource/overworld/wood/value/regen_upgrade_cost
-# function dimensions/overworld/shop/crystal_shop/value/apply_material_regen_upgrade_cost_down
+function dimensions/overworld/shop/crystal_shop/value/apply_material_regen_upgrade_cost_down
 function resource/convert_upgrade_cost_to_text_named {id:"wood_regen",insertion:", "}
 
 

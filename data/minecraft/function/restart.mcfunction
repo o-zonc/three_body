@@ -41,6 +41,10 @@ execute in overworld run tp @a 0 100 0
 
 function reset_state
 
+scoreboard objectives add material_display dummy
+scoreboard objectives modify material_display displayname {"text":"자원","color":"gold"}
+scoreboard objectives setdisplay sidebar material_display
+
 
 # ------------------------------------------------------------
 # 5. 시간 배율 복구

@@ -1,3 +1,4 @@
+scoreboard objectives modify material_display numberformat blank
 scoreboard players set wood material_display 1200
 execute if score #stone unlock matches 1 run scoreboard players set stone material_display 1100
 execute if score #coal unlock matches 1 run scoreboard players set coal material_display 1000

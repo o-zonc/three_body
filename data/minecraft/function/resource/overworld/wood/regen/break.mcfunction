@@ -1,4 +1,4 @@
-execute if score #disable_wood_resourceion var matches 1 run return 0
+execute if score #disable_wood_production var matches 1 run return 0
 # 나무 파괴 시
 
 # 자원 상점 업그레이드로 인해 자원 획득량이 조절됨

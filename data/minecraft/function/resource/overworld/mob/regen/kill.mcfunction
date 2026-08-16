@@ -1,4 +1,4 @@
-execute if score #disable_mob_resourceion var matches 1 run return 0
+execute if score #disable_mob_production var matches 1 run return 0
 execute if score #mob_remain generate matches 1.. run return 0
 
 execute unless score #overworld_12 advancement matches 1 run summon experience_orb 3.5 1.5 4.5 {Tags:[mob, xp]}

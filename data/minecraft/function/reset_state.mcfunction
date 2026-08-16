@@ -45,6 +45,12 @@ scoreboard players set #t intro 0
 
 # 8. 자원 스코어보드 초기화
 scoreboard players set * material 0
+scoreboard players set * upgrade 0
+scoreboard players set * unlock 0
+
+scoreboard objectives remove material_display
+
+data remove storage data tmp
 
 # 9. 엘리베이터 스코어보드 초기화
 scoreboard players set #GLOBAL elevator_unlocked 0

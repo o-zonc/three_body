@@ -1,4 +1,4 @@
-execute if score #disable_iron_resourceion var matches 1 run return 0
+execute if score #disable_iron_production var matches 1 run return 0
 execute unless score #cave unlock matches 1 run return 0
 # 철 광석 파괴 시
 

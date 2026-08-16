@@ -14,6 +14,8 @@ execute store result score #wood_regen_upgrade_cost_check tmp run function resou
 # 소지 시 업그레이드
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 run function resource/take_upgrade_cost
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 run scoreboard players add #wood_regen_lvl upgrade 1
+
+execute if score #wood_regen_upgrade_cost_check tmp matches 1 run scoreboard players operation #poss_effective_lvl tmp = #wood_regen_lvl upgrade
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 run playsound entity.ender_eye.death weather @a[tag=player] 0.5 1.5 4.5 1 0.8
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 run playsound block.respawn_anchor.charge weather @a[tag=player] 0.5 1.5 4.5 1 2
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 run particle end_rod 0.5 -58.5 35.5 0.3 0.3 0.3 0.4 30 force @a[tag=player]

@@ -1,4 +1,4 @@
-execute if score #disable_wood_resourceion var matches 1 run return 0
+execute if score #disable_wood_production var matches 1 run return 0
 execute unless block 0 -59 35 air run return run scoreboard players reset #wood_remain generate
 
 # 나무 파괴

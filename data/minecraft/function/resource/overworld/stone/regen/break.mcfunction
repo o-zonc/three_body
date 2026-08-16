@@ -1,4 +1,4 @@
-execute if score #disable_stone_resourceion var matches 1 run return 0
+execute if score #disable_stone_production var matches 1 run return 0
 execute unless score #stone unlock matches 1 run return 0
 # 돌 파괴 시
 

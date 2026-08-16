@@ -1,4 +1,4 @@
-execute if score #disable_gold_resourceion var matches 1 run return 0
+execute if score #disable_gold_production var matches 1 run return 0
 # 금 파괴 시
 
 scoreboard players set #gold_gain tmp 1

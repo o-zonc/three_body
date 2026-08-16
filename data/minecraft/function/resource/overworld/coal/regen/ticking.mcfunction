@@ -1,4 +1,4 @@
-execute if score #disable_coal_resourceion var matches 1 run return 0
+execute if score #disable_coal_production var matches 1 run return 0
 
 # 동굴 해금 전에는 미작동
 execute unless score #cave unlock matches 1 run setblock -15 1 3 air replace
