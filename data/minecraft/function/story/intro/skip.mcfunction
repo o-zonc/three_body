@@ -2,6 +2,8 @@
 #  인트로 조기 종료
 # ============================================================
 
+scoreboard players set #block intro 1
+
 # 진행 중인 인트로 스크롤(tick) 스케줄을 취소합니다.
 schedule clear story/intro/03_scroll_tick
 schedule clear story/intro/02_scroll_start

@@ -11,6 +11,7 @@ execute as @a run spectate @e[tag=story_camera,limit=1]
 # 현재 떠 있는 모든 텍스트 줄을 위로 살짝 이동 → 스크롤 효과
 execute as @e[tag=story_text] at @s run tp @s ~ ~0.03 ~
 
+execute if score #block intro matches 1 run return 0
 scoreboard players add #t intro 1
 
 # ---- 문단 1 ----

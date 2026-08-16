@@ -17,6 +17,9 @@ function mover/tick
 function interaction/detect
 
 # 자원 API
+function var_init
+function resource/limit_materials
+
 function resource/nether/gold/regen/ticking
 function resource/nether/blaze/regen/ticking
 function resource/nether/quartz/regen/ticking
@@ -27,5 +30,18 @@ function resource/overworld/obsidian/regen/ticking
 function resource/overworld/wood/regen/ticking
 function resource/overworld/stone/regen/ticking
 
-scoreboard players enable @a upgrade_trigger
-scoreboard players enable @a unlock_trigger
+function resource/product_managing_by_tick
+function resource/unlock_trigger
+function resource/upgrade_trigger
+
+# 스토리
+function story/story
+
+# 차원 이동 시스템
+function common/random
+
+# 엘리베이터
+function elevator/tick
+
+# 사이드바
+function ui/sidebar/update

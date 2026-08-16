@@ -3,5 +3,6 @@
 # ============================================================
 
 title @a clear
-scoreboard players set #t intro 0
+scoreboard players set #block intro 0
+
 schedule function story/intro/03_scroll_tick 1t
