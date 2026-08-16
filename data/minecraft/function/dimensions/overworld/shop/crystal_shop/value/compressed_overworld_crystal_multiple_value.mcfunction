@@ -1,6 +1,5 @@
 # 현재 compressed_overworld_crystal_multiple 상점 업그레이드 value 값을 반환
 
-execute store result storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.lvl int 1 run scoreboard players get #poss_effective_lvl tmp
 function dimensions/overworld/shop/crystal_shop/value/compressed_overworld_crystal_multiple_data_by_lvl with storage data tmp.crystal_shop.compressed_overworld_crystal_multiple
 data remove storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.now
 data modify storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.now set from storage data tmp.crystal_shop.compressed_overworld_crystal_multiple.tmp

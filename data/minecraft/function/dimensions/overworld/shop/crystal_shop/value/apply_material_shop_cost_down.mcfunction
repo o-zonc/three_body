@@ -2,7 +2,6 @@
 
 execute unless data storage data tmp.cost run return 0
 data modify storage data tmp.cost_original set from storage data tmp.cost
-execute store result storage data tmp.crystal_shop.material_shop_cost_down.lvl int 1 run scoreboard players get #poss_effective_lvl tmp
 function dimensions/overworld/shop/crystal_shop/value/material_shop_cost_down_data_by_lvl with storage data tmp.crystal_shop.material_shop_cost_down
 data remove storage data tmp.crystal_shop.material_shop_cost_down.now
 data modify storage data tmp.crystal_shop.material_shop_cost_down.now set from storage data tmp.crystal_shop.material_shop_cost_down.tmp

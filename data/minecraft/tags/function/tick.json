@@ -1,11 +1,5 @@
 {
 	"values": [
-		"story/story",
-		"common/random",
-		"tick",
-		"elevator/tick",
-		"ui/sidebar/update",
-		"interaction/detect",
-		"resource/product_managing_by_tick"
+		"tick"
 	]
 }

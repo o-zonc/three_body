@@ -1,4 +1,3 @@
-execute store result storage data tmp.material_shop.stone.lvl int 1 run scoreboard players get #poss_effective_lvl tmp
 function dimensions/overworld/shop/material_shop/value/stone_data_by_lvl with storage data tmp.material_shop.stone
 data remove storage data tmp.material_shop.stone.now
 data modify storage data tmp.material_shop.stone.now set from storage data tmp.material_shop.stone.tmp

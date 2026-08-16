@@ -42,9 +42,15 @@ scoreboard players set #disaster_running run 0
 # 7. 스토리 관리 스코어보드 초기화
 scoreboard players set #done intro 0
 scoreboard players set #t intro 0
+scoreboard players set #block intro 1
+scoreboard players set @a intro_skip 0
 
 # 8. 자원 스코어보드 초기화
 scoreboard players set * material 0
+scoreboard players set * unlock 0
+scoreboard players set * upgrade 0
+
+scoreboard players reset * material_display
 
 # 9. 엘리베이터 스코어보드 초기화
 scoreboard players set #GLOBAL elevator_unlocked 0

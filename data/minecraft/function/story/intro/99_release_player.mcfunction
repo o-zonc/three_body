@@ -14,5 +14,6 @@ kill @e[type=armor_stand,tag=fall_anchor]
 advancement grant @a only 0_overworld/00_root
 
 scoreboard objectives setdisplay sidebar material_display
+tag @a add player
 
 function story/tutorial/00_tutorial
