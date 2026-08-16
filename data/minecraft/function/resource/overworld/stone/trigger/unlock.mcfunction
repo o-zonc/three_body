@@ -11,9 +11,9 @@ execute store result score #stone_unlock_cost_check tmp run function resource/ch
 execute if score #stone_unlock_cost_check tmp matches 1 run function resource/take_cost
 execute if score #stone_unlock_cost_check tmp matches 1 run scoreboard players set #stone unlock 1
 execute if score #stone_unlock_cost_check tmp matches 1 run function resource/overworld/stone/regen/place
-execute if score #stone_unlock_cost_check tmp matches 1 run playsound entity.firework_rocket.blast weather @a[tag=player] -2.5 1.5 4.5 1 0.8
-execute if score #stone_unlock_cost_check tmp matches 1 run playsound entity.player.levelup weather @a[tag=player] -2.5 1.5 4.5 0.8 1.2
-execute if score #stone_unlock_cost_check tmp matches 1 run particle firework -2.5 1.5 4.5 0.1 0.1 0.1 0.7 15 force @a[tag=player]
+execute if score #stone_unlock_cost_check tmp matches 1 run playsound entity.firework_rocket.blast weather @a[tag=player] -2.5 -58.5 35.5 1 0.8
+execute if score #stone_unlock_cost_check tmp matches 1 run playsound entity.player.levelup weather @a[tag=player] -2.5 -58.5 35.5 0.8 1.2
+execute if score #stone_unlock_cost_check tmp matches 1 run particle firework -2.5 -58.5 35.5 0.1 0.1 0.1 0.7 15 force @a[tag=player]
 execute if score #stone_unlock_cost_check tmp matches 1 as @a[tag=player] run function util/blank
 execute if score #stone_unlock_cost_check tmp matches 1 run return 1
 

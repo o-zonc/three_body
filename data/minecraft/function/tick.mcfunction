@@ -7,9 +7,6 @@ execute as @a if predicate player/sneaking unless score @s sneaking_prev matches
 execute as @a if predicate player/sneaking run scoreboard players set @s sneaking_prev 1
 execute as @a unless predicate player/sneaking run scoreboard players set @s sneaking_prev 0
 
-# 플레이어가 직접 던진 아이템 제거
-function common/remove_item
-
 # 엘리베이터
 function elevator/tick
 
@@ -29,3 +26,6 @@ function resource/overworld/iron/regen/ticking
 function resource/overworld/obsidian/regen/ticking
 function resource/overworld/wood/regen/ticking
 function resource/overworld/stone/regen/ticking
+
+scoreboard players enable @a upgrade_trigger
+scoreboard players enable @a unlock_trigger

@@ -65,8 +65,8 @@ scoreboard objectives add crystal_shop dummy
 scoreboard objectives add compress dummy
 
 scoreboard objectives add nether_workshop dummy
-scoreboard objectives add unlock_trigger dummy
-scoreboard objectives add upgrade_trigger dummy
+scoreboard objectives add unlock_trigger trigger
+scoreboard objectives add upgrade_trigger trigger
 
 # 10. 엘리베이터 스코어보드
 scoreboard objectives add elevator_unlocked dummy

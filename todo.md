@@ -125,3 +125,8 @@
 
 # 알아두면 좋은 정보
 26.2 버전에서는 predicate에서 "type"이 아니라 "condition"을 씁니다.
+
+# 인터렉션 설치하기
+/summon minecraft:interaction 0.5 -60 35.5 {Tags:["wood", "product"], width:1.02f, height:0.52f}
+
+좌표는 항상 x좌표와 z좌표가 0.5 크게 해줘야 함
