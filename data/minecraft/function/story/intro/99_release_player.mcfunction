@@ -16,4 +16,7 @@ advancement grant @a only 0_overworld/00_root
 scoreboard objectives setdisplay sidebar material_display
 tag @a add player
 
+schedule clear story/intro/03_scroll_tick
+scoreboard players set #block intro 1
+
 function story/tutorial/00_tutorial
