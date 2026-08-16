@@ -98,6 +98,13 @@ xp set @a 0 points
 function common/structure/observatory/off
 function common/structure/beacon/off
 
+# ------------------------------------------------------------
+# 10. 게임 규칙 재설정
+# ------------------------------------------------------------
+
+gamerule send_command_feedback false
+gamerule max_snow_accumulation_height 0
+
 
 # ------------------------------------------------------------
 # 99. 인트로 시작

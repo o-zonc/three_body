@@ -19,6 +19,8 @@ schedule clear frozen/weather
 # 혹시 남아 있는 이전 차원의 전환 예약 제거
 schedule clear common/next
 
+scoreboard objectives setdisplay sidebar material_display
+
 # ==========================================
 # 멸망한 이전 차원의 상태 초기화
 # ==========================================

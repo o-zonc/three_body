@@ -1,0 +1,2 @@
+scoreboard players display name wood material_display {"text":"나무 ","extra":[{"score":{"name":"#wood","objective":"material"}}],"color":"yellow"}
+scoreboard players display name stone material_display {"text":"돌 ","extra":[{"score":{"name":"#stone","objective":"material"}}],"color":"gray"}

@@ -13,4 +13,6 @@ scoreboard players set #GLOBAL era_paused 0
 kill @e[type=armor_stand,tag=fall_anchor]
 advancement grant @a only 0_overworld/00_root
 
+scoreboard objectives setdisplay sidebar material_display
+
 function story/tutorial/00_tutorial

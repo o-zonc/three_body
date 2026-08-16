@@ -16,7 +16,7 @@ execute if score #wood_regen_upgrade_cost_check tmp matches 1 run function resou
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 run scoreboard players add #wood_regen_lvl upgrade 1
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 run playsound entity.ender_eye.death weather @a[tag=player] 0.5 1.5 4.5 1 0.8
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 run playsound block.respawn_anchor.charge weather @a[tag=player] 0.5 1.5 4.5 1 2
-execute if score #wood_regen_upgrade_cost_check tmp matches 1 run particle end_rod 0.5 1.5 4.5 0.3 0.3 0.3 0.4 30 force @a[tag=player]
+execute if score #wood_regen_upgrade_cost_check tmp matches 1 run particle end_rod 0.5 -58.5 35.5 0.3 0.3 0.3 0.4 30 force @a[tag=player]
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 as @a[tag=player] run function resource/overworld/wood/ui/info
 execute if score #wood_regen_upgrade_cost_check tmp matches 1 run return 1
 
