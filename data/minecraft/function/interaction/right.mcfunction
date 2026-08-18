@@ -2,6 +2,7 @@
 
 # 기본
 execute if entity @s[tag=product] run function resource/product_interaction_manager
+execute if entity @s[tag=item] run function item/item_interaction_manager
 execute if entity @s[tag=npc] run function npc/npc_interaction_manager
 execute if entity @s[tag=entrance] run function dimensions/entrance_manager
 
@@ -14,7 +15,9 @@ execute if entity @s[tag=piglin_head] run function dimensions/nether/piglin_head
 
 
 # 상점류
-execute if entity @s[tag=material_shop,tag=!entrance] run function dimensions/overworld/shop/material_shop/shop_interaction_manager
+execute if entity @s[tag=shop,tag=elevator] on target run function elevator/shop_interact
+execute if entity @s[tag=shop,tag=alchemy] on target run function shop/alchemy/interact
+execute if entity @s[tag=shop,tag=!alchemy,tag=!elevator,tag=!item,tag=!entrance] run function dimensions/overworld/shop/material_shop/shop_interaction_manager
 execute if entity @s[tag=crystal_shop,tag=!entrance] run function dimensions/overworld/shop/crystal_shop/shop_interaction_manager
 execute if entity @s[tag=nether_workshop_1_1] on target run function dimensions/nether/workshop/info/1_1
 execute if entity @s[tag=nether_workshop_2_1] on target run function dimensions/nether/workshop/info/2_1

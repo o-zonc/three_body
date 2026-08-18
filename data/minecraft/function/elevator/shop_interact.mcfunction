@@ -1,0 +1,20 @@
+# `shop` 및 `elevator` 태그를 모두 가진 인터랙션 엔티티의 상점 UI.
+execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
+function util/blank
+
+# 구매 UI. 아래의 기존 안내 UI는 호환성을 위해 남겨 두되, 이 레벨별 return으로 실행되지 않는다.
+execute unless score #GLOBAL elevator_unlocked matches 0.. run scoreboard players set #GLOBAL elevator_unlocked 0
+execute if score #GLOBAL elevator_unlocked matches 0 unless score #overworld civilization_age matches 7.. run tellraw @s ["",{"text":"  [ 엘리베이터 제어 단말 ]","color":"#9EF971","bold":true},{"text":"\n\n  현재 레벨: Lv. 0","color":"gray"},{"text":"\n  상태: 잠김","color":"red"},{"text":"\n\n  근대 시대에 도달하면 Lv. 1을 해금할 수 있습니다.","color":"yellow"},{"text":"\n"}]
+execute if score #GLOBAL elevator_unlocked matches 0 unless score #overworld civilization_age matches 7.. run return 0
+execute if score #GLOBAL elevator_unlocked matches 0 if score #overworld civilization_age matches 7.. run tellraw @s ["",{"text":"  [ 엘리베이터 제어 단말 ]","color":"#9EF971","bold":true},{"text":"\n\n  현재 레벨: Lv. 0","color":"gray"},{"text":"\n  다음 해금: Lv. 1 — 2층 이동","color":"yellow"},{"text":"\n  필요 재료: 금 100개, 다이아몬드 50개","color":"gray"},{"text":"\n\n  [ 해금 ]","color":"aqua","bold":true,"hover_event":{"action":"show_text","value":{"text":"금 100개, 다이아몬드 50개"}},"click_event":{"action":"run_command","command":"/trigger shop_trigger set 1401"}},{"text":"\n"}]
+execute if score #GLOBAL elevator_unlocked matches 0 run return 0
+execute if score #GLOBAL elevator_unlocked matches 1 unless score #overworld civilization_age matches 8.. run tellraw @s ["",{"text":"  [ 엘리베이터 제어 단말 ]","color":"#9EF971","bold":true},{"text":"\n\n  현재 레벨: Lv. 1","color":"green"},{"text":"\n  이용 가능: 1층 ↔ 2층","color":"gray"},{"text":"\n\n  현대 시대에 도달하면 Lv. 2로 업그레이드할 수 있습니다.","color":"yellow"},{"text":"\n"}]
+execute if score #GLOBAL elevator_unlocked matches 1 unless score #overworld civilization_age matches 8.. run return 0
+execute if score #GLOBAL elevator_unlocked matches 1 if score #overworld civilization_age matches 8.. run tellraw @s ["",{"text":"  [ 엘리베이터 제어 단말 ]","color":"#9EF971","bold":true},{"text":"\n\n  현재 레벨: Lv. 1","color":"green"},{"text":"\n  이용 가능: 1층 ↔ 2층","color":"gray"},{"text":"\n  다음 업그레이드: Lv. 2 — 3층 이동","color":"yellow"},{"text":"\n  필요 재료: 열기 40개, 냉기 30개, 정보 5조각","color":"gray"},{"text":"\n\n  [ 업그레이드 ]","color":"aqua","bold":true,"hover_event":{"action":"show_text","value":{"text":"열기 40개, 냉기 30개, 정보 5조각"}},"click_event":{"action":"run_command","command":"/trigger shop_trigger set 1402"}},{"text":"\n"}]
+execute if score #GLOBAL elevator_unlocked matches 1 run return 0
+execute if score #GLOBAL elevator_unlocked matches 2.. run tellraw @s ["",{"text":"  [ 엘리베이터 제어 단말 ]","color":"#9EF971","bold":true},{"text":"\n\n  현재 레벨: Lv. 2","color":"aqua"},{"text":"\n  이용 가능: 1층 ↔ 2층 ↔ 3층","color":"gray"},{"text":"\n\n  모든 층이 해금되었습니다.","color":"green"},{"text":"\n"}]
+execute if score #GLOBAL elevator_unlocked matches 2.. run return 0
+
+execute if score #GLOBAL elevator_unlocked matches 0 run tellraw @s ["",{"text":"  { 엘리베이터 제어 단말 }","color":"#9EF971","bold":true},{"text":"\n\n  현재 레벨: Lv. 0","color":"gray"},{"text":"\n  상태: 잠김","color":"red"},{"text":"\n\n  다음 해금: Lv. 1 — 2층 이동","color":"yellow"},{"text":"\n  ※ 구매 비용을 설정하면 이 단말에 해금 버튼을 추가합니다.","color":"dark_gray"},{"text":"\n"}]
+execute if score #GLOBAL elevator_unlocked matches 1 run tellraw @s ["",{"text":"  { 엘리베이터 제어 단말 }","color":"#9EF971","bold":true},{"text":"\n\n  현재 레벨: Lv. 1","color":"green"},{"text":"\n  이용 가능: 1층 ↔ 2층","color":"gray"},{"text":"\n\n  다음 업그레이드: Lv. 2 — 3층 이동","color":"yellow"},{"text":"\n  ※ 구매 비용을 설정하면 이 단말에 업그레이드 버튼을 추가합니다.","color":"dark_gray"},{"text":"\n"}]
+execute if score #GLOBAL elevator_unlocked matches 2.. run tellraw @s ["",{"text":"  { 엘리베이터 제어 단말 }","color":"#9EF971","bold":true},{"text":"\n\n  현재 레벨: Lv. 2","color":"aqua"},{"text":"\n  이용 가능: 1층 ↔ 2층 ↔ 3층","color":"gray"},{"text":"\n\n  모든 층이 해금되었습니다.","color":"green"},{"text":"\n"}]

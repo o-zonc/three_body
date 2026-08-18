@@ -13,7 +13,7 @@ execute store result bossbar bossbar_frozen value run scoreboard players get #GL
 bossbar set bossbar_frozen visible false
 bossbar set bossbar_frozen players @a[nbt={Dimension:"minecraft:frozen"}]
 
-execute if entity @a[nbt={Dimension:"minecraft:frozen"}] if entity @a[advancements={0_overworld/01_chaos=true}] run bossbar set bossbar_frozen visible true
+execute if entity @a[nbt={Dimension:"minecraft:frozen"}] if entity @a[advancements={0_overworld/20_observatory=true}] run bossbar set bossbar_frozen visible true
 
 execute if entity @a[nbt={Dimension:"minecraft:frozen"}] if score #GLOBAL state_frozen matches 0 run bossbar set bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
 execute if entity @a[nbt={Dimension:"minecraft:frozen"}] if score #GLOBAL state_frozen matches 0 run bossbar set bossbar_frozen color blue
@@ -36,7 +36,7 @@ execute store result bossbar bossbar_dried value run scoreboard players get #GLO
 bossbar set bossbar_dried visible false
 bossbar set bossbar_dried players @a[nbt={Dimension:"minecraft:dried"}]
 
-execute if entity @a[nbt={Dimension:"minecraft:dried"}] if entity @a[advancements={0_overworld/01_chaos=true}] run bossbar set bossbar_dried visible true
+execute if entity @a[nbt={Dimension:"minecraft:dried"}] if entity @a[advancements={0_overworld/20_observatory=true}] run bossbar set bossbar_dried visible true
 
 execute if entity @a[nbt={Dimension:"minecraft:dried"}] if score #GLOBAL state_dried matches 0 run bossbar set bossbar_dried name {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
 execute if entity @a[nbt={Dimension:"minecraft:dried"}] if score #GLOBAL state_dried matches 0 run bossbar set bossbar_dried color yellow
@@ -59,7 +59,7 @@ execute store result bossbar bossbar_overworld value run scoreboard players get 
 bossbar set bossbar_overworld visible false
 bossbar set bossbar_overworld players @a[nbt={Dimension:"minecraft:overworld"}]
 
-execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if entity @a[advancements={0_overworld/01_chaos=true}] run bossbar set bossbar_overworld visible true
+execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if entity @a[advancements={0_overworld/20_observatory=true}] run bossbar set bossbar_overworld visible true
 
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL state_overworld matches 0 run bossbar set bossbar_overworld name {"text":"[ 오버월드 ] 다음 난세기까지","color":"dark_green"}
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL state_overworld matches 0 run bossbar set bossbar_overworld color green

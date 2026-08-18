@@ -1,0 +1,20 @@
+{
+  "parent": "0_overworld/14_ancient_age",
+  "display": {
+    "icon": "brewing_stand",
+    "title": "연금술 공방",
+    "description": "물질을 변환하고 차원 이동 기술을 연구할 수 있게 되었습니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "structure_unlocked": {
+      "trigger": "impossible"
+    }
+  },
+    "rewards": {
+    "function": "common/structure/alchemy_workshop/on"
+  }
+}

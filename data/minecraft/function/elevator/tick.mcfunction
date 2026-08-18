@@ -1,4 +1,5 @@
 # 3층 엘리베이터
+# elevator_unlocked: 0 = 잠김, 1 = 2층까지, 2 = 3층까지
 # 3x3 승강장 기준
 # 1층 바닥: 24 -64 -24 / 플레이어: Y=-63
 # 2층 바닥: 24 -50 -24 / 플레이어: Y=-49
@@ -42,19 +43,20 @@ execute as @a[tag=shift,tag=elevator_floor_3] at @s run playsound block.note_blo
 # 점프: 위층 이동
 # ─────────────────────────────
 
-# 1층 -> 2층
-execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 0.75
-execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev run tp @s 24 -49 -24
-execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 1.0
+# 1층 -> 2층 (엘리베이터 Lv. 1 필요)
+execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 1.. at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
+execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 1.. at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 0.75
+execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 1.. run tp @s 24 -49 -24
+execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 1.. at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
+execute as @a[tag=elevator_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 1.. at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 1.0
 
-# 2층 -> 3층
-execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 0.75
-execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev run tp @s 24 -41 -24
-execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 1.0
+# 2층 -> 3층 (엘리베이터 Lv. 2 필요)
+execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev unless score #GLOBAL elevator_unlocked matches 2.. run function elevator/upgrade_required
+execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 2.. at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
+execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 2.. at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 0.75
+execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 2.. run tp @s 24 -41 -24
+execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 2.. at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
+execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 2.. at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 1.0
 
 # 이번 tick의 점프 통계를 다음 tick의 기준값으로 저장합니다.
 execute as @a run scoreboard players operation @s elevator_jump_prev = @s elevator_jump

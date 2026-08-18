@@ -35,14 +35,15 @@ execute as @a[nbt={Dimension:"minecraft:dawn"},limit=1] at @s run function commo
 # 극야를 제외하고는 문명 수 1 증가
 execute unless entity @a[nbt={Dimension:"minecraft:polarnight"}] run scoreboard players add #GLOBAL n_civil 1
 
-execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run advancement grant @a only 0_overworld/10_disaster
-execute if entity @a[nbt={Dimension:"minecraft:frozen"}] run advancement grant @a only 1_frozen/03_disaster
-execute if entity @a[nbt={Dimension:"minecraft:dried"}] run advancement grant @a only 2_dried/01_disaster
-execute if entity @a[nbt={Dimension:"minecraft:polarnight"}] run advancement grant @a only 3_polarnight/98_last
+advancement grant @a only 6_disaster/00_root
+execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run advancement grant @a only 6_disaster/10_overworld
+execute if entity @a[nbt={Dimension:"minecraft:frozen"}] run advancement grant @a only 6_disaster/20_frozen
+execute if entity @a[nbt={Dimension:"minecraft:dried"}] run advancement grant @a only 6_disaster/30_dried
+execute if entity @a[nbt={Dimension:"minecraft:polarnight"}] run advancement grant @a only 3_polarnight/01_enlightenment
 
 # 다른 차원을 한 번도 방문하지 않은 상태에서 오버월드가 멸망하는 경우
 # 자동 난세기 멸망(state_overworld=2)뿐 아니라 차원 이동기로 직접 멸망시키는 경우도 포함합니다.
-execute if score #GLOBAL current_dim matches 0 if score #GLOBAL first_frozen matches 0 if score #GLOBAL first_dried matches 0 run advancement grant @a only 0_overworld/11_unluck
+execute if score #GLOBAL current_dim matches 0 if score #GLOBAL first_frozen matches 0 if score #GLOBAL first_dried matches 0 run advancement grant @a only 6_disaster/11_early_overworld
 
 # 멸망 상태는 연출이 완전히 끝날 때까지 유지합니다.
 # state_* 초기화는 disaster/finish에서 다음 차원으로 이동한 뒤 처리합니다.

@@ -1,0 +1,17 @@
+{
+	"parent": "0_overworld/22_particle_accelerator",
+	"display": {
+		"icon": "nether_star",
+		"title": "미래",
+		"description": "문명은 마침내 지구의 한계를 넘어섭니다.",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "impossible"
+		}
+	},
+	"rewards": {"function": "story/overworld/age/27_future_age"}
+}

@@ -1,0 +1,1 @@
+give @s emerald[custom_name={"text":"상점 이동기",color:"gray",italic:false},custom_data={shop_move:1b},lore=[{"text":"기계 - 웅크리기로 사용",color:"blue",italic:false},{"text":"상점으로 이동합니다.",color:"gray",italic:false}],item_model="emerald"]

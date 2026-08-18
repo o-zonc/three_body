@@ -1,4 +1,0 @@
-scoreboard players reset #mob_remain generate
-
-execute positioned 3.5 1.9375 4.5 unless entity @e[tag=mob,distance=..0.2,type=item_display] run summon item_display ~ ~ ~ {Tags:[mob], item: {components: {"profile": {id: [I; -1770111665, -1009563463, -1719043784, 2061287404], name: "TheVoidBlock", properties: [{name: "textures", value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y1ODBkNGUyM2Y2NjJmMWM5NjljZmJhMDAwNjY0ZjhmODJhMjg2Mzg2ZWQ4YTMzZjliNDI1NjM2NTg5ZThlYTkifX19"}]}}, count: 1, id: "player_head"}, transformation: {left_rotation: [0.0f, 0.0f, 0.0f, 1.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.75f, 1.75f, 1.75f], translation: [0.0f, 0.0f, 0.0f]}}
-playsound entity.zombie.infect weather @a[tag=player] 3.5 1.5 4.5 0.8 1.8

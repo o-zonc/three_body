@@ -1,0 +1,17 @@
+{
+	"parent": "0_overworld/21_alchemy_workshop",
+	"display": {
+		"icon": "emerald",
+		"title": "중세",
+		"description": "교역과 사회의 체계를 발전시킵니다.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "impossible"
+		}
+	},
+	"rewards": {"function": "story/overworld/age/24_medieval_age"}
+}

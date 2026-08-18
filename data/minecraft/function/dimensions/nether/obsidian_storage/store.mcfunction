@@ -13,6 +13,5 @@ scoreboard players remove #obsidian material 1
 scoreboard players add #obsidian_storage_amount var 1
 function dimensions/nether/obsidian_storage/update_milestone
 
-function resource/overworld/obsidian/lock/update
 function dimensions/nether/obsidian_storage/ui/info
 return 1

@@ -1,0 +1,1 @@
+give @s purple_dye[custom_name={"text":"연금술 공방 이동기",color:"light_purple",italic:false},custom_data={alchemy_move:1b},lore=[{"text":"기계 - 웅크리기로 사용",color:"blue",italic:false},{"text":"연금술 공방으로 이동합니다.",color:"gray",italic:false}],item_model="brewing_stand"]

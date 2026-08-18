@@ -1,0 +1,17 @@
+{
+  "parent": "0_overworld/17_contemporary_age",
+  "display": {
+    "icon": "end_rod",
+    "title": "입자가속기",
+    "description": "입자의 충돌을 관측해 외계 문명의 과학 봉쇄를 연구합니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "structure_unlocked": {
+      "trigger": "impossible"
+    }
+  }
+}

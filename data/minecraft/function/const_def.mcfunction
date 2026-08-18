@@ -4,6 +4,13 @@
 data remove storage data const
 data merge storage data {\
   const:{\
+    structure: {\
+      alchemy_workshop: [\
+        { stage: 0, required_age: 5, cost: [{ type: "iron", amount: 250 }, { type: "emerald", amount: 100 }] },\
+        { stage: 1, required_age: 6, cost: [{ type: "iron", amount: 500 }, { type: "emerald", amount: 250 }, { type: "lapis", amount: 100 }] },\
+        { stage: 2, required_age: 7, cost: [{ type: "iron", amount: 2000 }, { type: "emerald", amount: 1000 }, { type: "lapis", amount: 500 }] },\
+      ],\
+    },\
     dimensions: {\
       overworld: {\
         drill: {\
@@ -78,6 +85,66 @@ data merge storage data {\
                 { lvl: 3, value: 8, cost: [{ type: "coal", amount: 2000 }] },\
                 { lvl: 4, value: 16, cost: [{ type: "coal", amount: 13000 }] },\
                 { lvl: 5, value: 32, cost: [{ type: "coal", amount: 30000 }] },\
+                { lvl: 6, value: 64 },\
+              ]\
+            },\
+            {\
+              type: "copper",\
+              costs: [\
+                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 20 }] },\
+                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 60 }] },\
+                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 200 }] },\
+                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 1500 }] },\
+                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 10000 }] },\
+                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 25000 }] },\
+                { lvl: 6, value: 64 },\
+              ]\
+            },\
+            {\
+              type: "gold",\
+              costs: [\
+                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 100 }] },\
+                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 500 }] },\
+                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 2000 }] },\
+                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 8000 }] },\
+                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 30000 }] },\
+                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 100000 }] },\
+                { lvl: 6, value: 64 },\
+              ]\
+            },\
+            {\
+              type: "diamond",\
+              costs: [\
+                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 250 }] },\
+                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 1000 }] },\
+                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 5000 }] },\
+                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 20000 }] },\
+                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 75000 }] },\
+                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 250000 }] },\
+                { lvl: 6, value: 64 },\
+              ]\
+            },\
+            {\
+              type: "emerald",\
+              costs: [\
+                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 200 }] },\
+                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 800 }] },\
+                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 4000 }] },\
+                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 16000 }] },\
+                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 60000 }] },\
+                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 200000 }] },\
+                { lvl: 6, value: 64 },\
+              ]\
+            },\
+            {\
+              type: "lapis",\
+              costs: [\
+                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 150 }] },\
+                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 600 }] },\
+                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 3000 }] },\
+                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 12000 }] },\
+                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 50000 }] },\
+                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 150000 }] },\
                 { lvl: 6, value: 64 },\
               ]\
             },\
@@ -701,59 +768,20 @@ data merge storage data {\
       },\
     ],\
     resource: {\
-      wood: {\
-        regen:[\
-          { lvl: 0, value: 40, cost: [{ type: "stone", amount: 3 }] },\
-          { lvl: 1, value: 20, cost: [{ type: "stone", amount: 6 }] },\
-          { lvl: 2, value: 10, cost: [{ type: "stone", amount: 20 }] },\
-          { lvl: 3, value: 4, cost: [{ type: "stone", amount: 100 }] },\
-          { lvl: 4, value: 1 },\
-        ],\
-      },\
-      stone: {\
-        unlock_cost: [{ type: "wood", amount: 30 }],\
-        regen:[\
-          { lvl: 0, value: 3, cost: [{ type: "stone", amount: 400 }] },\
-          { lvl: 1, value: 2, cost: [{ type: "stone", amount: 25000 }] },\
-          { lvl: 2, value: 1 },\
-        ],\
-      },\
-      mob: {\
-        unlock_cost: [{ type: "wood", amount: 50 }],\
-        regen:[\
-          { lvl: 0, value: 120, cost: [{ type: "stone", amount: 50 }] },\
-          { lvl: 1, value: 80, cost: [{ type: "stone", amount: 250 }] },\
-          { lvl: 2, value: 50, cost: [{ type: "stone", amount: 1250 }] },\
-          { lvl: 3, value: 20, cost: [{ type: "stone", amount: 5000 }] },\
-          { lvl: 4, value: 5 },\
-        ],\
-      },\
-      gold: {\
-        unlock_cost: [{ type: "quartz", amount: 10 }],\
-        regen:[\
-          { lvl: 0, value: 60, cost: [{ type: "stone", amount: 2000 }]},\
-          { lvl: 1, value: 45, cost: [{ type: "stone", amount: 6000 }]},\
-          { lvl: 2, value: 30, cost: [{ type: "stone", amount: 10000 }]},\
-          { lvl: 3, value: 18, cost: [{ type: "stone", amount: 18000 }]},\
-          { lvl: 4, value: 6, cost: [{ type: "stone", amount: 30000 }]},\
-          { lvl: 5, value: 4, cost: [{ type: "stone", amount: 50000 }]},\
-          { lvl: 6, value: 2, cost: [{ type: "stone", amount: 100000 }]},\
-          { lvl: 7, value: 1 },\
-        ],\
-      },\
-      blaze: {\
-        unlock_cost: [{ type: "quartz", amount: 5 }],\
-        drop:[\
-          { lvl: 0, value: 1, cost: [{ type: "wood", amount: 30000 }, { type: "quartz", amount: 3 } ] },\
-          { lvl: 1, value: 2, cost: [{ type: "wood", amount: 60000 }, { type: "quartz", amount: 12 } ] },\
-          { lvl: 2, value: 4, cost: [{ type: "wood", amount: 100000 }, { type: "quartz", amount: 28 } ] },\
-          { lvl: 3, value: 8, cost: [{ type: "wood", amount: 150000 }, { type: "quartz", amount: 45 } ] },\
-          { lvl: 4, value: 16, cost: [{ type: "wood", amount: 240000 }, { type: "quartz", amount: 82 } ] },\
-          { lvl: 5, value: 32, cost: [{ type: "wood", amount: 400000 }, { type: "quartz", amount: 210 } ] },\
-          { lvl: 6, value: 64, cost: [{ type: "wood", amount: 750000 }, { type: "quartz", amount: 450 } ] },\
-          { lvl: 7, value: 128 },\
-        ],\
-      },\
+      wood: {item:"oak_log",regen:[{lvl:0,value:40,cost:[{type:"stone",amount:3}]},{lvl:1,value:20,cost:[{type:"stone",amount:6}]},{lvl:2,value:10,cost:[{type:"stone",amount:20}]},{lvl:3,value:4,cost:[{type:"stone",amount:100}]},{lvl:4,value:1}]},\
+      stone: {item:"stone",unlock_cost:[{type:"wood",amount:30}],regen:[{lvl:0,value:3,cost:[{type:"stone",amount:400}]},{lvl:1,value:2,cost:[{type:"stone",amount:25000}]},{lvl:2,value:1}]},\
+      coal: {item:"deepslate_coal_ore",unlock_cost:[{type:"stone",amount:100}],regen:[{lvl:0,value:100,cost:[{type:"copper",amount:20}]},{lvl:1,value:70,cost:[{type:"iron",amount:50}]},{lvl:2,value:45,cost:[{type:"gold",amount:100}]},{lvl:3,value:25,cost:[{type:"diamond",amount:25}]},{lvl:4,value:10}]},\
+      copper: {item:"deepslate_copper_ore",unlock_cost:[{type:"stone",amount:200}],regen:[{lvl:0,value:160,cost:[{type:"stone",amount:100}]},{lvl:1,value:110,cost:[{type:"coal",amount:100}]},{lvl:2,value:70,cost:[{type:"iron",amount:150}]},{lvl:3,value:40,cost:[{type:"gold",amount:100}]},{lvl:4,value:20}]},\
+      iron: {item:"deepslate_iron_ore",unlock_cost:[{type:"coal",amount:100},{type:"copper",amount:100}],regen:[{lvl:0,value:300,cost:[{type:"copper",amount:200}]},{lvl:1,value:220,cost:[{type:"coal",amount:300}]},{lvl:2,value:150,cost:[{type:"gold",amount:250}]},{lvl:3,value:90,cost:[{type:"diamond",amount:50}]},{lvl:4,value:40}]},\
+      gold: {item:"deepslate_gold_ore",regen:[{lvl:0,value:600,cost:[{type:"iron",amount:500}]},{lvl:1,value:450,cost:[{type:"coal",amount:1000}]},{lvl:2,value:300,cost:[{type:"emerald",amount:250}]},{lvl:3,value:180,cost:[{type:"diamond",amount:100}]},{lvl:4,value:80}]},\
+      diamond: {item:"deepslate_diamond_block",regen:[{lvl:0,value:1200,cost:[{type:"gold",amount:500}]},{lvl:1,value:900,cost:[{type:"emerald",amount:500}]},{lvl:2,value:600,cost:[{type:"lapis",amount:1000}]},{lvl:3,value:350,cost:[{type:"information",amount:100}]},{lvl:4,value:160}]},\
+      emerald: {item:"deepslate_emerald_ore",unlock_cost:[{type:"iron",amount:300},{type:"copper",amount:300}],regen:[{lvl:0,value:800,cost:[{type:"gold",amount:300}]},{lvl:1,value:600,cost:[{type:"lapis",amount:300}]},{lvl:2,value:400,cost:[{type:"diamond",amount:75}]},{lvl:3,value:240,cost:[{type:"information",amount:50}]},{lvl:4,value:100}]},\
+      lapis: {item:"deepslate_lapis_ore",unlock_cost:[{type:"emerald",amount:100}],regen:[{lvl:0,value:500,cost:[{type:"emerald",amount:100}]},{lvl:1,value:360,cost:[{type:"gold",amount:400}]},{lvl:2,value:240,cost:[{type:"diamond",amount:100}]},{lvl:3,value:140,cost:[{type:"information",amount:75}]},{lvl:4,value:60}]},\
+      heat: {item:"fire_charge"},\
+      cold: {item:"snowball"},\
+      information: {item:"amethyst_shard"},\
+      time: {item:"echo_shard"},\
+      world_eye: {item:"ender_eye"}\
     },\
   }\
 }

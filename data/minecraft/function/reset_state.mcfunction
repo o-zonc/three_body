@@ -42,11 +42,64 @@ scoreboard players set #disaster_running run 0
 # 7. 스토리 관리 스코어보드 초기화
 scoreboard players set #done intro 0
 scoreboard players set #t intro 0
+scoreboard players set #overworld civilization_age 0
+scoreboard players set #level alchemy_workshop 0
+scoreboard players set #alchemy_workshop unlock 0
 
 # 8. 자원 스코어보드 초기화
 scoreboard players set * material 0
 scoreboard players set * upgrade 0
 scoreboard players set * unlock 0
+
+# 생산 업그레이드 레벨을 명시적으로 초기화
+scoreboard players set #wood_regen_lvl upgrade 0
+scoreboard players set #stone_regen_lvl upgrade 0
+scoreboard players set #coal_regen_lvl upgrade 0
+scoreboard players set #copper_regen_lvl upgrade 0
+scoreboard players set #iron_regen_lvl upgrade 0
+scoreboard players set #gold_regen_lvl upgrade 0
+scoreboard players set #diamond_regen_lvl upgrade 0
+scoreboard players set #emerald_regen_lvl upgrade 0
+scoreboard players set #lapis_regen_lvl upgrade 0
+scoreboard players set #drill_speed_lvl upgrade 0
+scoreboard players set #drill_limit_lvl upgrade 0
+scoreboard players set #tool upgrade 0
+
+# 상점 및 공방에서 관리하는 별도 업그레이드 레벨 초기화
+scoreboard players set * material_shop 0
+scoreboard players set * crystal_shop 0
+scoreboard players set * nether_workshop 0
+
+# 자원별 수급량 상점 레벨을 명시적으로 초기화
+scoreboard players set #wood_lvl material_shop 0
+scoreboard players set #stone_lvl material_shop 0
+scoreboard players set #coal_lvl material_shop 0
+scoreboard players set #copper_lvl material_shop 0
+scoreboard players set #iron_lvl material_shop 0
+scoreboard players set #gold_lvl material_shop 0
+scoreboard players set #diamond_lvl material_shop 0
+scoreboard players set #emerald_lvl material_shop 0
+scoreboard players set #lapis_lvl material_shop 0
+scoreboard players set #xp_lvl material_shop 0
+
+# 자원 상점 목록 UI의 임시 계산 결과 제거
+scoreboard players reset #wood_shop_value tmp
+scoreboard players reset #stone_shop_value tmp
+scoreboard players reset #coal_shop_value tmp
+scoreboard players reset #copper_shop_value tmp
+scoreboard players reset #iron_shop_value tmp
+scoreboard players reset #gold_shop_value tmp
+scoreboard players reset #diamond_shop_value tmp
+scoreboard players reset #emerald_shop_value tmp
+scoreboard players reset #lapis_shop_value tmp
+scoreboard players reset #xp_shop_value tmp
+scoreboard players reset #material_shop_cost_check tmp
+
+# 이전 계산 결과와 대기 중인 트리거 제거
+scoreboard players set #poss_effective_lvl tmp 0
+scoreboard players reset @a upgrade_trigger
+scoreboard players reset @a shop_trigger
+scoreboard players reset @a unlock_trigger
 
 scoreboard objectives remove material_display
 

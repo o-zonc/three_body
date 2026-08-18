@@ -1,0 +1,13 @@
+scoreboard players set #wood material 1000
+scoreboard players set #stone material 1000
+scoreboard players set #coal material 1000
+scoreboard players set #copper material 1000
+scoreboard players set #iron material 1000
+scoreboard players set #emerald material 1000
+scoreboard players set #lapis material 1000
+scoreboard players set #gold material 1000
+scoreboard players set #diamond material 1000
+scoreboard players set #heat material 1000
+scoreboard players set #cold material 1000
+scoreboard players set #information material 1000
+scoreboard players set #time material 1000

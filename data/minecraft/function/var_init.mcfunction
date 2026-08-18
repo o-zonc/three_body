@@ -4,6 +4,8 @@ scoreboard objectives add var dummy
 scoreboard objectives add tmp dummy
 
 scoreboard objectives add advancement dummy
+scoreboard objectives add civilization_age dummy
+scoreboard objectives add alchemy_workshop dummy
 
 scoreboard objectives add material dummy
 
@@ -35,6 +37,9 @@ scoreboard players enable @a upgrade_trigger
 
 scoreboard objectives add shop_trigger trigger
 scoreboard players enable @a shop_trigger
+
+scoreboard objectives add item_trigger trigger
+scoreboard players enable @a item_trigger
 
 scoreboard objectives add entrance_trigger trigger
 scoreboard players enable @a entrance_trigger
@@ -73,6 +78,7 @@ execute unless score #blaze unlock = #blaze unlock run scoreboard players set #b
 execute unless score #area_zone unlock = #area_zone unlock run scoreboard players set #area_zone unlock 0
 execute unless score #3rd_area unlock = #3rd_area unlock run scoreboard players set #3rd_area unlock 0
 execute unless score #tool_created_lvl var = #tool_created_lvl var run scoreboard players set #tool_created_lvl var -1
+execute unless score #level alchemy_workshop = #level alchemy_workshop run scoreboard players set #level alchemy_workshop 0
 execute unless score #overworld_advancement_reward_disabled var = #overworld_advancement_reward_disabled var run scoreboard players set #overworld_advancement_reward_disabled var 0
 execute unless score #nether_advancement_reward_disabled var = #nether_advancement_reward_disabled var run scoreboard players set #nether_advancement_reward_disabled var 0
 execute unless score #gold_regen_lvl upgrade = #gold_regen_lvl upgrade run scoreboard players set #gold_regen_lvl upgrade 0

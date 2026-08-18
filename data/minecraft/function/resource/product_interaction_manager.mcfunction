@@ -1,10 +1,14 @@
-execute if entity @s[tag=wood] on target run function resource/overworld/wood/ui/interact
-execute if entity @s[tag=stone] on target run function resource/overworld/stone/ui/interact
-execute if entity @s[tag=mob] on target run function resource/overworld/mob/ui/interact
-execute if entity @s[tag=coal] on target run function resource/overworld/coal/ui/interact
-execute if entity @s[tag=iron] on target run function resource/overworld/iron/ui/interact
-execute if entity @s[tag=obsidian] on target run function resource/overworld/obsidian/ui/interact
-execute if entity @s[tag=quartz] on target run function resource/nether/quartz/ui/interact
-execute if entity @s[tag=gold] on target run function resource/nether/gold/ui/interact
-execute if entity @s[tag=blaze] on target run function resource/nether/blaze/ui/interact
-execute positioned -76.5 1.5 13.5 if entity @s[tag=mob,tag=!blaze,distance=..1] on target run function resource/nether/blaze/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=wood] on target run function resource/material/wood/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=stone] on target run function resource/material/stone/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=coal] on target run function resource/material/coal/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=copper] on target run function resource/material/copper/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=iron] on target run function resource/material/iron/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=gold] on target run function resource/material/gold/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=diamond] on target run function resource/material/diamond/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=emerald] on target run function resource/material/emerald/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=lapis] on target run function resource/material/lapis/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=heat] on target run function resource/material/heat/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=cold] on target run function resource/material/cold/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=information] on target run function resource/material/information/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=time] on target run function resource/material/time/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=world_eye] on target run function resource/material/world_eye/ui/interact

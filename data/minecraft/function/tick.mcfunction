@@ -20,19 +20,10 @@ function interaction/detect
 function var_init
 function resource/limit_materials
 
-function resource/nether/gold/regen/ticking
-function resource/nether/blaze/regen/ticking
-function resource/nether/quartz/regen/ticking
-function resource/overworld/mob/regen/ticking
-function resource/overworld/coal/regen/ticking
-function resource/overworld/iron/regen/ticking
-function resource/overworld/obsidian/regen/ticking
-function resource/overworld/wood/regen/ticking
-function resource/overworld/stone/regen/ticking
-
 function resource/product_managing_by_tick
 function resource/unlock_trigger
 function resource/upgrade_trigger
+function item/purchase_trigger
 
 # 스토리
 function story/story

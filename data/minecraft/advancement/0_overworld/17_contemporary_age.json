@@ -1,0 +1,17 @@
+{
+	"parent": "0_overworld/16_modern_age",
+	"display": {
+		"icon": "observer",
+		"title": "현대",
+		"description": "정보를 기록하고 자동화된 기술을 발전시킵니다.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "impossible"
+		}
+	},
+	"rewards": {"function": "story/overworld/age/26_contemporary_age"}
+}

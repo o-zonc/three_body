@@ -12,5 +12,7 @@ scoreboard players set #GLOBAL visited_frozen 0
 scoreboard players set #GLOBAL visited_overworld 0
 scoreboard players add #GLOBAL visited_polar 1
 scoreboard players set #GLOBAL current_dim 3
+execute unless score #time unlock matches 1 as @a at @s run function resource/effect/unlock_success
+scoreboard players set #time unlock 1
 
 scoreboard players set #GLOBAL era_paused 0

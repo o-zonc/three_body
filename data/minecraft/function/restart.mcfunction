@@ -101,6 +101,7 @@ xp set @a 0 points
 
 function common/structure/observatory/off
 function common/structure/beacon/off
+function common/structure/alchemy_workshop/off
 
 # ------------------------------------------------------------
 # 10. 게임 규칙 재설정

@@ -11,7 +11,6 @@ execute store result score #obsidian_max_up_upgrade_cost_check tmp run function 
 execute if score #obsidian_max_up_upgrade_cost_check tmp matches 1 run function resource/take_upgrade_cost
 execute if score #obsidian_max_up_upgrade_cost_check tmp matches 1 run scoreboard players add #obsidian_max_up_lvl crystal_shop 1
 execute if score #obsidian_max_up_upgrade_cost_check tmp matches 1 at @s run playsound entity.ender_eye.death weather @s ~ ~ ~ 0.5 1.5
-execute if score #obsidian_max_up_upgrade_cost_check tmp matches 1 run function resource/overworld/obsidian/lock/update
 execute if score #obsidian_max_up_upgrade_cost_check tmp matches 1 run function dimensions/overworld/shop/crystal_shop/ui/obsidian_max_up
 execute if score #obsidian_max_up_upgrade_cost_check tmp matches 1 run return 1
 

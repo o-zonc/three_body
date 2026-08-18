@@ -46,6 +46,8 @@ scoreboard objectives add run dummy
 scoreboard objectives add intro dummy
 scoreboard objectives add intro_skip trigger
 scoreboard objectives add tutorial trigger
+scoreboard objectives add civilization_age dummy
+scoreboard objectives add alchemy_workshop dummy
 
 # 8. 자원 관리 스코어보드
 scoreboard objectives add material dummy
@@ -67,6 +69,7 @@ scoreboard objectives add compress dummy
 scoreboard objectives add nether_workshop dummy
 scoreboard objectives add unlock_trigger trigger
 scoreboard objectives add upgrade_trigger trigger
+scoreboard objectives add item_trigger trigger
 
 # 10. 엘리베이터 스코어보드
 scoreboard objectives add elevator_unlocked dummy

@@ -1,2 +1,1 @@
-function resource/overworld_product_managing_by_tick
-function resource/nether_product_managing_by_tick
+function resource/tick

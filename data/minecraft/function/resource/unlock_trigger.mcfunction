@@ -6,15 +6,23 @@
 
 
 
+# 아직 시대 조건을 충족하지 못한 자원 (1000)
+execute as @a[tag=player] if score @s unlock_trigger matches 1000 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
+execute as @a[tag=player] if score @s unlock_trigger matches 1000 run title @s actionbar "§c아직 해금되지 않은 자원입니다."
+
+
+
 # 오버월드 (11XX)
-execute as @a[tag=player] if score @s unlock_trigger matches 1101 run function resource/overworld/stone/trigger/unlock
-execute as @a[tag=player] if score @s unlock_trigger matches 1102 run function resource/overworld/mob/trigger/unlock
+execute as @a[tag=player] if score @s unlock_trigger matches 1101 run function resource/unlock/stone
+execute as @a[tag=player] if score @s unlock_trigger matches 1102 run function resource/unlock/coal
+execute as @a[tag=player] if score @s unlock_trigger matches 1103 run function resource/unlock/copper
+execute as @a[tag=player] if score @s unlock_trigger matches 1104 run function resource/unlock/iron
+execute as @a[tag=player] if score @s unlock_trigger matches 1105 run function resource/unlock/emerald
+execute as @a[tag=player] if score @s unlock_trigger matches 1106 run function resource/unlock/lapis
 
 
 
 # 네더 (12XX)
-execute as @a[tag=player] if score @s unlock_trigger matches 1201 run function resource/nether/gold/trigger/unlock
-execute as @a[tag=player] if score @s unlock_trigger matches 1202 run function resource/nether/blaze/trigger/unlock
 
 
 
@@ -25,3 +33,4 @@ execute as @a[tag=player] if score @s unlock_trigger matches 1202 run function r
 
 
 execute as @a[tag=player] if score @s unlock_trigger matches 1.. run scoreboard players reset @s unlock_trigger
+scoreboard players enable @a[tag=player] unlock_trigger

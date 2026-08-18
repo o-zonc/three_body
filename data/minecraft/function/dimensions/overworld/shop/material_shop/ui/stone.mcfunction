@@ -20,7 +20,7 @@ function util/blank
 
 data modify storage data tmp.creation_ui.material_shop_stone set value {text:"§b§l[ 업그레이드 ]",hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.material_shop_stone.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1102"}}
 tellraw @s ["", \
-  { text: "  §6§l[ 자원 상점 - 돌 ]§r" },\
+  { text: "  [ 자원 상점 - 돌 ]", color: "gray", bold: true, shadow_color: -16777216 },\
   { text: "\n" },\
   { text: "\n  §8•§7 현재 수급량: ", extra: [{ storage: "data", nbt: "tmp.material_shop.stone.value_component", interpret: true }] },\
   { text: "\n" },\

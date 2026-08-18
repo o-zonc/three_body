@@ -10,6 +10,8 @@ gamerule advance_time true
 scoreboard players set #GLOBAL visited_dried 1
 scoreboard players add #GLOBAL first_dried 1
 scoreboard players set #GLOBAL current_dim 1
+execute unless score #heat unlock matches 1 as @a at @s run function resource/effect/unlock_success
+scoreboard players set #heat unlock 1
 
 # 새 차원은 항상 항성기에서 시작하며, 첫 시대의 타이머를 1200틱으로 초기화합니다.
 scoreboard players set #GLOBAL state_dried 0
