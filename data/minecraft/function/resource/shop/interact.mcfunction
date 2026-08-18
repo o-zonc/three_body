@@ -1,0 +1,22 @@
+execute if entity @s[tag=check] on target run return run function resource/shop/check
+
+execute if entity @s[tag=wood] if score #wood unlock matches 1 on target run function resource/shop/ui {id:"wood",name:"나무",color:"yellow",trigger:1101,unit:"배"}
+execute if entity @s[tag=wood] unless score #wood unlock matches 1 on target run function resource/shop/locked {name:"나무",color:"yellow"}
+execute if entity @s[tag=stone] if score #stone unlock matches 1 on target run function resource/shop/ui {id:"stone",name:"돌",color:"gray",trigger:1102,unit:"배"}
+execute if entity @s[tag=stone] unless score #stone unlock matches 1 on target run function resource/shop/locked {name:"돌",color:"gray"}
+execute if entity @s[tag=coal] if score #coal unlock matches 1 on target run function resource/shop/ui {id:"coal",name:"석탄",color:"dark_gray",trigger:1103,unit:"배"}
+execute if entity @s[tag=coal] unless score #coal unlock matches 1 on target run function resource/shop/locked {name:"석탄",color:"dark_gray"}
+execute if entity @s[tag=copper] if score #copper unlock matches 1 on target run function resource/shop/ui {id:"copper",name:"구리",color:"gold",trigger:1106,unit:"배"}
+execute if entity @s[tag=copper] unless score #copper unlock matches 1 on target run function resource/shop/locked {name:"구리",color:"gold"}
+execute if entity @s[tag=iron] if score #iron unlock matches 1 on target run function resource/shop/ui {id:"iron",name:"철",color:"white",trigger:1104,unit:"배"}
+execute if entity @s[tag=iron] unless score #iron unlock matches 1 on target run function resource/shop/locked {name:"철",color:"white"}
+execute if entity @s[tag=gold] if score #gold unlock matches 1 on target run function resource/shop/ui {id:"gold",name:"금",color:"gold",trigger:1107,unit:"배"}
+execute if entity @s[tag=gold] unless score #gold unlock matches 1 on target run function resource/shop/locked {name:"금",color:"gold"}
+execute if entity @s[tag=diamond] if score #diamond unlock matches 1 on target run function resource/shop/ui {id:"diamond",name:"다이아몬드",color:"aqua",trigger:1108,unit:"배"}
+execute if entity @s[tag=diamond] unless score #diamond unlock matches 1 on target run function resource/shop/locked {name:"다이아몬드",color:"aqua"}
+execute if entity @s[tag=emerald] if score #emerald unlock matches 1 on target run function resource/shop/ui {id:"emerald",name:"에메랄드",color:"green",trigger:1109,unit:"배"}
+execute if entity @s[tag=emerald] unless score #emerald unlock matches 1 on target run function resource/shop/locked {name:"에메랄드",color:"green"}
+execute if entity @s[tag=lapis] if score #lapis unlock matches 1 on target run function resource/shop/ui {id:"lapis",name:"청금석",color:"blue",trigger:1110,unit:"배"}
+execute if entity @s[tag=lapis] unless score #lapis unlock matches 1 on target run function resource/shop/locked {name:"청금석",color:"blue"}
+execute if entity @s[tag=xp] if score #mob unlock matches 1 on target run function resource/shop/ui {id:"xp",name:"경험치",color:"green",trigger:1105,unit:" XP/구슬"}
+execute if entity @s[tag=xp] unless score #mob unlock matches 1 on target run function resource/shop/locked {name:"경험치",color:"green"}

@@ -12,12 +12,11 @@ scoreboard objectives add material dummy
 scoreboard objectives add unlock dummy
 
 scoreboard objectives add upgrade dummy
+scoreboard objectives add material_shop dummy
 
 scoreboard objectives add generate dummy
 
-scoreboard objectives add material_shop dummy
 
-scoreboard objectives add crystal_shop dummy
 
 scoreboard objectives add cost dummy
 
@@ -123,10 +122,3 @@ execute unless score #10_1 nether_workshop = #10_1 nether_workshop run scoreboar
 execute unless score #11_1 nether_workshop = #11_1 nether_workshop run scoreboard players set #11_1 nether_workshop 0
 execute unless score #11_2 nether_workshop = #11_2 nether_workshop run scoreboard players set #11_2 nether_workshop 0
 execute unless score #12_1 nether_workshop = #12_1 nether_workshop run scoreboard players set #12_1 nether_workshop 0
-execute unless score #obsidian_max_up_lvl crystal_shop = #obsidian_max_up_lvl crystal_shop run scoreboard players set #obsidian_max_up_lvl crystal_shop 0
-execute unless score #compressed_overworld_crystal_multiple_lvl crystal_shop = #compressed_overworld_crystal_multiple_lvl crystal_shop run scoreboard players set #compressed_overworld_crystal_multiple_lvl crystal_shop 0
-execute unless score #material_shop_cost_down_lvl crystal_shop = #material_shop_cost_down_lvl crystal_shop run scoreboard players set #material_shop_cost_down_lvl crystal_shop 0
-execute unless score #material_regen_upgrade_cost_down_lvl crystal_shop = #material_regen_upgrade_cost_down_lvl crystal_shop run scoreboard players set #material_regen_upgrade_cost_down_lvl crystal_shop 0
-execute unless score #cave_material_regen_speed_up_lvl crystal_shop = #cave_material_regen_speed_up_lvl crystal_shop run scoreboard players set #cave_material_regen_speed_up_lvl crystal_shop 0
-execute unless score #drill_speed_up_lvl crystal_shop = #drill_speed_up_lvl crystal_shop run scoreboard players set #drill_speed_up_lvl crystal_shop 0
-execute unless score #dig_speed_up_lvl crystal_shop = #dig_speed_up_lvl crystal_shop run scoreboard players set #dig_speed_up_lvl crystal_shop 0

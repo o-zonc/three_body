@@ -7,6 +7,8 @@ execute in polarnight run tp @a ~ 64 ~
 gamerule advance_time false
 execute in polarnight run time set 18000
 
+function common/weather
+
 scoreboard players set #GLOBAL visited_dried 0
 scoreboard players set #GLOBAL visited_frozen 0
 scoreboard players set #GLOBAL visited_overworld 0

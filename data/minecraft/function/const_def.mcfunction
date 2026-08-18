@@ -34,211 +34,9 @@ data merge storage data {\
         },\
         entrance: [\
           { id: "cave", cost: [{ type: "exp_lvl", amount: 5 }] },\
-          { id: "material_shop", cost: [{ type: "exp_lvl", amount: 5 }] },\
           { id: "nether_portal", cost: [{ type: "exp_lvl", amount: 25 }] },\
           { id: "nether_entrance", cost: [{ type: "obsidian", amount: 16 }] }\
         ],\
-        shop: {\
-          material_shop: [\
-            {\
-              type: "wood",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 5 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 25 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 50 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 100 }] },\
-                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 200 }] },\
-                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 500 }] },\
-                { lvl: 6, value: 64 },\
-              ]\
-            },\
-            {\
-              type: "stone",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 30 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 150 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 600 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 2400 }] },\
-                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 12000 }] },\
-                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 25000 }] },\
-                { lvl: 6, value: 64 },\
-              ]\
-            },\
-            {\
-              type: "coal",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 10 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 30 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 50 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 400 }] },\
-                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 3000 }] },\
-                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 7500 }] },\
-                { lvl: 6, value: 64 },\
-              ]\
-            },\
-            {\
-              type: "iron",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 20 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 50 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 100 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 2000 }] },\
-                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 13000 }] },\
-                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 30000 }] },\
-                { lvl: 6, value: 64 },\
-              ]\
-            },\
-            {\
-              type: "copper",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 20 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 60 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 200 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 1500 }] },\
-                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 10000 }] },\
-                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 25000 }] },\
-                { lvl: 6, value: 64 },\
-              ]\
-            },\
-            {\
-              type: "gold",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 100 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 500 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 2000 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 8000 }] },\
-                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 30000 }] },\
-                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 100000 }] },\
-                { lvl: 6, value: 64 },\
-              ]\
-            },\
-            {\
-              type: "diamond",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 250 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 1000 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 5000 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 20000 }] },\
-                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 75000 }] },\
-                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 250000 }] },\
-                { lvl: 6, value: 64 },\
-              ]\
-            },\
-            {\
-              type: "emerald",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 200 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 800 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 4000 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 16000 }] },\
-                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 60000 }] },\
-                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 200000 }] },\
-                { lvl: 6, value: 64 },\
-              ]\
-            },\
-            {\
-              type: "lapis",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "coal", amount: 150 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "coal", amount: 600 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "coal", amount: 3000 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "coal", amount: 12000 }] },\
-                { lvl: 4, value: 16, cost: [{ type: "coal", amount: 50000 }] },\
-                { lvl: 5, value: 32, cost: [{ type: "coal", amount: 150000 }] },\
-                { lvl: 6, value: 64 },\
-              ]\
-            },\
-            {\
-              type: "xp",\
-              costs: [\
-                { lvl: 0, value: 5, cost: [{ type: "coal", amount: 30 }] },\
-                { lvl: 1, value: 12, cost: [{ type: "coal", amount: 500 }] },\
-                { lvl: 2, value: 36, cost: [{ type: "coal", amount: 2500 }] },\
-                { lvl: 3, value: 145, cost: [{ type: "coal", amount: 5000 }] },\
-                { lvl: 4, value: 442 },\
-              ]\
-            },\
-          ],\
-          crystal_shop: [\
-            {\
-              type: "obsidian_max_up",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "compressed_overworld_crystal", amount: 1 }] },\
-                { lvl: 1, value: 2, cost: [{ type: "compressed_overworld_crystal", amount: 2 }] },\
-                { lvl: 2, value: 4, cost: [{ type: "compressed_overworld_crystal", amount: 8 }] },\
-                { lvl: 3, value: 8, cost: [{ type: "compressed_overworld_crystal", amount: 64 }] },\
-                { lvl: 4, value: 16 },\
-              ]\
-            },\
-            {\
-              type: "dig_speed_up",\
-              costs: [\
-                { lvl: 0, value: 0, cost: [{ type: "compressed_overworld_crystal", amount: 1 }] },\
-                { lvl: 1, value: 0.5, cost: [{ type: "compressed_overworld_crystal", amount: 4 }] },\
-                { lvl: 2, value: 1, cost: [{ type: "compressed_overworld_crystal", amount: 8 }] },\
-                { lvl: 3, value: 1.5, cost: [{ type: "compressed_overworld_crystal", amount: 16 }] },\
-                { lvl: 4, value: 2, cost: [{ type: "compressed_overworld_crystal", amount: 32 }] },\
-                { lvl: 5, value: 2.5, cost: [{ type: "compressed_overworld_crystal", amount: 64 }] },\
-                { lvl: 6, value: 3 },\
-              ]\
-            },\
-            {\
-              type: "drill_speed_up",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "compressed_overworld_crystal", amount: 1 }] },\
-                { lvl: 1, value: 2.5, cost: [{ type: "compressed_overworld_crystal", amount: 4 }] },\
-                { lvl: 2, value: 5, cost: [{ type: "compressed_overworld_crystal", amount: 8 }] },\
-                { lvl: 3, value: 10, cost: [{ type: "compressed_overworld_crystal", amount: 16 }] },\
-                { lvl: 4, value: 25, cost: [{ type: "compressed_overworld_crystal", amount: 32 }] },\
-                { lvl: 5, value: 50 },\
-              ]\
-            },\
-            {\
-              type: "cave_material_regen_speed_up",\
-              costs: [\
-                { lvl: 0, value: 0, cost: [{ type: "compressed_overworld_crystal", amount: 2 }] },\
-                { lvl: 1, value: 0.20, cost: [{ type: "compressed_overworld_crystal", amount: 12 }] },\
-                { lvl: 2, value: 0.45, cost: [{ type: "compressed_overworld_crystal", amount: 48 }] },\
-                { lvl: 3, value: 0.72, cost: [{ type: "compressed_overworld_crystal", amount: 192 }] },\
-                { lvl: 4, value: 0.95 },\
-              ]\
-            },\
-            {\
-              type: "material_regen_upgrade_cost_down",\
-              costs: [\
-                { lvl: 0, value: 0, cost: [{ type: "compressed_overworld_crystal", amount: 2 }] },\
-                { lvl: 1, value: 0.05, cost: [{ type: "compressed_overworld_crystal", amount: 4 }] },\
-                { lvl: 2, value: 0.10, cost: [{ type: "compressed_overworld_crystal", amount: 8 }] },\
-                { lvl: 3, value: 0.18, cost: [{ type: "compressed_overworld_crystal", amount: 16 }] },\
-                { lvl: 4, value: 0.28, cost: [{ type: "compressed_overworld_crystal", amount: 32 }] },\
-                { lvl: 5, value: 0.40, cost: [{ type: "compressed_overworld_crystal", amount: 64 }] },\
-                { lvl: 6, value: 0.55, cost: [{ type: "compressed_overworld_crystal", amount: 128 }] },\
-                { lvl: 7, value: 0.70 },\
-              ]\
-            },\
-            {\
-              type: "material_shop_cost_down",\
-              costs: [\
-                { lvl: 0, value: 0, cost: [{ type: "compressed_overworld_crystal", amount: 2 }] },\
-                { lvl: 1, value: 0.12, cost: [{ type: "compressed_overworld_crystal", amount: 12 }] },\
-                { lvl: 2, value: 0.25, cost: [{ type: "compressed_overworld_crystal", amount: 24 }] },\
-                { lvl: 3, value: 0.37, cost: [{ type: "compressed_overworld_crystal", amount: 48 }] },\
-                { lvl: 4, value: 0.50, cost: [{ type: "compressed_overworld_crystal", amount: 96 }] },\
-                { lvl: 5, value: 0.75 },\
-              ]\
-            },\
-            {\
-              type: "compressed_overworld_crystal_multiple",\
-              costs: [\
-                { lvl: 0, value: 1, cost: [{ type: "compressed_overworld_crystal", amount: 2 }] },\
-                { lvl: 1, value: 1.5, cost: [{ type: "compressed_overworld_crystal", amount: 15 }] },\
-                { lvl: 2, value: 2, cost: [{ type: "compressed_overworld_crystal", amount: 40 }] },\
-                { lvl: 3, value: 4, cost: [{ type: "compressed_overworld_crystal", amount: 100 }] },\
-                { lvl: 4, value: 8 },\
-              ]\
-            },\
-          ],\
-        },\
       },\
       nether: {\
         workshop: [\
@@ -785,3 +583,17 @@ data merge storage data {\
     },\
   }\
 }
+
+# 자원 상점: 현재 레벨의 value가 실제 수급량이며 cost는 다음 단계 구매 비용이다.
+data modify storage data const.resource_shop set value [\
+  {id:"wood",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:5}]},{lvl:1,value:2,cost:[{type:"coal",amount:25}]},{lvl:2,value:4,cost:[{type:"coal",amount:50}]},{lvl:3,value:8,cost:[{type:"coal",amount:100}]},{lvl:4,value:16,cost:[{type:"coal",amount:200}]},{lvl:5,value:32,cost:[{type:"coal",amount:500}]},{lvl:6,value:64}]},\
+  {id:"stone",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:30}]},{lvl:1,value:2,cost:[{type:"coal",amount:150}]},{lvl:2,value:4,cost:[{type:"coal",amount:600}]},{lvl:3,value:8,cost:[{type:"coal",amount:2400}]},{lvl:4,value:16,cost:[{type:"coal",amount:12000}]},{lvl:5,value:32,cost:[{type:"coal",amount:25000}]},{lvl:6,value:64}]},\
+  {id:"coal",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:10}]},{lvl:1,value:2,cost:[{type:"coal",amount:30}]},{lvl:2,value:4,cost:[{type:"coal",amount:50}]},{lvl:3,value:8,cost:[{type:"coal",amount:400}]},{lvl:4,value:16,cost:[{type:"coal",amount:3000}]},{lvl:5,value:32,cost:[{type:"coal",amount:7500}]},{lvl:6,value:64}]},\
+  {id:"copper",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:20}]},{lvl:1,value:2,cost:[{type:"coal",amount:60}]},{lvl:2,value:4,cost:[{type:"coal",amount:200}]},{lvl:3,value:8,cost:[{type:"coal",amount:1500}]},{lvl:4,value:16,cost:[{type:"coal",amount:10000}]},{lvl:5,value:32,cost:[{type:"coal",amount:25000}]},{lvl:6,value:64}]},\
+  {id:"iron",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:20}]},{lvl:1,value:2,cost:[{type:"coal",amount:50}]},{lvl:2,value:4,cost:[{type:"coal",amount:100}]},{lvl:3,value:8,cost:[{type:"coal",amount:2000}]},{lvl:4,value:16,cost:[{type:"coal",amount:13000}]},{lvl:5,value:32,cost:[{type:"coal",amount:30000}]},{lvl:6,value:64}]},\
+  {id:"gold",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:100}]},{lvl:1,value:2,cost:[{type:"coal",amount:500}]},{lvl:2,value:4,cost:[{type:"coal",amount:2000}]},{lvl:3,value:8,cost:[{type:"coal",amount:8000}]},{lvl:4,value:16,cost:[{type:"coal",amount:30000}]},{lvl:5,value:32,cost:[{type:"coal",amount:100000}]},{lvl:6,value:64}]},\
+  {id:"diamond",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:250}]},{lvl:1,value:2,cost:[{type:"coal",amount:1000}]},{lvl:2,value:4,cost:[{type:"coal",amount:5000}]},{lvl:3,value:8,cost:[{type:"coal",amount:20000}]},{lvl:4,value:16,cost:[{type:"coal",amount:75000}]},{lvl:5,value:32,cost:[{type:"coal",amount:250000}]},{lvl:6,value:64}]},\
+  {id:"emerald",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:200}]},{lvl:1,value:2,cost:[{type:"coal",amount:800}]},{lvl:2,value:4,cost:[{type:"coal",amount:4000}]},{lvl:3,value:8,cost:[{type:"coal",amount:16000}]},{lvl:4,value:16,cost:[{type:"coal",amount:60000}]},{lvl:5,value:32,cost:[{type:"coal",amount:200000}]},{lvl:6,value:64}]},\
+  {id:"lapis",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:150}]},{lvl:1,value:2,cost:[{type:"coal",amount:600}]},{lvl:2,value:4,cost:[{type:"coal",amount:3000}]},{lvl:3,value:8,cost:[{type:"coal",amount:12000}]},{lvl:4,value:16,cost:[{type:"coal",amount:50000}]},{lvl:5,value:32,cost:[{type:"coal",amount:150000}]},{lvl:6,value:64}]},\
+  {id:"xp",levels:[{lvl:0,value:5,cost:[{type:"coal",amount:30}]},{lvl:1,value:12,cost:[{type:"coal",amount:500}]},{lvl:2,value:36,cost:[{type:"coal",amount:2500}]},{lvl:3,value:145,cost:[{type:"coal",amount:5000}]},{lvl:4,value:442}]}\
+]

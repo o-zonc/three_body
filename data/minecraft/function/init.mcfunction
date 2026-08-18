@@ -63,7 +63,6 @@ scoreboard objectives add var dummy
 scoreboard objectives add generate dummy
 scoreboard objectives add upgrade dummy
 scoreboard objectives add material_shop dummy
-scoreboard objectives add crystal_shop dummy
 scoreboard objectives add compress dummy
 
 scoreboard objectives add nether_workshop dummy

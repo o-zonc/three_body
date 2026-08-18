@@ -8,7 +8,6 @@ execute if score #compressed_overworld_crystal material >= #compressed_overworld
 
 execute store result score #10_1_overworld_compress_reward tmp run function compressor/overworld/value/reward_value
 scoreboard players operation #overworld_compress_reward tmp = #10_1_overworld_compress_reward tmp
-function dimensions/overworld/shop/crystal_shop/apply/overworld_compress_reward
 scoreboard players operation #10_1_overworld_compress_reward tmp = #overworld_compress_reward tmp
 
 scoreboard players operation #compressed_overworld_crystal_add_limit tmp = #compressed_overworld_crystal_max tmp

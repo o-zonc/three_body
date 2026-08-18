@@ -66,8 +66,6 @@ scoreboard players set #drill_limit_lvl upgrade 0
 scoreboard players set #tool upgrade 0
 
 # 상점 및 공방에서 관리하는 별도 업그레이드 레벨 초기화
-scoreboard players set * material_shop 0
-scoreboard players set * crystal_shop 0
 scoreboard players set * nether_workshop 0
 
 # 자원별 수급량 상점 레벨을 명시적으로 초기화

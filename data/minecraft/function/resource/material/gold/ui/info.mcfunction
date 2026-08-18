@@ -1,6 +1,5 @@
 execute store result score #gold_restore_cooldown tmp run function resource/material/gold/cooldown
 execute store result score #gold_gain tmp run function resource/material/gold/amount
-execute if score #nether_8 advancement matches 1 unless score #nether_advancement_reward_disabled var matches 1 run scoreboard players operation #gold_gain tmp *= #four tmp
 function resource/upgrade/prepare_ui {id:"gold",trigger:1114}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2

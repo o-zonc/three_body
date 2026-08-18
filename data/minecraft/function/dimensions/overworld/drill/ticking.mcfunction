@@ -9,7 +9,6 @@ execute if score #5_1_effective tmp matches 1 run return 0
 
 # 현재 업그레이드 값과 깊이를 반영한 최종 속력을 읽음
 execute store result score #drill_effective_speed tmp run function dimensions/overworld/drill/value/effective_speed
-function dimensions/overworld/shop/crystal_shop/apply/drill_speed
 execute store result score #drill_limit_value tmp run function dimensions/overworld/drill/value/limit_value
 
 # 현재 limit보다 높을 때만 아래로 진행하고, 초과 하강분은 limit에서 막음

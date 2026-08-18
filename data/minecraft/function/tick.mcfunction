@@ -24,6 +24,7 @@ function resource/product_managing_by_tick
 function resource/unlock_trigger
 function resource/upgrade_trigger
 function item/purchase_trigger
+function dimensions/overworld/shop/shop_trigger
 
 # 스토리
 function story/story

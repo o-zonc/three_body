@@ -2,7 +2,6 @@ function dimensions/overworld/drill/value/y_text
 
 execute store result score #drill_speed_value tmp run function dimensions/overworld/drill/value/speed_value
 execute store result score #drill_effective_speed tmp run function dimensions/overworld/drill/value/effective_speed
-function dimensions/overworld/shop/crystal_shop/apply/drill_speed
 execute store result score #drill_limit_value tmp run function dimensions/overworld/drill/value/limit_value
 
 # 현재 높이 표시 컴포넌트

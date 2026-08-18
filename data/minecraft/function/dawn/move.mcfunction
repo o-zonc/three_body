@@ -3,6 +3,8 @@ effect clear @a blindness
 effect clear @a darkness
 title @a clear
 
+schedule clear frozen/weather
+
 execute in dawn run tp @a ~ 64 ~
 
 execute in dawn run time set 23000

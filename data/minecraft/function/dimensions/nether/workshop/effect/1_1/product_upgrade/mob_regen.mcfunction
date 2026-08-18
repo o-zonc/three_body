@@ -1,6 +1,5 @@
 data remove storage data tmp.cost
 data remove storage data tmp.cost_original
-function dimensions/overworld/shop/crystal_shop/value/apply_material_regen_upgrade_cost_down
 execute store result score #1_1_cost_check tmp run function dimensions/nether/workshop/effect/1_1/check_cost_no_exp
 execute if score #1_1_cost_check tmp matches 1 run function resource/take_upgrade_cost
 execute if score #1_1_cost_check tmp matches 1 run scoreboard players add #mob_regen_lvl upgrade 1

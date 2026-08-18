@@ -10,10 +10,8 @@ execute if score #5_1_effective tmp matches 1 run scoreboard players set #y var 
 
 execute if score #cave unlock matches 1 store result score #coal_remain generate run function resource/material/coal/value/regen_value
 execute if score #cave unlock matches 1 run scoreboard players operation #cave_material_regen_value tmp = #coal_remain generate
-execute if score #cave unlock matches 1 run function dimensions/overworld/shop/crystal_shop/apply/cave_material_regen_speed
 execute if score #cave unlock matches 1 run scoreboard players operation #coal_remain generate = #cave_material_regen_value tmp
 
 execute if score #cave unlock matches 1 store result score #iron_remain generate run function resource/material/iron/value/regen_value
 execute if score #cave unlock matches 1 run scoreboard players operation #cave_material_regen_value tmp = #iron_remain generate
-execute if score #cave unlock matches 1 run function dimensions/overworld/shop/crystal_shop/apply/cave_material_regen_speed
 execute if score #cave unlock matches 1 run scoreboard players operation #iron_remain generate = #cave_material_regen_value tmp

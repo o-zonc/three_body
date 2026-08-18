@@ -1,6 +1,5 @@
 # 오버월드
 execute if entity @s[tag=overworld,tag=cave] on target run function dimensions/overworld/entrance/cave/locked
-execute if entity @s[tag=overworld,tag=material_shop] on target run function dimensions/overworld/entrance/material_shop/locked
 execute if entity @s[tag=nether_portal] on target run function dimensions/overworld/entrance/nether_portal/locked
 execute if entity @s[tag=nether_entrance] on target run function dimensions/overworld/entrance/nether_entrance/locked
 

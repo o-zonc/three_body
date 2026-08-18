@@ -8,7 +8,6 @@
 
 # 오버월드 (11XX)
 execute as @a[tag=player] if score @s entrance_trigger matches 1101 run function dimensions/overworld/entrance/cave/unlock
-execute as @a[tag=player] if score @s entrance_trigger matches 1102 run function dimensions/overworld/entrance/material_shop/unlock
 execute as @a[tag=player] if score @s entrance_trigger matches 1103 run function dimensions/overworld/entrance/nether_portal/unlock
 execute as @a[tag=player] if score @s entrance_trigger matches 1104 run function dimensions/overworld/entrance/nether_entrance/unlock
 

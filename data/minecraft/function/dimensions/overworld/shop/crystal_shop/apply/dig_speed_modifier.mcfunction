@@ -1,1 +1,0 @@
-$attribute @s minecraft:block_break_speed modifier add dim_comp:crystal_shop_dig_speed_up $(value) add_multiplied_total
