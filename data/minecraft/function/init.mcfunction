@@ -60,7 +60,7 @@ scoreboard objectives add alchemy_workshop dummy
 scoreboard objectives add material dummy
 scoreboard objectives add material_unlocked dummy
 scoreboard objectives add material_display dummy
-scoreboard objectives modify material_display displayname {"text":"자원","color":"gold"}
+scoreboard objectives modify material_display displayname {"text":"발전 현황","color":"gold"}
 scoreboard objectives setdisplay sidebar material_display
 
 scoreboard objectives add cost dummy
@@ -93,3 +93,5 @@ scoreboard objectives add factory_timer dummy
 scoreboard objectives add factory_status dummy
 scoreboard objectives add factory_trigger trigger
 scoreboard objectives add tool_trigger trigger
+scoreboard objectives add factory_elevator_unlocked dummy
+scoreboard objectives add factory_build_stage dummy

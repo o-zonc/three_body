@@ -20,3 +20,6 @@ function factory/light {id:"diamond"}
 function factory/light {id:"emerald"}
 function factory/light {id:"lapis"}
 function factory/light {id:"cold"}
+
+# check 현황판 아래 전구는 해금된 공장 중 하나라도 가동 중이면 켭니다.
+function factory/check_light

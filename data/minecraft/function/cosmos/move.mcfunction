@@ -5,6 +5,7 @@ title @a clear
 function mover/local/recover
 
 execute in cosmos run tp @s 0 64 0
+function mover/items/arrive_other
 
 gamerule advance_time false
 gamerule advance_weather false

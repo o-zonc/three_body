@@ -7,6 +7,7 @@ function mover/local/recover
 schedule clear frozen/weather
 
 execute in dawn run tp @a ~ 64 ~
+function mover/items/arrive_other
 
 execute in dawn run time set 23000
 gamerule advance_time false

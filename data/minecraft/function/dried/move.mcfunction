@@ -5,6 +5,7 @@ title @a clear
 function mover/local/recover
 
 execute in dried run tp @a ~ 64 ~
+function mover/items/arrive_other
 gamerule advance_time true
 
 function common/weather
@@ -24,5 +25,3 @@ scoreboard players set #gold unlock 1
 scoreboard players set #GLOBAL state_dried 0
 scoreboard players set #GLOBAL timer_dried 1200
 bossbar set bossbar_dried max 1200
-
-function story/overworld/age/check_modern_age

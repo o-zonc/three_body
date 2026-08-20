@@ -18,7 +18,6 @@ execute if score #alchemy_stage tmp matches 0 run advancement grant @s only 0_ov
 execute if score #alchemy_stage tmp matches 0 run function story/overworld/age/check_medieval_age
 execute if score #alchemy_stage tmp matches 0 run function item/give/altar_mover
 execute if score #alchemy_stage tmp matches 1..2 run scoreboard players add #level alchemy_workshop 1
-execute if score #alchemy_stage tmp matches 1 run function story/overworld/age/check_modern_age
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 function shop/alchemy/interact
 return 1

@@ -16,6 +16,12 @@ execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custo
 execute as @e[type=minecraft:item,tag=dropped_mover] run data merge entity @s {PickupDelay:0s}
 execute as @e[type=minecraft:item,tag=dropped_mover] at @s if entity @p[tag=player,gamemode=adventure,distance=..4] run tp @s @p[tag=player,gamemode=adventure,distance=..4,sort=nearest,limit=1]
 
+# 정보와 시간은 버릴 수 없다.
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{three_body:{meta:"information"}}] run tag @s add dropped_meta
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{three_body:{meta:"time"}}] run tag @s add dropped_meta
+execute as @e[type=minecraft:item,tag=dropped_meta] run data merge entity @s {PickupDelay:0s}
+execute as @e[type=minecraft:item,tag=dropped_meta] at @s if entity @p[tag=player,gamemode=adventure,distance=..4] run tp @s @p[tag=player,gamemode=adventure,distance=..4,sort=nearest,limit=1]
+
 execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-63,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
 execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-49,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
 execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-41,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common

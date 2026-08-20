@@ -18,4 +18,5 @@ execute as @a if score @s factory_trigger matches 1717 run function factory/togg
 execute as @a if score @s factory_trigger matches 1718 run function factory/toggle {id:"emerald",unlock:"emerald",name:"에메랄드",color:"green",purchase:1708,toggle:1718}
 execute as @a if score @s factory_trigger matches 1719 run function factory/toggle {id:"lapis",unlock:"lapis",name:"청금석",color:"blue",purchase:1709,toggle:1719}
 execute as @a if score @s factory_trigger matches 1720 run function factory/toggle {id:"cold",unlock:"cold",name:"냉기",color:"aqua",purchase:1710,toggle:1720}
+execute as @a if score @s factory_trigger matches 1721 run function factory/toggle_all
 scoreboard players reset @a[scores={factory_trigger=1..}] factory_trigger

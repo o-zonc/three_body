@@ -18,7 +18,3 @@ scoreboard players set #GLOBAL timer_overworld 1200
 bossbar set bossbar_overworld max 1200
 
 function common/weather
-
-gamemode adventure @a
-
-scoreboard players set #GLOBAL era_paused 0

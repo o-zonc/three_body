@@ -60,3 +60,6 @@ execute unless score #diamond factory_status = #diamond factory_status run score
 execute unless score #emerald factory_status = #emerald factory_status run scoreboard players set #emerald factory_status 0
 execute unless score #lapis factory_status = #lapis factory_status run scoreboard players set #lapis factory_status 0
 execute unless score #cold factory_status = #cold factory_status run scoreboard players set #cold factory_status 0
+
+# 기존 월드도 리로드 시 공장 모닥불을 현재 가동 상태에 맞춥니다.
+function factory/campfires

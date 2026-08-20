@@ -5,6 +5,7 @@ title @a clear
 function mover/local/recover
 
 execute in frozen run tp @a 0 67 0
+function mover/items/arrive_other
 gamerule advance_time true
 
 # 방문 기록을 남기고, 현재 차원 상태를 '얼어붙은 차원'으로 갱신합니다.
@@ -22,8 +23,5 @@ scoreboard players set #diamond unlock 1
 scoreboard players set #GLOBAL state_frozen 0
 scoreboard players set #GLOBAL timer_frozen 1200
 bossbar set bossbar_frozen max 1200
-
-scoreboard players set #GLOBAL era_paused 0
-function story/overworld/age/check_modern_age
 
 schedule function frozen/weather 1t

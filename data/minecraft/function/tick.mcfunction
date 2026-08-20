@@ -36,6 +36,8 @@ function factory/trigger
 
 # 스토리
 function story/story
+execute if score #overworld civilization_age matches 6 run function story/overworld/age/check_modern_age
+execute if score #overworld civilization_age matches 7 run function story/overworld/age/check_contemporary_age
 
 # 차원 이동 시스템
 function common/random

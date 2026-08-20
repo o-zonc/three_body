@@ -33,6 +33,7 @@ gamemode adventure @a
 # ------------------------------------------------------------
 
 execute in overworld run tp @a 0 100 0
+function mover/items/arrive_overworld
 
 
 # ------------------------------------------------------------
@@ -42,7 +43,7 @@ execute in overworld run tp @a 0 100 0
 function reset_state
 
 scoreboard objectives add material_display dummy
-scoreboard objectives modify material_display displayname {"text":"자원","color":"gold"}
+scoreboard objectives modify material_display displayname {"text":"발전 현황","color":"gold"}
 scoreboard objectives setdisplay sidebar material_display
 
 
