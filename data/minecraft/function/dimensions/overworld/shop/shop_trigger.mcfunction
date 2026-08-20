@@ -15,9 +15,6 @@ execute as @a if score @s shop_trigger matches 1108 run function resource/shop/p
 execute as @a if score @s shop_trigger matches 1109 run function resource/shop/purchase {id:"emerald",unlock:"emerald",name:"에메랄드",color:"green",trigger:1109,unit:"배"}
 execute as @a if score @s shop_trigger matches 1110 run function resource/shop/purchase {id:"lapis",unlock:"lapis",name:"청금석",color:"blue",trigger:1110,unit:"배"}
 
-# 결정 상점 (12XX)
-execute as @a[tag=player] if score @s shop_trigger matches 1301 run function dimensions/nether/piglin_head/trigger/upgrade_piglin_shop
-
 # 엘리베이터 제어 단말 (14XX)
 execute as @a[tag=player] if score @s shop_trigger matches 1401 run function elevator/purchase_unlock
 execute as @a[tag=player] if score @s shop_trigger matches 1402 run function elevator/purchase_upgrade
@@ -27,5 +24,19 @@ execute as @a[tag=player] if score @s shop_trigger matches 1501 run function sho
 
 # 관측소 (16XX)
 execute as @a[tag=player] if score @s shop_trigger matches 1601 run function shop/observatory/purchase
+
+# 관측소 시간 제어 장치 (17XX)
+execute as @a[tag=player] if score @s shop_trigger matches 1701 run function common/era/purchase
+execute as @a[tag=player] if score @s shop_trigger matches 1702 run function common/era/paused
+execute as @a[tag=player] if score @s shop_trigger matches 1703 run function common/era/resume
+
+# 공장 건설 단말 (18XX)
+execute as @a[tag=player] if score @s shop_trigger matches 1801 run function shop/factory/purchase
+execute as @a[tag=player] if score @s shop_trigger matches 1811 run function shop/second/purchase {id:"heat",name:"열기 자연 수급",color:"red",effect:"자연 지급 주기",unit:"틱",trigger:1811}
+execute as @a[tag=player] if score @s shop_trigger matches 1812 run function shop/second/purchase {id:"cold",name:"냉기 자연 수급",color:"aqua",effect:"자연 지급 주기",unit:"틱",trigger:1812}
+execute as @a[tag=player] if score @s shop_trigger matches 1813 run function shop/second/purchase {id:"gold",name:"금 생산",color:"gold",effect:"기본 생산량 보너스",unit:"개",trigger:1813}
+execute as @a[tag=player] if score @s shop_trigger matches 1814 run function shop/second/purchase {id:"diamond",name:"다이아몬드 생산",color:"aqua",effect:"기본 생산량 보너스",unit:"개",trigger:1814}
+execute as @a[tag=player] if score @s shop_trigger matches 1815 run function shop/second/purchase {id:"special",name:"극한 환경 수급",color:"light_purple",effect:"열기·냉기 수급량 보너스",unit:"개",trigger:1815}
+execute as @a[tag=player] if score @s shop_trigger matches 1816 run function shop/second/purchase {id:"get",name:"기초 생산 공정",color:"green",effect:"모든 기본 생산량 보너스",unit:"개",trigger:1816}
 
 execute as @a if score @s shop_trigger matches 1.. run scoreboard players reset @s shop_trigger

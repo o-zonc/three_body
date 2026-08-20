@@ -1,1 +1,0 @@
-scoreboard players set #y var -64000

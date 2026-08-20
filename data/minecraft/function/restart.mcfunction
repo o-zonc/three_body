@@ -14,7 +14,7 @@ schedule clear story/intro/00_init
 schedule clear story/intro/01_quote1
 schedule clear story/intro/02_scroll_start
 schedule clear story/intro/03_scroll_tick
-schedule clear story/intro/98_end
+schedule clear story/intro/96_end
 schedule clear story/intro/99_release_player
 
 
@@ -102,6 +102,7 @@ xp set @a 0 points
 function common/structure/observatory/off
 function common/structure/beacon/off
 function common/structure/alchemy_workshop/off
+function common/structure/factory/off
 
 # ------------------------------------------------------------
 # 10. 게임 규칙 재설정

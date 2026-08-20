@@ -2,9 +2,26 @@
 # 주 손에 이동기를 들고 웅크리면 해당 이동기의 핸들러를 호출한다.
 # 엘리베이터 영역에서는 이동기를 사용할 수 없다.
 
-execute as @a if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-63,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
-execute as @a if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-49,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
-execute as @a if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-41,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+# 이동기는 버릴 수 없다. 고유 데이터가 붙은 드롭만 즉시 가까운 플레이어에게 돌려준다.
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{disaster:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{dried_move:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{frozen_move:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{overworld_move:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{cosmos_move:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{altar_move:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{shop_move:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{alchemy_move:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{epiphany:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{reactor:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item,tag=dropped_mover] run data merge entity @s {PickupDelay:0s}
+execute as @e[type=minecraft:item,tag=dropped_mover] at @s if entity @p[tag=player,gamemode=adventure,distance=..4] run tp @s @p[tag=player,gamemode=adventure,distance=..4,sort=nearest,limit=1]
+
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-63,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-49,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-41,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=-25,y=-62,z=23,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=-25,y=-53,z=23,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=-25,y=-46,z=23,dx=2,dy=0,dz=2] run return run function mover/restricted/common
 
 execute as @a if predicate item/dimension_mover if entity @s[tag=shift] run function mover/dimension
 execute as @a if predicate item/dried_mover if entity @s[tag=shift] run function mover/dried
@@ -13,3 +30,6 @@ execute as @a if predicate item/overworld_mover if entity @s[tag=shift] run func
 execute as @a if predicate item/cosmos_mover if entity @s[tag=shift] run function mover/cosmos
 execute as @a if predicate item/epiphany if entity @s[tag=shift] run function mover/transcendence
 execute as @a if predicate item/reactor if entity @s[tag=shift] run function mover/reactor
+execute as @a if predicate item/altar_mover if entity @s[tag=shift] run function mover/local/altar
+execute as @a if predicate item/shop_mover if entity @s[tag=shift] run function mover/local/shop
+execute as @a if predicate item/alchemy_mover if entity @s[tag=shift] run function mover/local/alchemy

@@ -9,6 +9,7 @@ execute as @a unless predicate player/sneaking run scoreboard players set @s sne
 
 # 엘리베이터
 function elevator/tick
+function elevator/second_perimeter_tick
 
 # 차원 이동기 API
 function mover/tick
@@ -18,22 +19,26 @@ function interaction/detect
 
 # 자원 API
 function var_init
+function meta/migrate
+execute as @a[tag=player,limit=1] run function meta/sync
 function resource/limit_materials
 
+# 자원 채취 도구
+function tool/tick
+
 function resource/product_managing_by_tick
+function factory/tick
 function resource/unlock_trigger
 function resource/upgrade_trigger
 function item/purchase_trigger
 function dimensions/overworld/shop/shop_trigger
+function factory/trigger
 
 # 스토리
 function story/story
 
 # 차원 이동 시스템
 function common/random
-
-# 엘리베이터
-function elevator/tick
 
 # 사이드바
 function ui/sidebar/update

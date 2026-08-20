@@ -4,5 +4,5 @@ scoreboard players set #wood unlock 1
 execute in overworld run function resource/material/wood/place
 advancement grant @a only 0_overworld/10_wood_age
 execute unless score #overworld civilization_age matches 1.. run scoreboard players set #overworld civilization_age 1
-function resource/effect/unlock_success
+execute in minecraft:overworld positioned 0.5 -58.5 35.5 run function resource/effect/unlock_success
 return 1

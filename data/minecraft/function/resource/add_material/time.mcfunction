@@ -1,1 +1,1 @@
-function resource/add {id:"time"}
+function meta/time/give

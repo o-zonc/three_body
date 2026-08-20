@@ -61,8 +61,8 @@ scoreboard players operation #emerald material -= #cost_emerald cost
 scoreboard players operation #lapis material -= #cost_lapis cost
 scoreboard players operation #heat material -= #cost_heat cost
 scoreboard players operation #cold material -= #cost_cold cost
-scoreboard players operation #information material -= #cost_information cost
-scoreboard players operation #time material -= #cost_time cost
+function meta/information/take_cost
+function meta/time/take_cost
 scoreboard players operation #world_eye material -= #cost_world_eye cost
 scoreboard players operation #obsidian material -= #cost_obsidian cost
 scoreboard players operation #compressed_overworld_crystal material -= #cost_compressed_overworld_crystal cost

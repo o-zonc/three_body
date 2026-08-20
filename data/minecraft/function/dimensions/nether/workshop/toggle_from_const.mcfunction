@@ -1,2 +1,0 @@
-$data modify storage data tmp.nether_workshop.entry set from storage data const.dimensions.nether.workshop[{id:"$(id)"}]
-return run function dimensions/nether/workshop/toggle with storage data tmp.nether_workshop.entry

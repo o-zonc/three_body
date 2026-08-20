@@ -13,6 +13,6 @@ scoreboard players set #iron unlock 1
 execute in overworld run function resource/material/iron/place
 advancement grant @a only 0_overworld/13_iron_age
 execute unless score #overworld civilization_age matches 4.. run scoreboard players set #overworld civilization_age 4
-function resource/effect/unlock_success
+execute in minecraft:overworld positioned 1.5 -61.5 -34.5 run function resource/effect/unlock_success
 function resource/material/iron/ui/info
 return 1

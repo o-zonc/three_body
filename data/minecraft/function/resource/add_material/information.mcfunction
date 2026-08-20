@@ -1,1 +1,1 @@
-function resource/add {id:"information"}
+function meta/information/give

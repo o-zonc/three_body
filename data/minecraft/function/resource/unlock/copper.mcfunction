@@ -13,6 +13,6 @@ scoreboard players set #copper unlock 1
 execute in overworld run function resource/material/copper/place
 advancement grant @a only 0_overworld/12_bronze_age
 execute unless score #overworld civilization_age matches 3.. run scoreboard players set #overworld civilization_age 3
-function resource/effect/unlock_success
+execute in minecraft:overworld positioned 3.5 -61.5 -34.5 run function resource/effect/unlock_success
 function resource/material/copper/ui/info
 return 1

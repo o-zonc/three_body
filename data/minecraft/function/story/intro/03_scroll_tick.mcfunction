@@ -52,4 +52,4 @@ execute if score #t intro matches 1075 as @e[tag=story_camera,limit=1] at @s run
 execute if score #t intro matches ..1200 run schedule function story/intro/03_scroll_tick 1t
 
 # 스크롤 종료 → 마무리로
-execute if score #t intro matches 1200.. run function story/intro/98_end
+execute if score #t intro matches 1200.. run function story/intro/96_end

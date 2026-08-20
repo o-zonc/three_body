@@ -1,0 +1,20 @@
+{
+  "parent": "0_overworld/16_modern_age",
+  "display": {
+    "icon": "crafter",
+    "title": "공장",
+    "description": "자동화 설비를 건설해 자원 생산 공정을 관리합니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "structure_unlocked": {
+      "trigger": "impossible"
+    }
+  },
+  "rewards": {
+    "function": "common/structure/factory/on"
+  }
+}

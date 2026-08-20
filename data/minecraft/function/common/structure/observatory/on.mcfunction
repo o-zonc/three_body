@@ -3,3 +3,5 @@ summon firework_rocket 24 -51 24 {LifeTime:10,Motion:[0.0,1.0,0.0],FireworksItem
 data modify block 18 -64 18 name set value "observatory"
 setblock 18 -64 17 redstone_block
 setblock 18 -64 17 air
+
+fill 23 -63 -4 25 -62 -4 air

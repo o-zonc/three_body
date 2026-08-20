@@ -11,6 +11,6 @@ execute unless score #coal_unlock_cost_check tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players set #coal unlock 1
 execute in overworld run function resource/material/coal/place
-function resource/effect/unlock_success
+execute in minecraft:overworld positioned 3.5 -58.5 35.5 run function resource/effect/unlock_success
 function resource/material/coal/ui/info
 return 1

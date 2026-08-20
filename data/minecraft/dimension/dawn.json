@@ -7,7 +7,7 @@
 			"layers": [
 				{ "block": "bedrock", "height": 1 },
 				{ "block": "air", "height": 122 },
-				{ "block": "deepslate_diamond_block", "height": 2 },
+				{ "block": "deepslate_diamond_ore", "height": 2 },
 				{ "block": "deepslate", "height": 3 }
 			]
 		}

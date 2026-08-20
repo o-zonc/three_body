@@ -41,6 +41,6 @@ function common/next
 # 새 차원에서 시대 시스템 재개
 # ==========================================
 
-scoreboard players set #GLOBAL era_paused 0
+execute unless score #GLOBAL era_observed matches 1 run scoreboard players set #GLOBAL era_paused 0
 scoreboard players set #GLOBAL user_disaster 0
 scoreboard players set #disaster_running run 0

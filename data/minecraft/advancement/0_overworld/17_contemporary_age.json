@@ -1,5 +1,5 @@
 {
-	"parent": "0_overworld/16_modern_age",
+	"parent": "0_overworld/23_factory",
 	"display": {
 		"icon": "observer",
 		"title": "현대",

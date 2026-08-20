@@ -1,1 +1,1 @@
-return run function resource/shop/value {id:"emerald"}
+return run function resource/production/amount {id:"emerald"}

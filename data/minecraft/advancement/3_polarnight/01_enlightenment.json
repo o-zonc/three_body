@@ -10,17 +10,8 @@
 		"hidden": false
 		},
 	"criteria": {
-		"get_stick": {
-			"trigger": "inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"items": [
-					"stick"
-						]
-					}
-				]
-			}
+		"manual_test": {
+			"trigger": "impossible"
 		}
 	}
 }

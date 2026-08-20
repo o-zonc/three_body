@@ -8,6 +8,7 @@ scoreboard objectives add civilization_age dummy
 scoreboard objectives add alchemy_workshop dummy
 
 scoreboard objectives add material dummy
+scoreboard objectives add meta dummy
 
 scoreboard objectives add unlock dummy
 
@@ -51,7 +52,17 @@ scoreboard players enable @a obsidian_storage_trigger
 scoreboard objectives add scene_trigger trigger
 scoreboard players enable @a scene_trigger
 
+# 천공의 제단 도구 강화 UI
+scoreboard objectives add tool_trigger trigger
+scoreboard players enable @a tool_trigger
+
 execute unless score #wood material = #wood material run scoreboard players set #wood material 0
+execute unless score #information_bank meta = #information_bank meta run scoreboard players set #information_bank meta 0
+execute unless score #time_bank meta = #time_bank meta run scoreboard players set #time_bank meta 0
+execute unless score #information_capacity meta = #information_capacity meta run scoreboard players set #information_capacity meta 64
+execute unless score #time_capacity meta = #time_capacity meta run scoreboard players set #time_capacity meta 16
+execute unless score #heat_environment_timer generate = #heat_environment_timer generate run scoreboard players set #heat_environment_timer generate 1200
+execute unless score #cold_environment_timer generate = #cold_environment_timer generate run scoreboard players set #cold_environment_timer generate 1200
 execute unless score #stone material = #stone material run scoreboard players set #stone material 0
 execute unless score #coal material = #coal material run scoreboard players set #coal material 0
 execute unless score #iron material = #iron material run scoreboard players set #iron material 0
@@ -75,6 +86,7 @@ execute unless score #quartz unlock = #quartz unlock run scoreboard players set 
 execute unless score #gold unlock = #gold unlock run scoreboard players set #gold unlock 0
 execute unless score #blaze unlock = #blaze unlock run scoreboard players set #blaze unlock 0
 execute unless score #area_zone unlock = #area_zone unlock run scoreboard players set #area_zone unlock 0
+execute unless score #era unlock = #era unlock run scoreboard players set #era unlock 0
 execute unless score #3rd_area unlock = #3rd_area unlock run scoreboard players set #3rd_area unlock 0
 execute unless score #tool_created_lvl var = #tool_created_lvl var run scoreboard players set #tool_created_lvl var -1
 execute unless score #level alchemy_workshop = #level alchemy_workshop run scoreboard players set #level alchemy_workshop 0
@@ -122,3 +134,23 @@ execute unless score #10_1 nether_workshop = #10_1 nether_workshop run scoreboar
 execute unless score #11_1 nether_workshop = #11_1 nether_workshop run scoreboard players set #11_1 nether_workshop 0
 execute unless score #11_2 nether_workshop = #11_2 nether_workshop run scoreboard players set #11_2 nether_workshop 0
 execute unless score #12_1 nether_workshop = #12_1 nether_workshop run scoreboard players set #12_1 nether_workshop 0
+
+# 타임머신 레벨은 항상 0~4 범위로 유지합니다.
+execute unless score #GLOBAL factory_elevator_unlocked = #GLOBAL factory_elevator_unlocked run scoreboard players set #GLOBAL factory_elevator_unlocked 0
+execute if score #GLOBAL factory_elevator_unlocked matches ..-1 run scoreboard players set #GLOBAL factory_elevator_unlocked 0
+execute if score #GLOBAL factory_elevator_unlocked matches 3.. run scoreboard players set #GLOBAL factory_elevator_unlocked 2
+execute unless score #GLOBAL factory_build_stage = #GLOBAL factory_build_stage run scoreboard players set #GLOBAL factory_build_stage 0
+execute if score #GLOBAL factory_build_stage matches ..-1 run scoreboard players set #GLOBAL factory_build_stage 0
+execute if score #GLOBAL factory_build_stage matches 4.. run scoreboard players set #GLOBAL factory_build_stage 3
+execute unless score #heat_second_lvl upgrade = #heat_second_lvl upgrade run scoreboard players set #heat_second_lvl upgrade 0
+execute unless score #cold_second_lvl upgrade = #cold_second_lvl upgrade run scoreboard players set #cold_second_lvl upgrade 0
+execute unless score #gold_second_lvl upgrade = #gold_second_lvl upgrade run scoreboard players set #gold_second_lvl upgrade 0
+execute unless score #diamond_second_lvl upgrade = #diamond_second_lvl upgrade run scoreboard players set #diamond_second_lvl upgrade 0
+execute unless score #special_second_lvl upgrade = #special_second_lvl upgrade run scoreboard players set #special_second_lvl upgrade 0
+execute unless score #get_second_lvl upgrade = #get_second_lvl upgrade run scoreboard players set #get_second_lvl upgrade 0
+execute unless score #GLOBAL time_machine_level = #GLOBAL time_machine_level run scoreboard players set #GLOBAL time_machine_level 0
+execute if score #GLOBAL time_machine_level matches ..-1 run scoreboard players set #GLOBAL time_machine_level 0
+execute if score #GLOBAL time_machine_level matches 5.. run scoreboard players set #GLOBAL time_machine_level 4
+
+function factory/init_state
+scoreboard players enable @a factory_trigger

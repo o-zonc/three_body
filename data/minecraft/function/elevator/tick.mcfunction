@@ -58,6 +58,9 @@ execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump
 execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 2.. at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
 execute as @a[tag=elevator_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL elevator_unlocked matches 2.. at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 1.0
 
+# 두 번째 엘리베이터도 점프 기준값을 갱신하기 전에 처리합니다.
+function elevator/second_tick
+
 # 이번 tick의 점프 통계를 다음 tick의 기준값으로 저장합니다.
 execute as @a run scoreboard players operation @s elevator_jump_prev = @s elevator_jump
 

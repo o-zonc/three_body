@@ -1,2 +1,0 @@
-execute unless score #1_1_done tmp matches 1 if score #nether unlock matches 1 run function dimensions/nether/workshop/effect/1_1/piglin_head/piglin_shop
-execute unless score #1_1_done tmp matches 1 if score #nether unlock matches 1 run function dimensions/nether/workshop/effect/1_1/piglin_head/speed_up

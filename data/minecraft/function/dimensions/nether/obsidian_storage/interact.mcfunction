@@ -1,1 +1,0 @@
-function dimensions/nether/obsidian_storage/ui/info

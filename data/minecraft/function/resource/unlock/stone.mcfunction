@@ -11,6 +11,6 @@ scoreboard players set #stone unlock 1
 function resource/material/stone/place
 advancement grant @a only 0_overworld/11_stone_age
 execute unless score #overworld civilization_age matches 2.. run scoreboard players set #overworld civilization_age 2
-function resource/effect/unlock_success
+execute in minecraft:overworld positioned -2.5 -58.5 35.5 run function resource/effect/unlock_success
 function resource/material/stone/ui/info
 return 1

@@ -38,6 +38,7 @@ scoreboard players set #GLOBAL current_dim 0
 # 6. 문명 전환 시스템 관리 스코어보드 초기화
 scoreboard players set #GLOBAL era_paused 1
 scoreboard players set #disaster_running run 0
+scoreboard players set #GLOBAL era_observed 0
 
 # 7. 스토리 관리 스코어보드 초기화
 scoreboard players set #done intro 0
@@ -98,6 +99,7 @@ scoreboard players set #poss_effective_lvl tmp 0
 scoreboard players reset @a upgrade_trigger
 scoreboard players reset @a shop_trigger
 scoreboard players reset @a unlock_trigger
+scoreboard players reset @a local_move_return
 
 scoreboard objectives remove material_display
 
@@ -105,6 +107,25 @@ data remove storage data tmp
 
 # 9. 엘리베이터 스코어보드 초기화
 scoreboard players set #GLOBAL elevator_unlocked 0
+scoreboard players set #GLOBAL time_machine_level 0
+scoreboard players set #GLOBAL factory_elevator_unlocked 0
+scoreboard players set #GLOBAL factory_build_stage 0
+scoreboard players reset * factory_level
+scoreboard players reset * factory_unlocked
+scoreboard players reset * factory_enabled
+scoreboard players reset * factory_timer
+scoreboard players reset * factory_status
+scoreboard players reset @a factory_trigger
+
+# 특수 환경 자원 지급 주기 초기화
+scoreboard players set #heat_environment_timer generate 1200
+scoreboard players set #cold_environment_timer generate 1200
+scoreboard players set #heat_second_lvl upgrade 0
+scoreboard players set #cold_second_lvl upgrade 0
+scoreboard players set #gold_second_lvl upgrade 0
+scoreboard players set #diamond_second_lvl upgrade 0
+scoreboard players set #special_second_lvl upgrade 0
+scoreboard players set #get_second_lvl upgrade 0
 
 # 10. 아이템 드롭 방지
 gamerule block_drops false

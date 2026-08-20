@@ -2,6 +2,7 @@
 effect clear @a blindness
 effect clear @a darkness
 title @a clear
+function mover/local/recover
 
 execute in polarnight run tp @a ~ 64 ~
 gamerule advance_time false

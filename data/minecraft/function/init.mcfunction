@@ -37,10 +37,17 @@ scoreboard objectives add first_dried dummy
 scoreboard objectives add n_civil dummy
 scoreboard objectives add current_dim dummy
 scoreboard objectives add sneaking_prev dummy
+scoreboard objectives add local_move_x dummy
+scoreboard objectives add local_move_y dummy
+scoreboard objectives add local_move_z dummy
+scoreboard objectives add local_move_yaw dummy
+scoreboard objectives add local_move_pitch dummy
+scoreboard objectives add local_move_return dummy
 
 # 6. 문명 전환 시스템 관리 스코어보드
 scoreboard objectives add era_paused dummy
 scoreboard objectives add run dummy
+scoreboard objectives add era_observed dummy
 
 # 7. 스토리 관리 스코어보드
 scoreboard objectives add intro dummy
@@ -74,3 +81,15 @@ scoreboard objectives add item_trigger trigger
 scoreboard objectives add elevator_unlocked dummy
 scoreboard objectives add elevator_jump minecraft.custom:minecraft.jump
 scoreboard objectives add elevator_jump_prev dummy
+
+# 11. 타임머신 레벨 (0~4)
+scoreboard objectives add time_machine_level dummy
+
+# 12. 공장 자동화
+scoreboard objectives add factory_level dummy
+scoreboard objectives add factory_unlocked dummy
+scoreboard objectives add factory_enabled dummy
+scoreboard objectives add factory_timer dummy
+scoreboard objectives add factory_status dummy
+scoreboard objectives add factory_trigger trigger
+scoreboard objectives add tool_trigger trigger

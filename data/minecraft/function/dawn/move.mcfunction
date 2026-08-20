@@ -2,6 +2,7 @@
 effect clear @a blindness
 effect clear @a darkness
 title @a clear
+function mover/local/recover
 
 schedule clear frozen/weather
 
@@ -14,5 +15,3 @@ scoreboard players set #GLOBAL visited_polar 0
 scoreboard players set #GLOBAL current_dim 4
 execute unless score #world_eye unlock matches 1 as @a at @s run function resource/effect/unlock_success
 scoreboard players set #world_eye unlock 1
-
-scoreboard players set #GLOBAL era_paused 0

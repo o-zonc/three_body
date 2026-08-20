@@ -7,7 +7,7 @@ $execute store result score #$(id)_shop_value tmp run data get storage data tmp.
 data remove storage data tmp.cost
 $data modify storage data tmp.cost set from storage data tmp.resource_shop.$(id).now.cost
 execute if data storage data tmp.cost run function resource/convert_cost_to_text_named {id:"material_shop",insertion:", "}
-$execute if data storage data tmp.cost run data modify storage data tmp.resource_shop.button set value {text:"[ 업그레이드 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:[{text:"[ 필요한 재료 ]\n",color:"gold"},{storage:"data",nbt:"tmp.cost_text.material_shop.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set $(trigger)"}}
+$execute if data storage data tmp.cost run data modify storage data tmp.resource_shop.button set value {text:"[ 업그레이드 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.material_shop.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set $(trigger)"}}
 execute unless data storage data tmp.cost run data modify storage data tmp.resource_shop.button set value {text:"[ 업그레이드 완료 ]",color:"dark_gray",bold:true}
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

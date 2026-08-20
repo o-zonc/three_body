@@ -9,5 +9,5 @@ execute unless score #gold_unlock_cost_check tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players set #gold unlock 1
 function resource/material/gold/place
-function resource/effect/unlock_success
+execute in minecraft:overworld positioned 0.5 -58.5 0.5 run function resource/effect/unlock_success
 return 1

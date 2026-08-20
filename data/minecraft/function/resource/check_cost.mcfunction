@@ -1,5 +1,6 @@
 # tmp.cost 의 목록에 있는 자원 요구 목록만큼 자원을 보유 중이면 1을, 그렇지 않으면 0을 반환
 
+function meta/sync
 scoreboard players reset * cost
 
 scoreboard players set #cost_wood cost 0

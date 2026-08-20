@@ -2,6 +2,7 @@
 effect clear @a blindness
 effect clear @a darkness
 title @a clear
+function mover/local/recover
 
 execute in cosmos run tp @s 0 64 0
 
@@ -12,5 +13,3 @@ scoreboard players set #GLOBAL visited_polar 0
 scoreboard players set #GLOBAL current_dim 5
 
 gamemode spectator @a
-
-scoreboard players set #GLOBAL era_paused 0

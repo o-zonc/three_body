@@ -132,4 +132,54 @@
 # 인터렉션 설치하기
 /summon minecraft:interaction 0.5 -60 35.5 {Tags:["wood", "product"], width:1.02f, height:0.52f}
 
-좌표는 항상 x좌표와 z좌표가 0.5 크게 해줘야 함
+인터렉션 좌표는 항상 x좌표와 z좌표가 0.5 크게 해줘야 함
+
+# 구조물 관련 이벤트 추가
+## 연금술 공방 해금
+- 해금하기
+/fill -23 -63 -4 -25 -61 -4 air
+/fill -4 -63 -25 -4 -61 -23 air
+
+- 초기화
+/fill -23 -63 -4 -25 -61 -4 polished_blackston_brick_wall
+/fill -4 -63 -25 -4 -61 -23 polished_blackston_brick_wall
+
+## 관측소 해금
+- 해금하기
+/fill 23 -63 -4 25 -62 -4 air
+
+- 초기화
+/fill 23 -63 -4 25 -62 -4 diorite_wall
+
+## 공장 해금
+- 해금하기
+/fill -25 -63 4 -23 -61 4 air
+/fill 4 -63 25 4 -62 23 air
+
+- 초기화
+/fill -25 -63 4 -23 -61 4 polished_tuff_wall
+/fill 4 -63 25 4 -62 23 polished_tuff_wall
+
+# 얼어붙은 차원 이벤트
+## 반대편 넘어가는 다리 해금
+- 해금하기
+/fill -1 67 6 1 67 6 air
+/fill -1 67 30 1 67 30 air
+
+- 초기화
+/fill -1 67 6 1 67 6 spruce_fence
+/fill -1 67 30 1 67 30 spruce_fence
+
+## 지하 미로 해금
+- 해금하기
+/fill -19 67 34 -21 67 34 air
+
+- 초기화
+/fill -19 67 34 -21 67 34 spruce_fence
+
+## 얼어붙은 상점 해금
+- 해금하기
+/fill 6 67 -1 6 67 1 air
+
+- 초기화
+/fill 6 67 -1 6 67 1 spruce_fence

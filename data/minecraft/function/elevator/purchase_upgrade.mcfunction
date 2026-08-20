@@ -9,4 +9,5 @@ execute unless score #elevator_purchase_check tmp matches 1 run title @s actionb
 execute unless score #elevator_purchase_check tmp matches 1 run return 0
 function resource/cost/take
 function elevator/upgrade
+function elevator/shop_interact
 return 1
