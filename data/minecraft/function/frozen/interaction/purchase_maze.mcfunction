@@ -9,6 +9,7 @@ execute unless score #frozen_purchase_check tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players set #frozen_maze unlock 1
 execute in minecraft:frozen run function frozen/structure/maze/on
+advancement grant @s only 1_frozen/12_maze
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 function frozen/interaction/shop
 return 1
