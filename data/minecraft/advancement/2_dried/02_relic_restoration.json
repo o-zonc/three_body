@@ -1,0 +1,17 @@
+{
+  "parent": "2_dried/01_archaeologist",
+  "display": {
+    "icon": "clock",
+    "title": "고대 기술의 복원",
+    "description": "발굴한 고대 문명 장치를 2레벨로 강화했습니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "relic_level_two": {
+      "trigger": "impossible"
+    }
+  }
+}
