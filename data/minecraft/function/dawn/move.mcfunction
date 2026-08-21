@@ -7,7 +7,7 @@ function mover/local/recover
 schedule clear frozen/weather
 schedule clear dried/weather
 
-execute in dawn run tp @a ~ 64 ~
+execute in dawn run tp @a 0 64 0
 function mover/items/arrive_other
 
 execute in dawn run time set 23000

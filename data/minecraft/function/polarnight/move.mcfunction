@@ -4,7 +4,7 @@ effect clear @a darkness
 title @a clear
 function mover/local/recover
 
-execute in polarnight run tp @a ~ 64 ~
+execute in polarnight run tp @a 0 64 0
 function mover/items/arrive_other
 gamerule advance_time false
 execute in polarnight run time set 18000

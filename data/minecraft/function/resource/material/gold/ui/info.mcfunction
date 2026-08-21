@@ -19,13 +19,10 @@ execute store result score #gold_shop_multiplier_ui tmp run function resource/sh
 function resource/upgrade/prepare_ui {id:"gold",trigger:1114}
 
 data modify storage data tmp.second_floor_ui.gold set value {text:""}
-execute if score #gold_second_bonus_ui tmp matches 1.. run data modify storage data tmp.second_floor_ui.gold set value [{text:"\n\n자원 상점 2층: §a수급량 +"},{score:{name:"#gold_second_bonus_ui",objective:"tmp"},color:"green"}]
-
-data modify storage data tmp.first_floor_ui.gold set value {text:""}
-execute if score #gold_shop_multiplier_ui tmp matches 2.. run data modify storage data tmp.first_floor_ui.gold set value [{text:"\n자원 상점 1층: §a수급량 ×"},{storage:"data",nbt:"tmp.resource_shop.gold.now.value",color:"green",plain:true}]
+execute if score #gold_second_bonus_ui tmp matches 1.. run data modify storage data tmp.second_floor_ui.gold set value [{text:"\n자원 상점 보상: §d수급량 +"},{score:{name:"#gold_second_bonus_ui",objective:"tmp"},color:"light_purple"}]
 
 data modify storage data tmp.advancement_reward_ui.gold set value {text:" "}
-execute unless score #gold_gain tmp = #gold_base_gain tmp run data modify storage data tmp.advancement_reward_ui.gold set value [{text:" → "},{score:{name:"#gold_gain",objective:"tmp"},color:"green"},{text:"§7개"},{text:" ★",color:"green",hover_event:{action:"show_text",value:[{text:"§a최종 자원 수급량§r§7이 증가합니다."},{storage:"data",nbt:"tmp.second_floor_ui.gold",interpret:true},{storage:"data",nbt:"tmp.first_floor_ui.gold",interpret:true}]}}]
+execute unless score #gold_gain tmp = #gold_base_gain tmp run data modify storage data tmp.advancement_reward_ui.gold set value [{text:" → "},{score:{name:"#gold_gain",objective:"tmp"},color:"gold"},{text:"§7개"},{text:" ★",color:"gold",hover_event:{action:"show_text",value:[{text:"§6최종 자원 수급량§r§7이 증가합니다.\n"},{storage:"data",nbt:"tmp.second_floor_ui.gold",interpret:true},{storage:"data",nbt:"tmp.first_floor_ui.gold",interpret:true}]}}]
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
