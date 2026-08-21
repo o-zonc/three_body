@@ -8,4 +8,5 @@ function resource/cost/take
 scoreboard players operation #world_eye material += #third_eye_yield tmp
 playsound block.end_portal_frame.fill weather @s ~ ~ ~ 0.8 1.2
 title @s actionbar [{text:"세계의 눈 +",color:"dark_green"},{score:{name:"#third_eye_yield",objective:"tmp"},color:"white"}]
+function shop/third/world_eye/ui
 return 1

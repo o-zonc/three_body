@@ -15,9 +15,6 @@ execute if entity @a[nbt={Dimension:"minecraft:dried"}] run scoreboard players s
 execute if entity @a[nbt={Dimension:"minecraft:frozen"}] run scoreboard players set #GLOBAL state_frozen 2
 execute if entity @a[nbt={Dimension:"minecraft:frozen"}] run scoreboard players set #GLOBAL timer_frozen 0
 
-# 테스트에서도 실제 게임과 동일한 보스바 갱신 함수를 사용합니다.
-function ui/bossbar/update
-
 function common/disaster/do
 
 tellraw @a {"text":"[TEST] disaster/do 실행 완료","color":"gold"}

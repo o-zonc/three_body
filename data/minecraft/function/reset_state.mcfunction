@@ -22,6 +22,10 @@ bossbar set bossbar_overworld color green
 bossbar set bossbar_overworld style progress
 bossbar set bossbar_overworld visible false
 bossbar set bossbar_overworld max 6000
+bossbar set shield_charge color white
+bossbar set shield_charge style progress
+bossbar set shield_charge max 216000
+bossbar set shield_charge visible false
 
 scoreboard players set #GLOBAL user_disaster 0
 

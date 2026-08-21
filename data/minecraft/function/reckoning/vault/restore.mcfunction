@@ -33,6 +33,7 @@ execute if score #vault_factory tmp matches 1 run scoreboard players operation #
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #emerald factory_level = #vault_factory_emerald tmp
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #lapis factory_level = #vault_factory_lapis tmp
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #cold factory_level = #vault_factory_cold tmp
+execute if score #vault_factory tmp matches 1 run scoreboard players operation #heat factory_level = #vault_factory_heat tmp
 execute if score #vault_accelerator tmp matches 1 run scoreboard players operation #GLOBAL accelerator_level = #vault_accelerator_level tmp
 execute if score #vault_time_machine tmp matches 1 run scoreboard players operation #GLOBAL time_machine_level = #vault_time_machine_level tmp
 execute if score #vault_factory tmp matches 1 if score #vault_factory_stage tmp matches 1.. run function common/structure/factory/on

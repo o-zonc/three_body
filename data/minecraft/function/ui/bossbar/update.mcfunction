@@ -3,7 +3,20 @@
 # ==========================================
 # 현재 플레이어가 존재하는 차원의 보스바만 표시하고,
 # 각 차원의 state에 따라 제목과 색상을 갱신합니다.
+
+# ==========================================
+# 0. 양자 보호막
+# ==========================================
+
+# 보호막 보스바 및 충전량 갱신
 execute unless score #GLOBAL shield_charge matches 1.. run bossbar set shield_charge visible false
+execute if score #GLOBAL shield_charge matches 1.. run scoreboard players remove #GLOBAL shield_charge 1
+execute if score #GLOBAL shield_charge matches 1.. run scoreboard players remove #GLOBAL shield_maintenance 1
+execute if score #GLOBAL shield_charge matches 1.. if score #GLOBAL shield_maintenance matches ..0 as @a[tag=player,limit=1] run function shield/pay_time
+execute unless score #GLOBAL shield_charge matches 1.. run scoreboard players set #GLOBAL shield_maintenance 6000
+execute store result bossbar shield_charge value run scoreboard players get #GLOBAL shield_charge
+bossbar set shield_charge players @a
+execute if score #GLOBAL shield_charge matches 1.. run bossbar set shield_charge visible true
 
 # ==========================================
 # 1. 얼음 차원 (frozen)
@@ -73,16 +86,3 @@ execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL sta
 
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL user_disaster matches 1 run bossbar set bossbar_overworld name {"text":"[ 오버월드 ] 지속 포기","color":"white"}
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL user_disaster matches 1 run bossbar set bossbar_overworld color white
-
-# ==========================================
-# 4. 양자 보호막
-# ==========================================
-
-# 보호막 보스바 및 충전량 갱신
-execute if score #GLOBAL shield_charge matches 1.. run scoreboard players remove #GLOBAL shield_charge 1
-execute if score #GLOBAL shield_charge matches 1.. run scoreboard players remove #GLOBAL shield_maintenance 1
-execute if score #GLOBAL shield_charge matches 1.. if score #GLOBAL shield_maintenance matches ..0 as @a[tag=player,limit=1] run function shield/pay_time
-execute unless score #GLOBAL shield_charge matches 1.. run scoreboard players set #GLOBAL shield_maintenance 6000
-execute store result bossbar shield_charge value run scoreboard players get #GLOBAL shield_charge
-bossbar set shield_charge players @a
-execute if score #GLOBAL shield_charge matches 1.. run bossbar set shield_charge visible true

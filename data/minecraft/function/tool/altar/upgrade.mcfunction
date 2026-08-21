@@ -18,7 +18,7 @@ execute if score #tool_upgrade_cost_check tmp matches 1 run function story/overw
 execute if score #tool_upgrade_cost_check tmp matches 1 run function tool/refresh_all
 execute if score #tool_upgrade_cost_check tmp matches 1 as @a[tag=player] at @s run playsound block.anvil.use weather @s ~ ~ ~ 1 2
 execute if score #tool_upgrade_cost_check tmp matches 1 as @a[tag=player] at @s run playsound block.beacon.power_select weather @s ~ ~ ~ 0.7 2
-execute if score #tool_upgrade_cost_check tmp matches 1 run title @s actionbar ["",{text:"하늘의 힘이 깃들었습니다  ",color:"aqua",bold:true},{storage:"data",nbt:"tmp.tool.now.components.custom_name"}]
+execute if score #tool_upgrade_cost_check tmp matches 1 run title @s actionbar ["",{text:"하늘의 힘이 깃들었습니다  ",color:"aqua"},{storage:"data",nbt:"tmp.tool.now.components.custom_name"}]
 execute if score #tool_upgrade_cost_check tmp matches 1 as @a[tag=player] at @s run particle trial_spawner_detection ~ ~0.5 ~ 0.3 0.3 0.3 0 30 force @a[tag=player]
 execute if score #tool_upgrade_cost_check tmp matches 1 run return 1
 

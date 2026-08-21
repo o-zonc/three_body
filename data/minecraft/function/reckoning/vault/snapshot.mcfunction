@@ -54,6 +54,7 @@ scoreboard players operation #vault_factory_diamond tmp = #diamond factory_level
 scoreboard players operation #vault_factory_emerald tmp = #emerald factory_level
 scoreboard players operation #vault_factory_lapis tmp = #lapis factory_level
 scoreboard players operation #vault_factory_cold tmp = #cold factory_level
+scoreboard players operation #vault_factory_heat tmp = #heat factory_level
 execute if entity @a[advancements={0_overworld/20_observatory=true}] run scoreboard players set #vault_observatory_owned tmp 1
 execute unless entity @a[advancements={0_overworld/20_observatory=true}] run scoreboard players set #vault_observatory_owned tmp 0
 execute if entity @a[advancements={0_overworld/21_alchemy_workshop=true}] run scoreboard players set #vault_alchemy_owned tmp 1

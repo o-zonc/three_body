@@ -21,6 +21,7 @@ scoreboard objectives add roll_chance dummy
 scoreboard objectives add timer_sec dummy
 
 # 4. 보스바 로드
+bossbar add shield_charge {"text":"양자 보호막","color":"white"}
 bossbar add bossbar_frozen {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
 bossbar add bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
 bossbar add bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color":"dark_green"}
@@ -104,11 +105,6 @@ scoreboard objectives add alien_interference dummy
 scoreboard objectives add alien_timer dummy
 scoreboard objectives add shield_charge dummy
 scoreboard objectives add shield_maintenance dummy
-bossbar add shield_charge {"text":"양자 보호막","color":"white"}
-bossbar set shield_charge color white
-bossbar set shield_charge style progress
-bossbar set shield_charge max 216000
-bossbar set shield_charge visible false
 
 # 14. 극야/여명 정산
 scoreboard objectives add reckoning_ready dummy

@@ -48,3 +48,6 @@ function common/random
 
 # 사이드바
 function ui/sidebar/update
+
+# 보스바
+function ui/bossbar/update

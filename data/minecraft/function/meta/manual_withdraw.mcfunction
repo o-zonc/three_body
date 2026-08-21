@@ -13,4 +13,5 @@ execute store result storage data tmp.meta.amount int 1 run scoreboard players g
 $function meta/$(id)/give_item with storage data tmp.meta
 function meta/sync
 playsound entity.item.pickup weather @s ~ ~ ~ 0.8 1.2
-$title @s actionbar [{text:"$(name) 보관소에서 ",color:"gray"},{score:{name:"#withdraw_amount",objective:"tmp"},color:"white"},{text:"개를 인출했습니다.",color:"gray"}]
+$title @s actionbar [{text:"$(name) 보관소에서 ",color:"gray"},{text:"$(name) ", color:"$(color)"},{score:{name:"#withdraw_amount",objective:"tmp"},color:"$(color)"},{text:"조각",color:"$(color)"},{text:"을 인출했습니다.",color:"gray"}]
+$function shop/third/storage_ui {id:"$(id)",name:"$(name)",color:"$(color)",unit:"$(unit)",bank_max:$(bank_max),trigger:$(trigger),withdraw_trigger:$(withdraw_trigger)}

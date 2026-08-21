@@ -1,7 +1,6 @@
 {
 	"values": [
 		"init",
-		"const_def",
-		"factory/const_extension"
+		"const_def"
 	]
 }
