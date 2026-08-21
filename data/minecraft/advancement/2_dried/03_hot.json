@@ -1,0 +1,17 @@
+{
+  "parent": "2_dried/00_root",
+  "display": {
+    "icon": "lava_bucket",
+    "title": "뜨거워!",
+    "description": "열기를 10,000개 이상 보유했습니다.\n\n§7일정 주기로 성급함 I 효과를 얻습니다.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "heat_ten_thousand": {
+      "trigger": "impossible"
+    }
+  }
+}
