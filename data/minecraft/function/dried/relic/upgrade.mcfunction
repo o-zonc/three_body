@@ -7,6 +7,7 @@ execute unless score #dried_relic_cost_ok tmp matches 1 at @s run playsound bloc
 execute unless score #dried_relic_cost_ok tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players add #dried_relic_level upgrade 1
+execute if score #dried_relic_level upgrade matches 2 run advancement grant @s only 2_dried/02_relic_restoration
 function dried/relic/prepare
 scoreboard players operation #dried_relic_timer generate = #dried_relic_interval tmp
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
