@@ -9,6 +9,7 @@
 schedule clear common/next
 
 schedule clear frozen/weather
+schedule clear dried/weather
 
 schedule clear story/intro/00_init
 schedule clear story/intro/01_quote1
@@ -33,8 +34,6 @@ gamemode adventure @a
 # ------------------------------------------------------------
 
 execute in overworld run tp @a 0 100 0
-function mover/items/arrive_overworld
-
 
 # ------------------------------------------------------------
 # 4. 스코어보드 초기화
@@ -95,6 +94,12 @@ advancement revoke @a everything
 xp set @a 0 levels
 xp set @a 0 points
 
+function resource/advancement_reward/wood/disable
+function resource/advancement_reward/coal/disable
+function resource/advancement_reward/copper/disable
+function resource/advancement_reward/iron/disable
+
+attribute @s movement_speed base set 0.1
 
 # ------------------------------------------------------------
 # 9. 시설물 철거
@@ -104,6 +109,10 @@ function common/structure/observatory/off
 function common/structure/beacon/off
 function common/structure/alchemy_workshop/off
 function common/structure/factory/off
+
+function frozen/structure/bridge/off
+function frozen/structure/maze/off
+function frozen/structure/shop/off
 
 # ------------------------------------------------------------
 # 10. 게임 규칙 재설정

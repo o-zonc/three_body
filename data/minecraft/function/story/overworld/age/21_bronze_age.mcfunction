@@ -1,3 +1,3 @@
 execute unless score #overworld civilization_age matches 3.. run scoreboard players set #overworld civilization_age 3
-tellraw @a {"text":"청동기 시대가 열렸습니다. 이제 문명은 자원을 교환하고 축적하기 시작합니다.","color":"#C87941"}
+
 playsound entity.player.levelup master @s ~ ~ ~ 0.8 1.0

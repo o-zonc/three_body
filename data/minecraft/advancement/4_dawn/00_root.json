@@ -13,7 +13,7 @@
 		"enter_polarnight": {
 			"trigger": "changed_dimension",
 			"conditions": {
-				"to": "polarnight"
+				"to": "dawn"
 			}
 		}
 	}

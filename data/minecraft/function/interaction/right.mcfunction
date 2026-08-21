@@ -5,8 +5,12 @@ execute if entity @s[tag=product] run function resource/product_interaction_mana
 execute if entity @s[tag=item] run function item/item_interaction_manager
 
 # 특수 구조물
-execute if entity @s[tag=po,tag=info] on target run function resource/material/information/ui/info
-execute if entity @s[tag=po,tag=time] on target run function resource/material/time/ui/info
+execute if entity @s[tag=po,tag=info] on target run function resource/interaction {id:"information"}
+execute if entity @s[tag=po,tag=time] on target run function resource/interaction {id:"time"}
+execute if entity @s[tag=frozen,tag=info] on target run function frozen/interaction/info
+execute if entity @s[tag=frozen,tag=shop] on target run function frozen/interaction/shop
+execute if entity @s[tag=dried,tag=info] on target run function dried/interaction/info
+execute if entity @s[tag=dried,tag=left] on target run function dried/relic/ui
 execute if entity @s[tag=era] on target run function common/era/interact
 
 
@@ -14,6 +18,7 @@ execute if entity @s[tag=era] on target run function common/era/interact
 # 모든 상점 interaction 엔티티는 shop 태그를 공통으로 사용한다.
 execute if entity @s[tag=shop,tag=check,tag=first] on target run function resource/shop/check
 execute if entity @s[tag=shop,tag=check,tag=second] on target run function resource/shop/check_second
+execute if entity @s[tag=shop,tag=check,tag=third] on target run function resource/shop/check_third
 execute if entity @s[tag=shop,tag=factory] on target run function shop/factory/interact
 execute if entity @s[tag=shop,tag=elevator] on target run function elevator/shop_interact
 execute if entity @s[tag=shop,tag=alchemy] on target run function shop/alchemy/interact
@@ -24,10 +29,12 @@ execute if entity @s[tag=shop,tag=gold] on target run function shop/second/ui {i
 execute if entity @s[tag=shop,tag=diamond] on target run function shop/second/ui {id:"diamond",name:"다이아몬드 생산",color:"aqua",effect:"기본 생산량 보너스",unit:"개",trigger:1814}
 execute if entity @s[tag=shop,tag=special] on target run function shop/second/ui {id:"special",name:"극한 환경 수급",color:"light_purple",effect:"열기·냉기 수급량 보너스",unit:"개",trigger:1815}
 execute if entity @s[tag=shop,tag=get] on target run function shop/second/ui {id:"get",name:"기초 생산 공정",color:"green",effect:"모든 기본 생산량 보너스",unit:"개",trigger:1816}
-execute if entity @s[tag=shop,tag=time] on target run function resource/material/time/ui/interact
-execute if entity @s[tag=shop,tag=information] on target run function resource/material/information/ui/interact
-execute if entity @s[tag=shop,tag=world_eye] on target run function resource/material/world_eye/ui/interact
-execute if entity @s[tag=shop,tag=!check,tag=!factory,tag=!heat,tag=!gold,tag=!cold,tag=!diamond,tag=!special,tag=!get,tag=!time,tag=!information,tag=!world_eye,tag=!era,tag=!alchemy,tag=!elevator,tag=!observatory,tag=!item,tag=!entrance] run function resource/shop/interact
+execute if entity @s[tag=shop,tag=time] on target run function shop/third/storage_ui {id:"time",name:"시간",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute if entity @s[tag=shop,tag=information] on target run function shop/third/storage_ui {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
+execute if entity @s[tag=shop,tag=world_eye] on target run function shop/third/world_eye/ui
+execute if entity @s[tag=shop,tag=!check,tag=!factory,tag=!heat,tag=!gold,tag=!cold,tag=!diamond,tag=!special,tag=!get,tag=!time,tag=!information,tag=!world_eye,tag=!era,tag=!alchemy,tag=!elevator,tag=!observatory,tag=!item,tag=!entrance,tag=!frozen] run function resource/shop/interact
 execute if entity @s[tag=factory,tag=!shop] run function factory/interact
+execute if entity @s[tag=factory,tag=accelerator] on target run function accelerator/ui
+execute if entity @s[tag=factory,tag=shield] on target run function shield/ui
 
 data remove entity @s interaction

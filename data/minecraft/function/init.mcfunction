@@ -72,7 +72,6 @@ scoreboard objectives add upgrade dummy
 scoreboard objectives add material_shop dummy
 scoreboard objectives add compress dummy
 
-scoreboard objectives add nether_workshop dummy
 scoreboard objectives add unlock_trigger trigger
 scoreboard objectives add upgrade_trigger trigger
 scoreboard objectives add item_trigger trigger
@@ -95,3 +94,25 @@ scoreboard objectives add factory_trigger trigger
 scoreboard objectives add tool_trigger trigger
 scoreboard objectives add factory_elevator_unlocked dummy
 scoreboard objectives add factory_build_stage dummy
+
+# 13. 입자가속기·외계 간섭·보호막
+scoreboard objectives add accelerator_level dummy
+scoreboard objectives add accelerator_timer dummy
+scoreboard objectives add experiment_cooldown dummy
+scoreboard objectives add accelerator_trigger trigger
+scoreboard objectives add alien_interference dummy
+scoreboard objectives add alien_timer dummy
+scoreboard objectives add shield_charge dummy
+scoreboard objectives add shield_maintenance dummy
+bossbar add shield_charge {"text":"양자 보호막","color":"white"}
+bossbar set shield_charge color white
+bossbar set shield_charge style progress
+bossbar set shield_charge max 216000
+bossbar set shield_charge visible false
+
+# 14. 극야/여명 정산
+scoreboard objectives add reckoning_ready dummy
+scoreboard objectives add dawn_information_shop dummy
+scoreboard objectives add dawn_time_shop dummy
+scoreboard objectives add dawn_bonus_shop dummy
+scoreboard objectives add dawn_reactor_purchased dummy

@@ -3,7 +3,7 @@
 	"display": {
 		"icon": "enchanting_table",
 		"title": "고대",
-		"description": "지식과 기술을 체계적으로 축적하기 시작합니다.",
+		"description": [{"text":"지식과 기술을 체계적으로 축적하기 시작합니다."},{"text": "\n\n§7§o마법을 연구하기 위해서는 탄탄한 자원이 뒷받침되어야 합니다."}],
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true

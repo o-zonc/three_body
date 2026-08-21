@@ -17,9 +17,7 @@ scoreboard players set #cost_world_eye cost 0
 scoreboard players set #cost_obsidian cost 0
 scoreboard players set #cost_compressed_overworld_crystal cost 0
 scoreboard players set #cost_compressed_nether_crystal cost 0
-scoreboard players set #cost_quartz cost 0
 scoreboard players set #cost_gold cost 0
-scoreboard players set #cost_blaze_powder cost 0
 scoreboard players set #cost_spirit cost 0
 
 execute if data storage data tmp.cost[{type:"wood"}].amount store result score #cost_wood cost run data get storage data tmp.cost[{type:"wood"}].amount
@@ -39,21 +37,15 @@ execute if data storage data tmp.cost[{type:"world_eye"}].amount store result sc
 execute if data storage data tmp.cost[{type:"obsidian"}].amount store result score #cost_obsidian cost run data get storage data tmp.cost[{type:"obsidian"}].amount
 execute if data storage data tmp.cost[{type:"compressed_overworld_crystal"}].amount store result score #cost_compressed_overworld_crystal cost run data get storage data tmp.cost[{type:"compressed_overworld_crystal"}].amount
 execute if data storage data tmp.cost[{type:"compressed_nether_crystal"}].amount store result score #cost_compressed_nether_crystal cost run data get storage data tmp.cost[{type:"compressed_nether_crystal"}].amount
-execute if data storage data tmp.cost[{type:"quartz"}].amount store result score #cost_quartz cost run data get storage data tmp.cost[{type:"quartz"}].amount
 execute if data storage data tmp.cost[{type:"gold"}].amount store result score #cost_gold cost run data get storage data tmp.cost[{type:"gold"}].amount
-execute if data storage data tmp.cost[{type:"blaze_powder"}].amount store result score #cost_blaze_powder cost run data get storage data tmp.cost[{type:"blaze_powder"}].amount
 execute if data storage data tmp.cost[{type:"spirit"}].amount store result score #cost_spirit cost run data get storage data tmp.cost[{type:"spirit"}].amount
-
-# 작업대 2-1 효과: 석탄과 금의 비용을 면제
-scoreboard players set #2_1_cost_effective tmp 0
-execute if score #2_1 nether_workshop matches 1 run scoreboard players set #2_1_cost_effective tmp 1
 
 # 발전과제 overworld_13 달성 시 나무/돌은 차감되지 않음
 execute unless score #overworld_13 advancement matches 1 run scoreboard players operation #wood material -= #cost_wood cost
 execute if score #overworld_13 advancement matches 1 if score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #wood material -= #cost_wood cost
 execute unless score #overworld_13 advancement matches 1 run scoreboard players operation #stone material -= #cost_stone cost
 execute if score #overworld_13 advancement matches 1 if score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #stone material -= #cost_stone cost
-execute unless score #2_1_cost_effective tmp matches 1 run scoreboard players operation #coal material -= #cost_coal cost
+scoreboard players operation #coal material -= #cost_coal cost
 scoreboard players operation #copper material -= #cost_copper cost
 scoreboard players operation #iron material -= #cost_iron cost
 scoreboard players operation #diamond material -= #cost_diamond cost
@@ -67,9 +59,7 @@ scoreboard players operation #world_eye material -= #cost_world_eye cost
 scoreboard players operation #obsidian material -= #cost_obsidian cost
 scoreboard players operation #compressed_overworld_crystal material -= #cost_compressed_overworld_crystal cost
 scoreboard players operation #compressed_nether_crystal material -= #cost_compressed_nether_crystal cost
-scoreboard players operation #quartz material -= #cost_quartz cost
-execute unless score #2_1_cost_effective tmp matches 1 run scoreboard players operation #gold material -= #cost_gold cost
-scoreboard players operation #blaze_powder material -= #cost_blaze_powder cost
+scoreboard players operation #gold material -= #cost_gold cost
 scoreboard players operation #spirit material -= #cost_spirit cost
 
 # 경험치는 개별

@@ -39,4 +39,21 @@ execute as @a[tag=player] if score @s shop_trigger matches 1814 run function sho
 execute as @a[tag=player] if score @s shop_trigger matches 1815 run function shop/second/purchase {id:"special",name:"극한 환경 수급",color:"light_purple",effect:"열기·냉기 수급량 보너스",unit:"개",trigger:1815}
 execute as @a[tag=player] if score @s shop_trigger matches 1816 run function shop/second/purchase {id:"get",name:"기초 생산 공정",color:"green",effect:"모든 기본 생산량 보너스",unit:"개",trigger:1816}
 
+# 자원 상점 3층 (182X)
+execute as @a[tag=player] if score @s shop_trigger matches 1821 run function shop/third/storage_purchase {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
+execute as @a[tag=player] if score @s shop_trigger matches 1822 run function shop/third/storage_purchase {id:"time",name:"시간",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute as @a[tag=player] if score @s shop_trigger matches 1823 run function shop/third/world_eye/purchase
+execute as @a[tag=player] if score @s shop_trigger matches 1824 run function shop/third/world_eye/synthesize
+execute as @a[tag=player] if score @s shop_trigger matches 1825 run function meta/manual_withdraw {id:"information",name:"정보"}
+execute as @a[tag=player] if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간"}
+execute as @a[tag=player] if score @s shop_trigger matches 1830 run function dawn/bonus_shop/purchase_reactor
+
+# 얼어붙은 차원 시설 (19XX)
+execute as @a[tag=player] if score @s shop_trigger matches 1901 run function frozen/interaction/purchase_shop
+execute as @a[tag=player] if score @s shop_trigger matches 1902 run function frozen/interaction/purchase_bridge
+execute as @a[tag=player] if score @s shop_trigger matches 1903 run function frozen/interaction/purchase_maze
+
+# 메마른 차원 시설 (20XX)
+execute as @a[tag=player] if score @s shop_trigger matches 2001 run function dried/relic/upgrade
+
 execute as @a if score @s shop_trigger matches 1.. run scoreboard players reset @s shop_trigger

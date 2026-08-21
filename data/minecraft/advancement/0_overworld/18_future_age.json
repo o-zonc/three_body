@@ -3,7 +3,7 @@
 	"display": {
 		"icon": "nether_star",
 		"title": "미래",
-		"description": "문명은 마침내 지구의 한계를 넘어섭니다.",
+		"description": "미래에 도달했습니다.\n\n§d문명은 지구의 한계를 넘어설 준비를 마쳤습니다.",
 		"frame": "challenge",
 		"show_toast": true,
 		"announce_to_chat": true

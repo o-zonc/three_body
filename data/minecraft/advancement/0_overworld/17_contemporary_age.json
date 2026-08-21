@@ -3,7 +3,7 @@
 	"display": {
 		"icon": "observer",
 		"title": "현대",
-		"description": "정보를 기록하고 자동화된 기술을 발전시킵니다.",
+		"description": "문명은 정보를 다루고 세계를 자동화하기 시작합니다.\n\n§6•§7 보상: 금속 수급량이 증가합니다.",
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true

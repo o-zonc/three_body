@@ -20,7 +20,8 @@ function interaction/detect
 # 자원 API
 function var_init
 function meta/migrate
-execute as @a[tag=player,limit=1] run function meta/sync
+execute as @a[tag=player,limit=1] run function meta/reconcile
+execute as @a[tag=player,limit=1] run function meta/auto_withdraw
 function resource/limit_materials
 
 # 자원 채취 도구
@@ -33,6 +34,9 @@ function resource/upgrade_trigger
 function item/purchase_trigger
 function dimensions/overworld/shop/shop_trigger
 function factory/trigger
+function accelerator/tick
+function accelerator/trigger
+function dried/relic/tick
 
 # 스토리
 function story/story

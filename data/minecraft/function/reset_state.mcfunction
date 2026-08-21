@@ -39,6 +39,11 @@ scoreboard players set #GLOBAL current_dim 0
 scoreboard players set #GLOBAL era_paused 1
 scoreboard players set #disaster_running run 0
 scoreboard players set #GLOBAL era_observed 0
+scoreboard players set #frozen_shop unlock 0
+scoreboard players set #frozen_bridge unlock 0
+scoreboard players set #frozen_maze unlock 0
+scoreboard players set #dried_relic_level upgrade 0
+scoreboard players set #dried_relic_timer generate 1200
 
 # 7. 스토리 관리 스코어보드 초기화
 scoreboard players set #done intro 0
@@ -51,6 +56,12 @@ scoreboard players set #alchemy_workshop unlock 0
 scoreboard players set * material 0
 scoreboard players set * upgrade 0
 scoreboard players set * unlock 0
+scoreboard players set #information_bank meta 0
+scoreboard players set #time_bank meta 0
+scoreboard players set #information_capacity meta 8
+scoreboard players set #time_capacity meta 2
+scoreboard players set #information_synced meta 0
+scoreboard players set #time_synced meta 0
 
 # 생산 업그레이드 레벨을 명시적으로 초기화
 scoreboard players set #wood_regen_lvl upgrade 0
@@ -62,12 +73,13 @@ scoreboard players set #gold_regen_lvl upgrade 0
 scoreboard players set #diamond_regen_lvl upgrade 0
 scoreboard players set #emerald_regen_lvl upgrade 0
 scoreboard players set #lapis_regen_lvl upgrade 0
-scoreboard players set #drill_speed_lvl upgrade 0
-scoreboard players set #drill_limit_lvl upgrade 0
 scoreboard players set #tool upgrade 0
 
-# 상점 및 공방에서 관리하는 별도 업그레이드 레벨 초기화
-scoreboard players set * nether_workshop 0
+# 시대 발전과제 자원 수급량 보상 초기화
+function resource/advancement_reward/wood/disable
+function resource/advancement_reward/coal/disable
+function resource/advancement_reward/copper/disable
+function resource/advancement_reward/iron/disable
 
 # 자원별 수급량 상점 레벨을 명시적으로 초기화
 scoreboard players set #wood_lvl material_shop 0
@@ -105,6 +117,11 @@ scoreboard objectives remove material_display
 
 data remove storage data tmp
 
+# 얼어붙은 차원 시설을 잠긴 상태로 되돌립니다.
+execute in minecraft:frozen run function frozen/structure/shop/off
+execute in minecraft:frozen run function frozen/structure/bridge/off
+execute in minecraft:frozen run function frozen/structure/maze/off
+
 # 9. 엘리베이터 스코어보드 초기화
 scoreboard players set #GLOBAL elevator_unlocked 0
 scoreboard players set #GLOBAL time_machine_level 0
@@ -116,6 +133,17 @@ scoreboard players reset * factory_enabled
 scoreboard players reset * factory_timer
 scoreboard players reset * factory_status
 scoreboard players reset @a factory_trigger
+scoreboard players set #GLOBAL accelerator_level 0
+scoreboard players set #GLOBAL accelerator_timer 1200
+scoreboard players set #GLOBAL experiment_cooldown 0
+scoreboard players set #GLOBAL alien_interference 0
+scoreboard players set #GLOBAL alien_timer 1200
+scoreboard players set #GLOBAL shield_charge 0
+scoreboard players set #GLOBAL shield_maintenance 6000
+scoreboard players set #information_auto_withdraw meta 0
+scoreboard players set #time_auto_withdraw meta 0
+scoreboard players reset @a accelerator_trigger
+bossbar set shield_charge visible false
 
 # 특수 환경 자원 지급 주기 초기화
 scoreboard players set #heat_environment_timer generate 1200

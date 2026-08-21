@@ -7,3 +7,7 @@ scoreboard players operation #information material = #information_wallet tmp
 scoreboard players operation #information material += #information_bank meta
 scoreboard players operation #time material = #time_wallet tmp
 scoreboard players operation #time material += #time_bank meta
+
+# 다음 틱에 material 점수가 외부 명령으로 변경되었는지 판별하기 위한 스냅샷이다.
+scoreboard players operation #information_synced meta = #information material
+scoreboard players operation #time_synced meta = #time material

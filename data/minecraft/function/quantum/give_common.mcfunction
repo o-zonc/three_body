@@ -1,0 +1,1 @@
+$give @s minecraft:cyan_dye[minecraft:custom_data={three_body:{quantum:"common"}},minecraft:custom_name={text:"일반 양자 얽힘 파편",color:"aqua",italic:false},minecraft:lore=[{text:"양자 자원",color:"gold",italic:false},{text:"입자가속기 실험에서 안정적으로 관측된 양자 얽힘 파편",color:"gray",italic:false}],minecraft:item_model="music_disc_precipice"] $(amount)

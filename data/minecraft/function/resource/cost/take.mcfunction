@@ -13,9 +13,7 @@ function meta/information/take_cost
 function meta/time/take_cost
 scoreboard players operation #world_eye material -= #cost_world_eye cost
 scoreboard players operation #obsidian material -= #cost_obsidian cost
-scoreboard players operation #quartz material -= #cost_quartz cost
 scoreboard players operation #gold material -= #cost_gold cost
-scoreboard players operation #blaze_powder material -= #cost_blaze_powder cost
 execute if score #cost_exp_lvl cost matches 1.. store result storage data tmp.resource.exp.lvl int -1 run scoreboard players get #cost_exp_lvl cost
 execute if data storage data tmp.resource.exp.lvl run function player/add_exp_lvl with storage data tmp.resource.exp
 data remove storage data tmp.resource.exp

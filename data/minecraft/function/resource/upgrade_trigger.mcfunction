@@ -21,12 +21,6 @@ execute as @a[tag=player] if score @s upgrade_trigger matches 1117 run function 
 
 
 
-# 네더 (12XX)
-execute as @a[tag=player] if score @s upgrade_trigger matches 1203 run function dimensions/nether/piglin_head/trigger/upgrade_speed_up
-
-
-
-
 # 엔드 (13XX)
 
 

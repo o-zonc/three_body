@@ -3,7 +3,7 @@
 	"display": {
 		"icon": "cobblestone",
 		"title": "석기 시대",
-		"description": "돌을 다루며 문명의 기반을 다집니다.",
+		"description": "돌을 다루며 문명의 기반을 다집니다.\n\n§6•§7 보상: 이동 속도가 약간 증가합니다.",
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true

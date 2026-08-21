@@ -16,7 +16,6 @@ scoreboard players set #GLOBAL visited_frozen 0
 scoreboard players set #GLOBAL visited_overworld 0
 scoreboard players add #GLOBAL visited_polar 1
 scoreboard players set #GLOBAL current_dim 3
-execute unless score #time unlock matches 1 as @a at @s run function resource/effect/unlock_success
-scoreboard players set #time unlock 1
-
 scoreboard players set #GLOBAL era_paused 0
+# 극야의 첫 자원 인터랙션에서 이번 문명의 정산을 한 번만 실행한다.
+scoreboard players set #GLOBAL reckoning_ready 1

@@ -1,0 +1,7 @@
+scoreboard players set #accelerator_info_amount tmp 1
+scoreboard players set #accelerator_interval tmp 1200
+execute if score #GLOBAL accelerator_level matches 2 run scoreboard players set #accelerator_info_amount tmp 2
+execute if score #GLOBAL accelerator_level matches 2 run scoreboard players set #accelerator_interval tmp 900
+execute if score #GLOBAL accelerator_level matches 3 run scoreboard players set #accelerator_info_amount tmp 4
+execute if score #GLOBAL accelerator_level matches 3 run scoreboard players set #accelerator_interval tmp 600
+tellraw @s ["",{text:"  [ 입자가속기 ]",color:"aqua",bold:true},{text:"\n\n  • 레벨: ",color:"gray"},{score:{name:"#GLOBAL",objective:"accelerator_level"},color:"white"},{text:" / 4",color:"gray"},{text:"\n  • 정보 생산량: ",color:"gray"},{score:{name:"#accelerator_info_amount",objective:"tmp"},color:"light_purple"},{text:"개",color:"gray"},{text:"\n  • 생산 주기: ",color:"gray"},{score:{name:"#accelerator_interval",objective:"tmp"},color:"white"},{text:"틱",color:"gray"},{text:"\n  • 실험 쿨다운: ",color:"gray"},{score:{name:"#GLOBAL",objective:"experiment_cooldown"},color:"white"},{text:"틱",color:"gray"},{text:"\n\n  [ 충돌 실험 ]",color:"light_purple",bold:true,click_event:{action:"run_command",command:"/trigger accelerator_trigger set 2"}},{text:"\n  [ 다음 단계 업그레이드 ]",color:"aqua",bold:true,click_event:{action:"run_command",command:"/trigger accelerator_trigger set 1"}},{text:"\n"}]

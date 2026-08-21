@@ -8,86 +8,25 @@ data merge storage data {\
       alchemy_workshop: [\
         { stage: 0, required_age: 5, cost: [{ type: "iron", amount: 250 }, { type: "emerald", amount: 100 }] },\
         { stage: 1, required_age: 6, cost: [{ type: "iron", amount: 500 }, { type: "emerald", amount: 250 }, { type: "lapis", amount: 100 }] },\
-        { stage: 2, required_age: 7, cost: [{ type: "iron", amount: 2000 }, { type: "emerald", amount: 1000 }, { type: "lapis", amount: 500 }] },\
+        { stage: 2, required_age: 7, cost: [{ type: "iron", amount: 2000 }, { type: "emerald", amount: 1000 }, { type: "lapis", amount: 500 }, { type: "information", amount: 8 }] },\
       ],\
-    },\
-    dimensions: {\
-      overworld: {\
-        drill: {\
-          speed:[\
-            { lvl: 0, value: 5, cost: [{ type: "stone", amount: 100 }] },\
-            { lvl: 1, value: 7, cost: [{ type: "stone", amount: 200 }] },\
-            { lvl: 2, value: 10, cost: [{ type: "stone", amount: 300 }] },\
-            { lvl: 3, value: 12, cost: [{ type: "stone", amount: 400 }] },\
-            { lvl: 4, value: 15, cost: [{ type: "stone", amount: 500 }] },\
-            { lvl: 5, value: 17, cost: [{ type: "stone", amount: 600 }] },\
-            { lvl: 6, value: 20, cost: [{ type: "stone", amount: 700 }] },\
-            { lvl: 7, value: 22, cost: [{ type: "stone", amount: 800 }] },\
-            { lvl: 8, value: 25 },\
-          ],\
-          limit:[\
-            { lvl: 0, value: 20000, cost: [{ type: "iron", amount: 5 }] },\
-            { lvl: 1, value: -5000, cost: [{ type: "iron", amount: 25 }] },\
-            { lvl: 2, value: -32000, cost: [{ type: "iron", amount: 150 }] },\
-            { lvl: 3, value: -64000 },\
-          ],\
-        },\
-        entrance: [\
-          { id: "cave", cost: [{ type: "exp_lvl", amount: 5 }] },\
-          { id: "nether_portal", cost: [{ type: "exp_lvl", amount: 25 }] },\
-          { id: "nether_entrance", cost: [{ type: "obsidian", amount: 16 }] }\
-        ],\
-      },\
-      nether: {\
-        workshop: [\
-          { id: "1_1", tier: 1, previous_tier: 0, cost: 600 },\
-          { id: "2_1", tier: 2, previous_tier: 1, cost: 5000 },\
-          { id: "2_2", tier: 2, previous_tier: 1, cost: 5000 },\
-          { id: "3_1", tier: 3, previous_tier: 2, cost: 16000 },\
-          { id: "4_1", tier: 4, previous_tier: 3, cost: 25000 },\
-          { id: "4_2", tier: 4, previous_tier: 3, cost: 25000 },\
-          { id: "5_1", tier: 5, previous_tier: 4, cost: 55000 },\
-          { id: "6_1", tier: 6, previous_tier: 5, cost: 100000 },\
-          { id: "7_1", tier: 7, previous_tier: 6, cost: 350000 },\
-          { id: "8_1", tier: 8, previous_tier: 7, cost: 700000 },\
-          { id: "9_1", tier: 9, previous_tier: 8, cost: 3000000 },\
-          { id: "9_2", tier: 9, previous_tier: 8, cost: 3000000 },\
-          { id: "10_1", tier: 10, previous_tier: 9, cost: 12000000 },\
-          { id: "11_1", tier: 11, previous_tier: 10, cost: 25000000 },\
-          { id: "11_2", tier: 11, previous_tier: 10, cost: 25000000 },\
-          { id: "12_1", tier: 12, previous_tier: 11, cost: 50000000 },\
-        ],\
-        piglin_head: {\
-          piglin_shop: [\
-            { lvl: 0, cost: [{ type: "gold", amount: 10 }] },\
-            { lvl: 1, cost: [{ type: "gold", amount: 25 }] },\
-            { lvl: 2, cost: [{ type: "gold", amount: 40 }] },\
-            { lvl: 3, cost: [{ type: "gold", amount: 80 }] },\
-            { lvl: 4, cost: [{ type: "gold", amount: 150 }] },\
-            { lvl: 5, cost: [{ type: "gold", amount: 250 }] },\
-            { lvl: 6, cost: [{ type: "gold", amount: 400 }] },\
-            { lvl: 7, cost: [{ type: "gold", amount: 600 }] },\
-            { lvl: 8 },\
-          ],\
-          speed_up: [\
-            { lvl: 0, value: 60, cost: [{ type: "blaze_powder", amount: 15 }] },\
-            { lvl: 1, value: 40, cost: [{ type: "blaze_powder", amount: 35 }] },\
-            { lvl: 2, value: 20, cost: [{ type: "blaze_powder", amount: 60 }] },\
-            { lvl: 3, value: 10, cost: [{ type: "blaze_powder", amount: 120 }] },\
-            { lvl: 4, value: 5, cost: [{ type: "blaze_powder", amount: 200 }] },\
-            { lvl: 5, value: 2, cost: [{ type: "blaze_powder", amount: 300 }] },\
-            { lvl: 6, value: 1 },\
-          ],\
-        },\
-      },\
+      dried_relic: [\
+        { lvl: 0, interval: 1200, amount: 2, cost: [{ type: "gold", amount: 25 }, { type: "heat", amount: 25 }] },\
+        { lvl: 1, interval: 900, amount: 4, cost: [{ type: "gold", amount: 75 }, { type: "heat", amount: 75 }] },\
+        { lvl: 2, interval: 600, amount: 8, cost: [{ type: "information", amount: 50 }, { type: "time", amount: 3 }] },\
+        { lvl: 3, interval: 400, amount: 15, cost: [{ type: "information", amount: 150 }, { type: "time", amount: 10 }] },\
+        { lvl: 4, interval: 200, amount: 30 },\
+      ],\
     },\
     tool: [\
       {\
         lvl: 0,\
         cost: [{ type: "wood", amount: 5 }],\
         components: {\
-          custom_name: "§f낡은 막대기",\
+          custom_name: "§f나무 막대기",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7를 파괴하기까지 §f3§7초 소요됨",\
           ],\
           can_break: {\
@@ -108,6 +47,8 @@ data merge storage data {\
         components: {\
           custom_name: "§f쓸만한 막대기",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7를 파괴하기까지 §f2§7초 소요됨",\
           ],\
           can_break: {\
@@ -128,6 +69,8 @@ data merge storage data {\
         components: {\
           custom_name: "§f괜찮은 막대기",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7를 파괴하기까지 §f1§7초 소요됨",\
           ],\
           can_break: {\
@@ -148,6 +91,8 @@ data merge storage data {\
         components: {\
           custom_name: "§f좋은 막대기",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7를 파괴하기까지 §f0.5§7초 소요됨",\
           ],\
           can_break: {\
@@ -168,6 +113,8 @@ data merge storage data {\
         components: {\
           custom_name: "§f유용한 막대기",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7를 파괴하기까지 §f0.25§7초 소요됨",\
             "§6* §f돌§7을 파괴하기까지 §f3§7초 소요됨",\
           ],\
@@ -191,6 +138,8 @@ data merge storage data {\
         components: {\
           custom_name: "§f제법 마음에 드는 막대기",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7 즉시 파괴 가능",\
             "§6* §f돌§7을 파괴하기까지 §f1.5§7초 소요됨",\
           ],\
@@ -215,6 +164,8 @@ data merge storage data {\
           custom_name: "§f낡은 곡괭이",\
           item_model: "stone_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7 즉시 파괴 가능",\
             "§6* §f돌§7을 파괴하기까지 §f0.75§7초 소요됨",\
             "§6* §f석탄§7을 파괴하기까지 §f3§7초 소요됨",\
@@ -245,6 +196,8 @@ data merge storage data {\
           custom_name: "§f쓸만한 곡괭이",\
           item_model: "iron_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7 즉시 파괴 가능",\
             "§6* §f돌§7 즉시 파괴 가능",\
             "§6* §f석탄§7을 파괴하기까지 §f1.5§7초 소요됨",\
@@ -275,6 +228,8 @@ data merge storage data {\
           custom_name: "§f좋은 곡괭이",\
           item_model: "iron_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7 즉시 파괴 가능",\
             "§6* §f돌§7 즉시 파괴 가능",\
             "§6* §f석탄§7을 파괴하기까지 §f0.5§7초 소요됨",\
@@ -305,6 +260,8 @@ data merge storage data {\
           custom_name: "§f훌륭한 곡괭이",\
           item_model: "iron_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7, §f돌§7, §f석탄§7 즉시 파괴 가능",\
             "§6* §f철§7을 파괴하기까지 §f0.5§7초 소요됨",\
             "§6* §c흑요석§7을 파괴하기까지 §f5§7초 소요됨",\
@@ -336,6 +293,8 @@ data merge storage data {\
           custom_name: "§f상당히 멋있는 곡괭이",\
           item_model: "iron_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7, §f돌§7, §f석탄§7, §f철§7 즉시 파괴 가능",\
             "§6* §c흑요석§7을 파괴하기까지 §f2.5§7초 소요됨",\
           ],\
@@ -361,11 +320,13 @@ data merge storage data {\
       },\
       {\
         lvl: 11,\
-        cost: [{ type: "quartz", amount: 5 }],\
+        cost: [{ type: "diamond", amount: 5 }, { type: "lapis", amount: 25 }],\
         components: {\
           custom_name: "§f이건 진짜로 대단한 곡괭이",\
           item_model: "iron_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7, §f돌§7, §f석탄§7, §f철§7 즉시 파괴 가능",\
             "§6* §c흑요석§7을 파괴하기까지 §f1.5§7초 소요됨",\
             ["§6* ", { text: "§f§l석영", shadow_color: -1426128896 }, "§7을 파괴하기까지 §f8§7초 소요됨"],\
@@ -394,11 +355,13 @@ data merge storage data {\
       },\
       {\
         lvl: 12,\
-        cost: [{ type: "quartz", amount: 25 }],\
+        cost: [{ type: "diamond", amount: 20 }, { type: "lapis", amount: 100 }],\
         components: {\
           custom_name: "§f영혼이 스민 곡괭이",\
           item_model: "diamond_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7, §f돌§7, §f석탄§7, §f철§7 즉시 파괴 가능",\
             "§6* §c흑요석§7을 파괴하기까지 §f0.75§7초 소요됨",\
             ["§6* ", { text: "§f§l석영", shadow_color: -1426128896 }, "§7을 파괴하기까지 §f6§7초 소요됨"],\
@@ -427,11 +390,13 @@ data merge storage data {\
       },\
       {\
         lvl: 13,\
-        cost: [{ type: "quartz", amount: 35 }, { type: "gold", amount: 5 }],\
+        cost: [{ type: "diamond", amount: 50 }, { type: "emerald", amount: 100 }, { type: "lapis", amount: 250 }],\
         components: {\
           custom_name: "§f영혼에 잠식된 곡괭이",\
           item_model: "diamond_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §f참나무§7, §f돌§7, §f석탄§7, §f철§7 즉시 파괴 가능",\
             "§6* §c흑요석§7을 파괴하기까지 §f0.25§7초 소요됨",\
             ["§6* ", { text: "§f§l석영", shadow_color: -1426128896 }, "§7을 파괴하기까지 §f3§7초 소요됨"],\
@@ -463,11 +428,13 @@ data merge storage data {\
       },\
       {\
         lvl: 14,\
-        cost: [{ type: "quartz", amount: 80 }, { type: "gold", amount: 15 }],\
+        cost: [{ type: "diamond", amount: 150 }, { type: "emerald", amount: 300 }, { type: "lapis", amount: 750 }],\
         components: {\
           custom_name: "§f영혼에 잠식된 곡괭이",\
           item_model: "diamond_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §a§l오버월드 차원의 블럭§7이 즉시 파괴됨",\
             ["§6* ", { text: "§f§l석영", shadow_color: -1426128896 }, "§7을 파괴하기까지 §f1.5§7초 소요됨"],\
             ["§6* ", { text: "§6§l금", shadow_color: -1426128896 }, "§7을 파괴하기까지 §f2§7초 소요됨"],\
@@ -498,11 +465,13 @@ data merge storage data {\
       },\
       {\
         lvl: 15,\
-        cost: [{ type: "quartz", amount: 300 }],\
+        cost: [{ type: "diamond", amount: 500 }, { type: "emerald", amount: 1000 }, { type: "lapis", amount: 2500 }],\
         components: {\
           custom_name: "§f영혼과 동화된 곡괭이",\
           item_model: "diamond_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §a§l오버월드 차원의 블럭§7이 즉시 파괴됨",\
             ["§6* ", { text: "§f§l석영", shadow_color: -1426128896 }, "§7을 즉시 파괴 가능"],\
             ["§6* ", { text: "§6§l금", shadow_color: -1426128896 }, "§7을 파괴하기까지 §f1§7초 소요됨"],\
@@ -537,6 +506,8 @@ data merge storage data {\
           custom_name: "§f영혼과 동화된 곡괭이",\
           item_model: "diamond_pickaxe",\
           lore: [\
+            "§4도구 - 파괴",\
+            "",\
             "§6* §a§l오버월드 차원의 블럭§7이 즉시 파괴됨",\
             ["§6* ", { text: "§c§l네더 차원의 블럭", shadow_color: -1426128896 }, "§7이 즉시 파괴됨"],\
           ],\
@@ -586,15 +557,65 @@ data merge storage data {\
 
 # 자원 상점: 현재 레벨의 value가 실제 수급량이며 cost는 다음 단계 구매 비용이다.
 data modify storage data const.resource_shop set value [\
-  {id:"wood",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:5}]},{lvl:1,value:2,cost:[{type:"coal",amount:25}]},{lvl:2,value:4,cost:[{type:"coal",amount:50}]},{lvl:3,value:8,cost:[{type:"coal",amount:100}]},{lvl:4,value:16,cost:[{type:"coal",amount:200}]},{lvl:5,value:32,cost:[{type:"coal",amount:500}]},{lvl:6,value:64}]},\
-  {id:"stone",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:30}]},{lvl:1,value:2,cost:[{type:"coal",amount:150}]},{lvl:2,value:4,cost:[{type:"coal",amount:600}]},{lvl:3,value:8,cost:[{type:"coal",amount:2400}]},{lvl:4,value:16,cost:[{type:"coal",amount:12000}]},{lvl:5,value:32,cost:[{type:"coal",amount:25000}]},{lvl:6,value:64}]},\
-  {id:"coal",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:10}]},{lvl:1,value:2,cost:[{type:"coal",amount:30}]},{lvl:2,value:4,cost:[{type:"coal",amount:50}]},{lvl:3,value:8,cost:[{type:"coal",amount:400}]},{lvl:4,value:16,cost:[{type:"coal",amount:3000}]},{lvl:5,value:32,cost:[{type:"coal",amount:7500}]},{lvl:6,value:64}]},\
-  {id:"copper",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:20}]},{lvl:1,value:2,cost:[{type:"coal",amount:60}]},{lvl:2,value:4,cost:[{type:"coal",amount:200}]},{lvl:3,value:8,cost:[{type:"coal",amount:1500}]},{lvl:4,value:16,cost:[{type:"coal",amount:10000}]},{lvl:5,value:32,cost:[{type:"coal",amount:25000}]},{lvl:6,value:64}]},\
-  {id:"iron",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:20}]},{lvl:1,value:2,cost:[{type:"coal",amount:50}]},{lvl:2,value:4,cost:[{type:"coal",amount:100}]},{lvl:3,value:8,cost:[{type:"coal",amount:2000}]},{lvl:4,value:16,cost:[{type:"coal",amount:13000}]},{lvl:5,value:32,cost:[{type:"coal",amount:30000}]},{lvl:6,value:64}]},\
-  {id:"gold",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:100}]},{lvl:1,value:2,cost:[{type:"coal",amount:500}]},{lvl:2,value:4,cost:[{type:"coal",amount:2000}]},{lvl:3,value:8,cost:[{type:"coal",amount:8000}]},{lvl:4,value:16,cost:[{type:"coal",amount:30000}]},{lvl:5,value:32,cost:[{type:"coal",amount:100000}]},{lvl:6,value:64}]},\
-  {id:"diamond",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:250}]},{lvl:1,value:2,cost:[{type:"coal",amount:1000}]},{lvl:2,value:4,cost:[{type:"coal",amount:5000}]},{lvl:3,value:8,cost:[{type:"coal",amount:20000}]},{lvl:4,value:16,cost:[{type:"coal",amount:75000}]},{lvl:5,value:32,cost:[{type:"coal",amount:250000}]},{lvl:6,value:64}]},\
-  {id:"emerald",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:200}]},{lvl:1,value:2,cost:[{type:"coal",amount:800}]},{lvl:2,value:4,cost:[{type:"coal",amount:4000}]},{lvl:3,value:8,cost:[{type:"coal",amount:16000}]},{lvl:4,value:16,cost:[{type:"coal",amount:60000}]},{lvl:5,value:32,cost:[{type:"coal",amount:200000}]},{lvl:6,value:64}]},\
-  {id:"lapis",levels:[{lvl:0,value:1,cost:[{type:"coal",amount:150}]},{lvl:1,value:2,cost:[{type:"coal",amount:600}]},{lvl:2,value:4,cost:[{type:"coal",amount:3000}]},{lvl:3,value:8,cost:[{type:"coal",amount:12000}]},{lvl:4,value:16,cost:[{type:"coal",amount:50000}]},{lvl:5,value:32,cost:[{type:"coal",amount:150000}]},{lvl:6,value:64}]},\
-  {id:"xp",levels:[{lvl:0,value:5,cost:[{type:"coal",amount:30}]},{lvl:1,value:12,cost:[{type:"coal",amount:500}]},{lvl:2,value:36,cost:[{type:"coal",amount:2500}]},{lvl:3,value:145,cost:[{type:"coal",amount:5000}]},{lvl:4,value:442}]}\
+  {id:"wood",\
+    levels:[\
+    {lvl:0,value:1,cost:[{type:"coal",amount:5}]},\
+    {lvl:1,value:2,cost:[{type:"coal",amount:25}]},\
+    {lvl:2,value:4,cost:[{type:"coal",amount:50}]},\
+    {lvl:3,value:8,cost:[{type:"coal",amount:100}]},\
+    {lvl:4,value:16,cost:[{type:"coal",amount:200}]},\
+    {lvl:5,value:32,cost:[{type:"coal",amount:500}]},\
+    {lvl:6,value:64}]},\
+  {id:"stone",\
+    levels:[\
+    {lvl:0,value:1,cost:[{type:"coal",amount:30}]},\
+    {lvl:1,value:2,cost:[{type:"coal",amount:150}]},\
+    {lvl:2,value:4,cost:[{type:"coal",amount:600}]},\
+    {lvl:3,value:8,cost:[{type:"coal",amount:2400}]},\
+    {lvl:4,value:16,cost:[{type:"coal",amount:12000}]},\
+    {lvl:5,value:32,cost:[{type:"coal",amount:25000}]},\
+    {lvl:6,value:64}]},\
+  {id:"coal",\
+    levels:[\
+    {lvl:0,value:1,cost:[{type:"coal",amount:10}]},{lvl:1,value:2,cost:[{type:"coal",amount:30}]},{lvl:2,value:4,cost:[{type:"coal",amount:50}]},{lvl:3,value:8,cost:[{type:"coal",amount:400}]},{lvl:4,value:16,cost:[{type:"coal",amount:3000}]},{lvl:5,value:32,cost:[{type:"coal",amount:7500}]},{lvl:6,value:64}]},\
+  {id:"copper",\
+    levels:[\
+    {lvl:0,value:1,cost:[{type:"coal",amount:20}]},{lvl:1,value:2,cost:[{type:"coal",amount:60}]},{lvl:2,value:4,cost:[{type:"coal",amount:200}]},{lvl:3,value:8,cost:[{type:"coal",amount:1500}]},{lvl:4,value:16,cost:[{type:"coal",amount:10000}]},{lvl:5,value:32,cost:[{type:"coal",amount:25000}]},{lvl:6,value:64}]},\
+  {id:"iron",\
+    levels:[\
+    {lvl:0,value:1,cost:[{type:"coal",amount:20}]},{lvl:1,value:2,cost:[{type:"coal",amount:50}]},{lvl:2,value:4,cost:[{type:"coal",amount:100}]},{lvl:3,value:8,cost:[{type:"coal",amount:2000}]},{lvl:4,value:16,cost:[{type:"coal",amount:13000}]},{lvl:5,value:32,cost:[{type:"coal",amount:30000}]},{lvl:6,value:64}]},\
+  {id:"gold",\
+    levels:[\
+    {lvl:0,value:1,cost:[{type:"coal",amount:100}]},{lvl:1,value:2,cost:[{type:"coal",amount:500}]},{lvl:2,value:4,cost:[{type:"coal",amount:2000}]},{lvl:3,value:8,cost:[{type:"coal",amount:8000}]},{lvl:4,value:16,cost:[{type:"coal",amount:30000}]},{lvl:5,value:32,cost:[{type:"coal",amount:100000}]},{lvl:6,value:64}]},\
+  {id:"diamond",\
+    levels:[\
+    {lvl:0,value:1,cost:[{type:"coal",amount:250}]},{lvl:1,value:2,cost:[{type:"coal",amount:1000}]},{lvl:2,value:4,cost:[{type:"coal",amount:5000}]},{lvl:3,value:8,cost:[{type:"coal",amount:20000}]},{lvl:4,value:16,cost:[{type:"coal",amount:75000}]},{lvl:5,value:32,cost:[{type:"coal",amount:250000}]},{lvl:6,value:64}]},\
+  {id:"emerald",\
+    levels:[\
+    {lvl:0,value:1,cost:[{type:"coal",amount:200}]},{lvl:1,value:2,cost:[{type:"coal",amount:800}]},{lvl:2,value:4,cost:[{type:"coal",amount:4000}]},{lvl:3,value:8,cost:[{type:"coal",amount:16000}]},{lvl:4,value:16,cost:[{type:"coal",amount:60000}]},{lvl:5,value:32,cost:[{type:"coal",amount:200000}]},{lvl:6,value:64}]},\
+  {id:"lapis",\
+    levels:[\
+    {lvl:0,value:1,cost:[{type:"coal",amount:150}]},{lvl:1,value:2,cost:[{type:"coal",amount:600}]},{lvl:2,value:4,cost:[{type:"coal",amount:3000}]},{lvl:3,value:8,cost:[{type:"coal",amount:12000}]},{lvl:4,value:16,cost:[{type:"coal",amount:50000}]},{lvl:5,value:32,cost:[{type:"coal",amount:150000}]},{lvl:6,value:64}]},\
+  {id:"xp",\
+    levels:[\
+    {lvl:0,value:5,cost:[{type:"coal",amount:30}]},{lvl:1,value:12,cost:[{type:"coal",amount:500}]},{lvl:2,value:36,cost:[{type:"coal",amount:2500}]},{lvl:3,value:145,cost:[{type:"coal",amount:5000}]},{lvl:4,value:442}]}\
 ]
-data modify storage data const.factory set value [{id:"wood",levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:40},{type:"wood",amount:100}]},{lvl:1,output:24,fuel:2,cost:[{type:"copper",amount:80},{type:"wood",amount:250}]},{lvl:2,output:48,fuel:3,cost:[{type:"copper",amount:160},{type:"wood",amount:600}]},{lvl:3,output:96,fuel:5,cost:[{type:"copper",amount:320},{type:"wood",amount:1500}]},{lvl:4,output:192,fuel:8}]},{id:"stone",levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:50},{type:"stone",amount:120}]},{lvl:1,output:20,fuel:3,cost:[{type:"copper",amount:100},{type:"stone",amount:300}]},{lvl:2,output:40,fuel:4,cost:[{type:"copper",amount:200},{type:"stone",amount:800}]},{lvl:3,output:80,fuel:7,cost:[{type:"copper",amount:400},{type:"stone",amount:2000}]},{lvl:4,output:160,fuel:11}]},{id:"coal",levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:70},{type:"coal",amount:150}]},{lvl:1,output:16,fuel:2,cost:[{type:"copper",amount:140},{type:"coal",amount:350}]},{lvl:2,output:32,fuel:3,cost:[{type:"copper",amount:280},{type:"coal",amount:900}]},{lvl:3,output:64,fuel:5,cost:[{type:"copper",amount:560},{type:"coal",amount:2200}]},{lvl:4,output:128,fuel:8}]},{id:"copper",levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:180}]},{lvl:1,output:14,fuel:3,cost:[{type:"copper",amount:300}]},{lvl:2,output:28,fuel:5,cost:[{type:"copper",amount:700}]},{lvl:3,output:56,fuel:8,cost:[{type:"copper",amount:1800}]},{lvl:4,output:112,fuel:13}]},{id:"iron",levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:90},{type:"iron",amount:100}]},{lvl:1,output:12,fuel:4,cost:[{type:"copper",amount:180},{type:"iron",amount:250}]},{lvl:2,output:24,fuel:6,cost:[{type:"copper",amount:360},{type:"iron",amount:650}]},{lvl:3,output:48,fuel:10,cost:[{type:"copper",amount:720},{type:"iron",amount:1600}]},{lvl:4,output:96,fuel:16}]},{id:"gold",levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:120},{type:"gold",amount:70}]},{lvl:1,output:8,fuel:5,cost:[{type:"copper",amount:240},{type:"gold",amount:180}]},{lvl:2,output:16,fuel:8,cost:[{type:"copper",amount:480},{type:"gold",amount:450}]},{lvl:3,output:32,fuel:13,cost:[{type:"copper",amount:960},{type:"gold",amount:1100}]},{lvl:4,output:64,fuel:21}]},{id:"diamond",levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:180},{type:"diamond",amount:30}]},{lvl:1,output:4,fuel:7,cost:[{type:"copper",amount:360},{type:"diamond",amount:80}]},{lvl:2,output:8,fuel:11,cost:[{type:"copper",amount:720},{type:"diamond",amount:200}]},{lvl:3,output:16,fuel:18,cost:[{type:"copper",amount:1440},{type:"diamond",amount:500}]},{lvl:4,output:32,fuel:29}]},{id:"emerald",levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:160},{type:"emerald",amount:40}]},{lvl:1,output:5,fuel:6,cost:[{type:"copper",amount:320},{type:"emerald",amount:100}]},{lvl:2,output:10,fuel:10,cost:[{type:"copper",amount:640},{type:"emerald",amount:250}]},{lvl:3,output:20,fuel:16,cost:[{type:"copper",amount:1280},{type:"emerald",amount:650}]},{lvl:4,output:40,fuel:26}]},{id:"lapis",levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:130},{type:"lapis",amount:70}]},{lvl:1,output:8,fuel:5,cost:[{type:"copper",amount:260},{type:"lapis",amount:180}]},{lvl:2,output:16,fuel:8,cost:[{type:"copper",amount:520},{type:"lapis",amount:450}]},{lvl:3,output:32,fuel:13,cost:[{type:"copper",amount:1040},{type:"lapis",amount:1200}]},{lvl:4,output:64,fuel:21}]}]
+data modify storage data const.factory set value \
+  [{id:"wood",\
+    levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:40},{type:"wood",amount:100}]},{lvl:1,output:24,fuel:2,cost:[{type:"copper",amount:80},{type:"wood",amount:250}]},{lvl:2,output:48,fuel:3,cost:[{type:"copper",amount:160},{type:"wood",amount:600}]},{lvl:3,output:96,fuel:5,cost:[{type:"copper",amount:320},{type:"wood",amount:1500}]},{lvl:4,output:192,fuel:8}]},\
+  {id:"stone",\
+    levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:50},{type:"stone",amount:120}]},{lvl:1,output:20,fuel:3,cost:[{type:"copper",amount:100},{type:"stone",amount:300}]},{lvl:2,output:40,fuel:4,cost:[{type:"copper",amount:200},{type:"stone",amount:800}]},{lvl:3,output:80,fuel:7,cost:[{type:"copper",amount:400},{type:"stone",amount:2000}]},{lvl:4,output:160,fuel:11}]},\
+  {id:"coal",\
+    levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:70},{type:"coal",amount:150}]},{lvl:1,output:16,fuel:2,cost:[{type:"copper",amount:140},{type:"coal",amount:350}]},{lvl:2,output:32,fuel:3,cost:[{type:"copper",amount:280},{type:"coal",amount:900}]},{lvl:3,output:64,fuel:5,cost:[{type:"copper",amount:560},{type:"coal",amount:2200}]},{lvl:4,output:128,fuel:8}]},\
+  {id:"copper",\
+    levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:180}]},{lvl:1,output:14,fuel:3,cost:[{type:"copper",amount:300}]},{lvl:2,output:28,fuel:5,cost:[{type:"copper",amount:700}]},{lvl:3,output:56,fuel:8,cost:[{type:"copper",amount:1800}]},{lvl:4,output:112,fuel:13}]},\
+  {id:"iron",\
+    levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:90},{type:"iron",amount:100}]},{lvl:1,output:12,fuel:4,cost:[{type:"copper",amount:180},{type:"iron",amount:250}]},{lvl:2,output:24,fuel:6,cost:[{type:"copper",amount:360},{type:"iron",amount:650}]},{lvl:3,output:48,fuel:10,cost:[{type:"copper",amount:720},{type:"iron",amount:1600}]},{lvl:4,output:96,fuel:16}]},{\
+  id:"gold",\
+    levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:120},{type:"gold",amount:70}]},{lvl:1,output:8,fuel:5,cost:[{type:"copper",amount:240},{type:"gold",amount:180}]},{lvl:2,output:16,fuel:8,cost:[{type:"copper",amount:480},{type:"gold",amount:450}]},{lvl:3,output:32,fuel:13,cost:[{type:"copper",amount:960},{type:"gold",amount:1100}]},{lvl:4,output:64,fuel:21}]},\
+  {id:"diamond",\
+    levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:180},{type:"diamond",amount:30}]},{lvl:1,output:4,fuel:7,cost:[{type:"copper",amount:360},{type:"diamond",amount:80}]},{lvl:2,output:8,fuel:11,cost:[{type:"copper",amount:720},{type:"diamond",amount:200}]},{lvl:3,output:16,fuel:18,cost:[{type:"copper",amount:1440},{type:"diamond",amount:500}]},{lvl:4,output:32,fuel:29}]},\
+  {id:"emerald",\
+    levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:160},{type:"emerald",amount:40}]},{lvl:1,output:5,fuel:6,cost:[{type:"copper",amount:320},{type:"emerald",amount:100}]},{lvl:2,output:10,fuel:10,cost:[{type:"copper",amount:640},{type:"emerald",amount:250}]},{lvl:3,output:20,fuel:16,cost:[{type:"copper",amount:1280},{type:"emerald",amount:650}]},{lvl:4,output:40,fuel:26}]},\
+  {id:"lapis",\
+    levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:130},{type:"lapis",amount:70}]},{lvl:1,output:8,fuel:5,cost:[{type:"copper",amount:260},{type:"lapis",amount:180}]},{lvl:2,output:16,fuel:8,cost:[{type:"copper",amount:520},{type:"lapis",amount:450}]},{lvl:3,output:32,fuel:13,cost:[{type:"copper",amount:1040},{type:"lapis",amount:1200}]},{lvl:4,output:64,fuel:21}]}]

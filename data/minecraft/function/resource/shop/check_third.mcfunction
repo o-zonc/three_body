@@ -1,0 +1,8 @@
+function meta/sync
+function shop/third/update_capacities
+function shop/third/world_eye/prepare
+scoreboard players operation #third_information_lvl tmp = #information_storage_lvl upgrade
+scoreboard players operation #third_time_lvl tmp = #time_storage_lvl upgrade
+execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
+function util/blank
+tellraw @s ["",{text:"  [ 자원 상점 3층 - 특수 자원 ]",color:"dark_purple",bold:true},{text:"\n\n  • 정보 소지 한도: ",color:"light_purple"},{score:{name:"#information_capacity",objective:"meta"},color:"white"},{text:"조각  (Lv. ",color:"gray"},{score:{name:"#third_information_lvl",objective:"tmp"},color:"white"},{text:")",color:"gray"},{text:"\n    보관소: ",color:"gray"},{score:{name:"#information_bank",objective:"meta"},color:"light_purple"},{text:" / 1000조각",color:"gray"},{text:"\n  • 시간 소지 한도: ",color:"dark_aqua"},{score:{name:"#time_capacity",objective:"meta"},color:"white"},{text:"조각  (Lv. ",color:"gray"},{score:{name:"#third_time_lvl",objective:"tmp"},color:"white"},{text:")",color:"gray"},{text:"\n    보관소: ",color:"gray"},{score:{name:"#time_bank",objective:"meta"},color:"dark_aqua"},{text:" / 500조각",color:"gray"},{text:"\n  • 세계의 눈 연성량: ",color:"dark_green"},{score:{name:"#third_eye_yield",objective:"tmp"},color:"white"},{text:"개/회  (Lv. ",color:"gray"},{score:{name:"#third_eye_lvl",objective:"tmp"},color:"white"},{text:")",color:"gray"},{text:"\n  • 세계의 눈 보유량: ",color:"dark_green"},{score:{name:"#world_eye",objective:"material"},color:"white"},{text:"개",color:"gray"},{text:"\n\n  ※ 멸망 시 보관 자원 유지 효과는 구현 예정입니다.",color:"dark_gray"},{text:"\n"}]
