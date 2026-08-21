@@ -11,6 +11,7 @@ execute if entity @s[tag=frozen,tag=info] on target run function frozen/interact
 execute if entity @s[tag=frozen,tag=shop] on target run function frozen/interaction/shop
 execute if entity @s[tag=dried,tag=info] on target run function dried/interaction/info
 execute if entity @s[tag=dried,tag=left] on target run function dried/relic/ui
+execute if entity @s[tag=polarnight,tag=reckoning] on target run function polarnight/interaction/reckoning
 execute if entity @s[tag=era] on target run function common/era/interact
 
 
