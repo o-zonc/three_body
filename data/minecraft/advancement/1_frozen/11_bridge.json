@@ -1,0 +1,17 @@
+{
+  "parent": "1_frozen/10_shop",
+  "display": {
+    "icon": "chain",
+    "title": "다리 해금",
+    "description": "얼어붙은 세계의 다리를 해금합니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "structure_unlocked": {
+      "trigger": "impossible"
+    }
+  }
+}
