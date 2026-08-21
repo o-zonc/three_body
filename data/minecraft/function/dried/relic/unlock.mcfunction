@@ -5,6 +5,7 @@ execute unless score #dried_relic_check tmp matches 1 run title @s actionbar {te
 execute unless score #dried_relic_check tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players set #dried_relic_level upgrade 1
+advancement grant @s only 2_dried/01_archaeologist
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 function dried/relic/ui
 return 1
