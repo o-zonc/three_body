@@ -37,6 +37,7 @@ function factory/trigger
 function accelerator/tick
 function accelerator/trigger
 function dried/relic/tick
+function dried/advancement/tick
 
 # 스토리
 function story/story
