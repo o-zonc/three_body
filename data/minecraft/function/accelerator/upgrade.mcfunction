@@ -30,9 +30,6 @@ execute if score #GLOBAL accelerator_level matches 3 run clear @s minecraft:gray
 scoreboard players add #GLOBAL accelerator_level 1
 scoreboard players set #GLOBAL accelerator_timer 1
 
-# 최초 가동 시 입자가속기 발전과제를 지급합니다.
-execute if score #GLOBAL accelerator_level matches 1 run advancement grant @s only 0_overworld/22_particle_accelerator
-
 playsound entity.player.levelup weather @s ~ ~ ~ 1 1.2
 title @s actionbar [{text:"입자가속기 Lv.",color:"aqua"},{score:{name:"#GLOBAL",objective:"accelerator_level"},color:"white"},{text:" 업그레이드 완료",color:"aqua"}]
 function accelerator/ui
