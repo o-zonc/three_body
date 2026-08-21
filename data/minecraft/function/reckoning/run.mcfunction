@@ -13,6 +13,7 @@ function meta/information/give
 scoreboard players set #material_add_value tmp 2
 function meta/time/give
 function item/give/epiphany
+advancement grant @a only 3_polarnight/01_enlightenment
 
 playsound entity.player.levelup master @s ~ ~ ~ 1 0.7
 function util/blank
