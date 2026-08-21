@@ -46,3 +46,6 @@ data modify storage data const.factory[{id:"lapis"}].levels append value {lvl:6,
 
 # 냉기 공장: 얼어붙은 세계의 blue_ice 자원 블록 자동화
 data modify storage data const.factory append value {id:"cold",levels:[{lvl:0,output:0,fuel:4,cost:[{type:"copper",amount:180},{type:"cold",amount:40}]},{lvl:1,output:0,fuel:7,cost:[{type:"copper",amount:360},{type:"cold",amount:100}]},{lvl:2,output:0,fuel:11,cost:[{type:"copper",amount:720},{type:"cold",amount:250}]},{lvl:3,output:0,fuel:18,cost:[{type:"copper",amount:1440},{type:"cold",amount:650}]},{lvl:4,output:0,fuel:29,cost:[{type:"copper",amount:2800},{type:"cold",amount:1500}]},{lvl:5,output:0,fuel:44,cost:[{type:"copper",amount:5600},{type:"cold",amount:3500}]},{lvl:6,output:0,fuel:66}]}
+
+# 열기 공장: 메마른 세계의 magma_block 자원 블록 자동화
+data modify storage data const.factory append value {id:"heat",levels:[{lvl:0,output:0,fuel:4,cost:[{type:"copper",amount:180},{type:"heat",amount:40}]},{lvl:1,output:0,fuel:7,cost:[{type:"copper",amount:360},{type:"heat",amount:100}]},{lvl:2,output:0,fuel:11,cost:[{type:"copper",amount:720},{type:"heat",amount:250}]},{lvl:3,output:0,fuel:18,cost:[{type:"copper",amount:1440},{type:"heat",amount:650}]},{lvl:4,output:0,fuel:29,cost:[{type:"copper",amount:2800},{type:"heat",amount:1500}]},{lvl:5,output:0,fuel:44,cost:[{type:"copper",amount:5600},{type:"heat",amount:3500}]},{lvl:6,output:0,fuel:66}]}

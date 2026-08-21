@@ -5,7 +5,7 @@ execute unless score #GLOBAL elevator_unlocked matches 1 run title @s actionbar 
 execute unless score #GLOBAL elevator_unlocked matches 1 run return 0
 data modify storage data tmp.cost set value [{type:"heat",amount:40},{type:"cold",amount:30},{type:"information",amount:5}]
 execute store result score #elevator_purchase_check tmp run function resource/check_cost
-execute unless score #elevator_purchase_check tmp matches 1 run title @s actionbar {"text":"재료가 부족합니다. 열기 40개, 냉기 30개, 정보 5조각이 필요합니다.","color":"red"}
+execute unless score #elevator_purchase_check tmp matches 1 run title @s actionbar {"text":"재료가 부족합니다.","color":"red"}
 execute unless score #elevator_purchase_check tmp matches 1 run return 0
 function resource/cost/take
 function elevator/upgrade

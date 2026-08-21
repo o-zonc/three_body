@@ -10,6 +10,7 @@ execute if score #diamond factory_unlocked matches 1 if score #diamond factory_e
 execute if score #emerald factory_unlocked matches 1 if score #emerald factory_enabled matches 1 run scoreboard players set #factory_any_enabled tmp 1
 execute if score #lapis factory_unlocked matches 1 if score #lapis factory_enabled matches 1 run scoreboard players set #factory_any_enabled tmp 1
 execute if score #cold factory_unlocked matches 1 if score #cold factory_enabled matches 1 run scoreboard players set #factory_any_enabled tmp 1
+execute if score #heat factory_unlocked matches 1 if score #heat factory_enabled matches 1 run scoreboard players set #factory_any_enabled tmp 1
 
 execute at @e[type=interaction,tag=factory,tag=check] if score #factory_any_enabled tmp matches 1 if block ~ ~-1 ~ waxed_copper_bulb[lit=false,powered=false] run setblock ~ ~-1 ~ waxed_copper_bulb[lit=true,powered=false]
 execute at @e[type=interaction,tag=factory,tag=check] if score #factory_any_enabled tmp matches 1 if block ~ ~-1 ~ waxed_copper_bulb[lit=false,powered=true] run setblock ~ ~-1 ~ waxed_copper_bulb[lit=true,powered=true]

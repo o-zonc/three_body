@@ -9,3 +9,4 @@ execute if entity @s[tag=diamond] on target run return run function factory/ui {
 execute if entity @s[tag=emerald] on target run return run function factory/ui {id:"emerald",unlock:"emerald",name:"에메랄드",color:"green",purchase:1708,toggle:1718}
 execute if entity @s[tag=lapis] on target run return run function factory/ui {id:"lapis",unlock:"lapis",name:"청금석",color:"blue",purchase:1709,toggle:1719}
 execute if entity @s[tag=cold] on target run return run function factory/ui {id:"cold",unlock:"cold",name:"냉기",color:"aqua",purchase:1710,toggle:1720}
+execute if entity @s[tag=heat] on target run return run function factory/ui {id:"heat",unlock:"heat",name:"열기",color:"red",purchase:1722,toggle:1723}

@@ -6,4 +6,4 @@ execute if score #shield_time_paid tmp matches 1 run return 1
 scoreboard players set #GLOBAL shield_charge 0
 scoreboard players set #GLOBAL shield_maintenance 6000
 playsound block.beacon.deactivate weather @a ~ ~ ~ 1 0.7
-tellraw @a [{text:"[양자 보호막] ",color:"white",bold:true},{text:"소지한 시간이 부족해 보호막이 정지했습니다. 시간 보관소에서 인출해야 합니다.",color:"red"}]
+tellraw @a [{text:"[양자 보호 컴퓨터] ",color:"white",bold:true},{text:"소지한 시간이 부족해 보호막이 정지했습니다. 시간 보관소에서 인출해야 합니다.",color:"red"}]

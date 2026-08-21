@@ -28,7 +28,7 @@ execute if entity @s[tag=shop,tag=cold] on target run function shop/second/ui {i
 execute if entity @s[tag=shop,tag=gold] on target run function shop/second/ui {id:"gold",name:"금 생산",color:"gold",effect:"기본 생산량 보너스",unit:"개",trigger:1813}
 execute if entity @s[tag=shop,tag=diamond] on target run function shop/second/ui {id:"diamond",name:"다이아몬드 생산",color:"aqua",effect:"기본 생산량 보너스",unit:"개",trigger:1814}
 execute if entity @s[tag=shop,tag=special] on target run function shop/second/ui {id:"special",name:"극한 환경 수급",color:"light_purple",effect:"열기·냉기 수급량 보너스",unit:"개",trigger:1815}
-execute if entity @s[tag=shop,tag=get] on target run function shop/second/ui {id:"get",name:"기초 생산 공정",color:"#3EB489",effect:"모든 기본 생산량 보너스",unit:"개",trigger:1816}
+execute if entity @s[tag=shop,tag=get] on target run function shop/second/ui {id:"get",name:"기초 생산 공정",color:"dark_aqua",effect:"모든 기본 생산량 보너스",unit:"개",trigger:1816}
 execute if entity @s[tag=shop,tag=time] on target run function shop/third/storage_ui {id:"time",name:"시간",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
 execute if entity @s[tag=shop,tag=information] on target run function shop/third/storage_ui {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
 execute if entity @s[tag=shop,tag=world_eye] on target run function shop/third/world_eye/ui
