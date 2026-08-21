@@ -1,1 +1,0 @@
-function resource/bossbar/overworld

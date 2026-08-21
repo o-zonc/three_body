@@ -11,11 +11,12 @@ data merge storage data {\
         { stage: 2, required_age: 7, cost: [{ type: "iron", amount: 2000 }, { type: "emerald", amount: 1000 }, { type: "lapis", amount: 500 }, { type: "information", amount: 8 }] },\
       ],\
       dried_relic: [\
-        { lvl: 0, interval: 1200, amount: 2, cost: [{ type: "gold", amount: 25 }, { type: "heat", amount: 25 }] },\
-        { lvl: 1, interval: 900, amount: 4, cost: [{ type: "gold", amount: 75 }, { type: "heat", amount: 75 }] },\
-        { lvl: 2, interval: 600, amount: 8, cost: [{ type: "information", amount: 50 }, { type: "time", amount: 3 }] },\
-        { lvl: 3, interval: 400, amount: 15, cost: [{ type: "information", amount: 150 }, { type: "time", amount: 10 }] },\
-        { lvl: 4, interval: 200, amount: 30 },\
+        { lvl: 0, cost: [{ type: "gold", amount: 15 }, { type: "time", amount: 2 }]},\
+        { lvl: 1, interval: 1200, amount: 2, cost: [{ type: "gold", amount: 25 }, { type: "heat", amount: 25 }] },\
+        { lvl: 2, interval: 900, amount: 8, cost: [{ type: "gold", amount: 75 }, { type: "heat", amount: 75 }] },\
+        { lvl: 3, interval: 600, amount: 256, cost: [{ type: "information", amount: 50 }, { type: "time", amount: 3 }] },\
+        { lvl: 4, interval: 400, amount: 1024, cost: [{ type: "information", amount: 150 }, { type: "time", amount: 10 }] },\
+        { lvl: 5, interval: 200, amount: 8192 },\
       ],\
     },\
     tool: [\
@@ -600,6 +601,7 @@ data modify storage data const.resource_shop set value [\
     levels:[\
     {lvl:0,value:5,cost:[{type:"coal",amount:30}]},{lvl:1,value:12,cost:[{type:"coal",amount:500}]},{lvl:2,value:36,cost:[{type:"coal",amount:2500}]},{lvl:3,value:145,cost:[{type:"coal",amount:5000}]},{lvl:4,value:442}]}\
 ]
+
 data modify storage data const.factory set value \
   [{id:"wood",\
     levels:[{lvl:0,output:0,fuel:0,cost:[{type:"copper",amount:40},{type:"wood",amount:100}]},{lvl:1,output:24,fuel:2,cost:[{type:"copper",amount:80},{type:"wood",amount:250}]},{lvl:2,output:48,fuel:3,cost:[{type:"copper",amount:160},{type:"wood",amount:600}]},{lvl:3,output:96,fuel:5,cost:[{type:"copper",amount:320},{type:"wood",amount:1500}]},{lvl:4,output:192,fuel:8}]},\

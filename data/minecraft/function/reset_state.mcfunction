@@ -42,6 +42,7 @@ scoreboard players set #GLOBAL era_observed 0
 scoreboard players set #frozen_shop unlock 0
 scoreboard players set #frozen_bridge unlock 0
 scoreboard players set #frozen_maze unlock 0
+scoreboard players set #dried_relic unlock 0
 scoreboard players set #dried_relic_level upgrade 0
 scoreboard players set #dried_relic_timer generate 1200
 
