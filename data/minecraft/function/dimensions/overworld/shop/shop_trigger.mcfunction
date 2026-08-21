@@ -56,4 +56,7 @@ execute as @a[tag=player] if score @s shop_trigger matches 1903 run function fro
 # 메마른 차원 시설 (20XX)
 execute as @a[tag=player] if score @s shop_trigger matches 2000..2001 run function dried/relic/upgrade
 
+# 극야 차원 정산대 (21XX)
+execute as @a[tag=player] if score @s shop_trigger matches 2101 run function reckoning/run
+
 execute as @a if score @s shop_trigger matches 1.. run scoreboard players reset @s shop_trigger
