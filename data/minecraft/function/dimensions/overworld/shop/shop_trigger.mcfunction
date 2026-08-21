@@ -60,3 +60,4 @@ execute as @a[tag=player] if score @s shop_trigger matches 2000..2001 run functi
 execute as @a[tag=player] if score @s shop_trigger matches 2101 run function reckoning/run
 
 execute as @a if score @s shop_trigger matches 1.. run scoreboard players reset @s shop_trigger
+scoreboard players enable @a shop_trigger
