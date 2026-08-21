@@ -2,6 +2,7 @@
 	"values": [
 		"init",
 		"const_def",
-		"factory/const_extension"
+		"factory/const_extension",
+		"accelerator/init_state"
 	]
 }
