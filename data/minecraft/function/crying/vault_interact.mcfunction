@@ -1,6 +1,7 @@
 # 극야 우는 흑요석 금고 상호작용
 
-# 이미 개방한 뒤에는 상태만 알려줍니다.
+# 이미 개방한 뒤에는 누락된 비밀 발전과제를 보정하고 상태만 알려줍니다.
+execute if score #crying_vault_opened var matches 1 run function crying/advancement_sync
 execute if score #crying_vault_opened var matches 1 run title @s actionbar {"text":"이미 개방했습니다.","color":"gold","italic":true,"bold":false}
 execute if score #crying_vault_opened var matches 1 run return 0
 

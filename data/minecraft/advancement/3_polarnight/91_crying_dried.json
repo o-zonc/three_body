@@ -1,0 +1,17 @@
+{
+  "parent": "3_polarnight/00_root",
+  "display": {
+    "icon": "crying_obsidian",
+    "title": "우는 흑요석: 메마른 세계",
+    "description": "메마른 세계의 모래 아래 숨겨진 우는 흑요석을 발견했습니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "secret": {
+      "trigger": "impossible"
+    }
+  }
+}
