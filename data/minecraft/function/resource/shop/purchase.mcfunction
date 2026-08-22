@@ -8,6 +8,7 @@ $data modify storage data tmp.resource_shop.purchase.id set value "$(id)"
 function resource/shop/read with storage data tmp.resource_shop.purchase
 data remove storage data tmp.cost
 $data modify storage data tmp.cost set from storage data tmp.resource_shop.$(id).now.cost
+function resource/cost/apply_shop_advancement_discount
 execute unless data storage data tmp.cost run title @s actionbar {text:"더 이상 업그레이드할 수 없습니다.",color:"red"}
 execute unless data storage data tmp.cost at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 execute unless data storage data tmp.cost run return 0
