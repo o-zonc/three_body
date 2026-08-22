@@ -10,8 +10,8 @@ execute unless score #information_bank meta matches 25.. run data modify storage
 execute if score #information_bank meta matches 50.. run data modify storage data tmp.vault.information_tooltip append value [{text:"\n50조각",color:"light_purple"},{text:" · 2층 생산 업그레이드를 유지합니다.",color:"gray"}]
 execute unless score #information_bank meta matches 50.. run data modify storage data tmp.vault.information_tooltip append value {text:"\n50조각 · 2층 생산 업그레이드를 유지합니다.",color:"dark_gray"}
 
-execute if score #information_bank meta matches 100.. run data modify storage data tmp.vault.information_tooltip append value [{text:"\n100조각",color:"light_purple"},{text:" · 연금술 공방의 건설 상태와 발전 단계를 유지합니다.",color:"gray"}]
-execute unless score #information_bank meta matches 100.. run data modify storage data tmp.vault.information_tooltip append value {text:"\n100조각 · 연금술 공방의 건설 상태와 발전 단계를 유지합니다.",color:"dark_gray"}
+execute if score #information_bank meta matches 100.. run data modify storage data tmp.vault.information_tooltip append value [{text:"\n100조각",color:"light_purple"},{text:" · 연금술 공방의 건설 상태·발전 단계와 영구 이동기 구매 상태를 유지합니다.",color:"gray"}]
+execute unless score #information_bank meta matches 100.. run data modify storage data tmp.vault.information_tooltip append value {text:"\n100조각 · 연금술 공방의 건설 상태·발전 단계와 영구 이동기 구매 상태를 유지합니다.",color:"dark_gray"}
 
 execute if score #information_bank meta matches 250.. run data modify storage data tmp.vault.information_tooltip append value [{text:"\n250조각",color:"light_purple"},{text:" · 공장의 건설 단계와 생산 진행을 유지합니다.",color:"gray"}]
 execute unless score #information_bank meta matches 250.. run data modify storage data tmp.vault.information_tooltip append value {text:"\n250조각 · 공장의 건설 단계와 생산 진행을 유지합니다.",color:"dark_gray"}
