@@ -46,6 +46,8 @@ execute as @a[tag=player] if score @s shop_trigger matches 1823 run function sho
 execute as @a[tag=player] if score @s shop_trigger matches 1824 run function shop/third/world_eye/synthesize
 execute as @a[tag=player] if score @s shop_trigger matches 1825 run function meta/manual_withdraw {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
 execute as @a[tag=player] if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute as @a[tag=player] if score @s shop_trigger matches 1827 run function shop/third/expansion/information
+execute as @a[tag=player] if score @s shop_trigger matches 1828 run function shop/third/expansion/time
 execute as @a[tag=player] if score @s shop_trigger matches 1830 run function dawn/bonus_shop/purchase_reactor
 
 # 얼어붙은 차원 시설 (19XX)
