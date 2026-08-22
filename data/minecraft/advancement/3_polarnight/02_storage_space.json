@@ -13,5 +13,8 @@
     "manual_unlock": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "resource/advancement_reward/shop_cost/enable"
   }
 }
