@@ -1,6 +1,6 @@
 # Macro args: id, name, color, purchase
 # 공장이 아직 건설되지 않았을 때는 상세 성능 대신 자동화 기능만 간단히 안내한다.
-execute store result storage data tmp.factory.ui_locked.lvl int 1 run scoreboard players get #$(id) factory_level
+$execute store result storage data tmp.factory.ui_locked.lvl int 1 run scoreboard players get #$(id) factory_level
 $data modify storage data tmp.factory.ui_locked.id set value "$(id)"
 function factory/read with storage data tmp.factory.ui_locked
 
