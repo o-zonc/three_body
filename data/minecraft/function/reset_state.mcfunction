@@ -80,11 +80,12 @@ scoreboard players set #emerald_regen_lvl upgrade 0
 scoreboard players set #lapis_regen_lvl upgrade 0
 scoreboard players set #tool upgrade 0
 
-# 시대 발전과제 자원 수급량 보상 초기화
+# 시대 발전과제 자원 수급량/상점 할인 보상 초기화
 function resource/advancement_reward/wood/disable
 function resource/advancement_reward/coal/disable
 function resource/advancement_reward/copper/disable
 function resource/advancement_reward/iron/disable
+function resource/advancement_reward/shop_cost/disable
 
 # 자원별 수급량 상점 레벨을 명시적으로 초기화
 scoreboard players set #wood_lvl material_shop 0
