@@ -1,0 +1,17 @@
+{
+  "parent": "3_polarnight/00_root",
+  "display": {
+    "icon": "ender_chest",
+    "title": "흑요석 저장고",
+    "description": "네 세계의 우는 흑요석을 모아 봉인된 저장고를 개방했습니다.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "secret": {
+      "trigger": "impossible"
+    }
+  }
+}
