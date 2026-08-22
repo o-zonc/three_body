@@ -22,6 +22,7 @@ execute unless score #alchemy_lab_can_pay tmp matches 1 run return 0
 
 function resource/cost/take
 scoreboard players add #alchemy_lab_level upgrade 1
+execute if score #alchemy_lab_level upgrade matches 5 run advancement grant @s only 0_overworld/15_fairy_help
 function shop/alchemy/lab/rates
 
 execute at @s run playsound block.enchantment_table.use master @s ~ ~ ~ 0.9 1.2
