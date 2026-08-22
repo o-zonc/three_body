@@ -66,6 +66,12 @@ execute if score #alchemy_workshop unlock matches 1.. run scoreboard players set
 scoreboard players set #vault_frozen_bridge_owned tmp 0
 execute if score #frozen_bridge unlock matches 1.. run scoreboard players set #vault_frozen_bridge_owned tmp 1
 
+# 공방 영구 이동기 구매 상태는 공방이 보존될 때 함께 복원한다.
+scoreboard players set #vault_shop_mover_owned tmp 0
+execute if score #shop_mover unlock matches 1.. run scoreboard players set #vault_shop_mover_owned tmp 1
+scoreboard players set #vault_alchemy_mover_owned tmp 0
+execute if score #alchemy_mover unlock matches 1.. run scoreboard players set #vault_alchemy_mover_owned tmp 1
+
 # 발전과제 보상은 보관량과 무관하게 영구 보존한다.
 scoreboard players operation #vault_reward_wood tmp = #wood_advancement_reward var
 scoreboard players operation #vault_reward_coal tmp = #coal_advancement_reward var
