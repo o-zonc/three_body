@@ -85,6 +85,7 @@ function resource/advancement_reward/wood/disable
 function resource/advancement_reward/coal/disable
 function resource/advancement_reward/copper/disable
 function resource/advancement_reward/iron/disable
+function resource/advancement_reward/lapis/disable
 function resource/advancement_reward/shop_cost/disable
 
 # 자원별 수급량 상점 레벨을 명시적으로 초기화
