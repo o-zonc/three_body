@@ -94,6 +94,7 @@ execute unless score #wood_advancement_reward var = #wood_advancement_reward var
 execute unless score #coal_advancement_reward var = #coal_advancement_reward var run scoreboard players set #coal_advancement_reward var 0
 execute unless score #copper_advancement_reward var = #copper_advancement_reward var run scoreboard players set #copper_advancement_reward var 0
 execute unless score #iron_advancement_reward var = #iron_advancement_reward var run scoreboard players set #iron_advancement_reward var 0
+execute unless score #lapis_advancement_reward var = #lapis_advancement_reward var run scoreboard players set #lapis_advancement_reward var 0
 execute unless score #shop_cost_advancement_reward var = #shop_cost_advancement_reward var run scoreboard players set #shop_cost_advancement_reward var 0
 execute unless score #gold_regen_lvl upgrade = #gold_regen_lvl upgrade run scoreboard players set #gold_regen_lvl upgrade 0
 execute unless score #blaze_drop_lvl upgrade = #blaze_drop_lvl upgrade run scoreboard players set #blaze_drop_lvl upgrade 0
