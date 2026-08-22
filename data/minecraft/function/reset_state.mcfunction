@@ -66,6 +66,7 @@ scoreboard players set #crying_dawn var 0
 scoreboard players set #crying_vault_opened var 0
 execute in polarnight run kill @e[type=minecraft:end_crystal,tag=crying_obsidian_crystal]
 function polarnight/structure/valut/off
+execute in minecraft:frozen run setblock 8 67 36 minecraft:obsidian
 
 # 8. 자원 스코어보드 초기화
 scoreboard players set * material 0
