@@ -1,8 +1,8 @@
 # 문명 정산의 [ 초기화되는 항목 ] 툴팁을 현재 보관소 보호 상태에 맞춰 구성한다.
-data modify storage data tmp.reckoning_reset_tooltip set value [{text:"[ 문명 정산 시 초기화 ]\n",color:"red",bold:true}]
+data modify storage data tmp.reckoning_reset_tooltip set value [{text:"[ 문명 정산 시 초기화 ]\n",color:"red"}]
 
 # 항상 초기화되는 항목
-data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 소지 아이템\n",color:"gray",bold:false}
+data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 소지 아이템\n",color:"gray"}
 data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 일반 자원 및 자원 해금 상태\n",color:"gray"}
 
 # 자원 상점: 정보 10조각은 전체 1층 상점을, 시간 10조각은 나무 상점 진행만 유지한다.
