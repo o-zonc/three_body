@@ -1,13 +1,10 @@
-# 전용 custom_data가 붙은 아이템만 메타 자원으로 계산한다.
+# 전용 custom_data가 붙은 아이템만 메타 자원의 현재 소지량으로 계산한다.
 execute store result score #information_wallet tmp run clear @s minecraft:amethyst_shard[minecraft:custom_data~{three_body:{meta:"information"}}] 0
 execute store result score #time_wallet tmp run clear @s minecraft:echo_shard[minecraft:custom_data~{three_body:{meta:"time"}}] 0
 
-# 기존 사이드바와 레거시 UI를 위한 파생값이다. 실제 원장은 아이템과 meta 보관소다.
+# 실제 원장은 '소지 아이템 + meta 보관소'다.
+# material은 사이드바와 레거시 UI를 위한 읽기 전용 파생값으로만 갱신한다.
 scoreboard players operation #information material = #information_wallet tmp
 scoreboard players operation #information material += #information_bank meta
 scoreboard players operation #time material = #time_wallet tmp
 scoreboard players operation #time material += #time_bank meta
-
-# 다음 틱에 material 점수가 외부 명령으로 변경되었는지 판별하기 위한 스냅샷이다.
-scoreboard players operation #information_synced meta = #information material
-scoreboard players operation #time_synced meta = #time material
