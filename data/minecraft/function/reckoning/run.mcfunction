@@ -7,8 +7,10 @@ scoreboard players set #GLOBAL reckoning_ready 0
 function reckoning/calculate_reward
 
 function reckoning/vault/snapshot
+function factory/vault_snapshot
 function reckoning/reset_progress
 function reckoning/vault/restore
+function factory/vault_restore
 
 scoreboard players operation #material_add_value tmp = #reckoning_information_reward tmp
 function meta/information/give
