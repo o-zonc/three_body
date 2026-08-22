@@ -9,6 +9,7 @@ scoreboard players set #vault_time_machine tmp 0
 scoreboard players set #vault_stick_progress tmp 0
 scoreboard players set #vault_frozen_bridge tmp 0
 scoreboard players set #vault_elevator tmp 0
+scoreboard players set #vault_tool tmp 0
 
 execute if score #information_bank meta matches 10.. run scoreboard players set #vault_shop_first tmp 1
 execute if score #information_bank meta matches 25.. run scoreboard players set #vault_observatory tmp 1
@@ -20,6 +21,7 @@ execute if score #information_bank meta matches 1000.. run scoreboard players se
 execute if score #time_bank meta matches 10.. run scoreboard players set #vault_stick_progress tmp 1
 execute if score #time_bank meta matches 10.. run scoreboard players set #vault_frozen_bridge tmp 1
 execute if score #time_bank meta matches 50.. run scoreboard players set #vault_elevator tmp 1
+execute if score #time_bank meta matches 250.. run scoreboard players set #vault_tool tmp 1
 
 # 보호 대상의 현재 값을 임시 원장에 복사한다.
 scoreboard players operation #vault_wood_shop tmp = #wood_lvl material_shop
@@ -33,6 +35,7 @@ scoreboard players operation #vault_emerald_shop tmp = #emerald_lvl material_sho
 scoreboard players operation #vault_lapis_shop tmp = #lapis_lvl material_shop
 scoreboard players operation #vault_xp_shop tmp = #xp_lvl material_shop
 scoreboard players operation #vault_wood_regen tmp = #wood_regen_lvl upgrade
+scoreboard players operation #vault_tool_level tmp = #tool upgrade
 scoreboard players operation #vault_heat_second tmp = #heat_second_lvl upgrade
 scoreboard players operation #vault_cold_second tmp = #cold_second_lvl upgrade
 scoreboard players operation #vault_gold_second tmp = #gold_second_lvl upgrade
