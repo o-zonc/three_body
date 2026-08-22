@@ -3,6 +3,9 @@
 execute unless score #alchemy_workshop unlock matches 1 run title @s actionbar {"text":"연금술 공방을 먼저 해금해야 합니다.","color":"red"}
 execute unless score #alchemy_workshop unlock matches 1 run return 0
 
+# 기존 월드에서도 최초 표시부터 쿨타임 0이 보이도록 안전하게 초기화합니다.
+execute unless score #jewel_cooldown var = #jewel_cooldown var run scoreboard players set #jewel_cooldown var 0
+
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
 
