@@ -44,6 +44,8 @@ scoreboard players operation #vault_special_second tmp = #special_second_lvl upg
 scoreboard players operation #vault_get_second tmp = #get_second_lvl upgrade
 scoreboard players operation #vault_age tmp = #overworld civilization_age
 scoreboard players operation #vault_alchemy_level tmp = #level alchemy_workshop
+scoreboard players set #vault_alchemy_lab_level tmp 0
+execute if score #alchemy_lab_level upgrade = #alchemy_lab_level upgrade run scoreboard players operation #vault_alchemy_lab_level tmp = #alchemy_lab_level upgrade
 scoreboard players operation #vault_factory_stage tmp = #GLOBAL factory_build_stage
 scoreboard players operation #vault_factory_elevator tmp = #GLOBAL factory_elevator_unlocked
 scoreboard players operation #vault_accelerator_level tmp = #GLOBAL accelerator_level
@@ -80,3 +82,4 @@ scoreboard players operation #vault_reward_wood tmp = #wood_advancement_reward v
 scoreboard players operation #vault_reward_coal tmp = #coal_advancement_reward var
 scoreboard players operation #vault_reward_copper tmp = #copper_advancement_reward var
 scoreboard players operation #vault_reward_iron tmp = #iron_advancement_reward var
+scoreboard players operation #vault_reward_lapis tmp = #lapis_advancement_reward var
