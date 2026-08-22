@@ -22,6 +22,13 @@ execute if score #vault_observatory tmp matches 1 if score #vault_observatory_ow
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players operation #level alchemy_workshop = #vault_alchemy_level tmp
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players set #alchemy_workshop unlock 1
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run function common/structure/alchemy_workshop/on
+
+# 공방이 보존되면 이미 영구 구매한 상점/연금술 공방 이동기도 구매 상태와 아이템을 복원한다.
+execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 if score #vault_shop_mover_owned tmp matches 1 run scoreboard players set #shop_mover unlock 1
+execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 if score #vault_shop_mover_owned tmp matches 1 run function item/give/shop_mover
+execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 if score #vault_alchemy_mover_owned tmp matches 1 run scoreboard players set #alchemy_mover unlock 1
+execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 if score #vault_alchemy_mover_owned tmp matches 1 run function item/give/alchemy_mover
+
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #GLOBAL factory_build_stage = #vault_factory_stage tmp
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #GLOBAL factory_elevator_unlocked = #vault_factory_elevator tmp
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #wood factory_level = #vault_factory_wood tmp
