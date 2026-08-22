@@ -14,6 +14,7 @@ execute unless score #alchemy_shop_cost_check tmp matches 1 run return 0
 function resource/cost/take
 
 execute if score #alchemy_stage tmp matches 0 run scoreboard players set #alchemy_workshop unlock 1
+execute if score #alchemy_stage tmp matches 0 run function common/structure/alchemy_workshop/on
 execute if score #alchemy_stage tmp matches 0 run advancement grant @s only 0_overworld/21_alchemy_workshop
 execute if score #alchemy_stage tmp matches 0 run function story/overworld/age/check_medieval_age
 execute if score #alchemy_stage tmp matches 0 run function item/give/altar_mover
