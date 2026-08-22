@@ -12,6 +12,11 @@ execute if entity @s[tag=frozen,tag=shop] on target run function frozen/interact
 execute if entity @s[tag=dried,tag=info] on target run function dried/interaction/info
 execute if entity @s[tag=dried,tag=left] on target run function dried/relic/ui
 execute if entity @s[tag=polarnight,tag=reckoning] on target run function polarnight/interaction/reckoning
+execute if entity @s[tag=crying,tag=overworld] on target run function crying/collect {id:"overworld",x:11,z:11}
+execute if entity @s[tag=crying,tag=dried] on target run function crying/collect {id:"dried",x:-11,z:11}
+execute if entity @s[tag=crying,tag=frozen] on target run function crying/collect {id:"frozen",x:11,z:-11}
+execute if entity @s[tag=crying,tag=dawn] on target run function crying/collect {id:"dawn",x:-11,z:-11}
+execute if entity @s[tag=polarnight,tag=vault] on target run function crying/vault_interact
 execute if entity @s[tag=era] on target run function common/era/interact
 execute if entity @s[tag=alchemy,tag=jewel] on target run function shop/alchemy/jewel/ui
 execute if entity @s[tag=alchemy,tag=lab] on target run function shop/alchemy/lab/ui
