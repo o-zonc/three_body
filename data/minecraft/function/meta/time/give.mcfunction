@@ -1,19 +1,35 @@
 # 입력: #material_add_value tmp
 execute if score #material_add_value tmp matches ..0 run return 0
+
+# 지급 직전에 현재 업그레이드 단계로 소지 한도를 다시 계산한다.
+function shop/third/update_capacities
 function meta/sync
+
+# 요청량 / 소지 지급량 / 보관량을 명시적으로 분리한다.
+scoreboard players operation #meta_requested tmp = #material_add_value tmp
 scoreboard players operation #meta_wallet_space tmp = #time_capacity meta
 scoreboard players operation #meta_wallet_space tmp -= #time_wallet tmp
-execute if score #meta_wallet_space tmp matches ..0 run scoreboard players operation #time_bank meta += #material_add_value tmp
+execute if score #meta_wallet_space tmp matches ..-1 run scoreboard players set #meta_wallet_space tmp 0
+
+scoreboard players operation #meta_to_wallet tmp = #meta_requested tmp
+execute if score #meta_to_wallet tmp > #meta_wallet_space tmp run scoreboard players operation #meta_to_wallet tmp = #meta_wallet_space tmp
+
+scoreboard players operation #meta_to_bank tmp = #meta_requested tmp
+scoreboard players operation #meta_to_bank tmp -= #meta_to_wallet tmp
+
+# 보관소에 실제로 추가된 양도 별도로 계산한다.
+scoreboard players operation #meta_bank_before tmp = #time_bank meta
+execute if score #meta_to_bank tmp matches 1.. run scoreboard players operation #time_bank meta += #meta_to_bank tmp
 execute if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
-execute if score #meta_wallet_space tmp matches ..0 run return run function meta/sync
-scoreboard players operation #meta_give tmp = #material_add_value tmp
-execute if score #meta_give tmp > #meta_wallet_space tmp run scoreboard players operation #meta_give tmp = #meta_wallet_space tmp
-scoreboard players operation #meta_overflow tmp = #material_add_value tmp
-scoreboard players operation #meta_overflow tmp -= #meta_give tmp
-scoreboard players operation #time_bank meta += #meta_overflow tmp
-execute if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
-execute store result storage data tmp.meta.amount int 1 run scoreboard players get #meta_give tmp
-function meta/time/give_item with storage data tmp.meta
+scoreboard players operation #meta_bank_added tmp = #time_bank meta
+scoreboard players operation #meta_bank_added tmp -= #meta_bank_before tmp
+
+# 소지 공간에 들어가는 만큼만 실제 아이템으로 지급한다.
+execute if score #meta_to_wallet tmp matches 1.. store result storage data tmp.meta.amount int 1 run scoreboard players get #meta_to_wallet tmp
+execute if score #meta_to_wallet tmp matches 1.. run function meta/time/give_item with storage data tmp.meta
+
 function meta/sync
-title @s actionbar [{text:"시간 +",color:"dark_aqua"},{score:{name:"#material_add_value",objective:"tmp"},color:"white"}]
+
+# 실제 분배 결과를 표시하여 소지 한도/보관 로직을 바로 확인할 수 있게 한다.
+title @s actionbar [{text:"시간 +",color:"dark_aqua"},{score:{name:"#meta_requested",objective:"tmp"},color:"white"},{text:"  (소지 +",color:"dark_gray"},{score:{name:"#meta_to_wallet",objective:"tmp"},color:"white"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#meta_bank_added",objective:"tmp"},color:"white"},{text:")",color:"dark_gray"}]
 return 1
