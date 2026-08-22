@@ -19,3 +19,6 @@ scoreboard players set #GLOBAL current_dim 3
 scoreboard players set #GLOBAL era_paused 0
 # 극야의 첫 자원 인터랙션에서 이번 문명의 정산을 한 번만 실행한다.
 scoreboard players set #GLOBAL reckoning_ready 1
+# 시공간 확장은 극야에 진입할 때마다 정보/시간 보관소에서 각각 한 번씩 다시 사용할 수 있다.
+scoreboard players set #information_spacetime_expansion_used var 0
+scoreboard players set #time_spacetime_expansion_used var 0
