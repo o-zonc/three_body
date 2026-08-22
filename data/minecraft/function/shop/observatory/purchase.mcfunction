@@ -7,7 +7,7 @@ execute unless score #overworld civilization_age matches 3.. run return 0
 
 scoreboard players set #observatory unlock 1
 function common/structure/observatory/on
-advancement grant @s only 0_overworld/20_observatory
+execute unless entity @s[advancements={0_overworld/20_observatory=true}] run advancement grant @s only 0_overworld/20_observatory
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 function shop/observatory/interact
 return 1
