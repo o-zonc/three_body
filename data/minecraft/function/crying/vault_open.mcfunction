@@ -5,7 +5,7 @@ execute if score #crying_vault_opened var matches 1 run title @s actionbar {"tex
 execute if score #crying_vault_opened var matches 1 run return 0
 
 # 네 조각이 모두 모였을 때만 개방할 수 있습니다.
-execute unless score #crying_count var matches 4 run title @s actionbar [{"score":{"name":"#crying_count","objective":"var"}},{"text":" / 4"}]
+execute unless score #crying_count var matches 4 run title @s actionbar [{"score":{"name":"#crying_count","objective":"var"}, color:"dark_purple"},{"text":" / 4", color:"dark_gray"}]
 execute unless score #crying_count var matches 4 run return 0
 
 scoreboard players set #crying_vault_opened var 1
