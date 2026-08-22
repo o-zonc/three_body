@@ -43,14 +43,19 @@ function resource/cost/take
 scoreboard players operation #material_add_value tmp = #jewel_reward tmp
 $function resource/add {id:"$(id)"}
 
-# Lv.2 부산물: 최종 결과량의 2배만큼 열기와 냉기를 각각 지급합니다.
-execute if score #level alchemy_workshop matches 2.. run scoreboard players operation #jewel_byproduct tmp = #jewel_reward tmp
+# Lv.2 부산물
+# 금 세공: 투입한 금의 2배만큼 열기 생성
+# 다이아몬드 세공: 투입한 다이아몬드의 2배만큼 냉기 생성
+# 에메랄드/청금석 세공에는 부산물이 없습니다.
 scoreboard players set #jewel_byproduct_factor tmp 2
-execute if score #level alchemy_workshop matches 2.. run scoreboard players operation #jewel_byproduct tmp *= #jewel_byproduct_factor tmp
-execute if score #level alchemy_workshop matches 2.. run scoreboard players operation #material_add_value tmp = #jewel_byproduct tmp
-execute if score #level alchemy_workshop matches 2.. run function resource/add {id:"heat"}
-execute if score #level alchemy_workshop matches 2.. run scoreboard players operation #material_add_value tmp = #jewel_byproduct tmp
-execute if score #level alchemy_workshop matches 2.. run function resource/add {id:"cold"}
+execute if score #level alchemy_workshop matches 2.. if score #cost_gold cost matches 1.. run scoreboard players operation #jewel_byproduct tmp = #cost_gold cost
+execute if score #level alchemy_workshop matches 2.. if score #cost_gold cost matches 1.. run scoreboard players operation #jewel_byproduct tmp *= #jewel_byproduct_factor tmp
+execute if score #level alchemy_workshop matches 2.. if score #cost_gold cost matches 1.. run scoreboard players operation #material_add_value tmp = #jewel_byproduct tmp
+execute if score #level alchemy_workshop matches 2.. if score #cost_gold cost matches 1.. run function resource/add {id:"heat"}
+execute if score #level alchemy_workshop matches 2.. if score #cost_diamond cost matches 1.. run scoreboard players operation #jewel_byproduct tmp = #cost_diamond cost
+execute if score #level alchemy_workshop matches 2.. if score #cost_diamond cost matches 1.. run scoreboard players operation #jewel_byproduct tmp *= #jewel_byproduct_factor tmp
+execute if score #level alchemy_workshop matches 2.. if score #cost_diamond cost matches 1.. run scoreboard players operation #material_add_value tmp = #jewel_byproduct tmp
+execute if score #level alchemy_workshop matches 2.. if score #cost_diamond cost matches 1.. run function resource/add {id:"cold"}
 
 # 성공 시 Lv.0에서만 공용 쿨타임을 시작합니다.
 execute if score #level alchemy_workshop matches 0 run scoreboard players set #jewel_cooldown var 300
