@@ -13,8 +13,5 @@
     "structure_unlocked": {
       "trigger": "impossible"
     }
-  },
-  "rewards": {
-    "function": "common/structure/factory/on"
   }
 }
