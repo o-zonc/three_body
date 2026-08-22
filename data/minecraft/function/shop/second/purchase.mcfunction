@@ -8,5 +8,9 @@ execute unless score #second_cost_check tmp matches 1 at @s run playsound block.
 execute unless score #second_cost_check tmp matches 1 run return 0
 function resource/cost/take
 $scoreboard players add #$(id)_second_lvl upgrade 1
+
+# 극한 자원 수급 Lv.2 달성 시 얼어붙은 차원의 우는 흑요석을 드러냅니다.
+execute if score #special_second_lvl upgrade matches 2 run function crying/frozen_reveal
+
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 $function shop/second/ui {id:"$(id)",name:"$(name)",color:"$(color)",effect:"$(effect)",unit:"$(unit)",trigger:$(trigger)}
