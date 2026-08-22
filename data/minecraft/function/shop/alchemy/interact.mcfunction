@@ -6,8 +6,8 @@ function resource/convert_cost_to_text_named {id:"alchemy_workshop",insertion:",
 data modify storage data tmp.alchemy_shop.state set value {text:"미해금",color:"red"}
 execute if score #alchemy_workshop unlock matches 1 run data modify storage data tmp.alchemy_shop.state set value {text:"Lv. ",color:"gray",extra:[{score:{name:"#level",objective:"alchemy_workshop"},color:"white"}]}
 data modify storage data tmp.alchemy_shop.next set value {text:"연금술 공방 해금",color:"yellow"}
-execute if score #alchemy_stage tmp matches 1 run data modify storage data tmp.alchemy_shop.next set value {text:"Lv. 1 — 상점/공방 이동기 제작",color:"yellow"}
-execute if score #alchemy_stage tmp matches 2 run data modify storage data tmp.alchemy_shop.next set value {text:"Lv. 2 — 차원 이동기 제작",color:"yellow"}
+execute if score #alchemy_stage tmp matches 1 run data modify storage data tmp.alchemy_shop.next set value {text:"Lv. 1 — 상점/공방 이동기 제작, 세공 작업대 업그레이드, 마법 연구소 해금",color:"yellow"}
+execute if score #alchemy_stage tmp matches 2 run data modify storage data tmp.alchemy_shop.next set value {text:"Lv. 2 — 차원 이동기 제작, 세공 작업대/마법 연구소 업그레이드",color:"yellow"}
 execute unless data storage data tmp.alchemy_shop.now run data modify storage data tmp.alchemy_shop.next set value {text:"최대 레벨",color:"green"}
 
 execute if data storage data tmp.alchemy_shop.now store result score #alchemy_required_age tmp run data get storage data tmp.alchemy_shop.now.required_age
