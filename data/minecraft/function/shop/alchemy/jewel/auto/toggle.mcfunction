@@ -3,14 +3,11 @@ execute unless score #level alchemy_workshop matches 2.. run title @s actionbar 
 execute unless score #level alchemy_workshop matches 2.. run return 0
 
 execute unless score #jewel_auto_enabled var = #jewel_auto_enabled var run scoreboard players set #jewel_auto_enabled var 0
-
-execute if score #jewel_auto_enabled var matches 1 run scoreboard players set #jewel_auto_enabled var 0
-execute if score #jewel_auto_enabled var matches 0 run scoreboard players set #jewel_auto_toggle_tmp tmp 1
-execute if score #jewel_auto_toggle_tmp tmp matches 1 run scoreboard players set #jewel_auto_enabled var 1
+scoreboard players operation #jewel_auto_toggle_tmp tmp = #jewel_auto_enabled var
+execute if score #jewel_auto_toggle_tmp tmp matches 1 run scoreboard players set #jewel_auto_enabled var 0
+execute unless score #jewel_auto_toggle_tmp tmp matches 1 run scoreboard players set #jewel_auto_enabled var 1
 scoreboard players reset #jewel_auto_toggle_tmp tmp
-
-execute if score #jewel_auto_enabled var matches 1 run scoreboard players set #jewel_auto_timer var 0
-execute unless score #jewel_auto_enabled var matches 1 run scoreboard players set #jewel_auto_timer var 0
+scoreboard players set #jewel_auto_timer var 0
 
 execute if score #jewel_auto_enabled var matches 1 run playsound block.iron_door.open weather @s ~ ~ ~ 0.8 1.1
 execute unless score #jewel_auto_enabled var matches 1 run playsound block.iron_door.close weather @s ~ ~ ~ 0.8 0.9
