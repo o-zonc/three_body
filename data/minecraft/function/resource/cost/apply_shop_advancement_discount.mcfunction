@@ -10,8 +10,8 @@ execute unless score #shop_cost_advancement_reward var matches 1 run return 0
 execute if score #overworld_advancement_reward_disabled var matches 1 run return 0
 execute unless data storage data tmp.cost run return 0
 
-# UI에서 원가를 참조할 수 있도록 할인 전 비용을 보존한다.
-data modify storage data tmp.cost_original set from storage data tmp.cost
+# 기존 tmp.cost_original은 결정 상점 등 다른 비용 감소 시스템의 표시용이므로 재사용하지 않는다.
+# 이번 보상은 할인된 비용 자체와 별도의 ★ 안내 문구로 표시한다.
 data modify storage data tmp.shop_advancement_discount_note set value {text:"★ 발전과제 보상: 상점 비용 50% 감소\n",color:"green",italic:false}
 
 function resource/cost/halve_shop_type {type:"wood"}
