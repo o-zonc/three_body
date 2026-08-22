@@ -1,6 +1,4 @@
 # 극야 우는 흑요석 금고 상호작용
-execute unless score #crying_count var = #crying_count var run scoreboard players set #crying_count var 0
-execute unless score #crying_vault_opened var = #crying_vault_opened var run scoreboard players set #crying_vault_opened var 0
 
 # 이미 개방한 뒤에는 진행도만 표시합니다.
 execute if score #crying_vault_opened var matches 1 run title @s actionbar {"text":"4 / 4"}
