@@ -4,6 +4,9 @@ effect clear @a darkness
 title @a clear
 function mover/local/recover
 
+# 여명 차원이 끝나면 깨달음은 역할을 다했으므로 전부 회수한다.
+clear @a minecraft:white_dye[minecraft:custom_data~{epiphany:1b}]
+
 execute in cosmos run tp @s 0 64 0
 function mover/items/arrive_other
 
