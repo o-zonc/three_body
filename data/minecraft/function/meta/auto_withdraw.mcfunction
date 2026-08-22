@@ -3,5 +3,7 @@ execute if score #information_bank meta matches 500.. if score #information_auto
 execute if score #information_bank meta matches 500.. if score #information_auto_withdraw meta matches 0 run scoreboard players set #information_auto_withdraw meta 1
 execute if score #time_bank meta matches 250.. if score #time_auto_withdraw meta matches 0 run tellraw @s {text:"시간 보관소 자동 인출 기능이 해금되었습니다.",color:"dark_aqua"}
 execute if score #time_bank meta matches 250.. if score #time_auto_withdraw meta matches 0 run scoreboard players set #time_auto_withdraw meta 1
-execute if score #information_auto_withdraw meta matches 1 run function meta/withdraw_silent {id:"information"}
-execute if score #time_auto_withdraw meta matches 1 run function meta/withdraw_silent {id:"time"}
+
+# 영구 해금 이후에도 해금 임계치 자체는 보관소에 남겨 둔다.
+execute if score #information_auto_withdraw meta matches 1 run function meta/withdraw_silent {id:"information",floor:500}
+execute if score #time_auto_withdraw meta matches 1 run function meta/withdraw_silent {id:"time",floor:250}
