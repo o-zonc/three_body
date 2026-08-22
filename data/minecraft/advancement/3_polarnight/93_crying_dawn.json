@@ -1,0 +1,17 @@
+{
+  "parent": "3_polarnight/00_root",
+  "display": {
+    "icon": "crying_obsidian",
+    "title": "우는 흑요석: 여명",
+    "description": "여명의 세계에서 우는 흑요석을 발견했습니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "secret": {
+      "trigger": "impossible"
+    }
+  }
+}
