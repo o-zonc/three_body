@@ -2,6 +2,7 @@
 	"values": [
 		"init",
 		"const_def",
+		"balance/resource_shop_early",
 		"balance/resource_regen"
 	]
 }
