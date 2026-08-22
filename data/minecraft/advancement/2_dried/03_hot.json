@@ -3,7 +3,7 @@
   "display": {
     "icon": "lava_bucket",
     "title": "뜨거워!",
-    "description": "열기를 10,000개 이상 보유했습니다.\n\n§7공장의 연료 소비량이 30% 감소하고, 블록 파괴 시도 주기가 10% 감소합니다.",
+    "description": "§c§o앗, 뜨거워!§r\n\n많은 양의 열기를 보유했습니다. 이제 열기가 다른 차원에도 영향을 줍니다.\n\n§6•§7 보상: 공장의 연료 소비량과 파괴 시도 주기가 감소합니다.",
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
