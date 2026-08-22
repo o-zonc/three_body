@@ -19,10 +19,8 @@ function interaction/detect
 
 # 자원 API
 function var_init
-# 기존 월드의 material 기반 정보/시간을 보관소로 옮기는 1회성 이관만 수행한다.
-function meta/migrate
 # 정보/시간의 실제 원장은 전용 아이템 + meta 보관소다.
-# material 점수는 역복원하지 않고 현재 원장의 합계를 표시하는 파생값으로만 동기화한다.
+# material 점수는 현재 원장의 합계를 표시하는 파생값으로만 사용한다.
 execute as @a[tag=player,limit=1] run function meta/sync
 execute as @a[tag=player,limit=1] run function meta/auto_withdraw
 function resource/limit_materials
