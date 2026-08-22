@@ -23,6 +23,13 @@ scoreboard players set #diamond_second_lvl upgrade 0
 scoreboard players set #special_second_lvl upgrade 0
 scoreboard players set #get_second_lvl upgrade 0
 scoreboard players set #dried_relic_level upgrade 0
+scoreboard players set #alchemy_lab_level upgrade 0
+
+# 세공 작업대의 작동 상태는 문명마다 새로 시작한다.
+scoreboard players set #jewel_auto_enabled var 0
+scoreboard players set #jewel_auto_timer var 0
+scoreboard players set #jewel_cooldown var 0
+scoreboard players set #jewel_particle_timer var 0
 
 # 문명별 생산/시설 타이머는 새 문명의 기본값으로 되돌린다.
 scoreboard players set #heat_environment_timer generate 1200
