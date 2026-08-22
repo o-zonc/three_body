@@ -8,6 +8,8 @@ execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custo
 execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{frozen_move:1b}] run tag @s add dropped_mover
 execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{overworld_move:1b}] run tag @s add dropped_mover
 execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{cosmos_move:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{dev_polarnight_move:1b}] run tag @s add dropped_mover
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{dev_dawn_move:1b}] run tag @s add dropped_mover
 execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{altar_move:1b}] run tag @s add dropped_mover
 execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{shop_move:1b}] run tag @s add dropped_mover
 execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{alchemy_move:1b}] run tag @s add dropped_mover
@@ -22,18 +24,21 @@ execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custo
 execute as @e[type=minecraft:item,tag=dropped_meta] run data merge entity @s {PickupDelay:0s}
 execute as @e[type=minecraft:item,tag=dropped_meta] at @s if entity @p[tag=player,gamemode=adventure,distance=..4] run tp @s @p[tag=player,gamemode=adventure,distance=..4,sort=nearest,limit=1]
 
-execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-63,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
-execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-49,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
-execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-41,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
-execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=-25,y=-62,z=23,dx=2,dy=0,dz=2] run return run function mover/restricted/common
-execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=-25,y=-53,z=23,dx=2,dy=0,dz=2] run return run function mover/restricted/common
-execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=-25,y=-46,z=23,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+# DEV 이동기는 테스트 편의를 위해 엘리베이터 내부 이동 제한을 우회합니다.
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover unless predicate item/dev_polarnight_mover unless predicate item/dev_dawn_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-63,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover unless predicate item/dev_polarnight_mover unless predicate item/dev_dawn_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-49,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover unless predicate item/dev_polarnight_mover unless predicate item/dev_dawn_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=23,y=-41,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover unless predicate item/dev_polarnight_mover unless predicate item/dev_dawn_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=-25,y=-62,z=23,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover unless predicate item/dev_polarnight_mover unless predicate item/dev_dawn_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=-25,y=-53,z=23,dx=2,dy=0,dz=2] run return run function mover/restricted/common
+execute as @a unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover unless predicate item/dev_polarnight_mover unless predicate item/dev_dawn_mover if items entity @s weapon.* * if entity @s[tag=shift] if entity @s[x=-25,y=-46,z=23,dx=2,dy=0,dz=2] run return run function mover/restricted/common
 
 execute as @a if predicate item/dimension_mover if entity @s[tag=shift] run function mover/dimension
 execute as @a if predicate item/dried_mover if entity @s[tag=shift] run function mover/dried
 execute as @a if predicate item/frozen_mover if entity @s[tag=shift] run function mover/frozen
 execute as @a if predicate item/overworld_mover if entity @s[tag=shift] run function mover/overworld
 execute as @a if predicate item/cosmos_mover if entity @s[tag=shift] run function mover/cosmos
+execute as @a[tag=dev] if predicate item/dev_polarnight_mover if entity @s[tag=shift] run function mover/dev_polarnight
+execute as @a[tag=dev] if predicate item/dev_dawn_mover if entity @s[tag=shift] run function mover/dev_dawn
 execute as @a if predicate item/epiphany if entity @s[tag=shift] run function mover/transcendence
 execute as @a if predicate item/reactor if entity @s[tag=shift] run function mover/reactor
 execute as @a if predicate item/altar_mover if entity @s[tag=shift] run function mover/local/altar
