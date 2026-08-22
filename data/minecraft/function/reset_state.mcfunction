@@ -57,6 +57,16 @@ scoreboard players set #overworld civilization_age 0
 scoreboard players set #level alchemy_workshop 0
 scoreboard players set #alchemy_workshop unlock 0
 
+# 우는 흑요석 수집 이벤트는 전체 reset_state에서만 초기화한다.
+scoreboard players set #crying_count var 0
+scoreboard players set #crying_overworld var 0
+scoreboard players set #crying_dried var 0
+scoreboard players set #crying_frozen var 0
+scoreboard players set #crying_dawn var 0
+scoreboard players set #crying_vault_opened var 0
+execute in polarnight run kill @e[type=minecraft:end_crystal,tag=crying_obsidian_crystal]
+function polarnight/structure/valut/off
+
 # 8. 자원 스코어보드 초기화
 scoreboard players set * material 0
 scoreboard players set * upgrade 0
