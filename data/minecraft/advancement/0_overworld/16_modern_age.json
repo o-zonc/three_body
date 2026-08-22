@@ -1,5 +1,5 @@
 {
-	"parent": "0_overworld/15_medieval_age",
+	"parent": "0_overworld/15_fairy_help",
 	"display": {
 		"icon": "redstone",
 		"title": "근대",
