@@ -7,6 +7,7 @@ execute unless score #alchemy_workshop unlock matches 1 run return 0
 # Lv. 0에서는 세공 작업대 전체가 300틱 공용 쿨타임을 사용합니다.
 execute if score #level alchemy_workshop matches 0 if score #jewel_cooldown var matches 1.. run title @s actionbar [{"text":"세공 작업대 재사용까지 ","color":"red"},{"score":{"name":"#jewel_cooldown","objective":"var"},"color":"yellow"},{"text":"틱 남았습니다.","color":"red"}]
 execute if score #level alchemy_workshop matches 0 if score #jewel_cooldown var matches 1.. run playsound block.note_block.bass master @s ~ ~ ~ 0.7 0.7
+execute if score #level alchemy_workshop matches 0 if score #jewel_cooldown var matches 1.. run function shop/alchemy/jewel/ui
 execute if score #level alchemy_workshop matches 0 if score #jewel_cooldown var matches 1.. run return 0
 
 # 현재 레벨에 맞는 결과 배율을 선택합니다.
