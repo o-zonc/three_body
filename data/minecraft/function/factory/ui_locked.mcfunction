@@ -11,4 +11,4 @@ execute if data storage data tmp.cost run function resource/convert_cost_to_text
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
-$tellraw @s [{text:"  [ 자동화 공장 - $(name) ]",color:"$(color)",bold:true},{text:"\n\n  공장을 건설하면 ",color:"gray",bold:false},{text:"$(name)",color:"$(color)"},{text:" 자원의 생산을 자동화할 수 있습니다.",color:"gray"},{text:"\n\n  "},{text:"[ 공장 건설 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.factory.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger factory_trigger set $(purchase)"}},{text:"\n"}]
+$tellraw @s [{text:"  [ 자동화 공장 - $(name) ]",color:"$(color)",bold:true},{text:"\n\n  공장을 건설하면 ",color:"gray",bold:false},{text:"$(name)",color:"$(color)"},{text:" 자원의 생산을 자동화할 수 있습니다.",color:"gray",bold:false},{text:"\n\n  "},{text:"[ 공장 건설 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.factory.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger factory_trigger set $(purchase)"}},{text:"\n"}]
