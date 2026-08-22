@@ -4,3 +4,6 @@ execute unless score #alchemy_workshop unlock matches 1 run scoreboard players s
 execute if score #level alchemy_workshop matches 0 if score #jewel_cooldown var matches 1.. run scoreboard players remove #jewel_cooldown var 1
 execute if score #level alchemy_workshop matches 1.. if score #jewel_cooldown var matches 1.. run scoreboard players set #jewel_cooldown var 0
 execute if score #jewel_cooldown var matches ..-1 run scoreboard players set #jewel_cooldown var 0
+
+# Lv.2 자동 세공
+function shop/alchemy/jewel/auto/tick
