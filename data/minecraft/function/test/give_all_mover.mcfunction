@@ -5,3 +5,5 @@ function item/give/dried_mover
 function item/give/epiphany
 function item/give/reactor
 function item/give/cosmos_mover
+function item/give/dev_polarnight_mover
+function item/give/dev_dawn_mover
