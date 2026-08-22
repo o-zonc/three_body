@@ -1,6 +1,7 @@
 {
 	"values": [
 		"init",
-		"const_def"
+		"const_def",
+		"balance/resource_regen"
 	]
 }
