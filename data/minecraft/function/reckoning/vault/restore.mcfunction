@@ -62,6 +62,12 @@ execute if score #vault_elevator tmp matches 1 run scoreboard players operation 
 execute if score #vault_stick_progress tmp matches 1 run scoreboard players operation #wood_regen_lvl upgrade = #vault_wood_regen tmp
 execute if score #vault_stick_progress tmp matches 1 run scoreboard players operation #wood_lvl material_shop = #vault_wood_shop tmp
 
+# 시간 250조각: 정산에서 0으로 초기화한 뒤 이전 채굴 도구 강화 단계를 복원한다.
+execute if score #vault_tool tmp matches 1 run scoreboard players operation #tool upgrade = #vault_tool_level tmp
+
+# clear로 사라진 채굴 도구를 최종 강화 단계에 맞춰 다시 발급한다.
+function tool/refresh_all
+
 # 자동 인출은 한 번 달성하면 영구 유지한다.
 execute if score #information_bank meta matches 500.. run scoreboard players set #information_auto_withdraw meta 1
 execute if score #time_bank meta matches 250.. run scoreboard players set #time_auto_withdraw meta 1
