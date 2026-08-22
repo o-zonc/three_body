@@ -25,5 +25,5 @@ scoreboard players add #alchemy_lab_level upgrade 1
 function shop/alchemy/lab/rates
 
 execute at @s run playsound block.enchantment_table.use master @s ~ ~ ~ 0.9 1.2
-title @s actionbar [{"text":"마법 연구 완료 — Lv. ","color":"light_purple","bold":true},{"score":{"name":"#alchemy_lab_level","objective":"upgrade"},"color":"white"}]
+title @s actionbar [{"text":"마법 연구 완료 — Lv. ","color":"light_purple"},{"score":{"name":"#alchemy_lab_level","objective":"upgrade"},"color":"white"}]
 function shop/alchemy/lab/ui

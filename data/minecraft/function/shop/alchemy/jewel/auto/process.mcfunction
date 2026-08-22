@@ -11,7 +11,7 @@ $scoreboard players remove #$(id) material 1
 scoreboard players remove #iron material 1
 scoreboard players remove #copper material 1
 
-scoreboard players set #material_add_value tmp $(reward)
+$scoreboard players set #material_add_value tmp $(reward)
 $function resource/add {id:"$(id)"}
 scoreboard players set #jewel_auto_success tmp 1
 return 1
