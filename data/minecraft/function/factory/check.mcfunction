@@ -38,7 +38,7 @@ execute if score #lapis factory_unlocked matches 1 if score #lapis factory_enabl
 execute if score #cold factory_unlocked matches 1 if score #cold factory_enabled matches 1 run scoreboard players set #factory_any_enabled tmp 1
 execute if score #heat factory_unlocked matches 1 if score #heat factory_enabled matches 1 run scoreboard players set #factory_any_enabled tmp 1
 
-execute unless score #factory_any_unlocked tmp matches 1 run data modify storage data tmp.factory.check_lines append value {text:"\n  해금된 공장이 없습니다.\n",color:"gray",italic:true}
+execute unless score #factory_any_unlocked tmp matches 1 run data modify storage data tmp.factory.check_lines append value {text:""}
 execute if score #factory_any_unlocked tmp matches 1 if score #factory_any_enabled tmp matches 1 run data modify storage data tmp.factory.check_lines append value {text:"\n  [ 모든 공장 가동 중단 ]\n",color:"red",bold:true,click_event:{action:"run_command",command:"/trigger factory_trigger set 1721"},hover_event:{action:"show_text",value:{text:"해금한 모든 공장의 가동을 중단합니다.",color:"gray"}}}
 execute if score #factory_any_unlocked tmp matches 1 unless score #factory_any_enabled tmp matches 1 run data modify storage data tmp.factory.check_lines append value {text:"\n  [ 모든 공장 가동 재개 ]\n",color:"green",bold:true,click_event:{action:"run_command",command:"/trigger factory_trigger set 1721"},hover_event:{action:"show_text",value:{text:"해금한 모든 공장의 가동을 재개합니다.",color:"gray"}}}
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2

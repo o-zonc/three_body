@@ -358,7 +358,7 @@ data merge storage data {\
         lvl: 8,\
         cost: [{ type: "wood", amount: 500 }, { type: "iron", amount: 35 }],\
         components: {\
-          custom_name: "§철 곡괭이",\
+          custom_name: "§f철 곡괭이",\
           item_model: "iron_pickaxe",\
           lore: [\
             "§4도구 - 파괴",\

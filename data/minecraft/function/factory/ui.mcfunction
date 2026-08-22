@@ -16,7 +16,7 @@ $execute store result score #$(id)_factory_fuel tmp run data get storage data tm
 $execute store result score #$(id)_factory_interval tmp run data get storage data tmp.factory.$(id).now.interval
 
 data modify storage data tmp.factory.hot_bonus_ui set value {text:""}
-execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] run data modify storage data tmp.factory.hot_bonus_ui set value {text:"\n  • 뜨거워! 보너스: 연료 소비 -30%, 시도 주기 -10%",color:"gold",bold:false}
+execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] run data modify storage data tmp.factory.hot_bonus_ui set value {text:"\n  • 발전과제 보상: 연료 소비 -30%, 시도 주기 -10%",color:"gold",bold:false}
 
 data remove storage data tmp.cost
 data remove storage data tmp.cost_original
