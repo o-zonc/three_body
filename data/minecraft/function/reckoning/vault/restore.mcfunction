@@ -16,11 +16,12 @@ execute if score #vault_shop_second tmp matches 1 run scoreboard players operati
 execute if score #vault_shop_second tmp matches 1 run scoreboard players operation #special_second_lvl upgrade = #vault_special_second tmp
 execute if score #vault_shop_second tmp matches 1 run scoreboard players operation #get_second_lvl upgrade = #vault_get_second tmp
 
-# 시설 보호
-execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run advancement grant @a only 0_overworld/20_observatory
-execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run advancement grant @a only 0_overworld/21_alchemy_workshop
-execute if score #vault_alchemy tmp matches 1 run scoreboard players operation #level alchemy_workshop = #vault_alchemy_level tmp
+# 시설 보호: 발전과제는 건드리지 않고 현재 시설 상태만 복원한다.
+execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run scoreboard players set #observatory unlock 1
+execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run function common/structure/observatory/on
+execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players operation #level alchemy_workshop = #vault_alchemy_level tmp
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players set #alchemy_workshop unlock 1
+execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run function common/structure/alchemy_workshop/on
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #GLOBAL factory_build_stage = #vault_factory_stage tmp
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #GLOBAL factory_elevator_unlocked = #vault_factory_elevator tmp
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #wood factory_level = #vault_factory_wood tmp
@@ -44,6 +45,10 @@ execute if score #time_bank meta matches 5.. run scoreboard players set #overwor
 execute if score #time_bank meta matches 20.. run scoreboard players set #overworld civilization_age 6
 execute if score #time_bank meta matches 50.. run scoreboard players set #overworld civilization_age 7
 execute if score #time_bank meta matches 100.. run scoreboard players set #overworld civilization_age 8
+
+# 시간 10조각: 이전 문명에서 개방한 얼어붙은 다리를 유지한다.
+execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run scoreboard players set #frozen_bridge unlock 1
+execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run function frozen/structure/bridge/on
 execute if score #vault_elevator tmp matches 1 run scoreboard players operation #GLOBAL elevator_unlocked = #vault_elevator_level tmp
 
 # 막대기 발전 단계는 첫 상점/생산 단계로 취급해 별도 보호한다.

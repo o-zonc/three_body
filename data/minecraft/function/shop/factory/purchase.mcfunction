@@ -13,12 +13,13 @@ execute unless score #factory_cost_check tmp matches 1 at @s run playsound block
 execute unless score #factory_cost_check tmp matches 1 run return 0
 function resource/take_cost
 
-execute if score #factory_shop_stage tmp matches 0 run advancement grant @s only 0_overworld/23_factory
 execute if score #factory_shop_stage tmp matches 0 run scoreboard players set #GLOBAL factory_build_stage 1
-execute if score #factory_shop_stage tmp matches 1 run advancement grant @s only 0_overworld/22_particle_accelerator
+execute if score #factory_shop_stage tmp matches 0 run function common/structure/factory/on
+execute if score #factory_shop_stage tmp matches 0 unless entity @s[advancements={0_overworld/23_factory=true}] run advancement grant @s only 0_overworld/23_factory
+execute if score #factory_shop_stage tmp matches 1 unless entity @s[advancements={0_overworld/22_particle_accelerator=true}] run advancement grant @s only 0_overworld/22_particle_accelerator
 execute if score #factory_shop_stage tmp matches 1 run scoreboard players set #GLOBAL factory_build_stage 2
 execute if score #factory_shop_stage tmp matches 1 run scoreboard players set #GLOBAL factory_elevator_unlocked 1
-execute if score #factory_shop_stage tmp matches 2 run advancement grant @s only 0_overworld/24_time_machine
+execute if score #factory_shop_stage tmp matches 2 unless entity @s[advancements={0_overworld/24_time_machine=true}] run advancement grant @s only 0_overworld/24_time_machine
 execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #GLOBAL factory_build_stage 3
 execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #GLOBAL factory_elevator_unlocked 2
 execute if score #factory_shop_stage tmp matches 2 unless score #GLOBAL time_machine_level matches 1.. run scoreboard players set #GLOBAL time_machine_level 1

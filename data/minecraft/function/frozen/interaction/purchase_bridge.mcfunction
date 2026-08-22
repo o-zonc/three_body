@@ -7,7 +7,7 @@ execute unless score #frozen_purchase_check tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players set #frozen_bridge unlock 1
 execute in minecraft:frozen run function frozen/structure/bridge/on
-advancement grant @s only 1_frozen/11_bridge
+execute unless entity @s[advancements={1_frozen/11_bridge=true}] run advancement grant @s only 1_frozen/11_bridge
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 function frozen/interaction/shop
 return 1
