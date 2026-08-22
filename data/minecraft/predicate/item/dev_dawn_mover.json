@@ -1,0 +1,16 @@
+{
+  "condition": "entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "mainhand": {
+        "items": "yellow_dye",
+        "components": {
+          "custom_data": {
+            "dev_dawn_move": 1
+          }
+        }
+      }
+    }
+  }
+}
