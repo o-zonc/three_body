@@ -226,7 +226,7 @@ summon interaction ~ ~ ~ {width:1.0f,height:1.0f,response:1b,Tags:["po","time"]}
 
 문명이 끝났을 때 정보와 시간을 계산하는 전용 정산 시스템을 만든다.
 
-추천 성과 지표:
+ 추천 성과 지표:
 
 - 도달한 최고 시대
 - 해당 문명에서 누적 생산한 일반 자원
