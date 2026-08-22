@@ -14,6 +14,7 @@ execute if entity @s[tag=dried,tag=left] on target run function dried/relic/ui
 execute if entity @s[tag=polarnight,tag=reckoning] on target run function polarnight/interaction/reckoning
 execute if entity @s[tag=era] on target run function common/era/interact
 execute if entity @s[tag=alchemy,tag=jewel] on target run function shop/alchemy/jewel/ui
+execute if entity @s[tag=alchemy,tag=lab] on target run function shop/alchemy/lab/ui
 
 
 # 상점류
