@@ -65,7 +65,7 @@ scoreboard players set #crying_frozen var 0
 scoreboard players set #crying_dawn var 0
 scoreboard players set #crying_vault_opened var 0
 execute in polarnight run kill @e[type=minecraft:end_crystal,tag=crying_obsidian_crystal]
-function polarnight/structure/valut/off
+function polarnight/structure/vault/off
 execute in minecraft:frozen run setblock 8 67 36 minecraft:obsidian
 execute in minecraft:dried run setblock 0 63 0 minecraft:sandstone
 

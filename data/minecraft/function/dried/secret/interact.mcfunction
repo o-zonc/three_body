@@ -3,4 +3,4 @@
 # 수집 완료 후에는 이 인터랙션이 완전히 무반응합니다.
 execute if score #crying_dried var matches 1 run return 0
 
-execute in minecraft:dried run fill 3 59 3 -3 64 -3 minecraft:air
+execute in minecraft:dried run fill 3 60 3 -3 63 -3 minecraft:air

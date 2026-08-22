@@ -8,5 +8,5 @@ function crying/collect {id:"dried",x:-11,z:11}
 
 # 비밀 공간에서 빠져나온 뒤 다시 모래로 봉인합니다.
 function dried/move
-execute in minecraft:dried run fill 3 59 3 -3 59 -3 minecraft:sandstone
-execute in minecraft:dried run fill 3 60 3 -3 64 -3 minecraft:sand
+execute in minecraft:dried run fill 3 60 3 -3 60 -3 minecraft:sandstone
+execute in minecraft:dried run fill 3 61 3 -3 63 -3 minecraft:sand
