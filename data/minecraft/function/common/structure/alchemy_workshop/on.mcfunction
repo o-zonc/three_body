@@ -4,5 +4,10 @@ execute in overworld run data modify block -33 -64 -33 name set value "alchemy_w
 execute in overworld run setblock -33 -64 -32 redstone_block
 execute in overworld run setblock -33 -64 -32 air
 
+execute in overworld run setblock -24 -63 -36 minecraft:smithing_table
+execute in overworld run setblock -36 -63 -24 minecraft:test_block[mode=start]
+execute in overworld run setblock -24 -63 -37 minecraft:light[level=15]
+execute in overworld run setblock -37 -63 -24 minecraft:light[level=15]
+
 execute in overworld run fill -23 -63 -4 -25 -61 -4 air
 execute in overworld run fill -4 -63 -25 -4 -61 -23 air
