@@ -1,8 +1,8 @@
 # 시간 보존 램프는 제목 한 줄만 표시하고, 모든 임계치와 보존 효과는 툴팁에 넣는다.
-data modify storage data tmp.vault.time_tooltip set value [{text:"[ 시간 보존 효과 ]",color:"dark_aqua",bold:true}]
+data modify storage data tmp.vault.time_tooltip set value [{text:"[ 시간 보관 효과 ]",color:"dark_aqua"}]
 
-execute if score #time_bank meta matches 5.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n5조각",color:"dark_aqua",bold:false},{text:" · 다음 문명을 고대 단계에서 시작합니다.",color:"gray"}]
-execute unless score #time_bank meta matches 5.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n5조각 · 다음 문명을 고대 단계에서 시작합니다.",color:"dark_gray",bold:false}
+execute if score #time_bank meta matches 5.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n5조각",color:"dark_aqua"},{text:" · 다음 문명을 고대 단계에서 시작합니다.",color:"gray"}]
+execute unless score #time_bank meta matches 5.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n5조각 · 다음 문명을 고대 단계에서 시작합니다.",color:"dark_gray"}
 
 execute if score #time_bank meta matches 10.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n10조각",color:"dark_aqua"},{text:" · 초기 나무 생산 진행과 얼어붙은 다리의 개방 상태를 유지합니다.",color:"gray"}]
 execute unless score #time_bank meta matches 10.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n10조각 · 초기 나무 생산 진행과 얼어붙은 다리의 개방 상태를 유지합니다.",color:"dark_gray"}
