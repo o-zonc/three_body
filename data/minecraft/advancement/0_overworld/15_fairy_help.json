@@ -1,0 +1,17 @@
+{
+	"parent": "0_overworld/15_medieval_age",
+	"display": {
+		"icon": "amethyst_shard",
+		"title": "요정의 도움으로",
+		"description": "마법 전문가가 되었습니다.\n\n§6•§7 보상: 청금석 수급량이 2배 증가합니다.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "impossible"
+		}
+	},
+	"rewards": {"function": "resource/advancement_reward/lapis/enable"}
+}
