@@ -28,6 +28,9 @@ execute as @a[tag=player] if score @s shop_trigger matches 1512 run function sho
 execute as @a[tag=player] if score @s shop_trigger matches 1513 run function shop/alchemy/jewel/purchase {id:"gold",name:"금",color:"gold",lv0:0,lv1:2,lv2:3}
 execute as @a[tag=player] if score @s shop_trigger matches 1514 run function shop/alchemy/jewel/purchase {id:"diamond",name:"다이아몬드",color:"aqua",lv0:0,lv1:2,lv2:3}
 
+# 마법 연구소 (152X)
+execute as @a[tag=player] if score @s shop_trigger matches 1521 run function shop/alchemy/lab/purchase
+
 # 관측소 (16XX)
 execute as @a[tag=player] if score @s shop_trigger matches 1601 run function shop/observatory/purchase
 
