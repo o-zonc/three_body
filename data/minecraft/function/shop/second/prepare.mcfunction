@@ -36,3 +36,4 @@ execute if score #second_lvl tmp matches 0 run data modify storage data tmp.cost
 execute if score #second_lvl tmp matches 1 run data modify storage data tmp.cost set value [{type:"iron",amount:250},{type:"emerald",amount:50}]
 execute if score #second_lvl tmp matches 2 run data modify storage data tmp.cost set value [{type:"emerald",amount:150},{type:"lapis",amount:100}]
 execute if score #second_lvl tmp matches 3 run data modify storage data tmp.cost set value [{type:"emerald",amount:400},{type:"lapis",amount:300}]
+function resource/cost/apply_shop_advancement_discount
