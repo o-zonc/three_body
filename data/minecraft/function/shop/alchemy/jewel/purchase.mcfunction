@@ -62,5 +62,7 @@ execute if score #level alchemy_workshop matches 2.. if score #cost_diamond cost
 execute if score #level alchemy_workshop matches 0 run scoreboard players set #jewel_cooldown var 300
 execute if score #level alchemy_workshop matches 0 run function shop/alchemy/jewel/ui
 
+# 성공한 세공만 작업대 파티클을 출력합니다.
+function shop/alchemy/jewel/effect
 execute at @s run playsound block.amethyst_block.chime master @s ~ ~ ~ 0.8 1.3
 $title @s actionbar [{"text":"$(name) 세공 완료! ","color":"$(color)"},{"text":"×","color":"gray","bold":false},{"score":{"name":"#jewel_reward","objective":"tmp"},"color":"white"}]
