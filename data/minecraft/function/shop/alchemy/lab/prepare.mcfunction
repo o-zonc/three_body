@@ -25,6 +25,10 @@ execute if score #alchemy_lab_next tmp matches 13 run data modify storage data t
 execute if score #alchemy_lab_next tmp matches 14 run data modify storage data tmp.cost set value [{type:"lapis",amount:1000000},{type:"information",amount:48},{type:"time",amount:12}]
 execute if score #alchemy_lab_next tmp matches 15 run data modify storage data tmp.cost set value [{type:"lapis",amount:2000000},{type:"information",amount:64},{type:"time",amount:16}]
 
+# 발전과제 보상의 상점 비용 50% 할인을 연구 비용에도 적용합니다.
+# 정보/시간 같은 메타 자원은 기존 할인 규칙대로 제외됩니다.
+execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
+
 # 다음 단계에서 증가하는 효과
 execute if score #alchemy_lab_next tmp matches 1..5 run data modify storage data tmp.alchemy_lab.next_effect set value {text:"에메랄드·청금석 -10%p / 금·다이아몬드 -4%p",color:"aqua"}
 execute if score #alchemy_lab_next tmp matches 6..10 run data modify storage data tmp.alchemy_lab.next_effect set value {text:"금·다이아몬드 -4%p / 열기·냉기 -3%p",color:"aqua"}
