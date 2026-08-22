@@ -20,10 +20,12 @@ execute unless score #information_bank meta matches 10.. unless score #time_bank
 execute if score #information_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 그 외 자원 상점 업그레이드\n",color:"gray",strikethrough:true}
 execute unless score #information_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 그 외 자원 상점 업그레이드\n",color:"gray"}
 
-# 생산 업그레이드: 시간 10조각은 나무 재생만, 정보 50조각은 2층 생산만 유지한다.
+# 생산/도구 업그레이드: 시간 10조각은 나무 재생, 시간 250조각은 채굴 도구, 정보 50조각은 2층 생산을 유지한다.
 execute if score #time_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 나무 재생 업그레이드\n",color:"gray",strikethrough:true}
 execute unless score #time_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 나무 재생 업그레이드\n",color:"gray"}
-data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 기타 자원 재생·도구 업그레이드\n",color:"gray"}
+data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 기타 자원 재생 업그레이드\n",color:"gray"}
+execute if score #time_bank meta matches 250.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 채굴 도구 강화 단계\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 250.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 채굴 도구 강화 단계\n",color:"gray"}
 execute if score #information_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 2층 생산 업그레이드\n",color:"gray",strikethrough:true}
 execute unless score #information_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 2층 생산 업그레이드\n",color:"gray"}
 
