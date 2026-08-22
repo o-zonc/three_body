@@ -1,8 +1,8 @@
 # 정보 보존 램프는 제목 한 줄만 표시하고, 모든 임계치와 보존 효과는 툴팁에 넣는다.
-data modify storage data tmp.vault.information_tooltip set value [{text:"[ 정보 보존 효과 ]",color:"light_purple",bold:true}]
+data modify storage data tmp.vault.information_tooltip set value [{text:"[ 정보 보관 효과 ]",color:"light_purple"}]
 
-execute if score #information_bank meta matches 10.. run data modify storage data tmp.vault.information_tooltip append value [{text:"\n10조각",color:"light_purple",bold:false},{text:" · 기초 자원 상점 업그레이드를 유지합니다.",color:"gray"}]
-execute unless score #information_bank meta matches 10.. run data modify storage data tmp.vault.information_tooltip append value {text:"\n10조각 · 기초 자원 상점 업그레이드를 유지합니다.",color:"dark_gray",bold:false}
+execute if score #information_bank meta matches 10.. run data modify storage data tmp.vault.information_tooltip append value [{text:"\n10조각",color:"light_purple"},{text:" · 기초 자원 상점 업그레이드를 유지합니다.",color:"gray"}]
+execute unless score #information_bank meta matches 10.. run data modify storage data tmp.vault.information_tooltip append value {text:"\n10조각 · 기초 자원 상점 업그레이드를 유지합니다.",color:"dark_gray"}
 
 execute if score #information_bank meta matches 25.. run data modify storage data tmp.vault.information_tooltip append value [{text:"\n25조각",color:"light_purple"},{text:" · 관측소의 건설 상태를 유지합니다.",color:"gray"}]
 execute unless score #information_bank meta matches 25.. run data modify storage data tmp.vault.information_tooltip append value {text:"\n25조각 · 관측소의 건설 상태를 유지합니다.",color:"dark_gray"}
