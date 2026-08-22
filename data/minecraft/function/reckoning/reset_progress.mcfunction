@@ -36,11 +36,7 @@ scoreboard players set #era unlock 0
 scoreboard players set #GLOBAL elevator_unlocked 0
 scoreboard players set #GLOBAL factory_elevator_unlocked 0
 scoreboard players set #GLOBAL factory_build_stage 0
-scoreboard players reset * factory_level
-scoreboard players reset * factory_unlocked
-scoreboard players reset * factory_enabled
-scoreboard players reset * factory_timer
-scoreboard players reset * factory_status
+function factory/reset_state
 
 # 입자가속기/외계 간섭/보호막은 문명마다 새로 시작한다.
 scoreboard players set #GLOBAL accelerator_level 0
