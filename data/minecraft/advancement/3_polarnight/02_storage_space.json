@@ -2,8 +2,8 @@
   "parent": "3_polarnight/01_storage_time",
   "display": {
     "icon": "ender_chest",
-    "title": "보관: 공간",
-    "description": "공간을 보관할 수 있게 되었습니다.",
+    "title": "확장: 공간",
+    "description": "시공간을 확장했습니다.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
