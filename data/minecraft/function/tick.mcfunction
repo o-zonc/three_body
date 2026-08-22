@@ -37,6 +37,7 @@ function dimensions/overworld/shop/shop_trigger
 function factory/trigger
 function accelerator/tick
 function accelerator/trigger
+function shop/alchemy/jewel/tick
 function dried/relic/tick
 function dried/advancement/tick
 
