@@ -28,6 +28,7 @@ clear @a
 
 gamemode adventure @a
 
+gamerule advance_time true
 
 # ------------------------------------------------------------
 # 3. 플레이어를 오버월드로 복귀

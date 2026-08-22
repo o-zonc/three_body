@@ -15,6 +15,8 @@ gamerule advance_weather false
 
 scoreboard objectives setdisplay sidebar
 
+execute if entity @e[tag=dev] run return run function story/intro/dev
+
 # 모든 플레이어를 스펙테이터로 전환 → 조작 완전 차단
 gamemode spectator @a
 title @a times 0 1 0

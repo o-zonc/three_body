@@ -3,7 +3,7 @@
   "display": {
     "icon": "ender_chest",
     "title": "확장: 공간",
-    "description": "시공간을 확장했습니다.",
+    "description": "시공간을 확장했습니다.\n\n§6•§7 보상: 자원 상점에서 요구하는 비용이 감소합니다.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
