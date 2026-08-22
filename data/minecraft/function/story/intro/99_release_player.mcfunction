@@ -6,7 +6,11 @@
 # 플레이어의 게임 모드를 '모험'으로 되돌립니다.
 gamemode adventure @a
 
-# 차원 전환 시스템 가동
+# 실제 월드 시간/날씨와 차원 전환 시스템을 함께 재개합니다.
+# dev 인트로 스킵은 96_end를 거치지 않으므로 여기서도 반드시 해제해야 합니다.
+time resume
+gamerule advance_time true
+gamerule advance_weather true
 scoreboard players set #GLOBAL era_paused 0
 
 # 낙하에 사용된 아머 스탠드를 제거하고 시작 발전과제를 부여합니다.
