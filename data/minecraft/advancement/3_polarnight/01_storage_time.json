@@ -1,0 +1,17 @@
+{
+  "parent": "3_polarnight/00_root",
+  "display": {
+    "icon": "clock",
+    "title": "보관: 시간",
+    "description": "시간을 보관할 수 있게 되었습니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "manual_unlock": {
+      "trigger": "impossible"
+    }
+  }
+}
