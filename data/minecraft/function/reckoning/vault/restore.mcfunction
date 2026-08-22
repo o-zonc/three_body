@@ -21,6 +21,7 @@ execute if score #vault_observatory tmp matches 1 if score #vault_observatory_ow
 execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run function common/structure/observatory/on
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players operation #level alchemy_workshop = #vault_alchemy_level tmp
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players set #alchemy_workshop unlock 1
+execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players operation #alchemy_lab_level upgrade = #vault_alchemy_lab_level tmp
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run function common/structure/alchemy_workshop/on
 
 # 공방이 보존되면 이미 영구 구매한 상점/연금술 공방 이동기도 구매 상태와 아이템을 복원한다.
@@ -77,5 +78,6 @@ execute if score #vault_reward_wood tmp matches 1.. run function resource/advanc
 execute if score #vault_reward_coal tmp matches 1.. run function resource/advancement_reward/coal/enable
 execute if score #vault_reward_copper tmp matches 1.. run function resource/advancement_reward/copper/enable
 execute if score #vault_reward_iron tmp matches 1.. run function resource/advancement_reward/iron/enable
+execute if score #vault_reward_lapis tmp matches 1.. run function resource/advancement_reward/lapis/enable
 function shop/third/update_capacities
 function meta/sync
