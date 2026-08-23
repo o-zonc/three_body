@@ -60,6 +60,8 @@ scoreboard players set #GLOBAL dawn_bonus_shop 0
 scoreboard players set #GLOBAL dawn_information_shop 0
 scoreboard players set #GLOBAL dawn_time_shop 0
 scoreboard players set #GLOBAL dawn_reactor_purchased 0
+# 시간축 개방은 회차 진행에서는 유지되지만, 전체 게임 초기화에서는 다시 잠급니다.
+scoreboard players set #time_axis_open var 0
 
 # 우는 흑요석 수집 이벤트는 전체 reset_state에서만 초기화한다.
 scoreboard players set #crying_count var 0
@@ -158,7 +160,6 @@ execute in minecraft:frozen run function frozen/structure/maze/off
 
 # 9. 엘리베이터 스코어보드 초기화
 scoreboard players set #GLOBAL elevator_unlocked 0
-scoreboard players set #GLOBAL time_machine_level 0
 scoreboard players set #GLOBAL factory_elevator_unlocked 0
 scoreboard players set #GLOBAL factory_build_stage 0
 scoreboard players reset * factory_level
@@ -178,6 +179,12 @@ scoreboard players set #information_auto_withdraw meta 0
 scoreboard players set #time_auto_withdraw meta 0
 scoreboard players reset @a accelerator_trigger
 bossbar set shield_charge visible false
+
+# 타임머신 연구/세대/타이머/트리거를 전체 초기 상태로 되돌립니다.
+function time_machine/reset
+# 숨겨진 발전과제 자동 채굴 타이머도 새 게임 기준으로 초기화합니다.
+scoreboard players set #yellow_auto_mine_timer generate 20
+scoreboard players set #blue_auto_mine_timer generate 20
 
 # 특수 환경 자원 지급 주기 초기화
 scoreboard players set #heat_environment_timer generate 1200
