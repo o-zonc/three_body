@@ -1,4 +1,5 @@
 # 여명 차원 리액터 제작대
+execute unless score #GLOBAL current_dim matches 4 run return 0
 function meta/sync
 
 execute if score #GLOBAL dawn_reactor_purchased matches 1.. run title @s actionbar {text:"이미 리액터를 제작했습니다.",color:"#F971BE",italic:true,bold:false}
