@@ -1,8 +1,6 @@
 # Deduct the exact costs populated by resource/check_cost.
 # 정상 비용을 충족하지 못해 흑요석 대체가 선택된 경우 다른 재료는 전혀 소모하지 않습니다.
-execute if score #obsidian_cost_bypass tmp matches 1 run scoreboard players set #cost_obsidian cost 1
-execute if score #obsidian_cost_bypass tmp matches 1 run function meta/obsidian/take_cost
-execute if score #obsidian_cost_bypass tmp matches 1 run return 1
+execute if score #obsidian_cost_bypass tmp matches 1 run return run function resource/cost/take_obsidian_bypass
 
 scoreboard players operation #wood material -= #cost_wood cost
 scoreboard players operation #stone material -= #cost_stone cost
