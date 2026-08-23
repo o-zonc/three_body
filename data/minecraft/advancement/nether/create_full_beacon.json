@@ -1,0 +1,27 @@
+{
+    "parent": "minecraft:nether/create_beacon",
+    "criteria": {
+        "beacon": {
+            "conditions": {
+        },
+        "trigger": "minecraft:impossible"
+    }
+    },
+    "display": {
+    "description": {
+        "translate": "advancements.nether.create_beacon.description"
+    },
+    "icon": {
+        "id": "minecraft:beacon"
+    },
+    "title": {
+        "translate": "advancements.nether.create_beacon.title"
+    }
+    },
+    "requirements": [
+    [
+        "beacon"
+    ]
+    ],
+    "sends_telemetry_event": true
+}
