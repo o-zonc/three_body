@@ -5,4 +5,8 @@ execute unless score #blue_regen_lvl upgrade = #blue_regen_lvl upgrade run score
 execute if entity @a[advancements={0_overworld/22_heavy_ion_experiment=true}] run scoreboard players set #blue unlock 1
 execute unless score #blue unlock matches 1 run setblock -35 -62 2 air replace
 execute unless score #blue unlock matches 1 run return 0
+
+# 파랑 발전 트리 완성 보상: 연료 없이 파랑 자원을 자동 채굴합니다.
+execute if entity @a[advancements={0_overworld/25_blue_time_machine=true}] run function resource/color/auto_mine {id:"blue",block:"blue_glazed_terracotta",x:-35,y:-62,z:2}
+
 function resource/block/tick {id:"blue",x:-35,y:-62,z:2}
