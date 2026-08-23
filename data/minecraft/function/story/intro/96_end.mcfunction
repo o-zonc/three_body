@@ -29,6 +29,8 @@ schedule function story/intro/99_release_player 19s
 gamerule advance_weather true
 time resume
 
+# 여기까지 도달한 플레이어는 인트로를 완료했거나 스킵한 것으로 기록합니다.
+tag @a add intro_seen
 scoreboard players set #GLOBAL visited_overworld 1
 scoreboard players set #GLOBAL n_civil 1
 
