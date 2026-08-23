@@ -1,6 +1,8 @@
 # tmp.cost 의 목록에 있는 자원 요구 목록만큼 자원을 보유 중이면 1을, 그렇지 않으면 0을 반환
+# 정상 비용을 낼 수 없을 때, no_obsidian 마커가 없다면 흑요석 1개로 전체 비용을 대체할 수 있습니다.
 
 function meta/sync
+scoreboard players set #obsidian_cost_bypass tmp 0
 scoreboard players reset * cost
 
 scoreboard players set #cost_wood cost 0
@@ -46,25 +48,33 @@ execute if data storage data tmp.cost[{type:"spirit"}].amount store result score
 # 경험치는 개별
 execute store result score #exp_lvl tmp run xp query @s levels
 
-execute unless score #wood material >= #cost_wood cost run return 0
-execute unless score #stone material >= #cost_stone cost run return 0
-execute unless score #exp_lvl tmp >= #cost_exp_lvl cost run return 0
-execute unless score #coal material >= #cost_coal cost run return 0
-execute unless score #copper material >= #cost_copper cost run return 0
-execute unless score #iron material >= #cost_iron cost run return 0
-execute unless score #diamond material >= #cost_diamond cost run return 0
-execute unless score #emerald material >= #cost_emerald cost run return 0
-execute unless score #lapis material >= #cost_lapis cost run return 0
-execute unless score #heat material >= #cost_heat cost run return 0
-execute unless score #cold material >= #cost_cold cost run return 0
+# 정상 비용을 모두 충족하는지 먼저 계산합니다.
+scoreboard players set #cost_regular_ok tmp 1
+execute unless score #wood material >= #cost_wood cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #stone material >= #cost_stone cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #exp_lvl tmp >= #cost_exp_lvl cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #coal material >= #cost_coal cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #copper material >= #cost_copper cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #iron material >= #cost_iron cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #diamond material >= #cost_diamond cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #emerald material >= #cost_emerald cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #lapis material >= #cost_lapis cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #heat material >= #cost_heat cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #cold material >= #cost_cold cost run scoreboard players set #cost_regular_ok tmp 0
 # 메타 자원 결제는 기본적으로 플레이어가 직접 인출해 소지한 아이템만 인정합니다.
-execute unless score #information_wallet tmp >= #cost_information cost run return 0
-execute unless score #time_wallet tmp >= #cost_time cost run return 0
-execute unless score #world_eye material >= #cost_world_eye cost run return 0
-execute unless score #obsidian material >= #cost_obsidian cost run return 0
-execute unless score #compressed_overworld_crystal material >= #cost_compressed_overworld_crystal cost run return 0
-execute unless score #compressed_nether_crystal material >= #cost_compressed_nether_crystal cost run return 0
-execute unless score #gold material >= #cost_gold cost run return 0
-execute unless score #spirit material >= #cost_spirit cost run return 0
+execute unless score #information_wallet tmp >= #cost_information cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #time_wallet tmp >= #cost_time cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #world_eye material >= #cost_world_eye cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #obsidian_wallet tmp >= #cost_obsidian cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #compressed_overworld_crystal material >= #cost_compressed_overworld_crystal cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #compressed_nether_crystal material >= #cost_compressed_nether_crystal cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #gold material >= #cost_gold cost run scoreboard players set #cost_regular_ok tmp 0
+execute unless score #spirit material >= #cost_spirit cost run scoreboard players set #cost_regular_ok tmp 0
 
+execute if score #cost_regular_ok tmp matches 1 run return 1
+
+# 일부 거래는 흑요석 대체를 금지합니다. (일회용 이동기, 연성/시공간 확장, 흑요석 수급 등)
+execute if data storage data tmp.cost[{type:"no_obsidian"}] run return 0
+execute unless score #obsidian_wallet tmp matches 1.. run return 0
+scoreboard players set #obsidian_cost_bypass tmp 1
 return 1
