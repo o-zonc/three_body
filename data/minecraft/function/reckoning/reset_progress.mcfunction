@@ -6,7 +6,15 @@ scoreboard players set * material 0
 scoreboard players set * unlock 0
 scoreboard players set * material_shop 0
 
+# 중입자 충돌에서 발견한 노랑/파랑은 발전과제 기록과 재생성 업그레이드를 다음 문명으로 계승한다.
+# 보유량은 위 material 초기화에 포함되지만, 노드는 새 문명 시작과 함께 즉시 다시 사용할 수 있다.
+execute if entity @a[advancements={0_overworld/22_heavy_ion_experiment=true}] run scoreboard players set #yellow unlock 1
+execute if entity @a[advancements={0_overworld/22_heavy_ion_experiment=true}] run scoreboard players set #blue unlock 1
+execute if entity @a[advancements={0_overworld/22_heavy_ion_experiment=true}] in overworld run function resource/material/yellow/place
+execute if entity @a[advancements={0_overworld/22_heavy_ion_experiment=true}] in overworld run function resource/material/blue/place
+
 # 3층 업그레이드를 보존하기 위해 upgrade는 명시적으로 초기화한다.
+# yellow/blue regen 업그레이드는 의도적으로 이 목록에서 제외해 순환 가속 요소로 유지한다.
 scoreboard players set #wood_regen_lvl upgrade 0
 scoreboard players set #stone_regen_lvl upgrade 0
 scoreboard players set #coal_regen_lvl upgrade 0
