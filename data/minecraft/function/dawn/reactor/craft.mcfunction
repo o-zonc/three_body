@@ -28,7 +28,6 @@ scoreboard players set #GLOBAL dawn_reactor_purchased 1
 
 # 리액터 제작 완료 시 여명 중앙의 첫 번째 스테인드글라스를 분홍색으로 채색합니다.
 execute in minecraft:dawn run setblock 0 64 0 minecraft:pink_stained_glass
-function crying/dawn_reveal
 
 # 시공간 반응: 소비한 정보/시간의 2배를 새로 만들어 냅니다.
 scoreboard players operation #dawn_reactor_info_bonus tmp = #dawn_reactor_info_before tmp
