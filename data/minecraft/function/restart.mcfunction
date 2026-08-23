@@ -52,10 +52,15 @@ execute in overworld run tp @a 0 100 0
 # 4. 스코어보드 및 월드 상태 초기화
 # ------------------------------------------------------------
 
+# 오프라인 플레이어를 포함해 다음 접속 시 trigger 초기화가 다시 수행되도록 합니다.
+scoreboard players reset * trigger_init
+
 function reset_state
 # tick에서 더 이상 전체 var_init을 호출하지 않으므로,
 # reset으로 제거된 factory timer/status 등 누락 점수는 여기서 한 번 복구합니다.
 function var_init/load
+# 현재 접속 중인 플레이어는 restart 과정에서 즉시 trigger 상태를 복구합니다.
+execute as @a run function var_init/player
 
 scoreboard objectives add material_display dummy
 scoreboard objectives modify material_display displayname {"text":"발전 현황","color":"gold"}
