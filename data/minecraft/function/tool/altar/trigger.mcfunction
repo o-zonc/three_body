@@ -1,4 +1,7 @@
 scoreboard players set @s tool_trigger 0
+# /trigger 사용 직후 비활성화된 objective를 현재 플레이어에게만 다시 허용합니다.
+# 아래에서 조기 return될 수 있으므로 검사 전에 재활성화합니다.
+scoreboard players enable @s tool_trigger
 
 execute unless dimension minecraft:overworld run title @s actionbar {text:"천공의 제단 곁에서만 하늘의 힘을 받을 수 있습니다.",color:"red",italic:true}
 execute unless dimension minecraft:overworld run return 0
