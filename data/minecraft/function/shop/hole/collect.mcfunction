@@ -28,6 +28,6 @@ function meta/sync
 
 execute at @s run playsound minecraft:block.end_portal.spawn master @s ~ ~ ~ 0.7 1.4
 execute at @s run particle minecraft:reverse_portal ~ ~1 ~ 0.35 0.5 0.35 0.08 36 force @s
-title @s actionbar [{text:"흑요석 +1",color:"black",shadow_color:-8388480,bold:true},{text:"  ·  균열이 한층 불안정해졌습니다.",color:"dark_gray",bold:false}]
+title @s actionbar [{text:"흑요석 +1",color:"dark_gray",shadow_color:-8388480,bold:true},{text:"  ·  균열이 한층 불안정해졌습니다.",color:"dark_gray",bold:false}]
 function shop/hole/interact
 return 1
