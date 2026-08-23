@@ -1,7 +1,7 @@
-execute as @a if score @s accelerator_trigger matches 1 run function accelerator/upgrade
-execute as @a if score @s accelerator_trigger matches 2 run function accelerator/experiment
-execute as @a if score @s accelerator_trigger matches 10 run function shield/charge_common
-execute as @a if score @s accelerator_trigger matches 11 run function shield/charge_great
-execute as @a if score @s accelerator_trigger matches 12 run function shield/charge_special
-scoreboard players reset @a[scores={accelerator_trigger=1..}] accelerator_trigger
-scoreboard players enable @a accelerator_trigger
+# 1: 업그레이드
+# 10: 양자 충돌 실험
+# 11: 중입자 충돌 실험 (Lv.2+)
+# 12: 시공간 붕괴 실험 (Lv.4+)
+execute if score @s accelerator_trigger matches 1 run function accelerator/upgrade
+execute if score @s accelerator_trigger matches 10..12 run function accelerator/experiment
+scoreboard players set @s accelerator_trigger 0
