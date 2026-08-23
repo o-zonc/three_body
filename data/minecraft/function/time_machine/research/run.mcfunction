@@ -32,7 +32,12 @@ execute if score #time_machine_research_total tmp matches 4 if score #GLOBAL tim
 execute if score #time_machine_research_total tmp matches 8 if score #GLOBAL time_machine_level matches ..2 run scoreboard players set #GLOBAL time_machine_level 3
 execute if score #time_machine_research_total tmp matches 12 if score #GLOBAL time_machine_level matches ..3 run scoreboard players set #GLOBAL time_machine_level 4
 
-# 마일스톤에서 세대 기본 성능이 바뀌므로 한 번 더 계산합니다.
+# 세대 상승 시 현재 누적 연구 비율로 발전 트리 특성을 확정합니다.
+execute if score #time_machine_research_total tmp matches 4 run function time_machine/research/apply_milestone
+execute if score #time_machine_research_total tmp matches 8 run function time_machine/research/apply_milestone
+execute if score #time_machine_research_total tmp matches 12 run function time_machine/research/apply_milestone
+
+# 마일스톤에서 세대 기본 성능과 트리 보너스가 바뀌므로 한 번 더 계산합니다.
 function time_machine/calculate
 scoreboard players operation #time_machine_timer generate = #time_machine_interval tmp
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.3
