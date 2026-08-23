@@ -1,6 +1,7 @@
 {
 	"values": [
 		"init",
+		"var_init/load",
 		"const_def",
 		"accelerator/const_def",
 		"resource/color/const_def",
