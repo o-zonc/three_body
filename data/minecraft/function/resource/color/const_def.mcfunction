@@ -5,7 +5,7 @@ data modify storage data const.resource.yellow set value {item:"yellow_glazed_te
 data modify storage data const.resource.blue set value {item:"blue_glazed_terracotta",regen:[{lvl:0,value:1400,cost:[{type:"wood",amount:75},{type:"stone",amount:75}]},{lvl:1,value:900,cost:[{type:"stone",amount:250},{type:"coal",amount:125}]},{lvl:2,value:600,cost:[{type:"copper",amount:300},{type:"iron",amount:150}]},{lvl:3,value:350,cost:[{type:"copper",amount:1200},{type:"iron",amount:600}]},{lvl:4,value:180}]}
 
 # 구리 곡괭이(Lv.6)부터 노랑/파랑을 채굴할 수 있습니다.
-# Lv.12 이상의 기존 외계 자원 규칙과 같은 초기 속도(약 8초)를 사용해 도구 성장 밸런스를 유지합니다.
+# 실제 아이템 생성 시 중입자 충돌 발전과제가 없다면 can_break 목록에서 이 두 블록만 제거합니다.
 data modify storage data const.tool[{lvl:6}].components.can_break.blocks append value "yellow_glazed_terracotta"
 data modify storage data const.tool[{lvl:6}].components.can_break.blocks append value "blue_glazed_terracotta"
 data modify storage data const.tool[{lvl:6}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
@@ -35,17 +35,3 @@ data modify storage data const.tool[{lvl:11}].components.can_break.blocks append
 data modify storage data const.tool[{lvl:11}].components.can_break.blocks append value "blue_glazed_terracotta"
 data modify storage data const.tool[{lvl:11}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
 data modify storage data const.tool[{lvl:11}].components.tool.rules append value {blocks:"blue_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
-
-# 발전과제 이전에 Adventure 모드의 기본 Can Break 툴팁으로 블록명이 노출되지 않게 합니다.
-# 실제 채굴 가능 블록은 기존 커스텀 lore와 게임 진행으로 안내합니다.
-data modify storage data const.tool[{lvl:6}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:7}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:8}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:9}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:10}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:11}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:12}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:13}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:14}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:15}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
-data modify storage data const.tool[{lvl:16}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
