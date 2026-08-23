@@ -3,6 +3,20 @@ execute if score #GLOBAL accelerator_level matches 1.. run scoreboard players re
 execute if score #GLOBAL accelerator_level matches 1.. if score #GLOBAL accelerator_timer matches ..0 run function accelerator/produce
 execute if score #GLOBAL experiment_cooldown matches 1.. run scoreboard players remove #GLOBAL experiment_cooldown 1
 
+# 진행 중인 실험 카운트다운
+execute as @a[tag=accelerator_experiment_running,scores={experiment_delay=1..}] run scoreboard players remove @s experiment_delay 1
+
+# 입자가속기가 가동되는 동안 주기적으로 저음의 공명음을 냅니다.
+execute as @a[tag=accelerator_experiment_running,scores={experiment_delay=80}] at @s run playsound block.beacon.ambient master @s ~ ~ ~ 0.4 0.60
+execute as @a[tag=accelerator_experiment_running,scores={experiment_delay=60}] at @s run playsound block.beacon.ambient master @s ~ ~ ~ 0.45 0.63
+execute as @a[tag=accelerator_experiment_running,scores={experiment_delay=40}] at @s run playsound block.beacon.ambient master @s ~ ~ ~ 0.5 0.66
+execute as @a[tag=accelerator_experiment_running,scores={experiment_delay=20}] at @s run playsound block.beacon.ambient master @s ~ ~ ~ 0.55 0.70
+execute as @a[tag=accelerator_experiment_running,scores={experiment_delay=40}] run title @s actionbar {text:"충돌 데이터를 분석하는 중...",color:"aqua"}
+execute as @a[tag=accelerator_experiment_running,scores={experiment_delay=20}] run title @s actionbar {text:"실험 결과를 계산하는 중...",color:"yellow"}
+
+# 카운트다운 종료 후 성공/실패 판정
+execute as @a[tag=accelerator_experiment_running,scores={experiment_delay=..0}] at @s run function accelerator/experiment_resolve
+
 # 현대(문명 단계 8) 진입 이후 철 보유량이 1,000,000개를 초과하면 외계 간섭이 발생합니다.
 execute if score #overworld civilization_age matches 8.. if score #iron material matches 1000001.. if score #GLOBAL alien_interference matches 0 run function alien/start
 execute if score #GLOBAL alien_interference matches 1 run function alien/tick
