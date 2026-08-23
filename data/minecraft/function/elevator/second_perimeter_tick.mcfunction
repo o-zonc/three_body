@@ -2,13 +2,16 @@
 # 정사각형 범위: X=-32..-16, Y=-46, Z=16..32
 # 미래 시대(문명 9)부터 표시합니다.
 
+# 플레이어가 오버월드에 없으면 시각 효과/마커 이동을 처리하지 않습니다.
+execute unless score #GLOBAL current_dim matches 0 run return 0
+
+# 미래 이전에는 구조물 NBT 검사보다 먼저 빠져나옵니다.
+execute unless score #overworld civilization_age matches 9.. in overworld run kill @e[type=marker,tag=elevator_2_perimeter]
+execute unless score #overworld civilization_age matches 9.. run return 0
+
 # 공장 구조물이 비활성화되어 있으면 마커를 제거하고 재생성하지 않습니다.
 execute in overworld unless data block -13 -64 35 {name:"factory"} run kill @e[type=marker,tag=elevator_2_perimeter]
 execute in overworld unless data block -13 -64 35 {name:"factory"} run return 0
-
-# 시대가 되돌아가거나 게임이 초기화되면 마커를 정리합니다.
-execute in overworld unless score #overworld civilization_age matches 9.. run kill @e[type=marker,tag=elevator_2_perimeter]
-execute unless score #overworld civilization_age matches 9.. run return 0
 
 # 레벨별 마커 수와 간격을 구성합니다. Lv.0~1: 1개 / Lv.2: 2개 / Lv.3: 3개 / Lv.4: 4개
 execute if score #GLOBAL time_machine_level matches 0..1 in overworld unless entity @e[type=marker,tag=elevator_2_config_1] run function time_machine/perimeter_setup/1
