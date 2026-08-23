@@ -26,7 +26,7 @@ execute unless score #time_machine_cost_ok tmp matches 1 at @s run playsound blo
 execute unless score #time_machine_cost_ok tmp matches 1 run return 0
 
 function resource/take_cost
-execute unless score #time_machine_obsidian_bypass tmp matches 1 run $scoreboard players operation #$(type) material -= #time_machine_color_cost tmp
+$execute unless score #time_machine_obsidian_bypass tmp matches 1 run scoreboard players operation #$(type) material -= #time_machine_color_cost tmp
 execute unless score #time_machine_obsidian_bypass tmp matches 1 run data modify storage data tmp.time_machine.research set value {broken:0}
 execute unless score #time_machine_obsidian_bypass tmp matches 1 store result storage data tmp.time_machine.research.broken int 1 run scoreboard players get #time_machine_broken_cost tmp
 execute unless score #time_machine_obsidian_bypass tmp matches 1 run function time_machine/research/take_broken with storage data tmp.time_machine.research
