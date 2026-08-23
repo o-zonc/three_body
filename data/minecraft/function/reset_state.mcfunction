@@ -74,6 +74,11 @@ execute in minecraft:frozen run setblock 8 67 36 minecraft:obsidian
 execute in minecraft:dried run setblock 0 63 0 minecraft:sandstone
 function crying/dawn_reset
 
+# 공허의 구멍 진행도와 인벤토리형 흑요석 자원은 전체 초기화에서만 제거한다.
+scoreboard players set #hole_level upgrade 0
+scoreboard players set #hole_claims var 0
+clear @a minecraft:dragon_egg[minecraft:custom_data~{three_body:{meta:"obsidian"}}]
+
 # 8. 자원 스코어보드 초기화
 scoreboard players set * material 0
 scoreboard players set * upgrade 0
