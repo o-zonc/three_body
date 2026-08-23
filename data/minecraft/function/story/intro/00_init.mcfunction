@@ -40,7 +40,7 @@ execute as @e[type=item_display,tag=story_camera,limit=1] at @s run summon item_
 
 # 타이틀 로고
 title @a title {"text":"삼체 (三體)","color":"#F971BE","shadow_color":[0.44, 0.8, 0.98, 1.0]}
-title @a subtitle {"text":"The Three Body","color":"gray","italic":true}
+title @a subtitle {"text":"3 Body Problem","color":"gray","italic":true}
 title @a times 20 60 20
 
 schedule function story/intro/01_quote1 100t
