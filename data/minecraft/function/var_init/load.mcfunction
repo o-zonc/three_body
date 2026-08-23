@@ -4,3 +4,17 @@ function var_init
 
 # 기존 세이브에 없는 타임머신 연구 점수는 load 시 한 번만 보정합니다.
 function time_machine/init_scores
+
+# 기존 플레이어도 최적화된 이벤트형 story trigger를 즉시 사용할 수 있게 한 번 활성화합니다.
+scoreboard players enable @a intro_skip
+scoreboard players enable @a tutorial
+
+# 자동 세공의 누락값 보정도 매 tick이 아니라 load에서 처리합니다.
+execute unless score #jewel_auto_enabled var = #jewel_auto_enabled var run scoreboard players set #jewel_auto_enabled var 0
+execute unless score #jewel_auto_timer var = #jewel_auto_timer var run scoreboard players set #jewel_auto_timer var 0
+
+# 다음 tick에 현재 차원 기준 환경 타이머를 한 번 다시 계산하도록 합니다.
+scoreboard players reset #environment_dim_prev var
+
+# sidebar는 load 직후 한 번 즉시 구성하고 이후에는 주기 갱신만 수행합니다.
+function ui/sidebar/refresh
