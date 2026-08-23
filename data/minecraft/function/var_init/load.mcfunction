@@ -15,6 +15,3 @@ execute unless score #jewel_auto_timer var = #jewel_auto_timer var run scoreboar
 
 # 다음 tick에 현재 차원 기준 환경 타이머를 한 번 다시 계산하도록 합니다.
 scoreboard players reset #environment_dim_prev var
-
-# sidebar는 load 직후 한 번 즉시 구성하고 이후에는 주기 갱신만 수행합니다.
-function ui/sidebar/refresh
