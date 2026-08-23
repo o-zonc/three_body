@@ -4,10 +4,10 @@
     "icon": "ender_eye",
     "title": "완전한 균형",
     "description": "타임머신의 모든 세대를 초록 발전 트리로 완성합니다.",
-    "frame": "challenge",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false
+    "hidden": true
   },
   "criteria": {
     "all_green_milestones": {
