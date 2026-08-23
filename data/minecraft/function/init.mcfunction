@@ -100,6 +100,8 @@ scoreboard objectives add factory_build_stage dummy
 scoreboard objectives add accelerator_level dummy
 scoreboard objectives add accelerator_timer dummy
 scoreboard objectives add experiment_cooldown dummy
+scoreboard objectives add experiment_delay dummy
+scoreboard objectives add experiment_type dummy
 scoreboard objectives add accelerator_trigger trigger
 scoreboard objectives add alien_interference dummy
 scoreboard objectives add alien_timer dummy
