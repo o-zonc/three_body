@@ -1,0 +1,14 @@
+scoreboard players add #wood material 10000
+scoreboard players add #stone material 10000
+scoreboard players add #coal material 10000
+scoreboard players add #copper material 10000
+scoreboard players add #iron material 10000
+scoreboard players add #emerald material 10000
+scoreboard players add #lapis material 10000
+scoreboard players add #gold material 10000
+scoreboard players add #diamond material 10000
+scoreboard players add #heat material 1000
+scoreboard players add #cold material 1000
+scoreboard players add #information material 10
+scoreboard players add #time material 10
+execute as @a[limit=1] run function meta/restore_from_scoreboard

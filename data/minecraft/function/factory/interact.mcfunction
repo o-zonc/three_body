@@ -1,0 +1,12 @@
+execute if entity @s[tag=check] on target run return run function factory/check
+execute if entity @s[tag=wood] on target run return run function factory/ui {id:"wood",unlock:"wood",name:"나무",color:"yellow",purchase:1701,toggle:1711}
+execute if entity @s[tag=stone] on target run return run function factory/ui {id:"stone",unlock:"stone",name:"돌",color:"gray",purchase:1702,toggle:1712}
+execute if entity @s[tag=coal] on target run return run function factory/ui {id:"coal",unlock:"coal",name:"석탄",color:"dark_gray",purchase:1703,toggle:1713}
+execute if entity @s[tag=copper] on target run return run function factory/ui {id:"copper",unlock:"copper",name:"구리",color:"gold",purchase:1704,toggle:1714}
+execute if entity @s[tag=iron] on target run return run function factory/ui {id:"iron",unlock:"iron",name:"철",color:"white",purchase:1705,toggle:1715}
+execute if entity @s[tag=gold] on target run return run function factory/ui {id:"gold",unlock:"gold",name:"금",color:"gold",purchase:1706,toggle:1716}
+execute if entity @s[tag=diamond] on target run return run function factory/ui {id:"diamond",unlock:"diamond",name:"다이아몬드",color:"aqua",purchase:1707,toggle:1717}
+execute if entity @s[tag=emerald] on target run return run function factory/ui {id:"emerald",unlock:"emerald",name:"에메랄드",color:"green",purchase:1708,toggle:1718}
+execute if entity @s[tag=lapis] on target run return run function factory/ui {id:"lapis",unlock:"lapis",name:"청금석",color:"blue",purchase:1709,toggle:1719}
+execute if entity @s[tag=cold] on target run return run function factory/ui {id:"cold",unlock:"cold",name:"냉기",color:"aqua",purchase:1710,toggle:1720}
+execute if entity @s[tag=heat] on target run return run function factory/ui {id:"heat",unlock:"heat",name:"열기",color:"red",purchase:1722,toggle:1723}

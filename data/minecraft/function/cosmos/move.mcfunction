@@ -2,8 +2,13 @@
 effect clear @a blindness
 effect clear @a darkness
 title @a clear
+function mover/local/recover
+
+# 여명 차원에서 다른 차원으로 떠나는 경우 깨달음을 회수한다.
+execute if score #GLOBAL current_dim matches 4 run function dawn/cleanup_epiphany
 
 execute in cosmos run tp @s 0 64 0
+function mover/items/arrive_other
 
 gamerule advance_time false
 gamerule advance_weather false
@@ -12,5 +17,3 @@ scoreboard players set #GLOBAL visited_polar 0
 scoreboard players set #GLOBAL current_dim 5
 
 gamemode spectator @a
-
-scoreboard players set #GLOBAL era_paused 0

@@ -16,6 +16,9 @@ title @a clear
 # 얼어붙은 세계의 지속적인 날씨 함수
 schedule clear frozen/weather
 
+# 메마른 세계의 지속적인 날씨 함수
+schedule clear dried/weather
+
 # 혹시 남아 있는 이전 차원의 전환 예약 제거
 schedule clear common/next
 
@@ -41,6 +44,6 @@ function common/next
 # 새 차원에서 시대 시스템 재개
 # ==========================================
 
-scoreboard players set #GLOBAL era_paused 0
+execute unless score #GLOBAL era_observed matches 1 run scoreboard players set #GLOBAL era_paused 0
 scoreboard players set #GLOBAL user_disaster 0
 scoreboard players set #disaster_running run 0

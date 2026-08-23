@@ -1,0 +1,17 @@
+{
+	"parent": "1_frozen/00_root",
+	"display": {
+	"icon": "blue_ice",
+	"title": "파괴되지 않은 세계",
+	"description": "이 세계는 한 번의 난세기를 버티고도 파괴되지 않았습니다.\n\n§6•§7 보상: 이 세계에서 자원 수급량이 늘어납니다.\n\n§o뭐, 곧 있으면 파괴되겠지만요.",
+	"frame": "challenge",
+	"show_toast": true,
+	"announce_to_chat": true,
+	"hidden": true
+	},
+	"criteria": {
+		"manual_test": {
+            "trigger": "impossible"
+        }
+	}
+}

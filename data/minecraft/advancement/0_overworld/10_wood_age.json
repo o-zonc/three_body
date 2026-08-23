@@ -1,0 +1,19 @@
+{
+	"parent": "0_overworld/00_root",
+	"display": {
+		"icon": "oak_log",
+		"title": "목기 시대",
+		"description": ["나무를 손에 넣고 문명의 첫걸음을 내디뎠습니다.",{"text":"\n\n큰 나무도 작은 씨앗에서 시작했다. - 장자","color":"gold", "italic": true},{"text":"\n\n참고로, 나무는 쉽게 썩어 유물로 남아있지 않기 때문에 공식적인 시대 구분으로 인정받지 않습니다.", "color": "dark_gray","italic": true}],
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "impossible"
+		}
+	},
+	"rewards": {
+		"function": "story/overworld/age/02_wood_age"
+	}
+}

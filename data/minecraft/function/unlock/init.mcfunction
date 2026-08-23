@@ -18,6 +18,4 @@ scoreboard players set #lapis unlock 0
 # 특수 자원
 scoreboard players set #heat unlock 0
 scoreboard players set #cold unlock 0
-scoreboard players set #information unlock 0
-scoreboard players set #time unlock 0
 scoreboard players set #world_eye unlock 0

@@ -1,1 +1,0 @@
-function dimensions/overworld/drill/ui/info

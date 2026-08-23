@@ -1,0 +1,5 @@
+execute if score #GLOBAL accelerator_level matches 1 run function quantum/give_common {amount:1}
+execute if score #GLOBAL accelerator_level matches 2 run function quantum/give_common {amount:2}
+execute if score #GLOBAL accelerator_level matches 3 run function quantum/give_common {amount:3}
+execute if score #GLOBAL accelerator_level matches 4 run function quantum/give_common {amount:4}
+title @s actionbar {text:"일반 양자 얽힘 파편을 획득했습니다.",color:"aqua"}

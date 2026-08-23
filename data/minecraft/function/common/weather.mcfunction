@@ -1,2 +1,2 @@
 schedule clear frozen/weather
-weather clear
+schedule clear dried/weather

@@ -1,0 +1,1 @@
+execute in frozen run fill -19 67 34 -21 67 34 spruce_fence

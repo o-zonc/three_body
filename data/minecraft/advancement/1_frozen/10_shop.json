@@ -1,0 +1,17 @@
+{
+  "parent": "1_frozen/00_root",
+  "display": {
+    "icon": "chest",
+    "title": "이런 곳에서도 거래를",
+    "description": "얼어붙은 세계의 상점을 해금합니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "structure_unlocked": {
+      "trigger": "impossible"
+    }
+  }
+}

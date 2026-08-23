@@ -1,0 +1,17 @@
+{
+  "parent": "1_frozen/11_bridge",
+  "display": {
+    "icon": "compass",
+    "title": "미로 해금",
+    "description": "얼어붙은 세계의 미로를 해금합니다.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "structure_unlocked": {
+      "trigger": "impossible"
+    }
+  }
+}

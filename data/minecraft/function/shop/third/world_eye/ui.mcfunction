@@ -1,0 +1,10 @@
+function meta/sync
+function shop/third/world_eye/prepare
+data modify storage data tmp.third_eye.button set value {text:"§8[ 강화 완료 ]"}
+data modify storage data tmp.third_eye.next set value {text:""}
+execute if score #third_eye_lvl tmp matches ..2 run function resource/convert_cost_to_text_named {id:"third_eye",insertion:", "}
+execute if score #third_eye_lvl tmp matches ..2 run data modify storage data tmp.third_eye.next set value {text:"\n  다음 단계 연성량: ",color:"gray",extra:[{score:{name:"#third_eye_next_yield",objective:"tmp"},color:"dark_green"},{text:"개",color:"dark_green"}]}
+execute if score #third_eye_lvl tmp matches ..2 run data modify storage data tmp.third_eye.button set value {text:"§b§l[ 연성 장치 강화 ]",hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.third_eye.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1823"}}
+execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
+function util/blank
+tellraw @s ["",{text:"  [ 세계의 눈 상점 ]",color:"dark_green",bold:true},{text:"\n\n  강화 단계: ",color:"gray"},{score:{name:"#third_eye_lvl",objective:"tmp"},color:"white"},{text:" / 3",color:"gray"},{text:"\n  ",color:"gray"},{text:"세계의 눈 ",color:"dark_green"},{text:"보유량: ",color:"gray"},{score:{name:"#world_eye",objective:"material"},color:"dark_green"},{text:"개",color:"dark_green"},{text:"\n\n  연성 비용: ",color:"gray"},{text:"정보 3조각",color:"light_purple"},{text:", ",color:"gray"},{text:"시간 1조각",color:"dark_aqua"},{text:"\n  1회 연성량: ",color:"gray"},{score:{name:"#third_eye_yield",objective:"tmp"},color:"dark_green"},{text:"개",color:"dark_green"},{storage:"data",nbt:"tmp.third_eye.next",interpret:true},{text:"\n\n  "},{text:"[ 세계의 눈 연성 ]",color:"green",bold:true,hover_event:{action:"show_text",value:["",{text:"정보 3조각",color:"light_purple"},{text:"과 ",color:"gray"},{text:"시간 1조각",color:"dark_aqua"},{text:"을 소모합니다.",color:"gray"}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1824"}},{text:"   "},{storage:"data",nbt:"tmp.third_eye.button",interpret:true},{text:"\n"}]

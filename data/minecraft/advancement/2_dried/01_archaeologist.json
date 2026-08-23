@@ -1,0 +1,17 @@
+{
+  "parent": "2_dried/00_root",
+  "display": {
+    "icon": "brush",
+    "title": "고고학자",
+    "description": "메마른 땅 아래에 묻혀 있던 고대 문명의 장치를 발굴했습니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "relic_excavated": {
+      "trigger": "impossible"
+    }
+  }
+}

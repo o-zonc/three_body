@@ -1,0 +1,17 @@
+{
+	"parent": "0_overworld/23_factory",
+	"display": {
+		"icon": "observer",
+		"title": "현대",
+		"description": "문명은 정보를 다루고 세계를 자동화하기 시작합니다.\n\n§6•§7 보상: 금속 수급량이 증가합니다.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "impossible"
+		}
+	},
+	"rewards": {"function": "story/overworld/age/26_contemporary_age"}
+}

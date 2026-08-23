@@ -1,0 +1,17 @@
+{
+  "parent": "1_frozen/10_shop",
+  "display": {
+    "icon": "stripped_spruce_wood",
+    "title": "저편으로",
+    "description": "다리가 생겨 반대쪽으로 넘어갈 수 있게 되었습니다.\n\n§6•§7 보상: 얼어붙은 세계가 안정화됩니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "structure_unlocked": {
+      "trigger": "impossible"
+    }
+  }
+}

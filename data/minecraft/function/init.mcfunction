@@ -21,6 +21,7 @@ scoreboard objectives add roll_chance dummy
 scoreboard objectives add timer_sec dummy
 
 # 4. 보스바 로드
+bossbar add shield_charge {"text":"양자 보호막","color":"white"}
 bossbar add bossbar_frozen {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
 bossbar add bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
 bossbar add bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color":"dark_green"}
@@ -37,23 +38,31 @@ scoreboard objectives add first_dried dummy
 scoreboard objectives add n_civil dummy
 scoreboard objectives add current_dim dummy
 scoreboard objectives add sneaking_prev dummy
+scoreboard objectives add local_move_x dummy
+scoreboard objectives add local_move_y dummy
+scoreboard objectives add local_move_z dummy
+scoreboard objectives add local_move_yaw dummy
+scoreboard objectives add local_move_pitch dummy
+scoreboard objectives add local_move_return dummy
 
 # 6. 문명 전환 시스템 관리 스코어보드
 scoreboard objectives add era_paused dummy
 scoreboard objectives add run dummy
+scoreboard objectives add era_observed dummy
 
 # 7. 스토리 관리 스코어보드
 scoreboard objectives add intro dummy
 scoreboard objectives add intro_skip trigger
 scoreboard objectives add tutorial trigger
+scoreboard objectives add civilization_age dummy
+scoreboard objectives add alchemy_workshop dummy
 
 # 8. 자원 관리 스코어보드
 scoreboard objectives add material dummy
 scoreboard objectives add material_unlocked dummy
 scoreboard objectives add material_display dummy
-scoreboard objectives modify material_display displayname {"text":"자원","color":"gold"}
+scoreboard objectives modify material_display displayname {"text":"발전 현황","color":"gold"}
 scoreboard objectives setdisplay sidebar material_display
-scoreboard objectives modify material_display numberformat blank
 
 scoreboard objectives add cost dummy
 scoreboard objectives add tmp dummy
@@ -62,14 +71,44 @@ scoreboard objectives add var dummy
 scoreboard objectives add generate dummy
 scoreboard objectives add upgrade dummy
 scoreboard objectives add material_shop dummy
-scoreboard objectives add crystal_shop dummy
 scoreboard objectives add compress dummy
 
-scoreboard objectives add nether_workshop dummy
 scoreboard objectives add unlock_trigger trigger
 scoreboard objectives add upgrade_trigger trigger
+scoreboard objectives add item_trigger trigger
 
 # 10. 엘리베이터 스코어보드
 scoreboard objectives add elevator_unlocked dummy
 scoreboard objectives add elevator_jump minecraft.custom:minecraft.jump
 scoreboard objectives add elevator_jump_prev dummy
+
+# 11. 타임머신 레벨 (0~4)
+scoreboard objectives add time_machine_level dummy
+
+# 12. 공장 자동화
+scoreboard objectives add factory_level dummy
+scoreboard objectives add factory_unlocked dummy
+scoreboard objectives add factory_enabled dummy
+scoreboard objectives add factory_timer dummy
+scoreboard objectives add factory_status dummy
+scoreboard objectives add factory_trigger trigger
+scoreboard objectives add tool_trigger trigger
+scoreboard objectives add factory_elevator_unlocked dummy
+scoreboard objectives add factory_build_stage dummy
+
+# 13. 입자가속기·외계 간섭·보호막
+scoreboard objectives add accelerator_level dummy
+scoreboard objectives add accelerator_timer dummy
+scoreboard objectives add experiment_cooldown dummy
+scoreboard objectives add accelerator_trigger trigger
+scoreboard objectives add alien_interference dummy
+scoreboard objectives add alien_timer dummy
+scoreboard objectives add shield_charge dummy
+scoreboard objectives add shield_maintenance dummy
+
+# 14. 극야/여명 정산
+scoreboard objectives add reckoning_ready dummy
+scoreboard objectives add dawn_information_shop dummy
+scoreboard objectives add dawn_time_shop dummy
+scoreboard objectives add dawn_bonus_shop dummy
+scoreboard objectives add dawn_reactor_purchased dummy

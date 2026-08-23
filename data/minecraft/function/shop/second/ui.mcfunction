@@ -1,0 +1,22 @@
+# Macro args: id, name, color, effect, unit, trigger
+scoreboard players set #heat_second_kind tmp 1
+scoreboard players set #cold_second_kind tmp 1
+scoreboard players set #get_second_kind tmp 2
+scoreboard players set #gold_second_kind tmp 3
+scoreboard players set #diamond_second_kind tmp 3
+$function shop/second/prepare {id:"$(id)"}
+function resource/convert_cost_to_text_named {id:"second_shop",insertion:", "}
+data modify storage data tmp.second_shop.button set value {text:"§8[ 강화 완료 ]"}
+data modify storage data tmp.second_shop.priority set value {text:""}
+data modify storage data tmp.second_shop.amount set value {text:""}
+data modify storage data tmp.second_shop.next set value {text:""}
+$data modify storage data tmp.second_shop.value set value {score:{name:"#second_current",objective:"tmp"},color:"white",extra:[{text:"§r$(unit)",color:"gray"}]}
+$execute if score #$(id)_second_kind tmp matches 1 run data modify storage data tmp.second_shop.amount set value {text:"\n  수급량: 1(",color:"gray",extra:[{text:"+",color:"dark_aqua"},{score:{name:"#second_common_bonus",objective:"tmp"},color:"dark_aqua"},{text:"+",color:"light_purple"},{score:{name:"#second_extreme_multiplier",objective:"tmp"},color:"light_purple"},{text:")개 ",color:"gray"},{text:"⁂",color:"light_purple",hover_event:{action:"show_text",value:["",{text:"수급량 구성\n\n",color:"gray"},{text:"모든 자원 생산량 증가: +",color:"dark_aqua"},{score:{name:"#second_common_bonus",objective:"tmp"},color:"dark_aqua"},{text:"\n극한 환경 수급 증가: +",color:"light_purple"},{score:{name:"#second_extreme_multiplier",objective:"tmp"},color:"light_purple"}]}}]}
+$execute if score #$(id)_second_kind tmp matches 2 run data modify storage data tmp.second_shop.priority set value {text:" ♣",color:"gold",hover_event:{action:"show_text",value:{text:"이 보너스는 1층 §a자원 생산량 증가§r보다 먼저 적용됩니다."}}}
+$execute if score #$(id)_second_kind tmp matches 3 run data modify storage data tmp.second_shop.value set value {score:{name:"#second_current",objective:"tmp"},color:"white",extra:[{text:"§r(+",color:"gray"},{score:{name:"#second_common_effective",objective:"tmp"},color:"white"},{text:") §r$(unit) ",color:"gray"},{text:"♣",color:"gold",hover_event:{action:"show_text",value:["",{text:"금",color:"gold"},{text:"과 ",color:"gray"},{text:"다이아몬드",color:"aqua"},{text:"에는 모든 자원 생산량 증가가 ",color:"gray"},{text:"[ 극한 환경 수급 ]",color:"light_purple"},{text:"의 수치 ",color:"gray"},{score:{name:"#second_extreme_multiplier",objective:"tmp"},color:"white"},{text:"배로 적용됩니다.\n\n현재 모든 자원 생산량 증가: ",color:"gray"},{score:{name:"#second_common_bonus",objective:"tmp"},color:"white"},{text:"\n현재 극한 환경 수급 수치: ",color:"gray"},{score:{name:"#second_extreme_multiplier",objective:"tmp"},color:"white"}]}}]}
+$execute if score #second_lvl tmp matches ..3 run data modify storage data tmp.second_shop.next set value {text:"§r\n  다음 단계: ",color:"gray",extra:[{score:{name:"#second_next",objective:"tmp"},color:"aqua"},{text:"§r$(unit)",color:"gray"}]}
+$execute if score #$(id)_second_kind tmp matches 3 if score #second_lvl tmp matches ..3 run data modify storage data tmp.second_shop.next set value {text:"§r\n  다음 단계: ",color:"gray",extra:[{score:{name:"#second_next",objective:"tmp"},color:"aqua"},{text:"§r(+",color:"gray"},{score:{name:"#second_common_effective",objective:"tmp"},color:"aqua"},{text:") §r$(unit)",color:"gray"}]}
+$execute if score #second_lvl tmp matches ..3 run data modify storage data tmp.second_shop.button set value {text:"§b§l[ 업그레이드 ]",hover_event:{action:"show_text",value:["",{storage:"data",nbt:"tmp.shop_advancement_discount_note",interpret:true},{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.second_shop.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set $(trigger)"}}
+execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
+function util/blank
+$tellraw @s ["",{text:"  [ $(name) ]",color:"$(color)",bold:true},{text:"\n\n  현재 단계: ",color:"gray"},{score:{name:"#second_lvl",objective:"tmp"},color:"white"},{text:" / 4",color:"gray"},{text:"\n  $(effect): ",color:"gray"},{storage:"data",nbt:"tmp.second_shop.value",interpret:true},{storage:"data",nbt:"tmp.second_shop.priority",interpret:true},{storage:"data",nbt:"tmp.second_shop.amount",interpret:true},{storage:"data",nbt:"tmp.second_shop.next",interpret:true},{text:"\n\n  "},{storage:"data",nbt:"tmp.second_shop.button",interpret:true},{text:"\n"}]

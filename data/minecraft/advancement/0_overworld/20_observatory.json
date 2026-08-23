@@ -1,0 +1,17 @@
+{
+  "parent": "0_overworld/12_bronze_age",
+  "display": {
+    "icon": "spyglass",
+    "title": "관측소",
+    "description": "별의 움직임을 관측해 난세기의 주기를 예측합니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "structure_unlocked": {
+      "trigger": "impossible"
+    }
+  }
+}

@@ -4,3 +4,4 @@ advancement grant @a from 2_dried/00_root
 advancement grant @a from 3_polarnight/00_root
 advancement grant @a from 4_dawn/00_root
 advancement grant @a from 5_cosmos/00_root
+advancement grant @a from 6_disaster/00_root

@@ -1,1 +1,1 @@
-give @a orange_dye[custom_name={"text":"메마른 이동기", color:gold, italic:false}, custom_data={"dried_move":1b}, lore=[{"text":"기계 - 웅크리기로 사용", color:blue, italic:false},{"text":"모래먼지만 날리는 그곳으로 가고 싶다고요?", color:"gray", italic:false}], item_model="dune_armor_trim_smithing_template"]
+give @s orange_dye[custom_name={"text":"메마른 이동기", color:gold, italic:false}, custom_data={"dried_move":1b}, lore=[{"text":"기계 - 웅크리기로 사용", color:blue, italic:false},{"text":""},{"text":"모래먼지만 날리는 그곳으로 가고 싶다고요?", color:"gray", italic:false}], item_model="dune_armor_trim_smithing_template"]

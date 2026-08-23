@@ -1,0 +1,17 @@
+{
+  "display": {
+    "icon": "wither_rose",
+    "title": "재앙",
+    "description": "문명은 끝을 맞이하고, 그 흔적은 기록으로 남습니다.",
+    "background": "block/black_concrete",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "manual_test": {
+      "trigger": "impossible"
+    }
+  }
+}

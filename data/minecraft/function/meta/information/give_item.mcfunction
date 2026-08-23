@@ -1,0 +1,1 @@
+$give @s minecraft:amethyst_shard[minecraft:custom_data={three_body:{meta:"information"}},minecraft:custom_name={text:"정보",color:"light_purple",italic:false},minecraft:lore=[{"text":"자원", "color":"gold",italic:false},{"text":""},{text:"문명의 발전과 멸망으로부터 남겨진 기록과 지식",color:"gray",italic:false}]] $(amount)

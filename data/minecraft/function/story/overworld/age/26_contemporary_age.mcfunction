@@ -1,2 +1,3 @@
-tellraw @s {"text":"현대에 도달했습니다. 문명은 정보를 다루고 세계를 자동화하기 시작합니다.","color":"white"}
-playsound entity.player.levelup master @s ~ ~ ~ 0.8 1.35
+execute unless score #overworld civilization_age matches 8.. run scoreboard players set #overworld civilization_age 8
+function resource/advancement_reward/copper/enable
+function resource/advancement_reward/iron/enable

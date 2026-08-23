@@ -1,0 +1,17 @@
+{
+  "parent": "2_dried/01_archaeologist",
+  "display": {
+    "icon": "clock",
+    "title": "고대 기술의 복원",
+    "description": "고대 문명은 어느 정도로 발전한 문명이었던 걸까요?",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "relic_level_two": {
+      "trigger": "impossible"
+    }
+  }
+}

@@ -1,1 +1,0 @@
-function resource/overworld/coal/ui/info

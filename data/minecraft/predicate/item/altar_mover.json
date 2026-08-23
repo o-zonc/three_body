@@ -1,0 +1,12 @@
+{
+  "condition": "entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "mainhand": {
+        "items": "cyan_dye",
+        "components": { "custom_data": { "altar_move": 1 } }
+      }
+    }
+  }
+}

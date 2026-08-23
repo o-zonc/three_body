@@ -1,0 +1,17 @@
+{
+	"parent": "0_overworld/21_alchemy_workshop",
+	"display": {
+		"icon": "emerald",
+		"title": "중세",
+		"description": "문명은 사회와 교역이라는 새로운 힘을 발견했습니다.\n\n§7§o기술이 발전하기 위해서는 충분한 양의 금속이 필요합니다.\n\n§6•§7 보상: 나무 수급량이 3배 증가합니다.",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true
+	},
+	"criteria": {
+		"manual_test": {
+			"trigger": "impossible"
+		}
+	},
+	"rewards": {"function": "story/overworld/age/24_medieval_age"}
+}

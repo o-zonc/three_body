@@ -5,7 +5,6 @@
 # ============================================================
 
 # 스펙테이터 시점 고정 유지 (풀리는 것 방지)
-# @n은 잘못된 선택자입니다. @e[tag=...,limit=1]을 사용해야 카메라에 시점이 정상적으로 고정됩니다.
 execute as @a run spectate @e[tag=story_camera,limit=1]
 
 # 현재 떠 있는 모든 텍스트 줄을 위로 살짝 이동 → 스크롤 효과
@@ -53,4 +52,4 @@ execute if score #t intro matches 1075 as @e[tag=story_camera,limit=1] at @s run
 execute if score #t intro matches ..1200 run schedule function story/intro/03_scroll_tick 1t
 
 # 스크롤 종료 → 마무리로
-execute if score #t intro matches 1200.. run function story/intro/98_end
+execute if score #t intro matches 1200.. run function story/intro/96_end
