@@ -27,7 +27,7 @@ execute if score #blue unlock matches 1 run scoreboard players set blue material
 execute if score #world_eye unlock matches 1 run scoreboard players set world_eye material_display 100
 
 
-scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"unwn","color":"white","shadow_color":-16777216, obfuscated:true}]
+scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"unwn","color":"white","shadow_color":-16777216,"obfuscated":true}]
 execute if score #overworld civilization_age matches 1 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"목기 시대","color":"gold","shadow_color":-16777216}]
 execute if score #overworld civilization_age matches 2 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"석기 시대","color":"gray","shadow_color":-16777216}]
 execute if score #overworld civilization_age matches 3 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"청동기 시대","color":"#C87941","shadow_color":-16777216}]
@@ -46,7 +46,7 @@ execute if score #copper unlock matches 1 run scoreboard players display name co
 execute if score #iron unlock matches 1 run scoreboard players display name iron material_display {"text":"철","color":"white","shadow_color":-16777216}
 execute if score #emerald unlock matches 1 run scoreboard players display name emerald material_display {"text":"에메랄드","color":"green","shadow_color":-16777216}
 execute if score #lapis unlock matches 1 run scoreboard players display name lapis material_display {"text":"청금석","color":"blue","shadow_color":-16777216}
-execute if score #gold unlock matches 1 run scoreboard players display name gold material_display {"text":"금","color":"gold",shadow_color:-7710208}
+execute if score #gold unlock matches 1 run scoreboard players display name gold material_display {"text":"금","color":"gold","shadow_color":-7710208}
 execute if score #heat unlock matches 1 run scoreboard players display name heat material_display {"text":"열기","color":"red","shadow_color":-16777216}
 execute if score #diamond unlock matches 1 run scoreboard players display name diamond material_display {"text":"다이아몬드","color":"aqua","shadow_color":-16741750}
 execute if score #cold unlock matches 1 run scoreboard players display name cold material_display {"text":"냉기","color":"aqua","shadow_color":-16777216}
@@ -67,4 +67,4 @@ execute if score #diamond unlock matches 1 run scoreboard players display number
 execute if score #cold unlock matches 1 run scoreboard players display numberformat cold material_display fixed {"score":{"name":"#cold","objective":"material"},"color":"aqua","shadow_color":-16777216}
 execute if score #yellow unlock matches 1 run scoreboard players display numberformat yellow material_display fixed {"text":"노랑","color":"yellow","shadow_color":-1704192}
 execute if score #blue unlock matches 1 run scoreboard players display numberformat blue material_display fixed {"text":"파랑","color":"blue","shadow_color":-16746497}
-execute if score #world_eye unlock matches 1 run scoreboard players display numberformat world_eye material_display fixed {"text":"세계의 눈","color":"dark_green","shadow_color":-16777216}
+execute if score #world_eye unlock matches 1 run scoreboard players display numberformat world_eye material_display fixed {"score":{"name":"#world_eye","objective":"material"},"color":"dark_green","shadow_color":-16777216}
