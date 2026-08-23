@@ -8,4 +8,5 @@ execute if score #special_second_lvl upgrade matches 4.. run scoreboard players 
 execute if entity @a[nbt={Dimension:"minecraft:frozen"}] if entity @a[advancements={1_frozen/01_chaos_survivor=true}] run scoreboard players set #advancement_reward_multiplier tmp 2
 execute if entity @a[nbt={Dimension:"minecraft:frozen"}] if entity @a[advancements={1_frozen/01_chaos_survivor=true}] run scoreboard players operation #production_amount tmp *= #advancement_reward_multiplier tmp
 
+function dawn/amplifier/apply {score:"#production_amount",dim:"frozen",final:150}
 return run scoreboard players get #production_amount tmp
