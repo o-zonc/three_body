@@ -32,11 +32,14 @@ function tool/tick
 
 function resource/product_managing_by_tick
 function factory/tick
-function resource/unlock_trigger
-function resource/upgrade_trigger
-function item/purchase_trigger
-function dimensions/overworld/shop/shop_trigger
-function factory/trigger
+
+# trigger 핸들러는 실제 입력이 들어온 플레이어에게만 실행합니다.
+execute as @a[tag=player,scores={unlock_trigger=1..}] run function resource/unlock_trigger
+execute as @a[tag=player,scores={upgrade_trigger=1..}] run function resource/upgrade_trigger
+execute as @a[tag=player,scores={item_trigger=1..}] run function item/purchase_trigger
+execute as @a[tag=player,scores={shop_trigger=1..}] run function dimensions/overworld/shop/shop_trigger
+execute as @a[tag=player,scores={factory_trigger=1..}] run function factory/trigger
+
 function accelerator/tick
 execute as @a[scores={accelerator_trigger=1..}] run function accelerator/trigger
 function time_machine/tick
