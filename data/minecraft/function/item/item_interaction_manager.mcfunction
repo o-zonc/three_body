@@ -9,5 +9,6 @@ execute if entity @s[type=interaction,tag=item,tag=frozen] if score #level alche
 execute if entity @s[type=interaction,tag=item,tag=frozen] unless score #level alchemy_workshop matches 2.. on target run title @s actionbar {"text":"연금술 공방 Lv. 2가 필요합니다.","color":"red"}
 execute if entity @s[type=interaction,tag=item,tag=overworld] if score #level alchemy_workshop matches 2.. on target run function item/ui/interact {id:"overworld",name:"오버월드 이동기",color:"dark_green",description:"오버월드로 이동합니다. 한 번 사용하면 사라집니다.",trigger:2104}
 execute if entity @s[type=interaction,tag=item,tag=overworld] unless score #level alchemy_workshop matches 2.. on target run title @s actionbar {"text":"연금술 공방 Lv. 2가 필요합니다.","color":"red"}
-# 2회차에서 우주 이동기 판매대를 추가하고 아래 조건을 활성화한다. (공방 Lv. 3)
-# execute if entity @s[type=interaction,tag=item,tag=cosmos] if score #level alchemy_workshop matches 3.. on target run function item/ui/interact {id:"cosmos",name:"우주 이동기",color:"dark_gray",description:"우주로 이동합니다.",trigger:2107}
+# 우주 이동기 단말은 다른 이동기와 동일하게 item 태그 계열에서 처리합니다.
+# 시간축 개방 이전에는 space/mover/interact가 조용히 종료합니다.
+execute if entity @s[type=interaction,tag=item,tag=cosmos] on target run function space/mover/interact
