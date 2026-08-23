@@ -37,6 +37,8 @@ function dimensions/overworld/shop/shop_trigger
 function factory/trigger
 function accelerator/tick
 function accelerator/trigger
+function time_machine/tick
+execute as @a[scores={time_machine_trigger=1..}] run function time_machine/trigger
 function shop/alchemy/jewel/tick
 function dried/relic/tick
 function dried/advancement/tick
