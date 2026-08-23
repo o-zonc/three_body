@@ -4,6 +4,9 @@
 # 기존 월드에서는 새 meta 점수가 없을 수 있으므로 최초 접근 시 잠김(0)으로 생성합니다.
 $execute unless score #dawn_$(id)_amp meta matches 0.. run scoreboard players set #dawn_$(id)_amp meta 0
 
+# 기존 진행 세이브도 화면상 Lv.1 이상이면 시각 상태를 동기화합니다.
+$execute if score #dawn_$(id)_amp meta matches 2.. run function dawn/amplifier/visual/$(id)
+
 $function dawn/amplifier/cost/$(id)
 function resource/convert_cost_to_text_named {id:"dawn_amp",insertion:", "}
 function util/blank
