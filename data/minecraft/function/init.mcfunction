@@ -99,6 +99,8 @@ scoreboard objectives add factory_build_stage dummy
 # 13. 입자가속기·외계 간섭·보호막
 scoreboard objectives add accelerator_level dummy
 scoreboard objectives add accelerator_timer dummy
+scoreboard objectives add accelerator_disabled dummy
+scoreboard objectives add accelerator_repair_timer dummy
 scoreboard objectives add experiment_cooldown dummy
 scoreboard objectives add experiment_delay dummy
 scoreboard objectives add experiment_type dummy
