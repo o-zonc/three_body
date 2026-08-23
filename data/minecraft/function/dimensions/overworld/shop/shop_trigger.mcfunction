@@ -49,7 +49,7 @@ execute as @a[tag=player] if score @s shop_trigger matches 1814 run function sho
 execute as @a[tag=player] if score @s shop_trigger matches 1815 run function shop/second/purchase {id:"special",name:"극한 환경 수급",color:"light_purple",effect:"열기·냉기 수급량 보너스",unit:"개",trigger:1815}
 execute as @a[tag=player] if score @s shop_trigger matches 1816 run function shop/second/purchase {id:"get",name:"기초 생산 공정",color:"dark_aqua",effect:"모든 기본 생산량 보너스",unit:"개",trigger:1816}
 
-# 자원 상점 3층 (182X)
+# 자원 상점 3층 / 여명 상호작용 (182X~183X)
 execute as @a[tag=player] if score @s shop_trigger matches 1821 run function shop/third/storage_purchase {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
 execute as @a[tag=player] if score @s shop_trigger matches 1822 run function shop/third/storage_purchase {id:"time",name:"시간",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
 execute as @a[tag=player] if score @s shop_trigger matches 1823 run function shop/third/world_eye/purchase
@@ -58,7 +58,10 @@ execute as @a[tag=player] if score @s shop_trigger matches 1825 run function met
 execute as @a[tag=player] if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
 execute as @a[tag=player] if score @s shop_trigger matches 1827 run function shop/third/expansion/information
 execute as @a[tag=player] if score @s shop_trigger matches 1828 run function shop/third/expansion/time
-execute as @a[tag=player] if score @s shop_trigger matches 1830 run function dawn/bonus_shop/purchase_reactor
+execute as @a[tag=player] if score @s shop_trigger matches 1830 run function dawn/reactor/craft
+execute as @a[tag=player] if score @s shop_trigger matches 1831 run function dawn/amplifier/purchase {id:"overworld",name:"오버월드",color:"green",trigger:1831}
+execute as @a[tag=player] if score @s shop_trigger matches 1832 run function dawn/amplifier/purchase {id:"dried",name:"메마른 세계",color:"gold",trigger:1832}
+execute as @a[tag=player] if score @s shop_trigger matches 1833 run function dawn/amplifier/purchase {id:"frozen",name:"얼어붙은 세계",color:"aqua",trigger:1833}
 
 # 얼어붙은 차원 시설 (19XX)
 execute as @a[tag=player] if score @s shop_trigger matches 1901 run function frozen/interaction/purchase_shop
