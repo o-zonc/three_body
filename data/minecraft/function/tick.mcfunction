@@ -18,7 +18,9 @@ function mover/tick
 function interaction/detect
 
 # 자원 API
-function var_init
+# 무거운 기본값/마이그레이션 초기화는 load에서만 실행하고,
+# tick에서는 trigger 재활성화와 런타임 해금 감지만 수행합니다.
+function var_init/runtime
 # 정보/시간의 실제 원장은 전용 아이템 + meta 보관소다.
 # material 점수는 현재 원장의 합계를 표시하는 파생값으로만 사용한다.
 execute as @a[tag=player,limit=1] run function meta/sync
