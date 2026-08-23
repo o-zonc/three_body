@@ -8,3 +8,4 @@ function quantum/give_broken with storage data tmp.quantum_withdraw
 scoreboard players set #broken_quantum_storage var 0
 playsound entity.item.pickup master @s ~ ~ ~ 0.8 1.2
 title @s actionbar [{score:{name:"#broken_quantum_withdraw",objective:"tmp"},color:"white"},{text:"개의 깨진 양자 얽힘 파편을 인출했습니다.",color:"light_purple"}]
+function quantum/storage/ui
