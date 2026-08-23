@@ -15,3 +15,4 @@ execute if score @s accelerator_trigger matches 20 run function shield/charge_co
 execute if score @s accelerator_trigger matches 21 run function shield/charge_great
 execute if score @s accelerator_trigger matches 22 run function shield/charge_special
 scoreboard players set @s accelerator_trigger 0
+scoreboard players enable @s accelerator_trigger
