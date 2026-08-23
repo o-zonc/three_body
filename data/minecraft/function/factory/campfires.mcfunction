@@ -33,7 +33,6 @@ execute in overworld if score #lapis factory_unlocked matches 1 unless score #la
 execute in minecraft:dried if score #heat factory_unlocked matches 1 if score #heat factory_enabled matches 1 run setblock -6 66 0 campfire[lit=true]
 execute in minecraft:dried if score #heat factory_unlocked matches 1 unless score #heat factory_enabled matches 1 run setblock -6 66 0 campfire[lit=false]
 
-# 공장 interaction이 로드되어 있으면 즉시 갱신하고, 아니면 첫 오버월드 tick까지 미룹니다.
-execute if entity @e[type=interaction,tag=factory] run function factory/refresh_lights
-execute if entity @e[type=interaction,tag=factory] run scoreboard players set #factory_light_dirty var 0
-execute unless entity @e[type=interaction,tag=factory] run scoreboard players set #factory_light_dirty var 1
+# 공장 상태가 실제로 바뀌는 순간에만 표시등을 갱신합니다.
+# 기존 dirty 플래그 재시도는 공장 interaction이 없는 세이브에서 영구적인 전수 검색을 만들 수 있어 제거합니다.
+execute in overworld if entity @e[type=interaction,tag=factory] run function factory/refresh_lights
