@@ -1,0 +1,18 @@
+{
+  "parent": "0_overworld/22_particle_accelerator",
+  "display": {
+    "icon": "firework_star",
+    "title": "중입자 충돌",
+    "description": "더 높은 에너지의 중입자 충돌에서 기존 이론으로 설명할 수 없는 물질 반응을 관측합니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "experiment_completed": {
+      "trigger": "impossible"
+    }
+  },
+  "rewards": {"function": "story/overworld/advancement/heavy_ion_experiment"}
+}
