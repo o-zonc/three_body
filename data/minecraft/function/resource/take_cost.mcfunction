@@ -1,4 +1,6 @@
 # tmp.cost 의 목록에 있는 자원 요구 목록만큼 자원을 차감
+# resource/check_cost가 흑요석 대체 결제를 선택했다면 다른 자원을 건드리지 않고 흑요석 1개만 소모합니다.
+execute if score #obsidian_cost_bypass tmp matches 1 run return run function resource/cost/take_obsidian_bypass
 
 scoreboard players set #cost_wood cost 0
 scoreboard players set #cost_stone cost 0
@@ -56,7 +58,7 @@ scoreboard players operation #cold material -= #cost_cold cost
 function meta/information/take_cost
 function meta/time/take_cost
 scoreboard players operation #world_eye material -= #cost_world_eye cost
-scoreboard players operation #obsidian material -= #cost_obsidian cost
+function meta/obsidian/take_cost
 scoreboard players operation #compressed_overworld_crystal material -= #cost_compressed_overworld_crystal cost
 scoreboard players operation #compressed_nether_crystal material -= #cost_compressed_nether_crystal cost
 scoreboard players operation #gold material -= #cost_gold cost
@@ -68,3 +70,4 @@ scoreboard players operation #reverse_exp_lvl tmp = #cost_exp_lvl cost
 scoreboard players operation #reverse_exp_lvl tmp *= #minus tmp
 execute store result storage data tmp.exp_lvl.lvl int 1 run scoreboard players get #reverse_exp_lvl tmp
 function player/add_exp_lvl with storage data tmp.exp_lvl
+scoreboard players set #obsidian_cost_bypass tmp 0
