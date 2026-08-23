@@ -1,4 +1,4 @@
-execute unless entity @a[tag=player,nbt={Dimension:"minecraft:dried"}] run return 0
+execute unless score #GLOBAL current_dim matches 1 run return 0
 execute if score #GLOBAL era_paused matches 1 run return 0
 execute if score #dried_relic_level upgrade matches 1 run return 0
 execute if score #dried_relic_timer generate matches 1.. run scoreboard players remove #dried_relic_timer generate 1
