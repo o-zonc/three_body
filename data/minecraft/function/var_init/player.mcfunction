@@ -11,5 +11,7 @@ scoreboard players enable @s scene_trigger
 scoreboard players enable @s tool_trigger
 scoreboard players enable @s factory_trigger
 scoreboard players enable @s accelerator_trigger
+scoreboard players enable @s intro_skip
+scoreboard players enable @s tutorial
 
 scoreboard players set @s trigger_init 1
