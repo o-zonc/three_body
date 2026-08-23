@@ -9,7 +9,7 @@ execute if score #hole_level upgrade matches 2.. run return 0
 
 scoreboard players set #hole_upgrade_cost tmp 16
 execute if score #hole_level upgrade matches 1 run scoreboard players set #hole_upgrade_cost tmp 96
-execute unless score #world_eye material >= #hole_upgrade_cost tmp run title @s actionbar [{text:"세계의 눈 ",color:"dark_green"},{score:{name:"#hole_upgrade_cost",objective:"tmp"},color:"white"},{text:"개가 필요합니다.",color:"red"}]
+execute unless score #world_eye material >= #hole_upgrade_cost tmp run title @s actionbar [{text:"세계의 눈 ",color:"dark_green"},{score:{name:"#hole_upgrade_cost",objective:"tmp"},color:"dark_green"},{text:"개",color:"dark_green"},{text:"가 필요합니다.",color:"red"}]
 execute unless score #world_eye material >= #hole_upgrade_cost tmp at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 0.8 0.5
 execute unless score #world_eye material >= #hole_upgrade_cost tmp run return 0
 
