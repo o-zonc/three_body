@@ -10,7 +10,8 @@ execute if score @s experiment_type matches 11 if score #GLOBAL accelerator_leve
 execute if score @s experiment_type matches 11 if score #GLOBAL accelerator_level matches 3 run function quantum/give_broken {amount:60}
 execute if score @s experiment_type matches 11 if score #GLOBAL accelerator_level matches 4 run function quantum/give_broken {amount:80}
 
-# 시공간 붕괴: 최종 단계답게 매우 많은 깨진 파편을 남기고 추가 손실을 발생시킵니다.
+# 시공간 붕괴: 실패하더라도 균열 관측 자체는 완료된 실험으로 기록합니다.
+execute if score @s experiment_type matches 12 run scoreboard players set #spacetime_experiment_done var 1
 execute if score @s experiment_type matches 12 run function quantum/give_broken {amount:160}
 execute if score @s experiment_type matches 12 run data remove storage data tmp.cost
 execute if score @s experiment_type matches 12 run data modify storage data tmp.cost set from storage data const.accelerator.experiment.spacetime.failure_loss
