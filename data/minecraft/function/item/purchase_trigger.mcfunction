@@ -11,5 +11,8 @@ execute as @a[tag=player] if score @s item_trigger matches 2106 if score #level 
 execute as @a[tag=player] if score @s item_trigger matches 2191 run function quantum/storage/deposit
 execute as @a[tag=player] if score @s item_trigger matches 2192 run function quantum/storage/withdraw
 
+# 미래 진입 단말
+execute as @a[tag=player] if score @s item_trigger matches 2193 run function future/enter
+
 execute as @a[tag=player] if score @s item_trigger matches 1.. run scoreboard players reset @s item_trigger
 scoreboard players enable @a[tag=player] item_trigger
