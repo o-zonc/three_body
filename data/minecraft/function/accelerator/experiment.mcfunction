@@ -1,6 +1,9 @@
 # 실험 종류는 accelerator_trigger 값으로 선택합니다.
 # 10: 양자 충돌 실험 / 11: 중입자 충돌 실험 / 12: 시공간 붕괴 실험
 
+execute if entity @s[tag=accelerator_experiment_running] run title @s actionbar {text:"이미 실험이 진행 중입니다.",color:"red"}
+execute if entity @s[tag=accelerator_experiment_running] run return 0
+
 execute unless score #GLOBAL accelerator_level matches 1.. run title @s actionbar {text:"입자가속기를 먼저 가동해야 합니다.",color:"red"}
 execute unless score #GLOBAL accelerator_level matches 1.. run return 0
 
@@ -21,38 +24,11 @@ execute unless score #experiment_cost_ok tmp matches 1 run title @s actionbar {t
 execute unless score #experiment_cost_ok tmp matches 1 run return 0
 function resource/cost/take
 
-# 양자 충돌 실험: 한 등급만 획득. 레벨이 높아질수록 고급 결과 확률과 지급량이 증가합니다.
-execute if score @s accelerator_trigger matches 10 store result score #experiment_roll tmp run random value 0..99
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 1 if score #experiment_roll tmp matches 0..69 run function accelerator/reward_common
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 1 if score #experiment_roll tmp matches 70..89 run function accelerator/reward_great
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 1 if score #experiment_roll tmp matches 90..99 run function accelerator/reward_special
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 2 if score #experiment_roll tmp matches 0..64 run function accelerator/reward_common
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 2 if score #experiment_roll tmp matches 65..87 run function accelerator/reward_great
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 2 if score #experiment_roll tmp matches 88..99 run function accelerator/reward_special
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 3 if score #experiment_roll tmp matches 0..59 run function accelerator/reward_common
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 3 if score #experiment_roll tmp matches 60..84 run function accelerator/reward_great
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 3 if score #experiment_roll tmp matches 85..99 run function accelerator/reward_special
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 4 if score #experiment_roll tmp matches 0..54 run function accelerator/reward_common
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 4 if score #experiment_roll tmp matches 55..81 run function accelerator/reward_great
-execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 4 if score #experiment_roll tmp matches 82..99 run function accelerator/reward_special
+scoreboard players operation @s experiment_type = @s accelerator_trigger
+execute if score @s accelerator_trigger matches 10 store result score @s experiment_delay run data get storage data const.accelerator.experiment.quantum.delay
+execute if score @s accelerator_trigger matches 11 store result score @s experiment_delay run data get storage data const.accelerator.experiment.heavy.delay
+execute if score @s accelerator_trigger matches 12 store result score @s experiment_delay run data get storage data const.accelerator.experiment.spacetime.delay
+tag @s add accelerator_experiment_running
 
-# 중입자 충돌 실험: 일반/굉장한/특별한 파편을 각각 독립 확률로 추첨합니다.
-execute if score @s accelerator_trigger matches 11 run scoreboard players set #experiment_mode tmp 2
-execute if score @s accelerator_trigger matches 11 run function accelerator/reward_common
-execute if score @s accelerator_trigger matches 11 run function accelerator/reward_great
-execute if score @s accelerator_trigger matches 11 run function accelerator/reward_special
-
-# 시공간 붕괴 실험: 세 등급을 각각 독립 추첨하며, 흑요석 1개를 추가 지급합니다.
-execute if score @s accelerator_trigger matches 12 run scoreboard players set #experiment_mode tmp 3
-execute if score @s accelerator_trigger matches 12 run function accelerator/reward_common
-execute if score @s accelerator_trigger matches 12 run function accelerator/reward_great
-execute if score @s accelerator_trigger matches 12 run function accelerator/reward_special
-execute if score @s accelerator_trigger matches 12 run give @s minecraft:obsidian 1
-
-# 재정비 시간은 레벨 상수에 따라 결정합니다.
-execute if score #GLOBAL accelerator_level matches 1 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."1".experiment_cooldown
-execute if score #GLOBAL accelerator_level matches 2 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."2".experiment_cooldown
-execute if score #GLOBAL accelerator_level matches 3 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."3".experiment_cooldown
-execute if score #GLOBAL accelerator_level matches 4 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."4".experiment_cooldown
-scoreboard players set #experiment_mode tmp 0
-playsound block.beacon.activate weather @s ~ ~ ~ 1 1.5
+playsound block.beacon.ambient master @s ~ ~ ~ 0.8 0.65
+title @s actionbar {text:"입자가속기 실험을 진행 중입니다...",color:"aqua"}
