@@ -76,6 +76,7 @@ scoreboard objectives add compress dummy
 scoreboard objectives add unlock_trigger trigger
 scoreboard objectives add upgrade_trigger trigger
 scoreboard objectives add item_trigger trigger
+scoreboard objectives add trigger_init dummy
 
 # 10. 엘리베이터 스코어보드
 scoreboard objectives add elevator_unlocked dummy
