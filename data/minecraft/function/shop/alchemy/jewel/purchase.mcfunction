@@ -25,6 +25,7 @@ execute if score #jewel_reward tmp matches ..0 run return 0
 # Lv.0: 나무 1 + 돌 1
 # Lv.1: 돌 1 + 구리 1
 # Lv.2: 철 1
+# 세공은 구매/업그레이드가 아닌 자원 변환이므로 흑요석 대체가 불가능합니다.
 data remove storage data tmp.cost
 $data modify storage data tmp.cost append value {type:"$(id)",amount:1}
 execute if score #level alchemy_workshop matches 0 run data modify storage data tmp.cost append value {type:"wood",amount:1}
@@ -32,6 +33,7 @@ execute if score #level alchemy_workshop matches 0 run data modify storage data 
 execute if score #level alchemy_workshop matches 1 run data modify storage data tmp.cost append value {type:"stone",amount:1}
 execute if score #level alchemy_workshop matches 1 run data modify storage data tmp.cost append value {type:"copper",amount:1}
 execute if score #level alchemy_workshop matches 2.. run data modify storage data tmp.cost append value {type:"iron",amount:1}
+data modify storage data tmp.cost append value {type:"no_obsidian",amount:1}
 
 execute store result score #jewel_can_pay tmp run function resource/check_cost
 execute unless score #jewel_can_pay tmp matches 1 run title @s actionbar {"text":"세공에 필요한 자원이 부족합니다.","color":"red"}
