@@ -14,7 +14,8 @@ execute unless score #dawn_reactor_time_before tmp matches 1.. run title @s acti
 execute unless score #dawn_reactor_time_before tmp matches 1.. run return 0
 
 # 현재 소지량 전부를 제작 비용으로 설정합니다.
-data modify storage data tmp.cost set value [{type:"information",amount:0},{type:"time",amount:0}]
+# 리액터 반응은 핵심 메커니즘이므로 흑요석으로 대체할 수 없습니다.
+data modify storage data tmp.cost set value [{type:"information",amount:0},{type:"time",amount:0},{type:"no_obsidian",amount:1}]
 execute store result storage data tmp.cost[{type:"information"}].amount int 1 run scoreboard players get #dawn_reactor_info_before tmp
 execute store result storage data tmp.cost[{type:"time"}].amount int 1 run scoreboard players get #dawn_reactor_time_before tmp
 
