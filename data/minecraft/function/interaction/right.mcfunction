@@ -16,6 +16,7 @@ execute if entity @s[tag=dawn,tag=reactor] on target run function dawn/reactor/i
 execute if entity @s[tag=dawn,tag=overworld] on target run function dawn/amplifier/ui {id:"overworld",name:"오버월드",color:"green",trigger:1831}
 execute if entity @s[tag=dawn,tag=dried] on target run function dawn/amplifier/ui {id:"dried",name:"메마른 세계",color:"gold",trigger:1832}
 execute if entity @s[tag=dawn,tag=frozen] on target run function dawn/amplifier/ui {id:"frozen",name:"얼어붙은 세계",color:"aqua",trigger:1833}
+execute if entity @s[tag=dawn,tag=spear] on target run function dawn/spear/interact
 execute if entity @s[tag=polarnight,tag=reckoning] on target run function polarnight/interaction/reckoning
 execute if entity @s[tag=crying,tag=overworld] on target run function crying/collect {id:"overworld",x:11,z:11}
 execute if entity @s[tag=crying,tag=dried] on target run function crying/dried_interact
