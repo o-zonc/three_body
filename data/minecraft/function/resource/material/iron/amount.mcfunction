@@ -4,4 +4,5 @@ execute if score #iron_advancement_reward var matches 1 unless score #overworld_
 execute if score #iron_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #iron_amount tmp *= #advancement_reward_multiplier tmp
 execute if score #iron_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 run scoreboard players set #advancement_reward_divisor tmp 2
 execute if score #iron_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #iron_amount tmp /= #advancement_reward_divisor tmp
+function dawn/amplifier/apply {score:"#iron_amount",dim:"overworld",final:100}
 return run scoreboard players get #iron_amount tmp
