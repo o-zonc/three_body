@@ -21,8 +21,7 @@ execute unless score #experiment_cost_ok tmp matches 1 run title @s actionbar {t
 execute unless score #experiment_cost_ok tmp matches 1 run return 0
 function resource/cost/take
 
-# 양자 충돌 실험: 기존 방식. 레벨이 높아질수록 고급 결과 확률이 조금씩 증가합니다.
-execute if score @s accelerator_trigger matches 10 run random reset *
+# 양자 충돌 실험: 한 등급만 획득. 레벨이 높아질수록 고급 결과 확률과 지급량이 증가합니다.
 execute if score @s accelerator_trigger matches 10 store result score #experiment_roll tmp run random value 0..99
 execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 1 if score #experiment_roll tmp matches 0..69 run function accelerator/reward_common
 execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 1 if score #experiment_roll tmp matches 70..89 run function accelerator/reward_great
@@ -37,13 +36,13 @@ execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_
 execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 4 if score #experiment_roll tmp matches 55..81 run function accelerator/reward_great
 execute if score @s accelerator_trigger matches 10 if score #GLOBAL accelerator_level matches 4 if score #experiment_roll tmp matches 82..99 run function accelerator/reward_special
 
-# 중입자 충돌 실험: 일반/굉장한/특별한 파편을 각각 독립 확률로 획득합니다.
+# 중입자 충돌 실험: 일반/굉장한/특별한 파편을 각각 독립 확률로 추첨합니다.
 execute if score @s accelerator_trigger matches 11 run scoreboard players set #experiment_mode tmp 2
 execute if score @s accelerator_trigger matches 11 run function accelerator/reward_common
 execute if score @s accelerator_trigger matches 11 run function accelerator/reward_great
 execute if score @s accelerator_trigger matches 11 run function accelerator/reward_special
 
-# 시공간 붕괴 실험: 가장 많은 파편 + 흑요석 1개.
+# 시공간 붕괴 실험: 세 등급을 각각 독립 추첨하며, 흑요석 1개를 추가 지급합니다.
 execute if score @s accelerator_trigger matches 12 run scoreboard players set #experiment_mode tmp 3
 execute if score @s accelerator_trigger matches 12 run function accelerator/reward_common
 execute if score @s accelerator_trigger matches 12 run function accelerator/reward_great
