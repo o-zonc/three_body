@@ -32,3 +32,6 @@ execute in overworld if score #lapis factory_unlocked matches 1 if score #lapis 
 execute in overworld if score #lapis factory_unlocked matches 1 unless score #lapis factory_enabled matches 1 run setblock -3 -61 -35 campfire[lit=false]
 execute in minecraft:dried if score #heat factory_unlocked matches 1 if score #heat factory_enabled matches 1 run setblock -6 66 0 campfire[lit=true]
 execute in minecraft:dried if score #heat factory_unlocked matches 1 unless score #heat factory_enabled matches 1 run setblock -6 66 0 campfire[lit=false]
+
+# 공장 상태가 바뀌는 모든 경로가 이 함수를 지나므로 전구도 여기서 한 번만 갱신합니다.
+function factory/refresh_lights
