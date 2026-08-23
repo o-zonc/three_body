@@ -21,10 +21,11 @@ execute if score #GLOBAL era_paused matches 0 as @a[nbt={Dimension:"minecraft:dr
 # 3. 오버월드 (overworld)
 # ==========================================
 
-execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_overworld matches 1.. run scoreboard players remove #GLOBAL timer_overworld 1
-execute if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_overworld matches ..0 run function common/roll/overworld
+# 오버월드의 난세기 시스템은 석기 시대(civilization_age >= 2) 이후에만 시작합니다.
+execute if score #overworld civilization_age matches 2.. if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_overworld matches 1.. run scoreboard players remove #GLOBAL timer_overworld 1
+execute if score #overworld civilization_age matches 2.. if entity @a[nbt={Dimension:"minecraft:overworld"}] if score #GLOBAL era_paused matches 0 if score #GLOBAL timer_overworld matches ..0 run function common/roll/overworld
 
-execute if score #GLOBAL era_paused matches 0 as @a[nbt={Dimension:"minecraft:overworld"}] at @s run function common/chaos/overworld
+execute if score #overworld civilization_age matches 2.. if score #GLOBAL era_paused matches 0 as @a[nbt={Dimension:"minecraft:overworld"}] at @s run function common/chaos/overworld
 
 # ==========================================
 # 4. 멸망 (disaster)
@@ -37,5 +38,5 @@ execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_frozen matc
 execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_dried matches 2 run scoreboard players set #GLOBAL user_disaster 0
 execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_dried matches 2 as @a[nbt={Dimension:"minecraft:dried"},limit=1] at @s run function common/disaster/do
 
-execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_overworld matches 2 run scoreboard players set #GLOBAL user_disaster 0
-execute if score #GLOBAL era_paused matches 0 if score #GLOBAL state_overworld matches 2 as @a[nbt={Dimension:"minecraft:overworld"},limit=1] at @s run function common/disaster/do
+execute if score #overworld civilization_age matches 2.. if score #GLOBAL era_paused matches 0 if score #GLOBAL state_overworld matches 2 run scoreboard players set #GLOBAL user_disaster 0
+execute if score #overworld civilization_age matches 2.. if score #GLOBAL era_paused matches 0 if score #GLOBAL state_overworld matches 2 as @a[nbt={Dimension:"minecraft:overworld"},limit=1] at @s run function common/disaster/do
