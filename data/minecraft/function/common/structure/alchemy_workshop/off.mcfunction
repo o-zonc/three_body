@@ -7,5 +7,8 @@ execute in overworld run setblock -36 -63 -24 air
 execute in overworld run setblock -24 -63 -37 air
 execute in overworld run setblock -37 -63 -24 air
 
+# 시간축 개방 후 나타나는 우주 이동기 단말을 제거합니다.
+execute in overworld run setblock -20 -62 -24 air
+
 execute in overworld run fill -23 -63 -4 -25 -61 -4 polished_blackstone_brick_wall
 execute in overworld run fill -4 -63 -25 -4 -61 -23 polished_blackstone_brick_wall
