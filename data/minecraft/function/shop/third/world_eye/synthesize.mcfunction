@@ -1,5 +1,5 @@
 function shop/third/world_eye/prepare
-data modify storage data tmp.cost set value [{type:"information",amount:3},{type:"time",amount:1}]
+data modify storage data tmp.cost set value [{type:"information",amount:3},{type:"time",amount:1},{type:"no_obsidian",amount:1}]
 execute store result score #third_eye_cost_check tmp run function resource/check_cost
 execute unless score #third_eye_cost_check tmp matches 1 run title @s actionbar "§c정보 또는 시간이 부족합니다."
 execute unless score #third_eye_cost_check tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
