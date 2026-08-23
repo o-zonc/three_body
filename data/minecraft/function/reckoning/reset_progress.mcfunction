@@ -67,7 +67,8 @@ scoreboard players set #GLOBAL shield_charge 0
 scoreboard players set #GLOBAL shield_maintenance 6000
 bossbar set shield_charge visible false
 
-scoreboard players set #GLOBAL time_machine_level 0
+# 타임머신 세대와 노랑/파랑 연구도 문명마다 새로 시작한다.
+function time_machine/reset
 
 # 정산 및 여명 보너스는 다음 문명에서 다시 판정한다.
 scoreboard players set #GLOBAL reckoning_ready 0
