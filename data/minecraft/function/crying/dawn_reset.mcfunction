@@ -3,4 +3,5 @@ execute in minecraft:dawn run setblock 0 64 0 minecraft:white_stained_glass
 execute in minecraft:dawn run setblock 0 65 0 minecraft:white_stained_glass
 execute in minecraft:dawn run setblock 0 66 0 minecraft:white_stained_glass
 execute in minecraft:dawn run setblock 0 67 0 minecraft:white_stained_glass
+execute in minecraft:dawn run setblock 0 68 0 minecraft:air
 execute in minecraft:dawn run kill @e[type=minecraft:block_display,tag=crying_dawn_display]
