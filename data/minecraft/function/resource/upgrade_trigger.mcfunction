@@ -8,5 +8,7 @@ execute as @a[tag=player] if score @s upgrade_trigger matches 1114 run function 
 execute as @a[tag=player] if score @s upgrade_trigger matches 1115 run function resource/upgrade/diamond
 execute as @a[tag=player] if score @s upgrade_trigger matches 1116 run function resource/upgrade/emerald
 execute as @a[tag=player] if score @s upgrade_trigger matches 1117 run function resource/upgrade/lapis
+execute as @a[tag=player] if score @s upgrade_trigger matches 1118 run function resource/upgrade/yellow
+execute as @a[tag=player] if score @s upgrade_trigger matches 1119 run function resource/upgrade/blue
 
 execute as @a[tag=player] if score @s upgrade_trigger matches 1.. run scoreboard players reset @s upgrade_trigger
