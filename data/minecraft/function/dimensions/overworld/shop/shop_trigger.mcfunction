@@ -63,6 +63,14 @@ execute as @a[tag=player] if score @s shop_trigger matches 1831 run function daw
 execute as @a[tag=player] if score @s shop_trigger matches 1832 run function dawn/amplifier/purchase {id:"dried",name:"메마른 세계",color:"gold",trigger:1832}
 execute as @a[tag=player] if score @s shop_trigger matches 1833 run function dawn/amplifier/purchase {id:"frozen",name:"얼어붙은 세계",color:"aqua",trigger:1833}
 
+# 색채 자원 변환 (184X)
+execute as @a[tag=player] if score @s shop_trigger matches 1841 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"copper",target_name:"구리",target_color:"gold",base:100}
+execute as @a[tag=player] if score @s shop_trigger matches 1842 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"gold",target_name:"금",target_color:"gold",base:20}
+execute as @a[tag=player] if score @s shop_trigger matches 1843 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"heat",target_name:"열기",target_color:"red",base:50}
+execute as @a[tag=player] if score @s shop_trigger matches 1844 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"iron",target_name:"철",target_color:"white",base:100}
+execute as @a[tag=player] if score @s shop_trigger matches 1845 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",target_color:"aqua",base:10}
+execute as @a[tag=player] if score @s shop_trigger matches 1846 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"cold",target_name:"냉기",target_color:"aqua",base:50}
+
 # 얼어붙은 차원 시설 (19XX)
 execute as @a[tag=player] if score @s shop_trigger matches 1901 run function frozen/interaction/purchase_shop
 execute as @a[tag=player] if score @s shop_trigger matches 1902 run function frozen/interaction/purchase_bridge
