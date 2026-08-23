@@ -1,5 +1,6 @@
 # 자원 상점 3층과 meta 보관소는 의도적으로 건드리지 않는다.
 # 발전과제 보상(var의 *_advancement_reward)도 문명 정산에서 초기화하지 않는다.
+# #broken_quantum_storage var는 시공간의 틈에 보관된 영구 자원으로 문명 정산에서 유지한다.
 clear @a
 scoreboard players set * material 0
 scoreboard players set * unlock 0
