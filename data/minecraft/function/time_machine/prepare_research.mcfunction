@@ -1,11 +1,3 @@
-# 기존 세이브/첫 건설에서도 연구 점수가 항상 존재하도록 초기화합니다.
-execute unless score #time_machine_yellow upgrade matches .. run scoreboard players set #time_machine_yellow upgrade 0
-execute unless score #time_machine_blue upgrade matches .. run scoreboard players set #time_machine_blue upgrade 0
-execute unless score #time_machine_path_yellow upgrade matches .. run scoreboard players set #time_machine_path_yellow upgrade 0
-execute unless score #time_machine_path_blue upgrade matches .. run scoreboard players set #time_machine_path_blue upgrade 0
-execute unless score #time_machine_path_green upgrade matches .. run scoreboard players set #time_machine_path_green upgrade 0
-execute unless score #time_machine_green_discovered upgrade matches .. run scoreboard players set #time_machine_green_discovered upgrade 0
-
 function time_machine/calculate
 scoreboard players set #time_machine_next_step tmp 0
 scoreboard players operation #time_machine_next_step tmp = #time_machine_research_total tmp
