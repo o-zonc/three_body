@@ -25,7 +25,12 @@ execute in minecraft:dawn unless block 0 67 0 minecraft:light_blue_stained_glass
 # 모든 색이 들어온 뒤 처음 상호작용하면 우는 흑요석이 모습을 드러냅니다.
 tellraw @s {text:"어라?",color:"light_purple"}
 execute at @s run playsound minecraft:block.amethyst_block.chime master @s ~ ~ ~ 1 0.7
-execute in minecraft:dawn positioned 0.5 68 0.5 run particle minecraft:end_rod ~ ~ ~ 0.35 0.35 0.35 0.02 24 normal
-execute in minecraft:dawn positioned 0.5 68 0.5 run particle minecraft:reverse_portal ~ ~ ~ 0.3 0.3 0.3 0.03 20 normal
+
+# block_display가 놓일 (0,68,0) 블록의 정중앙에서 강한 파티클을 터뜨립니다.
+# force + @s를 사용해 플레이어의 파티클 설정과 일반 표시 거리의 영향을 최소화합니다.
+execute in minecraft:dawn positioned 0.5 68.5 0.5 run particle minecraft:end_rod ~ ~ ~ 0.6 0.6 0.6 0.06 80 force @s
+execute in minecraft:dawn positioned 0.5 68.5 0.5 run particle minecraft:reverse_portal ~ ~ ~ 0.55 0.55 0.55 0.08 60 force @s
+execute in minecraft:dawn positioned 0.5 68.5 0.5 run particle minecraft:electric_spark ~ ~ ~ 0.45 0.45 0.45 0.12 40 force @s
+
 function crying/dawn_reveal
 execute at @s run playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 0.8 1.4
