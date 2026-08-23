@@ -2,6 +2,7 @@ execute store result score #gold_cooldown tmp run function resource/material/gol
 function shop/alchemy/lab/cooldown/prepare_ui {id:"gold",rate:"precious"}
 execute store result score #gold_gain tmp run function resource/material/gold/amount
 scoreboard players set #gold_base_gain tmp 1
+function dawn/amplifier/prepare_resource_ui {dim:"dried",final:150}
 
 # 자원 상점 2층에서 금 수급량에 더해지는 값을 계산합니다.
 scoreboard players set #gold_second_bonus_ui tmp 0
@@ -27,4 +28,4 @@ execute unless score #gold_gain tmp = #gold_base_gain tmp run data modify storag
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
-tellraw @s ["",{text:"  [ 금 ]",color:"gold",bold:true,shadow_color:-7710208},{text:"\n\n  §8•§7 보유량: ",extra:[{score:{name:"#gold",objective:"material"},color:"white"},{text:"§7개"}]},{text:"\n  §8•§7 수급량: ",extra:[{score:{name:"#gold_base_gain",objective:"tmp"},color:"white"},{text:"§7개"}]},{storage:"data",nbt:"tmp.advancement_reward_ui.gold",interpret:true},{text:"\n  §8•§7 재생산 대기: ",extra:[{score:{name:"#gold_base_cooldown",objective:"tmp"},color:"white"},{text:"§7틱"}]},{storage:"data",nbt:"tmp.alchemy_lab_cooldown_ui.gold",interpret:true},{text:"\n\n  ",extra:[{storage:"data",nbt:"tmp.creation_ui.gold_regen",interpret:true}]},{text:"\n"}]
+tellraw @s ["",{text:"  [ 금 ]",color:"gold",bold:true,shadow_color:-7710208},{text:"\n\n  §8•§7 보유량: ",extra:[{score:{name:"#gold",objective:"material"},color:"white"},{text:"§7개"}]},{text:"\n  §8•§7 수급량: ",extra:[{score:{name:"#gold_base_gain",objective:"tmp"},color:"white"},{text:"§7개"}]},{storage:"data",nbt:"tmp.advancement_reward_ui.gold",interpret:true},{storage:"data",nbt:"tmp.dawn_amplifier_ui",interpret:true},{text:"\n  §8•§7 재생산 대기: ",extra:[{score:{name:"#gold_base_cooldown",objective:"tmp"},color:"white"},{text:"§7틱"}]},{storage:"data",nbt:"tmp.alchemy_lab_cooldown_ui.gold",interpret:true},{text:"\n\n  ",extra:[{storage:"data",nbt:"tmp.creation_ui.gold_regen",interpret:true}]},{text:"\n"}]
