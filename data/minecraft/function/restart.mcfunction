@@ -31,13 +31,25 @@ gamemode adventure @a
 gamerule advance_time true
 
 # ------------------------------------------------------------
+# 2.5. 전체 초기화 대상 청크 임시 로드
+# ------------------------------------------------------------
+# restart는 스코어뿐 아니라 각 차원의 실제 블록/구조물도 되돌립니다.
+# 플레이어를 오버월드로 이동한 뒤 다른 차원의 청크가 언로드되면
+# setblock/fill/structure block 갱신이 실패할 수 있으므로 초기화 동안만 강제로 로드합니다.
+execute in overworld run forceload add -64 -64 64 64
+execute in dried run forceload add -64 -64 64 64
+execute in frozen run forceload add -64 -64 64 64
+execute in polarnight run forceload add -64 -64 64 64
+execute in dawn run forceload add -64 -64 64 64
+
+# ------------------------------------------------------------
 # 3. 플레이어를 오버월드로 복귀
 # ------------------------------------------------------------
 
 execute in overworld run tp @a 0 100 0
 
 # ------------------------------------------------------------
-# 4. 스코어보드 초기화
+# 4. 스코어보드 및 월드 상태 초기화
 # ------------------------------------------------------------
 
 function reset_state
@@ -114,6 +126,20 @@ function common/structure/factory/off
 function frozen/structure/bridge/off
 function frozen/structure/maze/off
 function frozen/structure/shop/off
+
+# reset_state 내부에서 함께 처리되는 실제 월드 상태:
+# - 극야 금고
+# - 메마른/얼어붙은 우는 흑요석 접근 블록
+# - 여명 색유리/우는 흑요석 디스플레이
+
+# ------------------------------------------------------------
+# 9.5. 임시 청크 로드 해제
+# ------------------------------------------------------------
+execute in overworld run forceload remove -64 -64 64 64
+execute in dried run forceload remove -64 -64 64 64
+execute in frozen run forceload remove -64 -64 64 64
+execute in polarnight run forceload remove -64 -64 64 64
+execute in dawn run forceload remove -64 -64 64 64
 
 # ------------------------------------------------------------
 # 10. 게임 규칙 재설정
