@@ -1,3 +1,4 @@
+execute unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run tellraw @s {"text":"…","color":"gray","bold":false}
 execute unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run return 0
 execute store result score #blue_to_iron tmp run function shop/color/calculate {target:"iron",base:100}
 execute store result score #blue_to_diamond tmp run function shop/color/calculate {target:"diamond",base:10}
