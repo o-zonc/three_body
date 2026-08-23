@@ -1,5 +1,6 @@
 # 여명 차원 중앙 구조물 상호작용
 # 우는 흑요석이 이미 공개된 뒤에는 더 이상 반응하지 않습니다.
+execute in minecraft:dawn if entity @e[type=minecraft:block_display,tag=crying_dawn_display] run tellraw @s {text:"이제는 더 이상 반응하지 않는다...",color:"gray"}
 execute in minecraft:dawn if entity @e[type=minecraft:block_display,tag=crying_dawn_display] run return 0
 
 execute in minecraft:dawn unless block 0 67 0 minecraft:light_blue_stained_glass run tellraw @s "하양"
