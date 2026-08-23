@@ -19,6 +19,8 @@ execute if score @s experiment_type matches 11 run scoreboard players set #exper
 execute if score @s experiment_type matches 11 run function accelerator/reward_common
 execute if score @s experiment_type matches 11 run function accelerator/reward_great
 execute if score @s experiment_type matches 11 run function accelerator/reward_special
+# 성공 여부가 아니라 중입자 충돌 실험을 끝까지 수행한 것이 발견 조건입니다.
+execute if score @s experiment_type matches 11 unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run advancement grant @s only 0_overworld/22_heavy_ion_experiment
 
 # 시공간 붕괴 실험: 세 등급 독립 추첨 + 흑요석 1개
 execute if score @s experiment_type matches 12 run scoreboard players set #spacetime_experiment_done var 1
