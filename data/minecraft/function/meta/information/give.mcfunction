@@ -30,6 +30,6 @@ execute if score #meta_to_wallet tmp matches 1.. run function meta/information/g
 
 function meta/sync
 
-# 총 지급량과 실제 분배 결과만 간결하게 표시한다.
-title @s actionbar [{text:"정보 +",color:"light_purple"},{score:{name:"#meta_requested",objective:"tmp"},color:"white"},{text:"  (소지 +",color:"dark_gray"},{score:{name:"#meta_to_wallet",objective:"tmp"},color:"white"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#meta_bank_added",objective:"tmp"},color:"white"},{text:")",color:"dark_gray"}]
+# 정보 수량은 이름/수치 모두 같은 자원 색으로 표시한다.
+title @s actionbar [{text:"정보 +",color:"light_purple"},{score:{name:"#meta_requested",objective:"tmp"},color:"light_purple"},{text:"  (소지 +",color:"dark_gray"},{score:{name:"#meta_to_wallet",objective:"tmp"},color:"light_purple"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#meta_bank_added",objective:"tmp"},color:"light_purple"},{text:")",color:"dark_gray"}]
 return 1
