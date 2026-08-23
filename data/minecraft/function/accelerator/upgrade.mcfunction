@@ -11,21 +11,25 @@ execute if score #GLOBAL accelerator_level matches 1 run data modify storage dat
 execute if score #GLOBAL accelerator_level matches 2 run data modify storage data tmp.cost set value [{type:"iron",amount:800000},{type:"time",amount:4}]
 execute if score #GLOBAL accelerator_level matches 3 run data modify storage data tmp.cost set value [{type:"iron",amount:2000000},{type:"time",amount:8}]
 execute store result score #accelerator_cost_ok tmp run function resource/check_cost
+scoreboard players operation #accelerator_obsidian_bypass tmp = #obsidian_cost_bypass tmp
 
 # Lv.2부터는 보호막에서 회수한 깨진 양자 얽힘 파편도 요구합니다.
-execute store result score #broken_count tmp run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 0
-execute if score #GLOBAL accelerator_level matches 1 unless score #broken_count tmp matches 10.. run scoreboard players set #accelerator_cost_ok tmp 0
-execute if score #GLOBAL accelerator_level matches 2 unless score #broken_count tmp matches 40.. run scoreboard players set #accelerator_cost_ok tmp 0
-execute if score #GLOBAL accelerator_level matches 3 unless score #broken_count tmp matches 120.. run scoreboard players set #accelerator_cost_ok tmp 0
+# 흑요석 대체 결제를 사용하는 경우에는 이 추가 재료까지 함께 대체합니다.
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 1 store result score #broken_count tmp run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 0
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 2 store result score #broken_count tmp run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 0
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 3 store result score #broken_count tmp run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 0
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 1 unless score #broken_count tmp matches 10.. run scoreboard players set #accelerator_cost_ok tmp 0
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 2 unless score #broken_count tmp matches 40.. run scoreboard players set #accelerator_cost_ok tmp 0
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 3 unless score #broken_count tmp matches 120.. run scoreboard players set #accelerator_cost_ok tmp 0
 
 execute unless score #accelerator_cost_ok tmp matches 1 run title @s actionbar {text:"업그레이드 재료가 부족합니다.",color:"red"}
 execute unless score #accelerator_cost_ok tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 execute unless score #accelerator_cost_ok tmp matches 1 run return 0
 
 function resource/cost/take
-execute if score #GLOBAL accelerator_level matches 1 run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 10
-execute if score #GLOBAL accelerator_level matches 2 run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 40
-execute if score #GLOBAL accelerator_level matches 3 run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 120
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 1 run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 10
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 2 run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 40
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 3 run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 120
 
 scoreboard players add #GLOBAL accelerator_level 1
 scoreboard players set #GLOBAL accelerator_timer 1
