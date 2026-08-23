@@ -45,6 +45,10 @@ scoreboard objectives add local_move_yaw dummy
 scoreboard objectives add local_move_pitch dummy
 scoreboard objectives add local_move_return dummy
 
+# 실제 재접속을 감지하기 위한 플레이어별 leave_game 통계와 마지막 확인값
+scoreboard objectives add leave_game minecraft.custom:minecraft.leave_game
+scoreboard objectives add leave_game_prev dummy
+
 # 6. 문명 전환 시스템 관리 스코어보드
 scoreboard objectives add era_paused dummy
 scoreboard objectives add run dummy
