@@ -23,21 +23,21 @@ scoreboard players operation #time_machine_interval tmp -= #time_machine_blue_re
 
 # 세대 상승 시 확정된 발전 트리 보너스
 # 노랑 세대 1회당 생산량 +2
-scoreboard players operation #time_machine_yellow_path_bonus tmp = #time_machine_path_yellow var
+scoreboard players operation #time_machine_yellow_path_bonus tmp = #time_machine_path_yellow upgrade
 scoreboard players set #time_machine_yellow_path_step tmp 2
 scoreboard players operation #time_machine_yellow_path_bonus tmp *= #time_machine_yellow_path_step tmp
 scoreboard players operation #time_machine_amount tmp += #time_machine_yellow_path_bonus tmp
 
 # 파랑 세대 1회당 생산 주기 -75틱
-scoreboard players operation #time_machine_blue_path_bonus tmp = #time_machine_path_blue var
+scoreboard players operation #time_machine_blue_path_bonus tmp = #time_machine_path_blue upgrade
 scoreboard players set #time_machine_blue_path_step tmp 75
 scoreboard players operation #time_machine_blue_path_bonus tmp *= #time_machine_blue_path_step tmp
 scoreboard players operation #time_machine_interval tmp -= #time_machine_blue_path_bonus tmp
 
 # 숨겨진 초록 세대 1회당 생산량 +1, 생산 주기 -15틱
-scoreboard players operation #time_machine_green_amount_bonus tmp = #time_machine_path_green var
+scoreboard players operation #time_machine_green_amount_bonus tmp = #time_machine_path_green upgrade
 scoreboard players operation #time_machine_amount tmp += #time_machine_green_amount_bonus tmp
-scoreboard players operation #time_machine_green_interval_bonus tmp = #time_machine_path_green var
+scoreboard players operation #time_machine_green_interval_bonus tmp = #time_machine_path_green upgrade
 scoreboard players set #time_machine_green_interval_step tmp 15
 scoreboard players operation #time_machine_green_interval_bonus tmp *= #time_machine_green_interval_step tmp
 scoreboard players operation #time_machine_interval tmp -= #time_machine_green_interval_bonus tmp
