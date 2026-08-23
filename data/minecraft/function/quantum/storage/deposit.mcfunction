@@ -6,3 +6,4 @@ clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}
 scoreboard players operation #broken_quantum_storage var += #broken_quantum_deposit tmp
 playsound entity.item.pickup master @s ~ ~ ~ 0.8 0.8
 title @s actionbar [{score:{name:"#broken_quantum_deposit",objective:"tmp"},color:"white"},{text:"개의 깨진 양자 얽힘 파편을 저장했습니다.",color:"aqua"}]
+function quantum/storage/ui
