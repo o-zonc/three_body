@@ -80,6 +80,11 @@ scoreboard players set #time_capacity meta 2
 scoreboard players set #information_synced meta 0
 scoreboard players set #time_synced meta 0
 
+# 여명 차원의 영구 자원 증폭 진행도는 문명 정산에서는 유지하고 전체 초기화에서만 제거합니다.
+scoreboard players set #dawn_overworld_amp meta 0
+scoreboard players set #dawn_dried_amp meta 0
+scoreboard players set #dawn_frozen_amp meta 0
+
 # 생산 업그레이드 레벨을 명시적으로 초기화
 scoreboard players set #wood_regen_lvl upgrade 0
 scoreboard players set #stone_regen_lvl upgrade 0
