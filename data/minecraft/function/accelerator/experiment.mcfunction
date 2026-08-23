@@ -2,7 +2,7 @@ execute unless score #GLOBAL accelerator_level matches 1.. run title @s actionba
 execute unless score #GLOBAL accelerator_level matches 1.. run return 0
 execute if score #GLOBAL experiment_cooldown matches 1.. run title @s actionbar [{text:"실험 재정비까지 ",color:"red"},{score:{name:"#GLOBAL",objective:"experiment_cooldown"},color:"white"},{text:"틱 남았습니다.",color:"red"}]
 execute if score #GLOBAL experiment_cooldown matches 1.. run return 0
-data modify storage data tmp.cost set value [{type:"iron",amount:50000},{type:"lapis",amount:500},{type:"gold",amount:250},{type:"diamond",amount:50},{type:"time",amount:1}]
+data modify storage data tmp.cost set value [{type:"iron",amount:50000},{type:"lapis",amount:500},{type:"gold",amount:250},{type:"diamond",amount:50},{type:"time",amount:1},{type:"no_obsidian",amount:1}]
 execute store result score #experiment_cost_ok tmp run function resource/check_cost
 execute unless score #experiment_cost_ok tmp matches 1 run title @s actionbar {text:"실험 재료가 부족합니다. (철 50,000 / 청금석 500 / 금 250 / 다이아몬드 50 / 소지한 시간 1)",color:"red"}
 execute unless score #experiment_cost_ok tmp matches 1 run return 0
