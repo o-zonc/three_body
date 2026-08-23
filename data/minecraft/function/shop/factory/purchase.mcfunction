@@ -23,6 +23,9 @@ execute if score #factory_shop_stage tmp matches 2 unless entity @s[advancements
 execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #GLOBAL factory_build_stage 3
 execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #GLOBAL factory_elevator_unlocked 2
 execute if score #factory_shop_stage tmp matches 2 unless score #GLOBAL time_machine_level matches 1.. run scoreboard players set #GLOBAL time_machine_level 1
+execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #time_machine_yellow upgrade 0
+execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #time_machine_blue upgrade 0
+execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #time_machine_timer generate 1200
 
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 function shop/factory/interact
