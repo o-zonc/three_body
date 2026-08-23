@@ -1,4 +1,4 @@
-execute unless entity @a[advancements={0_overworld/24_time_machine=true}] run return 0
+# time_machine_level 자체가 건설/세대 상태의 authoritative 값이므로 advancement 검색을 매 tick 반복하지 않습니다.
 execute unless score #GLOBAL time_machine_level matches 1.. run return 0
 execute unless entity @a[tag=player] run return 0
 
