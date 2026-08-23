@@ -1,5 +1,5 @@
 {
-	"parent": "0_overworld/22_particle_accelerator",
+	"parent": "0_overworld/22_heavy_ion_experiment",
 	"display": {
 		"icon": "nether_star",
 		"title": "미래",
