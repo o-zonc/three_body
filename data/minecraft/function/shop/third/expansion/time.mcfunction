@@ -8,7 +8,7 @@ execute if score #spacetime_expansion_used var matches 1 run title @s actionbar 
 execute if score #spacetime_expansion_used var matches 1 run return 0
 
 data remove storage data tmp.cost
-data modify storage data tmp.cost set value [{type:"information",amount:2}]
+data modify storage data tmp.cost set value [{type:"information",amount:2},{type:"no_obsidian",amount:1}]
 execute store result score #spacetime_expansion_cost_check tmp run function resource/check_cost
 execute unless score #spacetime_expansion_cost_check tmp matches 1 run title @s actionbar {text:"정보 2조각이 필요합니다.",color:"red"}
 execute unless score #spacetime_expansion_cost_check tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
