@@ -21,6 +21,7 @@ execute if score @s experiment_type matches 11 run function accelerator/reward_g
 execute if score @s experiment_type matches 11 run function accelerator/reward_special
 
 # 시공간 붕괴 실험: 세 등급 독립 추첨 + 흑요석 1개
+execute if score @s experiment_type matches 12 run scoreboard players set #spacetime_experiment_done var 1
 execute if score @s experiment_type matches 12 run scoreboard players set #experiment_mode tmp 3
 execute if score @s experiment_type matches 12 run function accelerator/reward_common
 execute if score @s experiment_type matches 12 run function accelerator/reward_great
