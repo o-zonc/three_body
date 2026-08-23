@@ -56,6 +56,10 @@ scoreboard players set #t intro 0
 scoreboard players set #overworld civilization_age 0
 scoreboard players set #level alchemy_workshop 0
 scoreboard players set #alchemy_workshop unlock 0
+scoreboard players set #GLOBAL dawn_bonus_shop 0
+scoreboard players set #GLOBAL dawn_information_shop 0
+scoreboard players set #GLOBAL dawn_time_shop 0
+scoreboard players set #GLOBAL dawn_reactor_purchased 0
 
 # 우는 흑요석 수집 이벤트는 전체 reset_state에서만 초기화한다.
 scoreboard players set #crying_count var 0
