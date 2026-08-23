@@ -5,6 +5,12 @@
 # 각 trigger 핸들러는 사용 후 자기 objective를 @s 기준으로 다시 활성화합니다.
 execute as @a unless score @s trigger_init matches 1 run function var_init/player
 
+# 실제 접속 감지.
+# leave_game 통계가 아직 없는 첫 접속 플레이어는 0으로 생성하고,
+# 마지막 확인값과 달라진 경우에만 player/on_join을 한 번 실행합니다.
+execute as @a unless score @s leave_game matches 0.. run scoreboard players set @s leave_game 0
+execute as @a unless score @s leave_game_prev = @s leave_game run function player/on_join
+
 # 보관소를 최대치까지 채웠을 때 영구 휴대 한도 보너스를 해금합니다.
 # 실제 자원 지급 함수는 자체적으로 보관소 상한을 적용하므로, 여기서는 해금 이벤트만 감시합니다.
 execute if score #information_bank meta matches 1000.. unless score #information_capacity_bonus meta matches 1.. run scoreboard players set #information_capacity_bonus meta 1
