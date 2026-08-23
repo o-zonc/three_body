@@ -9,6 +9,8 @@ execute if score @s experiment_type matches 10 if score #GLOBAL accelerator_leve
 execute if score @s experiment_type matches 11 if score #GLOBAL accelerator_level matches 2 run function quantum/give_broken {amount:45}
 execute if score @s experiment_type matches 11 if score #GLOBAL accelerator_level matches 3 run function quantum/give_broken {amount:60}
 execute if score @s experiment_type matches 11 if score #GLOBAL accelerator_level matches 4 run function quantum/give_broken {amount:80}
+# 실패하더라도 충돌 자체에서 미지 물질 반응을 관측했으므로 발견 발전과제를 달성합니다.
+execute if score @s experiment_type matches 11 unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run advancement grant @s only 0_overworld/22_heavy_ion_experiment
 
 # 시공간 붕괴: 실패하더라도 균열 관측 자체는 완료된 실험으로 기록합니다.
 execute if score @s experiment_type matches 12 run scoreboard players set #spacetime_experiment_done var 1
