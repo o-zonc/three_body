@@ -1,4 +1,4 @@
-# 두 번째 엘리베이터 3층 외곽을 도는 end_rod 파티클
+# 두 번째 엘리베이터 3층 외곽을 도는 파티클
 # 정사각형 범위: X=-32..-16, Y=-46, Z=16..32
 # 미래 시대(문명 9)부터 표시합니다.
 
@@ -19,13 +19,19 @@ execute if score #GLOBAL time_machine_level matches 2 in overworld unless entity
 execute if score #GLOBAL time_machine_level matches 3 in overworld unless entity @e[type=marker,tag=elevator_2_config_3] run function time_machine/perimeter_setup/3
 execute if score #GLOBAL time_machine_level matches 4 in overworld unless entity @e[type=marker,tag=elevator_2_config_4] run function time_machine/perimeter_setup/4
 
-# 현재 위치에 파티클을 남긴 뒤 한 틱에 0.25블록씩 이동합니다.
-execute in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s run particle end_rod ~ ~ ~ 0 0 0 0 1 force @a
-execute in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 1.. run particle enchant ~ ~0.1 ~ 0.16 0.16 0.16 0.04 5 force @a
-execute in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 2.. run particle portal ~ ~0.15 ~ 0.15 0.15 0.15 0.09 3 force @a
-execute in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 3.. run particle electric_spark ~ ~0.2 ~ 0.16 0.16 0.16 0.04 2 force @a
-execute in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 4 run particle firework ~ ~0.25 ~ 0.2 0.2 0.2 0.05 3 force @a
-execute in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 4 run particle dragon_breath ~ ~0.1 ~ 0.12 0.12 0.12 0.02 2 force @a
+# 마커 이동은 매틱 유지하되 렌더 파티클은 4틱(0.2초)에 한 번만 생성합니다.
+# 기존 force @a는 건물에서 멀리 떨어진 플레이어에게도 강제로 전송되어 클라이언트/네트워크 부담이 컸으므로
+# 건물 주변 48블록의 플레이어에게 normal 모드로만 보냅니다.
+scoreboard players add #time_machine_particle_timer var 1
+execute if score #time_machine_particle_timer var matches 4.. in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s run particle end_rod ~ ~ ~ 0 0 0 0 1 normal @a[distance=..48]
+execute if score #time_machine_particle_timer var matches 4.. in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 1.. run particle enchant ~ ~0.1 ~ 0.14 0.14 0.14 0.03 2 normal @a[distance=..48]
+execute if score #time_machine_particle_timer var matches 4.. in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 2.. run particle portal ~ ~0.15 ~ 0.12 0.12 0.12 0.07 1 normal @a[distance=..48]
+execute if score #time_machine_particle_timer var matches 4.. in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 3.. run particle electric_spark ~ ~0.2 ~ 0.12 0.12 0.12 0.03 1 normal @a[distance=..48]
+execute if score #time_machine_particle_timer var matches 4.. in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 4 run particle firework ~ ~0.25 ~ 0.15 0.15 0.15 0.04 1 normal @a[distance=..48]
+execute if score #time_machine_particle_timer var matches 4.. in overworld as @e[type=marker,tag=elevator_2_perimeter] at @s if score #GLOBAL time_machine_level matches 4 run particle dragon_breath ~ ~0.1 ~ 0.1 0.1 0.1 0.02 1 normal @a[distance=..48]
+execute if score #time_machine_particle_timer var matches 4.. run scoreboard players set #time_machine_particle_timer var 0
+
+# 이동 자체는 매틱 0.25블록으로 유지해 궤도 속도와 레벨별 연출 타이밍은 바꾸지 않습니다.
 execute in overworld as @e[type=marker,tag=elevator_2_z_positive] at @s run tp @s ~ ~ ~0.25
 execute in overworld as @e[type=marker,tag=elevator_2_x_negative] at @s run tp @s ~-0.25 ~ ~
 execute in overworld as @e[type=marker,tag=elevator_2_z_negative] at @s run tp @s ~ ~ ~-0.25
