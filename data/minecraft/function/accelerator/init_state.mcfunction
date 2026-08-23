@@ -2,6 +2,8 @@
 # 이미 값이 존재하면 보존하므로 /reload 시 진행도가 초기화되지 않습니다.
 execute unless score #GLOBAL accelerator_level = #GLOBAL accelerator_level run scoreboard players set #GLOBAL accelerator_level 0
 execute unless score #GLOBAL accelerator_timer = #GLOBAL accelerator_timer run scoreboard players set #GLOBAL accelerator_timer 1200
+execute unless score #GLOBAL accelerator_disabled = #GLOBAL accelerator_disabled run scoreboard players set #GLOBAL accelerator_disabled 0
+execute unless score #GLOBAL accelerator_repair_timer = #GLOBAL accelerator_repair_timer run scoreboard players set #GLOBAL accelerator_repair_timer 0
 execute unless score #GLOBAL experiment_cooldown = #GLOBAL experiment_cooldown run scoreboard players set #GLOBAL experiment_cooldown 0
 execute unless score #GLOBAL alien_interference = #GLOBAL alien_interference run scoreboard players set #GLOBAL alien_interference 0
 execute unless score #GLOBAL alien_timer = #GLOBAL alien_timer run scoreboard players set #GLOBAL alien_timer 1200
