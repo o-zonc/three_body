@@ -35,3 +35,17 @@ data modify storage data const.tool[{lvl:11}].components.can_break.blocks append
 data modify storage data const.tool[{lvl:11}].components.can_break.blocks append value "blue_glazed_terracotta"
 data modify storage data const.tool[{lvl:11}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
 data modify storage data const.tool[{lvl:11}].components.tool.rules append value {blocks:"blue_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+
+# 발전과제 이전에 Adventure 모드의 기본 Can Break 툴팁으로 블록명이 노출되지 않게 합니다.
+# 실제 채굴 가능 블록은 기존 커스텀 lore와 게임 진행으로 안내합니다.
+data modify storage data const.tool[{lvl:6}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:7}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:8}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:9}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:10}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:11}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:12}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:13}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:14}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:15}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
+data modify storage data const.tool[{lvl:16}].components.tooltip_display set value {hidden_components:["minecraft:can_break"]}
