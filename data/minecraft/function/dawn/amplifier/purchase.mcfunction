@@ -14,6 +14,10 @@ execute unless score #dawn_amp_cost_check tmp matches 1 run return 0
 
 function resource/cost/take
 $scoreboard players add #dawn_$(id)_amp meta 1
+
+# 화면상 Lv.1(내부 meta=2)에 도달하면 해당 장치의 스테인드글라스를 채색합니다.
+$execute if score #dawn_$(id)_amp meta matches 2 run function dawn/amplifier/visual/$(id)
+
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 $function dawn/amplifier/ui {id:"$(id)",name:"$(name)",color:"$(color)",trigger:$(trigger)}
 return 1
