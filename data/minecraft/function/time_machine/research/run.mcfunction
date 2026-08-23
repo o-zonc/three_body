@@ -32,7 +32,8 @@ execute if score #time_machine_research_total tmp matches 4 if score #GLOBAL tim
 execute if score #time_machine_research_total tmp matches 8 if score #GLOBAL time_machine_level matches ..2 run scoreboard players set #GLOBAL time_machine_level 3
 execute if score #time_machine_research_total tmp matches 12 if score #GLOBAL time_machine_level matches ..3 run scoreboard players set #GLOBAL time_machine_level 4
 
-# 새 성능을 즉시 반영하도록 다음 생산 주기를 다시 설정합니다.
+# 마일스톤에서 세대 기본 성능이 바뀌므로 한 번 더 계산합니다.
+function time_machine/calculate
 scoreboard players operation #time_machine_timer generate = #time_machine_interval tmp
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.3
 $title @s actionbar [{text:"$(type) 연구 완료 · 시간 생산 ",color:"light_purple"},{score:{name:"#time_machine_amount",objective:"tmp"},color:"white"},{text:"개 / ",color:"gray"},{score:{name:"#time_machine_interval",objective:"tmp"},color:"aqua"},{text:"틱",color:"gray"}]
