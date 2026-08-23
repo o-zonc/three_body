@@ -6,11 +6,20 @@ scoreboard players set #GLOBAL reckoning_ready 0
 # 초기화 전에 현재 문명의 달성도를 기준으로 보상을 확정한다.
 function reckoning/calculate_reward
 
+# 흑요석은 인벤토리형 메타 자원이므로 clear @a 전에 소지량을 따로 보존한다.
+function meta/sync
+scoreboard players operation #reckoning_obsidian tmp = #obsidian_wallet tmp
+
 function reckoning/vault/snapshot
 function factory/vault_snapshot
 function reckoning/reset_progress
 function reckoning/vault/restore
 function factory/vault_restore
+
+# 정산 초기화로 지워진 흑요석을 그대로 복원한다.
+execute store result storage data tmp.reckoning_obsidian.amount int 1 run scoreboard players get #reckoning_obsidian tmp
+execute if score #reckoning_obsidian tmp matches 1.. run function meta/obsidian/give_item with storage data tmp.reckoning_obsidian
+function meta/sync
 
 scoreboard players operation #material_add_value tmp = #reckoning_information_reward tmp
 function meta/information/give
