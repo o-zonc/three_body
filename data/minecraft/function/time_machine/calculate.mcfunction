@@ -1,11 +1,4 @@
 # 현재 세대와 노랑/파랑 연구, 세대 특성을 바탕으로 시간 생산 성능 계산
-# UI를 열지 않은 기존/신규 세이브에서도 패시브 생산이 안전하게 동작하도록 점수를 보정합니다.
-execute unless score #time_machine_yellow upgrade matches .. run scoreboard players set #time_machine_yellow upgrade 0
-execute unless score #time_machine_blue upgrade matches .. run scoreboard players set #time_machine_blue upgrade 0
-execute unless score #time_machine_path_yellow upgrade matches .. run scoreboard players set #time_machine_path_yellow upgrade 0
-execute unless score #time_machine_path_blue upgrade matches .. run scoreboard players set #time_machine_path_blue upgrade 0
-execute unless score #time_machine_path_green upgrade matches .. run scoreboard players set #time_machine_path_green upgrade 0
-execute unless score #time_machine_green_discovered upgrade matches .. run scoreboard players set #time_machine_green_discovered upgrade 0
 
 scoreboard players set #time_machine_amount tmp 1
 scoreboard players set #time_machine_interval tmp 1200
