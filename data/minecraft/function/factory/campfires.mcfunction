@@ -33,5 +33,7 @@ execute in overworld if score #lapis factory_unlocked matches 1 unless score #la
 execute in minecraft:dried if score #heat factory_unlocked matches 1 if score #heat factory_enabled matches 1 run setblock -6 66 0 campfire[lit=true]
 execute in minecraft:dried if score #heat factory_unlocked matches 1 unless score #heat factory_enabled matches 1 run setblock -6 66 0 campfire[lit=false]
 
-# 공장 상태가 바뀌는 모든 경로가 이 함수를 지나므로 전구도 여기서 한 번만 갱신합니다.
-function factory/refresh_lights
+# 공장 interaction이 로드되어 있으면 즉시 갱신하고, 아니면 첫 오버월드 tick까지 미룹니다.
+execute if entity @e[type=interaction,tag=factory] run function factory/refresh_lights
+execute if entity @e[type=interaction,tag=factory] run scoreboard players set #factory_light_dirty var 0
+execute unless entity @e[type=interaction,tag=factory] run scoreboard players set #factory_light_dirty var 1
