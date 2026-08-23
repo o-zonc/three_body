@@ -53,6 +53,9 @@ execute in overworld run tp @a 0 100 0
 # ------------------------------------------------------------
 
 function reset_state
+# tick에서 더 이상 전체 var_init을 호출하지 않으므로,
+# reset으로 제거된 factory timer/status 등 누락 점수는 여기서 한 번 복구합니다.
+function var_init/load
 
 scoreboard objectives add material_display dummy
 scoreboard objectives modify material_display displayname {"text":"발전 현황","color":"gold"}
