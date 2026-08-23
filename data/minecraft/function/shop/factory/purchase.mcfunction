@@ -25,7 +25,8 @@ execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #G
 execute if score #factory_shop_stage tmp matches 2 unless score #GLOBAL time_machine_level matches 1.. run scoreboard players set #GLOBAL time_machine_level 1
 execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #time_machine_yellow upgrade 0
 execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #time_machine_blue upgrade 0
-execute if score #factory_shop_stage tmp matches 2 run scoreboard players set #time_machine_timer generate 1200
+execute if score #factory_shop_stage tmp matches 2 run function time_machine/calculate
+execute if score #factory_shop_stage tmp matches 2 run scoreboard players operation #time_machine_timer generate = #time_machine_interval_cached var
 
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 function shop/factory/interact
