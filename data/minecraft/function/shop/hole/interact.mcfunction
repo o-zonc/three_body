@@ -23,10 +23,10 @@ execute if score #hole_claims var matches 1 run scoreboard players set #hole_tim
 execute if score #hole_claims var matches 2 run scoreboard players set #hole_info_cost tmp 64
 execute if score #hole_claims var matches 2 run scoreboard players set #hole_time_cost tmp 4
 
-# 업그레이드 비용: 기존 세계의 눈 장치의 16 -> 256 성장 폭과 맞춥니다.
+# 균열 확장 비용: Lv.1은 세계의 눈 16개, Lv.2는 96개를 요구합니다.
 scoreboard players set #hole_upgrade_cost tmp 0
 execute if score #hole_level upgrade matches 0 run scoreboard players set #hole_upgrade_cost tmp 16
-execute if score #hole_level upgrade matches 1 run scoreboard players set #hole_upgrade_cost tmp 256
+execute if score #hole_level upgrade matches 1 run scoreboard players set #hole_upgrade_cost tmp 96
 
 # 버튼 준비
 data modify storage data tmp.hole.claim_button set value {text:"§8[ 이번 문명 수급 완료 ]"}
@@ -36,4 +36,4 @@ execute if score #hole_level upgrade matches 0..1 run data modify storage data t
 
 execute at @s run playsound minecraft:block.respawn_anchor.ambient master @s ~ ~ ~ 0.35 0.7
 function util/blank
-tellraw @s ["",{text:"  [ 공허의 균열 ]",color:"dark_purple",bold:true},{text:"\n\n  틈 너머에서 이 세계에 존재하지 않는 물질이 응답합니다.",color:"gray"},{text:"\n\n  흑요석 1개는 구매·업그레이드 비용을 한 번 대신합니다.",color:"dark_gray", italic:true},{text:"\n\n  균열 단계: ",color:"gray"},{score:{name:"#hole_level_tmp",objective:"tmp"},color:"white"},{text:" / 2",color:"gray"},{text:"\n  이번 문명 수급: ",color:"gray"},{score:{name:"#hole_claims",objective:"var"},color:"white"},{text:" / ",color:"gray"},{score:{name:"#hole_max_claims",objective:"tmp"},color:"white"},{text:"\n  보유 흑요석: ",color:"gray"},{score:{name:"#obsidian_wallet",objective:"tmp"},color:"dark_gray",shadow_color:-8388480},{text:"개",color:"gray"},{text:"\n\n  "},{storage:"data",nbt:"tmp.hole.claim_button",interpret:true},{text:"   "},{storage:"data",nbt:"tmp.hole.upgrade_button",interpret:true},{text:"\n"}]
+tellraw @s ["",{text:"  [ 공허의 균열 ]",color:"dark_purple",bold:true},{text:"\n\n  틈 너머에서 이 세계에 존재하지 않는 물질이 응답합니다.",color:"gray"},{text:"\n\n  흑요석 1개는 구매·업그레이드 비용을 한 번 대신합니다.",color:"dark_gray",italic:true},{text:"\n\n  균열 단계: ",color:"gray"},{score:{name:"#hole_level_tmp",objective:"tmp"},color:"white"},{text:" / 2",color:"gray"},{text:"\n  이번 문명 수급: ",color:"gray"},{score:{name:"#hole_claims",objective:"var"},color:"white"},{text:" / ",color:"gray"},{score:{name:"#hole_max_claims",objective:"tmp"},color:"white"},{text:"\n  보유 흑요석: ",color:"gray"},{score:{name:"#obsidian_wallet",objective:"tmp"},color:"dark_gray",shadow_color:-8388480},{text:"개",color:"gray"},{text:"\n\n  "},{storage:"data",nbt:"tmp.hole.claim_button",interpret:true},{text:"   "},{storage:"data",nbt:"tmp.hole.upgrade_button",interpret:true},{text:"\n"}]
