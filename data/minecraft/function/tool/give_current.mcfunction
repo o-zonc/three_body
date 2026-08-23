@@ -12,8 +12,11 @@ data modify entity @e[type=minecraft:item,tag=creating_resource_tool,sort=neares
 
 # 최신 데이터 컴포넌트 형식에서는 can_break 자체가 블록 조건(또는 조건 목록)이다.
 data modify entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:can_break" set from storage data tmp.tool.now.components.can_break
-# 색채 자원 이름이 발견 전에 기본 Can Break 툴팁으로 노출되지 않도록 tooltip_display도 복사한다.
-execute if data storage data tmp.tool.now.components.tooltip_display run data modify entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:tooltip_display" set from storage data tmp.tool.now.components.tooltip_display
+
+# 노랑/파랑은 중입자 충돌 발전과제 이후에만 can_break 목록에 노출한다.
+# Lv.6 이상 도구의 목록 끝 두 항목은 항상 노랑, 파랑 순서이므로 미발견 상태에서만 제거한다.
+execute if score #tool upgrade matches 6.. unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run data remove entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:can_break".blocks[-1]
+execute if score #tool upgrade matches 6.. unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run data remove entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:can_break".blocks[-1]
 
 # 시스템 도구 식별자와 레벨을 아이템에 기록한다.
 data modify entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:custom_data" set value {tool:{}}
