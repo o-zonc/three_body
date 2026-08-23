@@ -26,3 +26,5 @@ execute unless score #GLOBAL era_observed matches 1 unless entity @a[tag=dev] ru
 scoreboard players set #GLOBAL reckoning_ready 1
 # 시공간 확장은 극야 진입당 정보/시간 보관소를 통틀어 한 번만 사용할 수 있다.
 scoreboard players set #spacetime_expansion_used var 0
+# 공허의 구멍 수급 횟수도 새 문명 정산 주기마다 초기화한다. 레벨은 영구 유지한다.
+scoreboard players set #hole_claims var 0
