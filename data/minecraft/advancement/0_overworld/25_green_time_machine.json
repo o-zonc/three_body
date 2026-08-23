@@ -1,0 +1,17 @@
+{
+  "parent": "0_overworld/24_time_machine",
+  "display": {
+    "icon": "ender_eye",
+    "title": "완전한 균형",
+    "description": "타임머신의 모든 세대를 초록 발전 트리로 완성합니다.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "all_green_milestones": {
+      "trigger": "impossible"
+    }
+  }
+}
