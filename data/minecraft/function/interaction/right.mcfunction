@@ -20,7 +20,7 @@ execute if entity @s[tag=polarnight,tag=reckoning] on target run function polarn
 execute if entity @s[tag=crying,tag=overworld] on target run function crying/collect {id:"overworld",x:11,z:11}
 execute if entity @s[tag=crying,tag=dried] on target run function crying/dried_interact
 execute if entity @s[tag=crying,tag=frozen] on target run function crying/frozen_interact
-execute if entity @s[tag=crying,tag=dawn] on target run function crying/collect {id:"dawn",x:-11,z:-11}
+execute if entity @s[tag=crying,tag=dawn] on target run function crying/dawn_interact
 execute if entity @s[tag=shop,tag=vault] on target run function crying/vault_interact
 execute if entity @s[tag=era] on target run function common/era/interact
 execute if entity @s[tag=alchemy,tag=jewel] on target run function shop/alchemy/jewel/ui
