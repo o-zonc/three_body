@@ -82,8 +82,9 @@ scoreboard objectives add elevator_unlocked dummy
 scoreboard objectives add elevator_jump minecraft.custom:minecraft.jump
 scoreboard objectives add elevator_jump_prev dummy
 
-# 11. 타임머신 레벨 (0~4)
+# 11. 타임머신
 scoreboard objectives add time_machine_level dummy
+scoreboard objectives add time_machine_trigger trigger
 
 # 12. 공장 자동화
 scoreboard objectives add factory_level dummy
