@@ -4,7 +4,7 @@
     "icon": "clock",
     "title": "타임머신",
     "description": "시간의 흐름을 제어하는 장치를 건설합니다.",
-    "frame": "challenge",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
