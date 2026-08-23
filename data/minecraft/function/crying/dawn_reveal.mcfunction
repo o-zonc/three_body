@@ -9,4 +9,4 @@ execute in minecraft:dawn unless block 0 67 0 minecraft:light_blue_stained_glass
 # 중복 생성 방지
 execute in minecraft:dawn if entity @e[type=minecraft:block_display,tag=crying_dawn_display] run return 0
 
-execute in minecraft:dawn run summon minecraft:block_display 0.5 68 0.5 {block_state:{Name:"minecraft:crying_obsidian"},Tags:["crying_dawn_display"]}
+execute in minecraft:dawn run summon minecraft:block_display 0 68 0 {block_state:{Name:"minecraft:crying_obsidian"},Tags:["crying_dawn_display"]}
