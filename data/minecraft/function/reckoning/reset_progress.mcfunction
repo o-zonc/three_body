@@ -32,6 +32,9 @@ scoreboard players set #jewel_auto_timer var 0
 scoreboard players set #jewel_cooldown var 0
 scoreboard players set #jewel_particle_timer var 0
 
+# 미래 진입에 필요한 시공간 붕괴 실험 기록은 문명마다 새로 달성해야 한다.
+scoreboard players set #spacetime_experiment_done var 0
+
 # 문명별 생산/시설 타이머는 새 문명의 기본값으로 되돌린다.
 scoreboard players set #heat_environment_timer generate 1200
 scoreboard players set #cold_environment_timer generate 1200
