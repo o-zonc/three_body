@@ -11,4 +11,5 @@ execute if score #gold_second_lvl upgrade matches 3 run scoreboard players add #
 execute if score #gold_second_lvl upgrade matches 4.. run scoreboard players add #production_amount tmp 10
 execute store result score #production_multiplier tmp run function resource/shop/value {id:"gold"}
 scoreboard players operation #production_amount tmp *= #production_multiplier tmp
+function dawn/amplifier/apply {score:"#production_amount",dim:"dried",final:150}
 return run scoreboard players get #production_amount tmp
