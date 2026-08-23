@@ -1,3 +1,6 @@
+execute if entity @s[tag=accelerator_experiment_running] run title @s actionbar {text:"실험이 진행 중일 때는 입자가속기를 업그레이드할 수 없습니다.",color:"red"}
+execute if entity @s[tag=accelerator_experiment_running] run return 0
+
 # 입자가속기는 현대(문명 단계 8) 이후에 처음 가동할 수 있습니다.
 execute if score #GLOBAL accelerator_level matches 0 unless score #overworld civilization_age matches 8.. run title @s actionbar {text:"현대에 도달해야 입자가속기를 가동할 수 있습니다.",color:"red"}
 execute if score #GLOBAL accelerator_level matches 0 unless score #overworld civilization_age matches 8.. run return 0
