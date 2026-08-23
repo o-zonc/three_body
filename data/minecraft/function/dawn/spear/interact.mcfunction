@@ -1,6 +1,5 @@
 # 여명 차원 중앙 구조물 상호작용
-# 우는 흑요석이 이미 공개된 뒤에는 기존 월드에서 잘못된 좌표에 남은 디스플레이만 보정하고 더 이상 반응하지 않습니다.
-execute in minecraft:dawn if entity @e[type=minecraft:block_display,tag=crying_dawn_display] run tp @e[type=minecraft:block_display,tag=crying_dawn_display] 0 68 0
+# 우는 흑요석이 이미 공개된 뒤에는 더 이상 반응하지 않습니다.
 execute in minecraft:dawn if entity @e[type=minecraft:block_display,tag=crying_dawn_display] run return 0
 
 execute in minecraft:dawn unless block 0 67 0 minecraft:light_blue_stained_glass run tellraw @s "하양"
