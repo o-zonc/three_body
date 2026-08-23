@@ -23,6 +23,7 @@ execute if entity @s[tag=crying,tag=dried] on target run function crying/dried_i
 execute if entity @s[tag=crying,tag=frozen] on target run function crying/frozen_interact
 execute if entity @s[tag=crying,tag=dawn] on target run function crying/dawn_interact
 execute if entity @s[tag=shop,tag=vault] on target run function crying/vault_interact
+execute if entity @s[tag=shop,tag=hole] on target run function shop/hole/interact
 execute if entity @s[tag=era] on target run function common/era/interact
 execute if entity @s[tag=alchemy,tag=jewel] on target run function shop/alchemy/jewel/ui
 execute if entity @s[tag=alchemy,tag=lab] on target run function shop/alchemy/lab/ui
@@ -48,7 +49,7 @@ execute if entity @s[tag=shop,tag=time,tag=polarnight] on target run function sh
 execute if entity @s[tag=shop,tag=information,tag=!polarnight] on target run function shop/third/storage_ui {id:"information",name:"정보",title:"상점 및 지갑",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
 execute if entity @s[tag=shop,tag=information,tag=polarnight] on target run function shop/third/storage_ui {id:"information",name:"정보",title:"보관소",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
 execute if entity @s[tag=shop,tag=world_eye] on target run function shop/third/world_eye/ui
-execute if entity @s[tag=shop,tag=!check,tag=!factory,tag=!heat,tag=!gold,tag=!cold,tag=!diamond,tag=!special,tag=!get,tag=!time,tag=!information,tag=!world_eye,tag=!era,tag=!alchemy,tag=!elevator,tag=!observatory,tag=!item,tag=!entrance,tag=!frozen,tag=!vault] run function resource/shop/interact
+execute if entity @s[tag=shop,tag=!check,tag=!factory,tag=!heat,tag=!gold,tag=!cold,tag=!diamond,tag=!special,tag=!get,tag=!time,tag=!information,tag=!world_eye,tag=!era,tag=!alchemy,tag=!elevator,tag=!observatory,tag=!item,tag=!entrance,tag=!frozen,tag=!vault,tag=!hole] run function resource/shop/interact
 execute if entity @s[tag=factory,tag=!shop] run function factory/interact
 execute if entity @s[tag=factory,tag=accelerator] on target run function accelerator/ui
 execute if entity @s[tag=factory,tag=shield] on target run function shield/ui
