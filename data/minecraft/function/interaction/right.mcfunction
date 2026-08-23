@@ -27,7 +27,6 @@ execute if entity @s[tag=shop,tag=hole] on target run function shop/hole/interac
 execute if entity @s[tag=era] on target run function common/era/interact
 execute if entity @s[tag=alchemy,tag=jewel] on target run function shop/alchemy/jewel/ui
 execute if entity @s[tag=alchemy,tag=lab] on target run function shop/alchemy/lab/ui
-execute if entity @s[tag=alchemy,tag=space_mover] on target run function space/mover/interact
 
 
 # 상점류
