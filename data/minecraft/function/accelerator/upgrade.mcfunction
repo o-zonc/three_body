@@ -6,10 +6,10 @@ execute if score #GLOBAL accelerator_level matches 4.. run title @s actionbar {t
 execute if score #GLOBAL accelerator_level matches 4.. run return 0
 
 data remove storage data tmp.cost
-execute if score #GLOBAL accelerator_level matches 0 run data modify storage data tmp.cost set value [{type:"iron",amount:100000},{type:"time",amount:1}]
-execute if score #GLOBAL accelerator_level matches 1 run data modify storage data tmp.cost set value [{type:"iron",amount:300000},{type:"time",amount:2}]
-execute if score #GLOBAL accelerator_level matches 2 run data modify storage data tmp.cost set value [{type:"iron",amount:800000},{type:"time",amount:4}]
-execute if score #GLOBAL accelerator_level matches 3 run data modify storage data tmp.cost set value [{type:"iron",amount:2000000},{type:"time",amount:8}]
+execute if score #GLOBAL accelerator_level matches 0 run data modify storage data tmp.cost set from storage data const.accelerator.upgrade."0".cost
+execute if score #GLOBAL accelerator_level matches 1 run data modify storage data tmp.cost set from storage data const.accelerator.upgrade."1".cost
+execute if score #GLOBAL accelerator_level matches 2 run data modify storage data tmp.cost set from storage data const.accelerator.upgrade."2".cost
+execute if score #GLOBAL accelerator_level matches 3 run data modify storage data tmp.cost set from storage data const.accelerator.upgrade."3".cost
 execute store result score #accelerator_cost_ok tmp run function resource/check_cost
 
 # Lv.2부터는 보호막에서 회수한 깨진 양자 얽힘 파편도 요구합니다.
@@ -17,9 +17,12 @@ execute store result score #accelerator_cost_ok tmp run function resource/check_
 execute if score #GLOBAL accelerator_level matches 1 store result score #broken_count tmp run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 0
 execute if score #GLOBAL accelerator_level matches 2 store result score #broken_count tmp run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 0
 execute if score #GLOBAL accelerator_level matches 3 store result score #broken_count tmp run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 0
-execute unless score #obsidian_cost_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 1 unless score #broken_count tmp matches 10.. run scoreboard players set #accelerator_cost_ok tmp 0
-execute unless score #obsidian_cost_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 2 unless score #broken_count tmp matches 40.. run scoreboard players set #accelerator_cost_ok tmp 0
-execute unless score #obsidian_cost_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 3 unless score #broken_count tmp matches 120.. run scoreboard players set #accelerator_cost_ok tmp 0
+execute if score #GLOBAL accelerator_level matches 1 store result score #broken_required tmp run data get storage data const.accelerator.upgrade."1".broken
+execute if score #GLOBAL accelerator_level matches 2 store result score #broken_required tmp run data get storage data const.accelerator.upgrade."2".broken
+execute if score #GLOBAL accelerator_level matches 3 store result score #broken_required tmp run data get storage data const.accelerator.upgrade."3".broken
+execute unless score #obsidian_cost_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 1 unless score #broken_count tmp >= #broken_required tmp run scoreboard players set #accelerator_cost_ok tmp 0
+execute unless score #obsidian_cost_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 2 unless score #broken_count tmp >= #broken_required tmp run scoreboard players set #accelerator_cost_ok tmp 0
+execute unless score #obsidian_cost_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 3 unless score #broken_count tmp >= #broken_required tmp run scoreboard players set #accelerator_cost_ok tmp 0
 
 # 추가 재료 때문에 실패했더라도 흑요석을 보유했다면 전체 비용 대체로 전환합니다.
 execute unless score #accelerator_cost_ok tmp matches 1 if score #obsidian_wallet tmp matches 1.. run scoreboard players set #obsidian_cost_bypass tmp 1
