@@ -3,13 +3,15 @@ function time_machine/prepare_research
 execute if score #time_machine_research_total tmp matches 12.. run title @s actionbar {text:"타임머신 연구가 이미 완료되었습니다.",color:"green"}
 execute if score #time_machine_research_total tmp matches 12.. run return 0
 
+# 시간은 마일스톤(4/8/12번째 연구)에서만 요구합니다.
 data remove storage data tmp.cost
-$data modify storage data tmp.cost set value [{type:"$(type)",amount:0},{type:"no_obsidian"}]
-execute store result storage data tmp.cost[0].amount int 1 run scoreboard players get #time_machine_color_cost tmp
+data modify storage data tmp.cost set value [{type:"no_obsidian"}]
 execute if score #time_machine_time_cost tmp matches 1.. run data modify storage data tmp.cost append value {type:"time",amount:0}
 execute if score #time_machine_time_cost tmp matches 1.. store result storage data tmp.cost[{type:"time"}].amount int 1 run scoreboard players get #time_machine_time_cost tmp
 
 execute store result score #time_machine_cost_ok tmp run function resource/check_cost
+# 선택한 색채 자원은 일반 material 점수에서 직접 검사합니다.
+$execute unless score #$(type) material >= #time_machine_color_cost tmp run scoreboard players set #time_machine_cost_ok tmp 0
 execute store result score #time_machine_broken_count tmp run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 0
 execute unless score #time_machine_broken_count tmp >= #time_machine_broken_cost tmp run scoreboard players set #time_machine_cost_ok tmp 0
 execute unless score #time_machine_cost_ok tmp matches 1 run title @s actionbar {text:"연구에 필요한 재료가 부족합니다.",color:"red"}
@@ -17,6 +19,7 @@ execute unless score #time_machine_cost_ok tmp matches 1 at @s run playsound blo
 execute unless score #time_machine_cost_ok tmp matches 1 run return 0
 
 function resource/take_cost
+$scoreboard players operation #$(type) material -= #time_machine_color_cost tmp
 data modify storage data tmp.time_machine.research set value {broken:0}
 execute store result storage data tmp.time_machine.research.broken int 1 run scoreboard players get #time_machine_broken_cost tmp
 function time_machine/research/take_broken with storage data tmp.time_machine.research
