@@ -9,3 +9,6 @@ function factory/run {id:"cold",dim:"minecraft:frozen",block:"blue_ice",x:0,y:68
 function factory/run {id:"emerald",dim:"overworld",block:"emerald_ore",x:-1,y:-62,z:-35}
 function factory/run {id:"lapis",dim:"overworld",block:"lapis_ore",x:-3,y:-62,z:-35}
 function factory/run {id:"heat",dim:"dried",block:"magma_block",x:-6,y:65,z:0}
+
+# load 시 청크가 없어 미뤄진 표시등 갱신만 필요할 때 한 번 재시도합니다.
+execute if score #factory_light_dirty var matches 1 if score #GLOBAL current_dim matches 0 run function factory/refresh_dirty
