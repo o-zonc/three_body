@@ -11,5 +11,7 @@ execute if score #time_machine_yellow upgrade > #time_machine_blue upgrade run t
 execute if score #time_machine_blue upgrade > #time_machine_yellow upgrade run tellraw @s ["",{"text":"\n  [ 파랑 발전 트리 ]","color":"blue","bold":true},{"text":"\n  시간 흐름 가속 세대가 확립되었습니다. 생산 주기 -75틱","color":"gray","bold":false}]
 execute if score #time_machine_yellow upgrade = #time_machine_blue upgrade run tellraw @s ["",{"text":"\n  [ 숨겨진 초록 발전 트리 발견 ]","color":"green","bold":true},{"text":"\n  두 연구의 균형으로 복합 시간 공학이 확립되었습니다. 생산량 +1 / 생산 주기 -15틱","color":"gray","bold":false}]
 
-# 세 번의 마일스톤을 모두 초록 트리로 완성하면 도전 발전과제를 달성합니다.
+# 세 번의 마일스톤을 모두 같은 발전 트리로 완성하면 해당 숨겨진 발전과제를 달성합니다.
+execute if score #time_machine_path_yellow upgrade matches 3.. unless entity @s[advancements={0_overworld/25_yellow_time_machine=true}] run advancement grant @s only 0_overworld/25_yellow_time_machine
+execute if score #time_machine_path_blue upgrade matches 3.. unless entity @s[advancements={0_overworld/25_blue_time_machine=true}] run advancement grant @s only 0_overworld/25_blue_time_machine
 execute if score #time_machine_path_green upgrade matches 3.. unless entity @s[advancements={0_overworld/25_green_time_machine=true}] run advancement grant @s only 0_overworld/25_green_time_machine
