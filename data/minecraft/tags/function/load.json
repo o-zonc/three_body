@@ -2,12 +2,6 @@
 	"values": [
 		"init",
 		"var_init/load",
-		"const_def",
-		"accelerator/const_def",
-		"resource/color/const_def",
-		"resource/shop/const_def",
-		"resource/regen/const_def",
-		"dried/relic/const_def",
-		"time_machine/const_def"
+		"const_def"
 	]
 }
