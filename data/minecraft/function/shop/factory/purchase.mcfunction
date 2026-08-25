@@ -7,6 +7,7 @@ execute unless score #overworld civilization_age >= #factory_required_age tmp ru
 execute unless score #overworld civilization_age >= #factory_required_age tmp run return 0
 
 data modify storage data tmp.cost set from storage data tmp.factory_shop.cost
+function resource/cost/apply_shop_advancement_discount
 execute store result score #factory_cost_check tmp run function resource/check_cost
 execute unless score #factory_cost_check tmp matches 1 run title @s actionbar "§c재료가 부족합니다."
 execute unless score #factory_cost_check tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
