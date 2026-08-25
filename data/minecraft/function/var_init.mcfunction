@@ -96,6 +96,9 @@ execute unless score #copper_advancement_reward var = #copper_advancement_reward
 execute unless score #iron_advancement_reward var = #iron_advancement_reward var run scoreboard players set #iron_advancement_reward var 0
 execute unless score #lapis_advancement_reward var = #lapis_advancement_reward var run scoreboard players set #lapis_advancement_reward var 0
 execute unless score #shop_cost_advancement_reward var = #shop_cost_advancement_reward var run scoreboard players set #shop_cost_advancement_reward var 0
+execute unless score #dried_shop_discount_stage var = #dried_shop_discount_stage var run scoreboard players set #dried_shop_discount_stage var 0
+execute if score #dried_shop_discount_stage var matches ..-1 run scoreboard players set #dried_shop_discount_stage var 0
+execute if score #dried_shop_discount_stage var matches 3.. run scoreboard players set #dried_shop_discount_stage var 2
 execute unless score #gold_regen_lvl upgrade = #gold_regen_lvl upgrade run scoreboard players set #gold_regen_lvl upgrade 0
 execute unless score #blaze_drop_lvl upgrade = #blaze_drop_lvl upgrade run scoreboard players set #blaze_drop_lvl upgrade 0
 execute unless score #disable_wood_production var = #disable_wood_production var run scoreboard players set #disable_wood_production var 0
@@ -137,7 +140,7 @@ execute unless score #GLOBAL shield_charge = #GLOBAL shield_charge run scoreboar
 execute unless score #GLOBAL shield_maintenance = #GLOBAL shield_maintenance run scoreboard players set #GLOBAL shield_maintenance 6000
 execute unless score #dried_relic_level upgrade = #dried_relic_level upgrade run scoreboard players set #dried_relic_level upgrade 0
 execute if score #dried_relic_level upgrade matches ..-1 run scoreboard players set #dried_relic_level upgrade 0
-execute if score #dried_relic_level upgrade matches 5.. run scoreboard players set #dried_relic_level upgrade 4
+execute if score #dried_relic_level upgrade matches 6.. run scoreboard players set #dried_relic_level upgrade 5
 execute unless score #dried_relic_timer generate = #dried_relic_timer generate run scoreboard players set #dried_relic_timer generate 1200
 execute unless score #information_auto_withdraw meta = #information_auto_withdraw meta run scoreboard players set #information_auto_withdraw meta 0
 execute unless score #time_auto_withdraw meta = #time_auto_withdraw meta run scoreboard players set #time_auto_withdraw meta 0
