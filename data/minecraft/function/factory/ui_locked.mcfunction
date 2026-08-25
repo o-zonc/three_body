@@ -7,7 +7,8 @@ function factory/read with storage data tmp.factory.ui_locked
 data remove storage data tmp.cost
 data remove storage data tmp.cost_original
 $data modify storage data tmp.cost set from storage data tmp.factory.$(id).now.cost
-execute if data storage data tmp.cost run function resource/convert_cost_to_text_named {id:"factory",insertion:", "}
+execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
+execute if data storage data tmp.cost run function resource/convert_discount_cost_to_text_named {id:"factory",insertion:", "}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
