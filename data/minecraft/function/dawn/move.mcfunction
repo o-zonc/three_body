@@ -8,6 +8,7 @@ schedule clear frozen/weather
 schedule clear dried/weather
 
 execute in dawn run tp @a 0 64 0
+execute in dawn run weather clear
 function mover/items/arrive_other
 
 execute in dawn run time set 23000
