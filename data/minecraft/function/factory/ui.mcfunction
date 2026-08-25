@@ -25,7 +25,8 @@ execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] run data mod
 data remove storage data tmp.cost
 data remove storage data tmp.cost_original
 $data modify storage data tmp.cost set from storage data tmp.factory.$(id).now.cost
-execute if data storage data tmp.cost run function resource/convert_cost_to_text_named {id:"factory",insertion:", "}
+execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
+execute if data storage data tmp.cost run function resource/convert_discount_cost_to_text_named {id:"factory",insertion:", "}
 $execute if score #$(id) factory_level matches 0..5 if data storage data tmp.cost run data modify storage data tmp.factory.purchase_button set value {text:"[ 생산 설비 업그레이드 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.factory.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger factory_trigger set $(purchase)"}}
 $execute if score #$(id) factory_level matches 6.. run data modify storage data tmp.factory.purchase_button set value {text:"[ 최대 레벨 ]",color:"dark_gray",bold:true}
 $execute if score #$(id) factory_enabled matches 0 run data modify storage data tmp.factory.toggle_button set value {text:"[ 가동 시작 ]",color:"green",bold:true,click_event:{action:"run_command",command:"/trigger factory_trigger set $(toggle)"}}
