@@ -9,6 +9,7 @@ function factory/read with storage data tmp.factory.purchase
 data remove storage data tmp.cost
 data remove storage data tmp.cost_original
 $data modify storage data tmp.cost set from storage data tmp.factory.$(id).now.cost
+execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
 execute store result score #factory_cost_check tmp run function resource/check_cost
 execute unless score #factory_cost_check tmp matches 1 run title @s actionbar {text:"공장 건설·업그레이드 재료가 부족합니다.",color:"red"}
 execute unless score #factory_cost_check tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
