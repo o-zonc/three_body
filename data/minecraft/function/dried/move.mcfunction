@@ -8,6 +8,7 @@ function mover/local/recover
 execute if score #GLOBAL current_dim matches 4 run function dawn/cleanup_epiphany
 
 execute in dried run tp @a 0 64 0
+execute in dried run weather clear
 function mover/items/arrive_other
 gamerule advance_time true
 
@@ -28,5 +29,3 @@ scoreboard players set #gold unlock 1
 scoreboard players set #GLOBAL state_dried 0
 scoreboard players set #GLOBAL timer_dried 1200
 bossbar set bossbar_dried max 1200
-
-schedule function dried/weather 1t
