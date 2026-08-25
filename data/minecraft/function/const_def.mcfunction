@@ -286,8 +286,6 @@ data merge storage data {\
               "diamond_block",\
               "magma_block",\
               "blue_ice",\
-              "yellow_glazed_terracotta",\
-              "blue_glazed_terracotta",\
             ]\
           },\
           tool: {\
@@ -302,8 +300,6 @@ data merge storage data {\
               { blocks: "diamond_block", correct_for_drops: 1b, speed: 0.9375f },\
               { blocks: "magma_block", correct_for_drops: 1b, speed: 0.1875f },\
               { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.05f },\
-              { blocks: "yellow_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
-              { blocks: "blue_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
             ]\
           },\
         }\
@@ -339,8 +335,6 @@ data merge storage data {\
               "diamond_block",\
               "magma_block",\
               "blue_ice",\
-              "yellow_glazed_terracotta",\
-              "blue_glazed_terracotta",\
             ]\
           },\
           tool: {\
@@ -356,8 +350,6 @@ data merge storage data {\
               { blocks: "diamond_block", correct_for_drops: 1b, speed: 1.875f },\
               { blocks: "magma_block", correct_for_drops: 1b, speed: 0.25f },\
               { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.4f },\
-              { blocks: "yellow_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
-              { blocks: "blue_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
             ]\
           },\
         }\
@@ -393,8 +385,6 @@ data merge storage data {\
               "diamond_block",\
               "magma_block",\
               "blue_ice",\
-              "yellow_glazed_terracotta",\
-              "blue_glazed_terracotta",\
             ]\
           },\
           tool: {\
@@ -410,8 +400,6 @@ data merge storage data {\
               { blocks: "diamond_block", correct_for_drops: 1b, speed: 1.875f },\
               { blocks: "magma_block", correct_for_drops: 1b, speed: 0.25f },\
               { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.4f },\
-              { blocks: "yellow_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
-              { blocks: "blue_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
             ]\
           },\
         }\
@@ -447,8 +435,6 @@ data merge storage data {\
               "diamond_block",\
               "magma_block",\
               "blue_ice",\
-              "yellow_glazed_terracotta",\
-              "blue_glazed_terracotta",\
             ]\
           },\
           tool: {\
@@ -464,8 +450,6 @@ data merge storage data {\
               { blocks: "diamond_block", correct_for_drops: 1b, speed: 1.875f },\
               { blocks: "magma_block", correct_for_drops: 1b, speed: 0.375f },\
               { blocks: "blue_ice", correct_for_drops: 1b, speed: 2.1f },\
-              { blocks: "yellow_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
-              { blocks: "blue_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
             ]\
           },\
         }\
@@ -500,8 +484,6 @@ data merge storage data {\
               "diamond_block",\
               "magma_block",\
               "blue_ice",\
-              "yellow_glazed_terracotta",\
-              "blue_glazed_terracotta",\
             ]\
           },\
           tool: {\
@@ -517,8 +499,6 @@ data merge storage data {\
               { blocks: "diamond_block", correct_for_drops: 1b, speed: 2.5f },\
               { blocks: "magma_block", correct_for_drops: 1b, speed: 0.375f },\
               { blocks: "blue_ice", correct_for_drops: 1b, speed: 2.1f },\
-              { blocks: "yellow_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
-              { blocks: "blue_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
             ]\
           },\
         }\
@@ -552,8 +532,6 @@ data merge storage data {\
               "diamond_block",\
               "magma_block",\
               "blue_ice",\
-              "yellow_glazed_terracotta",\
-              "blue_glazed_terracotta",\
             ]\
           },\
           tool: {\
@@ -569,8 +547,6 @@ data merge storage data {\
               { blocks: "diamond_block", correct_for_drops: 1b, speed: 3.75f },\
               { blocks: "magma_block", correct_for_drops: 1b, speed: 0.75f },\
               { blocks: "blue_ice", correct_for_drops: 1b, speed: 4.2f },\
-              { blocks: "yellow_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
-              { blocks: "blue_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
             ]\
           },\
         }\
@@ -1142,12 +1118,43 @@ data modify storage data const.factory set value \
 data modify storage data const.accelerator set value {level:{"1":{production:1,production_interval:1200,experiment_cooldown:1200,failure_cooldown:600},"2":{production:2,production_interval:900,experiment_cooldown:600,failure_cooldown:300},"3":{production:4,production_interval:600,experiment_cooldown:300,failure_cooldown:150},"4":{production:8,production_interval:400,experiment_cooldown:180,failure_cooldown:90}},upgrade:{"0":{cost:[{type:"iron",amount:100000},{type:"time",amount:1}],broken:0},"1":{cost:[{type:"iron",amount:300000},{type:"time",amount:2}],broken:10},"2":{cost:[{type:"iron",amount:800000},{type:"time",amount:4}],broken:40},"3":{cost:[{type:"iron",amount:2000000},{type:"time",amount:8}],broken:120}},experiment:{quantum:{unlock_level:1,delay:60,failure_chance:10,cost:[{type:"iron",amount:50000},{type:"lapis",amount:500},{type:"gold",amount:250},{type:"diamond",amount:50},{type:"time",amount:1},{type:"no_obsidian",amount:1}]},heavy:{unlock_level:2,delay:80,failure_chance:16,cost:[{type:"iron",amount:150000},{type:"lapis",amount:1000},{type:"gold",amount:500},{type:"diamond",amount:100},{type:"time",amount:2},{type:"no_obsidian",amount:1}]},spacetime:{unlock_level:4,delay:100,failure_chance:25,cost:[{type:"iron",amount:500000},{type:"lapis",amount:2500},{type:"gold",amount:1000},{type:"diamond",amount:250},{type:"time",amount:4},{type:"no_obsidian",amount:1}],failure_loss:[{type:"information",amount:16},{type:"time",amount:1}]}},repair:{automatic_time:36000,manual_cost:[{type:"iron",amount:100000},{type:"time",amount:2}]}}
 
 # -----------------------------------------------------------------------------
-# 로드 시 기존 세이브 보정
+# 로드 시 기존 세이브 보정 및 도구 규칙 확장
 # -----------------------------------------------------------------------------
 execute unless score #yellow material = #yellow material run scoreboard players set #yellow material 0
 execute unless score #blue material = #blue material run scoreboard players set #blue material 0
 execute unless score #yellow_regen_lvl upgrade = #yellow_regen_lvl upgrade run scoreboard players set #yellow_regen_lvl upgrade 0
 execute unless score #blue_regen_lvl upgrade = #blue_regen_lvl upgrade run scoreboard players set #blue_regen_lvl upgrade 0
+
+# 구리 곡괭이(Lv.6)부터 노랑/파랑을 채굴할 수 있습니다.
+data modify storage data const.tool[{lvl:6}].components.can_break.blocks append value "yellow_glazed_terracotta"
+data modify storage data const.tool[{lvl:6}].components.can_break.blocks append value "blue_glazed_terracotta"
+data modify storage data const.tool[{lvl:6}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+data modify storage data const.tool[{lvl:6}].components.tool.rules append value {blocks:"blue_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+
+data modify storage data const.tool[{lvl:7}].components.can_break.blocks append value "yellow_glazed_terracotta"
+data modify storage data const.tool[{lvl:7}].components.can_break.blocks append value "blue_glazed_terracotta"
+data modify storage data const.tool[{lvl:7}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+data modify storage data const.tool[{lvl:7}].components.tool.rules append value {blocks:"blue_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+
+data modify storage data const.tool[{lvl:8}].components.can_break.blocks append value "yellow_glazed_terracotta"
+data modify storage data const.tool[{lvl:8}].components.can_break.blocks append value "blue_glazed_terracotta"
+data modify storage data const.tool[{lvl:8}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+data modify storage data const.tool[{lvl:8}].components.tool.rules append value {blocks:"blue_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+
+data modify storage data const.tool[{lvl:9}].components.can_break.blocks append value "yellow_glazed_terracotta"
+data modify storage data const.tool[{lvl:9}].components.can_break.blocks append value "blue_glazed_terracotta"
+data modify storage data const.tool[{lvl:9}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+data modify storage data const.tool[{lvl:9}].components.tool.rules append value {blocks:"blue_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+
+data modify storage data const.tool[{lvl:10}].components.can_break.blocks append value "yellow_glazed_terracotta"
+data modify storage data const.tool[{lvl:10}].components.can_break.blocks append value "blue_glazed_terracotta"
+data modify storage data const.tool[{lvl:10}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+data modify storage data const.tool[{lvl:10}].components.tool.rules append value {blocks:"blue_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+
+data modify storage data const.tool[{lvl:11}].components.can_break.blocks append value "yellow_glazed_terracotta"
+data modify storage data const.tool[{lvl:11}].components.can_break.blocks append value "blue_glazed_terracotta"
+data modify storage data const.tool[{lvl:11}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
+data modify storage data const.tool[{lvl:11}].components.tool.rules append value {blocks:"blue_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
 
 # -----------------------------------------------------------------------------
 # 타임머신
