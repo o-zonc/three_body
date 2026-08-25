@@ -8,9 +8,6 @@
 
 schedule clear common/next
 
-schedule clear frozen/weather
-schedule clear dried/weather
-
 schedule clear story/intro/00_init
 schedule clear story/intro/01_quote1
 schedule clear story/intro/02_scroll_start
