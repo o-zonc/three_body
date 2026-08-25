@@ -4,9 +4,6 @@ effect clear @a darkness
 title @a clear
 function mover/local/recover
 
-schedule clear frozen/weather
-schedule clear dried/weather
-
 execute in dawn run tp @a 0 64 0
 execute in dawn run weather clear
 function mover/items/arrive_other
