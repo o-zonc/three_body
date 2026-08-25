@@ -1,7 +1,5 @@
 # 날씨는 차원 이동 함수에서 직접 고정합니다.
 gamerule advance_weather false
-schedule clear frozen/weather
-schedule clear dried/weather
 
 # 1. 각 차원별 시대 상태 스코어보드 (0: 항성기, 1: 난세기)
 scoreboard objectives add state_frozen dummy
