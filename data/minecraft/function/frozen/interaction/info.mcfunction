@@ -7,6 +7,6 @@ execute unless score #GLOBAL era_paused matches 1 run tellraw @s ["",{text:"  [ 
 
 execute if score #frozen_shop unlock matches 1.. run tellraw @s ["",{text:"  ✔ 상점 해금",color:"green"},{text:"\n\n  뒤편의 얼어붙은 상점에서 새로운 시설을 개방할 수 있습니다.",color:"gray"},{text:"\n"}]
 execute if score #frozen_shop unlock matches 1.. run return 0
-data modify storage data tmp.cost set value [{type:"diamond",amount:25}]
+data modify storage data tmp.cost set value [{type:"diamond",amount:1},{type:"cold",amount:1}]
 function resource/convert_cost_to_text_named {id:"frozen_shop",insertion:", "}
 tellraw @s ["",{text:"  "},{text:"[ 상점 해금 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.frozen_shop.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1901"}},{text:"\n"}]
