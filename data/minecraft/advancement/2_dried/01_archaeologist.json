@@ -3,7 +3,7 @@
   "display": {
     "icon": "brush",
     "title": "고고학자",
-    "description": "메마른 땅 아래에 묻혀 있던 고대 문명의 장치를 발굴했습니다.",
+    "description": "메마른 땅 아래에 묻혀 있던 고대 문명의 장치를 발굴했습니다.\n\n§6•§7 보상: 자원 상점 업그레이드 비용 20% 감소",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
@@ -13,5 +13,8 @@
     "relic_excavated": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "resource/advancement_reward/dried_shop_cost/stage_1"
   }
 }
