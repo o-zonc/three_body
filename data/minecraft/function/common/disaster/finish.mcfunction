@@ -13,12 +13,6 @@ title @a clear
 # 이전 차원의 예약 작업 정리
 # ==========================================
 
-# 얼어붙은 세계의 지속적인 날씨 함수
-schedule clear frozen/weather
-
-# 메마른 세계의 지속적인 날씨 함수
-schedule clear dried/weather
-
 # 혹시 남아 있는 이전 차원의 전환 예약 제거
 schedule clear common/next
 
