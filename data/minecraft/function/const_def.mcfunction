@@ -141,18 +141,15 @@ data merge storage data {\
             "§4도구 - 파괴",\
             "",\
             "§6* §e나무§7를 파괴하기까지 §f2§7초 소요됨",\
-            "§6* §7돌§7을 파괴하기까지 §f4§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
               "oak_log",\
-              "stone",\
             ]\
           },\
           tool: {\
             rules: [\
               { blocks: "oak_log", correct_for_drops: 1b, speed: 1.5f },\
-              { blocks: "stone", correct_for_drops: 1b, speed: 0.5625f },\
             ]\
           },\
         }\
@@ -167,7 +164,7 @@ data merge storage data {\
             "§4도구 - 파괴",\
             "",\
             "§6* §e나무§7를 파괴하기까지 §f1§7초 소요됨",\
-            "§6* §7돌§7을 파괴하기까지 §f3§7초 소요됨",\
+            "§6* §7돌§7을 파괴하기까지 §f4§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
@@ -178,7 +175,7 @@ data merge storage data {\
           tool: {\
             rules: [\
               { blocks: "oak_log", correct_for_drops: 1b, speed: 3.0f },\
-              { blocks: "stone", correct_for_drops: 1b, speed: 0.75f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 0.5625f },\
             ]\
           },\
         }\
@@ -193,7 +190,7 @@ data merge storage data {\
             "§4도구 - 파괴",\
             "",\
             "§6* §e나무§7를 파괴하기까지 §f1§7초 소요됨",\
-            "§6* §7돌§7을 파괴하기까지 §f2§7초 소요됨",\
+            "§6* §7돌§7을 파괴하기까지 §f3§7초 소요됨",\
             "§6* §8석탄§7을 파괴하기까지 §f6§7초 소요됨",\
             "§6* §6구리§7를 파괴하기까지 §f8§7초 소요됨",\
             "§6* §d특수 자원§7을 파괴하기까지 §f6§7초 소요됨",\
@@ -211,7 +208,7 @@ data merge storage data {\
           tool: {\
             rules: [\
               { blocks: "oak_log", correct_for_drops: 1b, speed: 3.0f },\
-              { blocks: "stone", correct_for_drops: 1b, speed: 1.125f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 0.75f },\
               { blocks: "coal_ore", correct_for_drops: 1b, speed: 0.75f },\
               { blocks: "copper_ore", correct_for_drops: 1b, speed: 0.5625f },\
               { blocks: "magma_block", correct_for_drops: 1b, speed: 0.125f },\
@@ -267,7 +264,7 @@ data merge storage data {\
             "§4도구 - 파괴",\
             "",\
             "§6* §e나무§7 즉시 파괴 가능",\
-            "§6* §7돌§7을 파괴하기까지 §f1§7초 소요됨",\
+            "§6* §7돌§7을 파괴하기까지 §f2§7초 소요됨",\
             "§6* §8석탄§7을 파괴하기까지 §f3§7초 소요됨",\
             "§6* §6구리§7를 파괴하기까지 §f5§7초 소요됨",\
             ["§6* ", "§f철", "§7, ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f8§7초 소요됨"],\
@@ -291,7 +288,7 @@ data merge storage data {\
           tool: {\
             rules: [\
               { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "stone", correct_for_drops: 1b, speed: 2.25f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 1.125f },\
               { blocks: "coal_ore", correct_for_drops: 1b, speed: 1.5f },\
               { blocks: "copper_ore", correct_for_drops: 1b, speed: 0.9f },\
               { blocks: "iron_ore", correct_for_drops: 1b, speed: 0.5625f },\
@@ -363,7 +360,8 @@ data merge storage data {\
           lore: [\
             "§4도구 - 파괴",\
             "",\
-            "§6* §e나무§7, §7돌§7 즉시 파괴 가능",\
+            "§6* §e나무§7 즉시 파괴 가능",\
+            "§6* §7돌§7을 파괴하기까지 §f1§7초 소요됨",\
             "§6* §8석탄§7을 파괴하기까지 §f2§7초 소요됨",\
             "§6* §6구리§7를 파괴하기까지 §f3§7초 소요됨",\
             "§6* §f철§7을 파괴하기까지 §f6§7초 소요됨",\
@@ -390,7 +388,7 @@ data merge storage data {\
           tool: {\
             rules: [\
               { blocks: "oak_log", correct_for_drops: 1b, speed: 60.0f },\
-              { blocks: "stone", correct_for_drops: 1b, speed: 45.0f },\
+              { blocks: "stone", correct_for_drops: 1b, speed: 2.25f },\
               { blocks: "coal_ore", correct_for_drops: 1b, speed: 2.25f },\
               { blocks: "copper_ore", correct_for_drops: 1b, speed: 1.5f },\
               { blocks: "iron_ore", correct_for_drops: 1b, speed: 0.75f },\
