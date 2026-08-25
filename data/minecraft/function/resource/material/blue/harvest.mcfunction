@@ -1,3 +1,3 @@
-scoreboard players set #material_add_value tmp 1
+execute store result score #material_add_value tmp run function resource/production/base
 function resource/add_material/blue
 execute store result score #blue_remain generate run function resource/material/blue/cooldown
