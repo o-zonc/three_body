@@ -11,7 +11,7 @@ data modify storage data tmp.shop_advancement_discount_note set value {text:""}
 execute unless score #shop_cost_discount_percent var = #shop_cost_discount_percent var run scoreboard players set #shop_cost_discount_percent var 0
 execute if score #dried_shop_discount_stage var matches 1 unless score #shop_cost_discount_percent var matches 20.. run scoreboard players set #shop_cost_discount_percent var 20
 execute if score #dried_shop_discount_stage var matches 2 unless score #shop_cost_discount_percent var matches 40.. run scoreboard players set #shop_cost_discount_percent var 40
-execute if score #shop_cost_advancement_reward var matches 1 unless score #shop_cost_discount_percent var matches 50.. run scoreboard players set #shop_cost_discount_percent var 50
+execute if score #shop_cost_advancement_reward var matches 1 unless score #shop_cost_discount_percent var matches 30.. run scoreboard players set #shop_cost_discount_percent var 30
 
 execute unless score #shop_cost_discount_percent var matches 1..99 run return 0
 execute if score #overworld_advancement_reward_disabled var matches 1 run return 0
