@@ -5,8 +5,8 @@
 		"const_def",
 		"accelerator/const_def",
 		"resource/color/const_def",
-		"time_machine/const_def",
-		"balance/resource_shop_early",
-		"balance/resource_regen"
+		"resource/shop/const_def",
+		"resource/regen/const_def",
+		"time_machine/const_def"
 	]
 }
