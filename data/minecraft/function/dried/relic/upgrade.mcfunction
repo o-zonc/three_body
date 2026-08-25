@@ -1,4 +1,4 @@
-execute if score #dried_relic_level upgrade matches 4.. run return 0
+execute if score #dried_relic_level upgrade matches 5.. run return 0
 function dried/relic/prepare
 data modify storage data tmp.cost set from storage data tmp.dried_relic.cost
 execute store result score #dried_relic_cost_ok tmp run function resource/check_cost
@@ -8,6 +8,7 @@ execute unless score #dried_relic_cost_ok tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players add #dried_relic_level upgrade 1
 execute if score #dried_relic_level upgrade matches 2 run advancement grant @s only 2_dried/02_relic_restoration
+execute if score #dried_relic_level upgrade matches 5 run advancement grant @s only 2_dried/03_help_from_the_past
 function dried/relic/prepare
 scoreboard players operation #dried_relic_timer generate = #dried_relic_interval tmp
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
