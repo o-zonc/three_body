@@ -8,6 +8,7 @@ function mover/local/recover
 execute if score #GLOBAL current_dim matches 4 run function dawn/cleanup_epiphany
 
 execute in frozen run tp @a 0 67 0
+execute in frozen run weather rain
 function mover/items/arrive_other
 gamerule advance_time true
 
@@ -26,5 +27,3 @@ scoreboard players set #diamond unlock 1
 scoreboard players set #GLOBAL state_frozen 0
 scoreboard players set #GLOBAL timer_frozen 1200
 bossbar set bossbar_frozen max 1200
-
-schedule function frozen/weather 1t
