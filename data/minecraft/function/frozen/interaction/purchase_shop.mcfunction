@@ -1,7 +1,7 @@
 execute if score #frozen_shop unlock matches 1.. run return 0
-data modify storage data tmp.cost set value [{type:"diamond",amount:25}]
+data modify storage data tmp.cost set value [{type:"diamond",amount:1},{type:"cold",amount:1}]
 execute store result score #frozen_purchase_check tmp run function resource/check_cost
-execute unless score #frozen_purchase_check tmp matches 1 run title @s actionbar {text:"다이아몬드가 부족합니다.",color:"red"}
+execute unless score #frozen_purchase_check tmp matches 1 run title @s actionbar {text:"필요한 재료가 부족합니다.",color:"red"}
 execute unless score #frozen_purchase_check tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players set #frozen_shop unlock 1
