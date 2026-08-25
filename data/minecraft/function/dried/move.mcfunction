@@ -12,8 +12,6 @@ execute in dried run weather clear
 function mover/items/arrive_other
 gamerule advance_time true
 
-function common/weather
-
 # 방문 기록을 남기고, 현재 차원 상태를 '말라붙은 차원'으로 갱신합니다.
 scoreboard players set #GLOBAL visited_dried 1
 scoreboard players add #GLOBAL first_dried 1
