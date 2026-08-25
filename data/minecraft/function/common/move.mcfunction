@@ -20,5 +20,3 @@ scoreboard players set #GLOBAL current_dim 0
 scoreboard players set #GLOBAL state_overworld 0
 scoreboard players set #GLOBAL timer_overworld 1200
 bossbar set bossbar_overworld max 1200
-
-function common/weather
