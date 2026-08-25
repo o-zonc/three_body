@@ -8,11 +8,7 @@ execute if score #GLOBAL accelerator_level matches 0 unless score #overworld civ
 execute if score #GLOBAL accelerator_level matches 4.. run title @s actionbar {text:"입자가속기는 이미 최대 레벨입니다.",color:"red"}
 execute if score #GLOBAL accelerator_level matches 4.. run return 0
 
-data remove storage data tmp.cost
-execute if score #GLOBAL accelerator_level matches 0 run data modify storage data tmp.cost set from storage data const.accelerator.upgrade."0".cost
-execute if score #GLOBAL accelerator_level matches 1 run data modify storage data tmp.cost set from storage data const.accelerator.upgrade."1".cost
-execute if score #GLOBAL accelerator_level matches 2 run data modify storage data tmp.cost set from storage data const.accelerator.upgrade."2".cost
-execute if score #GLOBAL accelerator_level matches 3 run data modify storage data tmp.cost set from storage data const.accelerator.upgrade."3".cost
+function accelerator/prepare_upgrade_cost
 execute store result score #accelerator_cost_ok tmp run function resource/check_cost
 
 # Lv.2부터는 보호막에서 회수한 깨진 양자 얽힘 파편도 요구합니다.
