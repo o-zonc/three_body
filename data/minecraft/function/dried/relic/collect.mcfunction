@@ -1,3 +1,5 @@
+execute unless score #dried_relic_level upgrade matches 1.. run return 0
+
 function dried/relic/prepare
 scoreboard players operation #material_add_value tmp = #dried_relic_amount tmp
 execute store result score #dried_relic_roll tmp run random value 0..8
