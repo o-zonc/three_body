@@ -8,10 +8,10 @@ function mover/local/recover
 execute if score #GLOBAL current_dim matches 4 run function dawn/cleanup_epiphany
 
 execute in cosmos run tp @s 0 64 0
+execute in cosmos run weather clear
 function mover/items/arrive_other
 
 gamerule advance_time false
-gamerule advance_weather false
 
 scoreboard players set #GLOBAL visited_polar 0
 scoreboard players set #GLOBAL current_dim 5
