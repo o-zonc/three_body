@@ -34,6 +34,8 @@ scoreboard players operation #second_common_effective tmp *= #second_extreme_mul
 data remove storage data tmp.cost
 execute if score #second_lvl tmp matches 0 run data modify storage data tmp.cost set value [{type:"copper",amount:100},{type:"iron",amount:100}]
 execute if score #second_lvl tmp matches 1 run data modify storage data tmp.cost set value [{type:"iron",amount:250},{type:"emerald",amount:50}]
-execute if score #second_lvl tmp matches 2 run data modify storage data tmp.cost set value [{type:"emerald",amount:150},{type:"lapis",amount:100}]
-execute if score #second_lvl tmp matches 3 run data modify storage data tmp.cost set value [{type:"emerald",amount:400},{type:"lapis",amount:300}]
+# Lv.3~4는 32배 수급 증폭과 50% 비용 감소를 획득한 최후반 시점을 기준으로 조정합니다.
+# 체감 비용을 기존 수준으로 유지하기 위해 기존 비용의 약 64배를 요구합니다.
+execute if score #second_lvl tmp matches 2 run data modify storage data tmp.cost set value [{type:"emerald",amount:9600},{type:"lapis",amount:6400}]
+execute if score #second_lvl tmp matches 3 run data modify storage data tmp.cost set value [{type:"emerald",amount:25600},{type:"lapis",amount:19200}]
 function resource/cost/apply_shop_advancement_discount
