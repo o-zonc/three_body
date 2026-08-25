@@ -1,6 +1,3 @@
-schedule clear frozen/weather
-schedule clear dried/weather
-
 # Check if all three primary dimensions have been visited. If so, move to polarnight.
 execute if score #GLOBAL visited_polar matches 1.. run return run function dawn/move
 execute if score #GLOBAL visited_dried matches 1.. if score #GLOBAL visited_frozen matches 1.. if score #GLOBAL visited_overworld matches 1.. run return run function polarnight/move
