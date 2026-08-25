@@ -5,6 +5,7 @@
 
 # 이전 호출의 표시 상태가 남지 않도록 먼저 정리한다.
 data remove storage data tmp.cost_original
+data remove storage data tmp.shop_advancement_cost_original
 data modify storage data tmp.shop_advancement_discount_note set value {text:""}
 
 # 기존 세이브 호환: 과거 플래그/단계만 존재하면 현재 할인율로 승격한다.
@@ -16,6 +17,9 @@ execute if score #shop_cost_advancement_reward var matches 1 unless score #shop_
 execute unless score #shop_cost_discount_percent var matches 1..99 run return 0
 execute if score #overworld_advancement_reward_disabled var matches 1 run return 0
 execute unless data storage data tmp.cost run return 0
+
+# 호버에서 할인 전/후 비용을 비교할 수 있도록 원본을 별도로 보존한다.
+data modify storage data tmp.shop_advancement_cost_original set from storage data tmp.cost
 
 # 할인율은 하나만 적용되며 UI에도 현재 최종 비율만 표시한다.
 data modify storage data tmp.shop_advancement_discount_note set value [{text:"★ 발전과제 보상: 상점 비용 ",color:"green",italic:false},{score:{name:"#shop_cost_discount_percent",objective:"var"},color:"green",italic:false},{text:"% 감소\n",color:"green",italic:false}]
