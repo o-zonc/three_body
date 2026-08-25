@@ -6,7 +6,8 @@ execute unless data storage data tmp.factory_shop run tellraw @s ["",{text:"  [ 
 execute unless data storage data tmp.factory_shop run return 0
 
 data modify storage data tmp.cost set from storage data tmp.factory_shop.cost
-function resource/convert_cost_to_text_named {id:"factory_shop",insertion:", "}
+function resource/cost/apply_shop_advancement_discount
+function resource/convert_discount_cost_to_text_named {id:"factory_shop",insertion:", "}
 execute store result score #factory_required_age tmp run data get storage data tmp.factory_shop.required_age
 
 execute unless score #overworld civilization_age >= #factory_required_age tmp if score #factory_required_age tmp matches 7 run tellraw @s ["",{text:"  [ 공장 건설 단말 ]",color:"gold",bold:true},{text:"\n\n  다음 시설: ",color:"gray"},{storage:"data",nbt:"tmp.factory_shop.name"},{text:"\n\n  근대 시대에 도달하면 건설할 수 있습니다.",color:"yellow"},{text:"\n"}]
