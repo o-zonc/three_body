@@ -1,0 +1,20 @@
+{
+  "parent": "2_dried/02_relic_restoration",
+  "display": {
+    "icon": "enchanted_book",
+    "title": "과거로부터의 도움",
+    "description": "고대 문명의 발굴 장치를 완전히 복원했습니다.\n\n§6•§7 보상: 자원 상점 업그레이드 비용이 총 40% 감소",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "relic_level_five": {
+      "trigger": "impossible"
+    }
+  },
+  "rewards": {
+    "function": "resource/advancement_reward/dried_shop_cost/stage_2"
+  }
+}
