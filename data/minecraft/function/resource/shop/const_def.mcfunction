@@ -1,0 +1,111 @@
+# 자원 상점 1층 상수
+# 현재 레벨의 value가 실제 수급 배수이며 cost는 다음 단계 구매 비용이다.
+#
+# 비용 설계 기준
+# - 직전 단계의 수급 배수(1/2/4/8/16/32배)를 기준으로 경제 규모를 계산한다.
+# - Lv.2 진입부터 각각 20% / 30% / 40% 상점 비용 감소를 획득한 시점을 가정한다.
+# - Lv.4 이후는 최종 40% 할인 상태를 기준으로 한다.
+# - 주 자원 원가는 기준 비용의 1 / 5 / 25 / 100 / 400 / 1600배로 증가한다.
+#   할인 후 직전 수급 배수로 환산하면 체감 요구량은 약 1 / 2 / 4.375 / 7.5 / 15 / 30배가 된다.
+
+data modify storage data const.resource_shop set value [\
+  {id:"wood",\
+    levels:[\
+      {lvl:0,value:1,cost:[{type:"wood",amount:100}]},\
+      {lvl:1,value:2,cost:[{type:"wood",amount:500},{type:"stone",amount:500}]},\
+      {lvl:2,value:4,cost:[{type:"wood",amount:2500},{type:"heat",amount:50}]},\
+      {lvl:3,value:8,cost:[{type:"wood",amount:10000},{type:"heat",amount:150}]},\
+      {lvl:4,value:16,cost:[{type:"wood",amount:40000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:5,value:32,cost:[{type:"wood",amount:160000},{type:"information",amount:4},{type:"time",amount:2}]},\
+      {lvl:6,value:64}\
+    ]\
+  },\
+  {id:"stone",\
+    levels:[\
+      {lvl:0,value:1,cost:[{type:"stone",amount:120}]},\
+      {lvl:1,value:2,cost:[{type:"stone",amount:600}]},\
+      {lvl:2,value:4,cost:[{type:"stone",amount:3000},{type:"cold",amount:50}]},\
+      {lvl:3,value:8,cost:[{type:"stone",amount:12000},{type:"cold",amount:150}]},\
+      {lvl:4,value:16,cost:[{type:"stone",amount:48000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:5,value:32,cost:[{type:"stone",amount:192000},{type:"information",amount:4},{type:"time",amount:2}]},\
+      {lvl:6,value:64}\
+    ]\
+  },\
+  {id:"coal",\
+    levels:[\
+      {lvl:0,value:1,cost:[{type:"coal",amount:150}]},\
+      {lvl:1,value:2,cost:[{type:"coal",amount:750},{type:"stone",amount:500}]},\
+      {lvl:2,value:4,cost:[{type:"coal",amount:3750},{type:"heat",amount:50}]},\
+      {lvl:3,value:8,cost:[{type:"coal",amount:15000},{type:"heat",amount:150}]},\
+      {lvl:4,value:16,cost:[{type:"coal",amount:60000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:5,value:32,cost:[{type:"coal",amount:240000},{type:"information",amount:4},{type:"time",amount:2}]},\
+      {lvl:6,value:64}\
+    ]\
+  },\
+  {id:"copper",\
+    levels:[\
+      {lvl:0,value:1,cost:[{type:"copper",amount:180}]},\
+      {lvl:1,value:2,cost:[{type:"copper",amount:900},{type:"stone",amount:500}]},\
+      {lvl:2,value:4,cost:[{type:"copper",amount:4500},{type:"heat",amount:50}]},\
+      {lvl:3,value:8,cost:[{type:"copper",amount:18000},{type:"heat",amount:150}]},\
+      {lvl:4,value:16,cost:[{type:"copper",amount:72000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:5,value:32,cost:[{type:"copper",amount:288000},{type:"information",amount:4},{type:"time",amount:2}]},\
+      {lvl:6,value:64}\
+    ]\
+  },\
+  {id:"iron",\
+    levels:[\
+      {lvl:0,value:1,cost:[{type:"iron",amount:150}]},\
+      {lvl:1,value:2,cost:[{type:"iron",amount:750},{type:"stone",amount:500}]},\
+      {lvl:2,value:4,cost:[{type:"iron",amount:3750},{type:"heat",amount:50}]},\
+      {lvl:3,value:8,cost:[{type:"iron",amount:15000},{type:"heat",amount:150}]},\
+      {lvl:4,value:16,cost:[{type:"iron",amount:60000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:5,value:32,cost:[{type:"iron",amount:240000},{type:"information",amount:4},{type:"time",amount:2}]},\
+      {lvl:6,value:64}\
+    ]\
+  },\
+  {id:"gold",\
+    levels:[\
+      {lvl:0,value:1,cost:[{type:"gold",amount:40}]},\
+      {lvl:1,value:2,cost:[{type:"gold",amount:200},{type:"stone",amount:500}]},\
+      {lvl:2,value:4,cost:[{type:"gold",amount:1000},{type:"heat",amount:50}]},\
+      {lvl:3,value:8,cost:[{type:"gold",amount:4000},{type:"heat",amount:150}]},\
+      {lvl:4,value:16,cost:[{type:"gold",amount:16000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:5,value:32,cost:[{type:"gold",amount:64000},{type:"information",amount:4},{type:"time",amount:2}]},\
+      {lvl:6,value:64}\
+    ]\
+  },\
+  {id:"diamond",\
+    levels:[\
+      {lvl:0,value:1,cost:[{type:"diamond",amount:20}]},\
+      {lvl:1,value:2,cost:[{type:"diamond",amount:100},{type:"stone",amount:500}]},\
+      {lvl:2,value:4,cost:[{type:"diamond",amount:500},{type:"cold",amount:50}]},\
+      {lvl:3,value:8,cost:[{type:"diamond",amount:2000},{type:"cold",amount:150}]},\
+      {lvl:4,value:16,cost:[{type:"diamond",amount:8000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:5,value:32,cost:[{type:"diamond",amount:32000},{type:"information",amount:4},{type:"time",amount:2}]},\
+      {lvl:6,value:64}\
+    ]\
+  },\
+  {id:"emerald",\
+    levels:[\
+      {lvl:0,value:1,cost:[{type:"emerald",amount:20}]},\
+      {lvl:1,value:2,cost:[{type:"emerald",amount:100},{type:"stone",amount:100}]},\
+      {lvl:2,value:4,cost:[{type:"emerald",amount:500},{type:"cold",amount:10}]},\
+      {lvl:3,value:8,cost:[{type:"emerald",amount:2000},{type:"cold",amount:150}]},\
+      {lvl:4,value:16,cost:[{type:"emerald",amount:8000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:5,value:32,cost:[{type:"emerald",amount:32000},{type:"information",amount:4},{type:"time",amount:2}]},\
+      {lvl:6,value:64}\
+    ]\
+  },\
+  {id:"lapis",\
+    levels:[\
+      {lvl:0,value:1,cost:[{type:"lapis",amount:30}]},\
+      {lvl:1,value:2,cost:[{type:"lapis",amount:150},{type:"stone",amount:100}]},\
+      {lvl:2,value:4,cost:[{type:"lapis",amount:750},{type:"cold",amount:10}]},\
+      {lvl:3,value:8,cost:[{type:"lapis",amount:3000},{type:"cold",amount:150}]},\
+      {lvl:4,value:16,cost:[{type:"lapis",amount:12000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:5,value:32,cost:[{type:"lapis",amount:48000},{type:"information",amount:4},{type:"time",amount:2}]},\
+      {lvl:6,value:64}\
+    ]\
+  }\
+]
