@@ -56,7 +56,7 @@ execute if score @s shop_trigger matches 1822 run function shop/third/storage_pu
 execute if score @s shop_trigger matches 1823 run function shop/third/world_eye/purchase
 execute if score @s shop_trigger matches 1824 run function shop/third/world_eye/synthesize
 execute if score @s shop_trigger matches 1825 run function meta/manual_withdraw {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
-execute if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간",title:"상점 및 지갑",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
 execute if score @s shop_trigger matches 1827 run function shop/third/expansion/information
 execute if score @s shop_trigger matches 1828 run function shop/third/expansion/time
 execute if score @s shop_trigger matches 1830 run function dawn/reactor/craft
@@ -77,10 +77,14 @@ execute if score @s shop_trigger matches 1901 run function frozen/interaction/pu
 execute if score @s shop_trigger matches 1902 run function frozen/interaction/purchase_bridge
 execute if score @s shop_trigger matches 1903 run function frozen/interaction/purchase_maze
 
-# 메마른 차원 시설 / 난세기 대책 물약 (20XX)
+# 메마른 차원 시설 / 난세기 대책 물약 / 발굴 우선 탐색 (20XX)
 execute if score @s shop_trigger matches 2000..2001 run function dried/relic/upgrade
 execute if score @s shop_trigger matches 2002 run function frozen/interaction/purchase_warmth_potion
 execute if score @s shop_trigger matches 2003 run function dried/interaction/purchase_cooling_potion
+execute if score @s shop_trigger matches 2004 run function dried/probability/select {mode:1,name:"오버월드 집중",color:"green"}
+execute if score @s shop_trigger matches 2005 run function dried/probability/select {mode:2,name:"메마른 세계 집중",color:"gold"}
+execute if score @s shop_trigger matches 2006 run function dried/probability/select {mode:3,name:"얼어붙은 세계 집중",color:"aqua"}
+execute if score @s shop_trigger matches 2007 run function dried/probability/select {mode:0,name:"기본 확률",color:"white"}
 
 # 극야 차원 정산대/보관소/공허의 구멍 (21XX)
 execute if score @s shop_trigger matches 2101 run function reckoning/run
