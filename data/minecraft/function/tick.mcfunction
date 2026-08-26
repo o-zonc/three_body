@@ -29,6 +29,9 @@ function tool/tick
 function resource/product_managing_by_tick
 function factory/tick
 
+# 얼어붙은 세계 난세기 환경 효과
+function frozen/chaos/tick
+
 # trigger 핸들러는 실제 입력이 들어온 플레이어에게만 실행합니다.
 execute as @a[tag=player,scores={unlock_trigger=1..}] run function resource/unlock_trigger
 execute as @a[tag=player,scores={upgrade_trigger=1..}] run function resource/upgrade_trigger
