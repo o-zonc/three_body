@@ -12,4 +12,4 @@ tag @a remove frozen_chaos_protected
 tag @a remove dried_chaos_protected
 tag @a remove frozen_chaos_potion_pending
 tag @a remove dried_chaos_potion_pending
-data merge entity @a {Fire:0s}
+execute as @a run data merge entity @s {Fire:0s}
