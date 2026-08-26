@@ -52,7 +52,7 @@ execute if score @s shop_trigger matches 1816 run function shop/second/purchase 
 
 # 자원 상점 3층 / 여명 상호작용 (182X~183X)
 execute if score @s shop_trigger matches 1821 run function shop/third/storage_purchase {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
-execute if score @s shop_trigger matches 1822 run function shop/third/storage_purchase {id:"time",name:"시간",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute if score @s shop_trigger matches 1822 run function shop/third/storage_purchase {id:"time",name:"시간",title:"상점 및 지갑",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
 execute if score @s shop_trigger matches 1823 run function shop/third/world_eye/purchase
 execute if score @s shop_trigger matches 1824 run function shop/third/world_eye/synthesize
 execute if score @s shop_trigger matches 1825 run function meta/manual_withdraw {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
@@ -76,11 +76,11 @@ execute if score @s shop_trigger matches 1846 run function shop/color/convert {s
 execute if score @s shop_trigger matches 1901 run function frozen/interaction/purchase_shop
 execute if score @s shop_trigger matches 1902 run function frozen/interaction/purchase_bridge
 execute if score @s shop_trigger matches 1903 run function frozen/interaction/purchase_maze
-execute if score @s shop_trigger matches 1904 run function frozen/interaction/purchase_warmth_potion
 
-# 메마른 차원 시설 (20XX)
+# 메마른 차원 시설 / 난세기 대책 물약 (20XX)
 execute if score @s shop_trigger matches 2000..2001 run function dried/relic/upgrade
-execute if score @s shop_trigger matches 2002 run function dried/interaction/purchase_cooling_potion
+execute if score @s shop_trigger matches 2002 run function frozen/interaction/purchase_warmth_potion
+execute if score @s shop_trigger matches 2003 run function dried/interaction/purchase_cooling_potion
 
 # 극야 차원 정산대/보관소/공허의 구멍 (21XX)
 execute if score @s shop_trigger matches 2101 run function reckoning/run
