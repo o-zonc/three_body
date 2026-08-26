@@ -28,6 +28,9 @@ function resource/limit_materials
 # 자원 채취 도구
 function tool/tick
 
+# 청동기 일회성 보상 아이템
+function heavenly_grace/tick
+
 function resource/product_managing_by_tick
 function factory/tick
 function resource/unlock_trigger
