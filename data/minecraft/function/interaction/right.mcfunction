@@ -9,7 +9,9 @@ execute if entity @s[tag=po,tag=info] on target run function resource/interactio
 execute if entity @s[tag=po,tag=time] on target run function resource/interaction {id:"time"}
 execute if entity @s[tag=frozen,tag=info] on target run function frozen/interaction/info
 execute if entity @s[tag=frozen,tag=shop] on target run function frozen/interaction/shop
+execute if entity @s[tag=frozen,tag=potion] on target run function frozen/interaction/potion
 execute if entity @s[tag=dried,tag=info] on target run function dried/interaction/info
+execute if entity @s[tag=dried,tag=potion] on target run function dried/interaction/potion
 execute if entity @s[tag=dried,tag=left] on target run function dried/relic/ui
 execute if entity @s[tag=dried,tag=secret] on target run function dried/secret/interact
 execute if entity @s[tag=dawn,tag=reactor] on target run function dawn/reactor/interact
