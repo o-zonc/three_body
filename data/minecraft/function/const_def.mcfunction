@@ -256,7 +256,7 @@ data merge storage data {\
       },\
       {\
         lvl: 6,\
-        cost: [{ type: "wood", amount: 100 }, { type: "iron", amount: 5 }],\
+        cost: [{ type: "wood", amount: 100 }, { type: "copper", amount: 5 }],\
         components: {\
           custom_name: "§f구리 곡괭이",\
           item_model: "copper_pickaxe",\
