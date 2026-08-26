@@ -76,6 +76,7 @@ execute if score @s shop_trigger matches 1846 run function shop/color/convert {s
 execute if score @s shop_trigger matches 1901 run function frozen/interaction/purchase_shop
 execute if score @s shop_trigger matches 1902 run function frozen/interaction/purchase_bridge
 execute if score @s shop_trigger matches 1903 run function frozen/interaction/purchase_maze
+execute if score @s shop_trigger matches 1904 run function frozen/interaction/purchase_warmth_potion
 
 # 메마른 차원 시설 (20XX)
 execute if score @s shop_trigger matches 2000..2001 run function dried/relic/upgrade
