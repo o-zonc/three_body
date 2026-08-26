@@ -1,6 +1,7 @@
 execute unless score #frozen_shop unlock matches 1.. run return 0
 execute if score #frozen_bridge unlock matches 1.. run return 0
-data modify storage data tmp.cost set value [{type:"diamond",amount:75}]
+# 기본 20초 생산 주기와 짧은 초기 항성기/난세기를 고려한 초중반 비용입니다.
+data modify storage data tmp.cost set value [{type:"diamond",amount:10}]
 execute store result score #frozen_purchase_check tmp run function resource/check_cost
 execute unless score #frozen_purchase_check tmp matches 1 run title @s actionbar {text:"다이아몬드가 부족합니다.",color:"red"}
 execute unless score #frozen_purchase_check tmp matches 1 run return 0

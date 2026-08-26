@@ -156,7 +156,7 @@ data merge storage data {\
       },\
       {\
         lvl: 3,\
-        cost: [{ type: "wood", amount: 20 }],\
+        cost: [{ type: "wood", amount: 20 }, { type: "stone", amount: 5 }],\
         components: {\
           custom_name: "§f나무 곡괭이",\
           item_model: "wooden_pickaxe",\
@@ -182,7 +182,7 @@ data merge storage data {\
       },\
       {\
         lvl: 4,\
-        cost: [{ type: "wood", amount: 50 }],\
+        cost: [{ type: "wood", amount: 50 }, { type: "stone", amount: 5 }],\
         components: {\
           custom_name: "§f돌 곡괭이",\
           item_model: "stone_pickaxe",\
@@ -219,7 +219,7 @@ data merge storage data {\
       },\
       {\
         lvl: 5,\
-        cost: [{ type: "wood", amount: 35 }, { type: "stone", amount: 10 }],\
+        cost: [{ type: "wood", amount: 35 }, { type: "stone", amount: 10 }, { type: "copper", amount: 5 }],\
         components: {\
           custom_name: "§f좋은 돌 곡괭이",\
           item_model: "stone_pickaxe",\
@@ -779,7 +779,7 @@ data merge storage data {\
         ]\
       },\
       coal: {item:"deepslate_coal_ore",\
-        unlock_cost:[{type:"stone",amount:100}],\
+        unlock_cost:[{type:"wood",amount:100},{type:"stone",amount:10}],\
         regen:[\
           {lvl:0,value:100,cost:[{type:"copper",amount:20}]},\
           {lvl:1,value:60,cost:[{type:"iron",amount:50}]},\
@@ -789,7 +789,7 @@ data merge storage data {\
         ]\
       },\
       copper: {item:"deepslate_copper_ore",\
-        unlock_cost:[{type:"stone",amount:200}],\
+        unlock_cost:[{type:"wood",amount:200},{type:"coal",amount:20}],\
         regen:[\
           {lvl:0,value:160,cost:[{type:"stone",amount:100}]},\
           {lvl:1,value:100,cost:[{type:"coal",amount:100}]},\

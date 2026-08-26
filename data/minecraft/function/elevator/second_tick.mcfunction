@@ -18,31 +18,15 @@ execute as @a[tag=shift,tag=elevator_2_floor_1] at @s unless score #GLOBAL facto
 execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev at @s unless score #GLOBAL factory_elevator_unlocked matches 1.. run return run function elevator/locked
 
 # 웅크리기: 아래층 이동
-execute as @a[tag=shift,tag=elevator_2_floor_2] at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=shift,tag=elevator_2_floor_2] at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 0.75
-execute as @a[tag=shift,tag=elevator_2_floor_2] run tp @s -24 -62 24
-execute as @a[tag=shift,tag=elevator_2_floor_2] at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=shift,tag=elevator_2_floor_2] at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 1.0
+execute as @a[tag=shift,tag=elevator_2_floor_2] at @s run function elevator/move {x:-24,y:-62,z:24}
 
-execute as @a[tag=shift,tag=elevator_2_floor_3] at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=shift,tag=elevator_2_floor_3] at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 0.75
-execute as @a[tag=shift,tag=elevator_2_floor_3] run tp @s -24 -53 24
-execute as @a[tag=shift,tag=elevator_2_floor_3] at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=shift,tag=elevator_2_floor_3] at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 1.0
+execute as @a[tag=shift,tag=elevator_2_floor_3] at @s run function elevator/move {x:-24,y:-53,z:24}
 
 # 점프: 위층 이동
-execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 1.. at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 1.. at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 0.75
-execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 1.. run tp @s -24 -53 24
-execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 1.. at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 1.. at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 1.0
+execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 1.. at @s run function elevator/move {x:-24,y:-53,z:24}
 
 execute as @a[tag=elevator_2_floor_2] if score @s elevator_jump > @s elevator_jump_prev at @s unless score #GLOBAL factory_elevator_unlocked matches 2.. run function elevator/locked
-execute as @a[tag=elevator_2_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 2.. at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=elevator_2_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 2.. at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 0.75
-execute as @a[tag=elevator_2_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 2.. run tp @s -24 -46 24
-execute as @a[tag=elevator_2_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 2.. at @s run particle end_rod ~ ~0.1 ~ 0.45 0.1 0.45 0.02 12 force
-execute as @a[tag=elevator_2_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 2.. at @s run playsound block.note_block.pling player @s ~ ~ ~ 0.8 1.0
+execute as @a[tag=elevator_2_floor_2] if score @s elevator_jump > @s elevator_jump_prev if score #GLOBAL factory_elevator_unlocked matches 2.. at @s run function elevator/move {x:-24,y:-46,z:24}
 
 # 임시 층 태그 정리
 tag @a remove elevator_2_floor_1

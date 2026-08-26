@@ -7,12 +7,13 @@ execute as @a if predicate player/sneaking unless score @s sneaking_prev matches
 execute as @a if predicate player/sneaking run scoreboard players set @s sneaking_prev 1
 execute as @a unless predicate player/sneaking run scoreboard players set @s sneaking_prev 0
 
+# 차원 이동기 API
+# 엘리베이터가 플레이어를 옮기기 전에 승강장 내부 사용 제한을 먼저 판정합니다.
+function mover/tick
+
 # 엘리베이터
 function elevator/tick
 function elevator/second_perimeter_tick
-
-# 차원 이동기 API
-function mover/tick
 
 # 인터랙션 이벤트
 function interaction/detect

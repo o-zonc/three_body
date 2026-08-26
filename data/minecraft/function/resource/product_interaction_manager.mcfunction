@@ -9,6 +9,7 @@ execute if entity @s[type=interaction,tag=product,tag=emerald] on target run fun
 execute if entity @s[type=interaction,tag=product,tag=lapis] on target run function resource/material/lapis/ui/interact
 execute if entity @s[type=interaction,tag=product,tag=heat] on target run function resource/material/heat/ui/interact
 execute if entity @s[type=interaction,tag=product,tag=cold] on target run function resource/material/cold/ui/interact
+execute if entity @s[type=interaction,tag=product,tag=frozen_alt] run function resource/material/cold/ui/alt_interact
 execute if entity @s[type=interaction,tag=product,tag=yellow] on target run function resource/material/yellow/ui/interact
 execute if entity @s[type=interaction,tag=product,tag=blue] on target run function resource/material/blue/ui/interact
 execute if entity @s[type=interaction,tag=product,tag=information] on target run function resource/material/information/ui/interact

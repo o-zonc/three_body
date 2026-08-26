@@ -16,4 +16,5 @@ function resource/material/blue/tick
 # 특수 환경 자원
 execute in dried run function resource/material/heat/tick
 function resource/material/cold/tick
+function resource/material/cold/alt_tick
 function resource/environment/tick

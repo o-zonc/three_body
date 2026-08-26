@@ -103,5 +103,5 @@ $execute if score #cost_$(id)_gold cost matches 1.. unless score #cost_$(id)_2_1
 $execute if score #cost_$(id)_gold cost matches 1.. if score #cost_$(id)_2_1_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "금 ", color:gold, bold:false, extra: [{score:{name:"#cost_$(id)_gold",objective:"cost"}}, "개 ", { text: "§6🍀", hover_event: { action: "show_text", value: ["", { text: "§6🍀 " }, { text: "발전성 중화", color:aqua, bold:true, shadow_color:-1426128896 }, { text: "§7 효과로 인해 구매 시 금을 소모하지 않습니다.\n§8(요구량은 소지해야 함)" }] } }], shadow_color:-7710208 }
 $execute if score #cost_$(id)_blaze_powder cost matches 1.. run data modify storage data tmp.cost_text.$(id).cost append value { text: "블레이즈 가루 ", color:red, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_blaze_powder",objective:"cost"}}, "개"] }
 
-$data modify storage data tmp.cost_text.$(id).text set value { storage: "data", nbt: "tmp.cost_text.$(id).cost[]", interpret:true, insertion:"$(insertion)" }
+$data modify storage data tmp.cost_text.$(id).text set value { storage: "data", nbt: "tmp.cost_text.$(id).cost[]", interpret:true, separator:{text:"$(insertion)",color:"white"} }
 data remove storage data tmp.cost_original

@@ -153,6 +153,9 @@ execute in dawn run forceload remove -64 -64 64 64
 gamerule send_command_feedback false
 gamerule max_snow_accumulation_height 0
 
+attribute @s block_interaction_range base set 10
+attribute @s block_interaction_range base set 10
+attribute @s entity_interaction_range base set 10
 
 # ------------------------------------------------------------
 # 99. 인트로 시작

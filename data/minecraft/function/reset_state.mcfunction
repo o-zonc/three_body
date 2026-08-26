@@ -76,6 +76,12 @@ execute in minecraft:frozen run setblock 8 67 36 minecraft:obsidian
 execute in minecraft:dried run setblock 0 63 0 minecraft:sandstone
 function crying/dawn_reset
 
+# 얼어붙은 세계의 일회성 푸른 얼음을 restart 때만 복원합니다.
+execute in minecraft:frozen run setblock 0 74 -4 minecraft:blue_ice
+execute in minecraft:frozen run setblock 0 74 4 minecraft:blue_ice
+scoreboard players set #cold_alt_north generate 1
+scoreboard players set #cold_alt_south generate 1
+
 # 공허의 구멍 진행도와 인벤토리형 흑요석 자원은 전체 초기화에서만 제거한다.
 scoreboard players set #hole_level upgrade 0
 scoreboard players set #hole_claims var 0

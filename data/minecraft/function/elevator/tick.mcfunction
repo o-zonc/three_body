@@ -1,5 +1,5 @@
 # 얼어붙은 세계 엘리베이터는 jump edge 기준값을 갱신하기 전에 먼저 처리합니다.
-function frozen/elevator/tick
+execute in minecraft:frozen run function frozen/elevator/tick
 
 # 3층 엘리베이터
 # elevator_unlocked: 0 = 잠김, 1 = 2층까지, 2 = 3층까지
