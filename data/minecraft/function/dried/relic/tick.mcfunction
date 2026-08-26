@@ -1,4 +1,3 @@
-execute unless score #GLOBAL current_dim matches 1 run return 0
 execute if score #GLOBAL era_paused matches 1 run return 0
 
 # 구매/해금된 장치만 작동한다.
