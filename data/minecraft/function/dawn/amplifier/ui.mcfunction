@@ -7,6 +7,10 @@ $execute unless score #dawn_$(id)_amp meta matches 0.. run scoreboard players se
 # 기존 진행 세이브도 화면상 Lv.1 이상이면 시각 상태를 동기화합니다.
 $execute if score #dawn_$(id)_amp meta matches 2.. run function dawn/amplifier/visual/$(id)
 
+# 리액터를 제작해 탈출 수단을 확보한 뒤에는 더 이상 증폭기에 투자할 수 없다.
+$execute if score #GLOBAL dawn_reactor_purchased matches 1.. run tellraw @s ["",{text:"  [ $(name) 자원 증폭기 ]",color:"$(color)",bold:true},{text:"\n\n  리액터의 시공간 반응이 시작되었습니다.",color:"gray"},{text:"\n  더 이상 이 장치를 조정할 수 없습니다.",color:"dark_gray"},{text:"\n"}]
+execute if score #GLOBAL dawn_reactor_purchased matches 1.. run return 0
+
 $function dawn/amplifier/cost/$(id)
 function resource/convert_cost_to_text_named {id:"dawn_amp",insertion:", "}
 function util/blank
