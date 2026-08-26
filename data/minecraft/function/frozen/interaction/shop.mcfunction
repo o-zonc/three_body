@@ -5,6 +5,10 @@ execute unless score #frozen_shop unlock matches 1.. run return 0
 function util/blank
 tellraw @s ["",{text:"  [ 얼어붙은 상점 ]",color:"aqua",bold:true,shadow_color:-16777216},{text:"\n\n  얼음 협곡 너머로 향하는 시설을 개방합니다.",color:"gray",bold:false}]
 
+data modify storage data tmp.cost set value [{type:"cold",amount:1}]
+function resource/convert_cost_to_text_named {id:"frozen_warmth_potion",insertion:", "}
+tellraw @s ["",{text:"\n\n  "},{text:"[ 보온 물약 구매 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:["",{text:"§7난세기의 실외 채굴 속도 감소를 5분간 극복합니다.\n\n§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.frozen_warmth_potion.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1904"}}]
+
 execute unless score #frozen_bridge unlock matches 1.. run data modify storage data tmp.cost set value [{type:"diamond",amount:75}]
 execute unless score #frozen_bridge unlock matches 1.. run function resource/convert_cost_to_text_named {id:"frozen_bridge",insertion:", "}
 execute unless score #frozen_bridge unlock matches 1.. run tellraw @s ["",{text:"\n\n  "},{text:"[ 다리 해금 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:["",{text:"§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.frozen_bridge.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1902"}}]
