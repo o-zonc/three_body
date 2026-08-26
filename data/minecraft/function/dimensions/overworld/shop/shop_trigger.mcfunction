@@ -69,7 +69,7 @@ execute if score @s shop_trigger matches 1841 run function shop/color/convert {s
 execute if score @s shop_trigger matches 1842 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"gold",target_name:"금",target_color:"gold",base:20}
 execute if score @s shop_trigger matches 1843 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"heat",target_name:"열기",target_color:"red",base:50}
 execute if score @s shop_trigger matches 1844 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"iron",target_name:"철",target_color:"white",base:100}
-execute if score @s shop_trigger matches 1845 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",color:"aqua",base:10}
+execute if score @s shop_trigger matches 1845 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",target_color:"aqua",base:10}
 execute if score @s shop_trigger matches 1846 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"cold",target_name:"냉기",target_color:"aqua",base:50}
 
 # 얼어붙은 차원 시설 (19XX)
