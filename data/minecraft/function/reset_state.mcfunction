@@ -81,6 +81,10 @@ scoreboard players set #hole_level upgrade 0
 scoreboard players set #hole_claims var 0
 clear @a minecraft:dragon_egg[minecraft:custom_data~{three_body:{meta:"obsidian"}}]
 
+# 청동기 일회성 보상 아이템 제거
+clear @a minecraft:paper[minecraft:custom_data~{heavenly_grace:1b}]
+execute as @e[type=minecraft:item] if items entity @s contents minecraft:paper[minecraft:custom_data~{heavenly_grace:1b}] run kill @s
+
 # 8. 자원 스코어보드 초기화
 scoreboard players set * material 0
 scoreboard players set * upgrade 0
