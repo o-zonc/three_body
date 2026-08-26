@@ -11,11 +11,11 @@ data modify storage data tmp.shop_advancement_cost_discounted set from storage d
 data remove storage data tmp.cost_original
 
 # 할인 전 비용 포맷
-$data modify storage data tmp.cost set from storage data tmp.shop_advancement_cost_original
+data modify storage data tmp.cost set from storage data tmp.shop_advancement_cost_original
 $function resource/convert_cost_to_text_named {id:"$(id)_before_discount",insertion:"$(insertion)"}
 
 # 할인 후 비용 포맷
-$data modify storage data tmp.cost set from storage data tmp.shop_advancement_cost_discounted
+data modify storage data tmp.cost set from storage data tmp.shop_advancement_cost_discounted
 $function resource/convert_cost_to_text_named {id:"$(id)_after_discount",insertion:"$(insertion)"}
 
 # 최종 호버 텍스트: 원래 재료(취소선) -> 새로운 재료량
