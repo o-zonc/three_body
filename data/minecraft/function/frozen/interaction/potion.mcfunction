@@ -7,4 +7,4 @@ tellraw @s ["",{text:"  [ 한파 대책 물약 ]",color:"aqua",bold:true,shadow_
 
 data modify storage data tmp.cost set value [{type:"heat",amount:1}]
 function resource/convert_cost_to_text_named {id:"frozen_warmth_potion",insertion:", "}
-tellraw @s ["",{text:"\n\n  "},{text:"[ 보온 물약 구매 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:["",{text:"§7마시면 현재 난세기 동안 실외 채굴 속도 감소를 무시합니다.\n\n§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.frozen_warmth_potion.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1904"}}]
+tellraw @s ["",{text:"\n\n  "},{text:"[ 보온 물약 구매 ]",color:"aqua",bold:true,hover_event:{action:"show_text",value:["",{text:"§7마시면 현재 난세기 동안 실외 채굴 속도 감소를 무시합니다.\n\n§6[§7 필요한 재료 §6]\n"},{storage:"data",nbt:"tmp.cost_text.frozen_warmth_potion.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 2002"}}]
