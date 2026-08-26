@@ -13,6 +13,7 @@ execute if entity @s[tag=frozen,tag=potion] on target run function frozen/intera
 execute if entity @s[tag=dried,tag=info] on target run function dried/interaction/info
 execute if entity @s[tag=dried,tag=potion] on target run function dried/interaction/potion
 execute if entity @s[tag=dried,tag=left] on target run function dried/relic/ui
+execute if entity @s[tag=dried,tag=probability] on target run function dried/probability/ui
 execute if entity @s[tag=dried,tag=secret] on target run function dried/secret/interact
 execute if entity @s[tag=dawn,tag=reactor] on target run function dawn/reactor/interact
 execute if entity @s[tag=dawn,tag=overworld] on target run function dawn/amplifier/ui {id:"overworld",name:"오버월드",color:"green",trigger:1831}
