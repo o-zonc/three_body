@@ -2,6 +2,8 @@
 # Macro args: id, name, color, trigger
 
 execute unless score #GLOBAL current_dim matches 4 run return 0
+execute if score #GLOBAL dawn_reactor_purchased matches 1.. run title @s actionbar {text:"리액터의 시공간 반응이 시작되어 더 이상 증폭기를 조정할 수 없습니다.",color:"gray",italic:true}
+execute if score #GLOBAL dawn_reactor_purchased matches 1.. run return 0
 $execute unless score #dawn_$(id)_amp meta matches 0.. run scoreboard players set #dawn_$(id)_amp meta 0
 $execute if score #dawn_$(id)_amp meta matches 3.. run title @s actionbar {text:"이미 최대 단계입니다.",color:"gold",italic:true}
 $execute if score #dawn_$(id)_amp meta matches 3.. run return 0
