@@ -17,10 +17,11 @@ execute if score #meta_to_wallet tmp > #meta_wallet_space tmp run scoreboard pla
 scoreboard players operation #meta_to_bank tmp = #meta_requested tmp
 scoreboard players operation #meta_to_bank tmp -= #meta_to_wallet tmp
 
-# 보관소 상한을 적용한 뒤 실제로 추가된 양을 계산한다.
+# 최초로 500조각에 도달하면 보관소 상한을 영구 해제한다.
 scoreboard players operation #meta_bank_before tmp = #time_bank meta
 execute if score #meta_to_bank tmp matches 1.. run scoreboard players operation #time_bank meta += #meta_to_bank tmp
-execute if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
+execute if score #time_bank meta matches 500.. run scoreboard players set #time_bank_unlocked meta 1
+execute unless score #time_bank_unlocked meta matches 1.. if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
 scoreboard players operation #meta_bank_added tmp = #time_bank meta
 scoreboard players operation #meta_bank_added tmp -= #meta_bank_before tmp
 

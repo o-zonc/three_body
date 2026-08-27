@@ -3,15 +3,9 @@ function shop/alchemy/lab/cooldown/prepare_ui {id:"lapis",rate:"early"}
 execute store result score #lapis_gain tmp run function resource/material/lapis/amount
 execute store result score #lapis_base_gain tmp run function resource/production/base
 function dawn/amplifier/prepare_resource_ui {dim:"overworld",final:150,final_multiplier:2.5}
-
-# 「요정의 도움으로」 발전과제 보상은 다른 자원 보상 UI와 같은 방식으로 기초 수급량에 반영합니다.
-execute if score #lapis_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 run scoreboard players set #advancement_reward_multiplier tmp 2
-execute if score #lapis_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #lapis_base_gain tmp *= #advancement_reward_multiplier tmp
 function resource/upgrade/prepare_ui {id:"lapis",trigger:1117}
-
-data modify storage data tmp.advancement_reward_ui.lapis set value {text:" "}
-execute unless score #lapis_gain tmp = #lapis_base_gain tmp run data modify storage data tmp.advancement_reward_ui.lapis set value [{text:" → "}, {score:{name:"#lapis_gain",objective:"tmp"},color:"green"},{text:"§7개"},{"text":" ★", "hover_event":{"action":"show_text", "value":[{text:"§a최종 자원 수급량§r§7이 증가합니다.\n\n자원 상점 강화: §a수급량 ×"},{storage:"data",nbt:"tmp.resource_shop.lapis.now.value",color:"green",plain:true},{storage:"data",nbt:"tmp.dawn_amplifier_ui",interpret:true}]}, "color":"green"}]
-execute if score #lapis_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 run data modify storage data tmp.advancement_reward_ui.lapis set value [{text:" → "}, {score:{name:"#lapis_gain",objective:"tmp"},color:"green"},{text:"§7개"},{"text":" ★", "hover_event":{"action":"show_text", "value":[{text:"§6기초 자원 수급량§r§7과 §a최종 자원 수급량§r§7이 증가합니다.\n\n발전과제 보상: §6수급량 ×2\n§r§7자원 상점 강화: §a수급량 ×"},{storage:"data",nbt:"tmp.resource_shop.lapis.now.value",color:"green",plain:true},{storage:"data",nbt:"tmp.dawn_amplifier_ui",interpret:true}]}, "color":"green"}]
+scoreboard players set #gain_advancement_threshold tmp 2
+function resource/ui/prepare_standard_gain {id:"lapis",color:"green",shop_color:"blue",advancement:"lapis",advancement_multiplier:2,advancement_label:"2"}
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

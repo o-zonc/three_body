@@ -6,7 +6,7 @@ scoreboard players set #gold_second_kind tmp 3
 scoreboard players set #diamond_second_kind tmp 3
 $function shop/second/prepare {id:"$(id)"}
 function resource/convert_discount_cost_to_text_named {id:"second_shop",insertion:", "}
-data modify storage data tmp.second_shop.button set value {text:"§8[ 강화 완료 ]"}
+data modify storage data tmp.second_shop.button set value {text:"[ 강화 완료 ]",color:"dark_gray",bold:true}
 data modify storage data tmp.second_shop.priority set value {text:""}
 data modify storage data tmp.second_shop.amount set value {text:""}
 data modify storage data tmp.second_shop.next set value {text:""}

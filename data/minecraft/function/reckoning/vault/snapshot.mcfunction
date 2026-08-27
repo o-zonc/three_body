@@ -2,24 +2,28 @@
 scoreboard players set #vault_shop_first tmp 0
 scoreboard players set #vault_observatory tmp 0
 scoreboard players set #vault_shop_second tmp 0
+scoreboard players set #vault_dried_relic tmp 0
 scoreboard players set #vault_alchemy tmp 0
 scoreboard players set #vault_factory tmp 0
 scoreboard players set #vault_accelerator tmp 0
 scoreboard players set #vault_time_machine tmp 0
 scoreboard players set #vault_stick_progress tmp 0
 scoreboard players set #vault_frozen_bridge tmp 0
+scoreboard players set #vault_stronghold tmp 0
 scoreboard players set #vault_elevator tmp 0
 scoreboard players set #vault_tool tmp 0
 
 execute if score #information_bank meta matches 10.. run scoreboard players set #vault_shop_first tmp 1
 execute if score #information_bank meta matches 25.. run scoreboard players set #vault_observatory tmp 1
 execute if score #information_bank meta matches 50.. run scoreboard players set #vault_shop_second tmp 1
-execute if score #information_bank meta matches 100.. run scoreboard players set #vault_alchemy tmp 1
+execute if score #information_bank meta matches 75.. run scoreboard players set #vault_dried_relic tmp 1
+execute if score #information_bank meta matches 125.. run scoreboard players set #vault_alchemy tmp 1
 execute if score #information_bank meta matches 250.. run scoreboard players set #vault_factory tmp 1
 execute if score #information_bank meta matches 500.. run scoreboard players set #vault_accelerator tmp 1
 execute if score #information_bank meta matches 1000.. run scoreboard players set #vault_time_machine tmp 1
 execute if score #time_bank meta matches 10.. run scoreboard players set #vault_stick_progress tmp 1
 execute if score #time_bank meta matches 10.. run scoreboard players set #vault_frozen_bridge tmp 1
+execute if score #time_bank meta matches 35.. run scoreboard players set #vault_stronghold tmp 1
 execute if score #time_bank meta matches 50.. run scoreboard players set #vault_elevator tmp 1
 execute if score #time_bank meta matches 250.. run scoreboard players set #vault_tool tmp 1
 
@@ -42,6 +46,10 @@ scoreboard players operation #vault_gold_second tmp = #gold_second_lvl upgrade
 scoreboard players operation #vault_diamond_second tmp = #diamond_second_lvl upgrade
 scoreboard players operation #vault_special_second tmp = #special_second_lvl upgrade
 scoreboard players operation #vault_get_second tmp = #get_second_lvl upgrade
+scoreboard players operation #vault_dried_relic_level tmp = #dried_relic_level upgrade
+scoreboard players operation #vault_stronghold_overworld tmp = #stronghold_overworld upgrade
+scoreboard players operation #vault_stronghold_frozen tmp = #stronghold_frozen upgrade
+scoreboard players operation #vault_stronghold_dried tmp = #stronghold_dried upgrade
 scoreboard players operation #vault_age tmp = #overworld civilization_age
 scoreboard players operation #vault_alchemy_level tmp = #level alchemy_workshop
 scoreboard players set #vault_alchemy_lab_level tmp 0

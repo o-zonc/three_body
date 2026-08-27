@@ -1,5 +1,6 @@
 # Macro args: id, fuel, interval, dim, block, x, y, z
 $scoreboard players set #$(id) factory_timer $(interval)
+$function dried/stronghold/apply_dried_factory {id:"$(id)"}
 $execute unless score #coal material matches $(fuel).. run scoreboard players set #$(id) factory_status 2
 $execute unless score #coal material matches $(fuel).. run return 0
 $scoreboard players remove #coal material $(fuel)

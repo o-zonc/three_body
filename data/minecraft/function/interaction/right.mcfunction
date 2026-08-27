@@ -10,13 +10,20 @@ execute if entity @s[tag=po,tag=time] on target run function resource/interactio
 execute if entity @s[tag=frozen,tag=info] on target run function frozen/interaction/info
 execute if entity @s[tag=frozen,tag=shop] on target run function frozen/interaction/shop
 execute if entity @s[tag=frozen,tag=potion] on target run function frozen/interaction/potion
-execute if entity @s[tag=frozen,tag=snow] on target run tellraw @s {text:"마지막 문명이 남긴 유산인 것 같다...",color:"gray"}
+execute if entity @s[tag=frozen,tag=snow] on target run tellraw @s {text:"통이 가득 차서 재활용할 수 없을 것 같다...",color:"gray"}
+execute if entity @s[tag=frozen,tag=ender] on target run function frozen/maze/reward
 execute if entity @s[tag=dried,tag=info] on target run function dried/interaction/info
 execute if entity @s[tag=dried,tag=potion] on target run function dried/interaction/potion
 execute if entity @s[tag=dried,tag=recycle] on target run function dried/recycle/interact
 execute if entity @s[tag=dried,tag=left] on target run function dried/relic/ui
 execute if entity @s[tag=dried,tag=probability] on target run function dried/probability/ui
 execute if entity @s[tag=dried,tag=secret] on target run function dried/secret/interact
+execute if entity @s[tag=dried,tag=sulfur] on target run function dried/interaction/structure_ui {id:"sulfur",name:"메마른 세계 업그레이드 - 유황",color:"yellow",trigger:2008,x:-8,y:62,z:-10,cost:[{type:"gold",amount:50},{type:"heat",amount:100}]}
+execute if entity @s[tag=dried,tag=cinnabar] on target run function dried/interaction/structure_ui {id:"cinnabar",name:"메마른 세계 업그레이드 - 진사",color:"red",trigger:2009,x:8,y:62,z:10,cost:[{type:"gold",amount:100},{type:"heat",amount:200}]}
+execute if entity @s[tag=stronghold,tag=1] on target run function dried/stronghold/ui {id:"overworld",name:"오버월드",color:"green",trigger:2011,effect:"블록 재생성 시간",block:"grass_block",x:18,z:-6}
+execute if entity @s[tag=stronghold,tag=2] on target run function dried/stronghold/ui {id:"frozen",name:"얼어붙은 세계",color:"aqua",trigger:2012,effect:"세공 시도 시간",block:"packed_ice",x:12,z:0}
+execute if entity @s[tag=stronghold,tag=3] on target run function dried/stronghold/ui {id:"dried",name:"메마른 세계",color:"gold",trigger:2013,effect:"입자가속기 실험·공장 채굴 대기 시간",block:"sandstone",x:18,z:6}
+execute if entity @s[tag=stronghold,tag=check] on target run function dried/stronghold/check
 execute if entity @s[tag=dawn,tag=reactor] on target run function dawn/reactor/interact
 execute if entity @s[tag=dawn,tag=overworld] on target run function dawn/amplifier/ui {id:"overworld",name:"오버월드",color:"green",trigger:1831}
 execute if entity @s[tag=dawn,tag=dried] on target run function dawn/amplifier/ui {id:"dried",name:"메마른 세계",color:"gold",trigger:1832}
@@ -52,9 +59,9 @@ execute if entity @s[tag=shop,tag=get] on target run function shop/second/ui {id
 # 노랑/파랑 변환 단말은 중입자 충돌 발전과제 이전에는 UI 함수가 조용히 종료합니다.
 execute if entity @s[tag=shop,tag=yellow] on target run function shop/color/yellow_ui
 execute if entity @s[tag=shop,tag=blue] on target run function shop/color/blue_ui
-execute if entity @s[tag=shop,tag=time,tag=!polarnight] on target run function shop/third/storage_ui {id:"time",name:"시간",title:"상점 및 지갑",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute if entity @s[tag=shop,tag=time,tag=!polarnight] on target run function shop/third/storage_ui {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
 execute if entity @s[tag=shop,tag=time,tag=polarnight] on target run function shop/third/storage_ui {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
-execute if entity @s[tag=shop,tag=information,tag=!polarnight] on target run function shop/third/storage_ui {id:"information",name:"정보",title:"상점 및 지갑",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
+execute if entity @s[tag=shop,tag=information,tag=!polarnight] on target run function shop/third/storage_ui {id:"information",name:"정보",title:"보관소",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
 execute if entity @s[tag=shop,tag=information,tag=polarnight] on target run function shop/third/storage_ui {id:"information",name:"정보",title:"보관소",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
 execute if entity @s[tag=shop,tag=world_eye] on target run function shop/third/world_eye/ui
 execute if entity @s[tag=shop,tag=!check,tag=!factory,tag=!heat,tag=!gold,tag=!cold,tag=!diamond,tag=!special,tag=!get,tag=!yellow,tag=!blue,tag=!time,tag=!information,tag=!world_eye,tag=!era,tag=!alchemy,tag=!elevator,tag=!observatory,tag=!item,tag=!entrance,tag=!frozen,tag=!vault,tag=!hole] run function resource/shop/interact

@@ -62,6 +62,7 @@ execute if score #level alchemy_workshop matches 2.. if score #cost_diamond cost
 
 # 성공 시 Lv.0에서만 공용 쿨타임을 시작합니다.
 execute if score #level alchemy_workshop matches 0 run scoreboard players set #jewel_cooldown var 300
+execute if score #level alchemy_workshop matches 0 run function dried/stronghold/apply_frozen
 execute if score #level alchemy_workshop matches 0 run function shop/alchemy/jewel/ui
 
 # 성공한 세공만 작업대 파티클을 출력합니다.

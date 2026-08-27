@@ -12,11 +12,13 @@ execute as @a unless predicate player/sneaking run scoreboard players set @s sne
 function mover/tick
 
 # 엘리베이터
+execute in minecraft:frozen run function frozen/maze/tick
 function elevator/tick
 function elevator/second_perimeter_tick
 
 # 인터랙션 이벤트
 function interaction/detect
+function crying/discovery_tick
 
 # 자원 API
 function var_init/runtime

@@ -1,0 +1,32 @@
+{
+  "parent": "3_polarnight/89_crying_discovery",
+  "display": {
+    "icon": "crying_obsidian",
+    "title": "우는 흑요석",
+    "description": "오버월드, 메마른 세계, 얼어붙은 세계, 여명에서 우는 흑요석을 발견하세요.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "overworld": {
+      "trigger": "impossible"
+    },
+    "dried": {
+      "trigger": "impossible"
+    },
+    "frozen": {
+      "trigger": "impossible"
+    },
+    "dawn": {
+      "trigger": "impossible"
+    }
+  },
+  "requirements": [
+    ["overworld"],
+    ["dried"],
+    ["frozen"],
+    ["dawn"]
+  ]
+}

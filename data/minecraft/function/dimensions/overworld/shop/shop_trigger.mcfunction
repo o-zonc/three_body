@@ -52,11 +52,11 @@ execute if score @s shop_trigger matches 1816 run function shop/second/purchase 
 
 # 자원 상점 3층 / 여명 상호작용 (182X~183X)
 execute if score @s shop_trigger matches 1821 run function shop/third/storage_purchase {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
-execute if score @s shop_trigger matches 1822 run function shop/third/storage_purchase {id:"time",name:"시간",title:"상점 및 지갑",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute if score @s shop_trigger matches 1822 run function shop/third/storage_purchase {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
 execute if score @s shop_trigger matches 1823 run function shop/third/world_eye/purchase
 execute if score @s shop_trigger matches 1824 run function shop/third/world_eye/synthesize
 execute if score @s shop_trigger matches 1825 run function meta/manual_withdraw {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
-execute if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간",title:"상점 및 지갑",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
 execute if score @s shop_trigger matches 1827 run function shop/third/expansion/information
 execute if score @s shop_trigger matches 1828 run function shop/third/expansion/time
 execute if score @s shop_trigger matches 1830 run function dawn/reactor/craft
@@ -65,12 +65,24 @@ execute if score @s shop_trigger matches 1832 run function dawn/amplifier/purcha
 execute if score @s shop_trigger matches 1833 run function dawn/amplifier/purchase {id:"frozen",name:"얼어붙은 세계",color:"aqua",trigger:1833}
 
 # 색채 자원 변환 (184X)
-execute if score @s shop_trigger matches 1841 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"copper",target_name:"구리",target_color:"gold",base:100}
-execute if score @s shop_trigger matches 1842 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"gold",target_name:"금",target_color:"gold",base:20}
-execute if score @s shop_trigger matches 1843 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"heat",target_name:"열기",target_color:"red",base:50}
-execute if score @s shop_trigger matches 1844 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"iron",target_name:"철",target_color:"white",base:100}
-execute if score @s shop_trigger matches 1845 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",target_color:"aqua",base:10}
-execute if score @s shop_trigger matches 1846 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"cold",target_name:"냉기",target_color:"aqua",base:50}
+execute if score @s shop_trigger matches 1841 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"copper",target_name:"구리",target_color:"gold",base:100,amount:1}
+execute if score @s shop_trigger matches 1842 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"gold",target_name:"금",target_color:"gold",base:20,amount:1}
+execute if score @s shop_trigger matches 1843 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"heat",target_name:"열기",target_color:"red",base:50,amount:1}
+execute if score @s shop_trigger matches 1844 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"iron",target_name:"철",target_color:"white",base:100,amount:1}
+execute if score @s shop_trigger matches 1845 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",target_color:"aqua",base:10,amount:1}
+execute if score @s shop_trigger matches 1846 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"cold",target_name:"냉기",target_color:"aqua",base:50,amount:1}
+execute if score @s shop_trigger matches 1851 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"copper",target_name:"구리",target_color:"gold",base:100,amount:10}
+execute if score @s shop_trigger matches 1852 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"gold",target_name:"금",target_color:"gold",base:20,amount:10}
+execute if score @s shop_trigger matches 1853 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"heat",target_name:"열기",target_color:"red",base:50,amount:10}
+execute if score @s shop_trigger matches 1854 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"iron",target_name:"철",target_color:"white",base:100,amount:10}
+execute if score @s shop_trigger matches 1855 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",target_color:"aqua",base:10,amount:10}
+execute if score @s shop_trigger matches 1856 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"cold",target_name:"냉기",target_color:"aqua",base:50,amount:10}
+execute if score @s shop_trigger matches 1861 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"copper",target_name:"구리",target_color:"gold",base:100,amount:0}
+execute if score @s shop_trigger matches 1862 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"gold",target_name:"금",target_color:"gold",base:20,amount:0}
+execute if score @s shop_trigger matches 1863 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"heat",target_name:"열기",target_color:"red",base:50,amount:0}
+execute if score @s shop_trigger matches 1864 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"iron",target_name:"철",target_color:"white",base:100,amount:0}
+execute if score @s shop_trigger matches 1865 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",target_color:"aqua",base:10,amount:0}
+execute if score @s shop_trigger matches 1866 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"cold",target_name:"냉기",target_color:"aqua",base:50,amount:0}
 
 # 얼어붙은 차원 시설 (19XX)
 execute if score @s shop_trigger matches 1901 run function frozen/interaction/purchase_shop
@@ -85,6 +97,11 @@ execute if score @s shop_trigger matches 2004 run function dried/probability/sel
 execute if score @s shop_trigger matches 2005 run function dried/probability/select {mode:2,name:"메마른 세계 집중",color:"gold"}
 execute if score @s shop_trigger matches 2006 run function dried/probability/select {mode:3,name:"얼어붙은 세계 집중",color:"aqua"}
 execute if score @s shop_trigger matches 2007 run function dried/probability/select {mode:0,name:"기본 확률",color:"white"}
+execute if score @s shop_trigger matches 2008 in dried unless data block -8 62 -10 {name:"sulfur"} run function dried/interaction/purchase_structure {id:"sulfur",name:"메마른 세계 업그레이드 - 유황",color:"yellow",x:-8,y:62,z:-10,cost:[{type:"gold",amount:50},{type:"heat",amount:100}]}
+execute if score @s shop_trigger matches 2009 in dried unless data block 8 62 10 {name:"cinnabar"} run function dried/interaction/purchase_structure {id:"cinnabar",name:"메마른 세계 업그레이드 - 진사",color:"red",x:8,y:62,z:10,cost:[{type:"gold",amount:100},{type:"heat",amount:200}]}
+execute if score @s shop_trigger matches 2011 run function dried/stronghold/purchase {id:"overworld",name:"오버월드",color:"green",trigger:2011,effect:"블록 재생성 시간",block:"grass_block",x:18,z:-6}
+execute if score @s shop_trigger matches 2012 run function dried/stronghold/purchase {id:"frozen",name:"얼어붙은 세계",color:"aqua",trigger:2012,effect:"세공 시도 시간",block:"packed_ice",x:12,z:0}
+execute if score @s shop_trigger matches 2013 run function dried/stronghold/purchase {id:"dried",name:"메마른 세계",color:"gold",trigger:2013,effect:"입자가속기 실험·공장 채굴 대기 시간",block:"sandstone",x:18,z:6}
 
 # 극야 차원 정산대/보관소/공허의 구멍 (21XX)
 execute if score @s shop_trigger matches 2101 run function reckoning/run

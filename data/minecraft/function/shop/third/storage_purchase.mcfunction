@@ -11,4 +11,4 @@ $scoreboard players add #$(id)_storage_lvl upgrade 1
 function shop/third/update_capacities
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 $execute if score #GLOBAL current_dim matches 3 run function shop/third/storage_ui {id:"$(id)",name:"$(name)",title:"보관소",color:"$(color)",unit:"$(unit)",bank_max:$(bank_max),trigger:$(trigger),withdraw_trigger:$(withdraw_trigger)}
-$execute unless score #GLOBAL current_dim matches 3 run function shop/third/storage_ui {id:"$(id)",name:"$(name)",title:"상점 및 지갑",color:"$(color)",unit:"$(unit)",bank_max:$(bank_max),trigger:$(trigger),withdraw_trigger:$(withdraw_trigger)}
+$execute unless score #GLOBAL current_dim matches 3 run function shop/third/storage_ui {id:"$(id)",name:"$(name)",title:"보관소",color:"$(color)",unit:"$(unit)",bank_max:$(bank_max),trigger:$(trigger),withdraw_trigger:$(withdraw_trigger)}

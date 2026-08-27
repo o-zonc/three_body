@@ -48,6 +48,7 @@ execute if score #GLOBAL accelerator_level matches 1 store result score #GLOBAL 
 execute if score #GLOBAL accelerator_level matches 2 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."2".experiment_cooldown
 execute if score #GLOBAL accelerator_level matches 3 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."3".experiment_cooldown
 execute if score #GLOBAL accelerator_level matches 4 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."4".experiment_cooldown
+function dried/stronghold/apply_dried_accelerator
 
 scoreboard players set #experiment_mode tmp 0
 playsound block.beacon.activate master @s ~ ~ ~ 1 1.35

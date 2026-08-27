@@ -28,8 +28,9 @@ execute if score #overworld civilization_age matches 8 if score #iron material m
 execute if score #overworld civilization_age matches 8 if score #GLOBAL alien_interference matches 1 run function alien/tick
 
 # 보호막 상태 변경은 여기 한 곳에서만 수행합니다.
-# 충전 중에는 5분(6000틱)마다 플레이어가 소지한 시간 1개를 유지비로 사용합니다.
-execute if score #GLOBAL shield_charge matches 1.. run scoreboard players remove #GLOBAL shield_charge 1
-execute if score #GLOBAL shield_charge matches 1.. run scoreboard players remove #GLOBAL shield_maintenance 1
-execute if score #GLOBAL shield_charge matches 1.. if score #GLOBAL shield_maintenance matches ..0 as @a[tag=player,limit=1] run function shield/pay_time
+# 미리 충전한 보호막은 외계 간섭이 시작될 때까지 보존합니다.
+# 간섭 차단 중에는 5분(6000틱)마다 플레이어가 소지한 시간 1개를 유지비로 사용합니다.
+execute if score #GLOBAL alien_interference matches 1 if score #GLOBAL shield_charge matches 1.. run scoreboard players remove #GLOBAL shield_charge 1
+execute if score #GLOBAL alien_interference matches 1 if score #GLOBAL shield_charge matches 1.. run scoreboard players remove #GLOBAL shield_maintenance 1
+execute if score #GLOBAL alien_interference matches 1 if score #GLOBAL shield_charge matches 1.. if score #GLOBAL shield_maintenance matches ..0 as @a[tag=player,limit=1] run function shield/pay_time
 execute unless score #GLOBAL shield_charge matches 1.. run scoreboard players set #GLOBAL shield_maintenance 6000

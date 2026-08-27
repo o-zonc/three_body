@@ -1,0 +1,5 @@
+# 문명 정산용 여명 원자로 초기화
+# 65~67층의 자원 증폭기 색유리는 영구 진행도이므로 건드리지 않습니다.
+execute in minecraft:dawn run setblock 0 64 0 minecraft:white_stained_glass
+execute in minecraft:dawn run setblock 0 68 0 minecraft:air
+execute in minecraft:dawn run kill @e[type=minecraft:block_display,tag=crying_dawn_display]

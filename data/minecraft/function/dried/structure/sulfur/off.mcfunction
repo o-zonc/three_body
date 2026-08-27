@@ -1,5 +1,7 @@
 execute in dried run kill @e[type=minecraft:interaction,tag=dried,tag=recycle]
 execute in dried run kill @e[type=minecraft:interaction,tag=dried,tag=potion]
+execute in dried run kill @e[type=minecraft:interaction,tag=dried,tag=probability]
+
 execute in dried run kill @e[type=minecraft:item,nbt={Item:{id:"minecraft:glass_bottle"}}]
 execute in dried run kill @e[type=minecraft:glow_item_frame]
 

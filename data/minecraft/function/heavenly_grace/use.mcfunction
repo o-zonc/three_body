@@ -20,5 +20,5 @@ clear @s minecraft:paper[minecraft:custom_data~{heavenly_grace:1b}] 1
 playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1.0 1.25
 particle minecraft:end_rod ~ ~1 ~ 0.7 1.0 0.7 0.05 60 force @s
 particle minecraft:firework ~ ~1 ~ 0.4 0.7 0.4 0.08 35 force @s
-title @s title {"text":"하늘의 은총","color":"gold","bold":true}
-title @s subtitle {"text":"나무 +100 · 돌 +100 · 석탄 +50 · 구리 +50","color":"yellow"}
+title @s title {"text":"하늘의 은총","color":"#71CDF9","bold":true}
+title @s subtitle ["",{"text":"나무 +100","color":"dark_green"},{"text":" · ","color":"gray"},{"text":"돌 +100","color":"gray"},{"text":" · ","color":"gray"},{"text":"석탄 +50","color":"dark_gray"},{"text":" · ","color":"gray"},{"text":"구리 +50","color":"#C87941"}]

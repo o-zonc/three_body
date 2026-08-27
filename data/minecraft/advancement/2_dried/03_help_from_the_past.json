@@ -3,7 +3,7 @@
   "display": {
     "icon": "enchanted_book",
     "title": "과거로부터의 도움",
-    "description": "고대 문명의 발굴 장치를 완전히 복원했습니다.\n\n§6•§7 보상: 자원 상점 업그레이드 비용이 총 40% 감소",
+    "description": "고대 문명의 발굴 장치를 완전히 복원했습니다.\n\n§6•§7 보상: 업그레이드 비용이 대폭 감소합니다.",
     "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true,

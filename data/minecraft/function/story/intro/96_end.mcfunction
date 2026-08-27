@@ -26,7 +26,6 @@ schedule function story/intro/98_warning 12s
 # 19초 후에 플레이어 조작을 복구하는 함수를 예약합니다.
 schedule function story/intro/99_release_player 19s
 
-gamerule advance_weather true
 time resume
 
 # 여기까지 도달한 플레이어는 인트로를 완료했거나 스킵한 것으로 기록합니다.

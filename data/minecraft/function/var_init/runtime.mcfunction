@@ -11,11 +11,6 @@ execute as @a unless score @s trigger_init matches 1 run function var_init/playe
 execute as @a unless score @s leave_game matches 0.. run scoreboard players set @s leave_game 0
 execute as @a unless score @s leave_game_prev = @s leave_game run function player/on_join
 
-# 보관소를 최대치까지 채웠을 때 영구 휴대 한도 보너스를 해금합니다.
-# 실제 자원 지급 함수는 자체적으로 보관소 상한을 적용하므로, 여기서는 해금 이벤트만 감시합니다.
-execute if score #information_bank meta matches 1000.. unless score #information_capacity_bonus meta matches 1.. run scoreboard players set #information_capacity_bonus meta 1
-execute if score #time_bank meta matches 500.. unless score #time_capacity_bonus meta matches 1.. run scoreboard players set #time_capacity_bonus meta 1
-
-# load에서 보너스가 복구되었거나 이번 틱에 새로 해금된 경우 휴대 한도를 한 번 동기화합니다.
-execute if score #information_capacity_bonus meta matches 1.. if score #information_capacity meta matches ..20000 run function shop/third/update_capacities
-execute if score #time_capacity_bonus meta matches 1.. if score #time_capacity meta matches ..10000 run function shop/third/update_capacities
+# 보관소를 최대치까지 채웠을 때 보관량 상한을 영구 해제합니다.
+execute if score #information_bank meta matches 1000.. unless score #information_bank_unlocked meta matches 1.. run scoreboard players set #information_bank_unlocked meta 1
+execute if score #time_bank meta matches 500.. unless score #time_bank_unlocked meta matches 1.. run scoreboard players set #time_bank_unlocked meta 1

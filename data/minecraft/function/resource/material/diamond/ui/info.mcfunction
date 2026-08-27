@@ -15,19 +15,31 @@ scoreboard players remove #diamond_second_common_ui tmp 1
 execute store result score #diamond_second_extreme_ui tmp run function resource/production/extreme_multiplier
 scoreboard players operation #diamond_second_common_ui tmp *= #diamond_second_extreme_ui tmp
 scoreboard players operation #diamond_second_bonus_ui tmp += #diamond_second_common_ui tmp
+scoreboard players operation #diamond_base_gain tmp += #diamond_second_bonus_ui tmp
 
 # 1층 자원 상점 배수도 일반 자원 UI와 같은 방식으로 표시합니다.
 execute store result score #diamond_shop_multiplier_ui tmp run function resource/shop/value {id:"diamond"}
 function resource/upgrade/prepare_ui {id:"diamond",trigger:1115}
 
-data modify storage data tmp.second_floor_ui.diamond set value {text:""}
-execute if score #diamond_second_bonus_ui tmp matches 1.. run data modify storage data tmp.second_floor_ui.diamond set value [{text:"\n자원 상점 보상: §d수급량 +"},{score:{name:"#diamond_second_bonus_ui",objective:"tmp"},color:"light_purple"}]
-
-data modify storage data tmp.frozen_advancement_ui.diamond set value {text:""}
-execute if entity @a[nbt={Dimension:"minecraft:frozen"}] if entity @a[advancements={1_frozen/01_chaos_survivor=true}] run data modify storage data tmp.frozen_advancement_ui.diamond set value {text:"\n발전과제 보상: §6수급량 ×2"}
-
-data modify storage data tmp.advancement_reward_ui.diamond set value {text:" "}
-execute unless score #diamond_gain tmp = #diamond_base_gain tmp run data modify storage data tmp.advancement_reward_ui.diamond set value [{text:" → "},{score:{name:"#diamond_gain",objective:"tmp"},color:"aqua"},{text:"§7개"},{text:" ★",color:"aqua",hover_event:{action:"show_text",value:[{text:"§b최종 자원 수급량§r§7이 증가합니다.\n"},{storage:"data",nbt:"tmp.second_floor_ui.diamond",interpret:true},{storage:"data",nbt:"tmp.frozen_advancement_ui.diamond",interpret:true},{storage:"data",nbt:"tmp.dawn_amplifier_ui",interpret:true}]}}]
+execute store result score #diamond_base_common_ui tmp run function resource/production/base
+scoreboard players remove #diamond_base_common_ui tmp 1
+scoreboard players operation #diamond_common_bonus_ui tmp = #diamond_second_common_ui tmp
+scoreboard players operation #diamond_dedicated_bonus_ui tmp = #diamond_second_bonus_ui tmp
+scoreboard players operation #diamond_dedicated_bonus_ui tmp -= #diamond_second_common_ui tmp
+data modify storage data tmp.resource_gain_hover.diamond set value [{text:"현재 생산량 증가 효과",color:"aqua"}]
+execute if score #diamond_common_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.diamond append value {text:"\n기초 자원 생산량: +",color:"gray"}
+execute if score #diamond_common_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.diamond append value {score:{name:"#diamond_base_common_ui",objective:"tmp"},color:"white"}
+execute if score #diamond_common_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.diamond append value {text:"\n극한 자원 수급량: ×",color:"gray"}
+execute if score #diamond_common_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.diamond append value {score:{name:"#diamond_second_extreme_ui",objective:"tmp"},color:"light_purple"}
+execute if score #diamond_dedicated_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.diamond append value {text:"\n다이아몬드 추가 수급량: +",color:"gray"}
+execute if score #diamond_dedicated_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.diamond append value {score:{name:"#diamond_dedicated_bonus_ui",objective:"tmp"},color:"dark_green"}
+execute if score #diamond_shop_multiplier_ui tmp matches 2.. run data modify storage data tmp.resource_gain_hover.diamond append value {text:"\n자원 상점 수급량: ×",color:"gray"}
+execute if score #diamond_shop_multiplier_ui tmp matches 2.. run data modify storage data tmp.resource_gain_hover.diamond append value {score:{name:"#diamond_shop_multiplier_ui",objective:"tmp"},color:"aqua"}
+execute if entity @a[nbt={Dimension:"minecraft:frozen"}] if entity @a[advancements={1_frozen/01_chaos_survivor=true}] run data modify storage data tmp.resource_gain_hover.diamond append value {text:"\n발전과제 수급량: ×",color:"gray"}
+execute if entity @a[nbt={Dimension:"minecraft:frozen"}] if entity @a[advancements={1_frozen/01_chaos_survivor=true}] run data modify storage data tmp.resource_gain_hover.diamond append value {text:"10",color:"gold"}
+data modify storage data tmp.resource_gain_hover.diamond append from storage data tmp.dawn_amplifier_ui
+data modify storage data tmp.advancement_reward_ui.diamond set value [{text:" → "},{score:{name:"#diamond_gain",objective:"tmp"},color:"aqua"},{text:"§7개"},{text:" ★",color:"aqua",hover_event:{action:"show_text",value:[]}}]
+data modify storage data tmp.advancement_reward_ui.diamond[3].hover_event.value set from storage data tmp.resource_gain_hover.diamond
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

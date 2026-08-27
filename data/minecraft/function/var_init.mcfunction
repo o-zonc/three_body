@@ -55,12 +55,16 @@ scoreboard players enable @a tool_trigger
 execute unless score #wood material = #wood material run scoreboard players set #wood material 0
 execute unless score #information_bank meta = #information_bank meta run scoreboard players set #information_bank meta 0
 execute unless score #time_bank meta = #time_bank meta run scoreboard players set #time_bank meta 0
+execute unless score #information_bank_unlocked meta = #information_bank_unlocked meta run scoreboard players set #information_bank_unlocked meta 0
+execute unless score #time_bank_unlocked meta = #time_bank_unlocked meta run scoreboard players set #time_bank_unlocked meta 0
 execute unless score #information_storage_lvl upgrade = #information_storage_lvl upgrade run scoreboard players set #information_storage_lvl upgrade 0
 execute unless score #time_storage_lvl upgrade = #time_storage_lvl upgrade run scoreboard players set #time_storage_lvl upgrade 0
 execute unless score #world_eye_shop_lvl upgrade = #world_eye_shop_lvl upgrade run scoreboard players set #world_eye_shop_lvl upgrade 0
 function shop/third/update_capacities
-execute if score #information_bank meta matches 1001.. run scoreboard players set #information_bank meta 1000
-execute if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
+execute if score #information_bank meta matches 1000.. run scoreboard players set #information_bank_unlocked meta 1
+execute if score #time_bank meta matches 500.. run scoreboard players set #time_bank_unlocked meta 1
+execute unless score #information_bank_unlocked meta matches 1.. if score #information_bank meta matches 1001.. run scoreboard players set #information_bank meta 1000
+execute unless score #time_bank_unlocked meta matches 1.. if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
 execute if score #information_bank meta matches ..-1 run scoreboard players set #information_bank meta 0
 execute if score #time_bank meta matches ..-1 run scoreboard players set #time_bank meta 0
 execute unless score #heat_environment_timer generate = #heat_environment_timer generate run scoreboard players set #heat_environment_timer generate 1200
@@ -70,17 +74,14 @@ execute unless score #coal material = #coal material run scoreboard players set 
 execute unless score #iron material = #iron material run scoreboard players set #iron material 0
 execute unless score #obsidian material = #obsidian material run scoreboard players set #obsidian material 0
 execute unless score #gold material = #gold material run scoreboard players set #gold material 0
-execute unless score #spirit material = #spirit material run scoreboard players set #spirit material 0
-execute unless score #spirit_sidebar var = #spirit_sidebar var run scoreboard players set #spirit_sidebar var 0
-execute unless score #compressed_overworld_crystal material = #compressed_overworld_crystal material run scoreboard players set #compressed_overworld_crystal material 0
-execute unless score #compressed_nether_crystal material = #compressed_nether_crystal material run scoreboard players set #compressed_nether_crystal material 0
-scoreboard players set #compressed_nether_crystal_max tmp 500000000
-execute if score #compressed_nether_crystal material matches ..-1 run scoreboard players set #compressed_nether_crystal material 0
-execute if score #compressed_nether_crystal material > #compressed_nether_crystal_max tmp run scoreboard players operation #compressed_nether_crystal material = #compressed_nether_crystal_max tmp
 execute unless score #nether_quartz_max var = #nether_quartz_max var run scoreboard players set #nether_quartz_max var 0
 execute unless score #nether_quartz_max_record var = #nether_quartz_max_record var run scoreboard players set #nether_quartz_max_record var 0
 execute unless score #2_2_quartz_overdrive_remain var = #2_2_quartz_overdrive_remain var run scoreboard players set #2_2_quartz_overdrive_remain var 0
 execute unless score #obsidian_storage_milestone var = #obsidian_storage_milestone var run scoreboard players set #obsidian_storage_milestone var 0
+execute unless score #frozen_maze_active var = #frozen_maze_active var run scoreboard players set #frozen_maze_active var 0
+execute unless score #frozen_maze_cleared var = #frozen_maze_cleared var run scoreboard players set #frozen_maze_cleared var 0
+execute unless score #frozen_maze_claimed var = #frozen_maze_claimed var run scoreboard players set #frozen_maze_claimed var 0
+execute unless score #frozen_maze_started var = #frozen_maze_started var run scoreboard players set #frozen_maze_started var 0
 execute unless score #nether unlock = #nether unlock run scoreboard players set #nether unlock 0
 execute unless score #gold unlock = #gold unlock run scoreboard players set #gold unlock 0
 execute unless score #area_zone unlock = #area_zone unlock run scoreboard players set #area_zone unlock 0
@@ -108,7 +109,6 @@ execute unless score #disable_coal_production var = #disable_coal_production var
 execute unless score #disable_iron_production var = #disable_iron_production var run scoreboard players set #disable_iron_production var 0
 execute unless score #disable_obsidian_production var = #disable_obsidian_production var run scoreboard players set #disable_obsidian_production var 0
 execute unless score #disable_gold_production var = #disable_gold_production var run scoreboard players set #disable_gold_production var 0
-execute unless score #disable_compressed_overworld_crystal_production var = #disable_compressed_overworld_crystal_production var run scoreboard players set #disable_compressed_overworld_crystal_production var 0
 execute unless score #disable_item_reissue var = #disable_item_reissue var run scoreboard players set #disable_item_reissue var 0
 
 # 타임머신 레벨은 항상 0~4 범위로 유지합니다.
@@ -141,16 +141,14 @@ execute unless score #GLOBAL shield_maintenance = #GLOBAL shield_maintenance run
 execute unless score #dried_relic_level upgrade = #dried_relic_level upgrade run scoreboard players set #dried_relic_level upgrade 0
 execute if score #dried_relic_level upgrade matches ..-1 run scoreboard players set #dried_relic_level upgrade 0
 execute if score #dried_relic_level upgrade matches 6.. run scoreboard players set #dried_relic_level upgrade 5
+execute unless score #stronghold_overworld upgrade = #stronghold_overworld upgrade run scoreboard players set #stronghold_overworld upgrade 0
+execute unless score #stronghold_frozen upgrade = #stronghold_frozen upgrade run scoreboard players set #stronghold_frozen upgrade 0
+execute unless score #stronghold_dried upgrade = #stronghold_dried upgrade run scoreboard players set #stronghold_dried upgrade 0
 execute unless score #dried_relic_timer generate = #dried_relic_timer generate run scoreboard players set #dried_relic_timer generate 1200
 execute unless score #information_auto_withdraw meta = #information_auto_withdraw meta run scoreboard players set #information_auto_withdraw meta 0
 execute unless score #time_auto_withdraw meta = #time_auto_withdraw meta run scoreboard players set #time_auto_withdraw meta 0
 execute unless score #GLOBAL reckoning_ready = #GLOBAL reckoning_ready run scoreboard players set #GLOBAL reckoning_ready 0
 execute unless score #GLOBAL dawn_bonus_shop = #GLOBAL dawn_bonus_shop run scoreboard players set #GLOBAL dawn_bonus_shop 0
-execute unless score #information_capacity_bonus meta = #information_capacity_bonus meta run scoreboard players set #information_capacity_bonus meta 0
-execute unless score #time_capacity_bonus meta = #time_capacity_bonus meta run scoreboard players set #time_capacity_bonus meta 0
-execute if score #information_bank meta matches 1000.. run scoreboard players set #information_capacity_bonus meta 1
-execute if score #time_bank meta matches 500.. run scoreboard players set #time_capacity_bonus meta 1
-
 function factory/init_state
 scoreboard players enable @a factory_trigger
 scoreboard players enable @a accelerator_trigger

@@ -8,7 +8,8 @@ execute if score #meta_restore_wallet tmp > #time_capacity meta run scoreboard p
 
 scoreboard players operation #time_bank meta = #time material
 scoreboard players operation #time_bank meta -= #meta_restore_wallet tmp
-execute if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
+execute if score #time_bank meta matches 500.. run scoreboard players set #time_bank_unlocked meta 1
+execute unless score #time_bank_unlocked meta matches 1.. if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
 
 execute if score #meta_restore_wallet tmp matches 1.. store result storage data tmp.meta.amount int 1 run scoreboard players get #meta_restore_wallet tmp
 execute if score #meta_restore_wallet tmp matches 1.. run function meta/time/give_item with storage data tmp.meta

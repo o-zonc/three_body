@@ -10,7 +10,7 @@ gamemode adventure @a
 # dev 인트로 스킵은 96_end를 거치지 않으므로 여기서도 반드시 해제해야 합니다.
 time resume
 gamerule advance_time true
-gamerule advance_weather true
+gamerule advance_weather false
 scoreboard players set #GLOBAL era_paused 0
 
 # 낙하에 사용된 아머 스탠드를 제거하고 시작 발전과제를 부여합니다.

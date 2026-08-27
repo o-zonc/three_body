@@ -2,6 +2,6 @@
 # Macro args: dim, final, final_multiplier
 
 data modify storage data tmp.dawn_amplifier_ui set value {text:""}
-$execute if score #dawn_$(dim)_amp meta matches 1 run data modify storage data tmp.dawn_amplifier_ui set value {text:"\n§r§7여명 증폭: §d수급량 ×1.2"}
-$execute if score #dawn_$(dim)_amp meta matches 2 run data modify storage data tmp.dawn_amplifier_ui set value {text:"\n§r§7여명 증폭: §d수급량 ×1.5"}
-$execute if score #dawn_$(dim)_amp meta matches 3.. run data modify storage data tmp.dawn_amplifier_ui set value {text:"\n§r§7여명 증폭: §d수급량 ×$(final_multiplier)"}
+$execute if score #dawn_$(dim)_amp meta matches 1 run data modify storage data tmp.dawn_amplifier_ui set value {text:"\n여명 증폭 수급량: ×",color:"gray",extra:[{text:"1.2",color:"#9EF971"}]}
+$execute if score #dawn_$(dim)_amp meta matches 2 run data modify storage data tmp.dawn_amplifier_ui set value {text:"\n여명 증폭 수급량: ×",color:"gray",extra:[{text:"1.5",color:"#9EF971"}]}
+$execute if score #dawn_$(dim)_amp meta matches 3.. run data modify storage data tmp.dawn_amplifier_ui set value {text:"\n여명 증폭 수급량: ×",color:"gray",extra:[{text:"$(final_multiplier)",color:"#9EF971"}]}

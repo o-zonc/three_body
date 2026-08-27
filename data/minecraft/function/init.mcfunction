@@ -26,6 +26,11 @@ scoreboard objectives add timer_sec dummy
 # 4. 보스바 로드
 bossbar add shield_charge {"text":"양자 보호막","color":"white"}
 bossbar add bossbar_frozen {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
+bossbar add bossbar_frozen_maze {"text":"[ 지하 미로 ] 중심까지 거리","color":"light_purple"}
+bossbar set bossbar_frozen_maze color purple
+bossbar set bossbar_frozen_maze style progress
+bossbar set bossbar_frozen_maze max 68
+bossbar set bossbar_frozen_maze visible false
 bossbar add bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
 bossbar add bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color":"dark_green"}
 

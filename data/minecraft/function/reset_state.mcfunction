@@ -14,6 +14,10 @@ bossbar set bossbar_frozen color blue
 bossbar set bossbar_frozen style notched_6
 bossbar set bossbar_frozen visible false
 bossbar set bossbar_frozen max 6000
+bossbar set bossbar_frozen_maze color purple
+bossbar set bossbar_frozen_maze style progress
+bossbar set bossbar_frozen_maze visible false
+bossbar set bossbar_frozen_maze max 68
 bossbar set bossbar_dried color yellow
 bossbar set bossbar_dried style notched_10
 bossbar set bossbar_dried visible false
@@ -46,9 +50,22 @@ scoreboard players set #GLOBAL era_observed 0
 scoreboard players set #frozen_shop unlock 0
 scoreboard players set #frozen_bridge unlock 0
 scoreboard players set #frozen_maze unlock 0
+scoreboard players set #frozen_maze_active var 0
+scoreboard players set #frozen_maze_cleared var 0
+scoreboard players set #frozen_maze_claimed var 0
+scoreboard players set #frozen_maze_started var 0
 scoreboard players set #dried_relic unlock 0
 scoreboard players set #dried_relic_level upgrade 0
 scoreboard players set #dried_relic_timer generate 1200
+scoreboard players set #stronghold_overworld upgrade 0
+scoreboard players set #stronghold_frozen upgrade 0
+scoreboard players set #stronghold_dried upgrade 0
+execute in minecraft:dried run setblock 18 65 -6 air
+execute in minecraft:dried run setblock 12 65 0 air
+execute in minecraft:dried run setblock 18 65 6 air
+execute in minecraft:dried run setblock 18 66 -6 air
+execute in minecraft:dried run setblock 12 66 0 air
+execute in minecraft:dried run setblock 18 66 6 air
 
 # 7. 스토리 관리 스코어보드 초기화
 scoreboard players set #done intro 0
@@ -85,6 +102,8 @@ scoreboard players set #cold_alt_south generate 1
 # 공허의 구멍 진행도와 인벤토리형 흑요석 자원은 전체 초기화에서만 제거한다.
 scoreboard players set #hole_level upgrade 0
 scoreboard players set #hole_claims var 0
+clear @a minecraft:paper[minecraft:custom_data~{three_body:{meta:"obsidian"}}]
+# 마이그레이션하지 않은 구형 드래곤 알 기반 흑요석도 전체 초기화 때 제거합니다.
 clear @a minecraft:dragon_egg[minecraft:custom_data~{three_body:{meta:"obsidian"}}]
 
 # 청동기 일회성 보상 아이템 제거
@@ -95,8 +114,12 @@ execute as @e[type=minecraft:item] if items entity @s contents minecraft:paper[m
 scoreboard players set * material 0
 scoreboard players set * upgrade 0
 scoreboard players set * unlock 0
+# 깨진 파편 저장소는 문명 정산에서는 유지하지만, restart에서는 비웁니다.
+scoreboard players set #broken_quantum_storage var 0
 scoreboard players set #information_bank meta 0
 scoreboard players set #time_bank meta 0
+scoreboard players set #information_bank_unlocked meta 0
+scoreboard players set #time_bank_unlocked meta 0
 scoreboard players set #information_capacity meta 8
 scoreboard players set #time_capacity meta 2
 scoreboard players set #information_synced meta 0
@@ -162,6 +185,10 @@ scoreboard players reset @a local_move_return
 scoreboard objectives remove material_display
 
 data remove storage data tmp
+
+# 메마른 차원 시설을 잠긴 상태로 되돌립니다.
+function dried/structure/sulfur/off
+function dried/structure/cinnabar/off
 
 # 얼어붙은 차원 시설을 잠긴 상태로 되돌립니다.
 execute in minecraft:frozen run function frozen/structure/shop/off

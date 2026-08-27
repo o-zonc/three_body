@@ -27,6 +27,7 @@ execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL acc
 execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 2 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."2".failure_cooldown
 execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 3 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."3".failure_cooldown
 execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 4 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."4".failure_cooldown
+execute unless score #GLOBAL accelerator_disabled matches 1 run function dried/stronghold/apply_dried_accelerator
 
 playsound block.beacon.deactivate master @s ~ ~ ~ 1 0.55
 playsound block.respawn_anchor.deplete master @s ~ ~ ~ 0.9 0.65

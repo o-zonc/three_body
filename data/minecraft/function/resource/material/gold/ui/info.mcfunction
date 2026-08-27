@@ -15,16 +15,29 @@ scoreboard players remove #gold_second_common_ui tmp 1
 execute store result score #gold_second_extreme_ui tmp run function resource/production/extreme_multiplier
 scoreboard players operation #gold_second_common_ui tmp *= #gold_second_extreme_ui tmp
 scoreboard players operation #gold_second_bonus_ui tmp += #gold_second_common_ui tmp
+scoreboard players operation #gold_base_gain tmp += #gold_second_bonus_ui tmp
 
 # 1층 자원 상점 배수도 일반 자원 UI와 같은 방식으로 표시합니다.
 execute store result score #gold_shop_multiplier_ui tmp run function resource/shop/value {id:"gold"}
 function resource/upgrade/prepare_ui {id:"gold",trigger:1114}
 
-data modify storage data tmp.second_floor_ui.gold set value {text:""}
-execute if score #gold_second_bonus_ui tmp matches 1.. run data modify storage data tmp.second_floor_ui.gold set value [{text:"\n자원 상점 보상: §d수급량 +"},{score:{name:"#gold_second_bonus_ui",objective:"tmp"},color:"light_purple"}]
-
-data modify storage data tmp.advancement_reward_ui.gold set value {text:" "}
-execute unless score #gold_gain tmp = #gold_base_gain tmp run data modify storage data tmp.advancement_reward_ui.gold set value [{text:" → "},{score:{name:"#gold_gain",objective:"tmp"},color:"gold"},{text:"§7개"},{text:" ★",color:"gold",hover_event:{action:"show_text",value:[{text:"§6최종 자원 수급량§r§7이 증가합니다.\n"},{storage:"data",nbt:"tmp.second_floor_ui.gold",interpret:true},{storage:"data",nbt:"tmp.first_floor_ui.gold",interpret:true},{storage:"data",nbt:"tmp.dawn_amplifier_ui",interpret:true}]}}]
+execute store result score #gold_base_common_ui tmp run function resource/production/base
+scoreboard players remove #gold_base_common_ui tmp 1
+scoreboard players operation #gold_common_bonus_ui tmp = #gold_second_common_ui tmp
+scoreboard players operation #gold_dedicated_bonus_ui tmp = #gold_second_bonus_ui tmp
+scoreboard players operation #gold_dedicated_bonus_ui tmp -= #gold_second_common_ui tmp
+data modify storage data tmp.resource_gain_hover.gold set value [{text:"현재 생산량 증가 효과",color:"gold"}]
+execute if score #gold_common_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.gold append value {text:"\n기초 자원 생산량: +",color:"gray"}
+execute if score #gold_common_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.gold append value {score:{name:"#gold_base_common_ui",objective:"tmp"},color:"white"}
+execute if score #gold_common_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.gold append value {text:"\n극한 자원 수급량: ×",color:"gray"}
+execute if score #gold_common_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.gold append value {score:{name:"#gold_second_extreme_ui",objective:"tmp"},color:"light_purple"}
+execute if score #gold_dedicated_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.gold append value {text:"\n금 추가 수급량: +",color:"gray"}
+execute if score #gold_dedicated_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.gold append value {score:{name:"#gold_dedicated_bonus_ui",objective:"tmp"},color:"dark_green"}
+execute if score #gold_shop_multiplier_ui tmp matches 2.. run data modify storage data tmp.resource_gain_hover.gold append value {text:"\n자원 상점 수급량: ×",color:"gray"}
+execute if score #gold_shop_multiplier_ui tmp matches 2.. run data modify storage data tmp.resource_gain_hover.gold append value {score:{name:"#gold_shop_multiplier_ui",objective:"tmp"},color:"gold"}
+data modify storage data tmp.resource_gain_hover.gold append from storage data tmp.dawn_amplifier_ui
+data modify storage data tmp.advancement_reward_ui.gold set value [{text:" → "},{score:{name:"#gold_gain",objective:"tmp"},color:"gold"},{text:"§7개"},{text:" ★",color:"gold",hover_event:{action:"show_text",value:[]}}]
+data modify storage data tmp.advancement_reward_ui.gold[3].hover_event.value set from storage data tmp.resource_gain_hover.gold
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

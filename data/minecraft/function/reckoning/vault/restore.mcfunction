@@ -16,6 +16,14 @@ execute if score #vault_shop_second tmp matches 1 run scoreboard players operati
 execute if score #vault_shop_second tmp matches 1 run scoreboard players operation #special_second_lvl upgrade = #vault_special_second tmp
 execute if score #vault_shop_second tmp matches 1 run scoreboard players operation #get_second_lvl upgrade = #vault_get_second tmp
 
+# 복원된 강화 단계에 맞춰 얼어붙은 차원의 우는 흑요석 외형도 동기화한다.
+execute if score #special_second_lvl upgrade matches 2.. run function crying/frozen_reveal
+
+# 정보 75조각: 고대 문명 발굴 장치의 해금 및 강화 단계를 유지한다.
+execute if score #vault_dried_relic tmp matches 1 run scoreboard players operation #dried_relic_level upgrade = #vault_dried_relic_level tmp
+execute if score #vault_dried_relic tmp matches 1 if score #dried_relic_level upgrade matches 1.. run function dried/relic/prepare
+execute if score #vault_dried_relic tmp matches 1 if score #dried_relic_level upgrade matches 1.. run scoreboard players operation #dried_relic_timer generate = #dried_relic_interval tmp
+
 # 시설 보호: 발전과제는 건드리지 않고 현재 시설 상태만 복원한다.
 execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run scoreboard players set #observatory unlock 1
 execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run function common/structure/observatory/on
@@ -57,6 +65,20 @@ execute if score #time_bank meta matches 100.. run scoreboard players set #overw
 # 시간 10조각: 이전 문명에서 개방한 얼어붙은 다리를 유지한다.
 execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run scoreboard players set #frozen_bridge unlock 1
 execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run function frozen/structure/bridge/on
+
+# 발전과제 보상: 한 번 해금한 얼어붙은 세계 상점과 미로는 문명이 바뀌어도 유지한다.
+execute if entity @a[advancements={1_frozen/10_shop=true}] run scoreboard players set #frozen_shop unlock 1
+execute if entity @a[advancements={1_frozen/10_shop=true}] run function frozen/structure/shop/on
+execute if entity @a[advancements={1_frozen/12_maze=true}] run scoreboard players set #frozen_maze unlock 1
+execute if entity @a[advancements={1_frozen/12_maze=true}] run function frozen/structure/maze/on
+
+# 시간 35조각: 세 차원 유적지의 복구 상태를 각각 유지한다.
+execute if score #vault_stronghold tmp matches 1 run scoreboard players operation #stronghold_overworld upgrade = #vault_stronghold_overworld tmp
+execute if score #vault_stronghold tmp matches 1 run scoreboard players operation #stronghold_frozen upgrade = #vault_stronghold_frozen tmp
+execute if score #vault_stronghold tmp matches 1 run scoreboard players operation #stronghold_dried upgrade = #vault_stronghold_dried tmp
+execute if score #vault_stronghold tmp matches 1 if score #stronghold_overworld upgrade matches 1.. in minecraft:dried run setblock 18 65 -6 minecraft:grass_block
+execute if score #vault_stronghold tmp matches 1 if score #stronghold_frozen upgrade matches 1.. in minecraft:dried run setblock 12 65 0 minecraft:packed_ice
+execute if score #vault_stronghold tmp matches 1 if score #stronghold_dried upgrade matches 1.. in minecraft:dried run setblock 18 65 6 minecraft:sandstone
 execute if score #vault_elevator tmp matches 1 run scoreboard players operation #GLOBAL elevator_unlocked = #vault_elevator_level tmp
 
 # 막대기 발전 단계는 첫 상점/생산 단계로 취급해 별도 보호한다.

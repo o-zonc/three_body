@@ -1,0 +1,17 @@
+{
+  "parent": "2_dried/00_root",
+  "display": {
+    "icon": "chiseled_sandstone",
+    "title": "세 세계의 유산",
+    "description": "오버월드, 얼어붙은 세계, 메마른 세계의 유적지를 모두 복구했습니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "all_ruins_restored": {
+      "trigger": "impossible"
+    }
+  }
+}

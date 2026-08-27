@@ -13,3 +13,4 @@ execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] run scoreboa
 $execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] run scoreboard players operation #$(id) factory_timer *= #hot_factory_interval_multiplier tmp
 $execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] run scoreboard players operation #$(id) factory_timer /= #hot_factory_interval_divisor tmp
 $execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] if score #$(id) factory_timer matches ..0 run scoreboard players set #$(id) factory_timer 1
+$function dried/stronghold/apply_dried_factory {id:"$(id)"}

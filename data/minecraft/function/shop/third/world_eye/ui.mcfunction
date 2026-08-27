@@ -1,6 +1,6 @@
 function meta/sync
 function shop/third/world_eye/prepare
-data modify storage data tmp.third_eye.button set value {text:"§8[ 강화 완료 ]"}
+data modify storage data tmp.third_eye.button set value {text:"[ 강화 완료 ]",color:"dark_gray",bold:true}
 data modify storage data tmp.third_eye.next set value {text:""}
 execute if score #third_eye_lvl tmp matches ..2 run function resource/convert_cost_to_text_named {id:"third_eye",insertion:", "}
 execute if score #third_eye_lvl tmp matches ..2 run data modify storage data tmp.third_eye.next set value {text:"\n  다음 단계 연성량: ",color:"gray",extra:[{score:{name:"#third_eye_next_yield",objective:"tmp"},color:"dark_green"},{text:"개",color:"dark_green"}]}

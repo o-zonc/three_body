@@ -22,10 +22,7 @@ scoreboard players set #cost_information cost 0
 scoreboard players set #cost_time cost 0
 scoreboard players set #cost_world_eye cost 0
 scoreboard players set #cost_obsidian cost 0
-scoreboard players set #cost_compressed_overworld_crystal cost 0
-scoreboard players set #cost_compressed_nether_crystal cost 0
 scoreboard players set #cost_gold cost 0
-scoreboard players set #cost_spirit cost 0
 
 execute if data storage data tmp.cost[{type:"wood"}].amount store result score #cost_wood cost run data get storage data tmp.cost[{type:"wood"}].amount
 execute if data storage data tmp.cost[{type:"stone"}].amount store result score #cost_stone cost run data get storage data tmp.cost[{type:"stone"}].amount
@@ -42,10 +39,7 @@ execute if data storage data tmp.cost[{type:"information"}].amount store result 
 execute if data storage data tmp.cost[{type:"time"}].amount store result score #cost_time cost run data get storage data tmp.cost[{type:"time"}].amount
 execute if data storage data tmp.cost[{type:"world_eye"}].amount store result score #cost_world_eye cost run data get storage data tmp.cost[{type:"world_eye"}].amount
 execute if data storage data tmp.cost[{type:"obsidian"}].amount store result score #cost_obsidian cost run data get storage data tmp.cost[{type:"obsidian"}].amount
-execute if data storage data tmp.cost[{type:"compressed_overworld_crystal"}].amount store result score #cost_compressed_overworld_crystal cost run data get storage data tmp.cost[{type:"compressed_overworld_crystal"}].amount
-execute if data storage data tmp.cost[{type:"compressed_nether_crystal"}].amount store result score #cost_compressed_nether_crystal cost run data get storage data tmp.cost[{type:"compressed_nether_crystal"}].amount
 execute if data storage data tmp.cost[{type:"gold"}].amount store result score #cost_gold cost run data get storage data tmp.cost[{type:"gold"}].amount
-execute if data storage data tmp.cost[{type:"spirit"}].amount store result score #cost_spirit cost run data get storage data tmp.cost[{type:"spirit"}].amount
 
 # 경험치는 개별
 execute store result score #exp_lvl tmp run xp query @s levels
@@ -87,10 +81,7 @@ execute unless score #information_cost_available tmp >= #cost_information cost r
 execute unless score #time_cost_available tmp >= #cost_time cost run scoreboard players set #cost_regular_ok tmp 0
 execute unless score #world_eye material >= #cost_world_eye cost run scoreboard players set #cost_regular_ok tmp 0
 execute unless score #obsidian_wallet tmp >= #cost_obsidian cost run scoreboard players set #cost_regular_ok tmp 0
-execute unless score #compressed_overworld_crystal material >= #cost_compressed_overworld_crystal cost run scoreboard players set #cost_regular_ok tmp 0
-execute unless score #compressed_nether_crystal material >= #cost_compressed_nether_crystal cost run scoreboard players set #cost_regular_ok tmp 0
 execute unless score #gold material >= #cost_gold cost run scoreboard players set #cost_regular_ok tmp 0
-execute unless score #spirit material >= #cost_spirit cost run scoreboard players set #cost_regular_ok tmp 0
 
 execute if score #cost_regular_ok tmp matches 1 run return 1
 

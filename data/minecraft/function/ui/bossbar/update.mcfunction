@@ -18,7 +18,7 @@ execute unless score #GLOBAL shield_charge matches 1.. run bossbar set shield_ch
 execute store result bossbar bossbar_frozen value run scoreboard players get #GLOBAL timer_frozen
 bossbar set bossbar_frozen visible false
 bossbar set bossbar_frozen players @a
-execute if score #GLOBAL current_dim matches 2 if entity @a[advancements={0_overworld/20_observatory=true}] run bossbar set bossbar_frozen visible true
+execute if score #GLOBAL current_dim matches 2 unless score #frozen_maze_active var matches 1 if entity @a[advancements={0_overworld/20_observatory=true}] run bossbar set bossbar_frozen visible true
 execute if score #GLOBAL current_dim matches 2 if score #GLOBAL state_frozen matches 0 run bossbar set bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 다음 난세기까지","color":"aqua"}
 execute if score #GLOBAL current_dim matches 2 if score #GLOBAL state_frozen matches 0 run bossbar set bossbar_frozen color blue
 execute if score #GLOBAL current_dim matches 2 if score #GLOBAL state_frozen matches 1 run bossbar set bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 난세기!","color":"dark_red"}
@@ -27,6 +27,17 @@ execute if score #GLOBAL current_dim matches 2 if score #GLOBAL state_frozen mat
 execute if score #GLOBAL current_dim matches 2 if score #GLOBAL state_frozen matches 2 if score #GLOBAL user_disaster matches 0 run bossbar set bossbar_frozen color blue
 execute if score #GLOBAL current_dim matches 2 if score #GLOBAL user_disaster matches 1 run bossbar set bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 지속 포기","color":"white"}
 execute if score #GLOBAL current_dim matches 2 if score #GLOBAL user_disaster matches 1 run bossbar set bossbar_frozen color white
+
+# 지하 미로 이벤트 중에는 시대 보스바 대신 중심까지의 격자 거리를 표시합니다.
+bossbar set bossbar_frozen_maze players @a
+bossbar set bossbar_frozen_maze visible false
+execute if score #GLOBAL current_dim matches 2 if score #frozen_maze_active var matches 1 run bossbar set bossbar_frozen_maze visible true
+execute if score #frozen_maze_active var matches 1 unless score #frozen_maze_cleared var matches 1 run bossbar set bossbar_frozen_maze name {"text":"[ 지하 미로 ] 중심까지 거리","color":"light_purple"}
+execute if score #frozen_maze_active var matches 1 unless score #frozen_maze_cleared var matches 1 run bossbar set bossbar_frozen_maze color purple
+execute if score #frozen_maze_active var matches 1 unless score #frozen_maze_cleared var matches 1 store result bossbar bossbar_frozen_maze value run scoreboard players get #frozen_maze_distance tmp
+execute if score #frozen_maze_active var matches 1 if score #frozen_maze_cleared var matches 1 run bossbar set bossbar_frozen_maze name {"text":"[ 지하 미로 ] 미로 클리어!","color":"green"}
+execute if score #frozen_maze_active var matches 1 if score #frozen_maze_cleared var matches 1 run bossbar set bossbar_frozen_maze color green
+execute if score #frozen_maze_active var matches 1 if score #frozen_maze_cleared var matches 1 run bossbar set bossbar_frozen_maze value 68
 
 # ==========================================
 # 2. 건조 차원 (dried, current_dim=1)

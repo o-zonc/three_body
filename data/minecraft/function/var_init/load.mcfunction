@@ -2,6 +2,9 @@
 # 기존 var_init은 objective 생성, 누락값 복구, 기존 월드 마이그레이션과 범위 보정을 담당합니다.
 function var_init
 
+# 기존 세이브 및 /reload 시 강화 단계와 얼어붙은 차원의 블록 상태를 보정합니다.
+execute if score #special_second_lvl upgrade matches 2.. run function crying/frozen_reveal
+
 # 기존 세이브에 없는 타임머신 연구 점수는 load 시 한 번만 보정합니다.
 function time_machine/init_scores
 

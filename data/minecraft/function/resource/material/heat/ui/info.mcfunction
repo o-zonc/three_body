@@ -14,11 +14,19 @@ execute if score #special_second_lvl upgrade matches 1 run scoreboard players ad
 execute if score #special_second_lvl upgrade matches 2 run scoreboard players add #heat_second_bonus_ui tmp 2
 execute if score #special_second_lvl upgrade matches 3 run scoreboard players add #heat_second_bonus_ui tmp 5
 execute if score #special_second_lvl upgrade matches 4.. run scoreboard players add #heat_second_bonus_ui tmp 10
+scoreboard players operation #heat_base_gain tmp += #heat_second_bonus_ui tmp
 
-data modify storage data tmp.second_floor_ui.heat set value {text:""}
-execute if score #heat_second_bonus_ui tmp matches 1.. run data modify storage data tmp.second_floor_ui.heat set value [{text:"\n\n자원 상점 보상: §d수급량 +"},{score:{name:"#heat_second_bonus_ui",objective:"tmp"},color:"light_purple"}]
+execute store result score #heat_base_common_ui tmp run function resource/production/base
+scoreboard players remove #heat_base_common_ui tmp 1
+scoreboard players operation #heat_extreme_bonus_ui tmp = #heat_second_bonus_ui tmp
+scoreboard players operation #heat_extreme_bonus_ui tmp -= #heat_base_common_ui tmp
+data modify storage data tmp.resource_gain_hover.heat set value [{text:"현재 생산량 증가 효과",color:"gold"}]
+execute if score #heat_base_common_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.heat append value {text:"\n기초 자원 생산량: +",color:"gray"}
+execute if score #heat_base_common_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.heat append value {score:{name:"#heat_base_common_ui",objective:"tmp"},color:"white"}
+execute if score #heat_extreme_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.heat append value {text:"\n극한 자원 수급량: +",color:"gray"}
+execute if score #heat_extreme_bonus_ui tmp matches 1.. run data modify storage data tmp.resource_gain_hover.heat append value {score:{name:"#heat_extreme_bonus_ui",objective:"tmp"},color:"light_purple"}
+data modify storage data tmp.resource_gain_hover.heat append from storage data tmp.dawn_amplifier_ui
+data modify storage data tmp.advancement_reward_ui.heat set value [{text:" → "},{score:{name:"#heat_gain",objective:"tmp"},color:"gold"},{text:"§7개"},{text:" ★",color:"gold",hover_event:{action:"show_text",value:[]}}]
+data modify storage data tmp.advancement_reward_ui.heat[3].hover_event.value set from storage data tmp.resource_gain_hover.heat
 
-data modify storage data tmp.advancement_reward_ui.heat set value {text:" "}
-execute unless score #heat_gain tmp = #heat_base_gain tmp run data modify storage data tmp.advancement_reward_ui.heat set value [{text:" → "},{score:{name:"#heat_gain",objective:"tmp"},color:"gold"},{text:"§7개"},{text:" ★",color:"gold",hover_event:{action:"show_text",value:[{text:"§6최종 자원 수급량§r§7이 증가합니다."},{storage:"data",nbt:"tmp.second_floor_ui.heat",interpret:true},{storage:"data",nbt:"tmp.dawn_amplifier_ui",interpret:true}]}}]
-
-tellraw @s ["",{text:"  [ 열기 ]",color:"red",bold:true,shadow_color:-16777216},{text:"\n\n  §8•§7 보유량: ",extra:[{score:{name:"#heat",objective:"material"},color:"white"},{text:"§7개"}]},{text:"\n  §8•§7 수급량: ",extra:[{score:{name:"#heat_base_gain",objective:"tmp"},color:"white"},{text:"§7개"}]},{storage:"data",nbt:"tmp.advancement_reward_ui.heat",interpret:true},{text:"\n  §8•§7 재생산 대기: ",extra:[{score:{name:"#heat_base_cooldown",objective:"tmp"},color:"white"},{text:"§7틱"}]},{storage:"data",nbt:"tmp.alchemy_lab_cooldown_ui.heat",interpret:true},{text:"\n  §8•§7 환경 수급: ",extra:[{score:{name:"#heat_environment_interval",objective:"tmp"},color:"white"},{text:"§7틱마다 "},{score:{name:"#heat_gain",objective:"tmp"},color:"green"},{text:"§7개"}]},{text:"\n"}]
+tellraw @s ["",{text:"  [ 열기 ]",color:"red",bold:true,shadow_color:-16777216},{text:"\n\n  §8•§7 보유량: ",extra:[{score:{name:"#heat",objective:"material"},color:"white"},{text:"§7개"}]},{text:"\n  §8•§7 수급량: ",extra:[{score:{name:"#heat_base_gain",objective:"tmp"},color:"white"},{text:"§7개"}]},{storage:"data",nbt:"tmp.advancement_reward_ui.heat",interpret:true},{text:"\n  §8•§7 재생산 대기: ",extra:[{score:{name:"#heat_base_cooldown",objective:"tmp"},color:"white"},{text:"§7틱"}]},{storage:"data",nbt:"tmp.alchemy_lab_cooldown_ui.heat",interpret:true},{text:"\n  §8•§7 환경 수급: ",extra:[{score:{name:"#heat_environment_interval",objective:"tmp"},color:"white"},{text:"§7틱마다 "},{score:{name:"#heat_gain",objective:"tmp"},color:"gold"},{text:"§7개"}]},{text:"\n"}]

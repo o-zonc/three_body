@@ -13,9 +13,8 @@ execute if score #GLOBAL state_frozen matches 1 unless score #frozen_stabilized 
 execute if score #GLOBAL state_frozen matches 1 if score #frozen_stabilized tmp matches 1 if score #ROLL_EXTREME roll_chance matches 0..59 run tellraw @a[nbt={Dimension:"minecraft:frozen"}] [{"text":"[얼어붙은 세계] 난세기 중 멸망!","color":"dark_aqua"}]
 execute if score #GLOBAL state_frozen matches 1 if score #frozen_stabilized tmp matches 1 if score #ROLL_EXTREME roll_chance matches 0..59 run scoreboard players set #GLOBAL state_frozen 2
 
-# 난세기 생존 발전과제
+# 난세기 생존 발전과제: 안정화 이전의 2% 생존에서만 달성
 execute if score #GLOBAL state_frozen matches 1 unless score #frozen_stabilized tmp matches 1 if score #ROLL_EXTREME roll_chance matches 98..99 run advancement grant @a only 1_frozen/01_chaos_survivor
-execute if score #GLOBAL state_frozen matches 1 if score #frozen_stabilized tmp matches 1 if score #ROLL_EXTREME roll_chance matches 60..99 run advancement grant @a only 1_frozen/01_chaos_survivor
 
 # [난세기 발동]
 # 안정화 전: 80% (0~79)

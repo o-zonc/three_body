@@ -32,6 +32,15 @@ scoreboard players set #diamond_second_lvl upgrade 0
 scoreboard players set #special_second_lvl upgrade 0
 scoreboard players set #get_second_lvl upgrade 0
 scoreboard players set #dried_relic_level upgrade 0
+scoreboard players set #stronghold_overworld upgrade 0
+scoreboard players set #stronghold_frozen upgrade 0
+scoreboard players set #stronghold_dried upgrade 0
+execute in minecraft:dried run setblock 18 65 -6 air
+execute in minecraft:dried run setblock 12 65 0 air
+execute in minecraft:dried run setblock 18 65 6 air
+execute in minecraft:dried run setblock 18 66 -6 air
+execute in minecraft:dried run setblock 12 66 0 air
+execute in minecraft:dried run setblock 18 66 6 air
 scoreboard players set #alchemy_lab_level upgrade 0
 
 # 세공 작업대의 작동 상태는 문명마다 새로 시작한다.
@@ -80,11 +89,23 @@ scoreboard players set #GLOBAL dawn_reactor_purchased 0
 scoreboard players set #frozen_shop unlock 0
 scoreboard players set #frozen_bridge unlock 0
 scoreboard players set #frozen_maze unlock 0
+scoreboard players set #frozen_maze_active var 0
+scoreboard players set #frozen_maze_cleared var 0
+scoreboard players set #frozen_maze_claimed var 0
+scoreboard players set #frozen_maze_started var 0
+bossbar set bossbar_frozen_maze visible false
 
 function common/structure/observatory/off
+function common/structure/beacon/off
 function common/structure/alchemy_workshop/off
 function common/structure/factory/off
+
+function dried/structure/sulfur/off
+function dried/structure/cinnabar/off
 
 function frozen/structure/shop/off
 function frozen/structure/bridge/off
 function frozen/structure/maze/off
+
+# 원자로는 문명마다 다시 제작하되, 영구 증폭기의 진행도와 색유리는 유지합니다.
+function dawn/reactor/off
