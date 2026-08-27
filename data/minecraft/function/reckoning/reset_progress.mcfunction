@@ -2,7 +2,27 @@
 # 발전과제 보상(var의 *_advancement_reward)도 문명 정산에서 초기화하지 않는다.
 # #broken_quantum_storage var는 시공간의 틈에 보관된 영구 자원으로 문명 정산에서 유지한다.
 clear @a
-scoreboard players set * material 0
+
+# 문명 정산에서는 일반 자원 보유량을 항상 0으로 초기화한다.
+# 와일드카드에만 의존하지 않고 실제 Material score holder를 명시적으로 초기화한다.
+scoreboard players set #wood material 0
+scoreboard players set #stone material 0
+scoreboard players set #coal material 0
+scoreboard players set #copper material 0
+scoreboard players set #iron material 0
+scoreboard players set #gold material 0
+scoreboard players set #diamond material 0
+scoreboard players set #emerald material 0
+scoreboard players set #lapis material 0
+scoreboard players set #heat material 0
+scoreboard players set #cold material 0
+scoreboard players set #yellow material 0
+scoreboard players set #blue material 0
+scoreboard players set #world_eye material 0
+scoreboard players set #information material 0
+scoreboard players set #time material 0
+scoreboard players set #obsidian material 0
+
 scoreboard players set * unlock 0
 scoreboard players set * material_shop 0
 
