@@ -27,13 +27,14 @@ execute if score @s experiment_type matches 11 run function accelerator/reward_s
 # 성공 여부가 아니라 중입자 충돌 실험을 끝까지 수행한 것이 발견 조건입니다.
 execute if score @s experiment_type matches 11 unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run advancement grant @s only 0_overworld/22_heavy_ion_experiment
 
-# 시공간 붕괴 실험: 세 등급 독립 추첨 + 흑요석 1개
+# 시공간 붕괴 실험: 세 등급 독립 추첨 + 커스텀 흑요석 1개
 execute if score @s experiment_type matches 12 run scoreboard players set #spacetime_experiment_done var 1
 execute if score @s experiment_type matches 12 run scoreboard players set #experiment_mode tmp 3
 execute if score @s experiment_type matches 12 run function accelerator/reward_common
 execute if score @s experiment_type matches 12 run function accelerator/reward_great
 execute if score @s experiment_type matches 12 run function accelerator/reward_special
-execute if score @s experiment_type matches 12 run give @s minecraft:obsidian 1
+execute if score @s experiment_type matches 12 run function meta/obsidian/give_item {amount:1}
+execute if score @s experiment_type matches 12 run function meta/sync
 
 # 지급 후 수량 차이로 이번 실험에서 실제 획득한 파편을 계산합니다.
 execute store result score #experiment_common_gained tmp run clear @s minecraft:cyan_dye[minecraft:custom_data~{three_body:{quantum:"common"}}] 0
