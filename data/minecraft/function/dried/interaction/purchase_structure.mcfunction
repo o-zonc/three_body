@@ -1,6 +1,9 @@
 # Macro args: id, name, color, x, y, z, cost
-$execute in dried if data block $(x) $(y) $(z) {name:"$(id)"} run title @s actionbar {text:"$(name)은(는) 이미 해금했습니다.",color:"red"}
-$execute in dried if data block $(x) $(y) $(z) {name:"$(id)"} run return 0
+# 구버전 저장 상태를 unlock 스코어로 승계합니다.
+$execute in dried if data block $(x) $(y) $(z) {name:"$(id)"} run scoreboard players set #dried_$(id) unlock 1
+
+$execute if score #dried_$(id) unlock matches 1 run title @s actionbar {text:"$(name)은(는) 이미 해금했습니다.",color:"red"}
+$execute if score #dried_$(id) unlock matches 1 run return 0
 
 $data modify storage data tmp.cost set value $(cost)
 execute store result score #dried_structure_cost_ok tmp run function resource/check_cost
