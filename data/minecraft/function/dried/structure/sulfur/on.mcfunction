@@ -1,16 +1,34 @@
-execute in dried run kill @e[type=minecraft:interaction,tag=dried,tag=recycle]
-execute in dried run kill @e[type=minecraft:interaction,tag=dried,tag=potion]
-execute in dried run kill @e[type=minecraft:interaction,tag=dried,tag=probability]
+# 구조물 청크 임시 로드
+execute in dried run forceload add -32 -16 -1 15
+scoreboard players set #structure_loaded tmp 0
+execute in dried if loaded -32 64 -16 run scoreboard players add #structure_loaded tmp 1
+execute in dried if loaded -16 64 -16 run scoreboard players add #structure_loaded tmp 1
+execute in dried if loaded -32 64 0 run scoreboard players add #structure_loaded tmp 1
+execute in dried if loaded -16 64 0 run scoreboard players add #structure_loaded tmp 1
+execute unless score #structure_loaded tmp matches 4 run schedule function minecraft:dried/structure/sulfur/on 1t replace
+execute unless score #structure_loaded tmp matches 4 run return 0
 
-execute in dried run kill @e[type=minecraft:item,nbt={Item:{id:"minecraft:glass_bottle"}}]
-execute in dried run kill @e[type=minecraft:glow_item_frame]
+#==============================
+# 황 (Sulfur) 구조물 활성화
+#==============================
 
-execute in dried run summon firework_rocket -20 68 0 {LifeTime:20,FireworksItem:{id:"firework_rocket",count:1,components:{"minecraft:fireworks":{flight_duration:3,explosions:[{shape:"burst",colors:[16711680,16753920,16766720],fade_colors:[16776960]},{shape:"star",colors:[16711680,16753920,16766720],fade_colors:[16776960]},{shape:"large_ball",colors:[16753920,16766720,16776960]},{shape:"burst",colors:[16711680,16753920,16776960],fade_colors:[16766720]}]}}}}
+# 기존 대체 구조물을 'sulfur'로 교체
+execute in dried run data modify block -8 62 -10 name set value "dried:sulfur"
 
-execute as @a[tag=player] unless entity @s[advancements={2_dried/05_endless_heat=true}] run advancement grant @s only 2_dried/05_endless_heat
+# 구조물 블록 작동
+execute in dried run setblock -8 62 -11 redstone_block
 
-# 구조물 블록이 로드 과정에서 덮여도 해금 상태는 별도로 유지합니다.
-scoreboard players set #dried_sulfur unlock 1
-execute in dried run data modify block -8 62 -10 name set value "sulfur"
-execute in dried run setblock -8 61 -10 redstone_block
-execute in dried run setblock -8 61 -10 air
+# 확률 조정 정보/상호작용 초기화
+execute in dried run kill @e[type=interaction,tag=recycle]
+execute in dried run kill @e[type=interaction,tag=potion]
+execute in dried run kill @e[type=interaction,tag=probability]
+execute in dried run kill @e[type=item_display,tag=probability_information]
+
+# 폭죽
+execute in dried run particle minecraft:firework -20 84 0 10 10 10 1 500
+execute as @a at @s run playsound minecraft:entity.firework_rocket.launch master @s ~ ~ ~ 10
+execute as @a at @s run playsound minecraft:entity.firework_rocket.large_blast master @s ~ ~ ~ 10
+
+# 구조물 청크 임시 로드 해제
+execute in dried run forceload remove -32 -16 -1 15
+scoreboard players reset #structure_loaded tmp

@@ -1,5 +1,19 @@
-execute in polarnight run summon firework_rocket 0 65 0 {LifeTime:25,FireworksItem:{id:"firework_rocket",count:1,components:{"minecraft:fireworks":{flight_duration:3,explosions:[{shape:"large_ball",colors:[725030,1522270,7232230],fade_colors:[9431295,16777215]},{shape:"burst",colors:[3718648,9431295,16777215],fade_colors:[16777215]},{shape:"large_ball",colors:[1522270,7232230,9431295],fade_colors:[16777215]},{shape:"burst",colors:[7232230,3718648],fade_colors:[9431295,16777215]}]}}}}
+# 구조물 청크 임시 로드
+execute in polar run forceload add -16 0 15 15
+scoreboard players set #structure_loaded tmp 0
+execute in polar if loaded -16 64 0 run scoreboard players add #structure_loaded tmp 1
+execute in polar if loaded 0 64 0 run scoreboard players add #structure_loaded tmp 1
+execute unless score #structure_loaded tmp matches 2 run schedule function minecraft:polarnight/structure/vault/on 1t replace
+execute unless score #structure_loaded tmp matches 2 run return 0
 
-execute in polarnight run data modify block -7 61 7 name set value "deepslate_hole"
-execute in polarnight run setblock -8 61 7 redstone_block
-execute in polarnight run setblock -8 61 7 air
+#금고 활성화
+execute in polar run data modify block -7 61 7 name set value "polar:time_vault"
+execute in polar run setblock -8 61 7 redstone_block
+#폭죽
+execute in polar run particle minecraft:firework 0 75 0 10 10 10 1 500
+execute as @a at @s run playsound minecraft:entity.firework_rocket.launch master @s ~ ~ ~ 10
+execute as @a at @s run playsound minecraft:entity.firework_rocket.large_blast master @s ~ ~ ~ 10
+
+# 구조물 청크 임시 로드 해제
+execute in polar run forceload remove -16 0 15 15
+scoreboard players reset #structure_loaded tmp
