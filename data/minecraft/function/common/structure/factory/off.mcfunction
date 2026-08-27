@@ -1,29 +1,16 @@
-# 구조물 청크 임시 로드
-execute in overworld run forceload add -48 0 -1 47
-scoreboard players set #structure_loaded tmp 0
-execute in overworld if loaded -48 64 0 run scoreboard players add #structure_loaded tmp 1
-execute in overworld if loaded -32 64 0 run scoreboard players add #structure_loaded tmp 1
-execute in overworld if loaded -16 64 0 run scoreboard players add #structure_loaded tmp 1
-execute in overworld if loaded -48 64 16 run scoreboard players add #structure_loaded tmp 1
-execute in overworld if loaded -32 64 16 run scoreboard players add #structure_loaded tmp 1
-execute in overworld if loaded -16 64 16 run scoreboard players add #structure_loaded tmp 1
-execute in overworld if loaded -48 64 32 run scoreboard players add #structure_loaded tmp 1
-execute in overworld if loaded -32 64 32 run scoreboard players add #structure_loaded tmp 1
-execute in overworld if loaded -16 64 32 run scoreboard players add #structure_loaded tmp 1
-execute unless score #structure_loaded tmp matches 9 run schedule function minecraft:common/structure/factory/off 1t replace
-execute unless score #structure_loaded tmp matches 9 run return 0
+# 공장 구조물을 제거하기 전에 모든 공장 표시등을 끈다.
+# powered 상태는 유지하고 lit만 false로 되돌린다.
+execute in overworld as @e[type=interaction,tag=factory] at @s if block ~ ~-1 ~ waxed_copper_bulb[lit=true,powered=false] run setblock ~ ~-1 ~ waxed_copper_bulb[lit=false,powered=false]
+execute in overworld as @e[type=interaction,tag=factory] at @s if block ~ ~-1 ~ waxed_copper_bulb[lit=true,powered=true] run setblock ~ ~-1 ~ waxed_copper_bulb[lit=false,powered=true]
 
-#구조물 끄기
-execute in overworld run data modify block -13 -64 35 name set value "common:factory_unenabled"
-execute in overworld run setblock -13 -64 36 redstone_block
-#상호작용 끄기
-execute in overworld as @e[tag=factory] run data merge entity @s {response:0b}
+# 공장 엘리베이터 외곽 마커 정리
+execute in overworld run kill @e[type=marker,tag=elevator_2_perimeter]
 
-#라인 전부 비활성화
-execute in overworld as @e[tag="factory_item",tag=!["trashcan","output"]] run item replace contents with air
-execute in overworld as @e[tag=factory_light] at @s run setblock ~ ~2 ~ minecraft:verdant_froglight
-execute in overworld as @e[tag=factory_light] run data merge entity @s {Tags:["factory_light","disabled"]}
+# 구조물 블록을 no_factory로 전환한다.
+execute in overworld run data modify block -13 -64 35 name set value "no_factory"
+execute in overworld run setblock -13 -64 34 redstone_block
+execute in overworld run setblock -13 -64 34 air
 
-# 구조물 청크 임시 로드 해제
-execute in overworld run forceload remove -48 0 -1 47
-scoreboard players reset #structure_loaded tmp
+# 출입구를 다시 막는다.
+execute in overworld run fill -25 -63 4 -23 -61 4 polished_tuff_wall
+execute in overworld run fill 4 -63 25 4 -62 23 polished_tuff_wall
