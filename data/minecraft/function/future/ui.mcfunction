@@ -2,7 +2,7 @@ execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
 
 execute unless score #spacetime_experiment_done var = #spacetime_experiment_done var run scoreboard players set #spacetime_experiment_done var 0
-execute store result score #future_obsidian_count tmp run clear @s minecraft:obsidian 0
+execute store result score #future_obsidian_count tmp run clear @s minecraft:paper[minecraft:custom_data~{three_body:{meta:"obsidian"}}] 0
 
 execute if score #overworld civilization_age matches 9.. run tellraw @s [{text:"  [ 미래 진입 단말 ]",color:"light_purple",bold:true},{text:"\n\n  이미 미래 시대에 도달했습니다.",color:"gray",bold:false},{text:"\n"}]
 execute if score #overworld civilization_age matches 9.. run return 0

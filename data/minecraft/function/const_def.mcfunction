@@ -10,15 +10,15 @@ data merge storage data {\
           stage: 0,\
           required_age: 5,\
           cost: [\
-            { type: "iron", amount: 80 },\
-            { type: "emerald", amount: 30 }\
+            { type: "iron", amount: 60 },\
+            { type: "emerald", amount: 15 }\
           ]\
         },\
         {\
           stage: 1,\
           required_age: 6,\
           cost: [\
-            { type: "iron", amount: 160 },\
+            { type: "iron", amount: 100 },\
             { type: "emerald", amount: 60 },\
             { type: "lapis", amount: 100 }\
           ]\
@@ -111,7 +111,7 @@ data merge storage data {\
       },\
       {\
         lvl: 1,\
-        cost: [{ type: "wood", amount: 10 }],\
+        cost: [{ type: "wood", amount: 5 }],\
         components: {\
           custom_name: "§f멋진 막대기",\
           lore: [\
@@ -133,7 +133,7 @@ data merge storage data {\
       },\
       {\
         lvl: 2,\
-        cost: [{ type: "wood", amount: 15 }],\
+        cost: [{ type: "wood", amount: 10 }],\
         components: {\
           custom_name: "§f나무 도끼",\
           item_model: "wooden_axe",\
@@ -156,7 +156,7 @@ data merge storage data {\
       },\
       {\
         lvl: 3,\
-        cost: [{ type: "wood", amount: 20 }, { type: "stone", amount: 5 }],\
+        cost: [{ type: "wood", amount: 15 }, { type: "stone", amount: 3 }],\
         components: {\
           custom_name: "§f나무 곡괭이",\
           item_model: "wooden_pickaxe",\
@@ -182,7 +182,7 @@ data merge storage data {\
       },\
       {\
         lvl: 4,\
-        cost: [{ type: "wood", amount: 50 }, { type: "stone", amount: 5 }],\
+        cost: [{ type: "wood", amount: 30 }, { type: "stone", amount: 3 }],\
         components: {\
           custom_name: "§f돌 곡괭이",\
           item_model: "stone_pickaxe",\
@@ -219,7 +219,7 @@ data merge storage data {\
       },\
       {\
         lvl: 5,\
-        cost: [{ type: "wood", amount: 35 }, { type: "stone", amount: 10 }, { type: "copper", amount: 5 }],\
+        cost: [{ type: "wood", amount: 25 }, { type: "stone", amount: 6 }, { type: "copper", amount: 3 }],\
         components: {\
           custom_name: "§f좋은 돌 곡괭이",\
           item_model: "stone_pickaxe",\
@@ -256,7 +256,7 @@ data merge storage data {\
       },\
       {\
         lvl: 6,\
-        cost: [{ type: "wood", amount: 100 }, { type: "copper", amount: 5 }],\
+        cost: [{ type: "wood", amount: 60 }, { type: "copper", amount: 3 }],\
         components: {\
           custom_name: "§f구리 곡괭이",\
           item_model: "copper_pickaxe",\
@@ -303,7 +303,7 @@ data merge storage data {\
       },\
       {\
         lvl: 7,\
-        cost: [{ type: "wood", amount: 250 }, { type: "iron", amount: 10 }],\
+        cost: [{ type: "wood", amount: 150 }, { type: "iron", amount: 10 }],\
         components: {\
           custom_name: "§f좋은 구리 곡괭이",\
           item_model: "copper_pickaxe",\
@@ -353,7 +353,7 @@ data merge storage data {\
       },\
       {\
         lvl: 8,\
-        cost: [{ type: "wood", amount: 500 }, { type: "iron", amount: 35 }],\
+        cost: [{ type: "wood", amount: 300 }, { type: "iron", amount: 25 }],\
         components: {\
           custom_name: "§f철 곡괭이",\
           item_model: "iron_pickaxe",\
@@ -503,7 +503,7 @@ data merge storage data {\
       },\
       {\
         lvl: 11,\
-        cost: [{ type: "diamond", amount: 5 }, { type: "lapis", amount: 25 }],\
+        cost: [{ type: "diamond", amount: 5000 }, { type: "lapis", amount: 25000 }],\
         components: {\
           custom_name: "§f신성 철 곡괭이",\
           item_model: "iron_pickaxe",\
@@ -551,7 +551,7 @@ data merge storage data {\
       },\
       {\
         lvl: 12,\
-        cost: [{ type: "diamond", amount: 20 }, { type: "lapis", amount: 100 }],\
+        cost: [{ type: "diamond", amount: 20000 }, { type: "lapis", amount: 100000 }],\
         components: {\
           custom_name: "§f수동 드릴",\
           item_model: "netherite_spear",\
@@ -560,6 +560,7 @@ data merge storage data {\
             "",\
             "§6* §e나무§7, §7돌§7, §8석탄§7, §6구리§7 즉시 파괴 가능",\
             ["§6* ", "§f철", "§7, ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f1§7초 소요됨"],\
+            {text:"도구가 보석을 채굴하기에는 섬세하지 못한 것 같다...",color:"dark_gray",italic:true},\
             "§6* §8외계 자원§7을 파괴하기까지 §f8§7초 소요됨",\
           ],\
           can_break: {\
@@ -592,7 +593,7 @@ data merge storage data {\
       },\
       {\
         lvl: 13,\
-        cost: [{ type: "diamond", amount: 50 }, { type: "emerald", amount: 100 }, { type: "lapis", amount: 250 }],\
+        cost: [{ type: "diamond", amount: 50000 }, { type: "emerald", amount: 100000 }, { type: "lapis", amount: 250000 }],\
         components: {\
           custom_name: "§f전동 드릴",\
           item_model: "mace",\
@@ -600,6 +601,7 @@ data merge storage data {\
             "§4도구 - 파괴",\
             "",\
             "§6* §f일반 자원§7 즉시 파괴 가능",\
+            {text:"도구가 보석을 채굴하기에는 섬세하지 못한 것 같다...",color:"dark_gray",italic:true},\
             "§6* §8외계 자원§7을 파괴하기까지 §f4§7초 소요됨",\
           ],\
           can_break: {\
@@ -632,7 +634,7 @@ data merge storage data {\
       },\
       {\
         lvl: 14,\
-        cost: [{ type: "diamond", amount: 150 }, { type: "emerald", amount: 300 }, { type: "lapis", amount: 750 }],\
+        cost: [{ type: "diamond", amount: 150000 }, { type: "emerald", amount: 300000 }, { type: "lapis", amount: 750000 }],\
         components: {\
           custom_name: "§f굴착기",\
           item_model: "mace",\
@@ -640,6 +642,7 @@ data merge storage data {\
             "§4도구 - 파괴",\
             "",\
             "§6* §f일반 자원§7 즉시 파괴 가능",\
+            {text:"도구가 보석을 채굴하기에는 섬세하지 못한 것 같다...",color:"dark_gray",italic:true},\
             "§6* §8외계 자원§7을 파괴하기까지 §f2§7초 소요됨",\
           ],\
           can_break: {\
@@ -672,7 +675,7 @@ data merge storage data {\
       },\
       {\
         lvl: 15,\
-        cost: [{ type: "diamond", amount: 500 }, { type: "emerald", amount: 1000 }, { type: "lapis", amount: 2500 }],\
+        cost: [{ type: "diamond", amount: 500000 }, { type: "emerald", amount: 1000000 }, { type: "lapis", amount: 2500000 }],\
         components: {\
           custom_name: "§f중력 채굴기",\
           item_model: "ender_pearl",\
@@ -680,6 +683,7 @@ data merge storage data {\
             "§4도구 - 파괴",\
             "",\
             "§6* §f일반 자원§7 즉시 파괴 가능",\
+            {text:"도구가 보석을 채굴하기에는 섬세하지 못한 것 같다...",color:"dark_gray",italic:true},\
             "§6* §8외계 자원§7을 파괴하기까지 §f1§7초 소요됨",\
           ],\
           can_break: {\
@@ -771,15 +775,18 @@ data merge storage data {\
         ]\
       },\
       stone: {item:"stone",\
-        unlock_cost:[{type:"wood",amount:30}],\
+        unlock_cost:[{type:"wood",amount:20}],\
         regen:[\
           {lvl:0,value:3,cost:[{type:"stone",amount:400}]},\
           {lvl:1,value:2,cost:[{type:"stone",amount:25000}]},\
-          {lvl:2,value:1}\
+          {lvl:2,value:1,cost:[{type:"stone",amount:100000}]},\
+          {lvl:3,value:0,cost:[{type:"stone",amount:500000}]},\
+          {lvl:4,value:0,cost:[{type:"stone",amount:2500000}]},\
+          {lvl:5,value:0}\
         ]\
       },\
       coal: {item:"deepslate_coal_ore",\
-        unlock_cost:[{type:"wood",amount:100},{type:"stone",amount:10}],\
+        unlock_cost:[{type:"wood",amount:40},{type:"stone",amount:5}],\
         regen:[\
           {lvl:0,value:100,cost:[{type:"copper",amount:20}]},\
           {lvl:1,value:60,cost:[{type:"iron",amount:50}]},\
@@ -789,7 +796,7 @@ data merge storage data {\
         ]\
       },\
       copper: {item:"deepslate_copper_ore",\
-        unlock_cost:[{type:"wood",amount:200},{type:"coal",amount:20}],\
+        unlock_cost:[{type:"wood",amount:80},{type:"coal",amount:10}],\
         regen:[\
           {lvl:0,value:160,cost:[{type:"stone",amount:100}]},\
           {lvl:1,value:100,cost:[{type:"coal",amount:100}]},\
@@ -799,7 +806,7 @@ data merge storage data {\
         ]\
       },\
       iron: {item:"deepslate_iron_ore",\
-        unlock_cost:[{type:"coal",amount:100},{type:"copper",amount:100}],\
+        unlock_cost:[{type:"coal",amount:25},{type:"copper",amount:25}],\
         regen:[\
           {lvl:0,value:300,cost:[{type:"copper",amount:200}]},\
           {lvl:1,value:180,cost:[{type:"coal",amount:300}]},\
@@ -827,7 +834,7 @@ data merge storage data {\
         ]\
       },\
       emerald: {item:"deepslate_emerald_ore",\
-        unlock_cost:[{type:"iron",amount:300},{type:"copper",amount:300}],\
+        unlock_cost:[{type:"iron",amount:120},{type:"copper",amount:120}],\
         regen:[\
           {lvl:0,value:800,cost:[{type:"gold",amount:300}]},\
           {lvl:1,value:500,cost:[{type:"lapis",amount:300}]},\
@@ -857,19 +864,19 @@ data merge storage data {\
       world_eye: {item:"ender_eye"},\
       yellow: {item:"yellow_glazed_terracotta",\
         regen:[\
-          {lvl:0,value:1200,cost:[{type:"wood",amount:50},{type:"stone",amount:50}]},\
-          {lvl:1,value:800,cost:[{type:"stone",amount:200},{type:"coal",amount:100}]},\
-          {lvl:2,value:500,cost:[{type:"copper",amount:250},{type:"iron",amount:100}]},\
-          {lvl:3,value:300,cost:[{type:"copper",amount:1000},{type:"iron",amount:500}]},\
+          {lvl:0,value:1200,cost:[{type:"information",amount:4}]},\
+          {lvl:1,value:800,cost:[{type:"information",amount:8},{type:"time",amount:1}]},\
+          {lvl:2,value:500,cost:[{type:"information",amount:16},{type:"time",amount:3}]},\
+          {lvl:3,value:300,cost:[{type:"information",amount:32},{type:"time",amount:6},{type:"world_eye",amount:1}]},\
           {lvl:4,value:160}\
         ]\
       },\
       blue: {item:"blue_glazed_terracotta",\
         regen:[\
-          {lvl:0,value:1400,cost:[{type:"wood",amount:75},{type:"stone",amount:75}]},\
-          {lvl:1,value:900,cost:[{type:"stone",amount:250},{type:"coal",amount:125}]},\
-          {lvl:2,value:600,cost:[{type:"copper",amount:300},{type:"iron",amount:150}]},\
-          {lvl:3,value:350,cost:[{type:"copper",amount:1200},{type:"iron",amount:600}]},\
+          {lvl:0,value:1400,cost:[{type:"information",amount:4}]},\
+          {lvl:1,value:900,cost:[{type:"information",amount:8},{type:"time",amount:1}]},\
+          {lvl:2,value:600,cost:[{type:"information",amount:16},{type:"time",amount:3}]},\
+          {lvl:3,value:350,cost:[{type:"information",amount:32},{type:"time",amount:6},{type:"world_eye",amount:1}]},\
           {lvl:4,value:180}\
         ]\
       }\
@@ -888,7 +895,7 @@ data merge storage data {\
 data modify storage data const.resource_shop set value [\
   {id:"wood",\
     levels:[\
-      {lvl:0,value:1,cost:[{type:"wood",amount:100}]},\
+      {lvl:0,value:1,cost:[{type:"wood",amount:40}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:500},{type:"stone",amount:500}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:2000},{type:"heat",amount:50}]},\
       {lvl:3,value:8,cost:[{type:"wood",amount:7500},{type:"heat",amount:150}]},\
@@ -899,7 +906,7 @@ data modify storage data const.resource_shop set value [\
   },\
   {id:"stone",\
     levels:[\
-      {lvl:0,value:1,cost:[{type:"stone",amount:120}]},\
+      {lvl:0,value:1,cost:[{type:"stone",amount:50}]},\
       {lvl:1,value:2,cost:[{type:"stone",amount:600}]},\
       {lvl:2,value:4,cost:[{type:"stone",amount:2400},{type:"cold",amount:50}]},\
       {lvl:3,value:8,cost:[{type:"stone",amount:9000},{type:"cold",amount:150}]},\
@@ -910,7 +917,7 @@ data modify storage data const.resource_shop set value [\
   },\
   {id:"coal",\
     levels:[\
-      {lvl:0,value:1,cost:[{type:"coal",amount:150}]},\
+      {lvl:0,value:1,cost:[{type:"coal",amount:60}]},\
       {lvl:1,value:2,cost:[{type:"coal",amount:750},{type:"stone",amount:500}]},\
       {lvl:2,value:4,cost:[{type:"coal",amount:3000},{type:"heat",amount:50}]},\
       {lvl:3,value:8,cost:[{type:"coal",amount:11250},{type:"heat",amount:150}]},\
@@ -921,7 +928,7 @@ data modify storage data const.resource_shop set value [\
   },\
   {id:"copper",\
     levels:[\
-      {lvl:0,value:1,cost:[{type:"copper",amount:180}]},\
+      {lvl:0,value:1,cost:[{type:"copper",amount:60}]},\
       {lvl:1,value:2,cost:[{type:"copper",amount:900},{type:"stone",amount:500}]},\
       {lvl:2,value:4,cost:[{type:"copper",amount:3600},{type:"heat",amount:50}]},\
       {lvl:3,value:8,cost:[{type:"copper",amount:13500},{type:"heat",amount:150}]},\
@@ -932,7 +939,7 @@ data modify storage data const.resource_shop set value [\
   },\
   {id:"iron",\
     levels:[\
-      {lvl:0,value:1,cost:[{type:"iron",amount:150}]},\
+      {lvl:0,value:1,cost:[{type:"iron",amount:40}]},\
       {lvl:1,value:2,cost:[{type:"iron",amount:750},{type:"stone",amount:500}]},\
       {lvl:2,value:4,cost:[{type:"iron",amount:3000},{type:"heat",amount:50}]},\
       {lvl:3,value:8,cost:[{type:"iron",amount:11250},{type:"heat",amount:150}]},\

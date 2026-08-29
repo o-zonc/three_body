@@ -1,6 +1,19 @@
 scoreboard objectives modify material_display numberformat blank
 
+# 이전 문명에서 해금되었던 행과 고정 numberformat이 남지 않도록 모든 자원 행을 먼저 제거합니다.
+scoreboard players reset wood material_display
+scoreboard players reset stone material_display
+scoreboard players reset coal material_display
+scoreboard players reset copper material_display
+scoreboard players reset iron material_display
+scoreboard players reset emerald material_display
+scoreboard players reset lapis material_display
 scoreboard players reset gold material_display
+scoreboard players reset heat material_display
+scoreboard players reset diamond material_display
+scoreboard players reset cold material_display
+scoreboard players reset yellow material_display
+scoreboard players reset blue material_display
 scoreboard players reset information material_display
 scoreboard players reset time material_display
 scoreboard players reset world_eye material_display
@@ -10,21 +23,22 @@ scoreboard players reset experience material_display
 scoreboard players reset blaze_powder material_display
 
 scoreboard players set era material_display 1600
-scoreboard players set divider material_display 1500
-scoreboard players set wood material_display 1400
-execute if score #stone unlock matches 1 run scoreboard players set stone material_display 1300
-execute if score #coal unlock matches 1 run scoreboard players set coal material_display 1200
-execute if score #copper unlock matches 1 run scoreboard players set copper material_display 1100
-execute if score #iron unlock matches 1 run scoreboard players set iron material_display 1000
-execute if score #emerald unlock matches 1 run scoreboard players set emerald material_display 900
-execute if score #lapis unlock matches 1 run scoreboard players set lapis material_display 800
-execute if score #gold unlock matches 1 run scoreboard players set gold material_display 700
-execute if score #heat unlock matches 1 run scoreboard players set heat material_display 600
-execute if score #diamond unlock matches 1 run scoreboard players set diamond material_display 500
-execute if score #cold unlock matches 1 run scoreboard players set cold material_display 400
-execute if score #yellow unlock matches 1 run scoreboard players set yellow material_display 300
-execute if score #blue unlock matches 1 run scoreboard players set blue material_display 200
-execute if score #world_eye unlock matches 1 run scoreboard players set world_eye material_display 100
+scoreboard players set pos material_display 1500
+scoreboard players set divider material_display 1400
+scoreboard players set wood material_display 1300
+execute if score #stone unlock matches 1 run scoreboard players set stone material_display 1200
+execute if score #coal unlock matches 1 run scoreboard players set coal material_display 1100
+execute if score #copper unlock matches 1 run scoreboard players set copper material_display 1000
+execute if score #iron unlock matches 1 run scoreboard players set iron material_display 900
+execute if score #emerald unlock matches 1 run scoreboard players set emerald material_display 800
+execute if score #lapis unlock matches 1 run scoreboard players set lapis material_display 700
+execute if score #gold unlock matches 1 run scoreboard players set gold material_display 600
+execute if score #heat unlock matches 1 run scoreboard players set heat material_display 500
+execute if score #diamond unlock matches 1 run scoreboard players set diamond material_display 400
+execute if score #cold unlock matches 1 run scoreboard players set cold material_display 300
+execute if score #yellow unlock matches 1 run scoreboard players set yellow material_display 200
+execute if score #blue unlock matches 1 run scoreboard players set blue material_display 100
+execute if score #world_eye unlock matches 1 run scoreboard players set world_eye material_display 0
 
 scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"unwn","color":"white","shadow_color":-16777216,"obfuscated":true}]
 execute if score #overworld civilization_age matches 1 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"목기 시대","color":"gold","shadow_color":-16777216}]
@@ -36,6 +50,9 @@ execute if score #overworld civilization_age matches 6 run scoreboard players di
 execute if score #overworld civilization_age matches 7 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"근대","color":"#71CDF9","shadow_color":-16777216}]
 execute if score #overworld civilization_age matches 8 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"현대","color":"light_purple","shadow_color":-16777216}]
 execute if score #overworld civilization_age matches 9.. run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"미래","color":"dark_purple","shadow_color":-16777216}]
+
+scoreboard players display name pos material_display [{"text":"현재 위치: "},{"text":"unwn","color":"white","shadow_color":-16777216,"obfuscated":true}]
+
 scoreboard players display name divider material_display {"text":"","color":"white","shadow_color":-16777216}
 
 scoreboard players display name wood material_display {"text":"나무","color":"yellow","shadow_color":-16777216}

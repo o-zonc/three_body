@@ -1,6 +1,8 @@
 execute if entity @s[tag=future] on target run return run function future/ui
 execute if entity @s[tag=store] on target run return run function quantum/storage/ui
 execute if entity @s[tag=time_machine] on target run return run function time_machine/ui
+execute if entity @s[tag=recycle] on target run return run function factory/recycle/ui
+execute if entity @s[tag=energy] on target run return run function factory/energy/ui
 execute if entity @s[tag=check] on target run return run function factory/check
 execute if entity @s[tag=wood] on target run return run function factory/ui {id:"wood",unlock:"wood",name:"나무",color:"yellow",purchase:1701,toggle:1711}
 execute if entity @s[tag=stone] on target run return run function factory/ui {id:"stone",unlock:"stone",name:"돌",color:"gray",purchase:1702,toggle:1712}

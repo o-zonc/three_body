@@ -3,7 +3,7 @@
   "display": {
     "icon": "end_rod",
     "title": "입자가속기",
-    "description": "입자의 충돌을 관측해 외계 문명의 과학 봉쇄를 연구합니다.",
+    "description": "입자의 충돌을 관측해 외계 문명의 과학 봉쇄를 연구합니다.\n\n§6•§7 보상: 철 수급량이 최종 4배로 증가합니다.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
@@ -13,5 +13,6 @@
     "structure_unlocked": {
       "trigger": "impossible"
     }
-  }
+  },
+  "rewards": {"function": "resource/advancement_reward/iron/accelerator"}
 }

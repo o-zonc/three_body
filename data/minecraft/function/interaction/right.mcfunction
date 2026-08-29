@@ -39,6 +39,8 @@ execute if entity @s[tag=shop,tag=hole] on target run function shop/hole/interac
 execute if entity @s[tag=era] on target run function common/era/interact
 execute if entity @s[tag=alchemy,tag=jewel] on target run function shop/alchemy/jewel/ui
 execute if entity @s[tag=alchemy,tag=lab] on target run function shop/alchemy/lab/ui
+execute if entity @s[tag=alchemy,tag=emerald] on target run function shop/alchemy/transmutation/gem_ui
+execute if entity @s[tag=alchemy,tag=gold] on target run function shop/alchemy/transmutation/metal_ui
 
 
 # 상점류

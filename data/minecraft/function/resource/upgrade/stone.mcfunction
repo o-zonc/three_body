@@ -4,6 +4,7 @@ execute unless score #stone unlock matches 1 run function resource/effect/failur
 execute unless score #stone unlock matches 1 run return 0
 data remove storage data tmp.cost_original
 function resource/material/stone/value/regen_upgrade_cost
+execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
 execute unless data storage data tmp.cost at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 execute unless data storage data tmp.cost run title @s actionbar "§c더 이상 업그레이드 할 수 없습니다."
 execute unless data storage data tmp.cost run return 0

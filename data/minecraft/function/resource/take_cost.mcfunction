@@ -1,10 +1,11 @@
 # tmp.cost 의 목록에 있는 자원 요구 목록만큼 자원을 차감
-# resource/check_cost가 흑요석 대체 결제를 선택했다면 다른 자원을 건드리지 않고 흑요석 1개만 소모합니다.
-execute if score #obsidian_cost_bypass tmp matches 1 run return run function resource/cost/take_obsidian_bypass
+# 특수 콘텐츠가 직접 요청한 기존 전체 대체 경로를 유지합니다.
+execute if score #obsidian_cost_bypass tmp matches 1 if score #obsidian_substitution_count tmp matches 0 run return run function resource/cost/take_obsidian_bypass
+# resource/check_cost가 준비한 정상/부분 대체 비용을 그대로 차감합니다.
+execute if score #cost_prepared tmp matches 1 run return run function resource/cost/take_prepared
 
 scoreboard players set #cost_wood cost 0
 scoreboard players set #cost_stone cost 0
-scoreboard players set #cost_exp_lvl cost 0
 scoreboard players set #cost_coal cost 0
 scoreboard players set #cost_copper cost 0
 scoreboard players set #cost_iron cost 0
@@ -21,7 +22,6 @@ scoreboard players set #cost_gold cost 0
 
 execute if data storage data tmp.cost[{type:"wood"}].amount store result score #cost_wood cost run data get storage data tmp.cost[{type:"wood"}].amount
 execute if data storage data tmp.cost[{type:"stone"}].amount store result score #cost_stone cost run data get storage data tmp.cost[{type:"stone"}].amount
-execute if data storage data tmp.cost[{type:"exp_lvl"}].amount store result score #cost_exp_lvl cost run data get storage data tmp.cost[{type:"exp_lvl"}].amount
 execute if data storage data tmp.cost[{type:"coal"}].amount store result score #cost_coal cost run data get storage data tmp.cost[{type:"coal"}].amount
 execute if data storage data tmp.cost[{type:"copper"}].amount store result score #cost_copper cost run data get storage data tmp.cost[{type:"copper"}].amount
 execute if data storage data tmp.cost[{type:"iron"}].amount store result score #cost_iron cost run data get storage data tmp.cost[{type:"iron"}].amount
@@ -36,11 +36,8 @@ execute if data storage data tmp.cost[{type:"world_eye"}].amount store result sc
 execute if data storage data tmp.cost[{type:"obsidian"}].amount store result score #cost_obsidian cost run data get storage data tmp.cost[{type:"obsidian"}].amount
 execute if data storage data tmp.cost[{type:"gold"}].amount store result score #cost_gold cost run data get storage data tmp.cost[{type:"gold"}].amount
 
-# 발전과제 overworld_13 달성 시 나무/돌은 차감되지 않음
-execute unless score #overworld_13 advancement matches 1 run scoreboard players operation #wood material -= #cost_wood cost
-execute if score #overworld_13 advancement matches 1 if score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #wood material -= #cost_wood cost
-execute unless score #overworld_13 advancement matches 1 run scoreboard players operation #stone material -= #cost_stone cost
-execute if score #overworld_13 advancement matches 1 if score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #stone material -= #cost_stone cost
+scoreboard players operation #wood material -= #cost_wood cost
+scoreboard players operation #stone material -= #cost_stone cost
 scoreboard players operation #coal material -= #cost_coal cost
 scoreboard players operation #copper material -= #cost_copper cost
 scoreboard players operation #iron material -= #cost_iron cost
@@ -55,10 +52,6 @@ scoreboard players operation #world_eye material -= #cost_world_eye cost
 function meta/obsidian/take_cost
 scoreboard players operation #gold material -= #cost_gold cost
 
-# 경험치는 개별
-scoreboard players set #minus tmp -1
-scoreboard players operation #reverse_exp_lvl tmp = #cost_exp_lvl cost
-scoreboard players operation #reverse_exp_lvl tmp *= #minus tmp
-execute store result storage data tmp.exp_lvl.lvl int 1 run scoreboard players get #reverse_exp_lvl tmp
-function player/add_exp_lvl with storage data tmp.exp_lvl
 scoreboard players set #obsidian_cost_bypass tmp 0
+scoreboard players set #obsidian_substitution_count tmp 0
+scoreboard players set #cost_prepared tmp 0

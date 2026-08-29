@@ -16,6 +16,43 @@ execute if score #vault_shop_second tmp matches 1 run scoreboard players operati
 execute if score #vault_shop_second tmp matches 1 run scoreboard players operation #special_second_lvl upgrade = #vault_special_second tmp
 execute if score #vault_shop_second tmp matches 1 run scoreboard players operation #get_second_lvl upgrade = #vault_get_second tmp
 
+# 정보 보관소: 이전 문명에서 실제로 해금했던 자원의 해금 상태와 채굴 노드를 복원한다.
+scoreboard players set #vault_loaded_gold_chunk tmp 0
+scoreboard players set #vault_loaded_diamond_chunk tmp 0
+scoreboard players set #vault_loaded_heat_chunk tmp 0
+scoreboard players set #vault_loaded_cold_chunk tmp 0
+execute if score #vault_stone_unlocks tmp matches 1 if score #vault_unlock_stone tmp matches 1 run scoreboard players set #stone unlock 1
+execute if score #vault_stone_unlocks tmp matches 1 if score #vault_unlock_stone tmp matches 1 in minecraft:overworld run function resource/material/stone/place
+execute if score #vault_stone_unlocks tmp matches 1 if score #vault_unlock_coal tmp matches 1 run scoreboard players set #coal unlock 1
+execute if score #vault_stone_unlocks tmp matches 1 if score #vault_unlock_coal tmp matches 1 in minecraft:overworld run function resource/material/coal/place
+
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_copper tmp matches 1 run scoreboard players set #copper unlock 1
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_copper tmp matches 1 in minecraft:overworld run function resource/material/copper/place
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_iron tmp matches 1 run scoreboard players set #iron unlock 1
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_iron tmp matches 1 in minecraft:overworld run function resource/material/iron/place
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_gold tmp matches 1 run scoreboard players set #gold unlock 1
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_gold tmp matches 1 in minecraft:dried store success score #vault_loaded_gold_chunk tmp run forceload add 6 0
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_gold tmp matches 1 run function resource/material/gold/place
+execute if score #vault_loaded_gold_chunk tmp matches 1 in minecraft:dried run forceload remove 6 0
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_diamond tmp matches 1 run scoreboard players set #diamond unlock 1
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_diamond tmp matches 1 in minecraft:frozen store success score #vault_loaded_diamond_chunk tmp run forceload add 0 -12
+execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_diamond tmp matches 1 run function resource/material/diamond/place
+execute if score #vault_loaded_diamond_chunk tmp matches 1 in minecraft:frozen run forceload remove 0 -12
+
+execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_heat tmp matches 1 run scoreboard players set #heat unlock 1
+execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_heat tmp matches 1 in minecraft:dried store success score #vault_loaded_heat_chunk tmp run forceload add -6 0
+execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_heat tmp matches 1 run function resource/material/heat/place
+execute if score #vault_loaded_heat_chunk tmp matches 1 in minecraft:dried run forceload remove -6 0
+execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_cold tmp matches 1 run scoreboard players set #cold unlock 1
+execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_cold tmp matches 1 in minecraft:frozen store success score #vault_loaded_cold_chunk tmp run forceload add 0 48
+execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_cold tmp matches 1 run function resource/material/cold/place
+execute if score #vault_loaded_cold_chunk tmp matches 1 in minecraft:frozen run forceload remove 0 48
+
+execute if score #vault_gem_unlocks tmp matches 1 if score #vault_unlock_emerald tmp matches 1 run scoreboard players set #emerald unlock 1
+execute if score #vault_gem_unlocks tmp matches 1 if score #vault_unlock_emerald tmp matches 1 in minecraft:overworld run function resource/material/emerald/place
+execute if score #vault_gem_unlocks tmp matches 1 if score #vault_unlock_lapis tmp matches 1 run scoreboard players set #lapis unlock 1
+execute if score #vault_gem_unlocks tmp matches 1 if score #vault_unlock_lapis tmp matches 1 in minecraft:overworld run function resource/material/lapis/place
+
 # 복원된 강화 단계에 맞춰 얼어붙은 차원의 우는 흑요석 외형도 동기화한다.
 execute if score #special_second_lvl upgrade matches 2.. run function crying/frozen_reveal
 
@@ -27,16 +64,19 @@ execute if score #vault_dried_relic tmp matches 1 if score #dried_relic_level up
 # 시설 보호: 발전과제는 건드리지 않고 현재 시설 상태만 복원한다.
 execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run scoreboard players set #observatory unlock 1
 execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run function common/structure/observatory/on
+execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 if score #vault_era_owned tmp matches 1 run scoreboard players set #era unlock 1
+execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 if score #vault_era_owned tmp matches 1 at @e[type=interaction,tag=era,limit=1] run setblock ~ ~ ~ respawn_anchor[charges=4] replace
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players operation #level alchemy_workshop = #vault_alchemy_level tmp
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players set #alchemy_workshop unlock 1
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players operation #alchemy_lab_level upgrade = #vault_alchemy_lab_level tmp
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run function common/structure/alchemy_workshop/on
 
-# 공방이 보존되면 이미 영구 구매한 상점/연금술 공방 이동기도 구매 상태와 아이템을 복원한다.
-execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 if score #vault_shop_mover_owned tmp matches 1 run scoreboard players set #shop_mover unlock 1
-execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 if score #vault_shop_mover_owned tmp matches 1 run function item/give/shop_mover
-execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 if score #vault_alchemy_mover_owned tmp matches 1 run scoreboard players set #alchemy_mover unlock 1
-execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 if score #vault_alchemy_mover_owned tmp matches 1 run function item/give/alchemy_mover
+# 영구 구매한 이동기는 시설 보존 임계치와 무관하게 구매 상태를 유지한다.
+# 아이템은 reset_progress에서 이미 복원하며, 상점·공방·제단 이동기는
+# 오버월드 복귀 시 mover/local/restore에서만 지급한다.
+execute if score #vault_dimension_mover_owned tmp matches 1 run scoreboard players set #dimension_mover unlock 1
+execute if score #vault_shop_mover_owned tmp matches 1 run scoreboard players set #shop_mover unlock 1
+execute if score #vault_alchemy_mover_owned tmp matches 1 run scoreboard players set #alchemy_mover unlock 1
 
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #GLOBAL factory_build_stage = #vault_factory_stage tmp
 execute if score #vault_factory tmp matches 1 run scoreboard players operation #GLOBAL factory_elevator_unlocked = #vault_factory_elevator tmp
@@ -59,7 +99,7 @@ execute if score #vault_factory tmp matches 1 if score #vault_factory_stage tmp 
 scoreboard players set #overworld civilization_age 0
 execute if score #time_bank meta matches 5.. run scoreboard players set #overworld civilization_age 5
 execute if score #time_bank meta matches 20.. run scoreboard players set #overworld civilization_age 6
-execute if score #time_bank meta matches 50.. run scoreboard players set #overworld civilization_age 7
+execute if score #time_bank meta matches 40.. run scoreboard players set #overworld civilization_age 7
 execute if score #time_bank meta matches 100.. run scoreboard players set #overworld civilization_age 8
 
 # 시간 10조각: 이전 문명에서 개방한 얼어붙은 다리를 유지한다.
@@ -84,6 +124,16 @@ execute if score #vault_elevator tmp matches 1 run scoreboard players operation 
 # 막대기 발전 단계는 첫 상점/생산 단계로 취급해 별도 보호한다.
 execute if score #vault_stick_progress tmp matches 1 run scoreboard players operation #wood_regen_lvl upgrade = #vault_wood_regen tmp
 execute if score #vault_stick_progress tmp matches 1 run scoreboard players operation #wood_lvl material_shop = #vault_wood_shop tmp
+
+# 시간 30/50/75조각: 석재/금속/보석 자원의 재생산 업그레이드를 유지한다.
+execute if score #vault_stone_resources tmp matches 1 run scoreboard players operation #stone_regen_lvl upgrade = #vault_stone_regen tmp
+execute if score #vault_stone_resources tmp matches 1 run scoreboard players operation #coal_regen_lvl upgrade = #vault_coal_regen tmp
+execute if score #vault_metal_resources tmp matches 1 run scoreboard players operation #copper_regen_lvl upgrade = #vault_copper_regen tmp
+execute if score #vault_metal_resources tmp matches 1 run scoreboard players operation #iron_regen_lvl upgrade = #vault_iron_regen tmp
+execute if score #vault_metal_resources tmp matches 1 run scoreboard players operation #gold_regen_lvl upgrade = #vault_gold_regen tmp
+execute if score #vault_metal_resources tmp matches 1 run scoreboard players operation #diamond_regen_lvl upgrade = #vault_diamond_regen tmp
+execute if score #vault_gem_resources tmp matches 1 run scoreboard players operation #emerald_regen_lvl upgrade = #vault_emerald_regen tmp
+execute if score #vault_gem_resources tmp matches 1 run scoreboard players operation #lapis_regen_lvl upgrade = #vault_lapis_regen tmp
 
 # 시간 250조각: 정산에서 0으로 초기화한 뒤 이전 채굴 도구 강화 단계를 복원한다.
 execute if score #vault_tool tmp matches 1 run scoreboard players operation #tool upgrade = #vault_tool_level tmp

@@ -1,3 +1,4 @@
+execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 execute store result score #quantum_common tmp run clear @s minecraft:cyan_dye[minecraft:custom_data~{three_body:{quantum:"common"}}] 0
 execute store result score #quantum_great tmp run clear @s minecraft:purple_dye[minecraft:custom_data~{three_body:{quantum:"great"}}] 0
 execute store result score #quantum_special tmp run clear @s minecraft:pink_dye[minecraft:custom_data~{three_body:{quantum:"special"}}] 0

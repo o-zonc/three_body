@@ -19,10 +19,12 @@ data remove storage data tmp.cost
 execute if score @s accelerator_trigger matches 10 run data modify storage data tmp.cost set from storage data const.accelerator.experiment.quantum.cost
 execute if score @s accelerator_trigger matches 11 run data modify storage data tmp.cost set from storage data const.accelerator.experiment.heavy.cost
 execute if score @s accelerator_trigger matches 12 run data modify storage data tmp.cost set from storage data const.accelerator.experiment.spacetime.cost
+function factory/energy/apply_experiment_discount
 execute store result score #experiment_cost_ok tmp run function resource/check_cost
 execute unless score #experiment_cost_ok tmp matches 1 run title @s actionbar {text:"실험 재료가 부족합니다.",color:"red"}
 execute unless score #experiment_cost_ok tmp matches 1 run return 0
 function resource/cost/take
+execute if score #factory_recycle_level upgrade matches 3.. run function factory/recycle/refund_cost
 
 scoreboard players operation @s experiment_type = @s accelerator_trigger
 execute if score @s accelerator_trigger matches 10 store result score @s experiment_delay run data get storage data const.accelerator.experiment.quantum.delay

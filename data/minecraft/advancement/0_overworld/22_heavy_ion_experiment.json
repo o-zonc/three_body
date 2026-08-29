@@ -3,7 +3,7 @@
   "display": {
     "icon": "firework_star",
     "title": "중입자 충돌",
-    "description": "더 높은 에너지의 중입자 충돌에서 기존 이론으로 설명할 수 없는 물질 반응을 관측합니다.",
+    "description": "더 높은 에너지의 중입자 충돌에서 기존 이론으로 설명할 수 없는 물질 반응을 관측합니다.\n\n§6•§7 보상: 외계 자원 노랑과 파랑을 해금합니다.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

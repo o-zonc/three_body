@@ -14,7 +14,9 @@ execute store result score #factory_cost_check tmp run function resource/check_c
 execute unless score #factory_cost_check tmp matches 1 run title @s actionbar {text:"공장 건설·업그레이드 재료가 부족합니다.",color:"red"}
 execute unless score #factory_cost_check tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 execute unless score #factory_cost_check tmp matches 1 run return 0
+scoreboard players operation #factory_purchase_bypass tmp = #obsidian_cost_bypass tmp
 function resource/cost/take
+execute unless score #factory_purchase_bypass tmp matches 1 if score #factory_recycle_level upgrade matches 1.. run function factory/recycle/refund_cost
 scoreboard players set #factory_was_unlocked tmp 0
 $execute if score #$(id) factory_unlocked matches 1 run scoreboard players set #factory_was_unlocked tmp 1
 $execute if score #factory_was_unlocked tmp matches 1 run scoreboard players add #$(id) factory_level 1

@@ -10,11 +10,20 @@ execute unless score #time_bank meta matches 10.. run data modify storage data t
 execute if score #time_bank meta matches 20.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n20조각",color:"dark_aqua"},{text:" · 다음 문명을 중세 단계에서 시작합니다.",color:"gray"}]
 execute unless score #time_bank meta matches 20.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n20조각 · 다음 문명을 중세 단계에서 시작합니다.",color:"dark_gray"}
 
+execute if score #time_bank meta matches 30.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n30조각",color:"dark_aqua"},{text:" · 돌·석탄의 재생산 업그레이드를 유지합니다.",color:"gray"}]
+execute unless score #time_bank meta matches 30.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n30조각 · 돌·석탄의 재생산 업그레이드를 유지합니다.",color:"dark_gray"}
+
 execute if score #time_bank meta matches 35.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n35조각",color:"dark_aqua"},{text:" · 세 차원 유적지의 복구 상태를 유지합니다.",color:"gray"}]
 execute unless score #time_bank meta matches 35.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n35조각 · 세 차원 유적지의 복구 상태를 유지합니다.",color:"dark_gray"}
 
-execute if score #time_bank meta matches 50.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n50조각",color:"dark_aqua"},{text:" · 다음 문명을 근대 단계에서 시작하고 엘리베이터 진행을 유지합니다.",color:"gray"}]
-execute unless score #time_bank meta matches 50.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n50조각 · 다음 문명을 근대 단계에서 시작하고 엘리베이터 진행을 유지합니다.",color:"dark_gray"}
+execute if score #time_bank meta matches 40.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n40조각",color:"dark_aqua"},{text:" · 다음 문명을 근대 단계에서 시작합니다.",color:"gray"}]
+execute unless score #time_bank meta matches 40.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n40조각 · 다음 문명을 근대 단계에서 시작합니다.",color:"dark_gray"}
+
+execute if score #time_bank meta matches 50.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n50조각",color:"dark_aqua"},{text:" · 엘리베이터 진행과 구리·철·금·다이아몬드의 재생산 업그레이드를 유지합니다.",color:"gray"}]
+execute unless score #time_bank meta matches 50.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n50조각 · 엘리베이터 진행과 구리·철·금·다이아몬드의 재생산 업그레이드를 유지합니다.",color:"dark_gray"}
+
+execute if score #time_bank meta matches 75.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n75조각",color:"dark_aqua"},{text:" · 에메랄드·청금석의 재생산 업그레이드를 유지합니다.",color:"gray"}]
+execute unless score #time_bank meta matches 75.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n75조각 · 에메랄드·청금석의 재생산 업그레이드를 유지합니다.",color:"dark_gray"}
 
 execute if score #time_bank meta matches 100.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n100조각",color:"dark_aqua"},{text:" · 다음 문명을 현대 단계에서 시작합니다.",color:"gray"}]
 execute unless score #time_bank meta matches 100.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n100조각 · 다음 문명을 현대 단계에서 시작합니다.",color:"dark_gray"}

@@ -7,6 +7,12 @@ execute if entity @e[type=minecraft:item,tag=!drop_checked] run function mover/p
 # 보호 아이템이 아직 월드에 남아 있으면 가까운 플레이어에게 계속 되돌립니다.
 execute as @e[type=minecraft:item,tag=protected_drop] at @s if entity @p[tag=player,gamemode=adventure,distance=..4] run tp @s @p[tag=player,gamemode=adventure,distance=..4,sort=nearest,limit=1]
 
+# 미로 내부에서는 사용 제한
+execute as @a[tag=maze,tag=shift] if items entity @s weapon.* * run return run function mover/restricted/common
+
+# 긴급 탈출기는 구조물 내부 이동 제한보다 먼저 처리해 언제든 오버월드로 복귀할 수 있게 합니다.
+execute as @a[tag=shift] if predicate item/overworld_escape run return run function mover/overworld_escape
+
 # 일반 플레이어의 엘리베이터 내부 이동 제한. dev는 모든 차원 이동기 테스트를 위해 우회합니다.
 # shift edge가 발생한 플레이어만 predicate/영역 검사를 수행합니다.
 execute as @a[tag=!dev,tag=shift] unless predicate item/altar_mover unless predicate item/shop_mover unless predicate item/alchemy_mover unless predicate item/dev_polarnight_mover unless predicate item/dev_dawn_mover if items entity @s weapon.* * if entity @s[x=23,y=-63,z=-25,dx=2,dy=0,dz=2] run return run function mover/restricted/common

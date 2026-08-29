@@ -28,3 +28,6 @@ function story/tutorial/00_tutorial
 
 # 예약 함수에는 플레이어 실행 주체가 없으므로, 각 플레이어 문맥에서 도구를 지급합니다.
 function tool/refresh_all
+
+# 개발자는 게임 시작 시 커스텀 흑요석 한 세트를 추가로 받습니다.
+execute as @a[tag=dev] run function meta/obsidian/give_item {amount:64}

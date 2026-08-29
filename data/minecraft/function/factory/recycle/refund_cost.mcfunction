@@ -1,0 +1,11 @@
+function factory/recycle/refund_type {type:"wood",cost:"#cost_wood"}
+function factory/recycle/refund_type {type:"stone",cost:"#cost_stone"}
+function factory/recycle/refund_type {type:"coal",cost:"#cost_coal"}
+function factory/recycle/refund_type {type:"copper",cost:"#cost_copper"}
+function factory/recycle/refund_type {type:"iron",cost:"#cost_iron"}
+function factory/recycle/refund_type {type:"gold",cost:"#cost_gold"}
+function factory/recycle/refund_type {type:"diamond",cost:"#cost_diamond"}
+function factory/recycle/refund_type {type:"emerald",cost:"#cost_emerald"}
+function factory/recycle/refund_type {type:"lapis",cost:"#cost_lapis"}
+function factory/recycle/refund_type {type:"heat",cost:"#cost_heat"}
+function factory/recycle/refund_type {type:"cold",cost:"#cost_cold"}

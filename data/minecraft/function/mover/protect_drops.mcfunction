@@ -4,6 +4,7 @@ execute as @e[type=minecraft:item,tag=!drop_checked] if items entity @s contents
 execute as @e[type=minecraft:item,tag=!drop_checked] if items entity @s contents *[minecraft:custom_data~{dried_move:1b}] run tag @s add protected_drop
 execute as @e[type=minecraft:item,tag=!drop_checked] if items entity @s contents *[minecraft:custom_data~{frozen_move:1b}] run tag @s add protected_drop
 execute as @e[type=minecraft:item,tag=!drop_checked] if items entity @s contents *[minecraft:custom_data~{overworld_move:1b}] run tag @s add protected_drop
+execute as @e[type=minecraft:item,tag=!drop_checked] if items entity @s contents *[minecraft:custom_data~{overworld_escape:1b}] run tag @s add protected_drop
 execute as @e[type=minecraft:item,tag=!drop_checked] if items entity @s contents *[minecraft:custom_data~{cosmos_move:1b}] run tag @s add protected_drop
 execute as @e[type=minecraft:item,tag=!drop_checked] if items entity @s contents *[minecraft:custom_data~{dev_polarnight_move:1b}] run tag @s add protected_drop
 execute as @e[type=minecraft:item,tag=!drop_checked] if items entity @s contents *[minecraft:custom_data~{dev_dawn_move:1b}] run tag @s add protected_drop

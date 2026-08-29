@@ -146,6 +146,11 @@ execute in frozen run forceload remove -64 -64 64 64
 execute in polarnight run forceload remove -64 -64 64 64
 execute in dawn run forceload remove -64 -64 64 64
 
+# 극야 엔드 수정은 청크 엔티티가 완전히 로드된 다음 틱에 한 번 더 제거합니다.
+function crying/crystal_reset_schedule
+# 여명 spear와 우는 흑요석 디스플레이도 중앙 청크 로드 후 다시 초기화합니다.
+function crying/dawn_reset_schedule
+
 # ------------------------------------------------------------
 # 10. 게임 규칙 재설정
 # ------------------------------------------------------------

@@ -8,6 +8,8 @@ execute if score #GLOBAL current_dim matches 4 run function dawn/cleanup_epiphan
 
 execute in overworld run tp @a 0 -59 0
 execute in overworld run weather clear
+execute in overworld run time rate 1
+function mover/items/arrive_other
 function mover/local/restore
 gamerule advance_time true
 

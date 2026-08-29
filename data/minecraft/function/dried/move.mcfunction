@@ -9,6 +9,9 @@ execute if score #GLOBAL current_dim matches 4 run function dawn/cleanup_epiphan
 
 execute in dried run tp @a 0 64 0
 execute in dried run weather clear
+execute in dried run time rate 1
+# 도착 경로와 관계없이 이 차원에서 채굴 가능한 자원이 없다면 긴급 귀환 수단을 지급합니다.
+execute if score #tool upgrade matches ..3 as @a[tag=player,gamemode=adventure,nbt={Dimension:"minecraft:dried"}] run function item/give/overworld_escape
 function mover/items/arrive_other
 gamerule advance_time true
 

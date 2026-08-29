@@ -78,7 +78,6 @@ scoreboard objectives setdisplay sidebar material_display
 
 scoreboard objectives add cost dummy
 scoreboard objectives add tmp dummy
-scoreboard objectives add advancement dummy
 scoreboard objectives add var dummy
 scoreboard objectives add generate dummy
 scoreboard objectives add upgrade dummy
@@ -130,3 +129,4 @@ scoreboard objectives add dawn_information_shop dummy
 scoreboard objectives add dawn_time_shop dummy
 scoreboard objectives add dawn_bonus_shop dummy
 scoreboard objectives add dawn_reactor_purchased dummy
+scoreboard objectives add crystal_state dummy

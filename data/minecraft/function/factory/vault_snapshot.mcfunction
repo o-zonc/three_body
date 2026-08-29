@@ -10,3 +10,18 @@ scoreboard players operation #vault_factory_emerald_unlocked tmp = #emerald fact
 scoreboard players operation #vault_factory_lapis_unlocked tmp = #lapis factory_unlocked
 scoreboard players operation #vault_factory_cold_unlocked tmp = #cold factory_unlocked
 scoreboard players operation #vault_factory_heat_unlocked tmp = #heat factory_unlocked
+
+# 공장 유지에는 정산 직전의 개별 가동 상태도 포함한다.
+scoreboard players operation #vault_factory_wood_enabled tmp = #wood factory_enabled
+scoreboard players operation #vault_factory_stone_enabled tmp = #stone factory_enabled
+scoreboard players operation #vault_factory_coal_enabled tmp = #coal factory_enabled
+scoreboard players operation #vault_factory_copper_enabled tmp = #copper factory_enabled
+scoreboard players operation #vault_factory_iron_enabled tmp = #iron factory_enabled
+scoreboard players operation #vault_factory_gold_enabled tmp = #gold factory_enabled
+scoreboard players operation #vault_factory_diamond_enabled tmp = #diamond factory_enabled
+scoreboard players operation #vault_factory_emerald_enabled tmp = #emerald factory_enabled
+scoreboard players operation #vault_factory_lapis_enabled tmp = #lapis factory_enabled
+scoreboard players operation #vault_factory_cold_enabled tmp = #cold factory_enabled
+scoreboard players operation #vault_factory_heat_enabled tmp = #heat factory_enabled
+scoreboard players operation #vault_factory_recycle_level tmp = #factory_recycle_level upgrade
+scoreboard players operation #vault_factory_energy_level tmp = #factory_energy_level upgrade

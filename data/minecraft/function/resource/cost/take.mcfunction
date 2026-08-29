@@ -1,6 +1,8 @@
 # Deduct the exact costs populated by resource/check_cost.
-# 정상 비용을 충족하지 못해 흑요석 대체가 선택된 경우 다른 재료는 전혀 소모하지 않습니다.
-execute if score #obsidian_cost_bypass tmp matches 1 run return run function resource/cost/take_obsidian_bypass
+# 특수 콘텐츠가 직접 요청한 기존 전체 대체 경로를 유지합니다.
+execute if score #obsidian_cost_bypass tmp matches 1 if score #obsidian_substitution_count tmp matches 0 run return run function resource/cost/take_obsidian_bypass
+# resource/check_cost가 준비한 정상/부분 대체 비용을 그대로 차감합니다.
+execute if score #cost_prepared tmp matches 1 run return run function resource/cost/take_prepared
 
 scoreboard players operation #wood material -= #cost_wood cost
 scoreboard players operation #stone material -= #cost_stone cost
@@ -20,3 +22,5 @@ function meta/time/take_cost
 scoreboard players operation #world_eye material -= #cost_world_eye cost
 function meta/obsidian/take_cost
 scoreboard players set #obsidian_cost_bypass tmp 0
+scoreboard players set #obsidian_substitution_count tmp 0
+scoreboard players set #cost_prepared tmp 0

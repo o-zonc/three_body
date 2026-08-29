@@ -7,7 +7,6 @@ $data modify storage data tmp.cost_text.$(id).cost set value []
 
 $scoreboard players set #cost_$(id)_wood cost 0
 $scoreboard players set #cost_$(id)_stone cost 0
-$scoreboard players set #cost_$(id)_exp_lvl cost 0
 $scoreboard players set #cost_$(id)_coal cost 0
 $scoreboard players set #cost_$(id)_copper cost 0
 $scoreboard players set #cost_$(id)_iron cost 0
@@ -29,7 +28,6 @@ $scoreboard players set #cost_$(id)_coal_original cost 0
 
 $execute if data storage data tmp.cost[{type:"wood"}].amount store result score #cost_$(id)_wood cost run data get storage data tmp.cost[{type:"wood"}].amount
 $execute if data storage data tmp.cost[{type:"stone"}].amount store result score #cost_$(id)_stone cost run data get storage data tmp.cost[{type:"stone"}].amount
-$execute if data storage data tmp.cost[{type:"exp_lvl"}].amount store result score #cost_$(id)_exp_lvl cost run data get storage data tmp.cost[{type:"exp_lvl"}].amount
 $execute if data storage data tmp.cost[{type:"coal"}].amount store result score #cost_$(id)_coal cost run data get storage data tmp.cost[{type:"coal"}].amount
 $execute if data storage data tmp.cost[{type:"copper"}].amount store result score #cost_$(id)_copper cost run data get storage data tmp.cost[{type:"copper"}].amount
 $execute if data storage data tmp.cost[{type:"iron"}].amount store result score #cost_$(id)_iron cost run data get storage data tmp.cost[{type:"iron"}].amount
@@ -51,21 +49,13 @@ $execute if data storage data tmp.cost_original[{type:"stone"}].amount store res
 $execute if data storage data tmp.cost_original[{type:"coal"}].amount store result score #cost_$(id)_coal_original cost run data get storage data tmp.cost_original[{type:"coal"}].amount
 
 $scoreboard players set #cost_$(id)_2_1_effective tmp 0
-$scoreboard players set #cost_$(id)_overworld_13_effective tmp 0
-$execute if score #overworld_13 advancement matches 1 unless score #overworld_advancement_reward_disabled var matches 1 run scoreboard players set #cost_$(id)_overworld_13_effective tmp 1
 $scoreboard players set #cost_$(id)_4_2_effective tmp 0
 
-$execute if score #cost_$(id)_wood cost matches 1.. unless score #cost_$(id)_overworld_13_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "나무 ", color:yellow, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_wood",objective:"cost"}}, "개"] }
-$execute if score #cost_$(id)_wood cost matches 1.. if score #cost_$(id)_overworld_13_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "나무 ", color:yellow, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_wood",objective:"cost"}}, "개 §8(소모 없음)"] }
+$execute if score #cost_$(id)_wood cost matches 1.. run data modify storage data tmp.cost_text.$(id).cost append value { text: "나무 ", color:yellow, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_wood",objective:"cost"}}, "개"] }
 
-$execute if score #cost_$(id)_stone cost matches 1.. unless score #cost_$(id)_stone_original cost matches 1.. unless score #cost_$(id)_overworld_13_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "돌 ", color:gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_stone",objective:"cost"}}, "개"] }
-$execute if score #cost_$(id)_stone cost matches 1.. unless score #cost_$(id)_stone_original cost matches 1.. if score #cost_$(id)_overworld_13_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "돌 ", color:gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_stone",objective:"cost"}}, "개 §8(소모 없음)"] }
-$execute if score #cost_$(id)_stone cost matches 1.. if score #cost_$(id)_stone_original cost = #cost_$(id)_stone cost unless score #cost_$(id)_overworld_13_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "돌 ", color:gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_stone",objective:"cost"}}, "개"] }
-$execute if score #cost_$(id)_stone cost matches 1.. if score #cost_$(id)_stone_original cost = #cost_$(id)_stone cost if score #cost_$(id)_overworld_13_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "돌 ", color:gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_stone",objective:"cost"}}, "개 §8(소모 없음)"] }
-$execute if score #cost_$(id)_stone cost matches 1.. if score #cost_$(id)_stone_original cost matches 1.. unless score #cost_$(id)_stone_original cost = #cost_$(id)_stone cost unless score #cost_$(id)_overworld_13_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "돌 ", color:gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_stone_original",objective:"cost"}}, "개 §8→ §f", {score:{name:"#cost_$(id)_stone",objective:"cost"}}, "개 §8(결정 상점 영향 적용)"] }
-$execute if score #cost_$(id)_stone cost matches 1.. if score #cost_$(id)_stone_original cost matches 1.. unless score #cost_$(id)_stone_original cost = #cost_$(id)_stone cost if score #cost_$(id)_overworld_13_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "돌 ", color:gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_stone_original",objective:"cost"}}, "개 §8→ §f", {score:{name:"#cost_$(id)_stone",objective:"cost"}}, "개 §8(결정 상점 영향 적용, 소모 없음)"] }
-
-$execute if score #cost_$(id)_exp_lvl cost matches 1.. run data modify storage data tmp.cost_text.$(id).cost append value { text: "경험치 ", extra: [{score:{name:"#cost_$(id)_exp_lvl",objective:"cost"}}, "레벨"] }
+$execute if score #cost_$(id)_stone cost matches 1.. unless score #cost_$(id)_stone_original cost matches 1.. run data modify storage data tmp.cost_text.$(id).cost append value { text: "돌 ", color:gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_stone",objective:"cost"}}, "개"] }
+$execute if score #cost_$(id)_stone cost matches 1.. if score #cost_$(id)_stone_original cost = #cost_$(id)_stone cost run data modify storage data tmp.cost_text.$(id).cost append value { text: "돌 ", color:gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_stone",objective:"cost"}}, "개"] }
+$execute if score #cost_$(id)_stone cost matches 1.. if score #cost_$(id)_stone_original cost matches 1.. unless score #cost_$(id)_stone_original cost = #cost_$(id)_stone cost run data modify storage data tmp.cost_text.$(id).cost append value { text: "돌 ", color:gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_stone_original",objective:"cost"}}, "개 §8→ §f", {score:{name:"#cost_$(id)_stone",objective:"cost"}}, "개 §8(결정 상점 영향 적용)"] }
 
 $execute if score #cost_$(id)_coal cost matches 1.. unless score #cost_$(id)_coal_original cost matches 1.. unless score #cost_$(id)_2_1_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "석탄 ", color:dark_gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_coal",objective:"cost"}}, "개"] }
 $execute if score #cost_$(id)_coal cost matches 1.. unless score #cost_$(id)_coal_original cost matches 1.. if score #cost_$(id)_2_1_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "석탄 ", color:dark_gray, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_coal",objective:"cost"}}, "개 ", { text: "§6🍀", hover_event: { action: "show_text", value: ["", { text: "§6🍀 " }, { text: "발전성 중화", color:aqua, bold:true, shadow_color:-1426128896 }, { text: "§7 효과로 인해 구매 시 석탄을 소모하지 않습니다.\n§8(요구량은 소지해야 함)" }] } }] }

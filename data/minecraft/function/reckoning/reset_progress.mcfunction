@@ -26,6 +26,14 @@ scoreboard players set #obsidian material 0
 scoreboard players set * unlock 0
 scoreboard players set * material_shop 0
 
+# 영구 이동기 구매 기록은 연금술 공방과 무관하게 문명 정산을 통과합니다.
+# 차원 이동기는 즉시 복원하고, 오버월드 전용인 상점·공방 이동기는
+# 오버월드 복귀 시 mover/local/restore에서 제단 이동기와 함께 재지급합니다.
+execute if score #vault_dimension_mover_owned tmp matches 1 run scoreboard players set #dimension_mover unlock 1
+execute if score #vault_shop_mover_owned tmp matches 1 run scoreboard players set #shop_mover unlock 1
+execute if score #vault_alchemy_mover_owned tmp matches 1 run scoreboard players set #alchemy_mover unlock 1
+execute if score #vault_dimension_mover_owned tmp matches 1 as @a run function item/give/dimension_mover
+
 # 중입자 충돌에서 발견한 노랑/파랑은 발전과제 기록과 재생성 업그레이드를 다음 문명으로 계승한다.
 # 보유량은 위 material 초기화에 포함되지만, 노드는 새 문명 시작과 함께 즉시 다시 사용할 수 있다.
 execute if entity @a[advancements={0_overworld/22_heavy_ion_experiment=true}] run scoreboard players set #yellow unlock 1
@@ -85,6 +93,8 @@ scoreboard players set #GLOBAL elevator_unlocked 0
 scoreboard players set #GLOBAL factory_elevator_unlocked 0
 scoreboard players set #GLOBAL factory_build_stage 0
 function factory/reset_state
+scoreboard players set #factory_recycle_level upgrade 0
+scoreboard players set #factory_energy_level upgrade 0
 
 # 입자가속기/외계 간섭/보호막은 문명마다 새로 시작한다.
 scoreboard players set #GLOBAL accelerator_level 0

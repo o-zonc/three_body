@@ -8,6 +8,15 @@ function resource/convert_upgrade_cost_to_text_named {id:"stone_regen",insertion
 scoreboard players set #gain_advancement_threshold tmp 1
 function resource/ui/prepare_standard_gain {id:"stone",color:"green",shop_color:"gray",advancement:"stone",advancement_multiplier:1,advancement_label:"1"}
 
+# 돌 전용 최종 수급 배수는 모든 공통 수급량 증가 항목 뒤에 표시한다.
+data modify storage data tmp.stone_special_label set value {text:""}
+execute if score #stone_regen_lvl upgrade matches 4 run data modify storage data tmp.stone_special_label set value {text:"1.7",color:"aqua"}
+execute if score #stone_regen_lvl upgrade matches 5.. run data modify storage data tmp.stone_special_label set value {text:"3",color:"aqua"}
+execute if score #stone_regen_lvl upgrade matches 4.. run data modify storage data tmp.resource_gain_hover.stone append value {text:"\n돌 재생산 특수 강화: ×",color:"gray"}
+execute if score #stone_regen_lvl upgrade matches 4.. run data modify storage data tmp.resource_gain_hover.stone append from storage data tmp.stone_special_label
+execute if score #stone_regen_lvl upgrade matches 4.. run data modify storage data tmp.advancement_reward_ui.stone set value [{text:" → "},{score:{name:"#stone_gain",objective:"tmp"},color:"green"},{text:"§7개"},{text:" ★",color:"green",hover_event:{action:"show_text",value:[]}}]
+execute if score #stone_regen_lvl upgrade matches 4.. run data modify storage data tmp.advancement_reward_ui.stone[3].hover_event.value set from storage data tmp.resource_gain_hover.stone
+
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
 data modify storage data tmp.creation_ui.stone_regen set value {text:"[ 업그레이드 완료 ]",color:"dark_gray",bold:true}

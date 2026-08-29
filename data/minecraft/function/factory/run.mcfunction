@@ -14,6 +14,7 @@ $execute if score #$(id) factory_level matches 4 run data modify storage data tm
 $execute if score #$(id) factory_level matches 5 run data modify storage data tmp.factory.$(id).now.interval set value 2
 $execute if score #$(id) factory_level matches 6.. run data modify storage data tmp.factory.$(id).now.interval set value 1
 $function dried/advancement/hot_factory_efficiency with storage data tmp.factory.$(id).now
+$function factory/energy/apply_fuel with storage data tmp.factory.$(id).now
 $data modify storage data tmp.factory.$(id).now.dim set value "$(dim)"
 $data modify storage data tmp.factory.$(id).now.block set value "$(block)"
 $data modify storage data tmp.factory.$(id).now.x set value $(x)

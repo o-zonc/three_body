@@ -1,3 +1,5 @@
+execute in overworld store success score #observatory_forceload_added tmp run forceload add 18 -4 25 24
+
 execute in overworld run summon firework_rocket 24 -51 24 {LifeTime:10,Motion:[0.0,1.0,0.0],FireworksItem:{id:"firework_rocket",count:1,components:{fireworks:{flight_duration:2,explosions:[{shape:"large_ball",colors:[I;16711680,16755200,16776960],fade_colors:[I;2437522],has_trail:true,has_twinkle:true},{shape:"star",colors:[I;65535,16711935],fade_colors:[I;16777215],has_trail:true,has_twinkle:true},{shape:"creeper",colors:[I;65280],has_twinkle:true},{shape:"burst",colors:[I;11141350,43520],has_trail:true}]}}}}
 
 execute in overworld run data modify block 18 -64 18 name set value "observatory"
@@ -5,3 +7,5 @@ execute in overworld run setblock 18 -64 17 redstone_block
 execute in overworld run setblock 18 -64 17 air
 
 execute in overworld run fill 23 -63 -4 25 -62 -4 air
+
+execute if score #observatory_forceload_added tmp matches 1 in overworld run forceload remove 18 -4 25 24

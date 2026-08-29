@@ -33,6 +33,7 @@ execute unless score #accelerator_cost_ok tmp matches 1 at @s run playsound bloc
 execute unless score #accelerator_cost_ok tmp matches 1 run return 0
 
 function resource/cost/take
+execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #factory_recycle_level upgrade matches 2.. run function factory/recycle/refund_cost
 execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 1 run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 10
 execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 2 run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 40
 execute unless score #accelerator_obsidian_bypass tmp matches 1 if score #GLOBAL accelerator_level matches 3 run clear @s minecraft:gray_dye[minecraft:custom_data~{three_body:{quantum:"broken"}}] 120

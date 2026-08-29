@@ -39,5 +39,7 @@ function common/next
 # ==========================================
 
 execute unless score #GLOBAL era_observed matches 1 run scoreboard players set #GLOBAL era_paused 0
+# 이번 멸망에서 사용한 수동 정지 기록은 다음 차원 이동에 남기지 않습니다.
+scoreboard players set #GLOBAL era_observed 0
 scoreboard players set #GLOBAL user_disaster 0
 scoreboard players set #disaster_running run 0

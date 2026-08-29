@@ -2,9 +2,9 @@
 execute if score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_repair_timer matches 1.. run scoreboard players remove #GLOBAL accelerator_repair_timer 1
 execute if score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_repair_timer matches ..0 run function accelerator/repair_complete
 
-# 입자가속기는 정상 가동 중일 때만 정보 조각을 자동 생산합니다.
-execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 1.. run scoreboard players remove #GLOBAL accelerator_timer 1
-execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 1.. if score #GLOBAL accelerator_timer matches ..0 run function accelerator/produce
+# 입자가속기는 정상 가동 중이고 시간의 흐름이 멈추지 않았을 때만 정보를 자동 생산합니다.
+execute unless score #GLOBAL era_paused matches 1 unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 1.. run scoreboard players remove #GLOBAL accelerator_timer 1
+execute unless score #GLOBAL era_paused matches 1 unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 1.. if score #GLOBAL accelerator_timer matches ..0 run function accelerator/produce
 execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL experiment_cooldown matches 1.. run scoreboard players remove #GLOBAL experiment_cooldown 1
 
 # 진행 중인 실험 카운트다운

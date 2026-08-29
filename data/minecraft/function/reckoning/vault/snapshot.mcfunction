@@ -7,7 +7,14 @@ scoreboard players set #vault_alchemy tmp 0
 scoreboard players set #vault_factory tmp 0
 scoreboard players set #vault_accelerator tmp 0
 scoreboard players set #vault_time_machine tmp 0
+scoreboard players set #vault_stone_unlocks tmp 0
+scoreboard players set #vault_metal_unlocks tmp 0
+scoreboard players set #vault_substrate_unlocks tmp 0
+scoreboard players set #vault_gem_unlocks tmp 0
 scoreboard players set #vault_stick_progress tmp 0
+scoreboard players set #vault_stone_resources tmp 0
+scoreboard players set #vault_metal_resources tmp 0
+scoreboard players set #vault_gem_resources tmp 0
 scoreboard players set #vault_frozen_bridge tmp 0
 scoreboard players set #vault_stronghold tmp 0
 scoreboard players set #vault_elevator tmp 0
@@ -21,7 +28,14 @@ execute if score #information_bank meta matches 125.. run scoreboard players set
 execute if score #information_bank meta matches 250.. run scoreboard players set #vault_factory tmp 1
 execute if score #information_bank meta matches 500.. run scoreboard players set #vault_accelerator tmp 1
 execute if score #information_bank meta matches 1000.. run scoreboard players set #vault_time_machine tmp 1
+execute if score #information_bank meta matches 60.. run scoreboard players set #vault_stone_unlocks tmp 1
+execute if score #information_bank meta matches 100.. run scoreboard players set #vault_metal_unlocks tmp 1
+execute if score #information_bank meta matches 200.. run scoreboard players set #vault_substrate_unlocks tmp 1
+execute if score #information_bank meta matches 300.. run scoreboard players set #vault_gem_unlocks tmp 1
 execute if score #time_bank meta matches 10.. run scoreboard players set #vault_stick_progress tmp 1
+execute if score #time_bank meta matches 30.. run scoreboard players set #vault_stone_resources tmp 1
+execute if score #time_bank meta matches 50.. run scoreboard players set #vault_metal_resources tmp 1
+execute if score #time_bank meta matches 75.. run scoreboard players set #vault_gem_resources tmp 1
 execute if score #time_bank meta matches 10.. run scoreboard players set #vault_frozen_bridge tmp 1
 execute if score #time_bank meta matches 35.. run scoreboard players set #vault_stronghold tmp 1
 execute if score #time_bank meta matches 50.. run scoreboard players set #vault_elevator tmp 1
@@ -39,6 +53,25 @@ scoreboard players operation #vault_emerald_shop tmp = #emerald_lvl material_sho
 scoreboard players operation #vault_lapis_shop tmp = #lapis_lvl material_shop
 scoreboard players operation #vault_xp_shop tmp = #xp_lvl material_shop
 scoreboard players operation #vault_wood_regen tmp = #wood_regen_lvl upgrade
+scoreboard players operation #vault_stone_regen tmp = #stone_regen_lvl upgrade
+scoreboard players operation #vault_coal_regen tmp = #coal_regen_lvl upgrade
+scoreboard players operation #vault_copper_regen tmp = #copper_regen_lvl upgrade
+scoreboard players operation #vault_iron_regen tmp = #iron_regen_lvl upgrade
+scoreboard players operation #vault_gold_regen tmp = #gold_regen_lvl upgrade
+scoreboard players operation #vault_diamond_regen tmp = #diamond_regen_lvl upgrade
+scoreboard players operation #vault_emerald_regen tmp = #emerald_regen_lvl upgrade
+scoreboard players operation #vault_lapis_regen tmp = #lapis_regen_lvl upgrade
+# 자원군 보호 조건을 충족하더라도 이전 문명에서 실제로 해금한 자원만 복원한다.
+scoreboard players operation #vault_unlock_stone tmp = #stone unlock
+scoreboard players operation #vault_unlock_coal tmp = #coal unlock
+scoreboard players operation #vault_unlock_copper tmp = #copper unlock
+scoreboard players operation #vault_unlock_iron tmp = #iron unlock
+scoreboard players operation #vault_unlock_gold tmp = #gold unlock
+scoreboard players operation #vault_unlock_diamond tmp = #diamond unlock
+scoreboard players operation #vault_unlock_heat tmp = #heat unlock
+scoreboard players operation #vault_unlock_cold tmp = #cold unlock
+scoreboard players operation #vault_unlock_emerald tmp = #emerald unlock
+scoreboard players operation #vault_unlock_lapis tmp = #lapis unlock
 scoreboard players operation #vault_tool_level tmp = #tool upgrade
 scoreboard players operation #vault_heat_second tmp = #heat_second_lvl upgrade
 scoreboard players operation #vault_cold_second tmp = #cold_second_lvl upgrade
@@ -74,12 +107,16 @@ scoreboard players operation #vault_factory_heat tmp = #heat factory_level
 # 발전과제는 영구 기록이므로 시설의 현재 상태는 별도 unlock 값으로 기록한다.
 scoreboard players set #vault_observatory_owned tmp 0
 execute if score #observatory unlock matches 1.. run scoreboard players set #vault_observatory_owned tmp 1
+scoreboard players set #vault_era_owned tmp 0
+execute if score #era unlock matches 1.. run scoreboard players set #vault_era_owned tmp 1
 scoreboard players set #vault_alchemy_owned tmp 0
 execute if score #alchemy_workshop unlock matches 1.. run scoreboard players set #vault_alchemy_owned tmp 1
 scoreboard players set #vault_frozen_bridge_owned tmp 0
 execute if score #frozen_bridge unlock matches 1.. run scoreboard players set #vault_frozen_bridge_owned tmp 1
 
-# 공방 영구 이동기 구매 상태는 공방이 보존될 때 함께 복원한다.
+# 영구 이동기 구매 상태는 시설 보존 임계치와 별도로 기록한다.
+scoreboard players set #vault_dimension_mover_owned tmp 0
+execute if score #dimension_mover unlock matches 1.. run scoreboard players set #vault_dimension_mover_owned tmp 1
 scoreboard players set #vault_shop_mover_owned tmp 0
 execute if score #shop_mover unlock matches 1.. run scoreboard players set #vault_shop_mover_owned tmp 1
 scoreboard players set #vault_alchemy_mover_owned tmp 0

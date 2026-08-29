@@ -77,6 +77,8 @@ scoreboard players set #GLOBAL dawn_bonus_shop 0
 scoreboard players set #GLOBAL dawn_information_shop 0
 scoreboard players set #GLOBAL dawn_time_shop 0
 scoreboard players set #GLOBAL dawn_reactor_purchased 0
+scoreboard players set #GLOBAL reckoning_pending 0
+scoreboard players set #GLOBAL reckoning_count 0
 # 시간축 개방은 회차 진행에서는 유지되지만, 전체 게임 초기화에서는 다시 잠급니다.
 scoreboard players set #time_axis_open var 0
 
@@ -86,8 +88,26 @@ scoreboard players set #crying_overworld var 0
 scoreboard players set #crying_dried var 0
 scoreboard players set #crying_frozen var 0
 scoreboard players set #crying_dawn var 0
+scoreboard players set #overworld crystal_state 0
+scoreboard players set #dried crystal_state 0
+scoreboard players set #frozen crystal_state 0
+scoreboard players set #dawn crystal_state 0
 scoreboard players set #crying_vault_opened var 0
-execute in polarnight run kill @e[type=minecraft:end_crystal,tag=crying_obsidian_crystal]
+# 네 엔드 수정 좌표가 속한 극야의 4개 청크를 로드한 상태에서 모두 제거합니다.
+# 태그가 누락되었거나 위치가 어긋난 과거 수정도 restart에서는 함께 정리합니다.
+execute in polarnight store success score #crying_reset_forceload_added tmp run forceload add -11 -11 11 11
+execute in polarnight as @e[type=minecraft:end_crystal] run data merge entity @s {Invulnerable:0b}
+execute in polarnight run kill @e[type=minecraft:end_crystal]
+# 과거 버전에서 태그 없이 남은 수정도 네 설치 좌표를 기준으로 제거합니다.
+execute in polarnight positioned 11 67 11 as @e[type=minecraft:end_crystal,distance=..2] run data merge entity @s {Invulnerable:0b}
+execute in polarnight positioned 11 67 11 run kill @e[type=minecraft:end_crystal,distance=..2]
+execute in polarnight positioned -11 67 11 as @e[type=minecraft:end_crystal,distance=..2] run data merge entity @s {Invulnerable:0b}
+execute in polarnight positioned -11 67 11 run kill @e[type=minecraft:end_crystal,distance=..2]
+execute in polarnight positioned 11 67 -11 as @e[type=minecraft:end_crystal,distance=..2] run data merge entity @s {Invulnerable:0b}
+execute in polarnight positioned 11 67 -11 run kill @e[type=minecraft:end_crystal,distance=..2]
+execute in polarnight positioned -11 67 -11 as @e[type=minecraft:end_crystal,distance=..2] run data merge entity @s {Invulnerable:0b}
+execute in polarnight positioned -11 67 -11 run kill @e[type=minecraft:end_crystal,distance=..2]
+execute if score #crying_reset_forceload_added tmp matches 1 in polarnight run forceload remove -11 -11 11 11
 function polarnight/structure/vault/off
 execute in minecraft:frozen run setblock 8 67 36 minecraft:obsidian
 execute in minecraft:dried run setblock 0 63 0 minecraft:sandstone
@@ -141,6 +161,27 @@ scoreboard players set #diamond_regen_lvl upgrade 0
 scoreboard players set #emerald_regen_lvl upgrade 0
 scoreboard players set #lapis_regen_lvl upgrade 0
 scoreboard players set #tool upgrade 0
+
+# 천공의 제단 자원 도감 발견 이력 초기화
+scoreboard players set #seen_wood var 0
+scoreboard players set #seen_stone var 0
+scoreboard players set #seen_coal var 0
+scoreboard players set #seen_copper var 0
+scoreboard players set #seen_iron var 0
+scoreboard players set #seen_gold var 0
+scoreboard players set #seen_diamond var 0
+scoreboard players set #seen_emerald var 0
+scoreboard players set #seen_lapis var 0
+scoreboard players set #seen_heat var 0
+scoreboard players set #seen_cold var 0
+scoreboard players set #seen_yellow var 0
+scoreboard players set #seen_blue var 0
+scoreboard players set #seen_information var 0
+scoreboard players set #seen_time var 0
+scoreboard players set #seen_world_eye var 0
+scoreboard players set #seen_obsidian var 0
+scoreboard players set #alchemy_gem_cooldown var 0
+scoreboard players set #alchemy_metal_cooldown var 0
 
 # 시대 발전과제 자원 수급량/상점 할인 보상 초기화
 function resource/advancement_reward/wood/disable
@@ -232,6 +273,8 @@ scoreboard players set #gold_second_lvl upgrade 0
 scoreboard players set #diamond_second_lvl upgrade 0
 scoreboard players set #special_second_lvl upgrade 0
 scoreboard players set #get_second_lvl upgrade 0
+scoreboard players set #factory_recycle_level upgrade 0
+scoreboard players set #factory_energy_level upgrade 0
 
 # 10. 아이템 드롭 방지
 gamerule block_drops false

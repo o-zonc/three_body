@@ -20,7 +20,7 @@ function quantum/give_broken {amount:170}
 # 합계 22. 테스트 함수이므로 휴대 한도와 무관하게 직접 지급한다.
 function meta/time/give_item {amount:22}
 
-# 미래 시대 진입에 필요한 실제 흑요석 1개
-give @s minecraft:obsidian 1
+# 미래 시대 진입에 필요한 커스텀 흑요석 1개
+function meta/obsidian/give_item {amount:1}
 
 tellraw @s ["",{"text":"[테스트] ","color":"dark_gray","bold":false},{"text":"현대 → 시간축 개방 진행용 자원을 지급했습니다.","color":"gray","bold":false}]

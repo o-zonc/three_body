@@ -1,3 +1,3 @@
 execute in frozen run summon firework_rocket -20 68 26 {LifeTime:30,FireworksItem:{id:"firework_rocket",count:1,components:{"minecraft:fireworks":{flight_duration:3,explosions:[{shape:"burst",colors:[65535,65535,65535,8435517],fade_colors:[16777215]},{shape:"star",colors:[65535,65535,65535,16777215],fade_colors:[16777215]},{shape:"large_ball",colors:[65535,65535,8435517,16777215]},{shape:"burst",colors:[65535,65535,16777215],fade_colors:[65535,8435517]}]}}}}
 
-execute in frozen run fill -19 67 34 -21 67 34 air
+function frozen/structure/maze/open

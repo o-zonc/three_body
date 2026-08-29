@@ -39,8 +39,12 @@ execute if score #dawn_reactor_info_bonus tmp matches 1.. run function meta/info
 execute if score #dawn_reactor_time_bonus tmp matches 1.. run function meta/time/give_item with storage data tmp.dawn_reactor_time_bonus
 
 function meta/sync
+# 반응 결과가 휴대 한도를 넘으면 초과분을 보관소에 명시적으로 예치한다.
+function reckoning/deposit_reactor_overflow
+# 정산 당시 기록한 시설·발전 단계는 최종 보관량이 확정된 이 시점에 복원한다.
+execute if score #GLOBAL reckoning_pending matches 1.. run function reckoning/finalize
 function item/give/reactor
 playsound entity.player.levelup master @s ~ ~ ~ 1 1.2
 function util/blank
-tellraw @s ["",{text:"  [ 시공간 반응 ]",color:"#F971BE",bold:true},{text:"\n\n  리액터가 정보와 시간을 반응시켜 시공간의 균열을 만들어 냈습니다.",color:"gray"},{text:"\n  정보 +",color:"light_purple"},{score:{name:"#dawn_reactor_info_bonus",objective:"tmp"},color:"light_purple"},{text:" / 시간 +",color:"dark_aqua"},{score:{name:"#dawn_reactor_time_bonus",objective:"tmp"},color:"dark_aqua"},{text:"\n"}]
+tellraw @s ["",{text:"  [ 시공간 반응 ]",color:"#F971BE",bold:true},{text:"\n\n  리액터가 정보와 시간을 반응시켜 시공간의 균열을 만들어 냈습니다.",color:"gray"},{text:"\n  정보 +",color:"light_purple"},{score:{name:"#dawn_reactor_info_bonus",objective:"tmp"},color:"light_purple"},{text:" / 시간 +",color:"dark_aqua"},{score:{name:"#dawn_reactor_time_bonus",objective:"tmp"},color:"dark_aqua"},{text:"\n  휴대 한도 초과분: 정보 ",color:"dark_gray"},{score:{name:"#reactor_information_deposit",objective:"tmp"},color:"light_purple"},{text:" / 시간 ",color:"dark_gray"},{score:{name:"#reactor_time_deposit",objective:"tmp"},color:"dark_aqua"},{text:" (보관소 예치)",color:"dark_gray"},{text:"\n"}]
 return 1

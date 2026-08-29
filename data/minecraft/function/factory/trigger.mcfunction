@@ -23,6 +23,8 @@ execute if score @s factory_trigger matches 1720 run function factory/toggle {id
 execute if score @s factory_trigger matches 1721 run function factory/toggle_all
 execute if score @s factory_trigger matches 1722 run function factory/purchase {id:"heat",unlock:"heat",name:"열기",color:"red",purchase:1722,toggle:1723}
 execute if score @s factory_trigger matches 1723 run function factory/toggle {id:"heat",unlock:"heat",name:"열기",color:"red",purchase:1722,toggle:1723}
+execute if score @s factory_trigger matches 1731 run function factory/recycle/purchase
+execute if score @s factory_trigger matches 1732 run function factory/energy/purchase
 
 # 처리한 플레이어만 초기화하고 다음 /trigger 입력을 허용합니다.
 scoreboard players reset @s factory_trigger

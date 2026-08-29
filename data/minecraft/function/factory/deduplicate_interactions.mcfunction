@@ -22,6 +22,8 @@ execute in overworld run function factory/deduplicate_role {role:"cold"}
 execute in overworld run function factory/deduplicate_role {role:"heat"}
 execute in overworld run function factory/deduplicate_role {role:"accelerator"}
 execute in overworld run function factory/deduplicate_role {role:"shield"}
+execute in overworld run function factory/deduplicate_role {role:"recycle"}
+execute in overworld run function factory/deduplicate_role {role:"energy"}
 
 execute in overworld run tag @e[type=interaction,tag=factory,tag=factory_dedup_keep] remove factory_dedup_keep
 execute in overworld store result score #factory_dedup_after tmp run execute if entity @e[type=interaction,tag=factory,tag=!shop,x=-36,y=-64,z=0,dx=44,dy=32,dz=40]

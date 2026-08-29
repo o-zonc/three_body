@@ -3,7 +3,6 @@
 scoreboard objectives add var dummy
 scoreboard objectives add tmp dummy
 
-scoreboard objectives add advancement dummy
 scoreboard objectives add civilization_age dummy
 scoreboard objectives add alchemy_workshop dummy
 
@@ -95,6 +94,7 @@ execute unless score #wood_advancement_reward var = #wood_advancement_reward var
 execute unless score #coal_advancement_reward var = #coal_advancement_reward var run scoreboard players set #coal_advancement_reward var 0
 execute unless score #copper_advancement_reward var = #copper_advancement_reward var run scoreboard players set #copper_advancement_reward var 0
 execute unless score #iron_advancement_reward var = #iron_advancement_reward var run scoreboard players set #iron_advancement_reward var 0
+execute if entity @a[advancements={0_overworld/22_particle_accelerator=true}] unless score #iron_advancement_reward var matches 2.. run scoreboard players set #iron_advancement_reward var 2
 execute unless score #lapis_advancement_reward var = #lapis_advancement_reward var run scoreboard players set #lapis_advancement_reward var 0
 execute unless score #shop_cost_advancement_reward var = #shop_cost_advancement_reward var run scoreboard players set #shop_cost_advancement_reward var 0
 execute unless score #dried_shop_discount_stage var = #dried_shop_discount_stage var run scoreboard players set #dried_shop_discount_stage var 0
@@ -124,6 +124,8 @@ execute unless score #gold_second_lvl upgrade = #gold_second_lvl upgrade run sco
 execute unless score #diamond_second_lvl upgrade = #diamond_second_lvl upgrade run scoreboard players set #diamond_second_lvl upgrade 0
 execute unless score #special_second_lvl upgrade = #special_second_lvl upgrade run scoreboard players set #special_second_lvl upgrade 0
 execute unless score #get_second_lvl upgrade = #get_second_lvl upgrade run scoreboard players set #get_second_lvl upgrade 0
+execute unless score #factory_recycle_level upgrade = #factory_recycle_level upgrade run scoreboard players set #factory_recycle_level upgrade 0
+execute unless score #factory_energy_level upgrade = #factory_energy_level upgrade run scoreboard players set #factory_energy_level upgrade 0
 execute unless score #GLOBAL time_machine_level = #GLOBAL time_machine_level run scoreboard players set #GLOBAL time_machine_level 0
 execute if score #GLOBAL time_machine_level matches ..-1 run scoreboard players set #GLOBAL time_machine_level 0
 execute if score #GLOBAL time_machine_level matches 5.. run scoreboard players set #GLOBAL time_machine_level 4
@@ -148,6 +150,8 @@ execute unless score #dried_relic_timer generate = #dried_relic_timer generate r
 execute unless score #information_auto_withdraw meta = #information_auto_withdraw meta run scoreboard players set #information_auto_withdraw meta 0
 execute unless score #time_auto_withdraw meta = #time_auto_withdraw meta run scoreboard players set #time_auto_withdraw meta 0
 execute unless score #GLOBAL reckoning_ready = #GLOBAL reckoning_ready run scoreboard players set #GLOBAL reckoning_ready 0
+execute unless score #GLOBAL reckoning_pending = #GLOBAL reckoning_pending run scoreboard players set #GLOBAL reckoning_pending 0
+execute unless score #GLOBAL reckoning_count = #GLOBAL reckoning_count run scoreboard players set #GLOBAL reckoning_count 0
 execute unless score #GLOBAL dawn_bonus_shop = #GLOBAL dawn_bonus_shop run scoreboard players set #GLOBAL dawn_bonus_shop 0
 function factory/init_state
 scoreboard players enable @a factory_trigger

@@ -3,6 +3,7 @@
 execute unless score #GLOBAL current_dim matches 3 run return 0
 execute unless score #GLOBAL reckoning_ready matches 1.. run title @s actionbar {text:"문명 정산이 끝나 공허의 구멍이 닫혔습니다.",color:"dark_gray",italic:true}
 execute unless score #GLOBAL reckoning_ready matches 1.. run return 0
+execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 
 execute unless score #hole_level upgrade matches 0.. run scoreboard players set #hole_level upgrade 0
 execute if score #hole_level upgrade matches 3.. run scoreboard players set #hole_level upgrade 2
@@ -36,4 +37,4 @@ execute if score #hole_level upgrade matches 0..1 run data modify storage data t
 
 execute at @s run playsound minecraft:block.respawn_anchor.ambient master @s ~ ~ ~ 0.35 0.7
 function util/blank
-tellraw @s ["",{text:"  [ 공허의 균열 ]",color:"dark_purple",bold:true},{text:"\n\n  틈 너머에서 이 세계에 존재하지 않는 물질이 응답합니다.",color:"gray"},{text:"\n\n  ",color:"gray"},{text:"흑요석 1개는 구매·업그레이드 비용을 한 번 대신합니다.",color:"dark_gray",italic:true},{text:"\n\n  균열 단계: ",color:"gray"},{score:{name:"#hole_level_tmp",objective:"tmp"},color:"white"},{text:" / 2",color:"gray"},{text:"\n  이번 문명 수급: ",color:"gray"},{score:{name:"#hole_claims",objective:"var"},color:"white"},{text:" / ",color:"gray"},{score:{name:"#hole_max_claims",objective:"tmp"},color:"white"},{text:"\n  보유 흑요석: ",color:"gray"},{score:{name:"#obsidian_wallet",objective:"tmp"},color:"dark_gray",shadow_color:-8388480},{text:"개",color:"dark_gray",shadow_color:-8388480},{text:"\n\n  "},{storage:"data",nbt:"tmp.hole.claim_button",interpret:true},{text:"   "},{storage:"data",nbt:"tmp.hole.upgrade_button",interpret:true},{text:"\n"}]
+tellraw @s ["",{text:"  [ 공허의 균열 ]",color:"dark_purple",bold:true},{text:"\n\n  틈 너머에서 이 세계에 존재하지 않는 물질이 응답합니다.",color:"gray"},{text:"\n\n  ",color:"gray"},{text:"흑요석 1개는 구매·업그레이드에서 부족한 비용 항목 하나를 대신합니다.",color:"dark_gray",italic:true},{text:"\n\n  균열 단계: ",color:"gray"},{score:{name:"#hole_level_tmp",objective:"tmp"},color:"white"},{text:" / 2",color:"gray"},{text:"\n  이번 문명 수급: ",color:"gray"},{score:{name:"#hole_claims",objective:"var"},color:"white"},{text:" / ",color:"gray"},{score:{name:"#hole_max_claims",objective:"tmp"},color:"white"},{text:"\n  보유 흑요석: ",color:"gray"},{score:{name:"#obsidian_wallet",objective:"tmp"},color:"dark_gray",shadow_color:-8388480},{text:"개",color:"dark_gray",shadow_color:-8388480},{text:"\n\n  "},{storage:"data",nbt:"tmp.hole.claim_button",interpret:true},{text:"   "},{storage:"data",nbt:"tmp.hole.upgrade_button",interpret:true},{text:"\n"}]

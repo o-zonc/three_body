@@ -1,6 +1,8 @@
 # 여명 차원 자원 증폭기 UI
 # Macro args: id, name, color, trigger
 
+execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
+
 # 기존 월드에서는 새 meta 점수가 없을 수 있으므로 최초 접근 시 잠김(0)으로 생성합니다.
 $execute unless score #dawn_$(id)_amp meta matches 0.. run scoreboard players set #dawn_$(id)_amp meta 0
 

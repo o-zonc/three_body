@@ -18,6 +18,10 @@ data modify entity @e[type=minecraft:item,tag=creating_resource_tool,sort=neares
 execute if score #tool upgrade matches 6.. unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run data remove entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:can_break".blocks[-1]
 execute if score #tool upgrade matches 6.. unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run data remove entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:can_break".blocks[-1]
 
+# 외계 자원 설명이 있는 Lv.12 이상 도구에서는 해금 전까지 lore의 마지막 항목도 숨긴다.
+# 중입자 충돌 발전과제 달성 시 tool/refresh_all이 원본 lore를 다시 복사하므로 설명이 자동으로 복원된다.
+execute if score #tool upgrade matches 12.. unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run data remove entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:lore"[-1]
+
 # 시스템 도구 식별자와 레벨을 아이템에 기록한다.
 data modify entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:custom_data" set value {tool:{}}
 data modify entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:custom_data".tool.lvl set from storage data tmp.tool.now.lvl

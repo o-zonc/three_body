@@ -33,6 +33,12 @@ execute if score @s shop_trigger matches 1515 run function shop/alchemy/jewel/au
 # 마법 연구소 (152X)
 execute if score @s shop_trigger matches 1521 run function shop/alchemy/lab/purchase
 
+# 연금술 자원 변환기 (153X)
+execute if score @s shop_trigger matches 1531 run function shop/alchemy/transmutation/purchase {source:"stone",source_name:"돌",source_amount:2000,target:"emerald",target_name:"에메랄드",target_color:"green",cooldown:"#alchemy_gem_cooldown"}
+execute if score @s shop_trigger matches 1532 run function shop/alchemy/transmutation/purchase {source:"stone",source_name:"돌",source_amount:2000,target:"lapis",target_name:"청금석",target_color:"blue",cooldown:"#alchemy_gem_cooldown"}
+execute if score @s shop_trigger matches 1533 run function shop/alchemy/transmutation/purchase {source:"iron",source_name:"철",source_amount:1000,target:"gold",target_name:"금",target_color:"gold",cooldown:"#alchemy_metal_cooldown"}
+execute if score @s shop_trigger matches 1534 run function shop/alchemy/transmutation/purchase {source:"iron",source_name:"철",source_amount:1000,target:"diamond",target_name:"다이아몬드",target_color:"aqua",cooldown:"#alchemy_metal_cooldown"}
+
 # 관측소 (16XX)
 execute if score @s shop_trigger matches 1601 run function shop/observatory/purchase
 
@@ -90,7 +96,8 @@ execute if score @s shop_trigger matches 1902 run function frozen/interaction/pu
 execute if score @s shop_trigger matches 1903 run function frozen/interaction/purchase_maze
 
 # 메마른 차원 시설 / 난세기 대책 물약 / 발굴 우선 탐색 (20XX)
-execute if score @s shop_trigger matches 2000..2001 run function dried/relic/upgrade
+execute if score @s shop_trigger matches 2000 run function dried/relic/unlock
+execute if score @s shop_trigger matches 2001 run function dried/relic/upgrade
 execute if score @s shop_trigger matches 2002 run function frozen/interaction/purchase_warmth_potion
 execute if score @s shop_trigger matches 2003 run function dried/interaction/purchase_cooling_potion
 execute if score @s shop_trigger matches 2004 run function dried/probability/select {mode:1,name:"오버월드 집중",color:"green"}

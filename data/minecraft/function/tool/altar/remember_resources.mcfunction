@@ -1,0 +1,22 @@
+# 한 번 확인된 자원은 문명 정산 뒤 현재 unlock 값이 사라져도 도감에 남긴다.
+execute if score #wood unlock matches 1 run scoreboard players set #seen_wood var 1
+execute if score #stone unlock matches 1 run scoreboard players set #seen_stone var 1
+execute if score #coal unlock matches 1 run scoreboard players set #seen_coal var 1
+execute if score #copper unlock matches 1 run scoreboard players set #seen_copper var 1
+execute if score #iron unlock matches 1 run scoreboard players set #seen_iron var 1
+execute if score #gold unlock matches 1 run scoreboard players set #seen_gold var 1
+execute if score #diamond unlock matches 1 run scoreboard players set #seen_diamond var 1
+execute if score #emerald unlock matches 1 run scoreboard players set #seen_emerald var 1
+execute if score #lapis unlock matches 1 run scoreboard players set #seen_lapis var 1
+execute if score #heat unlock matches 1 run scoreboard players set #seen_heat var 1
+execute if score #cold unlock matches 1 run scoreboard players set #seen_cold var 1
+execute if score #yellow unlock matches 1 run scoreboard players set #seen_yellow var 1
+execute if score #blue unlock matches 1 run scoreboard players set #seen_blue var 1
+execute if score #world_eye unlock matches 1 run scoreboard players set #seen_world_eye var 1
+
+# 별도 unlock 점수가 없는 인벤토리형 메타 자원은 원장에 한 번이라도 잡히면 발견 처리한다.
+execute if score #information_wallet tmp matches 1.. run scoreboard players set #seen_information var 1
+execute if score #information_bank meta matches 1.. run scoreboard players set #seen_information var 1
+execute if score #time_wallet tmp matches 1.. run scoreboard players set #seen_time var 1
+execute if score #time_bank meta matches 1.. run scoreboard players set #seen_time var 1
+execute if score #obsidian_wallet tmp matches 1.. run scoreboard players set #seen_obsidian var 1

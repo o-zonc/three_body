@@ -6,6 +6,8 @@ function dawn/amplifier/prepare_resource_ui {dim:"overworld",final:100,final_mul
 function resource/upgrade/prepare_ui {id:"iron",trigger:1113}
 scoreboard players set #gain_advancement_threshold tmp 2
 function resource/ui/prepare_standard_gain {id:"iron",color:"green",shop_color:"white",advancement:"iron",advancement_multiplier:2,advancement_label:"1.5"}
+execute if score #iron_advancement_reward var matches 2.. unless score #overworld_advancement_reward_disabled var matches 1 run data modify storage data tmp.resource_gain_hover.iron[{text:"1.5"}].text set value "4"
+execute if score #iron_advancement_reward var matches 2.. unless score #overworld_advancement_reward_disabled var matches 1 run data modify storage data tmp.advancement_reward_ui.iron[3].hover_event.value set from storage data tmp.resource_gain_hover.iron
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
