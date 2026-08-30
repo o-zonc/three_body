@@ -19,5 +19,5 @@ execute if score #chaos_end_success tmp matches 1 run time rate 1
 execute if score #chaos_end_success tmp matches 1 run effect clear @a minecraft:mining_fatigue
 execute if score #chaos_end_success tmp matches 1 run tag @a remove frozen_chaos_protected
 execute if score #chaos_end_success tmp matches 1 run tag @a remove dried_chaos_protected
-execute if score #chaos_end_success tmp matches 1 run tellraw @a [{text:"[현재 세계] ",color:"light_purple"},{text:"난세기가 강제로 종료되었습니다.",color:"green"}]
+execute if score #chaos_end_success tmp matches 1 run tellraw @a [{text:"[알림] ",color:"light_purple"},{text:"난세기가 강제로 종료되었습니다.",color:"green"}]
 execute unless score #chaos_end_success tmp matches 1 run tellraw @s {text:"지금은 난세기가 아닌걸요?",color:"gray"}

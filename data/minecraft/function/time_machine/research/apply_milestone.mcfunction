@@ -15,3 +15,8 @@ execute if score #time_machine_yellow upgrade = #time_machine_blue upgrade run t
 execute if score #time_machine_path_yellow upgrade matches 3.. unless entity @s[advancements={0_overworld/25_yellow_time_machine=true}] run advancement grant @s only 0_overworld/25_yellow_time_machine
 execute if score #time_machine_path_blue upgrade matches 3.. unless entity @s[advancements={0_overworld/25_blue_time_machine=true}] run advancement grant @s only 0_overworld/25_blue_time_machine
 execute if score #time_machine_path_green upgrade matches 3.. unless entity @s[advancements={0_overworld/25_green_time_machine=true}] run advancement grant @s only 0_overworld/25_green_time_machine
+
+# 세 발전 트리 중 하나를 완성한 플레이어는 엔딩을 한 번만 볼 수 있습니다.
+execute if score #time_machine_path_yellow upgrade matches 3.. run function story/ending/start
+execute if score #time_machine_path_blue upgrade matches 3.. run function story/ending/start
+execute if score #time_machine_path_green upgrade matches 3.. run function story/ending/start

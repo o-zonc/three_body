@@ -96,6 +96,11 @@ execute unless score #catalyst_cooldown var = #catalyst_cooldown var run scorebo
 execute unless score #catalyst_timer var = #catalyst_timer var run scoreboard players set #catalyst_timer var 0
 execute unless score #catalyst_level var = #catalyst_level var run scoreboard players set #catalyst_level var 0
 execute unless score #catalyst_multiplier var = #catalyst_multiplier var run scoreboard players set #catalyst_multiplier var 1
+# 우는 흑요석의 네 수집 플래그는 0(미수집) 또는 1(수집)만 사용합니다.
+execute unless score #crying_overworld var = #crying_overworld var run scoreboard players set #crying_overworld var 0
+execute unless score #crying_dried var = #crying_dried var run scoreboard players set #crying_dried var 0
+execute unless score #crying_frozen var = #crying_frozen var run scoreboard players set #crying_frozen var 0
+execute unless score #crying_dawn var = #crying_dawn var run scoreboard players set #crying_dawn var 0
 execute unless score #overworld_advancement_reward_disabled var = #overworld_advancement_reward_disabled var run scoreboard players set #overworld_advancement_reward_disabled var 0
 execute unless score #nether_advancement_reward_disabled var = #nether_advancement_reward_disabled var run scoreboard players set #nether_advancement_reward_disabled var 0
 execute unless score #wood_advancement_reward var = #wood_advancement_reward var run scoreboard players set #wood_advancement_reward var 0

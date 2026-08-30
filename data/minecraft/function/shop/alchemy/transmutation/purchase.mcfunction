@@ -22,6 +22,6 @@ scoreboard players set #material_add_value tmp 1
 $function resource/add {id:"$(target)"}
 $scoreboard players set $(cooldown) var 6000
 
-execute at @s run playsound block.brewing_stand.brew master @s ~ ~ ~ 1 0.8
+execute as @a at @s run playsound block.brewing_stand.brew master @s ~ ~ ~ 1 0.8
 execute at @s run playsound block.amethyst_block.chime master @s ~ ~ ~ 0.8 1.4
 $title @s actionbar [{text:"",italic:false},{text:"$(source_name) $(source_amount)개를 ",color:"gray"},{text:"$(target_name) 1개",color:"$(target_color)"},{text:"로 연성했습니다.",color:"gray"}]

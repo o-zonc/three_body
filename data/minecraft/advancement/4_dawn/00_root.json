@@ -1,9 +1,9 @@
 {
+	"parent": "3_polarnight/04_twilight",
 	"display": {
 		"icon": "sea_lantern",
 		"title": "여명",
 		"description": "새벽이 밝았습니다.\n\n§7여명의 빛으로 뒤덮인 세상이 찾아왔습니다.",
-		"background": "block/moss_block",
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true,

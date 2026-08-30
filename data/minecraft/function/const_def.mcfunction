@@ -193,7 +193,7 @@ data merge storage data {\
             "§6* §7돌§7을 파괴하기까지 §f3§7초 소요됨",\
             "§6* §8석탄§7을 파괴하기까지 §f6§7초 소요됨",\
             "§6* §6구리§7를 파괴하기까지 §f8§7초 소요됨",\
-            "§6* §d특수 자원§7을 파괴하기까지 §f6§7초 소요됨",\
+            "§6* §d특수 자원§7을 파괴하기까지 §f5§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
@@ -211,8 +211,8 @@ data merge storage data {\
               { blocks: "stone", correct_for_drops: 1b, speed: 0.75f },\
               { blocks: "coal_ore", correct_for_drops: 1b, speed: 0.75f },\
               { blocks: "copper_ore", correct_for_drops: 1b, speed: 0.5625f },\
-              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.125f },\
-              { blocks: "blue_ice", correct_for_drops: 1b, speed: 0.7f },\
+              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.15625f },\
+              { blocks: "blue_ice", correct_for_drops: 1b, speed: 0.875f },\
             ]\
           },\
         }\
@@ -230,7 +230,7 @@ data merge storage data {\
             "§6* §7돌§7을 파괴하기까지 §f2§7초 소요됨",\
             "§6* §8석탄§7을 파괴하기까지 §f4§7초 소요됨",\
             "§6* §6구리§7를 파괴하기까지 §f7§7초 소요됨",\
-            "§6* §d특수 자원§7을 파괴하기까지 §f5§7초 소요됨",\
+            "§6* §d특수 자원§7을 파괴하기까지 §f4§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
@@ -248,8 +248,8 @@ data merge storage data {\
               { blocks: "stone", correct_for_drops: 1b, speed: 1.125f },\
               { blocks: "coal_ore", correct_for_drops: 1b, speed: 1.125f },\
               { blocks: "copper_ore", correct_for_drops: 1b, speed: 0.642857f },\
-              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.15f },\
-              { blocks: "blue_ice", correct_for_drops: 1b, speed: 0.84f },\
+              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.1875f },\
+              { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.05f },\
             ]\
           },\
         }\
@@ -267,9 +267,10 @@ data merge storage data {\
             "§6* §7돌§7을 파괴하기까지 §f2§7초 소요됨",\
             "§6* §8석탄§7을 파괴하기까지 §f3§7초 소요됨",\
             "§6* §6구리§7를 파괴하기까지 §f5§7초 소요됨",\
-            ["§6* ", "§f철", "§7, ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f8§7초 소요됨"],\
+            "§6* §f철§7을 파괴하기까지 §f8§7초 소요됨",\
+            ["§6* ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f6.4§7초 소요됨"],\
             "§6* §a에메랄드§7를 파괴하기까지 §f8§7초 소요됨",\
-            "§6* §d특수 자원§7을 파괴하기까지 §f4§7초 소요됨",\
+            "§6* §d특수 자원§7을 파괴하기까지 §f3.2§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
@@ -293,10 +294,10 @@ data merge storage data {\
               { blocks: "copper_ore", correct_for_drops: 1b, speed: 0.9f },\
               { blocks: "iron_ore", correct_for_drops: 1b, speed: 0.5625f },\
               { blocks: "emerald_ore", correct_for_drops: 1b, speed: 0.5625f },\
-              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 0.9375f },\
-              { blocks: "diamond_block", correct_for_drops: 1b, speed: 0.9375f },\
-              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.1875f },\
-              { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.05f },\
+              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 1.171875f },\
+              { blocks: "diamond_block", correct_for_drops: 1b, speed: 1.171875f },\
+              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.234375f },\
+              { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.3125f },\
             ]\
           },\
         }\
@@ -313,11 +314,12 @@ data merge storage data {\
             "§6* §e나무§7 즉시 파괴 가능",\
             "§6* §7돌§7을 파괴하기까지 §f1§7초 소요됨",\
             "§6* §8석탄§7을 파괴하기까지 §f2§7초 소요됨",\
-            ["§6* ", "§6구리", "§7, ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f4§7초 소요됨"],\
+            "§6* §6구리§7를 파괴하기까지 §f4§7초 소요됨",\
+            ["§6* ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f3.2§7초 소요됨"],\
             "§6* §f철§7을 파괴하기까지 §f7§7초 소요됨",\
             "§6* §a에메랄드§7를 파괴하기까지 §f7§7초 소요됨",\
             "§6* §9청금석§7을 파괴하기까지 §f8§7초 소요됨",\
-            "§6* §d특수 자원§7을 파괴하기까지 §f3§7초 소요됨",\
+            "§6* §d특수 자원§7을 파괴하기까지 §f2.4§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
@@ -343,10 +345,10 @@ data merge storage data {\
               { blocks: "iron_ore", correct_for_drops: 1b, speed: 0.642857f },\
               { blocks: "emerald_ore", correct_for_drops: 1b, speed: 0.642857f },\
               { blocks: "lapis_ore", correct_for_drops: 1b, speed: 0.5625f },\
-              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 1.875f },\
-              { blocks: "diamond_block", correct_for_drops: 1b, speed: 1.875f },\
-              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.25f },\
-              { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.4f },\
+              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 2.34375f },\
+              { blocks: "diamond_block", correct_for_drops: 1b, speed: 2.34375f },\
+              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.3125f },\
+              { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.75f },\
             ]\
           },\
         }\
@@ -365,10 +367,10 @@ data merge storage data {\
             "§6* §8석탄§7을 파괴하기까지 §f2§7초 소요됨",\
             "§6* §6구리§7를 파괴하기까지 §f3§7초 소요됨",\
             "§6* §f철§7을 파괴하기까지 §f6§7초 소요됨",\
-            ["§6* ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f4§7초 소요됨"],\
+            ["§6* ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f3.2§7초 소요됨"],\
             "§6* §a에메랄드§7를 파괴하기까지 §f6§7초 소요됨",\
             "§6* §9청금석§7을 파괴하기까지 §f7§7초 소요됨",\
-            "§6* §d특수 자원§7을 파괴하기까지 §f3§7초 소요됨",\
+            "§6* §d특수 자원§7을 파괴하기까지 §f2.4§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
@@ -394,10 +396,10 @@ data merge storage data {\
               { blocks: "iron_ore", correct_for_drops: 1b, speed: 0.75f },\
               { blocks: "emerald_ore", correct_for_drops: 1b, speed: 0.75f },\
               { blocks: "lapis_ore", correct_for_drops: 1b, speed: 0.642857f },\
-              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 1.875f },\
-              { blocks: "diamond_block", correct_for_drops: 1b, speed: 1.875f },\
-              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.25f },\
-              { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.4f },\
+              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 2.34375f },\
+              { blocks: "diamond_block", correct_for_drops: 1b, speed: 2.34375f },\
+              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.3125f },\
+              { blocks: "blue_ice", correct_for_drops: 1b, speed: 1.75f },\
             ]\
           },\
         }\
@@ -414,11 +416,12 @@ data merge storage data {\
             "§6* §e나무§7, §7돌§7 즉시 파괴 가능",\
             "§6* §8석탄§7을 파괴하기까지 §f1§7초 소요됨",\
             "§6* §6구리§7를 파괴하기까지 §f2§7초 소요됨",\
-            ["§6* ", "§f철", "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f4§7초 소요됨"],\
-            ["§6* ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7을 파괴하기까지 §f3§7초 소요됨"],\
+            "§6* §f철§7을 파괴하기까지 §f4§7초 소요됨",\
+            ["§6* ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7을 파괴하기까지 §f2.4§7초 소요됨"],\
+            ["§6* ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f3.2§7초 소요됨"],\
             "§6* §a에메랄드§7를 파괴하기까지 §f4§7초 소요됨",\
             "§6* §9청금석§7을 파괴하기까지 §f6§7초 소요됨",\
-            "§6* §d특수 자원§7을 파괴하기까지 §f2§7초 소요됨",\
+            "§6* §d특수 자원§7을 파괴하기까지 §f1.6§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
@@ -444,10 +447,10 @@ data merge storage data {\
               { blocks: "iron_ore", correct_for_drops: 1b, speed: 1.125f },\
               { blocks: "emerald_ore", correct_for_drops: 1b, speed: 1.125f },\
               { blocks: "lapis_ore", correct_for_drops: 1b, speed: 0.75f },\
-              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 2.5f },\
-              { blocks: "diamond_block", correct_for_drops: 1b, speed: 1.875f },\
-              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.375f },\
-              { blocks: "blue_ice", correct_for_drops: 1b, speed: 2.1f },\
+              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 3.125f },\
+              { blocks: "diamond_block", correct_for_drops: 1b, speed: 2.34375f },\
+              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.46875f },\
+              { blocks: "blue_ice", correct_for_drops: 1b, speed: 2.625f },\
             ]\
           },\
         }\
@@ -463,11 +466,13 @@ data merge storage data {\
             "",\
             "§6* §e나무§7, §7돌§7 즉시 파괴 가능",\
             "§6* §8석탄§7을 파괴하기까지 §f1§7초 소요됨",\
-            ["§6* ", "§6구리", "§7, ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7을 파괴하기까지 §f2§7초 소요됨"],\
-            ["§6* ", "§f철", "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f3§7초 소요됨"],\
+            "§6* §6구리§7를 파괴하기까지 §f2§7초 소요됨",\
+            ["§6* ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7을 파괴하기까지 §f1.6§7초 소요됨"],\
+            "§6* §f철§7을 파괴하기까지 §f3§7초 소요됨",\
+            ["§6* ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f2.4§7초 소요됨"],\
             "§6* §a에메랄드§7를 파괴하기까지 §f3§7초 소요됨",\
             "§6* §9청금석§7을 파괴하기까지 §f4§7초 소요됨",\
-            "§6* §d특수 자원§7을 파괴하기까지 §f2§7초 소요됨",\
+            "§6* §d특수 자원§7을 파괴하기까지 §f1.6§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
@@ -493,10 +498,10 @@ data merge storage data {\
               { blocks: "iron_ore", correct_for_drops: 1b, speed: 1.5f },\
               { blocks: "emerald_ore", correct_for_drops: 1b, speed: 1.5f },\
               { blocks: "lapis_ore", correct_for_drops: 1b, speed: 1.125f },\
-              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 3.75f },\
-              { blocks: "diamond_block", correct_for_drops: 1b, speed: 2.5f },\
-              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.375f },\
-              { blocks: "blue_ice", correct_for_drops: 1b, speed: 2.1f },\
+              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 4.6875f },\
+              { blocks: "diamond_block", correct_for_drops: 1b, speed: 3.125f },\
+              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.46875f },\
+              { blocks: "blue_ice", correct_for_drops: 1b, speed: 2.625f },\
             ]\
           },\
         }\
@@ -512,10 +517,11 @@ data merge storage data {\
             "",\
             "§6* §e나무§7, §7돌§7, §8석탄§7 즉시 파괴 가능",\
             "§6* §6구리§7를 파괴하기까지 §f1§7초 소요됨",\
-            ["§6* ", "§f철", "§7, ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f2§7초 소요됨"],\
+            "§6* §f철§7을 파괴하기까지 §f2§7초 소요됨",\
+            ["§6* ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f1.6§7초 소요됨"],\
             "§6* §a에메랄드§7를 파괴하기까지 §f2§7초 소요됨",\
             "§6* §9청금석§7을 파괴하기까지 §f3§7초 소요됨",\
-            "§6* §d특수 자원§7을 파괴하기까지 §f1§7초 소요됨",\
+            "§6* §d특수 자원§7을 파괴하기까지 §f0.8§7초 소요됨",\
           ],\
           can_break: {\
             blocks: [\
@@ -541,10 +547,10 @@ data merge storage data {\
               { blocks: "iron_ore", correct_for_drops: 1b, speed: 2.25f },\
               { blocks: "emerald_ore", correct_for_drops: 1b, speed: 2.25f },\
               { blocks: "lapis_ore", correct_for_drops: 1b, speed: 1.5f },\
-              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 3.75f },\
-              { blocks: "diamond_block", correct_for_drops: 1b, speed: 3.75f },\
-              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.75f },\
-              { blocks: "blue_ice", correct_for_drops: 1b, speed: 4.2f },\
+              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 4.6875f },\
+              { blocks: "diamond_block", correct_for_drops: 1b, speed: 4.6875f },\
+              { blocks: "magma_block", correct_for_drops: 1b, speed: 0.9375f },\
+              { blocks: "blue_ice", correct_for_drops: 1b, speed: 5.25f },\
             ]\
           },\
         }\
@@ -559,7 +565,8 @@ data merge storage data {\
             "§4도구 - 파괴",\
             "",\
             "§6* §e나무§7, §7돌§7, §8석탄§7, §6구리§7 즉시 파괴 가능",\
-            ["§6* ", "§f철", "§7, ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f1§7초 소요됨"],\
+            "§6* §f철§7을 파괴하기까지 §f1§7초 소요됨",\
+            ["§6* ", { text: "금", color: "gold", shadow_color: -7710208, italic:false }, "§7, ", { text: "다이아몬드", color: "aqua", shadow_color: -16741750, italic:false }, "§7를 파괴하기까지 §f0.8§7초 소요됨"],\
             {text:"도구가 보석을 채굴하기에는 섬세하지 못한 것 같다...",color:"dark_gray",italic:true},\
             "§6* §8외계 자원§7을 파괴하기까지 §f8§7초 소요됨",\
           ],\
@@ -583,8 +590,8 @@ data merge storage data {\
               { blocks: "coal_ore", correct_for_drops: 1b, speed: 90.0f },\
               { blocks: "copper_ore", correct_for_drops: 1b, speed: 90.0f },\
               { blocks: "iron_ore", correct_for_drops: 1b, speed: 4.5f },\
-              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 7.5f },\
-              { blocks: "diamond_block", correct_for_drops: 1b, speed: 7.5f },\
+              { blocks: "raw_gold_block", correct_for_drops: 1b, speed: 9.375f },\
+              { blocks: "diamond_block", correct_for_drops: 1b, speed: 9.375f },\
               { blocks: "yellow_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
               { blocks: "blue_glazed_terracotta", correct_for_drops: 1b, speed: 0.2625f },\
             ]\
@@ -817,20 +824,20 @@ data merge storage data {\
       },\
       gold: {item:"deepslate_gold_ore",\
         regen:[\
-          {lvl:0,value:200,cost:[{type:"iron",amount:500}]},\
-          {lvl:1,value:120,cost:[{type:"coal",amount:1000}]},\
-          {lvl:2,value:60,cost:[{type:"emerald",amount:250}]},\
-          {lvl:3,value:20,cost:[{type:"diamond",amount:100}]},\
-          {lvl:4,value:5}\
+          {lvl:0,value:100,cost:[{type:"iron",amount:500}]},\
+          {lvl:1,value:60,cost:[{type:"coal",amount:1000}]},\
+          {lvl:2,value:25,cost:[{type:"emerald",amount:250}]},\
+          {lvl:3,value:6,cost:[{type:"diamond",amount:100}]},\
+          {lvl:4,value:1}\
         ]\
       },\
       diamond: {item:"deepslate_diamond_ore",\
         regen:[\
-          {lvl:0,value:400,cost:[{type:"gold",amount:500}]},\
-          {lvl:1,value:240,cost:[{type:"emerald",amount:500}]},\
-          {lvl:2,value:100,cost:[{type:"lapis",amount:1000}]},\
-          {lvl:3,value:30,cost:[{type:"information",amount:100}]},\
-          {lvl:4,value:5}\
+          {lvl:0,value:160,cost:[{type:"gold",amount:500}]},\
+          {lvl:1,value:100,cost:[{type:"emerald",amount:500}]},\
+          {lvl:2,value:50,cost:[{type:"lapis",amount:1000}]},\
+          {lvl:3,value:15,cost:[{type:"information",amount:100}]},\
+          {lvl:4,value:3}\
         ]\
       },\
       emerald: {item:"deepslate_emerald_ore",\
@@ -854,10 +861,10 @@ data merge storage data {\
         ]\
       },\
       heat: {item:"magma_block",\
-        regen:[{lvl:0,value:1200}]\
+        regen:[{lvl:0,value:160}]\
       },\
       cold: {item:"blue_ice",\
-        regen:[{lvl:0,value:1200}]\
+        regen:[{lvl:0,value:160}]\
       },\
       information: {item:"amethyst_shard"},\
       time: {item:"echo_shard"},\

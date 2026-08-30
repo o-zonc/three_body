@@ -4,7 +4,8 @@ execute store result score #stone_gain tmp run function resource/material/stone/
 execute store result score #stone_base_gain tmp run function resource/production/base
 function dawn/amplifier/prepare_resource_ui {dim:"overworld",final:100,final_multiplier:2}
 function resource/material/stone/value/regen_upgrade_cost
-function resource/convert_upgrade_cost_to_text_named {id:"stone_regen",insertion:", "}
+execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
+execute if data storage data tmp.cost run function resource/convert_discount_cost_to_text_named {id:"stone_regen",insertion:", "}
 scoreboard players set #gain_advancement_threshold tmp 1
 function resource/ui/prepare_standard_gain {id:"stone",color:"green",shop_color:"gray",advancement:"stone",advancement_multiplier:1,advancement_label:"1"}
 

@@ -14,9 +14,11 @@ schedule clear story/intro/02_scroll_start
 schedule clear story/intro/03_scroll_tick
 schedule clear story/intro/96_end
 schedule clear story/intro/99_release_player
-schedule clear crying/crystal_reset_finish
-schedule clear crying/crystal_place_finish
-function crying/crystal_place_cancel
+schedule clear story/ending/01_answer
+schedule clear story/ending/02_epilogue
+schedule clear story/ending/03_credits
+schedule clear story/ending/04_credit_scroll
+schedule clear story/ending/05_return
 schedule clear crying/dawn_reset_finish
 execute if score #dawn_reset_forceload_owned var matches 1 in minecraft:dawn run forceload remove 0 0
 scoreboard players set #dawn_reset_forceload_owned var 0
@@ -54,6 +56,13 @@ schedule clear structure/restart_polar_release
 
 effect clear @a
 clear @a
+tag @a remove ending_seen
+tag @a remove ending_active
+tag @a remove ending_from_overworld
+tag @a remove ending_from_dried
+tag @a remove ending_from_frozen
+tag @a remove ending_from_polarnight
+tag @a remove ending_from_dawn
 
 gamemode adventure @a
 
@@ -143,6 +152,7 @@ kill @e[type=marker,tag=next_dim_selector]
 kill @e[type=marker,tag=current]
 
 kill @e[tag=story_intro]
+kill @e[tag=story_ending]
 
 kill @e[tag=fall_anchor]
 
@@ -195,8 +205,6 @@ schedule function structure/restart_frozen_release 4t replace
 schedule function structure/restart_polar_release 4t replace
 execute in dawn run forceload remove -64 -64 64 64
 
-# 극야 엔드 수정은 청크 엔티티가 완전히 로드된 다음 틱에 한 번 더 제거합니다.
-function crying/crystal_reset_schedule
 # 여명 spear와 우는 흑요석 디스플레이도 중앙 청크 로드 후 다시 초기화합니다.
 function crying/dawn_reset_schedule
 

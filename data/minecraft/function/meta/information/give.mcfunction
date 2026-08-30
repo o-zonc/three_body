@@ -1,4 +1,6 @@
 # 입력: #material_add_value tmp
+# 초록 발전 트리 완성 보상: 모든 정보 획득량을 2배로 적용합니다.
+execute if entity @s[advancements={0_overworld/25_green_time_machine=true}] run scoreboard players operation #material_add_value tmp += #material_add_value tmp
 execute if score #material_add_value tmp matches ..0 run return 0
 
 # 지급 직전에 현재 업그레이드 단계로 소지 한도를 다시 계산한다.

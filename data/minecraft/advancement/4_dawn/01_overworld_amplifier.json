@@ -3,7 +3,7 @@
   "display": {
     "icon": "lime_stained_glass",
     "title": "오버월드의 아침",
-    "description": "오버월드 자원 증폭기를 Lv.1로 강화했습니다.\n\n§6•§7 보상: 리액터에서 획득하는 메타 자원의 양이 25% 증가합니다.",
+    "description": "오버월드 자원 증폭기를 Lv.1로 강화했습니다.\n\n§6•§7 보상: 리액터에서 획득하는 메타 자원의 양이 25% 추가로 증가합니다.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

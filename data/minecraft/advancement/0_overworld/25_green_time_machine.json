@@ -3,7 +3,7 @@
   "display": {
     "icon": "ender_eye",
     "title": "완전한 균형",
-    "description": "타임머신의 모든 세대를 초록 발전 트리로 완성합니다.",
+    "description": "타임머신의 모든 세대를 초록 발전 트리로 완성합니다.\n\n§6•§7 보상: 메타 자원 획득량이 2배로 증가합니다.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

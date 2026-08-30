@@ -5,10 +5,10 @@
 execute as @a[tag=player] unless score @s potion_used matches 0.. run scoreboard players set @s potion_used 0
 execute as @a[tag=player] unless score @s potion_used_prev matches 0.. run scoreboard players operation @s potion_used_prev = @s potion_used
 
-# 카탈리스트 구매 쿨타임은 관측소 시간 정지 중 멈추지만,
-# 활성화된 카탈리스트 자체의 지속시간은 실제 경과 시간 기준으로 항상 감소합니다.
+# 구매 쿨타임은 era_paused 동안, 활성 카탈리스트 지속시간은 차원 이동 연출 중에만 멈춥니다.
 execute unless score #GLOBAL era_paused matches 1 if score #catalyst_cooldown var matches 1.. run scoreboard players remove #catalyst_cooldown var 1
-execute if score #catalyst_timer var matches 1.. run scoreboard players remove #catalyst_timer var 1
+execute unless score #disaster_running run matches 1 if score #catalyst_timer var matches 1 if score #catalyst_level var matches 1.. as @a[tag=player] at @s run playsound block.beacon.deactivate master @s ~ ~ ~ 0.8 1.2
+execute unless score #disaster_running run matches 1 if score #catalyst_timer var matches 1.. run scoreboard players remove #catalyst_timer var 1
 
 # 직전 틱에 추적한 물약을 실제로 마셨을 때만 각 효과를 실행합니다.
 execute as @a[tag=player,tag=catalyst_i_owned] if score @s potion_used > @s potion_used_prev run function shop/alchemy/potion/activate {level:1,multiplier:2,duration:1200,roman:"I"}
@@ -19,7 +19,7 @@ execute as @a[tag=player,tag=!catalyst_i_owned,tag=!catalyst_ii_owned,tag=!catal
 # 이번 틱의 누적 사용 횟수를 다음 비교 기준으로 저장합니다.
 execute as @a[tag=player] run scoreboard players operation @s potion_used_prev = @s potion_used
 
-# 카탈리스트 보스바는 차원 이동과 무관하게 계속 플레이어에게 표시됩니다.
+# 카탈리스트 보스바는 차원 이동과 무관하게 표시하되, 엔딩 연출 중에는 숨깁니다.
 bossbar set catalyst_fever players @a[tag=player]
 execute if score #catalyst_level var matches 1 run bossbar set catalyst_fever name {"text":"카탈리스트 I","color":"gold"}
 execute if score #catalyst_level var matches 1 run bossbar set catalyst_fever max 1200
@@ -28,7 +28,7 @@ execute if score #catalyst_level var matches 2 run bossbar set catalyst_fever ma
 execute if score #catalyst_level var matches 3 run bossbar set catalyst_fever name {"text":"카탈리스트 III","color":"gold"}
 execute if score #catalyst_level var matches 3 run bossbar set catalyst_fever max 2400
 execute if score #catalyst_timer var matches 1.. store result bossbar catalyst_fever value run scoreboard players get #catalyst_timer var
-execute if score #catalyst_timer var matches 1.. run bossbar set catalyst_fever visible true
+execute if score #catalyst_timer var matches 1.. unless entity @a[tag=ending_active] run bossbar set catalyst_fever visible true
 execute unless score #catalyst_timer var matches 1.. run bossbar set catalyst_fever visible false
 execute unless score #catalyst_timer var matches 1.. run scoreboard players set #catalyst_level var 0
 execute unless score #catalyst_timer var matches 1.. run scoreboard players set #catalyst_multiplier var 1
