@@ -17,7 +17,7 @@ execute if score #level alchemy_workshop matches 2.. run give @s minecraft:potio
 
 scoreboard players set #catalyst_cooldown var 12000
 playsound block.brewing_stand.brew master @s ~ ~ ~ 1 1.2
-execute if score #level alchemy_workshop matches 0 run title @s actionbar {text:"카탈리스트 I을 연성했습니다.",color:"gold",italic:false}
+execute if score #level alchemy_workshop matches 0 run title @s actionbar {text:"카탈리스트 I를 연성했습니다.",color:"gold",italic:false}
 execute if score #level alchemy_workshop matches 1 run title @s actionbar {text:"카탈리스트 II를 연성했습니다.",color:"gold",italic:false}
 execute if score #level alchemy_workshop matches 2.. run title @s actionbar {text:"카탈리스트 III를 연성했습니다.",color:"gold",italic:false}
 return 1
