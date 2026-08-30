@@ -140,3 +140,5 @@ scoreboard objectives add dawn_time_shop dummy
 scoreboard objectives add dawn_bonus_shop dummy
 scoreboard objectives add dawn_reactor_purchased dummy
 scoreboard objectives add crystal_state dummy
+scoreboard objectives add reckoning_pending dummy
+scoreboard objectives add reckoning_count dummy
