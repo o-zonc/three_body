@@ -1,6 +1,4 @@
-# consume_item 발전과제는 반복 사용을 위해 즉시 회수합니다.
-advancement revoke @s only utility/consume_chaos_end_potion
-
+# potion_used 스코어와 직전 소지 태그로 섭취가 확인된 뒤 호출됩니다.
 scoreboard players set #chaos_end_success tmp 0
 execute if score #GLOBAL current_dim matches 0 if score #GLOBAL state_overworld matches 1 run scoreboard players set #chaos_end_success tmp 1
 execute if score #GLOBAL current_dim matches 0 if score #GLOBAL state_overworld matches 1 run scoreboard players set #GLOBAL state_overworld 0
@@ -22,4 +20,4 @@ execute if score #chaos_end_success tmp matches 1 run effect clear @a minecraft:
 execute if score #chaos_end_success tmp matches 1 run tag @a remove frozen_chaos_protected
 execute if score #chaos_end_success tmp matches 1 run tag @a remove dried_chaos_protected
 execute if score #chaos_end_success tmp matches 1 run tellraw @a [{text:"[현재 세계] ",color:"light_purple"},{text:"난세기가 강제로 종료되었습니다.",color:"green"}]
-execute unless score #chaos_end_success tmp matches 1 run title @s actionbar {text:"현재 세계는 난세기가 아닙니다.",color:"gray",italic:true}
+execute unless score #chaos_end_success tmp matches 1 run tellraw @s {text:"지금은 난세기가 아닌걸요?",color:"gray"}
