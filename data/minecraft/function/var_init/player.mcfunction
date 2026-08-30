@@ -14,6 +14,9 @@ scoreboard players enable @s accelerator_trigger
 scoreboard players enable @s intro_skip
 scoreboard players enable @s tutorial
 
-execute unless score @s potion_used_prev = @s potion_used_prev run scoreboard players operation @s potion_used_prev = @s potion_used
+# potion_used 통계는 첫 사용 전에는 score holder가 없을 수 있으므로 명시적으로 0을 만듭니다.
+# restart 직후에는 현재 누적 통계를 기준점으로 삼아 이전 사용을 새 소비로 오인하지 않습니다.
+execute unless score @s potion_used matches 0.. run scoreboard players set @s potion_used 0
+execute unless score @s potion_used_prev matches 0.. run scoreboard players operation @s potion_used_prev = @s potion_used
 
 scoreboard players set @s trigger_init 1
