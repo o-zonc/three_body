@@ -5,5 +5,5 @@ execute unless score #stone factory_unlocked matches 1.. run return 0
 execute unless score #coal factory_unlocked matches 1.. run return 0
 execute unless score #copper factory_unlocked matches 1.. run return 0
 
-advancement grant @a only 0_overworld/17_contemporary_age
+execute as @a[tag=player,limit=1] at @s run function story/overworld/age/26_contemporary_age
 return 1

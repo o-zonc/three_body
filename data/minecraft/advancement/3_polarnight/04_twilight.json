@@ -3,7 +3,7 @@
 		"display": {
 		"icon": "soul_lantern",
 		"title": "박명",
-		"description": "아침이 찾아오려나 봅니다.",
+		"description": "처음으로 깨달음을 사용했습니다.",
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true,

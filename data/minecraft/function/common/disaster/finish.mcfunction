@@ -16,8 +16,6 @@ title @a clear
 # 혹시 남아 있는 이전 차원의 전환 예약 제거
 schedule clear common/next
 
-scoreboard objectives setdisplay sidebar material_display
-
 # ==========================================
 # 멸망한 이전 차원의 상태 초기화
 # ==========================================
@@ -33,6 +31,10 @@ execute if score #GLOBAL current_dim matches 2 if score #GLOBAL state_frozen mat
 # ==========================================
 
 function common/next
+
+# 다음 차원 이동이 끝난 뒤 최신 시대·위치로 구성한 사이드바를 다시 표시합니다.
+function ui/sidebar/refresh
+scoreboard objectives setdisplay sidebar material_display
 
 # ==========================================
 # 새 차원에서 시대 시스템 재개

@@ -12,6 +12,5 @@
 		"manual_test": {
 			"trigger": "impossible"
 		}
-	},
-	"rewards": {"function": "story/overworld/age/26_contemporary_age"}
+	}
 }

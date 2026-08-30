@@ -9,4 +9,6 @@ execute in minecraft:dawn run setblock 0 68 0 minecraft:air
 execute in minecraft:dawn run kill @e[type=minecraft:block_display,tag=crying_dawn_display]
 execute in minecraft:dawn positioned 0 68 0 run kill @e[type=minecraft:block_display,distance=..2,nbt={block_state:{Name:"minecraft:crying_obsidian"}}]
 
-execute in minecraft:dawn run forceload remove -16 -16 16 16
+execute if score #dawn_reset_forceload_owned var matches 1 in minecraft:dawn run forceload remove 0 0
+scoreboard players set #dawn_reset_forceload_owned var 0
+scoreboard players set #dawn_reset_pending var 0

@@ -8,6 +8,7 @@ execute in overworld store result score #alchemy_dedup_before tmp run execute if
 execute in overworld run function shop/alchemy/deduplicate_role {role:"shop"}
 execute in overworld run function shop/alchemy/deduplicate_role {role:"jewel"}
 execute in overworld run function shop/alchemy/deduplicate_role {role:"lab"}
+execute in overworld run function shop/alchemy/deduplicate_role {role:"potion"}
 execute in overworld run function shop/alchemy/deduplicate_role {role:"emerald"}
 execute in overworld run function shop/alchemy/deduplicate_role {role:"gold"}
 

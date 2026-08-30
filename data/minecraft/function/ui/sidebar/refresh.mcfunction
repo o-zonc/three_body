@@ -1,22 +1,22 @@
-scoreboard objectives modify material_display numberformat blank
+# 표시 중인 행을 매번 지우고 다시 추가하면 클라이언트에 중간 상태가 노출되어 깜빡일 수 있습니다.
+# 해금이 해제된 행만 제거하고, 유지되는 행은 아래에서 이름과 숫자 형식만 갱신합니다.
+execute unless score #stone unlock matches 1 run scoreboard players reset stone material_display
+execute unless score #coal unlock matches 1 run scoreboard players reset coal material_display
+execute unless score #copper unlock matches 1 run scoreboard players reset copper material_display
+execute unless score #iron unlock matches 1 run scoreboard players reset iron material_display
+execute unless score #emerald unlock matches 1 run scoreboard players reset emerald material_display
+execute unless score #lapis unlock matches 1 run scoreboard players reset lapis material_display
+execute unless score #gold unlock matches 1 run scoreboard players reset gold material_display
+execute unless score #heat unlock matches 1 run scoreboard players reset heat material_display
+execute unless score #diamond unlock matches 1 run scoreboard players reset diamond material_display
+execute unless score #cold unlock matches 1 run scoreboard players reset cold material_display
+execute unless score #yellow unlock matches 1 run scoreboard players reset yellow material_display
+execute unless score #blue unlock matches 1 run scoreboard players reset blue material_display
+execute unless score #world_eye unlock matches 1 run scoreboard players reset world_eye material_display
 
-# 이전 문명에서 해금되었던 행과 고정 numberformat이 남지 않도록 모든 자원 행을 먼저 제거합니다.
-scoreboard players reset wood material_display
-scoreboard players reset stone material_display
-scoreboard players reset coal material_display
-scoreboard players reset copper material_display
-scoreboard players reset iron material_display
-scoreboard players reset emerald material_display
-scoreboard players reset lapis material_display
-scoreboard players reset gold material_display
-scoreboard players reset heat material_display
-scoreboard players reset diamond material_display
-scoreboard players reset cold material_display
-scoreboard players reset yellow material_display
-scoreboard players reset blue material_display
+# 현재 레이아웃에서 사용하지 않는 이전 행은 계속 정리합니다.
 scoreboard players reset information material_display
 scoreboard players reset time material_display
-scoreboard players reset world_eye material_display
 scoreboard players reset quartz material_display
 scoreboard players reset xp material_display
 scoreboard players reset experience material_display
@@ -40,18 +40,19 @@ execute if score #yellow unlock matches 1 run scoreboard players set yellow mate
 execute if score #blue unlock matches 1 run scoreboard players set blue material_display 100
 execute if score #world_eye unlock matches 1 run scoreboard players set world_eye material_display 0
 
-scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"unwn","color":"white","shadow_color":-16777216,"obfuscated":true}]
-execute if score #overworld civilization_age matches 1 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"목기 시대","color":"gold","shadow_color":-16777216}]
-execute if score #overworld civilization_age matches 2 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"석기 시대","color":"gray","shadow_color":-16777216}]
-execute if score #overworld civilization_age matches 3 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"청동기 시대","color":"#C87941","shadow_color":-16777216}]
-execute if score #overworld civilization_age matches 4 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"철기 시대","color":"white","shadow_color":-16777216}]
-execute if score #overworld civilization_age matches 5 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"고대","color":"aqua","shadow_color":-16777216}]
-execute if score #overworld civilization_age matches 6 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"중세","color":"green","shadow_color":-16777216}]
-execute if score #overworld civilization_age matches 7 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"근대","color":"#71CDF9","shadow_color":-16777216}]
-execute if score #overworld civilization_age matches 8 run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"현대","color":"light_purple","shadow_color":-16777216}]
-execute if score #overworld civilization_age matches 9.. run scoreboard players display name era material_display [{"text":"현재 시대: "},{"text":"미래","color":"dark_purple","shadow_color":-16777216}]
+scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"unwn","color":"white","shadow_color":-16777216,"obfuscated":true}]
+execute if score #overworld civilization_age matches 1 run scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"목기 시대","color":"gold","shadow_color":-16777216}]
+execute if score #overworld civilization_age matches 2 run scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"석기 시대","color":"gray","shadow_color":-16777216}]
+execute if score #overworld civilization_age matches 3 run scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"청동기 시대","color":"#C87941","shadow_color":-16777216}]
+execute if score #overworld civilization_age matches 4 run scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"철기 시대","color":"white","shadow_color":-16777216}]
+execute if score #overworld civilization_age matches 5 run scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"고대","color":"aqua","shadow_color":-16777216}]
+execute if score #overworld civilization_age matches 6 run scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"중세","color":"green","shadow_color":-16777216}]
+execute if score #overworld civilization_age matches 7 run scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"근대","color":"#71CDF9","shadow_color":-16777216}]
+execute if score #overworld civilization_age matches 8 run scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"현대","color":"light_purple","shadow_color":-16777216}]
+execute if score #overworld civilization_age matches 9.. run scoreboard players display name era material_display [{"text":"현재 시대: ",shadow_color:-16777216},{"text":"미래","color":"dark_purple","shadow_color":-16777216}]
 
-scoreboard players display name pos material_display [{"text":"현재 위치: "},{"text":"unwn","color":"white","shadow_color":-16777216,"obfuscated":true}]
+function location/resolve
+scoreboard players display name pos material_display [{"text":"현재 위치: ",shadow_color:-16777216},{"storage":"data","nbt":"tmp.location.name","shadow_color":-16777216,"interpret":true}]
 
 scoreboard players display name divider material_display {"text":"","color":"white","shadow_color":-16777216}
 

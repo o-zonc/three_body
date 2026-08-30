@@ -3,7 +3,7 @@
   "display": {
     "icon": "written_book",
     "title": "깨달음",
-    "description": "이 문명은 깨달음을 얻었습니다.",
+    "description": "처음으로 문명을 정산했습니다.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

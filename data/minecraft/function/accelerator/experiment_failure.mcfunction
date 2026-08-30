@@ -31,7 +31,7 @@ execute unless score #GLOBAL accelerator_disabled matches 1 run function dried/s
 
 playsound block.beacon.deactivate master @s ~ ~ ~ 1 0.55
 playsound block.respawn_anchor.deplete master @s ~ ~ ~ 0.9 0.65
-execute unless score #GLOBAL accelerator_disabled matches 1 run title @s actionbar {text:"실험 실패 - 불안정한 양자 파편이 대량 발생했습니다.",color:"red",bold:true}
+execute unless score #GLOBAL accelerator_disabled matches 1 run title @s actionbar {text:"실험 실패 - 불안정한 양자 파편이 대량 발생했습니다.",color:"red",bold:true,italic:false}
 tag @s remove accelerator_experiment_running
 scoreboard players set @s experiment_delay 0
 scoreboard players set @s experiment_type 0

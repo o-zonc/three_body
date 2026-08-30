@@ -4,5 +4,5 @@ execute unless score #level alchemy_workshop matches 1.. run return 0
 execute unless score #copper material matches 200.. run return 0
 execute unless score #iron material matches 120.. run return 0
 
-advancement grant @a only 0_overworld/16_modern_age
+execute as @a[tag=player,limit=1] at @s run function story/overworld/age/25_modern_age
 return 1

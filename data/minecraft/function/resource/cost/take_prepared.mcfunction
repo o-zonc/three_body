@@ -17,7 +17,7 @@ scoreboard players operation #world_eye material -= #cost_world_eye cost
 function meta/obsidian/take_cost
 scoreboard players operation #gold material -= #cost_gold cost
 
-execute if score #obsidian_substitution_count tmp matches 1.. run title @s actionbar [{text:"부족한 비용 ",color:"gray"},{score:{name:"#obsidian_substitution_count",objective:"tmp"},color:"dark_purple"},{text:" 항목을 흑요석으로 대체했습니다.",color:"gray"}]
+execute if score #obsidian_substitution_count tmp matches 1.. run title @s actionbar [{text:"",italic:false},{text:"부족한 비용 ",color:"gray"},{score:{name:"#obsidian_substitution_count",objective:"tmp"},color:"dark_purple"},{text:" 항목을 흑요석으로 대체했습니다.",color:"gray"}]
 scoreboard players set #cost_prepared tmp 0
 scoreboard players set #obsidian_cost_bypass tmp 0
 scoreboard players set #obsidian_substitution_count tmp 0

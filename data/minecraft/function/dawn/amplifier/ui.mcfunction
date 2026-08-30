@@ -10,6 +10,7 @@ $execute unless score #dawn_$(id)_amp meta matches 0.. run scoreboard players se
 $execute if score #dawn_$(id)_amp meta matches 2.. run function dawn/amplifier/visual/$(id)
 
 # 리액터를 제작해 탈출 수단을 확보한 뒤에는 더 이상 증폭기에 투자할 수 없다.
+execute if score #GLOBAL dawn_reactor_purchased matches 1.. run function util/blank
 $execute if score #GLOBAL dawn_reactor_purchased matches 1.. run tellraw @s ["",{text:"  [ $(name) 자원 증폭기 ]",color:"$(color)",bold:true},{text:"\n\n  리액터의 시공간 반응이 시작되었습니다.",color:"gray"},{text:"\n  더 이상 이 장치를 조정할 수 없습니다.",color:"dark_gray"},{text:"\n"}]
 execute if score #GLOBAL dawn_reactor_purchased matches 1.. run return 0
 

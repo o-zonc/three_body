@@ -1,4 +1,5 @@
 # 여명 차원 중앙 구조물 상호작용
+execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 execute unless entity @s[advancements={3_polarnight/89_crying_discovery=true}] run advancement grant @s only 3_polarnight/89_crying_discovery dawn_spear
 
 # 우는 흑요석이 이미 공개된 뒤에는 더 이상 반응하지 않습니다.

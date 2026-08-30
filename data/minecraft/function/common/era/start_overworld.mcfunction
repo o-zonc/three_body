@@ -1,4 +1,4 @@
-# 석기 시대 도달 시 오버월드의 첫 항성기 타이머를 시작합니다.
+# 새 문명의 오버월드 첫 항성기 타이머를 시작합니다.
 # 첫 난세기는 초반 경제가 자리 잡을 시간을 주기 위해 일반 항성기보다 길게 설정합니다.
 execute store result score #FIRST_ERA_ROLL roll_chance run random value 0..99
 

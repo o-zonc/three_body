@@ -5,10 +5,9 @@
 scoreboard players operation #lab_base_cooldown tmp = #lab_cooldown tmp
 function shop/alchemy/lab/rates
 $scoreboard players operation #lab_rate tmp = #alchemy_lab_$(rate)_rate tmp
-scoreboard players operation #lab_reduction tmp = #lab_cooldown tmp
-scoreboard players operation #lab_reduction tmp *= #lab_rate tmp
 scoreboard players set #lab_percent_base tmp 100
-scoreboard players operation #lab_reduction tmp /= #lab_percent_base tmp
-scoreboard players operation #lab_cooldown tmp -= #lab_reduction tmp
-execute if score #lab_cooldown tmp matches ..0 run scoreboard players set #lab_cooldown tmp 1
+scoreboard players operation #lab_remaining_rate tmp = #lab_percent_base tmp
+scoreboard players operation #lab_remaining_rate tmp -= #lab_rate tmp
+scoreboard players operation #lab_cooldown tmp *= #lab_remaining_rate tmp
+scoreboard players operation #lab_cooldown tmp /= #lab_percent_base tmp
 return run scoreboard players get #lab_cooldown tmp

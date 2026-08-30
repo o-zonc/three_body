@@ -19,5 +19,5 @@ execute if score #stone_unlock_cost_check tmp matches 1 run return 1
 
 # 미소지 시 
 execute unless score #stone_unlock_cost_check tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
-execute unless score #stone_unlock_cost_check tmp matches 1 run title @s actionbar "§c재료가 부족합니다."
+execute unless score #stone_unlock_cost_check tmp matches 1 run title @s actionbar {text:"재료가 부족합니다.",color:"red",italic:true}
 execute unless score #stone_unlock_cost_check tmp matches 1 run return 0

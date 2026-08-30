@@ -5,6 +5,8 @@ scoreboard objectives add tmp dummy
 
 scoreboard objectives add civilization_age dummy
 scoreboard objectives add alchemy_workshop dummy
+scoreboard objectives add potion_used minecraft.used:minecraft.potion
+scoreboard objectives add potion_used_prev dummy
 
 scoreboard objectives add material dummy
 scoreboard objectives add meta dummy
@@ -81,6 +83,8 @@ execute unless score #frozen_maze_active var = #frozen_maze_active var run score
 execute unless score #frozen_maze_cleared var = #frozen_maze_cleared var run scoreboard players set #frozen_maze_cleared var 0
 execute unless score #frozen_maze_claimed var = #frozen_maze_claimed var run scoreboard players set #frozen_maze_claimed var 0
 execute unless score #frozen_maze_started var = #frozen_maze_started var run scoreboard players set #frozen_maze_started var 0
+execute unless score #frozen_maze_announced var = #frozen_maze_announced var run scoreboard players set #frozen_maze_announced var 0
+execute unless score #maze_type var = #maze_type var run scoreboard players set #maze_type var 0
 execute unless score #nether unlock = #nether unlock run scoreboard players set #nether unlock 0
 execute unless score #gold unlock = #gold unlock run scoreboard players set #gold unlock 0
 execute unless score #area_zone unlock = #area_zone unlock run scoreboard players set #area_zone unlock 0
@@ -88,6 +92,10 @@ execute unless score #era unlock = #era unlock run scoreboard players set #era u
 execute unless score #3rd_area unlock = #3rd_area unlock run scoreboard players set #3rd_area unlock 0
 execute unless score #tool_created_lvl var = #tool_created_lvl var run scoreboard players set #tool_created_lvl var -1
 execute unless score #level alchemy_workshop = #level alchemy_workshop run scoreboard players set #level alchemy_workshop 0
+execute unless score #catalyst_cooldown var = #catalyst_cooldown var run scoreboard players set #catalyst_cooldown var 0
+execute unless score #catalyst_timer var = #catalyst_timer var run scoreboard players set #catalyst_timer var 0
+execute unless score #catalyst_level var = #catalyst_level var run scoreboard players set #catalyst_level var 0
+execute unless score #catalyst_multiplier var = #catalyst_multiplier var run scoreboard players set #catalyst_multiplier var 1
 execute unless score #overworld_advancement_reward_disabled var = #overworld_advancement_reward_disabled var run scoreboard players set #overworld_advancement_reward_disabled var 0
 execute unless score #nether_advancement_reward_disabled var = #nether_advancement_reward_disabled var run scoreboard players set #nether_advancement_reward_disabled var 0
 execute unless score #wood_advancement_reward var = #wood_advancement_reward var run scoreboard players set #wood_advancement_reward var 0

@@ -5,4 +5,5 @@ $execute unless score #$(id)_auto_mine_timer generate = #$(id)_auto_mine_timer g
 $execute if score #$(id)_auto_mine_timer generate matches 1.. run scoreboard players remove #$(id)_auto_mine_timer generate 1
 $execute if score #$(id)_auto_mine_timer generate matches 1.. run return 0
 $scoreboard players set #$(id)_auto_mine_timer generate 20
+$execute if block $(x) $(y) $(z) $(block) run scoreboard players set #$(id)_automated_harvest var 1
 $execute if block $(x) $(y) $(z) $(block) run setblock $(x) $(y) $(z) air destroy

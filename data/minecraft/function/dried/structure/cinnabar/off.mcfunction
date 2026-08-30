@@ -1,3 +1,3 @@
-execute in dried run data modify block 8 62 10 name set value "no_cinnabar"
-execute in dried run setblock 8 61 10 redstone_block
-execute in dried run setblock 8 61 10 air
+# Trigger 2210: 진사 구조물 OFF 요청
+scoreboard players set #structure_trigger var 2210
+function structure/trigger

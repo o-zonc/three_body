@@ -10,6 +10,7 @@ execute if entity @s[tag=po,tag=time] on target run function resource/interactio
 execute if entity @s[tag=frozen,tag=info] on target run function frozen/interaction/info
 execute if entity @s[tag=frozen,tag=shop] on target run function frozen/interaction/shop
 execute if entity @s[tag=frozen,tag=potion] on target run function frozen/interaction/potion
+execute if entity @s[tag=frozen,tag=snow] on target at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 execute if entity @s[tag=frozen,tag=snow] on target run tellraw @s {text:"통이 가득 차서 재활용할 수 없을 것 같다...",color:"gray"}
 execute if entity @s[tag=frozen,tag=ender] on target run function frozen/maze/reward
 execute if entity @s[tag=dried,tag=info] on target run function dried/interaction/info
@@ -18,8 +19,8 @@ execute if entity @s[tag=dried,tag=recycle] on target run function dried/recycle
 execute if entity @s[tag=dried,tag=left] on target run function dried/relic/ui
 execute if entity @s[tag=dried,tag=probability] on target run function dried/probability/ui
 execute if entity @s[tag=dried,tag=secret] on target run function dried/secret/interact
-execute if entity @s[tag=dried,tag=sulfur] on target run function dried/interaction/structure_ui {id:"sulfur",name:"메마른 세계 업그레이드 - 유황",color:"yellow",trigger:2008,x:-8,y:62,z:-10,cost:[{type:"gold",amount:50},{type:"heat",amount:100}]}
-execute if entity @s[tag=dried,tag=cinnabar] on target run function dried/interaction/structure_ui {id:"cinnabar",name:"메마른 세계 업그레이드 - 진사",color:"red",trigger:2009,x:8,y:62,z:10,cost:[{type:"gold",amount:100},{type:"heat",amount:200}]}
+execute if entity @s[tag=dried,tag=sulfur] on target run function dried/interaction/structure_ui {id:"sulfur",name:"메마른 세계 업그레이드 - 유황",color:"yellow",trigger:2008,x:-8,y:62,z:-10,cost:[{type:"gold",amount:100},{type:"heat",amount:50}]}
+execute if entity @s[tag=dried,tag=cinnabar] on target run function dried/interaction/structure_ui {id:"cinnabar",name:"메마른 세계 업그레이드 - 진사",color:"red",trigger:2009,x:8,y:62,z:10,cost:[{type:"gold",amount:200},{type:"heat",amount:100}]}
 execute if entity @s[tag=stronghold,tag=1] on target run function dried/stronghold/ui {id:"overworld",name:"오버월드",color:"green",trigger:2011,effect:"블록 재생성 시간",block:"grass_block",x:18,z:-6}
 execute if entity @s[tag=stronghold,tag=2] on target run function dried/stronghold/ui {id:"frozen",name:"얼어붙은 세계",color:"aqua",trigger:2012,effect:"세공 시도 시간",block:"packed_ice",x:12,z:0}
 execute if entity @s[tag=stronghold,tag=3] on target run function dried/stronghold/ui {id:"dried",name:"메마른 세계",color:"gold",trigger:2013,effect:"입자가속기 실험·공장 채굴 대기 시간",block:"sandstone",x:18,z:6}
@@ -39,6 +40,7 @@ execute if entity @s[tag=shop,tag=hole] on target run function shop/hole/interac
 execute if entity @s[tag=era] on target run function common/era/interact
 execute if entity @s[tag=alchemy,tag=jewel] on target run function shop/alchemy/jewel/ui
 execute if entity @s[tag=alchemy,tag=lab] on target run function shop/alchemy/lab/ui
+execute if entity @s[tag=alchemy,tag=potion] on target run function shop/alchemy/potion/ui
 execute if entity @s[tag=alchemy,tag=emerald] on target run function shop/alchemy/transmutation/gem_ui
 execute if entity @s[tag=alchemy,tag=gold] on target run function shop/alchemy/transmutation/metal_ui
 

@@ -12,4 +12,3 @@ scoreboard players operation #wood material += #material_add_value tmp
 # 이전 문명에서 발전과제를 이미 완료한 경우 grant만으로는 보상 함수가 다시 실행되지 않으므로,
 # 현재 시대가 초기 상태라면 시대 진입 함수를 직접 한 번 실행합니다.
 execute if score #wood material matches 1.. unless score #overworld civilization_age matches 1.. as @a[tag=player,limit=1] at @s run function story/overworld/age/02_wood_age
-execute if score #wood material matches 1.. run advancement grant @a only 0_overworld/10_wood_age

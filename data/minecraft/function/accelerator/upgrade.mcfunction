@@ -1,11 +1,11 @@
-execute if entity @s[tag=accelerator_experiment_running] run title @s actionbar {text:"실험이 진행 중일 때는 입자가속기를 업그레이드할 수 없습니다.",color:"red"}
+execute if entity @s[tag=accelerator_experiment_running] run title @s actionbar {text:"실험이 진행 중일 때는 입자가속기를 업그레이드할 수 없습니다.",color:"red",italic:true}
 execute if entity @s[tag=accelerator_experiment_running] run return 0
 
 # 입자가속기는 현대(문명 단계 8) 이후에 처음 가동할 수 있습니다.
-execute if score #GLOBAL accelerator_level matches 0 unless score #overworld civilization_age matches 8.. run title @s actionbar {text:"현대에 도달해야 입자가속기를 가동할 수 있습니다.",color:"red"}
+execute if score #GLOBAL accelerator_level matches 0 unless score #overworld civilization_age matches 8.. run title @s actionbar {text:"현대에 도달해야 입자가속기를 가동할 수 있습니다.",color:"red",italic:true}
 execute if score #GLOBAL accelerator_level matches 0 unless score #overworld civilization_age matches 8.. run return 0
 
-execute if score #GLOBAL accelerator_level matches 4.. run title @s actionbar {text:"입자가속기는 이미 최대 레벨입니다.",color:"red"}
+execute if score #GLOBAL accelerator_level matches 4.. run title @s actionbar {text:"입자가속기는 이미 최대 레벨입니다.",color:"red",italic:true}
 execute if score #GLOBAL accelerator_level matches 4.. run return 0
 
 function accelerator/prepare_upgrade_cost
@@ -28,7 +28,7 @@ execute unless score #accelerator_cost_ok tmp matches 1 if score #obsidian_walle
 execute unless score #accelerator_cost_ok tmp matches 1 if score #obsidian_wallet tmp matches 1.. run scoreboard players set #accelerator_cost_ok tmp 1
 scoreboard players operation #accelerator_obsidian_bypass tmp = #obsidian_cost_bypass tmp
 
-execute unless score #accelerator_cost_ok tmp matches 1 run title @s actionbar {text:"업그레이드 재료가 부족합니다.",color:"red"}
+execute unless score #accelerator_cost_ok tmp matches 1 run title @s actionbar {text:"업그레이드 재료가 부족합니다.",color:"red",italic:true}
 execute unless score #accelerator_cost_ok tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 execute unless score #accelerator_cost_ok tmp matches 1 run return 0
 
@@ -42,5 +42,5 @@ scoreboard players add #GLOBAL accelerator_level 1
 scoreboard players set #GLOBAL accelerator_timer 1
 
 playsound entity.player.levelup weather @s ~ ~ ~ 1 1.2
-title @s actionbar [{text:"입자가속기 Lv.",color:"aqua"},{score:{name:"#GLOBAL",objective:"accelerator_level"},color:"white"},{text:" 업그레이드 완료",color:"aqua"}]
+title @s actionbar [{text:"",italic:false},{text:"입자가속기 Lv.",color:"aqua"},{score:{name:"#GLOBAL",objective:"accelerator_level"},color:"white"},{text:" 업그레이드 완료",color:"aqua"}]
 function accelerator/ui

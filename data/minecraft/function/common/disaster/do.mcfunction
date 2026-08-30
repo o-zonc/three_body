@@ -14,6 +14,8 @@ scoreboard players set #disaster_running run 1
 
 # user_disaster는 호출 지점에서 설정합니다.
 # 자연 멸망은 0, 이동기로 직접 실행한 멸망은 1입니다.
+# 자연 멸망으로 차원이 바뀌면 반출할 수 없는 난세기 종료 물약을 모두 회수합니다.
+execute if score #GLOBAL user_disaster matches 0 run clear @a minecraft:potion[minecraft:custom_data~{chaos_end_potion:1b}]
 
 scoreboard objectives setdisplay sidebar
 
@@ -39,7 +41,6 @@ advancement grant @a only 6_disaster/00_root
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run advancement grant @a only 6_disaster/10_overworld
 execute if entity @a[nbt={Dimension:"minecraft:frozen"}] run advancement grant @a only 6_disaster/20_frozen
 execute if entity @a[nbt={Dimension:"minecraft:dried"}] run advancement grant @a only 6_disaster/30_dried
-execute if entity @a[nbt={Dimension:"minecraft:polarnight"}] run advancement grant @a only 3_polarnight/01_enlightenment
 
 # 멸망 상태는 연출이 완전히 끝날 때까지 유지합니다.
 # state_* 초기화는 disaster/finish에서 다음 차원으로 이동한 뒤 처리합니다.

@@ -6,4 +6,4 @@ execute at @e[type=interaction,tag=era,limit=1] unless entity @s[distance=..5.0]
 
 scoreboard players set #GLOBAL era_paused 1
 
-execute at @s run title @a actionbar {"text": "시간의 흐름을 멈춥니다.", "color":"red", italic:true}
+execute at @s run title @a actionbar {"text": "시간의 흐름을 멈춥니다.", "color":"red",italic:false}

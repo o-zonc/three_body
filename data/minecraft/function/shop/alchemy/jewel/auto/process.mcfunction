@@ -3,6 +3,7 @@
 # Lv.2 세공 비용(대상 1 + 철 1)에 자동화 연료 구리 1을 추가로 소비합니다.
 scoreboard players set #jewel_auto_success tmp 0
 
+$execute unless score #$(id) unlock matches 1 run return 0
 $execute unless score #$(id) material matches 1.. run return 0
 execute unless score #iron material matches 1.. run return 0
 execute unless score #copper material matches 1.. run return 0

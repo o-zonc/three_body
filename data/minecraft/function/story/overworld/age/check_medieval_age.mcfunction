@@ -3,5 +3,5 @@ execute unless score #overworld civilization_age matches 5 run return 0
 execute unless score #alchemy_workshop unlock matches 1 run return 0
 execute unless score #tool upgrade matches 8.. run return 0
 
-advancement grant @a only 0_overworld/15_medieval_age
+execute as @a[tag=player,limit=1] at @s run function story/overworld/age/24_medieval_age
 return 1

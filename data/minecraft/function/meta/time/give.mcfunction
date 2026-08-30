@@ -32,5 +32,5 @@ execute if score #meta_to_wallet tmp matches 1.. run function meta/time/give_ite
 function meta/sync
 
 # 시간 수량은 이름/수치 모두 같은 자원 색으로 표시한다.
-title @s actionbar [{text:"시간 +",color:"dark_aqua"},{score:{name:"#meta_requested",objective:"tmp"},color:"dark_aqua"},{text:"  (소지 +",color:"dark_gray"},{score:{name:"#meta_to_wallet",objective:"tmp"},color:"dark_aqua"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#meta_bank_added",objective:"tmp"},color:"dark_aqua"},{text:")",color:"dark_gray"}]
+title @s actionbar [{text:"",italic:false},{text:"시간 +",color:"dark_aqua"},{score:{name:"#meta_requested",objective:"tmp"},color:"dark_aqua"},{text:"  (소지 +",color:"dark_gray"},{score:{name:"#meta_to_wallet",objective:"tmp"},color:"dark_aqua"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#meta_bank_added",objective:"tmp"},color:"dark_aqua"},{text:")",color:"dark_gray"}]
 return 1

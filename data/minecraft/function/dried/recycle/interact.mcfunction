@@ -1,6 +1,6 @@
 # 소지한 유리병을 모두 회수합니다.
 execute store result score #recycle_bottles tmp run clear @s minecraft:glass_bottle 0
-execute unless score #recycle_bottles tmp matches 1.. run title @s actionbar {text:"재활용할 유리병이 없습니다.",color:"red"}
+execute unless score #recycle_bottles tmp matches 1.. run title @s actionbar {text:"재활용할 유리병이 없습니다.",color:"red",italic:true}
 execute unless score #recycle_bottles tmp matches 1.. at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 execute unless score #recycle_bottles tmp matches 1.. run return 0
 clear @s minecraft:glass_bottle

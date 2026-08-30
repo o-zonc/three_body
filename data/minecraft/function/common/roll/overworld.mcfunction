@@ -1,9 +1,9 @@
 execute store result score #ROLL roll_chance run random value 0..99
 execute store result score #ROLL_EXTREME roll_chance run random value 0..99
 
-# [난세기 중 멸망: 70% (0~69)]
-execute if score #GLOBAL state_overworld matches 1 if score #ROLL_EXTREME roll_chance matches 0..69 run tellraw @a[nbt={Dimension:"minecraft:overworld"}] [{"text":"[오버월드] 난세기 중 멸망!","color":"dark_red"}]
-execute if score #GLOBAL state_overworld matches 1 if score #ROLL_EXTREME roll_chance matches 0..69 run scoreboard players set #GLOBAL state_overworld 2
+# [난세기 중 멸망: 40% (0~39)]
+execute if score #GLOBAL state_overworld matches 1 if score #ROLL_EXTREME roll_chance matches 0..39 run tellraw @a[nbt={Dimension:"minecraft:overworld"}] [{"text":"[오버월드] 난세기 중 멸망!","color":"dark_red"}]
+execute if score #GLOBAL state_overworld matches 1 if score #ROLL_EXTREME roll_chance matches 0..39 run scoreboard players set #GLOBAL state_overworld 2
 
 # [난세기 발동: 25% (0~24)]
 execute if score #GLOBAL state_overworld matches 0 if score #ROLL roll_chance matches 0..24 run tellraw @a[nbt={Dimension:"minecraft:overworld"}] [{"text":"[오버월드] 난세기 시작!","color":"red"}]

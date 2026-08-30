@@ -14,4 +14,6 @@ scoreboard players enable @s accelerator_trigger
 scoreboard players enable @s intro_skip
 scoreboard players enable @s tutorial
 
+execute unless score @s potion_used_prev = @s potion_used_prev run scoreboard players operation @s potion_used_prev = @s potion_used
+
 scoreboard players set @s trigger_init 1

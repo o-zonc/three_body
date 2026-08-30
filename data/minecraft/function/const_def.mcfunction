@@ -11,7 +11,7 @@ data merge storage data {\
           required_age: 5,\
           cost: [\
             { type: "iron", amount: 60 },\
-            { type: "emerald", amount: 15 }\
+            { type: "emerald", amount: 10 }\
           ]\
         },\
         {\
@@ -19,8 +19,8 @@ data merge storage data {\
           required_age: 6,\
           cost: [\
             { type: "iron", amount: 100 },\
-            { type: "emerald", amount: 60 },\
-            { type: "lapis", amount: 100 }\
+            { type: "emerald", amount: 50 },\
+            { type: "lapis", amount: 70 }\
           ]\
         },\
         {\
@@ -28,8 +28,8 @@ data merge storage data {\
           required_age: 7,\
           cost: [\
             { type: "iron", amount: 320 },\
-            { type: "emerald", amount: 120 },\
-            { type: "lapis", amount: 200 },\
+            { type: "emerald", amount: 100 },\
+            { type: "lapis", amount: 140 },\
             { type: "information", amount: 8 }\
           ]\
         }\
@@ -778,9 +778,9 @@ data merge storage data {\
         unlock_cost:[{type:"wood",amount:20}],\
         regen:[\
           {lvl:0,value:3,cost:[{type:"stone",amount:400}]},\
-          {lvl:1,value:2,cost:[{type:"stone",amount:25000}]},\
-          {lvl:2,value:1,cost:[{type:"stone",amount:100000}]},\
-          {lvl:3,value:0,cost:[{type:"stone",amount:500000}]},\
+          {lvl:1,value:2,cost:[{type:"wood",amount:10000},{type:"stone",amount:5000}]},\
+          {lvl:2,value:1,cost:[{type:"wood",amount:50000},{type:"stone",amount:25000}]},\
+          {lvl:3,value:0,cost:[{type:"wood",amount:200000},{type:"stone",amount:100000}]},\
           {lvl:4,value:0,cost:[{type:"stone",amount:2500000}]},\
           {lvl:5,value:0}\
         ]\
@@ -836,8 +836,8 @@ data merge storage data {\
       emerald: {item:"deepslate_emerald_ore",\
         unlock_cost:[{type:"iron",amount:120},{type:"copper",amount:120}],\
         regen:[\
-          {lvl:0,value:800,cost:[{type:"gold",amount:300}]},\
-          {lvl:1,value:500,cost:[{type:"lapis",amount:300}]},\
+          {lvl:0,value:700,cost:[{type:"gold",amount:300}]},\
+          {lvl:1,value:420,cost:[{type:"lapis",amount:300}]},\
           {lvl:2,value:220,cost:[{type:"diamond",amount:75}]},\
           {lvl:3,value:70,cost:[{type:"information",amount:50}]},\
           {lvl:4,value:10}\
@@ -846,10 +846,10 @@ data merge storage data {\
       lapis: {item:"deepslate_lapis_ore",\
         unlock_cost:[{type:"emerald",amount:100}],\
         regen:[\
-          {lvl:0,value:500,cost:[{type:"emerald",amount:100}]},\
-          {lvl:1,value:320,cost:[{type:"gold",amount:400}]},\
-          {lvl:2,value:150,cost:[{type:"diamond",amount:100}]},\
-          {lvl:3,value:50,cost:[{type:"information",amount:75}]},\
+          {lvl:0,value:600,cost:[{type:"emerald",amount:100}]},\
+          {lvl:1,value:380,cost:[{type:"gold",amount:400}]},\
+          {lvl:2,value:180,cost:[{type:"diamond",amount:100}]},\
+          {lvl:3,value:60,cost:[{type:"information",amount:75}]},\
           {lvl:4,value:10}\
         ]\
       },\
@@ -896,7 +896,7 @@ data modify storage data const.resource_shop set value [\
   {id:"wood",\
     levels:[\
       {lvl:0,value:1,cost:[{type:"wood",amount:40}]},\
-      {lvl:1,value:2,cost:[{type:"wood",amount:500},{type:"stone",amount:500}]},\
+      {lvl:1,value:2,cost:[{type:"wood",amount:200}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:2000},{type:"heat",amount:50}]},\
       {lvl:3,value:8,cost:[{type:"wood",amount:7500},{type:"heat",amount:150}]},\
       {lvl:4,value:16,cost:[{type:"wood",amount:22000},{type:"information",amount:2},{type:"time",amount:1}]},\
@@ -907,7 +907,7 @@ data modify storage data const.resource_shop set value [\
   {id:"stone",\
     levels:[\
       {lvl:0,value:1,cost:[{type:"stone",amount:50}]},\
-      {lvl:1,value:2,cost:[{type:"stone",amount:600}]},\
+      {lvl:1,value:2,cost:[{type:"stone",amount:250}]},\
       {lvl:2,value:4,cost:[{type:"stone",amount:2400},{type:"cold",amount:50}]},\
       {lvl:3,value:8,cost:[{type:"stone",amount:9000},{type:"cold",amount:150}]},\
       {lvl:4,value:16,cost:[{type:"stone",amount:26400},{type:"information",amount:2},{type:"time",amount:1}]},\
@@ -918,7 +918,7 @@ data modify storage data const.resource_shop set value [\
   {id:"coal",\
     levels:[\
       {lvl:0,value:1,cost:[{type:"coal",amount:60}]},\
-      {lvl:1,value:2,cost:[{type:"coal",amount:750},{type:"stone",amount:500}]},\
+      {lvl:1,value:2,cost:[{type:"coal",amount:300}]},\
       {lvl:2,value:4,cost:[{type:"coal",amount:3000},{type:"heat",amount:50}]},\
       {lvl:3,value:8,cost:[{type:"coal",amount:11250},{type:"heat",amount:150}]},\
       {lvl:4,value:16,cost:[{type:"coal",amount:33000},{type:"information",amount:2},{type:"time",amount:1}]},\
@@ -1171,3 +1171,6 @@ data modify storage data const.time_machine set value {base:[{lvl:1,amount:1,int
 
 # load/reload 시 현재 연구 상태에서 생산 성능 캐시를 한 번 복구합니다.
 function time_machine/calculate
+
+# 사이드바 현재 위치 영역 목록
+function location/define

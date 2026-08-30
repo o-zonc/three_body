@@ -1,4 +1,6 @@
 # 오버월드 이동기
+execute store result score #chaos_end_potion_count tmp run clear @s minecraft:potion[minecraft:custom_data~{chaos_end_potion:1b}] 0
+execute if score #chaos_end_potion_count tmp matches 1.. run return run function mover/restricted/chaos_end_potion
 # dev는 현재 오버월드에 있는 경우만 막고, 그 외 차원 제한은 모두 우회합니다.
 execute if entity @s[tag=dev,nbt={Dimension:"minecraft:overworld"}] run return run function mover/restricted/common
 execute if entity @s[tag=dev] run return run function common/move

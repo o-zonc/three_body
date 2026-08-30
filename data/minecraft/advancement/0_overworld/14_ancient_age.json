@@ -12,6 +12,5 @@
 		"manual_test": {
 			"trigger": "impossible"
 		}
-	},
-	"rewards": {"function": "story/overworld/age/23_ancient_age"}
+	}
 }

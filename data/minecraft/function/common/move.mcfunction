@@ -9,6 +9,8 @@ execute if score #GLOBAL current_dim matches 4 run function dawn/cleanup_epiphan
 execute in overworld run tp @a 0 -59 0
 execute in overworld run weather clear
 execute in overworld run time rate 1
+# 다음 메마른/얼어붙은 세계 방문에서는 탈출기를 다시 받을 수 있게 합니다.
+tag @a remove overworld_escape_given
 function mover/items/arrive_other
 function mover/local/restore
 gamerule advance_time true

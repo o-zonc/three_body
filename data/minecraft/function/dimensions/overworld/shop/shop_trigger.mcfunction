@@ -24,20 +24,25 @@ execute if score @s shop_trigger matches 1402 run function elevator/purchase_upg
 execute if score @s shop_trigger matches 1501 run function shop/alchemy/purchase
 
 # 세공 작업대 (151X)
-execute if score @s shop_trigger matches 1511 run function shop/alchemy/jewel/purchase {id:"emerald",name:"에메랄드",color:"green",lv0:3,lv1:5,lv2:8}
-execute if score @s shop_trigger matches 1512 run function shop/alchemy/jewel/purchase {id:"lapis",name:"청금석",color:"blue",lv0:3,lv1:5,lv2:8}
-execute if score @s shop_trigger matches 1513 run function shop/alchemy/jewel/purchase {id:"gold",name:"금",color:"gold",lv0:0,lv1:2,lv2:3}
-execute if score @s shop_trigger matches 1514 run function shop/alchemy/jewel/purchase {id:"diamond",name:"다이아몬드",color:"aqua",lv0:0,lv1:2,lv2:3}
+execute if score @s shop_trigger matches 1511 run function shop/alchemy/jewel/purchase {id:"emerald",name:"에메랄드",color:"green"}
+execute if score @s shop_trigger matches 1512 run function shop/alchemy/jewel/purchase {id:"lapis",name:"청금석",color:"blue"}
+execute if score @s shop_trigger matches 1513 run function shop/alchemy/jewel/purchase {id:"gold",name:"금",color:"gold"}
+execute if score @s shop_trigger matches 1514 run function shop/alchemy/jewel/purchase {id:"diamond",name:"다이아몬드",color:"aqua"}
 execute if score @s shop_trigger matches 1515 run function shop/alchemy/jewel/auto/toggle
+execute if score @s shop_trigger matches 1516 run function shop/alchemy/jewel/mode
 
 # 마법 연구소 (152X)
 execute if score @s shop_trigger matches 1521 run function shop/alchemy/lab/purchase
 
 # 연금술 자원 변환기 (153X)
-execute if score @s shop_trigger matches 1531 run function shop/alchemy/transmutation/purchase {source:"stone",source_name:"돌",source_amount:2000,target:"emerald",target_name:"에메랄드",target_color:"green",cooldown:"#alchemy_gem_cooldown"}
-execute if score @s shop_trigger matches 1532 run function shop/alchemy/transmutation/purchase {source:"stone",source_name:"돌",source_amount:2000,target:"lapis",target_name:"청금석",target_color:"blue",cooldown:"#alchemy_gem_cooldown"}
-execute if score @s shop_trigger matches 1533 run function shop/alchemy/transmutation/purchase {source:"iron",source_name:"철",source_amount:1000,target:"gold",target_name:"금",target_color:"gold",cooldown:"#alchemy_metal_cooldown"}
-execute if score @s shop_trigger matches 1534 run function shop/alchemy/transmutation/purchase {source:"iron",source_name:"철",source_amount:1000,target:"diamond",target_name:"다이아몬드",target_color:"aqua",cooldown:"#alchemy_metal_cooldown"}
+execute if score @s shop_trigger matches 1531 run function shop/alchemy/transmutation/purchase {source:"stone",source_name:"돌",source_amount:2000,target:"emerald",target_name:"에메랄드",target_color:"green",cooldown:"#alchemy_gem_cooldown",lapis_amount:0}
+execute if score @s shop_trigger matches 1532 run function shop/alchemy/transmutation/purchase {source:"stone",source_name:"돌",source_amount:2000,target:"lapis",target_name:"청금석",target_color:"blue",cooldown:"#alchemy_gem_cooldown",lapis_amount:0}
+execute if score @s shop_trigger matches 1533 run function shop/alchemy/transmutation/purchase {source:"iron",source_name:"철",source_amount:1000,target:"gold",target_name:"금",target_color:"gold",cooldown:"#alchemy_metal_cooldown",lapis_amount:50}
+execute if score @s shop_trigger matches 1534 run function shop/alchemy/transmutation/purchase {source:"iron",source_name:"철",source_amount:1000,target:"diamond",target_name:"다이아몬드",target_color:"aqua",cooldown:"#alchemy_metal_cooldown",lapis_amount:50}
+
+# 연금술 물약 상점 (154X)
+execute if score @s shop_trigger matches 1541 run function shop/alchemy/potion/purchase_fever
+execute if score @s shop_trigger matches 1542 run function shop/alchemy/potion/purchase_chaos_end
 
 # 관측소 (16XX)
 execute if score @s shop_trigger matches 1601 run function shop/observatory/purchase
@@ -104,8 +109,8 @@ execute if score @s shop_trigger matches 2004 run function dried/probability/sel
 execute if score @s shop_trigger matches 2005 run function dried/probability/select {mode:2,name:"메마른 세계 집중",color:"gold"}
 execute if score @s shop_trigger matches 2006 run function dried/probability/select {mode:3,name:"얼어붙은 세계 집중",color:"aqua"}
 execute if score @s shop_trigger matches 2007 run function dried/probability/select {mode:0,name:"기본 확률",color:"white"}
-execute if score @s shop_trigger matches 2008 in dried unless data block -8 62 -10 {name:"sulfur"} run function dried/interaction/purchase_structure {id:"sulfur",name:"메마른 세계 업그레이드 - 유황",color:"yellow",x:-8,y:62,z:-10,cost:[{type:"gold",amount:50},{type:"heat",amount:100}]}
-execute if score @s shop_trigger matches 2009 in dried unless data block 8 62 10 {name:"cinnabar"} run function dried/interaction/purchase_structure {id:"cinnabar",name:"메마른 세계 업그레이드 - 진사",color:"red",x:8,y:62,z:10,cost:[{type:"gold",amount:100},{type:"heat",amount:200}]}
+execute if score @s shop_trigger matches 2008 in dried unless data block -8 62 -10 {name:"sulfur"} run function dried/interaction/purchase_structure {id:"sulfur",name:"메마른 세계 업그레이드 - 유황",color:"yellow",x:-8,y:62,z:-10,cost:[{type:"gold",amount:100},{type:"heat",amount:50}]}
+execute if score @s shop_trigger matches 2009 in dried unless data block 8 62 10 {name:"cinnabar"} run function dried/interaction/purchase_structure {id:"cinnabar",name:"메마른 세계 업그레이드 - 진사",color:"red",x:8,y:62,z:10,cost:[{type:"gold",amount:200},{type:"heat",amount:100}]}
 execute if score @s shop_trigger matches 2011 run function dried/stronghold/purchase {id:"overworld",name:"오버월드",color:"green",trigger:2011,effect:"블록 재생성 시간",block:"grass_block",x:18,z:-6}
 execute if score @s shop_trigger matches 2012 run function dried/stronghold/purchase {id:"frozen",name:"얼어붙은 세계",color:"aqua",trigger:2012,effect:"세공 시도 시간",block:"packed_ice",x:12,z:0}
 execute if score @s shop_trigger matches 2013 run function dried/stronghold/purchase {id:"dried",name:"메마른 세계",color:"gold",trigger:2013,effect:"입자가속기 실험·공장 채굴 대기 시간",block:"sandstone",x:18,z:6}

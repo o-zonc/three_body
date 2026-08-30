@@ -5,7 +5,7 @@ execute if score @s shop_trigger matches 2012 run scoreboard players set #strong
 execute if score @s shop_trigger matches 2013 run scoreboard players set #stronghold_cost_mode tmp 3
 $function dried/stronghold/cost {id:"$(id)"}
 execute store result score #stronghold_cost_ok tmp run function resource/check_cost
-execute unless score #stronghold_cost_ok tmp matches 1 run title @s actionbar {text:"유적지 복구 재료가 부족합니다.",color:"red"}
+execute unless score #stronghold_cost_ok tmp matches 1 run title @s actionbar {text:"유적지 복구 재료가 부족합니다.",color:"red",italic:true}
 execute unless score #stronghold_cost_ok tmp matches 1 run return 0
 function resource/cost/take
 $scoreboard players set #stronghold_$(id) upgrade 1

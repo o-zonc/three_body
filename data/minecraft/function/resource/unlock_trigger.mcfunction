@@ -8,7 +8,7 @@
 
 # 아직 시대 조건을 충족하지 못한 자원 (1000)
 execute if score @s unlock_trigger matches 1000 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
-execute if score @s unlock_trigger matches 1000 run title @s actionbar "§c아직 해금되지 않은 자원입니다."
+execute if score @s unlock_trigger matches 1000 run title @s actionbar {text:"아직 해금되지 않은 자원입니다.",color:"red",italic:true}
 
 # 오버월드 (11XX)
 execute if score @s unlock_trigger matches 1101 run function resource/unlock/stone

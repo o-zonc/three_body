@@ -25,7 +25,7 @@ data modify storage data tmp.altar_resource_info append value {text:"\n  정교�
 execute if score #seen_emerald var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 에메랄드",color:"green"}
 execute if score #seen_lapis var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 청금석",color:"blue"}
 
-data modify storage data tmp.altar_resource_info append value {text:"\n\n  ◆ 기질 자원",color:"light_purple"}
+data modify storage data tmp.altar_resource_info append value {text:"\n\n  ◆ 특수 자원",color:"light_purple"}
 data modify storage data tmp.altar_resource_info append value {text:"\n  세계의 환경과 성질이 응축된 비정형 자원.",color:"gray"}
 execute if score #seen_heat var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 열기",color:"red"}
 execute if score #seen_cold var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 냉기",color:"aqua"}

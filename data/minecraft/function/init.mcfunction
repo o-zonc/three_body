@@ -34,6 +34,12 @@ bossbar set bossbar_frozen_maze visible false
 bossbar add bossbar_dried {"text":"[ 메마른 세계 ] 다음 난세기까지","color":"gold"}
 bossbar add bossbar_overworld {"text":"[ 오버월드 ] 다음 난세기까지","color":"dark_green"}
 
+bossbar add catalyst_fever {"text":"카탈리스트 I","color":"gold"}
+bossbar set catalyst_fever color yellow
+bossbar set catalyst_fever style progress
+bossbar set catalyst_fever max 6000
+bossbar set catalyst_fever visible false
+
 scoreboard objectives add user_disaster dummy
 
 # 5. 차원 방문 스코어보드
@@ -56,6 +62,8 @@ scoreboard objectives add local_move_return dummy
 # 실제 재접속을 감지하기 위한 플레이어별 leave_game 통계와 마지막 확인값
 scoreboard objectives add leave_game minecraft.custom:minecraft.leave_game
 scoreboard objectives add leave_game_prev dummy
+scoreboard objectives add potion_used minecraft.used:minecraft.potion
+scoreboard objectives add potion_used_prev dummy
 
 # 6. 문명 전환 시스템 관리 스코어보드
 scoreboard objectives add era_paused dummy
@@ -74,6 +82,8 @@ scoreboard objectives add material dummy
 scoreboard objectives add material_unlocked dummy
 scoreboard objectives add material_display dummy
 scoreboard objectives modify material_display displayname {"text":"발전 현황","color":"gold"}
+scoreboard objectives modify material_display numberformat blank
+function ui/sidebar/refresh
 scoreboard objectives setdisplay sidebar material_display
 
 scoreboard objectives add cost dummy

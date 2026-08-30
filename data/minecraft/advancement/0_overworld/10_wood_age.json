@@ -12,8 +12,5 @@
 		"manual_test": {
 			"trigger": "impossible"
 		}
-	},
-	"rewards": {
-		"function": "story/overworld/age/02_wood_age"
 	}
 }

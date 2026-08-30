@@ -27,9 +27,11 @@ function reckoning/add_resource_reward {id:"copper",amount:150,reward:"informati
 function reckoning/add_resource_reward {id:"iron",amount:100,reward:"information"}
 function reckoning/add_resource_reward {id:"emerald",amount:50,reward:"information"}
 
-function reckoning/add_resource_reward {id:"lapis",amount:50,reward:"time"}
-function reckoning/add_resource_reward {id:"gold",amount:50,reward:"time"}
-function reckoning/add_resource_reward {id:"diamond",amount:50,reward:"time"}
+# 청금석·금·다이아몬드는 첫 50개까지 10개당 1조각,
+# 이후 초과분은 50개당 1조각으로 환산한다.
+function reckoning/add_time_resource_reward {id:"lapis"}
+function reckoning/add_time_resource_reward {id:"gold"}
+function reckoning/add_time_resource_reward {id:"diamond"}
 
 # 열기와 냉기는 각각 정보와 시간 양쪽으로 환산한다.
 function reckoning/add_resource_reward {id:"heat",amount:20,reward:"information"}

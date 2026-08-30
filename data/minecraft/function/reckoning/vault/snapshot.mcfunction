@@ -16,6 +16,7 @@ scoreboard players set #vault_stone_resources tmp 0
 scoreboard players set #vault_metal_resources tmp 0
 scoreboard players set #vault_gem_resources tmp 0
 scoreboard players set #vault_frozen_bridge tmp 0
+scoreboard players set #vault_dried_structures tmp 0
 scoreboard players set #vault_stronghold tmp 0
 scoreboard players set #vault_elevator tmp 0
 scoreboard players set #vault_tool tmp 0
@@ -37,6 +38,7 @@ execute if score #time_bank meta matches 30.. run scoreboard players set #vault_
 execute if score #time_bank meta matches 50.. run scoreboard players set #vault_metal_resources tmp 1
 execute if score #time_bank meta matches 75.. run scoreboard players set #vault_gem_resources tmp 1
 execute if score #time_bank meta matches 10.. run scoreboard players set #vault_frozen_bridge tmp 1
+execute if score #time_bank meta matches 20.. run scoreboard players set #vault_dried_structures tmp 1
 execute if score #time_bank meta matches 35.. run scoreboard players set #vault_stronghold tmp 1
 execute if score #time_bank meta matches 50.. run scoreboard players set #vault_elevator tmp 1
 execute if score #time_bank meta matches 250.. run scoreboard players set #vault_tool tmp 1
@@ -113,6 +115,10 @@ scoreboard players set #vault_alchemy_owned tmp 0
 execute if score #alchemy_workshop unlock matches 1.. run scoreboard players set #vault_alchemy_owned tmp 1
 scoreboard players set #vault_frozen_bridge_owned tmp 0
 execute if score #frozen_bridge unlock matches 1.. run scoreboard players set #vault_frozen_bridge_owned tmp 1
+scoreboard players set #vault_dried_sulfur_owned tmp 0
+execute if score #dried_sulfur unlock matches 1.. run scoreboard players set #vault_dried_sulfur_owned tmp 1
+scoreboard players set #vault_dried_cinnabar_owned tmp 0
+execute if score #dried_cinnabar unlock matches 1.. run scoreboard players set #vault_dried_cinnabar_owned tmp 1
 
 # 영구 이동기 구매 상태는 시설 보존 임계치와 별도로 기록한다.
 scoreboard players set #vault_dimension_mover_owned tmp 0

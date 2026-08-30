@@ -6,5 +6,6 @@ $execute unless score #coal material matches $(fuel).. run return 0
 $scoreboard players remove #coal material $(fuel)
 $scoreboard players set #$(id) factory_status 1
 $execute in $(dim) unless block $(x) $(y) $(z) $(block) run return 0
+$scoreboard players set #$(id)_automated_harvest var 1
 $execute in $(dim) run setblock $(x) $(y) $(z) air destroy
 return 1

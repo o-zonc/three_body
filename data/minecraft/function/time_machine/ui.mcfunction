@@ -1,4 +1,4 @@
-execute unless entity @s[advancements={0_overworld/24_time_machine=true}] run title @s actionbar {text:"타임머신을 먼저 건설해야 합니다.",color:"red"}
+execute unless entity @s[advancements={0_overworld/24_time_machine=true}] run title @s actionbar {text:"타임머신을 먼저 건설해야 합니다.",color:"red",italic:true}
 execute unless entity @s[advancements={0_overworld/24_time_machine=true}] run return 0
 
 function time_machine/prepare_research

@@ -106,6 +106,10 @@ execute if score #time_bank meta matches 100.. run scoreboard players set #overw
 execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run scoreboard players set #frozen_bridge unlock 1
 execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run function frozen/structure/bridge/on
 
+# 시간 20조각: 이전 문명에서 구매한 메마른 세계의 유황·진사 업그레이드를 유지한다.
+execute if score #vault_dried_structures tmp matches 1 if score #vault_dried_sulfur_owned tmp matches 1 run function dried/structure/sulfur/on
+execute if score #vault_dried_structures tmp matches 1 if score #vault_dried_cinnabar_owned tmp matches 1 run function dried/structure/cinnabar/on
+
 # 발전과제 보상: 한 번 해금한 얼어붙은 세계 상점과 미로는 문명이 바뀌어도 유지한다.
 execute if entity @a[advancements={1_frozen/10_shop=true}] run scoreboard players set #frozen_shop unlock 1
 execute if entity @a[advancements={1_frozen/10_shop=true}] run function frozen/structure/shop/on

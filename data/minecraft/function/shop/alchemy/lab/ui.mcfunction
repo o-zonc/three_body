@@ -1,7 +1,7 @@
 # 마법 연구소 UI
-execute unless score #alchemy_workshop unlock matches 1 run title @s actionbar {"text":"연금술 공방을 먼저 해금해야 합니다.","color":"red"}
+execute unless score #alchemy_workshop unlock matches 1 run title @s actionbar {"text":"연금술 공방을 먼저 해금해야 합니다.","color":"red",italic:true}
 execute unless score #alchemy_workshop unlock matches 1 run return 0
-execute unless score #level alchemy_workshop matches 1.. run title @s actionbar {"text":"연금술 공방 Lv. 1이 필요합니다.","color":"red"}
+execute unless score #level alchemy_workshop matches 1.. run title @s actionbar {"text":"연금술 공방 Lv. 1이 필요합니다.","color":"red",italic:true}
 execute unless score #level alchemy_workshop matches 1.. run return 0
 
 function shop/alchemy/lab/rates

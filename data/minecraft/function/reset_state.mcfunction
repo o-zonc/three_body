@@ -54,6 +54,8 @@ scoreboard players set #frozen_maze_active var 0
 scoreboard players set #frozen_maze_cleared var 0
 scoreboard players set #frozen_maze_claimed var 0
 scoreboard players set #frozen_maze_started var 0
+scoreboard players set #frozen_maze_announced var 0
+scoreboard players set #maze_type var 0
 scoreboard players set #dried_relic unlock 0
 scoreboard players set #dried_relic_level upgrade 0
 scoreboard players set #dried_relic_timer generate 1200
@@ -73,6 +75,15 @@ scoreboard players set #t intro 0
 scoreboard players set #overworld civilization_age 0
 scoreboard players set #level alchemy_workshop 0
 scoreboard players set #alchemy_workshop unlock 0
+scoreboard players set #catalyst_cooldown var 0
+scoreboard players set #catalyst_timer var 0
+scoreboard players set #catalyst_level var 0
+scoreboard players set #catalyst_multiplier var 1
+bossbar set catalyst_fever visible false
+tag @a remove catalyst_i_owned
+tag @a remove catalyst_ii_owned
+tag @a remove catalyst_iii_owned
+tag @a remove chaos_end_potion_owned
 scoreboard players set #GLOBAL dawn_bonus_shop 0
 scoreboard players set #GLOBAL dawn_information_shop 0
 scoreboard players set #GLOBAL dawn_time_shop 0
@@ -129,6 +140,10 @@ clear @a minecraft:dragon_egg[minecraft:custom_data~{three_body:{meta:"obsidian"
 # 청동기 일회성 보상 아이템 제거
 clear @a minecraft:paper[minecraft:custom_data~{heavenly_grace:1b}]
 execute as @e[type=minecraft:item] if items entity @s contents minecraft:paper[minecraft:custom_data~{heavenly_grace:1b}] run kill @s
+
+# 현대 일회성 투자금 아이템 제거
+clear @a minecraft:brick[minecraft:custom_data~{investment_series_a:1b}]
+execute as @e[type=minecraft:item] if items entity @s contents minecraft:brick[minecraft:custom_data~{investment_series_a:1b}] run kill @s
 
 # 8. 자원 스코어보드 초기화
 scoreboard players set * material 0

@@ -1,6 +1,7 @@
 # 플레이어 상태
 # shift는 웅크리기 시작 순간에만 1틱 동안 유지되는 edge 신호입니다.
 tag @a remove shift
+tag @a remove unavailable_feedback_played
 execute as @a if predicate player/sneaking unless score @s sneaking_prev matches 1 run tag @s add shift
 
 # 현재 웅크리기 상태를 다음 tick의 이전 상태로 저장
@@ -32,6 +33,9 @@ function tool/tick
 # 청동기 일회성 보상 아이템
 function heavenly_grace/tick
 
+# 현대 일회성 보상 아이템
+function investment_series_a/tick
+
 function resource/product_managing_by_tick
 function factory/tick
 
@@ -56,6 +60,7 @@ function time_machine/tick
 execute as @a[scores={time_machine_trigger=1..}] run function time_machine/trigger
 function shop/alchemy/jewel/tick
 function shop/alchemy/transmutation/tick
+function shop/alchemy/potion/tick
 function dried/relic/tick
 function dried/advancement/tick
 

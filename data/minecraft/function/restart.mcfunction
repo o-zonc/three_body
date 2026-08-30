@@ -14,6 +14,38 @@ schedule clear story/intro/02_scroll_start
 schedule clear story/intro/03_scroll_tick
 schedule clear story/intro/96_end
 schedule clear story/intro/99_release_player
+schedule clear crying/crystal_reset_finish
+schedule clear crying/crystal_place_finish
+function crying/crystal_place_cancel
+schedule clear crying/dawn_reset_finish
+execute if score #dawn_reset_forceload_owned var matches 1 in minecraft:dawn run forceload remove 0 0
+scoreboard players set #dawn_reset_forceload_owned var 0
+scoreboard players set #dawn_reset_pending var 0
+schedule clear structure/dried_sulfur_apply
+schedule clear structure/dried_sulfur_release
+schedule clear structure/dried_cinnabar_apply
+schedule clear structure/dried_cinnabar_release
+schedule clear structure/restart_dried_release
+schedule clear structure/reckoning_dried_release
+schedule clear structure/alchemy_apply
+schedule clear structure/alchemy_release
+schedule clear structure/beacon_apply
+schedule clear structure/beacon_release
+schedule clear structure/factory_apply
+schedule clear structure/factory_release
+schedule clear structure/observatory_apply
+schedule clear structure/observatory_release
+schedule clear structure/frozen_bridge_apply
+schedule clear structure/frozen_bridge_release
+schedule clear structure/frozen_maze_apply
+schedule clear structure/frozen_maze_release
+schedule clear structure/frozen_shop_apply
+schedule clear structure/frozen_shop_release
+schedule clear structure/polar_vault_apply
+schedule clear structure/polar_vault_release
+schedule clear structure/restart_overworld_release
+schedule clear structure/restart_frozen_release
+schedule clear structure/restart_polar_release
 
 
 # ------------------------------------------------------------
@@ -39,6 +71,18 @@ execute in frozen run forceload add -64 -64 64 64
 execute in polarnight run forceload add -64 -64 64 64
 execute in dawn run forceload add -64 -64 64 64
 
+# 취소된 개별 구조물 작업의 소유 상태는 위 광역 로드가 대신하므로 초기화합니다.
+scoreboard players set #alchemy_forceload_owned var 0
+scoreboard players set #beacon_forceload_owned var 0
+scoreboard players set #factory_forceload_owned var 0
+scoreboard players set #observatory_forceload_owned var 0
+scoreboard players set #dried_sulfur_forceload_owned var 0
+scoreboard players set #dried_cinnabar_forceload_owned var 0
+scoreboard players set #frozen_bridge_forceload_owned var 0
+scoreboard players set #frozen_maze_forceload_owned var 0
+scoreboard players set #frozen_shop_forceload_owned var 0
+scoreboard players set #polar_vault_forceload_owned var 0
+
 # ------------------------------------------------------------
 # 3. 플레이어를 오버월드로 복귀
 # ------------------------------------------------------------
@@ -53,6 +97,8 @@ execute in overworld run tp @a 0 100 0
 scoreboard players reset * trigger_init
 
 function reset_state
+# 전체 재시작 직후 기본 미로는 오리지널 유형(4)으로 시작합니다.
+scoreboard players set #maze_type var 4
 # tick에서 더 이상 전체 var_init을 호출하지 않으므로,
 # reset으로 제거된 factory timer/status 등 누락 점수는 여기서 한 번 복구합니다.
 function var_init/load
@@ -61,6 +107,8 @@ execute as @a run function var_init/player
 
 scoreboard objectives add material_display dummy
 scoreboard objectives modify material_display displayname {"text":"발전 현황","color":"gold"}
+scoreboard objectives modify material_display numberformat blank
+function ui/sidebar/refresh
 scoreboard objectives setdisplay sidebar material_display
 
 
@@ -140,10 +188,11 @@ function frozen/structure/shop/off
 # ------------------------------------------------------------
 # 9.5. 임시 청크 로드 해제
 # ------------------------------------------------------------
-execute in overworld run forceload remove -64 -64 64 64
-execute in dried run forceload remove -64 -64 64 64
-execute in frozen run forceload remove -64 -64 64 64
-execute in polarnight run forceload remove -64 -64 64 64
+schedule function structure/restart_overworld_release 4t replace
+# 메마른 구조물 OFF 예약(2틱)이 적용된 뒤 광역 강제 로드를 해제합니다.
+schedule function structure/restart_dried_release 4t replace
+schedule function structure/restart_frozen_release 4t replace
+schedule function structure/restart_polar_release 4t replace
 execute in dawn run forceload remove -64 -64 64 64
 
 # 극야 엔드 수정은 청크 엔티티가 완전히 로드된 다음 틱에 한 번 더 제거합니다.

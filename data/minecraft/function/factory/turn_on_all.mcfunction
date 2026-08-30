@@ -35,6 +35,6 @@ function factory/set_timer {id:"cold"}
 function factory/set_timer {id:"heat"}
 function factory/campfires
 playsound block.iron_door.open weather @s ~ ~ ~ 0.8 1.1
-title @s actionbar {text:"해금한 모든 공장의 가동을 재개했습니다.",color:"green"}
+title @s actionbar {text:"해금한 모든 공장의 가동을 재개했습니다.",color:"green",italic:false}
 function factory/check
 return 1

@@ -15,8 +15,8 @@ execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerato
 execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerator_experiment_running,scores={experiment_delay=60}] at @s run playsound block.beacon.ambient master @s ~ ~ ~ 0.45 0.63
 execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerator_experiment_running,scores={experiment_delay=40}] at @s run playsound block.beacon.ambient master @s ~ ~ ~ 0.5 0.66
 execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerator_experiment_running,scores={experiment_delay=20}] at @s run playsound block.beacon.ambient master @s ~ ~ ~ 0.55 0.70
-execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerator_experiment_running,scores={experiment_delay=40}] run title @s actionbar {text:"충돌 데이터를 분석하는 중...",color:"aqua"}
-execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerator_experiment_running,scores={experiment_delay=20}] run title @s actionbar {text:"실험 결과를 계산하는 중...",color:"yellow"}
+execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerator_experiment_running,scores={experiment_delay=40}] run title @s actionbar {text:"충돌 데이터를 분석하는 중...",color:"aqua",italic:false}
+execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerator_experiment_running,scores={experiment_delay=20}] run title @s actionbar {text:"실험 결과를 계산하는 중...",color:"yellow",italic:false}
 
 # 카운트다운 종료 후 성공/실패 판정
 execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerator_experiment_running,scores={experiment_delay=..0}] at @s run function accelerator/experiment_resolve

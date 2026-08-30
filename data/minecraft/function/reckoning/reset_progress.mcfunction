@@ -24,6 +24,8 @@ scoreboard players set #time material 0
 scoreboard players set #obsidian material 0
 
 scoreboard players set * unlock 0
+# 나무는 문명 단계와 관계없이 항상 해금된 기본 자원이다.
+scoreboard players set #wood unlock 1
 scoreboard players set * material_shop 0
 
 # 영구 이동기 구매 기록은 연금술 공방과 무관하게 문명 정산을 통과합니다.
@@ -53,6 +55,9 @@ scoreboard players set #diamond_regen_lvl upgrade 0
 scoreboard players set #emerald_regen_lvl upgrade 0
 scoreboard players set #lapis_regen_lvl upgrade 0
 scoreboard players set #tool upgrade 0
+# clear로 제거된 채굴 도구는 레벨 변경 감지에 의존하지 않고 기본 단계로 즉시 재발급한다.
+# 보관소가 보호한 강화 단계는 기존대로 리액터 제작 시 복원·교체된다.
+function tool/refresh_all
 scoreboard players set #heat_second_lvl upgrade 0
 scoreboard players set #cold_second_lvl upgrade 0
 scoreboard players set #gold_second_lvl upgrade 0
@@ -75,6 +80,7 @@ scoreboard players set #alchemy_lab_level upgrade 0
 scoreboard players set #jewel_auto_enabled var 0
 scoreboard players set #jewel_auto_timer var 0
 scoreboard players set #jewel_cooldown var 0
+scoreboard players set #jewel_mode var 0
 scoreboard players set #jewel_particle_timer var 0
 
 # 미래 진입에 필요한 시공간 붕괴 실험 기록은 문명마다 새로 달성해야 한다.
@@ -86,6 +92,8 @@ scoreboard players set #cold_environment_timer generate 1200
 scoreboard players set #dried_relic_timer generate 1200
 
 scoreboard players set #overworld civilization_age 0
+# 정산 후 시대가 직접 복원되더라도 새 문명의 첫 장기 항성기가 누락되지 않게 합니다.
+function common/era/start_overworld
 scoreboard players set #level alchemy_workshop 0
 scoreboard players set #alchemy_workshop unlock 0
 scoreboard players set #era unlock 0
@@ -115,8 +123,11 @@ scoreboard players set #GLOBAL dawn_bonus_shop 0
 scoreboard players set #GLOBAL dawn_information_shop 0
 scoreboard players set #GLOBAL dawn_time_shop 0
 scoreboard players set #GLOBAL dawn_reactor_purchased 0
+scoreboard players set #GLOBAL reckoning_materials_restored 0
 
-scoreboard players set #frozen_shop unlock 0
+# 얼어붙은 상점 발전과제 보상은 정산 즉시 유지한다.
+execute unless entity @a[advancements={1_frozen/10_shop=true}] run scoreboard players set #frozen_shop unlock 0
+execute if entity @a[advancements={1_frozen/10_shop=true}] run scoreboard players set #frozen_shop unlock 1
 scoreboard players set #frozen_bridge unlock 0
 scoreboard players set #frozen_maze unlock 0
 scoreboard players set #frozen_maze_active var 0
@@ -133,7 +144,8 @@ function common/structure/factory/off
 function dried/structure/sulfur/off
 function dried/structure/cinnabar/off
 
-function frozen/structure/shop/off
+execute unless entity @a[advancements={1_frozen/10_shop=true}] run function frozen/structure/shop/off
+execute if entity @a[advancements={1_frozen/10_shop=true}] run function frozen/structure/shop/on
 function frozen/structure/bridge/off
 function frozen/structure/maze/off
 

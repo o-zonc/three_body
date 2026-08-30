@@ -6,7 +6,6 @@ clear @a minecraft:purple_dye[minecraft:custom_data~{alchemy_move:1b}]
 
 # 차원별 난세기 환경 효과와 보호 상태는 차원을 이동하면 제거합니다.
 effect clear @a minecraft:mining_fatigue
-effect clear @a minecraft:haste
 effect clear @a minecraft:fire_resistance
 tag @a remove frozen_chaos_protected
 tag @a remove dried_chaos_protected

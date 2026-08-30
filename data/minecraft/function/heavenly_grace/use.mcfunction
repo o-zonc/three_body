@@ -1,7 +1,7 @@
 # 천공의 제단(0 -59 0) 근처에서만 사용할 수 있다.
-execute unless dimension minecraft:overworld run title @s actionbar {"text":"천공의 제단 곁에서만 하늘의 은총을 받을 수 있습니다.","color":"red","italic":true}
+execute unless dimension minecraft:overworld run title @s actionbar {"text":"천공의 제단 곁에서만 하늘의 은총을 받을 수 있습니다.","color":"red",italic:true}
 execute unless dimension minecraft:overworld run return 0
-execute positioned 0 -59 0 unless entity @s[distance=..3.0] run title @s actionbar {"text":"천공의 제단 곁에서만 하늘의 은총을 받을 수 있습니다.","color":"red","italic":true}
+execute positioned 0 -59 0 unless entity @s[distance=..3.0] run title @s actionbar {"text":"천공의 제단 곁에서만 하늘의 은총을 받을 수 있습니다.","color":"red",italic:true}
 execute positioned 0 -59 0 unless entity @s[distance=..3.0] run return 0
 
 # 보상 지급

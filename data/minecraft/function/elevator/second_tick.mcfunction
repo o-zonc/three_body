@@ -15,7 +15,8 @@ execute as @a[x=-25,y=-46,z=23,dx=2,dy=0,dz=2] run tag @s add elevator_2_floor_3
 
 # 입자가속기 건설 전에는 1층에서 사용할 수 없습니다.
 execute as @a[tag=shift,tag=elevator_2_floor_1] at @s unless score #GLOBAL factory_elevator_unlocked matches 1.. run return run function elevator/locked
-execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev at @s unless score #GLOBAL factory_elevator_unlocked matches 1.. run return run function elevator/locked
+execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev unless score #GLOBAL factory_elevator_unlocked matches 1.. run function elevator/locked
+execute as @a[tag=elevator_2_floor_1] if score @s elevator_jump > @s elevator_jump_prev unless score #GLOBAL factory_elevator_unlocked matches 1.. run scoreboard players operation @s elevator_jump_prev = @s elevator_jump
 
 # 웅크리기: 아래층 이동
 execute as @a[tag=shift,tag=elevator_2_floor_2] at @s run function elevator/move {x:-24,y:-62,z:24}
