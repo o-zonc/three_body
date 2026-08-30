@@ -1,6 +1,10 @@
 # 연금술 물약 런타임
 # potion_used 통계와 직전 틱에 손에 들고 있던 커스텀 물약 태그를 조합해 섭취를 감지합니다.
 
+# 기존 세이브에서도 첫 소비를 놓치지 않도록 누락된 플레이어 통계 기준값을 보정합니다.
+execute as @a[tag=player] unless score @s potion_used matches 0.. run scoreboard players set @s potion_used 0
+execute as @a[tag=player] unless score @s potion_used_prev matches 0.. run scoreboard players operation @s potion_used_prev = @s potion_used
+
 # 시간 정지 중에는 카탈리스트 피버타임과 구매 쿨타임이 모두 멈춥니다.
 execute unless score #GLOBAL era_paused matches 1 if score #catalyst_cooldown var matches 1.. run scoreboard players remove #catalyst_cooldown var 1
 execute unless score #GLOBAL era_paused matches 1 if score #catalyst_timer var matches 1.. run scoreboard players remove #catalyst_timer var 1
