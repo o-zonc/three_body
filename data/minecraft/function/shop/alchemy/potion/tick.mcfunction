@@ -5,9 +5,10 @@
 execute as @a[tag=player] unless score @s potion_used matches 0.. run scoreboard players set @s potion_used 0
 execute as @a[tag=player] unless score @s potion_used_prev matches 0.. run scoreboard players operation @s potion_used_prev = @s potion_used
 
-# 시간 정지 중에는 카탈리스트 피버타임과 구매 쿨타임이 모두 멈춥니다.
+# 카탈리스트 구매 쿨타임은 관측소 시간 정지 중 멈추지만,
+# 활성화된 카탈리스트 자체의 지속시간은 실제 경과 시간 기준으로 항상 감소합니다.
 execute unless score #GLOBAL era_paused matches 1 if score #catalyst_cooldown var matches 1.. run scoreboard players remove #catalyst_cooldown var 1
-execute unless score #GLOBAL era_paused matches 1 if score #catalyst_timer var matches 1.. run scoreboard players remove #catalyst_timer var 1
+execute if score #catalyst_timer var matches 1.. run scoreboard players remove #catalyst_timer var 1
 
 # 직전 틱에 추적한 물약을 실제로 마셨을 때만 각 효과를 실행합니다.
 execute as @a[tag=player,tag=catalyst_i_owned] if score @s potion_used > @s potion_used_prev run function shop/alchemy/potion/activate {level:1,multiplier:2,duration:1200,roman:"I"}
