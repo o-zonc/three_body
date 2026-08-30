@@ -1,10 +1,10 @@
+# 직접 설치 요청이 들어온 순간에만 카탈리스트 구매 대기 시간을 초기화합니다.
+# 구조물 청크가 로드된 뒤 재호출되는 apply 단계와 문명 정산 복원 요청에서는 건드리지 않습니다.
+execute unless score #structure_apply_context var matches 1 unless score #GLOBAL reckoning_pending matches 1.. run scoreboard players set #catalyst_cooldown var 0
+
 execute unless score #structure_apply_context var matches 1 run scoreboard players set #structure_trigger var 2001
 execute unless score #structure_apply_context var matches 1 run function structure/trigger
 execute unless score #structure_apply_context var matches 1 run return 0
-
-# 새 공방을 설치할 때만 카탈리스트 구매 대기 시간을 초기화합니다.
-# 문명 정산 뒤 보관소가 공방을 복원하는 동안에는 기존 쿨타임을 그대로 유지합니다.
-execute unless score #GLOBAL reckoning_pending matches 1.. run scoreboard players set #catalyst_cooldown var 0
 
 execute in overworld run summon firework_rocket -24 -51 -24 {LifeTime:10,Motion:[0.0,1.0,0.0],FireworksItem:{id:"firework_rocket",count:1,components:{fireworks:{flight_duration:2,explosions:[{shape:"large_ball",colors:[I;16711680,16755200,16776960],fade_colors:[I;2437522],has_trail:true,has_twinkle:true},{shape:"star",colors:[I;65535,16711935],fade_colors:[I;16777215],has_trail:true,has_twinkle:true},{shape:"creeper",colors:[I;65280],has_twinkle:true},{shape:"burst",colors:[I;11141350,43520],has_trail:true}]}}}}
 
