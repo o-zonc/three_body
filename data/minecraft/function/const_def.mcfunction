@@ -60,6 +60,11 @@ data modify storage data const.resource.diamond.regen[{lvl:0}].value set value 1
 data modify storage data const.resource.emerald.regen[{lvl:0}].value set value 490
 data modify storage data const.resource.lapis.regen[{lvl:0}].value set value 420
 
+# 자원 상점 2배 업그레이드 비용
+# 자기 자원 부담을 조금 낮추고, 철기 이후 늘어난 나무 수급량을 보조 비용으로 사용한다.
+data modify storage data const.resource_shop[{id:"copper"}].levels[{lvl:0}].cost set value [{type:"copper",amount:50},{type:"wood",amount:300}]
+data modify storage data const.resource_shop[{id:"iron"}].levels[{lvl:0}].cost set value [{type:"iron",amount:30},{type:"wood",amount:300}]
+
 # -----------------------------------------------------------------------------
 # 초반 채굴 도구 밸런스 상수
 # -----------------------------------------------------------------------------
