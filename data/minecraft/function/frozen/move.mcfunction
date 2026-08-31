@@ -11,6 +11,8 @@ execute in frozen run tp @a 0 67 0
 execute in frozen run weather rain
 execute in frozen run time rate 1
 
+# 시간이 정지된 상태에서 차원 이동기 없이 진입했다면 긴급 귀환 수단을 지급합니다.
+execute as @a[tag=player,gamemode=adventure,nbt={Dimension:"minecraft:frozen"}] run function item/give/overworld_escape_paused
 # 도착 경로와 관계없이 이 차원에서 채굴 가능한 자원이 없다면 긴급 귀환 수단을 지급합니다.
 execute if score #tool upgrade matches ..3 as @a[tag=player,gamemode=adventure,nbt={Dimension:"minecraft:frozen"}] run function item/give/overworld_escape
 function mover/items/arrive_other
