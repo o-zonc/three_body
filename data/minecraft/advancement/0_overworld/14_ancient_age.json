@@ -3,7 +3,7 @@
 	"display": {
 		"icon": "enchanting_table",
 		"title": "고대",
-		"description": [{"text":"지식과 기술을 체계적으로 축적하기 시작합니다."},{"text": "\n\n§7§o도구의 발전이 그 무엇보다 중요합니다."}],
+		"description": [{"text":"지식과 기술을 체계적으로 축적하기 시작합니다."},{"text": "\n\n§7§o도구의 발전이 그 무엇보다 중요합니다."},{"text":"\n\n§6•§7 보상: 석탄 수급량이 3배 증가합니다."}],
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true
