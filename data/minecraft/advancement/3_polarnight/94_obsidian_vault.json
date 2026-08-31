@@ -3,7 +3,7 @@
   "display": {
     "icon": "ender_chest",
     "title": "흑요석 저장고",
-    "description": "네 세계의 우는 흑요석을 모아 봉인된 저장고를 개방했습니다.\n\n§6•§7 보상: 리액터에서 획득하는 메타 자원의 양이 25% 증가합니다.",
+    "description": "네 세계의 우는 흑요석을 모아 봉인된 저장고를 개방했습니다.\n\n§6•§7 보상: 리액터에서 획득하는 메타 자원의 양이 25% 추가로 증가합니다.",
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,

@@ -26,6 +26,11 @@ scoreboard objectives add compress dummy
 
 scoreboard objectives add scene dummy
 
+# 2회차 공통 진행 상태
+scoreboard objectives add second_story dummy
+scoreboard objectives add second_step dummy
+scoreboard objectives add second_timer dummy
+
 scoreboard objectives add unlock_trigger trigger
 scoreboard players enable @a unlock_trigger
 
@@ -52,6 +57,11 @@ scoreboard players enable @a scene_trigger
 # 천공의 제단 도구 강화 UI
 scoreboard objectives add tool_trigger trigger
 scoreboard players enable @a tool_trigger
+
+# 차원 선택 UI
+scoreboard objectives add dimension_trigger trigger
+scoreboard players set @a dimension_trigger 0
+scoreboard players enable @a dimension_trigger
 
 execute unless score #wood material = #wood material run scoreboard players set #wood material 0
 execute unless score #information_bank meta = #information_bank meta run scoreboard players set #information_bank meta 0
@@ -96,6 +106,11 @@ execute unless score #catalyst_cooldown var = #catalyst_cooldown var run scorebo
 execute unless score #catalyst_timer var = #catalyst_timer var run scoreboard players set #catalyst_timer var 0
 execute unless score #catalyst_level var = #catalyst_level var run scoreboard players set #catalyst_level var 0
 execute unless score #catalyst_multiplier var = #catalyst_multiplier var run scoreboard players set #catalyst_multiplier var 1
+# 우는 흑요석의 네 수집 플래그는 0(미수집) 또는 1(수집)만 사용합니다.
+execute unless score #crying_overworld var = #crying_overworld var run scoreboard players set #crying_overworld var 0
+execute unless score #crying_dried var = #crying_dried var run scoreboard players set #crying_dried var 0
+execute unless score #crying_frozen var = #crying_frozen var run scoreboard players set #crying_frozen var 0
+execute unless score #crying_dawn var = #crying_dawn var run scoreboard players set #crying_dawn var 0
 execute unless score #overworld_advancement_reward_disabled var = #overworld_advancement_reward_disabled var run scoreboard players set #overworld_advancement_reward_disabled var 0
 execute unless score #nether_advancement_reward_disabled var = #nether_advancement_reward_disabled var run scoreboard players set #nether_advancement_reward_disabled var 0
 execute unless score #wood_advancement_reward var = #wood_advancement_reward var run scoreboard players set #wood_advancement_reward var 0

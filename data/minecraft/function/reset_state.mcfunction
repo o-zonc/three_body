@@ -70,6 +70,11 @@ execute in minecraft:dried run setblock 12 66 0 air
 execute in minecraft:dried run setblock 18 66 6 air
 
 # 7. 스토리 관리 스코어보드 초기화
+scoreboard players reset * second_story
+scoreboard players reset * second_step
+scoreboard players reset * second_timer
+tag @a remove second
+tag @a remove third
 scoreboard players set #done intro 0
 scoreboard players set #t intro 0
 scoreboard players set #overworld civilization_age 0
@@ -99,30 +104,17 @@ scoreboard players set #crying_overworld var 0
 scoreboard players set #crying_dried var 0
 scoreboard players set #crying_frozen var 0
 scoreboard players set #crying_dawn var 0
-scoreboard players set #overworld crystal_state 0
-scoreboard players set #dried crystal_state 0
-scoreboard players set #frozen crystal_state 0
-scoreboard players set #dawn crystal_state 0
+scoreboard players set #crying_overworld summoned 0
+scoreboard players set #crying_dried summoned 0
+scoreboard players set #crying_frozen summoned 0
+scoreboard players set #crying_dawn summoned 0
 scoreboard players set #crying_vault_opened var 0
-# 네 엔드 수정 좌표가 속한 극야의 4개 청크를 로드한 상태에서 모두 제거합니다.
-# 태그가 누락되었거나 위치가 어긋난 과거 수정도 restart에서는 함께 정리합니다.
-execute in polarnight store success score #crying_reset_forceload_added tmp run forceload add -11 -11 11 11
-execute in polarnight as @e[type=minecraft:end_crystal] run data merge entity @s {Invulnerable:0b}
-execute in polarnight run kill @e[type=minecraft:end_crystal]
-# 과거 버전에서 태그 없이 남은 수정도 네 설치 좌표를 기준으로 제거합니다.
-execute in polarnight positioned 11 67 11 as @e[type=minecraft:end_crystal,distance=..2] run data merge entity @s {Invulnerable:0b}
-execute in polarnight positioned 11 67 11 run kill @e[type=minecraft:end_crystal,distance=..2]
-execute in polarnight positioned -11 67 11 as @e[type=minecraft:end_crystal,distance=..2] run data merge entity @s {Invulnerable:0b}
-execute in polarnight positioned -11 67 11 run kill @e[type=minecraft:end_crystal,distance=..2]
-execute in polarnight positioned 11 67 -11 as @e[type=minecraft:end_crystal,distance=..2] run data merge entity @s {Invulnerable:0b}
-execute in polarnight positioned 11 67 -11 run kill @e[type=minecraft:end_crystal,distance=..2]
-execute in polarnight positioned -11 67 -11 as @e[type=minecraft:end_crystal,distance=..2] run data merge entity @s {Invulnerable:0b}
-execute in polarnight positioned -11 67 -11 run kill @e[type=minecraft:end_crystal,distance=..2]
-execute if score #crying_reset_forceload_added tmp matches 1 in polarnight run forceload remove -11 -11 11 11
 function polarnight/structure/vault/off
 execute in minecraft:frozen run setblock 8 67 36 minecraft:obsidian
 execute in minecraft:dried run setblock 0 63 0 minecraft:sandstone
 function crying/dawn_reset
+
+execute in polarnight run kill @e[type=end_crystal]
 
 # 얼어붙은 세계의 일회성 푸른 얼음을 restart 때만 복원합니다.
 execute in minecraft:frozen run setblock 0 74 -4 minecraft:blue_ice

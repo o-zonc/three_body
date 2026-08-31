@@ -22,17 +22,17 @@ execute if score #lapis factory_unlocked matches 1 run scoreboard players set #l
 execute if score #cold factory_unlocked matches 1 run scoreboard players set #cold factory_status 1
 execute if score #heat factory_unlocked matches 1 run scoreboard players set #heat factory_status 1
 
-function factory/set_timer {id:"wood"}
-function factory/set_timer {id:"stone"}
-function factory/set_timer {id:"coal"}
-function factory/set_timer {id:"copper"}
-function factory/set_timer {id:"iron"}
-function factory/set_timer {id:"gold"}
-function factory/set_timer {id:"diamond"}
-function factory/set_timer {id:"emerald"}
-function factory/set_timer {id:"lapis"}
-function factory/set_timer {id:"cold"}
-function factory/set_timer {id:"heat"}
+function factory/set_timer_phased {id:"wood",index:0}
+function factory/set_timer_phased {id:"stone",index:1}
+function factory/set_timer_phased {id:"coal",index:2}
+function factory/set_timer_phased {id:"copper",index:3}
+function factory/set_timer_phased {id:"iron",index:4}
+function factory/set_timer_phased {id:"gold",index:5}
+function factory/set_timer_phased {id:"diamond",index:6}
+function factory/set_timer_phased {id:"emerald",index:7}
+function factory/set_timer_phased {id:"lapis",index:8}
+function factory/set_timer_phased {id:"cold",index:9}
+function factory/set_timer_phased {id:"heat",index:10}
 function factory/campfires
 playsound block.iron_door.open weather @s ~ ~ ~ 0.8 1.1
 title @s actionbar {text:"해금한 모든 공장의 가동을 재개했습니다.",color:"green",italic:false}

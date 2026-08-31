@@ -7,7 +7,8 @@ execute if score #crying_vault_opened var matches 1 run title @s actionbar {"tex
 execute if score #crying_vault_opened var matches 1 run return 0
 
 # 네 조각이 모두 모이지 않았다면 현재 진행도만 표시합니다.
-execute unless score #crying_count var matches 4 run title @s actionbar [{text:"",italic:true},{"score":{"name":"#crying_count","objective":"var"}, color:"dark_purple"},{"text":" / 4", color:"dark_gray"}]
+function crying/update_count
+execute unless score #crying_count var matches 4 run title @s actionbar [{text:"",italic:true},{"score":{"name":"#crying_count","objective":"var"}, color:"dark_gray"},{"text":" / 4", color:"dark_gray"}]
 execute unless score #crying_count var matches 4 run return 0
 
 # 네 조각이 모두 모였다면 금고의 의미를 간단히 설명하고 개방 버튼을 표시합니다.

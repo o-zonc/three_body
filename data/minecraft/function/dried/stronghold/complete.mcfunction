@@ -6,4 +6,5 @@ execute if score #stronghold_dried upgrade matches 1.. run advancement grant @s 
 execute unless score #stronghold_overworld upgrade matches 1.. run return 0
 execute unless score #stronghold_frozen upgrade matches 1.. run return 0
 execute unless score #stronghold_dried upgrade matches 1.. run return 0
+function factory/cache_all
 return 1

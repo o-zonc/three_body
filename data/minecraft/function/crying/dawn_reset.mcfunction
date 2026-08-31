@@ -1,6 +1,6 @@
 # 여명 차원 우는 흑요석 이벤트 전체 초기화
 scoreboard players set #crying_dawn var 0
-scoreboard players set #dawn crystal_state 0
+function crying/update_count
 scoreboard players set #GLOBAL dawn_reactor_purchased 0
 scoreboard players set #dawn_overworld_amp meta 0
 scoreboard players set #dawn_dried_amp meta 0

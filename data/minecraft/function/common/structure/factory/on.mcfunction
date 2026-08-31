@@ -13,3 +13,6 @@ execute in overworld run setblock -24 -63 36 creaking_heart
 
 execute in overworld run fill -25 -63 4 -23 -61 4 air
 execute in overworld run fill 4 -63 25 4 -62 23 air
+
+# 구조물 재적용으로 interaction이 중복되더라도 즉시 역할별 하나만 남긴다.
+function factory/deduplicate_interactions

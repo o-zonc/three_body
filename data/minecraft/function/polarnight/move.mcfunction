@@ -16,10 +16,6 @@ scoreboard players set #GLOBAL visited_overworld 0
 scoreboard players add #GLOBAL visited_polar 1
 scoreboard players set #GLOBAL current_dim 3
 
-# 극야에 들어올 때 영구 수집 기록을 기준으로 네 표식 좌표를 정확히 하나씩 정합화한다.
-# 과거 버전에서 남은 중복 엔드 수정도 이 시점에 자동으로 정리된다.
-function crying/crystal_reset_schedule
-
 # 관측소에서 이미 흐름을 멈춰 둔 상태는 극야 진입으로 풀지 않는다.
 # era_observed는 멸망 시작 전에 정지 상태였음을 기록하며,
 # dev 태그가 있는 테스트 환경에서는 수동 정지를 항상 보존한다.

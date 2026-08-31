@@ -97,6 +97,7 @@ scoreboard objectives add compress dummy
 scoreboard objectives add unlock_trigger trigger
 scoreboard objectives add upgrade_trigger trigger
 scoreboard objectives add item_trigger trigger
+scoreboard objectives add dimension_trigger trigger
 scoreboard objectives add trigger_init dummy
 
 # 10. 엘리베이터 스코어보드
@@ -107,6 +108,11 @@ scoreboard objectives add elevator_jump_prev dummy
 # 11. 타임머신
 scoreboard objectives add time_machine_level dummy
 scoreboard objectives add time_machine_trigger trigger
+
+# 2회차 공통 진행 상태
+scoreboard objectives add second_story dummy
+scoreboard objectives add second_step dummy
+scoreboard objectives add second_timer dummy
 
 # 12. 공장 자동화
 scoreboard objectives add factory_level dummy
@@ -139,4 +145,8 @@ scoreboard objectives add dawn_information_shop dummy
 scoreboard objectives add dawn_time_shop dummy
 scoreboard objectives add dawn_bonus_shop dummy
 scoreboard objectives add dawn_reactor_purchased dummy
-scoreboard objectives add crystal_state dummy
+scoreboard objectives add reckoning_pending dummy
+scoreboard objectives add reckoning_count dummy
+
+# 15. 우는 흑요석
+scoreboard objectives add summoned dummy

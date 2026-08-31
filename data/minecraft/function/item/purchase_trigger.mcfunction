@@ -6,8 +6,7 @@ execute if score @s item_trigger matches 2103 if score #level alchemy_workshop m
 execute if score @s item_trigger matches 2104 if score #level alchemy_workshop matches 2.. run function item/purchase {id:"overworld"}
 execute if score @s item_trigger matches 2105 if score #level alchemy_workshop matches 1.. run function item/purchase_permanent {id:"shop",name:"상점 이동기",color:"gray",description:"상점으로 이동합니다.",trigger:2105}
 execute if score @s item_trigger matches 2106 if score #level alchemy_workshop matches 1.. run function item/purchase_permanent {id:"alchemy",name:"연금술 공방 이동기",color:"light_purple",description:"연금술 공방으로 이동합니다.",trigger:2106}
-# 2회차에서 우주 이동기 판매를 활성화한다. (공방 Lv. 3)
-# execute if score @s item_trigger matches 2107 if score #level alchemy_workshop matches 3.. run function item/purchase {id:"cosmos"}
+execute if score @s item_trigger matches 2107 if entity @s[tag=ending_seen] run function item/purchase_permanent {id:"cosmos",name:"우주 이동기",color:"dark_aqua",description:"우주로 이동합니다.",trigger:2107}
 
 # 시공간 양자 얽힘 파편 저장소
 execute if score @s item_trigger matches 2191 run function quantum/storage/deposit

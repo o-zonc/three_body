@@ -1,6 +1,6 @@
-# Lv.2 자동 세공 ON/OFF
-execute unless score #level alchemy_workshop matches 2.. run title @s actionbar {"text":"자동 세공은 연금술 공방 Lv. 2에서 해금됩니다.","color":"red",italic:true}
-execute unless score #level alchemy_workshop matches 2.. run return 0
+# Lv.1 자동 세공 ON/OFF
+execute unless score #level alchemy_workshop matches 1.. run title @s actionbar {"text":"자동 세공은 연금술 공방 Lv. 1에서 해금됩니다.","color":"red",italic:true}
+execute unless score #level alchemy_workshop matches 1.. run return 0
 
 execute unless score #jewel_auto_enabled var = #jewel_auto_enabled var run scoreboard players set #jewel_auto_enabled var 0
 scoreboard players operation #jewel_auto_toggle_tmp tmp = #jewel_auto_enabled var

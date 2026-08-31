@@ -53,6 +53,7 @@ execute as @a[tag=player,scores={upgrade_trigger=1..}] run function resource/upg
 execute as @a[tag=player,scores={item_trigger=1..}] run function item/purchase_trigger
 execute as @a[tag=player,scores={shop_trigger=1..}] run function dimensions/overworld/shop/shop_trigger
 execute as @a[tag=player,scores={factory_trigger=1..}] run function factory/trigger
+execute as @a[scores={dimension_trigger=1..}] run function mover/dimension_2
 
 function accelerator/tick
 execute as @a[scores={accelerator_trigger=1..}] run function accelerator/trigger
@@ -66,6 +67,7 @@ function dried/advancement/tick
 
 # 스토리
 function story/story
+function second/tick
 execute if score #overworld civilization_age matches 6 run function story/overworld/age/check_modern_age
 execute if score #overworld civilization_age matches 7 run function story/overworld/age/check_contemporary_age
 

@@ -6,4 +6,6 @@ title @s actionbar {text:"긴급탈출장치가 지급되었습니다.",color:"a
 
 tag @s add maze
 
+scoreboard players set #maze_shake var 0
+
 function frozen/maze/randomize

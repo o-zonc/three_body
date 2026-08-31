@@ -30,5 +30,6 @@ execute if score #factory_shop_stage tmp matches 2 run function time_machine/cal
 execute if score #factory_shop_stage tmp matches 2 run scoreboard players operation #time_machine_timer generate = #time_machine_interval_cached var
 
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
-function shop/factory/interact
+execute if score #factory_shop_stage tmp matches 2 run function story/ending/start
+execute unless score #factory_shop_stage tmp matches 2 run function shop/factory/interact
 return 1

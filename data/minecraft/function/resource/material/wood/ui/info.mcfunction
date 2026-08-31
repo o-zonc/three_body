@@ -4,7 +4,8 @@ execute store result score #wood_gain tmp run function resource/material/wood/am
 execute store result score #wood_base_gain tmp run function resource/production/base
 function dawn/amplifier/prepare_resource_ui {dim:"overworld",final:100,final_multiplier:2}
 function resource/material/wood/value/regen_upgrade_cost
-function resource/convert_upgrade_cost_to_text_named {id:"wood_regen",insertion:", "}
+execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
+execute if data storage data tmp.cost run function resource/convert_discount_cost_to_text_named {id:"wood_regen",insertion:", "}
 scoreboard players set #gain_advancement_threshold tmp 3
 function resource/ui/prepare_standard_gain {id:"wood",color:"green",shop_color:"yellow",advancement:"wood",advancement_multiplier:3,advancement_label:"3"}
 
