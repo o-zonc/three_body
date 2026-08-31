@@ -7,4 +7,4 @@ execute if data storage data tmp.tool.now.cost run data modify storage data tmp.
 execute if data storage data tmp.tool.now.cost run function resource/convert_upgrade_cost_to_text_named {id:"tool_upgrade",insertion:", "}
 
 execute if data storage data tmp.tool.now.cost run title @s actionbar ["",{text:"하늘의 힘은 천공의 제단 위에서만 응답합니다.",color:"aqua",italic:true},{text:"  다음 업그레이드: ",color:"gray",italic:false},{storage:"data",nbt:"tmp.cost_text.tool_upgrade.text",interpret:true}]
-execute unless data storage data tmp.tool.now.cost run title @s actionbar ["",{text:"하늘의 힘은 천공의 제단 위에서만 응답합니다.",color:"aqua",italic:true},{text:"  다음 업그레이드: ",color:"gray",italic:false},{text:"더 이상 업그레이드 불가",color:"red",italic:false}]
+execute unless data storage data tmp.tool.now.cost run title @s actionbar {text:"하늘의 힘은 천공의 제단 위에서만 응답합니다.",color:"aqua",italic:true}
