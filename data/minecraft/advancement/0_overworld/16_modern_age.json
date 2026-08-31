@@ -3,7 +3,7 @@
 	"display": {
 		"icon": "redstone",
 		"title": "근대",
-		"description": "과학과 기계가 문명의 속도를 바꾸기 시작합니다.\n\n§7§o현대 사회가 되기에는 아직 공장이 부족한 것 같습니다.\n\n§6•§7 보상: 석탄 수급량이 3배 증가합니다.",
+		"description": "과학과 기계가 문명의 속도를 바꾸기 시작합니다.\n\n§7§o현대 사회가 되기에는 아직 공장이 부족한 것 같습니다.",
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true
