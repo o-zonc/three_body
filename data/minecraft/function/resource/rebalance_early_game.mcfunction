@@ -50,9 +50,9 @@ data modify storage data const.resource.iron.regen[{lvl:2}].cost set value [{typ
 data modify storage data const.resource.iron.regen[{lvl:3}].cost set value [{type:"diamond",amount:40}]
 
 # 오버월드 광산 자원 7종(석탄/구리/철/금/다이아몬드/에메랄드/청금석)의 초기 쿨타임 상한은 500틱.
-# 석탄/구리/철은 위에서 이미 500틱 미만으로 조정했다. 금/다이아몬드는 기존값을 유지하고,
-# 상한을 넘던 에메랄드(700틱)와 청금석(600틱)만 500틱으로 단축한다.
+# 석탄/구리/철은 위에서 이미 500틱 미만으로 조정했고 금/다이아몬드는 기존값을 유지한다.
+# 에메랄드:청금석은 기존 700:600 = 7:6 비율을 유지해 490:420틱으로 함께 30% 단축한다.
 data modify storage data const.resource.gold.regen[{lvl:0}].value set value 100
 data modify storage data const.resource.diamond.regen[{lvl:0}].value set value 160
-data modify storage data const.resource.emerald.regen[{lvl:0}].value set value 500
-data modify storage data const.resource.lapis.regen[{lvl:0}].value set value 500
+data modify storage data const.resource.emerald.regen[{lvl:0}].value set value 490
+data modify storage data const.resource.lapis.regen[{lvl:0}].value set value 420
