@@ -21,9 +21,6 @@ execute as @a[tag=player,tag=!catalyst_i_owned,tag=catalyst_ii_owned] if score @
 execute as @a[tag=player,tag=!catalyst_i_owned,tag=!catalyst_ii_owned,tag=catalyst_iii_owned] if score @s potion_used > @s potion_used_prev run function shop/alchemy/potion/activate {level:3,multiplier:5,duration:2400,roman:"III",break_speed:8}
 execute as @a[tag=player,tag=!catalyst_i_owned,tag=!catalyst_ii_owned,tag=!catalyst_iii_owned,tag=chaos_end_potion_owned] if score @s potion_used > @s potion_used_prev run function shop/alchemy/potion/use_chaos_end
 
-# 신속 III는 파티클 없이 짧게 갱신해, 일시정지된 카탈리스트 타이머와도 정확히 동기화합니다.
-execute if score #catalyst_timer var matches 1.. as @a[tag=player,tag=catalyst_effect_active] run effect give @s minecraft:haste 2 2 true
-
 # 이번 틱의 누적 사용 횟수를 다음 비교 기준으로 저장합니다.
 execute as @a[tag=player] run scoreboard players operation @s potion_used_prev = @s potion_used
 
