@@ -1,4 +1,4 @@
-# 모든 해금과 업그레이드를 엔딩 직전의 최대 테스트 상태로 설정합니다.
+# 타임머신 건설과 엔딩 직전의 최대 테스트 상태로 설정합니다.
 # /function test/max_upgrades_pre_ending
 
 # 자원 및 시설 해금
@@ -92,13 +92,13 @@ scoreboard players set #hole_level upgrade 2
 function shop/third/update_capacities
 function shop/alchemy/lab/rates
 
-# 공장과 후반 시설
-scoreboard players set #GLOBAL factory_build_stage 3
-scoreboard players set #GLOBAL factory_elevator_unlocked 2
+# 공장과 후반 시설. 타임머신은 구매 테스트가 가능하도록 미건설 상태로 둡니다.
+scoreboard players set #GLOBAL factory_build_stage 2
+scoreboard players set #GLOBAL factory_elevator_unlocked 1
 scoreboard players set #factory_recycle_level upgrade 4
 scoreboard players set #factory_energy_level upgrade 4
 scoreboard players set #GLOBAL accelerator_level 4
-scoreboard players set #GLOBAL time_machine_level 4
+scoreboard players set #GLOBAL time_machine_level 0
 scoreboard players set #wood factory_level 6
 scoreboard players set #stone factory_level 6
 scoreboard players set #coal factory_level 6
@@ -121,13 +121,13 @@ scoreboard players set #crying_count var 4
 scoreboard players set #crying_vault_opened var 1
 execute as @a run function crying/advancement_sync
 
-# 타임머신의 최종 세 발전과제를 제외한 데이터팩 발전과제를 모두 달성합니다.
+# 타임머신 건설 이전에 달성 가능한 데이터팩 발전과제를 설정합니다.
 function test/grant_advancements_pre_ending
 
-# 시간 연구는 최종 마일스톤 직전까지만 설정하여 엔딩을 발동하지 않습니다.
-scoreboard players set #time_machine_yellow upgrade 6
-scoreboard players set #time_machine_blue upgrade 5
-scoreboard players set #time_machine_path_yellow upgrade 2
+# 타임머신은 아직 건설되지 않았으므로 연구 상태도 시작 전으로 되돌립니다.
+scoreboard players set #time_machine_yellow upgrade 0
+scoreboard players set #time_machine_blue upgrade 0
+scoreboard players set #time_machine_path_yellow upgrade 0
 scoreboard players set #time_machine_path_blue upgrade 0
 scoreboard players set #time_machine_path_green upgrade 0
 scoreboard players set #time_machine_green_discovered upgrade 0
@@ -151,7 +151,12 @@ tag @a remove ending_from_dawn
 advancement revoke @a only 0_overworld/25_yellow_time_machine
 advancement revoke @a only 0_overworld/25_blue_time_machine
 advancement revoke @a only 0_overworld/25_green_time_machine
+scoreboard players reset @a second_story
+scoreboard players reset @a second_step
+scoreboard players reset @a second_timer
+tag @a remove second
+tag @a remove third
 
 function meta/obsidian/give_item {amount:128}
 
-tellraw @s {text:"모든 업그레이드를 엔딩 직전 최대 테스트 상태로 설정했습니다.",color:"green"}
+tellraw @s {text:"타임머신 건설과 엔딩 직전의 최대 테스트 상태로 설정했습니다.",color:"green"}

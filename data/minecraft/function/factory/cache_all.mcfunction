@@ -1,0 +1,11 @@
+function factory/cache {id:"wood"}
+function factory/cache {id:"stone"}
+function factory/cache {id:"coal"}
+function factory/cache {id:"copper"}
+function factory/cache {id:"iron"}
+function factory/cache {id:"gold"}
+function factory/cache {id:"diamond"}
+function factory/cache {id:"emerald"}
+function factory/cache {id:"lapis"}
+function factory/cache {id:"cold"}
+function factory/cache {id:"heat"}

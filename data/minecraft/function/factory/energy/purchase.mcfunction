@@ -7,5 +7,6 @@ execute unless score #factory_energy_cost_ok tmp matches 1 at @s run playsound b
 execute unless score #factory_energy_cost_ok tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players add #factory_energy_level upgrade 1
+function factory/cache_all
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 function factory/energy/ui

@@ -26,6 +26,11 @@ scoreboard objectives add compress dummy
 
 scoreboard objectives add scene dummy
 
+# 2회차 공통 진행 상태
+scoreboard objectives add second_story dummy
+scoreboard objectives add second_step dummy
+scoreboard objectives add second_timer dummy
+
 scoreboard objectives add unlock_trigger trigger
 scoreboard players enable @a unlock_trigger
 
@@ -52,6 +57,11 @@ scoreboard players enable @a scene_trigger
 # 천공의 제단 도구 강화 UI
 scoreboard objectives add tool_trigger trigger
 scoreboard players enable @a tool_trigger
+
+# 차원 선택 UI
+scoreboard objectives add dimension_trigger trigger
+scoreboard players set @a dimension_trigger 0
+scoreboard players enable @a dimension_trigger
 
 execute unless score #wood material = #wood material run scoreboard players set #wood material 0
 execute unless score #information_bank meta = #information_bank meta run scoreboard players set #information_bank meta 0

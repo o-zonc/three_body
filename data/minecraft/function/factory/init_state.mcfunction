@@ -72,5 +72,8 @@ execute unless score #lapis factory_status = #lapis factory_status run scoreboar
 execute unless score #cold factory_status = #cold factory_status run scoreboard players set #cold factory_status 0
 execute unless score #heat factory_status = #heat factory_status run scoreboard players set #heat factory_status 0
 
+# 로드 시 기존 월드의 캐시도 현재 레벨·발전·성채 상태로 초기화한다.
+function factory/cache_all
+
 # 기존 월드도 리로드 시 공장 모닥불을 현재 가동 상태에 맞춥니다.
 function factory/campfires

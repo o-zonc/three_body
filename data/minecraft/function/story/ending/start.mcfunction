@@ -1,8 +1,8 @@
 # ============================================================
-#  엔딩 - 발전 트리 완성 뒤 단 한 번 실행되는 결말
+#  엔딩 - 타임머신 최초 건설 완료 뒤 단 한 번 실행되는 결말
 # ============================================================
 
-# execute if entity @s[tag=ending_seen] run return 0
+execute if entity @s[tag=ending_seen] run return 0
 tag @s add ending_seen
 scoreboard players set #ending_credit_tick var 0
 scoreboard objectives setdisplay sidebar

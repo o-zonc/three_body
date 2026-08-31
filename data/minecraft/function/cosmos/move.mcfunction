@@ -15,5 +15,3 @@ gamerule advance_time false
 
 scoreboard players set #GLOBAL visited_polar 0
 scoreboard players set #GLOBAL current_dim 5
-
-gamemode spectator @a

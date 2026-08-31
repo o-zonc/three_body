@@ -1,2 +1,1 @@
-tellraw @a ["§7[알림] ",{text:"[ 천공의 제단 ]",color:"#91D7FF",shadow_color:-16777216,hover_event:{action:"show_text",value:{text:"오버월드 중앙의 석영 구조물"}}},"에서 채굴 도구를 손에 들고 §c[웅크리기]§r§7해 도구를 업그레이드 할 수 있습니다."]
-tellraw @a ["§7또한, 손에 아무런 아이템도 들지 않고 §c[웅크리기]§r§7해 자원에 관한 정보를 얻을 수 있습니다."]
+tellraw @a ["§7[알림] ",{text:"[ 천공의 제단 ]",color:"#91D7FF",shadow_color:-16777216,hover_event:{action:"show_text",value:{text:"오버월드 중앙의 석영 구조물"}}},"에서 채굴 도구를 손에 들고 §c[웅크리기]§r§7해 도구를 업그레이드 할 수 있습니다. 또한, 손에 아무런 아이템도 들지 않고 §c[웅크리기]§r§7해 자원에 관한 정보를 얻을 수 있습니다."]

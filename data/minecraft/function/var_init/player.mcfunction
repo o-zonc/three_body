@@ -9,6 +9,8 @@ scoreboard players enable @s compress_trigger
 scoreboard players enable @s obsidian_storage_trigger
 scoreboard players enable @s scene_trigger
 scoreboard players enable @s tool_trigger
+scoreboard players set @s dimension_trigger 0
+scoreboard players enable @s dimension_trigger
 scoreboard players enable @s factory_trigger
 scoreboard players enable @s accelerator_trigger
 scoreboard players enable @s intro_skip

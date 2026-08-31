@@ -70,6 +70,11 @@ execute in minecraft:dried run setblock 12 66 0 air
 execute in minecraft:dried run setblock 18 66 6 air
 
 # 7. 스토리 관리 스코어보드 초기화
+scoreboard players reset * second_story
+scoreboard players reset * second_step
+scoreboard players reset * second_timer
+tag @a remove second
+tag @a remove third
 scoreboard players set #done intro 0
 scoreboard players set #t intro 0
 scoreboard players set #overworld civilization_age 0
