@@ -6,7 +6,7 @@ function minecraft:const_def/base
 # -----------------------------------------------------------------------------
 # 초반 자원 밸런스 상수
 # -----------------------------------------------------------------------------
-# 자원 해금 비용은 변경하지 않으며, 오버월드 광산 자원 7종의 초기 재생 쿨타임은 최대 500틱으로 제한한다.
+# 오버월드 광산 자원 7종의 초기 재생 쿨타임은 최대 500틱으로 제한한다.
 
 # 나무
 data modify storage data const.resource.wood.regen[{lvl:0}].value set value 30
@@ -59,6 +59,10 @@ data modify storage data const.resource.gold.regen[{lvl:0}].value set value 100
 data modify storage data const.resource.diamond.regen[{lvl:0}].value set value 160
 data modify storage data const.resource.emerald.regen[{lvl:0}].value set value 490
 data modify storage data const.resource.lapis.regen[{lvl:0}].value set value 420
+
+# 에메랄드 / 청금석 해금 비용
+data modify storage data const.resource.emerald.unlock_cost set value [{type:"coal",amount:100},{type:"copper",amount:50},{type:"wood",amount:300}]
+data modify storage data const.resource.lapis.unlock_cost set value [{type:"iron",amount:40},{type:"copper",amount:80},{type:"wood",amount:400}]
 
 # 자원 상점 2배 업그레이드 비용
 # 자기 자원 부담을 조금 낮추고, 철기 이후 늘어난 나무 수급량을 보조 비용으로 사용한다.
