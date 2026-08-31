@@ -10,4 +10,6 @@ scoreboard players operation #lab_remaining_rate tmp = #lab_percent_base tmp
 scoreboard players operation #lab_remaining_rate tmp -= #lab_rate tmp
 scoreboard players operation #lab_cooldown tmp *= #lab_remaining_rate tmp
 scoreboard players operation #lab_cooldown tmp /= #lab_percent_base tmp
+# 양수 기본값에 감소 보상을 적용한 결과가 0틱 이하가 되지 않도록 최솟값을 1틱으로 고정합니다.
+execute if score #lab_base_cooldown tmp matches 1.. if score #lab_cooldown tmp matches ..0 run scoreboard players set #lab_cooldown tmp 1
 return run scoreboard players get #lab_cooldown tmp
