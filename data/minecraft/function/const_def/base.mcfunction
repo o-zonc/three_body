@@ -841,7 +841,7 @@ data merge storage data {\
         ]\
       },\
       emerald: {item:"deepslate_emerald_ore",\
-        unlock_cost:[{type:"iron",amount:120},{type:"copper",amount:120}],\
+        unlock_cost:[{type:"iron",amount:80},{type:"copper",amount:80},{type:"wood",amount:300}],\
         regen:[\
           {lvl:0,value:700,cost:[{type:"gold",amount:300}]},\
           {lvl:1,value:420,cost:[{type:"lapis",amount:300}]},\
@@ -851,7 +851,7 @@ data merge storage data {\
         ]\
       },\
       lapis: {item:"deepslate_lapis_ore",\
-        unlock_cost:[{type:"emerald",amount:100}],\
+        unlock_cost:[{type:"emerald",amount:60},{type:"stone",amount:300}],\
         regen:[\
           {lvl:0,value:600,cost:[{type:"emerald",amount:100}]},\
           {lvl:1,value:380,cost:[{type:"gold",amount:400}]},\
