@@ -851,7 +851,7 @@ data merge storage data {\
         ]\
       },\
       lapis: {item:"deepslate_lapis_ore",\
-        unlock_cost:[{type:"emerald",amount:60},{type:"stone",amount:300}],\
+        unlock_cost:[{type:"copper",amount:100},{type:"coal",amount:100}],\
         regen:[\
           {lvl:0,value:600,cost:[{type:"emerald",amount:100}]},\
           {lvl:1,value:380,cost:[{type:"gold",amount:400}]},\
