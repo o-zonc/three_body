@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "4_dawn/00_root",
   "display": {
     "icon": "light_blue_stained_glass",
@@ -13,5 +13,8 @@
     "level_one": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "advancement/general/check"
   }
 }

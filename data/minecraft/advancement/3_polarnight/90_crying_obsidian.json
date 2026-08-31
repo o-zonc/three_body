@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "3_polarnight/89_crying_discovery",
   "display": {
     "icon": "crying_obsidian",
@@ -28,5 +28,8 @@
     ["dried"],
     ["frozen"],
     ["dawn"]
-  ]
+  ],
+  "rewards": {
+    "function": "advancement/general/check"
+  }
 }

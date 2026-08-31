@@ -12,7 +12,7 @@ execute unless score #disaster_running run matches 1 if score #catalyst_timer va
 
 # 카탈리스트가 끝난 플레이어의 임시 효과와 채굴 속도 배율을 원래 값으로 돌립니다.
 execute unless score #catalyst_timer var matches 1.. as @a[tag=player,tag=catalyst_effect_active] run effect clear @s minecraft:haste
-execute unless score #catalyst_timer var matches 1.. as @a[tag=player,tag=catalyst_effect_active] run attribute @s minecraft:player.block_break_speed base set 1
+execute unless score #catalyst_timer var matches 1.. as @a[tag=player,tag=catalyst_effect_active] run attribute @s minecraft:block_break_speed base set 1
 execute unless score #catalyst_timer var matches 1.. run tag @a[tag=catalyst_effect_active] remove catalyst_effect_active
 
 # 직전 틱에 추적한 물약을 실제로 마셨을 때만 각 효과를 실행합니다.

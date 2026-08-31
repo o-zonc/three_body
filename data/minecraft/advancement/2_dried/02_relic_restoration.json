@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "2_dried/01_archaeologist",
   "display": {
     "icon": "clock",
@@ -13,5 +13,8 @@
     "relic_level_two": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "advancement/general/check"
   }
 }

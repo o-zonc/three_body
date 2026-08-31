@@ -151,6 +151,10 @@ tag @a remove ending_from_dawn
 advancement revoke @a only 0_overworld/25_yellow_time_machine
 advancement revoke @a only 0_overworld/25_blue_time_machine
 advancement revoke @a only 0_overworld/25_green_time_machine
+advancement revoke @a only 0_overworld/26_all_general
+scoreboard players set #time_machine_ever_yellow var 0
+scoreboard players set #time_machine_ever_blue var 0
+scoreboard players set #time_machine_ever_green var 0
 scoreboard players reset @a second_story
 scoreboard players reset @a second_step
 scoreboard players reset @a second_timer

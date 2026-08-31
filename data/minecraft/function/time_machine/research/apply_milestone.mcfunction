@@ -15,3 +15,9 @@ execute if score #time_machine_yellow upgrade = #time_machine_blue upgrade run t
 execute if score #time_machine_path_yellow upgrade matches 3.. unless entity @s[advancements={0_overworld/25_yellow_time_machine=true}] run advancement grant @s only 0_overworld/25_yellow_time_machine
 execute if score #time_machine_path_blue upgrade matches 3.. unless entity @s[advancements={0_overworld/25_blue_time_machine=true}] run advancement grant @s only 0_overworld/25_blue_time_machine
 execute if score #time_machine_path_green upgrade matches 3.. unless entity @s[advancements={0_overworld/25_green_time_machine=true}] run advancement grant @s only 0_overworld/25_green_time_machine
+
+# 분기 advancement는 연구 초기화 때 회수되므로 과거 완료 기록을 별도로 유지합니다.
+execute if score #time_machine_path_yellow upgrade matches 3.. run scoreboard players set #time_machine_ever_yellow var 1
+execute if score #time_machine_path_blue upgrade matches 3.. run scoreboard players set #time_machine_ever_blue var 1
+execute if score #time_machine_path_green upgrade matches 3.. run scoreboard players set #time_machine_ever_green var 1
+function advancement/general/check

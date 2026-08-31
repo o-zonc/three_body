@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "0_overworld/16_modern_age",
   "display": {
     "icon": "crafter",
@@ -13,5 +13,8 @@
     "structure_unlocked": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "advancement/general/check"
   }
 }

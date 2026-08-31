@@ -1,0 +1,17 @@
+{
+  "parent": "0_overworld/24_time_machine",
+  "display": {
+    "icon": "nether_star",
+    "title": "모든 일반 발전과제 달성",
+    "description": "엔딩을 다시 시청.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "all_general_advancements": {
+      "trigger": "impossible"
+    }
+  }
+}

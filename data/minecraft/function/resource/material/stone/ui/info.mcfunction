@@ -6,8 +6,8 @@ function dawn/amplifier/prepare_resource_ui {dim:"overworld",final:100,final_mul
 function resource/material/stone/value/regen_upgrade_cost
 execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
 execute if data storage data tmp.cost run function resource/convert_discount_cost_to_text_named {id:"stone_regen",insertion:", "}
-scoreboard players set #gain_advancement_threshold tmp 1
-function resource/ui/prepare_standard_gain {id:"stone",color:"green",shop_color:"gray",advancement:"stone",advancement_multiplier:1,advancement_label:"1"}
+scoreboard players set #gain_advancement_threshold tmp 2
+function resource/ui/prepare_standard_gain {id:"stone",color:"green",shop_color:"gray",advancement:"stone",advancement_multiplier:2,advancement_label:"2"}
 
 # 돌 전용 최종 수급 배수는 모든 공통 수급량 증가 항목 뒤에 표시한다.
 data modify storage data tmp.stone_special_label set value {text:""}

@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "2_dried/00_root",
   "display": {
     "icon": "magma_cream",
@@ -16,5 +16,8 @@
     "unlock_sulfur_structure": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "advancement/general/check"
   }
 }

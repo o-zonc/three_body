@@ -17,8 +17,13 @@ execute unless score #dawn_amp_cost_check tmp matches 1 run return 0
 function resource/cost/take
 $scoreboard players add #dawn_$(id)_amp meta 1
 
-# 화면상 Lv.1(내부 meta=2)에 도달하면 해당 장치의 스테인드글라스를 채색합니다.
-$execute if score #dawn_$(id)_amp meta matches 2 run function dawn/amplifier/visual/$(id)
+# 각 증폭기를 해금하면(내부 meta=1) 해당 장치의 스테인드글라스를 채색합니다.
+$execute if score #dawn_$(id)_amp meta matches 1 run function dawn/amplifier/visual/$(id)
+# 증폭기 발전과제와 리액터 보상은 기존처럼 Lv.1(내부 meta=2)에서 획득합니다.
+$execute if score #dawn_$(id)_amp meta matches 2 run function dawn/amplifier/advancement/$(id)
+
+# 세 증폭기가 모두 해금되면 여명 홀의 우는 흑요석을 즉시 공개합니다.
+function crying/dawn_reveal
 
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 $function dawn/amplifier/ui {id:"$(id)",name:"$(name)",color:"$(color)",trigger:$(trigger)}

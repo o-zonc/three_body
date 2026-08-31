@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "3_polarnight/00_root",
   "display": {
     "icon": "echo_shard",
@@ -25,5 +25,8 @@
   },
   "requirements": [
     ["overworld_water", "frozen_obsidian", "dried_secret", "dawn_spear"]
-  ]
+  ],
+  "rewards": {
+    "function": "advancement/general/check"
+  }
 }

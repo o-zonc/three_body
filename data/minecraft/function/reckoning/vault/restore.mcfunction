@@ -97,10 +97,10 @@ execute if score #vault_factory tmp matches 1 if score #vault_factory_stage tmp 
 
 # 시간 보관소: 가장 높은 달성 시대부터 적용한다.
 scoreboard players set #overworld civilization_age 0
-execute if score #time_bank meta matches 5.. run scoreboard players set #overworld civilization_age 5
-execute if score #time_bank meta matches 20.. run scoreboard players set #overworld civilization_age 6
-execute if score #time_bank meta matches 40.. run scoreboard players set #overworld civilization_age 7
-execute if score #time_bank meta matches 100.. run scoreboard players set #overworld civilization_age 8
+execute if score #time_bank meta matches 10.. run scoreboard players set #overworld civilization_age 5
+execute if score #time_bank meta matches 40.. run scoreboard players set #overworld civilization_age 6
+execute if score #time_bank meta matches 80.. run scoreboard players set #overworld civilization_age 7
+execute if score #time_bank meta matches 200.. run scoreboard players set #overworld civilization_age 8
 
 # 시간 10조각: 이전 문명에서 개방한 얼어붙은 다리를 유지한다.
 execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run scoreboard players set #frozen_bridge unlock 1
@@ -142,15 +142,19 @@ execute if score #vault_gem_resources tmp matches 1 run scoreboard players opera
 # 시간 250조각: 정산에서 0으로 초기화한 뒤 이전 채굴 도구 강화 단계를 복원한다.
 execute if score #vault_tool tmp matches 1 run scoreboard players operation #tool upgrade = #vault_tool_level tmp
 
+# 시간 보관소 10조각 이상 보정은 상점·도구 보관 효과를 모두 복원한 뒤 적용한다.
+execute if score #time_bank meta matches 10.. run function reckoning/vault/apply_ancient_start
+
 # clear로 사라진 채굴 도구를 최종 강화 단계에 맞춰 다시 발급한다.
 function tool/refresh_all
 
 # 자동 인출은 한 번 달성하면 영구 유지한다.
-execute if score #information_bank meta matches 500.. run scoreboard players set #information_auto_withdraw meta 1
-execute if score #time_bank meta matches 250.. run scoreboard players set #time_auto_withdraw meta 1
+execute if score #information_bank meta matches 1000.. run scoreboard players set #information_auto_withdraw meta 1
+execute if score #time_bank meta matches 500.. run scoreboard players set #time_auto_withdraw meta 1
 
 # 발전과제 보상 복원
 execute if score #vault_reward_wood tmp matches 1.. run function resource/advancement_reward/wood/enable
+execute if score #vault_reward_stone tmp matches 1.. run function resource/advancement_reward/stone/enable
 execute if score #vault_reward_coal tmp matches 1.. run function resource/advancement_reward/coal/enable
 execute if score #vault_reward_copper tmp matches 1.. run function resource/advancement_reward/copper/enable
 execute if score #vault_reward_iron tmp matches 1.. run function resource/advancement_reward/iron/enable

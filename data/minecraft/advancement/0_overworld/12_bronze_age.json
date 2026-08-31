@@ -1,9 +1,9 @@
-{
+﻿{
 	"parent": "0_overworld/11_stone_age",
 	"display": {
 		"icon": "copper_ingot",
 		"title": "청동기 시대",
-		"description": [{"text":"금속을 다루는 법을 깨닫고 새로운 문명의 문을 엽니다."},{"text":"\n\n이제 문명은 자원을 교환하고 축적합니다.","color":"#C87941"}],
+		"description": [{"text":"금속을 다루는 법을 깨닫고 새로운 문명의 문을 엽니다."},{"text":"\n\n이제 문명은 자원을 교환하고 축적합니다.","color":"#C87941"},{"text":"\n\n§6•§7 보상: 나무 수급량이 3배 증가합니다."}],
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true
@@ -12,5 +12,8 @@
 		"manual_test": {
 			"trigger": "impossible"
 		}
-	}
+	},
+  "rewards": {
+    "function": "advancement/general/check"
+  }
 }

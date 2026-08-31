@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "3_polarnight/00_root",
   "display": {
     "icon": "written_book",
@@ -13,5 +13,8 @@
     "manual_test": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "advancement/general/check"
   }
 }

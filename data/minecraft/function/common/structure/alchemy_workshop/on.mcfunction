@@ -18,7 +18,7 @@ execute in overworld run setblock -24 -63 -12 minecraft:brewing_stand
 execute in overworld run setblock -24 -63 -37 minecraft:light[level=15]
 execute in overworld run setblock -37 -63 -24 minecraft:light[level=15]
 execute in overworld run setblock -24 -63 -11 minecraft:light[level=15]
-execute in overworld run setblock -20 -62 -24 minecraft:cartography_table
+execute in overworld run setblock -20 -62 -24 air
 
 execute in overworld run fill -23 -63 -4 -25 -61 -4 air
 execute in overworld run fill -4 -63 -25 -4 -61 -23 air

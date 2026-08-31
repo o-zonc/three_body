@@ -4,12 +4,12 @@ function shop/third/world_eye/prepare
 scoreboard players operation #third_information_lvl tmp = #information_storage_lvl upgrade
 scoreboard players operation #third_time_lvl tmp = #time_storage_lvl upgrade
 scoreboard players operation #third_information_bank_visible tmp = #information_bank meta
-execute unless score #information_bank_unlocked meta matches 1.. if score #third_information_bank_visible tmp matches 1001.. run scoreboard players set #third_information_bank_visible tmp 1000
+execute unless score #information_bank_unlocked meta matches 1.. if score #third_information_bank_visible tmp matches 2001.. run scoreboard players set #third_information_bank_visible tmp 2000
 scoreboard players operation #third_time_bank_visible tmp = #time_bank meta
-execute unless score #time_bank_unlocked meta matches 1.. if score #third_time_bank_visible tmp matches 501.. run scoreboard players set #third_time_bank_visible tmp 500
-data modify storage data tmp.third_information_bank_limit set value {text:" / 1000조각",color:"gray"}
+execute unless score #time_bank_unlocked meta matches 1.. if score #third_time_bank_visible tmp matches 1001.. run scoreboard players set #third_time_bank_visible tmp 1000
+data modify storage data tmp.third_information_bank_limit set value {text:" / 2000조각",color:"gray"}
 execute if score #information_bank_unlocked meta matches 1.. run data modify storage data tmp.third_information_bank_limit set value {text:"조각 (상한 해제)",color:"gray"}
-data modify storage data tmp.third_time_bank_limit set value {text:" / 500조각",color:"gray"}
+data modify storage data tmp.third_time_bank_limit set value {text:" / 1000조각",color:"gray"}
 execute if score #time_bank_unlocked meta matches 1.. run data modify storage data tmp.third_time_bank_limit set value {text:"조각 (상한 해제)",color:"gray"}
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank

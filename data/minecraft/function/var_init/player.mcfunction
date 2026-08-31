@@ -22,3 +22,6 @@ execute unless score @s potion_used matches 0.. run scoreboard players set @s po
 execute unless score @s potion_used_prev matches 0.. run scoreboard players operation @s potion_used_prev = @s potion_used
 
 scoreboard players set @s trigger_init 1
+
+# 신규/재초기화 플레이어의 일반 발전과제 달성 상태를 한 번 동기화합니다.
+function advancement/general/check

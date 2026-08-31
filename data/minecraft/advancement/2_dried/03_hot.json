@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "2_dried/05_endless_heat",
   "display": {
     "icon": "lava_bucket",
@@ -13,5 +13,8 @@
     "heat_ten_thousand": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "advancement/general/check"
   }
 }

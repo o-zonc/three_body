@@ -1,1 +1,3 @@
 give @s minecraft:paper[minecraft:custom_name={"text":"하늘의 은총","color":"#71CDF9","italic":false},minecraft:custom_data={heavenly_grace:1b},minecraft:lore=[{"text":"축복 - 웅크리기로 사용","color":"#71CDF9","italic":false},{"text":""},{"text":"하늘이 문명의 첫 걸음에 은총을 내립니다.","color":"gray","italic":false},{"text":""},{"text":"나무 +100","color":"dark_green","italic":false},{"text":"돌 +100","color":"gray","italic":false},{"text":"석탄 +50","color":"dark_gray","italic":false},{"text":"구리 +50","color":"#C87941","italic":false},{"text":""},{"text":"일회용","color":"red","italic":true}],minecraft:item_model="minecraft:white_bundle"] 1
+
+tellraw @a ["","§7[알림] ",{selector:"@a[tag=player]",color:"white"},"§7은(는) 하늘의 뜻을 조금 알 수 있게 되었다!"]

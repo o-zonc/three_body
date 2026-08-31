@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "1_frozen/11_bridge",
   "display": {
     "icon": "compass",
@@ -13,5 +13,8 @@
     "structure_unlocked": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "advancement/general/check"
   }
 }

@@ -9,6 +9,6 @@ execute if score #third_lvl tmp matches 0 run scoreboard players set #third_next
 execute if score #third_lvl tmp matches 1 run scoreboard players set #third_next_capacity tmp 32
 execute if score #third_lvl tmp matches 2 run scoreboard players set #third_next_capacity tmp 64
 data remove storage data tmp.cost
-execute if score #third_lvl tmp matches 0 run data modify storage data tmp.cost set value [{type:"emerald",amount:200},{type:"lapis",amount:100}]
+execute if score #third_lvl tmp matches 0 run data modify storage data tmp.cost set value [{type:"gold",amount:10},{type:"diamond",amount:5}]
 execute if score #third_lvl tmp matches 1 run data modify storage data tmp.cost set value [{type:"information",amount:24},{type:"time",amount:6},{type:"diamond",amount:100}]
 execute if score #third_lvl tmp matches 2 run data modify storage data tmp.cost set value [{type:"information",amount:96},{type:"time",amount:24},{type:"world_eye",amount:256}]

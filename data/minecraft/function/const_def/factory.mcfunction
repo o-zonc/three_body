@@ -1,0 +1,125 @@
+# load
+# Factory constants
+
+data modify storage data const.factory set value \
+[{id:"wood",\
+  levels:[\
+    {lvl:0,fuel:1,cost:[{type:"copper",amount:40},{type:"wood",amount:100}]},\
+    {lvl:1,fuel:2,cost:[{type:"copper",amount:80},{type:"wood",amount:250}]},\
+    {lvl:2,fuel:3,cost:[{type:"copper",amount:400},{type:"wood",amount:1250}]},\
+    {lvl:3,fuel:4,cost:[{type:"copper",amount:3200},{type:"wood",amount:10000}]},\
+    {lvl:4,fuel:5,cost:[{type:"copper",amount:25600},{type:"wood",amount:80000}]},\
+    {lvl:5,fuel:6,cost:[{type:"copper",amount:204800},{type:"wood",amount:640000}]},\
+    {lvl:6,fuel:7}\
+  ]\
+},\
+{id:"stone",\
+  levels:[\
+    {lvl:0,fuel:1,cost:[{type:"copper",amount:50},{type:"stone",amount:120}]},\
+    {lvl:1,fuel:3,cost:[{type:"copper",amount:100},{type:"stone",amount:300}]},\
+    {lvl:2,fuel:4,cost:[{type:"copper",amount:500},{type:"stone",amount:1500}]},\
+    {lvl:3,fuel:5,cost:[{type:"copper",amount:4000},{type:"stone",amount:12000}]},\
+    {lvl:4,fuel:6,cost:[{type:"copper",amount:32000},{type:"stone",amount:96000}]},\
+    {lvl:5,fuel:7,cost:[{type:"copper",amount:256000},{type:"stone",amount:768000}]},\
+    {lvl:6,fuel:8}\
+  ]\
+},\
+{id:"coal",\
+  levels:[\
+    {lvl:0,fuel:1,cost:[{type:"copper",amount:70},{type:"coal",amount:150}]},\
+    {lvl:1,fuel:2,cost:[{type:"copper",amount:140},{type:"coal",amount:350}]},\
+    {lvl:2,fuel:3,cost:[{type:"copper",amount:700},{type:"coal",amount:1750}]},\
+    {lvl:3,fuel:4,cost:[{type:"copper",amount:5600},{type:"coal",amount:14000}]},\
+    {lvl:4,fuel:5,cost:[{type:"copper",amount:44800},{type:"coal",amount:112000}]},\
+    {lvl:5,fuel:6,cost:[{type:"copper",amount:358400},{type:"coal",amount:896000}]},\
+    {lvl:6,fuel:7}\
+  ]\
+},\
+{id:"copper",\
+  levels:[\
+    {lvl:0,fuel:2,cost:[{type:"copper",amount:180}]},\
+    {lvl:1,fuel:3,cost:[{type:"copper",amount:300}]},\
+    {lvl:2,fuel:4,cost:[{type:"copper",amount:1500}]},\
+    {lvl:3,fuel:5,cost:[{type:"copper",amount:12000}]},\
+    {lvl:4,fuel:6,cost:[{type:"copper",amount:96000}]},\
+    {lvl:5,fuel:7,cost:[{type:"copper",amount:768000}]},\
+    {lvl:6,fuel:8}\
+  ]\
+},\
+{id:"iron",\
+  levels:[\
+    {lvl:0,fuel:2,cost:[{type:"copper",amount:90},{type:"iron",amount:100}]},\
+    {lvl:1,fuel:4,cost:[{type:"copper",amount:180},{type:"iron",amount:250}]},\
+    {lvl:2,fuel:5,cost:[{type:"copper",amount:900},{type:"iron",amount:1250}]},\
+    {lvl:3,fuel:6,cost:[{type:"copper",amount:7200},{type:"iron",amount:10000}]},\
+    {lvl:4,fuel:7,cost:[{type:"copper",amount:57600},{type:"iron",amount:80000}]},\
+    {lvl:5,fuel:8,cost:[{type:"copper",amount:460800},{type:"iron",amount:640000}]},\
+    {lvl:6,fuel:9}\
+  ]\
+},\
+{id:"gold",\
+  levels:[\
+    {lvl:0,fuel:3,cost:[{type:"copper",amount:120},{type:"gold",amount:70}]},\
+    {lvl:1,fuel:5,cost:[{type:"copper",amount:240},{type:"gold",amount:180}]},\
+    {lvl:2,fuel:7,cost:[{type:"copper",amount:1200},{type:"gold",amount:900}]},\
+    {lvl:3,fuel:9,cost:[{type:"copper",amount:9600},{type:"gold",amount:7200}]},\
+    {lvl:4,fuel:11,cost:[{type:"copper",amount:76800},{type:"gold",amount:57600}]},\
+    {lvl:5,fuel:13,cost:[{type:"copper",amount:614400},{type:"gold",amount:460800}]},\
+    {lvl:6,fuel:15}\
+  ]\
+},\
+{id:"diamond",\
+  levels:[\
+    {lvl:0,fuel:4,cost:[{type:"copper",amount:180},{type:"diamond",amount:30}]},\
+    {lvl:1,fuel:7,cost:[{type:"copper",amount:360},{type:"diamond",amount:80}]},\
+    {lvl:2,fuel:9,cost:[{type:"copper",amount:1800},{type:"diamond",amount:400}]},\
+    {lvl:3,fuel:11,cost:[{type:"copper",amount:14400},{type:"diamond",amount:3200}]},\
+    {lvl:4,fuel:13,cost:[{type:"copper",amount:115200},{type:"diamond",amount:25600}]},\
+    {lvl:5,fuel:15,cost:[{type:"copper",amount:921600},{type:"diamond",amount:204800}]},\
+    {lvl:6,fuel:17}\
+  ]\
+},\
+{id:"emerald",\
+  levels:[\
+    {lvl:0,fuel:4,cost:[{type:"copper",amount:160},{type:"emerald",amount:40}]},\
+    {lvl:1,fuel:6,cost:[{type:"copper",amount:320},{type:"emerald",amount:100}]},\
+    {lvl:2,fuel:8,cost:[{type:"copper",amount:1600},{type:"emerald",amount:500}]},\
+    {lvl:3,fuel:10,cost:[{type:"copper",amount:12800},{type:"emerald",amount:4000}]},\
+    {lvl:4,fuel:12,cost:[{type:"copper",amount:102400},{type:"emerald",amount:32000}]},\
+    {lvl:5,fuel:14,cost:[{type:"copper",amount:819200},{type:"emerald",amount:256000}]},\
+    {lvl:6,fuel:16}\
+  ]\
+},\
+{id:"lapis",\
+  levels:[\
+    {lvl:0,fuel:3,cost:[{type:"copper",amount:130},{type:"lapis",amount:70}]},\
+    {lvl:1,fuel:5,cost:[{type:"copper",amount:260},{type:"lapis",amount:180}]},\
+    {lvl:2,fuel:7,cost:[{type:"copper",amount:1300},{type:"lapis",amount:900}]},\
+    {lvl:3,fuel:9,cost:[{type:"copper",amount:10400},{type:"lapis",amount:7200}]},\
+    {lvl:4,fuel:11,cost:[{type:"copper",amount:83200},{type:"lapis",amount:57600}]},\
+    {lvl:5,fuel:13,cost:[{type:"copper",amount:665600},{type:"lapis",amount:460800}]},\
+    {lvl:6,fuel:15}\
+  ]\
+},\
+{id:"cold",\
+  levels:[\
+    {lvl:0,fuel:4,cost:[{type:"copper",amount:180},{type:"cold",amount:40}]},\
+    {lvl:1,fuel:7,cost:[{type:"copper",amount:360},{type:"cold",amount:100}]},\
+    {lvl:2,fuel:9,cost:[{type:"copper",amount:1800},{type:"cold",amount:500}]},\
+    {lvl:3,fuel:11,cost:[{type:"copper",amount:14400},{type:"cold",amount:4000}]},\
+    {lvl:4,fuel:13,cost:[{type:"copper",amount:115200},{type:"cold",amount:32000}]},\
+    {lvl:5,fuel:15,cost:[{type:"copper",amount:921600},{type:"cold",amount:256000}]},\
+    {lvl:6,fuel:17}\
+  ]\
+},\
+{id:"heat",\
+  levels:[\
+    {lvl:0,fuel:4,cost:[{type:"copper",amount:180},{type:"heat",amount:40}]},\
+    {lvl:1,fuel:7,cost:[{type:"copper",amount:360},{type:"heat",amount:100}]},\
+    {lvl:2,fuel:9,cost:[{type:"copper",amount:1800},{type:"heat",amount:500}]},\
+    {lvl:3,fuel:11,cost:[{type:"copper",amount:14400},{type:"heat",amount:4000}]},\
+    {lvl:4,fuel:13,cost:[{type:"copper",amount:115200},{type:"heat",amount:32000}]},\
+    {lvl:5,fuel:15,cost:[{type:"copper",amount:921600},{type:"heat",amount:256000}]},\
+    {lvl:6,fuel:17}\
+  ]\
+}]

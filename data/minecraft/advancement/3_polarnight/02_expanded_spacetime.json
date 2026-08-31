@@ -3,7 +3,7 @@
   "display": {
     "icon": "respawn_anchor",
     "title": "확장된 시공간",
-    "description": "공간과 시간의 경계를 모두 확장했습니다.\n\n§6•§7 보상: 업그레이드 비용이 감소합니다.",
+    "description": "공간과 시간의 경계를 모두 확장했습니다.\n\n§6•§7 보상: 업그레이드 비용이 20% 감소합니다.",
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,

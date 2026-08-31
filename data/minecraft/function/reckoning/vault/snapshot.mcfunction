@@ -21,27 +21,27 @@ scoreboard players set #vault_stronghold tmp 0
 scoreboard players set #vault_elevator tmp 0
 scoreboard players set #vault_tool tmp 0
 
-execute if score #information_bank meta matches 10.. run scoreboard players set #vault_shop_first tmp 1
-execute if score #information_bank meta matches 25.. run scoreboard players set #vault_observatory tmp 1
-execute if score #information_bank meta matches 50.. run scoreboard players set #vault_shop_second tmp 1
-execute if score #information_bank meta matches 75.. run scoreboard players set #vault_dried_relic tmp 1
-execute if score #information_bank meta matches 125.. run scoreboard players set #vault_alchemy tmp 1
-execute if score #information_bank meta matches 250.. run scoreboard players set #vault_factory tmp 1
-execute if score #information_bank meta matches 500.. run scoreboard players set #vault_accelerator tmp 1
-execute if score #information_bank meta matches 1000.. run scoreboard players set #vault_time_machine tmp 1
-execute if score #information_bank meta matches 60.. run scoreboard players set #vault_stone_unlocks tmp 1
-execute if score #information_bank meta matches 100.. run scoreboard players set #vault_metal_unlocks tmp 1
-execute if score #information_bank meta matches 200.. run scoreboard players set #vault_substrate_unlocks tmp 1
-execute if score #information_bank meta matches 300.. run scoreboard players set #vault_gem_unlocks tmp 1
-execute if score #time_bank meta matches 10.. run scoreboard players set #vault_stick_progress tmp 1
-execute if score #time_bank meta matches 30.. run scoreboard players set #vault_stone_resources tmp 1
-execute if score #time_bank meta matches 50.. run scoreboard players set #vault_metal_resources tmp 1
-execute if score #time_bank meta matches 75.. run scoreboard players set #vault_gem_resources tmp 1
-execute if score #time_bank meta matches 10.. run scoreboard players set #vault_frozen_bridge tmp 1
-execute if score #time_bank meta matches 20.. run scoreboard players set #vault_dried_structures tmp 1
-execute if score #time_bank meta matches 35.. run scoreboard players set #vault_stronghold tmp 1
-execute if score #time_bank meta matches 50.. run scoreboard players set #vault_elevator tmp 1
-execute if score #time_bank meta matches 250.. run scoreboard players set #vault_tool tmp 1
+execute if score #information_bank meta matches 20.. run scoreboard players set #vault_shop_first tmp 1
+execute if score #information_bank meta matches 50.. run scoreboard players set #vault_observatory tmp 1
+execute if score #information_bank meta matches 100.. run scoreboard players set #vault_shop_second tmp 1
+execute if score #information_bank meta matches 150.. run scoreboard players set #vault_dried_relic tmp 1
+execute if score #information_bank meta matches 250.. run scoreboard players set #vault_alchemy tmp 1
+execute if score #information_bank meta matches 500.. run scoreboard players set #vault_factory tmp 1
+execute if score #information_bank meta matches 1000.. run scoreboard players set #vault_accelerator tmp 1
+execute if score #information_bank meta matches 2000.. run scoreboard players set #vault_time_machine tmp 1
+execute if score #information_bank meta matches 120.. run scoreboard players set #vault_stone_unlocks tmp 1
+execute if score #information_bank meta matches 200.. run scoreboard players set #vault_metal_unlocks tmp 1
+execute if score #information_bank meta matches 400.. run scoreboard players set #vault_substrate_unlocks tmp 1
+execute if score #information_bank meta matches 600.. run scoreboard players set #vault_gem_unlocks tmp 1
+execute if score #time_bank meta matches 20.. run scoreboard players set #vault_stick_progress tmp 1
+execute if score #time_bank meta matches 60.. run scoreboard players set #vault_stone_resources tmp 1
+execute if score #time_bank meta matches 100.. run scoreboard players set #vault_metal_resources tmp 1
+execute if score #time_bank meta matches 150.. run scoreboard players set #vault_gem_resources tmp 1
+execute if score #time_bank meta matches 20.. run scoreboard players set #vault_frozen_bridge tmp 1
+execute if score #time_bank meta matches 40.. run scoreboard players set #vault_dried_structures tmp 1
+execute if score #time_bank meta matches 70.. run scoreboard players set #vault_stronghold tmp 1
+execute if score #time_bank meta matches 100.. run scoreboard players set #vault_elevator tmp 1
+execute if score #time_bank meta matches 500.. run scoreboard players set #vault_tool tmp 1
 
 # 보호 대상의 현재 값을 임시 원장에 복사한다.
 scoreboard players operation #vault_wood_shop tmp = #wood_lvl material_shop
@@ -130,6 +130,7 @@ execute if score #alchemy_mover unlock matches 1.. run scoreboard players set #v
 
 # 발전과제 보상은 보관량과 무관하게 영구 보존한다.
 scoreboard players operation #vault_reward_wood tmp = #wood_advancement_reward var
+scoreboard players operation #vault_reward_stone tmp = #stone_advancement_reward var
 scoreboard players operation #vault_reward_coal tmp = #coal_advancement_reward var
 scoreboard players operation #vault_reward_copper tmp = #copper_advancement_reward var
 scoreboard players operation #vault_reward_iron tmp = #iron_advancement_reward var

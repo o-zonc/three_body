@@ -1,4 +1,4 @@
-{
+﻿{
   "parent": "2_dried/00_root",
   "display": {
     "icon": "chiseled_sandstone",
@@ -19,5 +19,8 @@
     "dried_ruin_restored": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "advancement/general/check"
   }
 }

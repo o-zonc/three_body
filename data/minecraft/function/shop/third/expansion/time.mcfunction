@@ -28,5 +28,5 @@ scoreboard players operation #material_add_value tmp = #spacetime_expansion_rewa
 function meta/time/give
 advancement grant @s only 3_polarnight/02_expanded_spacetime expand_time
 playsound block.respawn_anchor.charge weather @s ~ ~ ~ 0.8 1.4
-function shop/third/storage_ui {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+function shop/third/storage_ui {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:1000,trigger:1822,withdraw_trigger:1826}
 return 1

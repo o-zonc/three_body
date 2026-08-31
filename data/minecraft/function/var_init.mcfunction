@@ -72,8 +72,8 @@ execute unless score #information_storage_lvl upgrade = #information_storage_lvl
 execute unless score #time_storage_lvl upgrade = #time_storage_lvl upgrade run scoreboard players set #time_storage_lvl upgrade 0
 execute unless score #world_eye_shop_lvl upgrade = #world_eye_shop_lvl upgrade run scoreboard players set #world_eye_shop_lvl upgrade 0
 function shop/third/update_capacities
-execute if score #information_bank meta matches 1000.. run scoreboard players set #information_bank_unlocked meta 1
-execute if score #time_bank meta matches 500.. run scoreboard players set #time_bank_unlocked meta 1
+execute if score #information_bank meta matches 2000.. run scoreboard players set #information_bank_unlocked meta 1
+execute if score #time_bank meta matches 1000.. run scoreboard players set #time_bank_unlocked meta 1
 execute unless score #information_bank_unlocked meta matches 1.. if score #information_bank meta matches 1001.. run scoreboard players set #information_bank meta 1000
 execute unless score #time_bank_unlocked meta matches 1.. if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
 execute if score #information_bank meta matches ..-1 run scoreboard players set #information_bank meta 0
@@ -114,6 +114,10 @@ execute unless score #crying_dawn var = #crying_dawn var run scoreboard players 
 execute unless score #overworld_advancement_reward_disabled var = #overworld_advancement_reward_disabled var run scoreboard players set #overworld_advancement_reward_disabled var 0
 execute unless score #nether_advancement_reward_disabled var = #nether_advancement_reward_disabled var run scoreboard players set #nether_advancement_reward_disabled var 0
 execute unless score #wood_advancement_reward var = #wood_advancement_reward var run scoreboard players set #wood_advancement_reward var 0
+execute unless score #stone_advancement_reward var = #stone_advancement_reward var run scoreboard players set #stone_advancement_reward var 0
+# 이미 해당 시대를 통과한 문명도 데이터팩 갱신 뒤 새 시대 보상을 적용받는다.
+execute if entity @a[advancements={0_overworld/12_bronze_age=true}] run function resource/advancement_reward/wood/enable
+execute if entity @a[advancements={0_overworld/13_iron_age=true}] run function resource/advancement_reward/stone/enable
 execute unless score #coal_advancement_reward var = #coal_advancement_reward var run scoreboard players set #coal_advancement_reward var 0
 execute unless score #copper_advancement_reward var = #copper_advancement_reward var run scoreboard players set #copper_advancement_reward var 0
 execute unless score #iron_advancement_reward var = #iron_advancement_reward var run scoreboard players set #iron_advancement_reward var 0
@@ -133,6 +137,9 @@ execute unless score #disable_iron_production var = #disable_iron_production var
 execute unless score #disable_obsidian_production var = #disable_obsidian_production var run scoreboard players set #disable_obsidian_production var 0
 execute unless score #disable_gold_production var = #disable_gold_production var run scoreboard players set #disable_gold_production var 0
 execute unless score #disable_item_reissue var = #disable_item_reissue var run scoreboard players set #disable_item_reissue var 0
+execute unless score #time_machine_ever_yellow var = #time_machine_ever_yellow var run scoreboard players set #time_machine_ever_yellow var 0
+execute unless score #time_machine_ever_blue var = #time_machine_ever_blue var run scoreboard players set #time_machine_ever_blue var 0
+execute unless score #time_machine_ever_green var = #time_machine_ever_green var run scoreboard players set #time_machine_ever_green var 0
 
 # 타임머신 레벨은 항상 0~4 범위로 유지합니다.
 execute unless score #GLOBAL factory_elevator_unlocked = #GLOBAL factory_elevator_unlocked run scoreboard players set #GLOBAL factory_elevator_unlocked 0

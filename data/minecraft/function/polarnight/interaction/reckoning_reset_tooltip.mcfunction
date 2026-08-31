@@ -2,51 +2,51 @@
 data modify storage data tmp.reckoning_reset_tooltip set value ["",{text:"[ 문명 정산 시 초기화 ]\n",color:"red",bold:true}]
 
 # 자원 상점과 생산 업그레이드
-execute if score #information_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 1층 진행도\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 1층 진행도\n",color:"gray"}
-execute if score #information_bank meta matches 60.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 석재 자원 해금 상태\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 60.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 석재 자원 해금 상태\n",color:"gray"}
-execute if score #information_bank meta matches 100.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 금속 자원 해금 상태\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 100.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 금속 자원 해금 상태\n",color:"gray"}
-execute if score #information_bank meta matches 200.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 특수 자원 해금 상태\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 200.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 특수 자원 해금 상태\n",color:"gray"}
-execute if score #information_bank meta matches 300.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 보석 자원 해금 상태\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 300.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 보석 자원 해금 상태\n",color:"gray"}
-execute if score #time_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 나무 재생 업그레이드\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 나무 재생 업그레이드\n",color:"gray"}
-execute if score #time_bank meta matches 30.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 석재 자원 재생 업그레이드\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 30.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 석재 자원 재생 업그레이드\n",color:"gray"}
-execute if score #time_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 금속 자원 재생 업그레이드\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 금속 자원 재생 업그레이드\n",color:"gray"}
-execute if score #time_bank meta matches 75.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 보석 자원 재생 업그레이드\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 75.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 보석 자원 재생 업그레이드\n",color:"gray"}
-execute if score #information_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 2층 진행도\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 2층 진행도\n",color:"gray"}
-execute if score #time_bank meta matches 250.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 채굴 도구 강화 단계\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 250.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 채굴 도구 강화 단계\n",color:"gray"}
+execute if score #information_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 1층 진행도\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 1층 진행도\n",color:"gray"}
+execute if score #information_bank meta matches 120.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 석재 자원 해금 상태\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 120.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 석재 자원 해금 상태\n",color:"gray"}
+execute if score #information_bank meta matches 200.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 금속 자원 해금 상태\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 200.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 금속 자원 해금 상태\n",color:"gray"}
+execute if score #information_bank meta matches 400.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 특수 자원 해금 상태\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 400.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 특수 자원 해금 상태\n",color:"gray"}
+execute if score #information_bank meta matches 600.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 보석 자원 해금 상태\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 600.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 보석 자원 해금 상태\n",color:"gray"}
+execute if score #time_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 나무 재생 업그레이드\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 나무 재생 업그레이드\n",color:"gray"}
+execute if score #time_bank meta matches 60.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 석재 자원 재생 업그레이드\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 60.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 석재 자원 재생 업그레이드\n",color:"gray"}
+execute if score #time_bank meta matches 100.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 금속 자원 재생 업그레이드\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 100.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 금속 자원 재생 업그레이드\n",color:"gray"}
+execute if score #time_bank meta matches 150.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 보석 자원 재생 업그레이드\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 150.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 보석 자원 재생 업그레이드\n",color:"gray"}
+execute if score #information_bank meta matches 100.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 2층 진행도\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 100.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 2층 진행도\n",color:"gray"}
+execute if score #time_bank meta matches 500.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 채굴 도구 강화 단계\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 500.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 채굴 도구 강화 단계\n",color:"gray"}
 
 # 문명 발전 단계는 현재 시대까지 복원할 수 있을 때 취소선을 표시한다.
 scoreboard players set #reckoning_age_preserved tmp 0
-execute if score #overworld civilization_age matches 5 if score #time_bank meta matches 5.. run scoreboard players set #reckoning_age_preserved tmp 1
-execute if score #overworld civilization_age matches 6 if score #time_bank meta matches 20.. run scoreboard players set #reckoning_age_preserved tmp 1
-execute if score #overworld civilization_age matches 7 if score #time_bank meta matches 40.. run scoreboard players set #reckoning_age_preserved tmp 1
-execute if score #overworld civilization_age matches 8.. if score #time_bank meta matches 100.. run scoreboard players set #reckoning_age_preserved tmp 1
+execute if score #overworld civilization_age matches 5 if score #time_bank meta matches 10.. run scoreboard players set #reckoning_age_preserved tmp 1
+execute if score #overworld civilization_age matches 6 if score #time_bank meta matches 40.. run scoreboard players set #reckoning_age_preserved tmp 1
+execute if score #overworld civilization_age matches 7 if score #time_bank meta matches 80.. run scoreboard players set #reckoning_age_preserved tmp 1
+execute if score #overworld civilization_age matches 8.. if score #time_bank meta matches 200.. run scoreboard players set #reckoning_age_preserved tmp 1
 execute if score #reckoning_age_preserved tmp matches 1 run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 문명 발전 단계\n",color:"gray",strikethrough:true}
 execute unless score #reckoning_age_preserved tmp matches 1 run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 문명 발전 단계\n",color:"gray"}
 
 # 주요 시설
-execute if score #information_bank meta matches 25.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 관측소 및 시간 제어 장치\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 25.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 관측소 및 시간 제어 장치\n",color:"gray"}
-execute if score #information_bank meta matches 125.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 연금술 공방, 세공 작업대 및 마법 연구\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 125.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 연금술 공방, 세공 작업대 및 마법 연구\n",color:"gray"}
-execute if score #time_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 엘리베이터 발전 단계\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 엘리베이터 발전 단계\n",color:"gray"}
-execute if score #information_bank meta matches 250.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 공장 건설·생산 단계\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 250.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 공장 건설·생산 단계\n",color:"gray"}
-execute if score #information_bank meta matches 500.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 입자가속기 발전 단계\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 500.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 입자가속기 발전 단계\n",color:"gray"}
-execute if score #information_bank meta matches 1000.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 타임머신 발전 단계\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 1000.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 타임머신 발전 단계\n",color:"gray"}
+execute if score #information_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 관측소 및 시간 제어 장치\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 50.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 관측소 및 시간 제어 장치\n",color:"gray"}
+execute if score #information_bank meta matches 250.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 연금술 공방, 세공 작업대 및 마법 연구\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 250.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 연금술 공방, 세공 작업대 및 마법 연구\n",color:"gray"}
+execute if score #time_bank meta matches 100.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 엘리베이터 발전 단계\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 100.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 엘리베이터 발전 단계\n",color:"gray"}
+execute if score #information_bank meta matches 500.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 공장 건설·생산 단계\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 500.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 공장 건설·생산 단계\n",color:"gray"}
+execute if score #information_bank meta matches 1000.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 입자가속기 발전 단계\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 1000.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 입자가속기 발전 단계\n",color:"gray"}
+execute if score #information_bank meta matches 2000.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 타임머신 발전 단계\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 2000.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 타임머신 발전 단계\n",color:"gray"}
 
 # 메마른·얼어붙은 차원 진행
 execute if score #information_bank meta matches 75.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 고대 문명 발굴 장치 진행도\n",color:"gray",strikethrough:true}

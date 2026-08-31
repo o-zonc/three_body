@@ -20,12 +20,12 @@ scoreboard players add #reckoning_next_count tmp 1
 
 # 정산 시점에 남은 일반 자원을 메타 자원으로 환산한다.
 # 몫만 보상에 더하므로 기준량에 못 미치는 나머지는 이 계산에서 제외된다.
-function reckoning/add_resource_reward {id:"wood",amount:400,reward:"information"}
-function reckoning/add_resource_reward {id:"stone",amount:300,reward:"information"}
-function reckoning/add_resource_reward {id:"coal",amount:200,reward:"information"}
-function reckoning/add_resource_reward {id:"copper",amount:150,reward:"information"}
-function reckoning/add_resource_reward {id:"iron",amount:100,reward:"information"}
-function reckoning/add_resource_reward {id:"emerald",amount:50,reward:"information"}
+function reckoning/add_resource_reward {id:"wood",amount:2000,reward:"information"}
+function reckoning/add_resource_reward {id:"stone",amount:1000,reward:"information"}
+function reckoning/add_resource_reward {id:"coal",amount:500,reward:"information"}
+function reckoning/add_resource_reward {id:"copper",amount:400,reward:"information"}
+function reckoning/add_resource_reward {id:"iron",amount:300,reward:"information"}
+function reckoning/add_resource_reward {id:"emerald",amount:200,reward:"information"}
 
 # 청금석·금·다이아몬드는 첫 50개까지 10개당 1조각,
 # 이후 초과분은 50개당 1조각으로 환산한다.

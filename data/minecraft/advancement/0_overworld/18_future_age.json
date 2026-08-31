@@ -1,4 +1,4 @@
-{
+﻿{
 	"parent": "0_overworld/22_heavy_ion_experiment",
 	"display": {
 		"icon": "nether_star",
@@ -12,5 +12,8 @@
 		"manual_test": {
 			"trigger": "impossible"
 		}
-	}
+	},
+  "rewards": {
+    "function": "advancement/general/check"
+  }
 }

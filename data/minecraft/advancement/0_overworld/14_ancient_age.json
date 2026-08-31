@@ -1,4 +1,4 @@
-{
+﻿{
 	"parent": "0_overworld/13_iron_age",
 	"display": {
 		"icon": "enchanting_table",
@@ -12,5 +12,8 @@
 		"manual_test": {
 			"trigger": "impossible"
 		}
-	}
+	},
+  "rewards": {
+    "function": "advancement/general/check"
+  }
 }

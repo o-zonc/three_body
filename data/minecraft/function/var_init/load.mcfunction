@@ -8,6 +8,14 @@ execute if score #special_second_lvl upgrade matches 2.. run function crying/fro
 # 기존 세이브에 없는 타임머신 연구 점수는 load 시 한 번만 보정합니다.
 function time_machine/init_scores
 
+# 기존 세이브의 현재 분기 advancement를 과거 완료 기록으로 이관합니다.
+execute if entity @a[advancements={0_overworld/25_yellow_time_machine=true}] run scoreboard players set #time_machine_ever_yellow var 1
+execute if entity @a[advancements={0_overworld/25_blue_time_machine=true}] run scoreboard players set #time_machine_ever_blue var 1
+execute if entity @a[advancements={0_overworld/25_green_time_machine=true}] run scoreboard players set #time_machine_ever_green var 1
+
+# 기존 세이브가 이미 whitelist를 모두 충족한 경우 reload 시 한 번 보정합니다.
+execute as @a[tag=player] run function advancement/general/check
+
 # 기존 플레이어도 최적화된 이벤트형 story trigger를 즉시 사용할 수 있게 한 번 활성화합니다.
 scoreboard players enable @a intro_skip
 scoreboard players enable @a tutorial

@@ -62,12 +62,12 @@ execute if score @s shop_trigger matches 1815 run function shop/second/purchase 
 execute if score @s shop_trigger matches 1816 run function shop/second/purchase {id:"get",name:"기초 생산 공정",color:"dark_aqua",effect:"모든 기본 생산량 보너스",unit:"개",trigger:1816}
 
 # 자원 상점 3층 / 여명 상호작용 (182X~183X)
-execute if score @s shop_trigger matches 1821 run function shop/third/storage_purchase {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
-execute if score @s shop_trigger matches 1822 run function shop/third/storage_purchase {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute if score @s shop_trigger matches 1821 run function shop/third/storage_purchase {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:2000,trigger:1821,withdraw_trigger:1825}
+execute if score @s shop_trigger matches 1822 run function shop/third/storage_purchase {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:1000,trigger:1822,withdraw_trigger:1826}
 execute if score @s shop_trigger matches 1823 run function shop/third/world_eye/purchase
 execute if score @s shop_trigger matches 1824 run function shop/third/world_eye/synthesize
-execute if score @s shop_trigger matches 1825 run function meta/manual_withdraw {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:1000,trigger:1821,withdraw_trigger:1825}
-execute if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:500,trigger:1822,withdraw_trigger:1826}
+execute if score @s shop_trigger matches 1825 run function meta/manual_withdraw {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:2000,trigger:1821,withdraw_trigger:1825}
+execute if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:1000,trigger:1822,withdraw_trigger:1826}
 execute if score @s shop_trigger matches 1827 run function shop/third/expansion/information
 execute if score @s shop_trigger matches 1828 run function shop/third/expansion/time
 execute if score @s shop_trigger matches 1830 run function dawn/reactor/craft

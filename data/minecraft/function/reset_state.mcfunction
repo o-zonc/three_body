@@ -75,6 +75,10 @@ scoreboard players reset * second_step
 scoreboard players reset * second_timer
 tag @a remove second
 tag @a remove third
+tag @a remove time_machine_reset_confirm
+scoreboard players set #time_machine_ever_yellow var 0
+scoreboard players set #time_machine_ever_blue var 0
+scoreboard players set #time_machine_ever_green var 0
 scoreboard players set #done intro 0
 scoreboard players set #t intro 0
 scoreboard players set #overworld civilization_age 0

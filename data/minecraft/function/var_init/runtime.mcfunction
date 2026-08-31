@@ -12,5 +12,7 @@ execute as @a unless score @s leave_game matches 0.. run scoreboard players set 
 execute as @a unless score @s leave_game_prev = @s leave_game run function player/on_join
 
 # 보관소를 최대치까지 채웠을 때 보관량 상한을 영구 해제합니다.
-execute if score #information_bank meta matches 1000.. unless score #information_bank_unlocked meta matches 1.. run scoreboard players set #information_bank_unlocked meta 1
-execute if score #time_bank meta matches 500.. unless score #time_bank_unlocked meta matches 1.. run scoreboard players set #time_bank_unlocked meta 1
+execute if score #information_bank meta matches 2000.. unless score #information_bank_unlocked meta matches 1.. run scoreboard players set #information_bank_unlocked meta 1
+execute if score #time_bank meta matches 1000.. unless score #time_bank_unlocked meta matches 1.. run scoreboard players set #time_bank_unlocked meta 1
+execute unless score #information_bank meta matches 2000.. run scoreboard players set #information_bank_unlocked meta 0
+execute unless score #time_bank meta matches 1000.. run scoreboard players set #time_bank_unlocked meta 0

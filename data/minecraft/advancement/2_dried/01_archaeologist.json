@@ -3,7 +3,7 @@
   "display": {
     "icon": "brush",
     "title": "고고학자",
-    "description": "메마른 땅 아래에 묻혀 있던 고대 문명의 장치를 발굴했습니다.\n\n§6•§7 보상: 업그레이드 비용이 약간 감소합니다.",
+    "description": "메마른 땅 아래에 묻혀 있던 고대 문명의 장치를 발굴했습니다.\n\n§6•§7 보상: 업그레이드 비용이 10% 감소합니다.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
