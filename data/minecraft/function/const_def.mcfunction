@@ -780,9 +780,9 @@ data merge storage data {\
           {lvl:0,value:3,cost:[{type:"stone",amount:400}]},\
           {lvl:1,value:2,cost:[{type:"wood",amount:10000},{type:"stone",amount:5000}]},\
           {lvl:2,value:1,cost:[{type:"wood",amount:50000},{type:"stone",amount:25000}]},\
-          {lvl:3,value:0,cost:[{type:"wood",amount:200000},{type:"stone",amount:100000}]},\
-          {lvl:4,value:0,cost:[{type:"stone",amount:2500000}]},\
-          {lvl:5,value:0}\
+          {lvl:3,value:1,cost:[{type:"wood",amount:200000},{type:"stone",amount:100000}]},\
+          {lvl:4,value:1,cost:[{type:"stone",amount:2500000}]},\
+          {lvl:5,value:1}\
         ]\
       },\
       coal: {item:"deepslate_coal_ore",\
