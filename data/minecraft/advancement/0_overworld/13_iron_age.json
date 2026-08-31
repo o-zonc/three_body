@@ -3,7 +3,7 @@
 	"display": {
 		"icon": "iron_ingot",
 		"title": "철기 시대",
-		"description": "문명은 더욱 단단한 도구와 무기를 손에 넣었습니다.\n\n§7§o나아가기 위해서는 더 많은 자원을 얻을 방법이 필요해 보입니다.",
+		"description": "문명은 더욱 단단한 도구와 무기를 손에 넣었습니다.\n\n§7§o나아가기 위해서는 더 많은 자원을 얻을 방법이 필요해 보입니다.\n\n§6•§7 보상: 나무 수급량이 3배 증가합니다.",
 		"frame": "task",
 		"show_toast": true,
 		"announce_to_chat": true
