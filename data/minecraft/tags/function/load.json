@@ -4,6 +4,7 @@
 		"var_init/load",
 		"const_def",
 		"resource/rebalance_early_game",
+		"tool/rebalance_early_game",
 		"factory/rebalance_costs"
 	]
 }
