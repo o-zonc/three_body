@@ -24,6 +24,7 @@ $execute unless score #factory_was_unlocked tmp matches 1 run scoreboard players
 $scoreboard players set #$(id) factory_enabled 1
 $scoreboard players set #$(id) factory_status 1
 $function factory/set_timer {id:"$(id)"}
+function factory/chunk_load/sync
 function factory/campfires
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 $function factory/ui {id:"$(id)",unlock:"$(unlock)",name:"$(name)",color:"$(color)",purchase:$(purchase),toggle:$(toggle)}

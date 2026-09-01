@@ -51,5 +51,8 @@ execute if score #vault_factory tmp matches 1 if score #lapis factory_unlocked m
 execute if score #vault_factory tmp matches 1 if score #cold factory_unlocked matches 1 run function factory/set_timer {id:"cold"}
 execute if score #vault_factory tmp matches 1 if score #heat factory_unlocked matches 1 run function factory/set_timer {id:"heat"}
 
+# 복원된 공장 상태를 기준으로 백그라운드 생산 청크 소유권을 먼저 동기화한다.
+function factory/chunk_load/sync
+
 # 복원된 개별 가동 상태에 맞춰 공장 외형과 표시등을 갱신한다.
 function factory/campfires

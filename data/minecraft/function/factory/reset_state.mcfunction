@@ -65,4 +65,5 @@ scoreboard players set #factory_any_unlocked tmp 0
 scoreboard players set #factory_any_enabled tmp 0
 
 # 자원 위의 공장 상태 모닥불도 즉시 초기화한다.
+function factory/chunk_load/sync
 function factory/campfires

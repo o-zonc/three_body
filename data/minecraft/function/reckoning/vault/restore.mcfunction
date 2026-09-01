@@ -16,42 +16,21 @@ execute if score #vault_shop_second tmp matches 1 run scoreboard players operati
 execute if score #vault_shop_second tmp matches 1 run scoreboard players operation #special_second_lvl upgrade = #vault_special_second tmp
 execute if score #vault_shop_second tmp matches 1 run scoreboard players operation #get_second_lvl upgrade = #vault_get_second tmp
 
-# 정보 보관소: 이전 문명에서 실제로 해금했던 자원의 해금 상태와 채굴 노드를 복원한다.
-scoreboard players set #vault_loaded_gold_chunk tmp 0
-scoreboard players set #vault_loaded_diamond_chunk tmp 0
-scoreboard players set #vault_loaded_heat_chunk tmp 0
-scoreboard players set #vault_loaded_cold_chunk tmp 0
+# 정보 보관소: 이전 문명에서 실제로 해금했던 자원의 상태를 복원한다.
+# 실제 노드 배치는 factory 상태 복원 후 restore_nodes_request가 청크를 먼저 확보해 처리한다.
 execute if score #vault_stone_unlocks tmp matches 1 if score #vault_unlock_stone tmp matches 1 run scoreboard players set #stone unlock 1
-execute if score #vault_stone_unlocks tmp matches 1 if score #vault_unlock_stone tmp matches 1 in minecraft:overworld run function resource/material/stone/place
 execute if score #vault_stone_unlocks tmp matches 1 if score #vault_unlock_coal tmp matches 1 run scoreboard players set #coal unlock 1
-execute if score #vault_stone_unlocks tmp matches 1 if score #vault_unlock_coal tmp matches 1 in minecraft:overworld run function resource/material/coal/place
 
 execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_copper tmp matches 1 run scoreboard players set #copper unlock 1
-execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_copper tmp matches 1 in minecraft:overworld run function resource/material/copper/place
 execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_iron tmp matches 1 run scoreboard players set #iron unlock 1
-execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_iron tmp matches 1 in minecraft:overworld run function resource/material/iron/place
 execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_gold tmp matches 1 run scoreboard players set #gold unlock 1
-execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_gold tmp matches 1 in minecraft:dried store success score #vault_loaded_gold_chunk tmp run forceload add 6 0
-execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_gold tmp matches 1 run function resource/material/gold/place
-execute if score #vault_loaded_gold_chunk tmp matches 1 in minecraft:dried run forceload remove 6 0
 execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_diamond tmp matches 1 run scoreboard players set #diamond unlock 1
-execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_diamond tmp matches 1 in minecraft:frozen store success score #vault_loaded_diamond_chunk tmp run forceload add 0 -12
-execute if score #vault_metal_unlocks tmp matches 1 if score #vault_unlock_diamond tmp matches 1 run function resource/material/diamond/place
-execute if score #vault_loaded_diamond_chunk tmp matches 1 in minecraft:frozen run forceload remove 0 -12
 
 execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_heat tmp matches 1 run scoreboard players set #heat unlock 1
-execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_heat tmp matches 1 in minecraft:dried store success score #vault_loaded_heat_chunk tmp run forceload add -6 0
-execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_heat tmp matches 1 run function resource/material/heat/place
-execute if score #vault_loaded_heat_chunk tmp matches 1 in minecraft:dried run forceload remove -6 0
 execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_cold tmp matches 1 run scoreboard players set #cold unlock 1
-execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_cold tmp matches 1 in minecraft:frozen store success score #vault_loaded_cold_chunk tmp run forceload add 0 48
-execute if score #vault_substrate_unlocks tmp matches 1 if score #vault_unlock_cold tmp matches 1 run function resource/material/cold/place
-execute if score #vault_loaded_cold_chunk tmp matches 1 in minecraft:frozen run forceload remove 0 48
 
 execute if score #vault_gem_unlocks tmp matches 1 if score #vault_unlock_emerald tmp matches 1 run scoreboard players set #emerald unlock 1
-execute if score #vault_gem_unlocks tmp matches 1 if score #vault_unlock_emerald tmp matches 1 in minecraft:overworld run function resource/material/emerald/place
 execute if score #vault_gem_unlocks tmp matches 1 if score #vault_unlock_lapis tmp matches 1 run scoreboard players set #lapis unlock 1
-execute if score #vault_gem_unlocks tmp matches 1 if score #vault_unlock_lapis tmp matches 1 in minecraft:overworld run function resource/material/lapis/place
 
 # 복원된 강화 단계에 맞춰 얼어붙은 차원의 우는 흑요석 외형도 동기화한다.
 execute if score #special_second_lvl upgrade matches 2.. run function crying/frozen_reveal

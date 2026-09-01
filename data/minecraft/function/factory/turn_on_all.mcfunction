@@ -33,6 +33,7 @@ function factory/set_timer_phased {id:"emerald",index:7}
 function factory/set_timer_phased {id:"lapis",index:8}
 function factory/set_timer_phased {id:"cold",index:9}
 function factory/set_timer_phased {id:"heat",index:10}
+function factory/chunk_load/sync
 function factory/campfires
 playsound block.iron_door.open weather @s ~ ~ ~ 0.8 1.1
 title @s actionbar {text:"해금한 모든 공장의 가동을 재개했습니다.",color:"green",italic:false}
