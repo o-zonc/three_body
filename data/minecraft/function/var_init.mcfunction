@@ -74,8 +74,8 @@ execute unless score #world_eye_shop_lvl upgrade = #world_eye_shop_lvl upgrade r
 function shop/third/update_capacities
 execute if score #information_bank meta matches 2000.. run scoreboard players set #information_bank_unlocked meta 1
 execute if score #time_bank meta matches 1000.. run scoreboard players set #time_bank_unlocked meta 1
-execute unless score #information_bank_unlocked meta matches 1.. if score #information_bank meta matches 1001.. run scoreboard players set #information_bank meta 1000
-execute unless score #time_bank_unlocked meta matches 1.. if score #time_bank meta matches 501.. run scoreboard players set #time_bank meta 500
+execute if score #information_bank meta matches 2001.. run scoreboard players set #information_bank meta 2000
+execute if score #time_bank meta matches 1001.. run scoreboard players set #time_bank meta 1000
 execute if score #information_bank meta matches ..-1 run scoreboard players set #information_bank meta 0
 execute if score #time_bank meta matches ..-1 run scoreboard players set #time_bank meta 0
 execute unless score #heat_environment_timer generate = #heat_environment_timer generate run scoreboard players set #heat_environment_timer generate 1200

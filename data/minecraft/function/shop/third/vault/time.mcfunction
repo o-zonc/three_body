@@ -31,7 +31,7 @@ execute unless score #time_bank meta matches 200.. run data modify storage data 
 execute if score #time_bank meta matches 500.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n500조각",color:"dark_aqua"},{text:" · 채굴 도구의 강화 단계를 유지하고 시간 자동 인출 기능을 영구 해금합니다.",color:"gray"}]
 execute unless score #time_bank meta matches 500.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n500조각 · 채굴 도구의 강화 단계를 유지하고 시간 자동 인출 기능을 영구 해금합니다.",color:"dark_gray"}
 
-execute if score #time_bank_unlocked meta matches 1.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n1000조각",color:"dark_aqua"},{text:" · 시간 보관소의 상한을 영구 해제합니다.",color:"gray"}]
-execute unless score #time_bank_unlocked meta matches 1.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n1000조각 · 시간 보관소의 상한을 영구 해제합니다.",color:"dark_gray"}
+execute if score #time_bank_unlocked meta matches 1.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n1000조각",color:"dark_aqua"},{text:" · 시간 보관소가 최대치에 도달했습니다.",color:"gray"}]
+execute unless score #time_bank_unlocked meta matches 1.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n1000조각 · 시간 보관소 최대치입니다.",color:"dark_gray"}
 
 data modify storage data tmp.third_shop.vault_line set value {text:"\n\n  ",extra:["",{text:"[ 시간 보관 효과 ]",color:"dark_aqua",bold:true,hover_event:{action:"show_text",value:{storage:"data",nbt:"tmp.vault.time_tooltip",interpret:true}}}]}
