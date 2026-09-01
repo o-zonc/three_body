@@ -1,12 +1,46 @@
 scoreboard players set #alien_divisor tmp 100
+execute store result score #alien_percent_roll tmp run random value 0..99
+scoreboard players set #alien_percent tmp 1
+execute if score #alien_percent_roll tmp matches 60..89 run scoreboard players set #alien_percent tmp 2
+execute if score #alien_percent_roll tmp matches 90..99 run scoreboard players set #alien_percent tmp 3
 scoreboard players operation #alien_iron tmp = #iron material
 scoreboard players operation #alien_lapis tmp = #lapis material
 scoreboard players operation #alien_gold tmp = #gold material
 scoreboard players operation #alien_diamond tmp = #diamond material
+
+# 보유량을 100으로 나눈 몹과 나머지를 각각 계산해 오버플로 없이 floor(보유량 * 탈취율 / 100)을 구합니다.
+scoreboard players operation #alien_iron_remainder tmp = #alien_iron tmp
+scoreboard players operation #alien_lapis_remainder tmp = #alien_lapis tmp
+scoreboard players operation #alien_gold_remainder tmp = #alien_gold tmp
+scoreboard players operation #alien_diamond_remainder tmp = #alien_diamond tmp
 scoreboard players operation #alien_iron tmp /= #alien_divisor tmp
 scoreboard players operation #alien_lapis tmp /= #alien_divisor tmp
 scoreboard players operation #alien_gold tmp /= #alien_divisor tmp
 scoreboard players operation #alien_diamond tmp /= #alien_divisor tmp
+scoreboard players operation #alien_iron tmp *= #alien_percent tmp
+scoreboard players operation #alien_lapis tmp *= #alien_percent tmp
+scoreboard players operation #alien_gold tmp *= #alien_percent tmp
+scoreboard players operation #alien_diamond tmp *= #alien_percent tmp
+scoreboard players operation #alien_iron_remainder tmp %= #alien_divisor tmp
+scoreboard players operation #alien_lapis_remainder tmp %= #alien_divisor tmp
+scoreboard players operation #alien_gold_remainder tmp %= #alien_divisor tmp
+scoreboard players operation #alien_diamond_remainder tmp %= #alien_divisor tmp
+scoreboard players operation #alien_iron_remainder tmp *= #alien_percent tmp
+scoreboard players operation #alien_lapis_remainder tmp *= #alien_percent tmp
+scoreboard players operation #alien_gold_remainder tmp *= #alien_percent tmp
+scoreboard players operation #alien_diamond_remainder tmp *= #alien_percent tmp
+scoreboard players operation #alien_iron_remainder tmp /= #alien_divisor tmp
+scoreboard players operation #alien_lapis_remainder tmp /= #alien_divisor tmp
+scoreboard players operation #alien_gold_remainder tmp /= #alien_divisor tmp
+scoreboard players operation #alien_diamond_remainder tmp /= #alien_divisor tmp
+scoreboard players operation #alien_iron tmp += #alien_iron_remainder tmp
+scoreboard players operation #alien_lapis tmp += #alien_lapis_remainder tmp
+scoreboard players operation #alien_gold tmp += #alien_gold_remainder tmp
+scoreboard players operation #alien_diamond tmp += #alien_diamond_remainder tmp
+execute if score #alien_iron tmp matches ..-1 run scoreboard players set #alien_iron tmp 0
+execute if score #alien_lapis tmp matches ..-1 run scoreboard players set #alien_lapis tmp 0
+execute if score #alien_gold tmp matches ..-1 run scoreboard players set #alien_gold tmp 0
+execute if score #alien_diamond tmp matches ..-1 run scoreboard players set #alien_diamond tmp 0
 scoreboard players operation #iron material -= #alien_iron tmp
 scoreboard players operation #lapis material -= #alien_lapis tmp
 scoreboard players operation #gold material -= #alien_gold tmp

@@ -7,26 +7,29 @@ data modify storage data const.structure set value {\
           stage: 0,\
           required_age: 5,\
           cost: [\
+            { type: "copper", amount: 80 },\
             { type: "iron", amount: 50 },\
-            { type: "emerald", amount: 3 }\
+            { type: "emerald", amount: 1 }\
           ]\
         },\
         {\
           stage: 1,\
           required_age: 6,\
           cost: [\
+            { type: "copper", amount: 150 },\
             { type: "iron", amount: 100 },\
-            { type: "emerald", amount: 50 },\
-            { type: "lapis", amount: 70 }\
+            { type: "emerald", amount: 2 },\
+            { type: "lapis", amount: 3 }\
           ]\
         },\
         {\
           stage: 2,\
           required_age: 7,\
           cost: [\
+            { type: "copper", amount: 300 },\
             { type: "iron", amount: 320 },\
-            { type: "emerald", amount: 100 },\
-            { type: "lapis", amount: 140 },\
+            { type: "emerald", amount: 4 },\
+            { type: "lapis", amount: 6 },\
             { type: "information", amount: 8 }\
           ]\
         }\
@@ -35,7 +38,7 @@ data modify storage data const.structure set value {\
         {\
           lvl: 0,\
           cost: [\
-            { type: "gold", amount: 15 },\
+            { type: "gold", amount: 25 },\
             { type: "time", amount: 2 }\
           ]\
         },\
@@ -44,8 +47,8 @@ data modify storage data const.structure set value {\
           interval: 2400,\
           amount: 16,\
           cost: [\
-            { type: "gold", amount: 50 },\
-            { type: "heat", amount: 150 }\
+            { type: "gold", amount: 100 },\
+            { type: "heat", amount: 100 }\
           ]\
         },\
         {\
@@ -53,8 +56,9 @@ data modify storage data const.structure set value {\
           interval: 1800,\
           amount: 64,\
           cost: [\
-            { type: "gold", amount: 150 },\
-            { type: "heat", amount: 600 }\
+            { type: "gold", amount: 500 },\
+            { type: "heat", amount: 300 },\
+            { type: "time", amount: 4 }\
           ]\
         },\
         {\
@@ -62,8 +66,10 @@ data modify storage data const.structure set value {\
           interval: 1200,\
           amount: 512,\
           cost: [\
-            { type: "information", amount: 100 },\
-            { type: "time", amount: 16 }\
+            { type: "gold", amount: 5000 },\
+            { type: "heat", amount: 1000 },\
+            { type: "information", amount: 32 },\
+            { type: "time", amount: 8 }\
           ]\
         },\
         {\
@@ -71,9 +77,10 @@ data modify storage data const.structure set value {\
           interval: 900,\
           amount: 4096,\
           cost: [\
-            { type: "information", amount: 300 },\
-            { type: "time", amount: 48 },\
-            { type: "yellow", amount: 16 }\
+            { type: "gold", amount: 50000 },\
+            { type: "heat", amount: 5000 },\
+            { type: "information", amount: 128 },\
+            { type: "time", amount: 32 }\
           ]\
         },\
         {\

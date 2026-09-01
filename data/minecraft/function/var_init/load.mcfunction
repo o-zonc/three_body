@@ -27,6 +27,7 @@ scoreboard players enable @a tutorial
 # 자동 세공의 누락값 보정도 매 tick이 아니라 load에서 처리합니다.
 execute unless score #jewel_auto_enabled var = #jewel_auto_enabled var run scoreboard players set #jewel_auto_enabled var 0
 execute unless score #jewel_auto_timer var = #jewel_auto_timer var run scoreboard players set #jewel_auto_timer var 0
+execute unless score #jewel_cooldown var = #jewel_cooldown var run scoreboard players set #jewel_cooldown var 0
 
 # 다음 tick에 현재 차원 기준 환경 타이머를 한 번 다시 계산하도록 합니다.
 scoreboard players reset #environment_dim_prev var

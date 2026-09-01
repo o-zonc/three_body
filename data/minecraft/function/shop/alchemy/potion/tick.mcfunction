@@ -7,7 +7,7 @@ execute as @a[tag=player] unless score @s potion_used_prev matches 0.. run score
 
 # 구매 쿨타임은 era_paused 동안, 활성 카탈리스트 지속시간은 차원 이동 연출 중에만 멈춥니다.
 execute unless score #GLOBAL era_paused matches 1 if score #catalyst_cooldown var matches 1.. run scoreboard players remove #catalyst_cooldown var 1
-execute unless score #disaster_running run matches 1 if score #catalyst_timer var matches 1 if score #catalyst_level var matches 1.. as @a[tag=player] at @s run playsound block.beacon.deactivate master @s ~ ~ ~ 0.8 1.2
+execute unless score #disaster_running run matches 1 if score #catalyst_timer var matches 1 if score #catalyst_level var matches 1.. as @a[tag=player] at @s run playsound minecraft:entity.evoker.prepare_wololo master @s ~ ~ ~ 1 2
 execute unless score #disaster_running run matches 1 if score #catalyst_timer var matches 1.. run scoreboard players remove #catalyst_timer var 1
 
 # 카탈리스트가 끝난 플레이어의 임시 효과와 채굴 속도 배율을 원래 값으로 돌립니다.

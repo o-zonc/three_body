@@ -9,9 +9,9 @@ execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] run scoreboa
 execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] run scoreboard players operation #factory_energy_fuel tmp *= #factory_energy_multiplier tmp
 execute if entity @a[tag=player,advancements={2_dried/03_hot=true}] run scoreboard players operation #factory_energy_fuel tmp /= #factory_energy_divisor tmp
 
-# 태양광 발전 연구: Lv.1은 30%, Lv.2 이상은 70% 감소
-scoreboard players set #factory_energy_multiplier tmp 70
-execute if score #factory_energy_level upgrade matches 2.. run scoreboard players set #factory_energy_multiplier tmp 30
+# 태양광 발전 연구: Lv.1은 25%, Lv.2 이상은 60% 감소
+scoreboard players set #factory_energy_multiplier tmp 75
+execute if score #factory_energy_level upgrade matches 2.. run scoreboard players set #factory_energy_multiplier tmp 40
 execute if score #factory_energy_level upgrade matches 1.. run scoreboard players operation #factory_energy_fuel tmp *= #factory_energy_multiplier tmp
 execute if score #factory_energy_level upgrade matches 1.. run scoreboard players operation #factory_energy_fuel tmp /= #factory_energy_divisor tmp
 

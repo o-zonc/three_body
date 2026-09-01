@@ -18,6 +18,8 @@ execute unless score #material_shop_cost_check tmp matches 1 at @s run playsound
 execute unless score #material_shop_cost_check tmp matches 1 run return 0
 function resource/take_upgrade_cost
 $scoreboard players add #$(id)_lvl material_shop 1
+execute if score @s shop_trigger matches 1109 run function resource/shop/sync_gem_regen {id:"emerald"}
+execute if score @s shop_trigger matches 1110 run function resource/shop/sync_gem_regen {id:"lapis"}
 function story/overworld/age/check_ancient_age
 playsound entity.player.levelup weather @s ~ ~ ~ 0.8 1.2
 $function resource/shop/ui {id:"$(id)",name:"$(name)",color:"$(color)",trigger:$(trigger),unit:"$(unit)"}

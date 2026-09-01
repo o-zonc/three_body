@@ -6,6 +6,6 @@ execute if entity @a[advancements={0_overworld/24_time_machine=true}] if score #
 scoreboard players operation #factory_shop_stage tmp = #GLOBAL factory_build_stage
 
 data remove storage data tmp.factory_shop
-execute if score #factory_shop_stage tmp matches 0 run data modify storage data tmp.factory_shop set value {name:"공장",required_age:7,cost:[{type:"copper",amount:100},{type:"iron",amount:100},{type:"emerald",amount:50},{type:"lapis",amount:50}]}
+execute if score #factory_shop_stage tmp matches 0 run data modify storage data tmp.factory_shop set value {name:"공장",required_age:7,cost:[{type:"wood",amount:5000},{type:"stone",amount:2000},{type:"coal",amount:1000},{type:"copper",amount:200},{type:"iron",amount:200}]}
 execute if score #factory_shop_stage tmp matches 1 run data modify storage data tmp.factory_shop set value {name:"입자가속기",required_age:8,cost:[{type:"copper",amount:200},{type:"iron",amount:200},{type:"emerald",amount:100},{type:"lapis",amount:100}]}
 execute if score #factory_shop_stage tmp matches 2 run data modify storage data tmp.factory_shop set value {name:"타임머신",required_age:9,cost:[{type:"copper",amount:400},{type:"iron",amount:400},{type:"emerald",amount:200},{type:"lapis",amount:200}]}

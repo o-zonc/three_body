@@ -2,7 +2,6 @@
 	"values": [
 		"init",
 		"var_init/load",
-		"const_def",
-		"factory/rebalance_costs"
+		"const_def"
 	]
 }

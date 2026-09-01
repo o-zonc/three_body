@@ -321,7 +321,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 9,\
-        cost: [{ type: "wood", amount: 4000 }, { type: "iron", amount: 200 }],\
+        cost: [{ type: "wood", amount: 1200 }, { type: "iron", amount: 150 }],\
         components: {\
           custom_name: "§f좋은 철 곡괭이",\
           item_model: "iron_pickaxe",\
@@ -372,7 +372,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 10,\
-        cost: [{ type: "wood", amount: 25000 }, { type: "iron", amount: 350 }],\
+        cost: [{ type: "wood", amount: 6000 }, { type: "iron", amount: 500 }, { type: "gold", amount: 5 }],\
         components: {\
           custom_name: "§f훌륭한 철 곡괭이",\
           item_model: "iron_pickaxe",\
@@ -423,7 +423,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 11,\
-        cost: [{ type: "diamond", amount: 5000 }, { type: "lapis", amount: 25000 }],\
+        cost: [{ type: "wood", amount: 15000 }, { type: "iron", amount: 1000 }, { type: "gold", amount: 15 }, { type: "diamond", amount: 5 }],\
         components: {\
           custom_name: "§f신성 철 곡괭이",\
           item_model: "iron_pickaxe",\
@@ -472,7 +472,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 12,\
-        cost: [{ type: "diamond", amount: 20000 }, { type: "lapis", amount: 100000 }],\
+        cost: [{ type: "wood", amount: 30000 }, { type: "iron", amount: 2000 }, { type: "gold", amount: 30 }, { type: "heat", amount: 5 }, { type: "cold", amount: 5 }],\
         components: {\
           custom_name: "§f수동 드릴",\
           item_model: "netherite_spear",\
@@ -515,7 +515,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 13,\
-        cost: [{ type: "diamond", amount: 50000 }, { type: "emerald", amount: 100000 }, { type: "lapis", amount: 250000 }],\
+        cost: [{ type: "wood", amount: 60000 }, { type: "iron", amount: 4000 }, { type: "diamond", amount: 30 }, { type: "heat", amount: 10 }, { type: "cold", amount: 10 }],\
         components: {\
           custom_name: "§f전동 드릴",\
           item_model: "mace",\
@@ -556,7 +556,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 14,\
-        cost: [{ type: "diamond", amount: 150000 }, { type: "emerald", amount: 300000 }, { type: "lapis", amount: 750000 }],\
+        cost: [{ type: "wood", amount: 120000 }, { type: "iron", amount: 8000 }, { type: "diamond", amount: 80 }, { type: "heat", amount: 20 }, { type: "cold", amount: 20 }],\
         components: {\
           custom_name: "§f굴착기",\
           item_model: "mace",\
@@ -597,7 +597,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 15,\
-        cost: [{ type: "diamond", amount: 500000 }, { type: "emerald", amount: 1000000 }, { type: "lapis", amount: 2500000 }],\
+        cost: [{ type: "wood", amount: 240000 }, { type: "gold", amount: 400 }, { type: "diamond", amount: 200 }, { type: "information", amount: 32 }, { type: "time", amount: 8 }],\
         components: {\
           custom_name: "§f중력 채굴기",\
           item_model: "ender_pearl",\

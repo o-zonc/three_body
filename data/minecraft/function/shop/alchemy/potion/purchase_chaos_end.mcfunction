@@ -1,4 +1,4 @@
-data modify storage data tmp.cost set value [{type:"emerald",amount:40},{type:"lapis",amount:60},{type:"information",amount:3},{type:"time",amount:1}]
+function shop/alchemy/potion/value/chaos_end_cost
 execute store result score #alchemy_potion_cost_ok tmp run function resource/check_cost
 execute unless score #alchemy_potion_cost_ok tmp matches 1 run title @s actionbar {text:"난세기 종료 물약을 양조할 재료가 부족합니다.",color:"red",italic:true}
 execute unless score #alchemy_potion_cost_ok tmp matches 1 run return 0

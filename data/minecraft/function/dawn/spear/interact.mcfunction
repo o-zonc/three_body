@@ -24,4 +24,4 @@ execute in minecraft:dawn unless block 0 67 0 minecraft:light_blue_stained_glass
 execute in minecraft:dawn unless block 0 67 0 minecraft:light_blue_stained_glass run return 0
 
 # 모든 증폭기가 완성되면 우는 흑요석은 자동으로 공개됩니다.
-tellraw @s {text:"세 증폭기의 힘이 중앙에 모여 있다.",color:"light_purple"}
+tellraw @s {text:"어라?",color:"light_purple"}

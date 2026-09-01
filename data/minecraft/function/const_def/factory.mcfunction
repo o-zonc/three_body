@@ -4,34 +4,34 @@
 data modify storage data const.factory set value \
 [{id:"wood",\
   levels:[\
-    {lvl:0,fuel:1,cost:[{type:"copper",amount:40},{type:"wood",amount:100}]},\
-    {lvl:1,fuel:2,cost:[{type:"copper",amount:80},{type:"wood",amount:250}]},\
-    {lvl:2,fuel:3,cost:[{type:"copper",amount:400},{type:"wood",amount:1250}]},\
-    {lvl:3,fuel:4,cost:[{type:"copper",amount:3200},{type:"wood",amount:10000}]},\
-    {lvl:4,fuel:5,cost:[{type:"copper",amount:25600},{type:"wood",amount:80000}]},\
-    {lvl:5,fuel:6,cost:[{type:"copper",amount:204800},{type:"wood",amount:640000}]},\
+    {lvl:0,fuel:1,cost:[{type:"wood",amount:100},{type:"copper",amount:40}]},\
+    {lvl:1,fuel:2,cost:[{type:"wood",amount:250},{type:"copper",amount:80}]},\
+    {lvl:2,fuel:3,cost:[{type:"wood",amount:1250},{type:"copper",amount:200},{type:"iron",amount:200}]},\
+    {lvl:3,fuel:4,cost:[{type:"wood",amount:10000},{type:"iron",amount:3200}]},\
+    {lvl:4,fuel:5,cost:[{type:"wood",amount:80000},{type:"iron",amount:25600}]},\
+    {lvl:5,fuel:6,cost:[{type:"wood",amount:640000},{type:"iron",amount:204800}]},\
     {lvl:6,fuel:7}\
   ]\
 },\
 {id:"stone",\
   levels:[\
-    {lvl:0,fuel:1,cost:[{type:"copper",amount:50},{type:"stone",amount:120}]},\
-    {lvl:1,fuel:3,cost:[{type:"copper",amount:100},{type:"stone",amount:300}]},\
-    {lvl:2,fuel:4,cost:[{type:"copper",amount:500},{type:"stone",amount:1500}]},\
-    {lvl:3,fuel:5,cost:[{type:"copper",amount:4000},{type:"stone",amount:12000}]},\
-    {lvl:4,fuel:6,cost:[{type:"copper",amount:32000},{type:"stone",amount:96000}]},\
-    {lvl:5,fuel:7,cost:[{type:"copper",amount:256000},{type:"stone",amount:768000}]},\
+    {lvl:0,fuel:1,cost:[{type:"stone",amount:120},{type:"copper",amount:50}]},\
+    {lvl:1,fuel:3,cost:[{type:"stone",amount:300},{type:"copper",amount:100}]},\
+    {lvl:2,fuel:4,cost:[{type:"stone",amount:1500},{type:"copper",amount:250},{type:"iron",amount:250}]},\
+    {lvl:3,fuel:5,cost:[{type:"stone",amount:12000},{type:"iron",amount:4000}]},\
+    {lvl:4,fuel:6,cost:[{type:"stone",amount:96000},{type:"iron",amount:32000}]},\
+    {lvl:5,fuel:7,cost:[{type:"stone",amount:768000},{type:"iron",amount:256000}]},\
     {lvl:6,fuel:8}\
   ]\
 },\
 {id:"coal",\
   levels:[\
-    {lvl:0,fuel:1,cost:[{type:"copper",amount:70},{type:"coal",amount:150}]},\
-    {lvl:1,fuel:2,cost:[{type:"copper",amount:140},{type:"coal",amount:350}]},\
-    {lvl:2,fuel:3,cost:[{type:"copper",amount:700},{type:"coal",amount:1750}]},\
-    {lvl:3,fuel:4,cost:[{type:"copper",amount:5600},{type:"coal",amount:14000}]},\
-    {lvl:4,fuel:5,cost:[{type:"copper",amount:44800},{type:"coal",amount:112000}]},\
-    {lvl:5,fuel:6,cost:[{type:"copper",amount:358400},{type:"coal",amount:896000}]},\
+    {lvl:0,fuel:1,cost:[{type:"coal",amount:150},{type:"copper",amount:70}]},\
+    {lvl:1,fuel:2,cost:[{type:"coal",amount:350},{type:"copper",amount:140}]},\
+    {lvl:2,fuel:3,cost:[{type:"coal",amount:1750},{type:"copper",amount:350},{type:"iron",amount:350}]},\
+    {lvl:3,fuel:4,cost:[{type:"coal",amount:14000},{type:"iron",amount:5600}]},\
+    {lvl:4,fuel:5,cost:[{type:"coal",amount:112000},{type:"iron",amount:44800}]},\
+    {lvl:5,fuel:6,cost:[{type:"coal",amount:896000},{type:"iron",amount:358400}]},\
     {lvl:6,fuel:7}\
   ]\
 },\
@@ -39,87 +39,87 @@ data modify storage data const.factory set value \
   levels:[\
     {lvl:0,fuel:2,cost:[{type:"copper",amount:180}]},\
     {lvl:1,fuel:3,cost:[{type:"copper",amount:300}]},\
-    {lvl:2,fuel:4,cost:[{type:"copper",amount:1500}]},\
-    {lvl:3,fuel:5,cost:[{type:"copper",amount:12000}]},\
-    {lvl:4,fuel:6,cost:[{type:"copper",amount:96000}]},\
-    {lvl:5,fuel:7,cost:[{type:"copper",amount:768000}]},\
+    {lvl:2,fuel:4,cost:[{type:"copper",amount:1500},{type:"iron",amount:100}]},\
+    {lvl:3,fuel:5,cost:[{type:"copper",amount:12000},{type:"iron",amount:500}]},\
+    {lvl:4,fuel:6,cost:[{type:"copper",amount:96000},{type:"iron",amount:2500}]},\
+    {lvl:5,fuel:7,cost:[{type:"copper",amount:768000},{type:"iron",amount:12000}]},\
     {lvl:6,fuel:8}\
   ]\
 },\
 {id:"iron",\
   levels:[\
-    {lvl:0,fuel:2,cost:[{type:"copper",amount:90},{type:"iron",amount:100}]},\
-    {lvl:1,fuel:4,cost:[{type:"copper",amount:180},{type:"iron",amount:250}]},\
-    {lvl:2,fuel:5,cost:[{type:"copper",amount:900},{type:"iron",amount:1250}]},\
-    {lvl:3,fuel:6,cost:[{type:"copper",amount:7200},{type:"iron",amount:10000}]},\
-    {lvl:4,fuel:7,cost:[{type:"copper",amount:57600},{type:"iron",amount:80000}]},\
-    {lvl:5,fuel:8,cost:[{type:"copper",amount:460800},{type:"iron",amount:640000}]},\
+    {lvl:0,fuel:2,cost:[{type:"iron",amount:100},{type:"copper",amount:90}]},\
+    {lvl:1,fuel:4,cost:[{type:"iron",amount:250},{type:"copper",amount:180}]},\
+    {lvl:2,fuel:5,cost:[{type:"iron",amount:1700},{type:"copper",amount:450}]},\
+    {lvl:3,fuel:6,cost:[{type:"iron",amount:17200}]},\
+    {lvl:4,fuel:7,cost:[{type:"iron",amount:137600}]},\
+    {lvl:5,fuel:8,cost:[{type:"iron",amount:1100800}]},\
     {lvl:6,fuel:9}\
   ]\
 },\
 {id:"gold",\
   levels:[\
-    {lvl:0,fuel:3,cost:[{type:"copper",amount:120},{type:"gold",amount:70}]},\
-    {lvl:1,fuel:5,cost:[{type:"copper",amount:240},{type:"gold",amount:180}]},\
-    {lvl:2,fuel:7,cost:[{type:"copper",amount:1200},{type:"gold",amount:900}]},\
-    {lvl:3,fuel:9,cost:[{type:"copper",amount:9600},{type:"gold",amount:7200}]},\
-    {lvl:4,fuel:11,cost:[{type:"copper",amount:76800},{type:"gold",amount:57600}]},\
-    {lvl:5,fuel:13,cost:[{type:"copper",amount:614400},{type:"gold",amount:460800}]},\
+    {lvl:0,fuel:3,cost:[{type:"gold",amount:70},{type:"copper",amount:120}]},\
+    {lvl:1,fuel:5,cost:[{type:"gold",amount:180},{type:"copper",amount:240}]},\
+    {lvl:2,fuel:7,cost:[{type:"gold",amount:900},{type:"copper",amount:600},{type:"iron",amount:600}]},\
+    {lvl:3,fuel:9,cost:[{type:"gold",amount:7200},{type:"iron",amount:9600}]},\
+    {lvl:4,fuel:11,cost:[{type:"gold",amount:57600},{type:"iron",amount:76800}]},\
+    {lvl:5,fuel:13,cost:[{type:"gold",amount:460800},{type:"iron",amount:614400}]},\
     {lvl:6,fuel:15}\
   ]\
 },\
 {id:"diamond",\
   levels:[\
-    {lvl:0,fuel:4,cost:[{type:"copper",amount:180},{type:"diamond",amount:30}]},\
-    {lvl:1,fuel:7,cost:[{type:"copper",amount:360},{type:"diamond",amount:80}]},\
-    {lvl:2,fuel:9,cost:[{type:"copper",amount:1800},{type:"diamond",amount:400}]},\
-    {lvl:3,fuel:11,cost:[{type:"copper",amount:14400},{type:"diamond",amount:3200}]},\
-    {lvl:4,fuel:13,cost:[{type:"copper",amount:115200},{type:"diamond",amount:25600}]},\
-    {lvl:5,fuel:15,cost:[{type:"copper",amount:921600},{type:"diamond",amount:204800}]},\
+    {lvl:0,fuel:4,cost:[{type:"diamond",amount:30},{type:"copper",amount:180}]},\
+    {lvl:1,fuel:7,cost:[{type:"diamond",amount:80},{type:"copper",amount:360}]},\
+    {lvl:2,fuel:9,cost:[{type:"diamond",amount:400},{type:"copper",amount:900},{type:"iron",amount:900}]},\
+    {lvl:3,fuel:11,cost:[{type:"diamond",amount:3200},{type:"iron",amount:14400}]},\
+    {lvl:4,fuel:13,cost:[{type:"diamond",amount:25600},{type:"iron",amount:115200}]},\
+    {lvl:5,fuel:15,cost:[{type:"diamond",amount:204800},{type:"iron",amount:921600}]},\
     {lvl:6,fuel:17}\
   ]\
 },\
 {id:"emerald",\
   levels:[\
-    {lvl:0,fuel:4,cost:[{type:"copper",amount:160},{type:"emerald",amount:40}]},\
-    {lvl:1,fuel:6,cost:[{type:"copper",amount:320},{type:"emerald",amount:100}]},\
-    {lvl:2,fuel:8,cost:[{type:"copper",amount:1600},{type:"emerald",amount:500}]},\
-    {lvl:3,fuel:10,cost:[{type:"copper",amount:12800},{type:"emerald",amount:4000}]},\
-    {lvl:4,fuel:12,cost:[{type:"copper",amount:102400},{type:"emerald",amount:32000}]},\
-    {lvl:5,fuel:14,cost:[{type:"copper",amount:819200},{type:"emerald",amount:256000}]},\
+    {lvl:0,fuel:4,cost:[{type:"emerald",amount:40},{type:"copper",amount:160}]},\
+    {lvl:1,fuel:6,cost:[{type:"emerald",amount:100},{type:"copper",amount:320}]},\
+    {lvl:2,fuel:8,cost:[{type:"emerald",amount:500},{type:"copper",amount:800},{type:"iron",amount:800}]},\
+    {lvl:3,fuel:10,cost:[{type:"emerald",amount:4000},{type:"iron",amount:12800}]},\
+    {lvl:4,fuel:12,cost:[{type:"emerald",amount:32000},{type:"iron",amount:102400}]},\
+    {lvl:5,fuel:14,cost:[{type:"emerald",amount:256000},{type:"iron",amount:819200}]},\
     {lvl:6,fuel:16}\
   ]\
 },\
 {id:"lapis",\
   levels:[\
-    {lvl:0,fuel:3,cost:[{type:"copper",amount:130},{type:"lapis",amount:70}]},\
-    {lvl:1,fuel:5,cost:[{type:"copper",amount:260},{type:"lapis",amount:180}]},\
-    {lvl:2,fuel:7,cost:[{type:"copper",amount:1300},{type:"lapis",amount:900}]},\
-    {lvl:3,fuel:9,cost:[{type:"copper",amount:10400},{type:"lapis",amount:7200}]},\
-    {lvl:4,fuel:11,cost:[{type:"copper",amount:83200},{type:"lapis",amount:57600}]},\
-    {lvl:5,fuel:13,cost:[{type:"copper",amount:665600},{type:"lapis",amount:460800}]},\
+    {lvl:0,fuel:3,cost:[{type:"lapis",amount:70},{type:"copper",amount:130}]},\
+    {lvl:1,fuel:5,cost:[{type:"lapis",amount:180},{type:"copper",amount:260}]},\
+    {lvl:2,fuel:7,cost:[{type:"lapis",amount:900},{type:"copper",amount:650},{type:"iron",amount:650}]},\
+    {lvl:3,fuel:9,cost:[{type:"lapis",amount:7200},{type:"iron",amount:10400}]},\
+    {lvl:4,fuel:11,cost:[{type:"lapis",amount:57600},{type:"iron",amount:83200}]},\
+    {lvl:5,fuel:13,cost:[{type:"lapis",amount:460800},{type:"iron",amount:665600}]},\
     {lvl:6,fuel:15}\
   ]\
 },\
 {id:"cold",\
   levels:[\
-    {lvl:0,fuel:4,cost:[{type:"copper",amount:180},{type:"cold",amount:40}]},\
-    {lvl:1,fuel:7,cost:[{type:"copper",amount:360},{type:"cold",amount:100}]},\
-    {lvl:2,fuel:9,cost:[{type:"copper",amount:1800},{type:"cold",amount:500}]},\
-    {lvl:3,fuel:11,cost:[{type:"copper",amount:14400},{type:"cold",amount:4000}]},\
-    {lvl:4,fuel:13,cost:[{type:"copper",amount:115200},{type:"cold",amount:32000}]},\
-    {lvl:5,fuel:15,cost:[{type:"copper",amount:921600},{type:"cold",amount:256000}]},\
+    {lvl:0,fuel:4,cost:[{type:"cold",amount:40},{type:"copper",amount:180}]},\
+    {lvl:1,fuel:7,cost:[{type:"cold",amount:100},{type:"copper",amount:360}]},\
+    {lvl:2,fuel:9,cost:[{type:"cold",amount:500},{type:"copper",amount:900},{type:"iron",amount:900}]},\
+    {lvl:3,fuel:11,cost:[{type:"cold",amount:4000},{type:"iron",amount:14400}]},\
+    {lvl:4,fuel:13,cost:[{type:"cold",amount:32000},{type:"iron",amount:115200}]},\
+    {lvl:5,fuel:15,cost:[{type:"cold",amount:256000},{type:"iron",amount:921600}]},\
     {lvl:6,fuel:17}\
   ]\
 },\
 {id:"heat",\
   levels:[\
-    {lvl:0,fuel:4,cost:[{type:"copper",amount:180},{type:"heat",amount:40}]},\
-    {lvl:1,fuel:7,cost:[{type:"copper",amount:360},{type:"heat",amount:100}]},\
-    {lvl:2,fuel:9,cost:[{type:"copper",amount:1800},{type:"heat",amount:500}]},\
-    {lvl:3,fuel:11,cost:[{type:"copper",amount:14400},{type:"heat",amount:4000}]},\
-    {lvl:4,fuel:13,cost:[{type:"copper",amount:115200},{type:"heat",amount:32000}]},\
-    {lvl:5,fuel:15,cost:[{type:"copper",amount:921600},{type:"heat",amount:256000}]},\
+    {lvl:0,fuel:4,cost:[{type:"heat",amount:40},{type:"copper",amount:180}]},\
+    {lvl:1,fuel:7,cost:[{type:"heat",amount:100},{type:"copper",amount:360}]},\
+    {lvl:2,fuel:9,cost:[{type:"heat",amount:500},{type:"copper",amount:900},{type:"iron",amount:900}]},\
+    {lvl:3,fuel:11,cost:[{type:"heat",amount:4000},{type:"iron",amount:14400}]},\
+    {lvl:4,fuel:13,cost:[{type:"heat",amount:32000},{type:"iron",amount:115200}]},\
+    {lvl:5,fuel:15,cost:[{type:"heat",amount:256000},{type:"iron",amount:921600}]},\
     {lvl:6,fuel:17}\
   ]\
 }]

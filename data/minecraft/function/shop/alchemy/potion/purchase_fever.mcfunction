@@ -3,7 +3,7 @@ execute if score #catalyst_cooldown var matches 1.. run function shop/alchemy/po
 execute if score #catalyst_cooldown var matches 1.. run title @s actionbar [{text:"카탈리스트 재양조까지 ",color:"red",italic:true},{score:{name:"#catalyst_cd_minutes",objective:"tmp"},color:"white",italic:true},{text:"분 ",color:"red",italic:true},{score:{name:"#catalyst_cd_remainder",objective:"tmp"},color:"white",italic:true},{text:"초 남았습니다.",color:"red",italic:true}]
 execute if score #catalyst_cooldown var matches 1.. run return 0
 
-data modify storage data tmp.cost set value [{type:"emerald",amount:10},{type:"lapis",amount:15}]
+function shop/alchemy/potion/value/fever_cost
 execute store result score #alchemy_potion_cost_ok tmp run function resource/check_cost
 execute unless score #alchemy_potion_cost_ok tmp matches 1 run title @s actionbar {text:"카탈리스트를 양조할 재료가 부족합니다.",color:"red",italic:true}
 execute unless score #alchemy_potion_cost_ok tmp matches 1 run return 0

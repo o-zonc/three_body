@@ -24,7 +24,7 @@ execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerato
 # 외계 간섭은 현대(문명 단계 8)에서만 발생하며, 미래에 진입하면 영구적으로 종료됩니다.
 execute if score #overworld civilization_age matches 9.. run scoreboard players set #GLOBAL alien_interference 0
 execute if score #overworld civilization_age matches 9.. run scoreboard players set #GLOBAL alien_timer 1200
-execute if score #overworld civilization_age matches 8 if score #iron material matches 1000001.. if score #GLOBAL alien_interference matches 0 run function alien/start
+execute if score #overworld civilization_age matches 8 if score #GLOBAL alien_interference matches 0 run function alien/start
 execute if score #overworld civilization_age matches 8 if score #GLOBAL alien_interference matches 1 run function alien/tick
 
 # 보호막 상태 변경은 여기 한 곳에서만 수행합니다.

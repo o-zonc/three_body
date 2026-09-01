@@ -5,7 +5,6 @@ function meta/sync
 
 # 기존 진행 세이브도 리액터 제작 완료 상태라면 시각 상태를 동기화합니다.
 execute if score #GLOBAL dawn_reactor_purchased matches 1.. in minecraft:dawn run setblock 0 64 0 minecraft:pink_stained_glass
-execute if score #GLOBAL dawn_reactor_purchased matches 1.. run function crying/dawn_reveal
 
 execute if score #GLOBAL dawn_reactor_purchased matches 1.. run title @s actionbar {text:"이미 리액터를 제작했습니다.",color:"#F971BE",bold:false,italic:true}
 execute if score #GLOBAL dawn_reactor_purchased matches 1.. run return 0

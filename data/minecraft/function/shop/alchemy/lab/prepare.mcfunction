@@ -8,22 +8,22 @@ data remove storage data tmp.alchemy_lab.next_effect
 data remove storage data tmp.alchemy_lab.lock
 scoreboard players set #alchemy_lab_available tmp 1
 
-# 비용: 청금석 중심, 후반부에 정보/시간 추가
-execute if score #alchemy_lab_next tmp matches 1 run data modify storage data tmp.cost set value [{type:"lapis",amount:100},{type:"emerald",amount:10}]
-execute if score #alchemy_lab_next tmp matches 2 run data modify storage data tmp.cost set value [{type:"lapis",amount:250},{type:"emerald",amount:25}]
-execute if score #alchemy_lab_next tmp matches 3 run data modify storage data tmp.cost set value [{type:"lapis",amount:500},{type:"emerald",amount:50}]
-execute if score #alchemy_lab_next tmp matches 4 run data modify storage data tmp.cost set value [{type:"lapis",amount:1000},{type:"gold",amount:10}]
-execute if score #alchemy_lab_next tmp matches 5 run data modify storage data tmp.cost set value [{type:"lapis",amount:2000},{type:"diamond",amount:5}]
-execute if score #alchemy_lab_next tmp matches 6 run data modify storage data tmp.cost set value [{type:"lapis",amount:4000},{type:"gold",amount:25}]
-execute if score #alchemy_lab_next tmp matches 7 run data modify storage data tmp.cost set value [{type:"lapis",amount:8000},{type:"diamond",amount:10}]
-execute if score #alchemy_lab_next tmp matches 8 run data modify storage data tmp.cost set value [{type:"lapis",amount:16000},{type:"information",amount:4}]
-execute if score #alchemy_lab_next tmp matches 9 run data modify storage data tmp.cost set value [{type:"lapis",amount:32000},{type:"information",amount:8}]
-execute if score #alchemy_lab_next tmp matches 10 run data modify storage data tmp.cost set value [{type:"lapis",amount:64000},{type:"information",amount:16}]
-execute if score #alchemy_lab_next tmp matches 11 run data modify storage data tmp.cost set value [{type:"lapis",amount:125000},{type:"information",amount:24},{type:"time",amount:2}]
-execute if score #alchemy_lab_next tmp matches 12 run data modify storage data tmp.cost set value [{type:"lapis",amount:250000},{type:"information",amount:32},{type:"time",amount:4}]
-execute if score #alchemy_lab_next tmp matches 13 run data modify storage data tmp.cost set value [{type:"lapis",amount:500000},{type:"information",amount:40},{type:"time",amount:8}]
-execute if score #alchemy_lab_next tmp matches 14 run data modify storage data tmp.cost set value [{type:"lapis",amount:1000000},{type:"information",amount:48},{type:"time",amount:12}]
-execute if score #alchemy_lab_next tmp matches 15 run data modify storage data tmp.cost set value [{type:"lapis",amount:2000000},{type:"information",amount:64},{type:"time",amount:16}]
+# 비용: 보석은 소량 게이트로만 사용하고 후반부는 정보/시간으로 제어합니다.
+execute if score #alchemy_lab_next tmp matches 1 run data modify storage data tmp.cost set value [{type:"lapis",amount:2},{type:"emerald",amount:1}]
+execute if score #alchemy_lab_next tmp matches 2 run data modify storage data tmp.cost set value [{type:"lapis",amount:3},{type:"emerald",amount:1}]
+execute if score #alchemy_lab_next tmp matches 3 run data modify storage data tmp.cost set value [{type:"lapis",amount:4},{type:"emerald",amount:2}]
+execute if score #alchemy_lab_next tmp matches 4 run data modify storage data tmp.cost set value [{type:"lapis",amount:5},{type:"gold",amount:10}]
+execute if score #alchemy_lab_next tmp matches 5 run data modify storage data tmp.cost set value [{type:"lapis",amount:6},{type:"diamond",amount:5}]
+execute if score #alchemy_lab_next tmp matches 6 run data modify storage data tmp.cost set value [{type:"lapis",amount:8},{type:"gold",amount:25}]
+execute if score #alchemy_lab_next tmp matches 7 run data modify storage data tmp.cost set value [{type:"lapis",amount:10},{type:"diamond",amount:10}]
+execute if score #alchemy_lab_next tmp matches 8 run data modify storage data tmp.cost set value [{type:"lapis",amount:12},{type:"information",amount:4}]
+execute if score #alchemy_lab_next tmp matches 9 run data modify storage data tmp.cost set value [{type:"lapis",amount:16},{type:"information",amount:8}]
+execute if score #alchemy_lab_next tmp matches 10 run data modify storage data tmp.cost set value [{type:"lapis",amount:20},{type:"information",amount:16}]
+execute if score #alchemy_lab_next tmp matches 11 run data modify storage data tmp.cost set value [{type:"lapis",amount:24},{type:"information",amount:24},{type:"time",amount:2}]
+execute if score #alchemy_lab_next tmp matches 12 run data modify storage data tmp.cost set value [{type:"lapis",amount:28},{type:"information",amount:32},{type:"time",amount:4}]
+execute if score #alchemy_lab_next tmp matches 13 run data modify storage data tmp.cost set value [{type:"lapis",amount:32},{type:"information",amount:40},{type:"time",amount:8}]
+execute if score #alchemy_lab_next tmp matches 14 run data modify storage data tmp.cost set value [{type:"lapis",amount:40},{type:"information",amount:48},{type:"time",amount:12}]
+execute if score #alchemy_lab_next tmp matches 15 run data modify storage data tmp.cost set value [{type:"lapis",amount:48},{type:"information",amount:64},{type:"time",amount:16}]
 
 # 발전과제 보상의 상점 비용 할인을 연구 비용에도 적용합니다.
 # 정보/시간 같은 메타 자원은 기존 할인 규칙대로 제외됩니다.

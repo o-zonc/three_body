@@ -8,8 +8,6 @@ execute if score @s upgrade_trigger matches 1112 run function resource/upgrade/c
 execute if score @s upgrade_trigger matches 1113 run function resource/upgrade/iron
 execute if score @s upgrade_trigger matches 1114 run function resource/upgrade/gold
 execute if score @s upgrade_trigger matches 1115 run function resource/upgrade/diamond
-execute if score @s upgrade_trigger matches 1116 run function resource/upgrade/emerald
-execute if score @s upgrade_trigger matches 1117 run function resource/upgrade/lapis
 execute if score @s upgrade_trigger matches 1118 run function resource/upgrade/yellow
 execute if score @s upgrade_trigger matches 1119 run function resource/upgrade/blue
 

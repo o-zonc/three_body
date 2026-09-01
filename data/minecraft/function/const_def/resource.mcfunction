@@ -73,20 +73,20 @@ data modify storage data const.resource set value {\
       emerald: {item:"deepslate_emerald_ore",\
         unlock_cost:[{type:"wood",amount:400},{type:"iron",amount:40},{type:"copper",amount:40}],\
         regen:[\
-          {lvl:0,value:700,cost:[{type:"wood",amount:280},{type:"gold",amount:150}]},\
-          {lvl:1,value:420,cost:[{type:"lapis",amount:300}]},\
-          {lvl:2,value:220,cost:[{type:"diamond",amount:75}]},\
-          {lvl:3,value:70,cost:[{type:"information",amount:50}]},\
+          {lvl:0,value:700},\
+          {lvl:1,value:420},\
+          {lvl:2,value:220},\
+          {lvl:3,value:70},\
           {lvl:4,value:10}\
         ]\
       },\
       lapis: {item:"deepslate_lapis_ore",\
         unlock_cost:[{type:"wood",amount:320},{type:"copper",amount:50},{type:"coal",amount:50}],\
         regen:[\
-          {lvl:0,value:600,cost:[{type:"wood",amount:320},{type:"emerald",amount:50}]},\
-          {lvl:1,value:380,cost:[{type:"gold",amount:400}]},\
-          {lvl:2,value:180,cost:[{type:"diamond",amount:100}]},\
-          {lvl:3,value:60,cost:[{type:"information",amount:75}]},\
+          {lvl:0,value:600},\
+          {lvl:1,value:380},\
+          {lvl:2,value:180},\
+          {lvl:3,value:60},\
           {lvl:4,value:10}\
         ]\
       },\
@@ -214,15 +214,3 @@ data modify storage data const.resource.diamond.regen[{lvl:0}].cost set value [{
 data modify storage data const.resource.diamond.regen[{lvl:1}].cost set value [{type:"wood",amount:1500},{type:"stone",amount:750}]
 data modify storage data const.resource.diamond.regen[{lvl:2}].cost set value [{type:"wood",amount:4000},{type:"stone",amount:2000},{type:"coal",amount:750}]
 data modify storage data const.resource.diamond.regen[{lvl:3}].cost set value [{type:"wood",amount:8000},{type:"stone",amount:4000},{type:"coal",amount:1500},{type:"copper",amount:750}]
-
-# 에메랄드
-data modify storage data const.resource.emerald.regen[{lvl:0}].cost set value [{type:"wood",amount:280},{type:"stone",amount:140}]
-data modify storage data const.resource.emerald.regen[{lvl:1}].cost set value [{type:"wood",amount:1200},{type:"stone",amount:600}]
-data modify storage data const.resource.emerald.regen[{lvl:2}].cost set value [{type:"wood",amount:3500},{type:"stone",amount:1750},{type:"coal",amount:600}]
-data modify storage data const.resource.emerald.regen[{lvl:3}].cost set value [{type:"wood",amount:7000},{type:"stone",amount:3500},{type:"coal",amount:1200},{type:"copper",amount:600}]
-
-# 청금석
-data modify storage data const.resource.lapis.regen[{lvl:0}].cost set value [{type:"wood",amount:320},{type:"stone",amount:160}]
-data modify storage data const.resource.lapis.regen[{lvl:1}].cost set value [{type:"wood",amount:1300},{type:"stone",amount:650}]
-data modify storage data const.resource.lapis.regen[{lvl:2}].cost set value [{type:"wood",amount:3800},{type:"stone",amount:1900},{type:"coal",amount:650}]
-data modify storage data const.resource.lapis.regen[{lvl:3}].cost set value [{type:"wood",amount:7600},{type:"stone",amount:3800},{type:"coal",amount:1300},{type:"copper",amount:650}]

@@ -1,6 +1,10 @@
 # 세공 모드와 자동 세공 상태 관리
 execute unless score #alchemy_workshop unlock matches 1 run return 0
 
+execute unless score #jewel_cooldown var = #jewel_cooldown var run scoreboard players set #jewel_cooldown var 0
+execute if score #jewel_cooldown var matches 1.. unless score #GLOBAL era_paused matches 1 run scoreboard players remove #jewel_cooldown var 1
+execute if score #jewel_cooldown var matches ..-1 run scoreboard players set #jewel_cooldown var 0
+
 execute unless score #jewel_mode var = #jewel_mode var run scoreboard players set #jewel_mode var 0
 execute if score #jewel_mode var matches ..-1 run scoreboard players set #jewel_mode var 0
 execute if score #jewel_mode var matches 3.. run scoreboard players set #jewel_mode var 0
