@@ -8,6 +8,7 @@
 
 schedule clear common/next
 schedule clear common/disaster/finish
+schedule clear resource/color/event/meteor_finish
 
 schedule clear story/intro/00_init
 schedule clear story/intro/01_quote1

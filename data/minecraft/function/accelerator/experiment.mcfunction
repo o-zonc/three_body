@@ -25,7 +25,6 @@ execute unless score #experiment_cost_ok tmp matches 1 run title @s actionbar {t
 execute unless score #experiment_cost_ok tmp matches 1 run return 0
 function resource/cost/take
 execute if score #factory_recycle_level upgrade matches 3.. run function factory/recycle/refund_cost
-execute unless score #color_resources_unlocked var matches 1 run function resource/color/unlock
 
 scoreboard players operation @s experiment_type = @s accelerator_trigger
 execute if score @s accelerator_trigger matches 10 store result score @s experiment_delay run data get storage data const.accelerator.experiment.quantum.delay

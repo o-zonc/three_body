@@ -106,6 +106,8 @@ scoreboard players set #GLOBAL reckoning_count 0
 # 시간축 개방은 회차 진행에서는 유지되지만, 전체 게임 초기화에서는 다시 잠급니다.
 scoreboard players set #time_axis_open var 0
 scoreboard players set #color_resources_unlocked var 0
+scoreboard players set #color_event_timer var -1
+scoreboard players set #color_event_pending var 0
 scoreboard players set #spacetime_experiment_done var 0
 scoreboard players set #jewel_mode var 0
 scoreboard players set #jewel_cooldown var 0

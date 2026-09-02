@@ -22,6 +22,9 @@ function ui/sidebar/refresh
 scoreboard objectives setdisplay sidebar material_display
 tag @a add player
 
+# 본편 조작이 풀린 순간 이번 전체 회차의 외계 자원 등장 시점을 한 번만 정합니다.
+function resource/color/event/init
+
 schedule clear story/intro/03_scroll_tick
 scoreboard players set #block intro 1
 

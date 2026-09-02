@@ -17,8 +17,9 @@ execute if entity @a[advancements={0_overworld/25_yellow_time_machine=true}] run
 execute if entity @a[advancements={0_overworld/25_blue_time_machine=true}] run scoreboard players set #time_machine_ever_blue var 1
 execute if entity @a[advancements={0_overworld/25_green_time_machine=true}] run scoreboard players set #time_machine_ever_green var 1
 
-# 기존 월드의 중입자 충돌 발전과제는 새 영구 색 자원 해금 상태로 한 번 이관합니다.
-execute if entity @a[advancements={0_overworld/22_heavy_ion_experiment=true}] run scoreboard players set #color_resources_unlocked var 1
+# 기존 진행 중 월드에 이벤트 타이머가 없다면 이번 load에서 한 번만 생성합니다.
+# 값이 이미 있거나 외계 자원을 발견한 월드는 /reload로 다시 추첨하지 않습니다.
+execute if entity @a[tag=player] run function resource/color/event/init
 
 # 기존 세이브가 이미 whitelist를 모두 충족한 경우 reload 시 한 번 보정합니다.
 execute as @a[tag=player] run function advancement/general/check

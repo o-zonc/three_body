@@ -37,6 +37,7 @@ function heavenly_grace/tick
 function investment_series_a/tick
 
 function resource/product_managing_by_tick
+function resource/color/event/tick
 function factory/tick
 
 # 얼어붙은 세계 난세기 환경 효과

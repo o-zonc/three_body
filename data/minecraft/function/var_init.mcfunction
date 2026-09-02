@@ -141,6 +141,8 @@ execute unless score #time_machine_ever_yellow var = #time_machine_ever_yellow v
 execute unless score #time_machine_ever_blue var = #time_machine_ever_blue var run scoreboard players set #time_machine_ever_blue var 0
 execute unless score #time_machine_ever_green var = #time_machine_ever_green var run scoreboard players set #time_machine_ever_green var 0
 execute unless score #color_resources_unlocked var = #color_resources_unlocked var run scoreboard players set #color_resources_unlocked var 0
+execute unless score #color_event_timer var = #color_event_timer var run scoreboard players set #color_event_timer var -1
+execute unless score #color_event_pending var = #color_event_pending var run scoreboard players set #color_event_pending var 0
 
 # 타임머신 레벨은 항상 0~4 범위로 유지합니다.
 execute unless score #GLOBAL factory_elevator_unlocked = #GLOBAL factory_elevator_unlocked run scoreboard players set #GLOBAL factory_elevator_unlocked 0

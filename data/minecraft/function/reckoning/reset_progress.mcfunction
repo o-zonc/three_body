@@ -36,7 +36,7 @@ execute if score #vault_shop_mover_owned tmp matches 1 run scoreboard players se
 execute if score #vault_alchemy_mover_owned tmp matches 1 run scoreboard players set #alchemy_mover unlock 1
 execute if score #vault_dimension_mover_owned tmp matches 1 as @a run function item/give/dimension_mover
 
-# 첫 입자가속기 실험으로 해금한 노랑/파랑은 영구 해금 기록과 재생성 업그레이드를 다음 문명으로 계승한다.
+# 운석 충돌 사건으로 발견한 노랑/파랑은 영구 해금 기록과 재생성 업그레이드를 다음 문명으로 계승한다.
 # 보유량은 위 material 초기화에 포함되지만, 노드는 새 문명 시작과 함께 즉시 다시 사용할 수 있다.
 execute if score #color_resources_unlocked var matches 1 run scoreboard players set #yellow unlock 1
 execute if score #color_resources_unlocked var matches 1 run scoreboard players set #blue unlock 1
