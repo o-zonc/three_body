@@ -31,10 +31,10 @@ execute if score #seen_heat var matches 1 run data modify storage data tmp.altar
 execute if score #seen_cold var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 냉기",color:"aqua"}
 
 # 외계 자원은 해금 전까지 분류명과 설명을 포함한 모든 정보를 숨긴다.
-execute if entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run data modify storage data tmp.altar_resource_info append value {text:"\n\n  ◆ 외계 자원",color:"dark_gray"}
-execute if entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run data modify storage data tmp.altar_resource_info append value {text:"\n  기존 물질 이론으로 설명하기 어려운 이질적인 자원.",color:"gray"}
-execute if entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] if score #seen_yellow var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 노랑",color:"yellow"}
-execute if entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] if score #seen_blue var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 파랑",color:"blue"}
+execute if score #color_resources_unlocked var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n\n  ◆ 외계 자원",color:"dark_gray"}
+execute if score #color_resources_unlocked var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  기존 물질 이론으로 설명하기 어려운 이질적인 자원.",color:"gray"}
+execute if score #color_resources_unlocked var matches 1 if score #seen_yellow var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 노랑",color:"yellow"}
+execute if score #color_resources_unlocked var matches 1 if score #seen_blue var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 파랑",color:"blue"}
 
 data modify storage data tmp.altar_resource_info append value {text:"\n\n  ◆ 메타 자원",color:"dark_aqua"}
 data modify storage data tmp.altar_resource_info append value {text:"\n  문명과 시공간의 진행에 직접 관여하는 희귀 자원.",color:"gray"}

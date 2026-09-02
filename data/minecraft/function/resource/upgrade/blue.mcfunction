@@ -1,5 +1,5 @@
-execute unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run function resource/effect/failure
-execute unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run return 0
+execute unless score #color_resources_unlocked var matches 1 run function resource/effect/failure
+execute unless score #color_resources_unlocked var matches 1 run return 0
 execute unless score #blue_regen_lvl upgrade = #blue_regen_lvl upgrade run scoreboard players set #blue_regen_lvl upgrade 0
 execute store result storage data tmp.resource.upgrade.lvl int 1 run scoreboard players get #blue_regen_lvl upgrade
 data modify storage data tmp.resource.upgrade.id set value "blue"

@@ -16,7 +16,6 @@ scoreboard players set #vault_stone_resources tmp 0
 scoreboard players set #vault_metal_resources tmp 0
 scoreboard players set #vault_gem_resources tmp 0
 scoreboard players set #vault_frozen_bridge tmp 0
-scoreboard players set #vault_dried_structures tmp 0
 scoreboard players set #vault_stronghold tmp 0
 scoreboard players set #vault_elevator tmp 0
 scoreboard players set #vault_tool tmp 0
@@ -38,7 +37,6 @@ execute if score #time_bank meta matches 60.. run scoreboard players set #vault_
 execute if score #time_bank meta matches 100.. run scoreboard players set #vault_metal_resources tmp 1
 execute if score #time_bank meta matches 150.. run scoreboard players set #vault_gem_resources tmp 1
 execute if score #time_bank meta matches 20.. run scoreboard players set #vault_frozen_bridge tmp 1
-execute if score #time_bank meta matches 40.. run scoreboard players set #vault_dried_structures tmp 1
 execute if score #time_bank meta matches 70.. run scoreboard players set #vault_stronghold tmp 1
 execute if score #time_bank meta matches 100.. run scoreboard players set #vault_elevator tmp 1
 execute if score #time_bank meta matches 500.. run scoreboard players set #vault_tool tmp 1

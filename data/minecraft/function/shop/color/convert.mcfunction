@@ -1,5 +1,5 @@
 # Macro args: source, source_name, source_color, target, target_name, target_color, base, amount
-execute unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run return 0
+execute unless score #color_resources_unlocked var matches 1 run return 0
 $execute unless score #$(source) material matches 1.. run title @s actionbar {text:"$(source_name) 자원이 부족합니다.",color:"red",bold:false,italic:true}
 $execute unless score #$(source) material matches 1.. at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 $execute unless score #$(source) material matches 1.. run return 0

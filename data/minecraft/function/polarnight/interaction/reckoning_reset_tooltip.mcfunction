@@ -49,14 +49,13 @@ execute if score #information_bank meta matches 2000.. run data modify storage d
 execute unless score #information_bank meta matches 2000.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 타임머신 발전 단계\n",color:"gray"}
 
 # 메마른·얼어붙은 차원 진행
-execute if score #information_bank meta matches 75.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 고대 문명 발굴 장치 진행도\n",color:"gray",strikethrough:true}
-execute unless score #information_bank meta matches 75.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 고대 문명 발굴 장치 진행도\n",color:"gray"}
-execute if score #time_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 세계 업그레이드 (유황·진사)\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 세계 업그레이드 (유황·진사)\n",color:"gray"}
-execute if score #time_bank meta matches 35.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 차원의 유적 복구\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 35.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 차원의 유적 복구\n",color:"gray"}
-execute if score #time_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 다리\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 10.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 다리\n",color:"gray"}
+execute if score #information_bank meta matches 150.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 고대 문명 발굴 장치 진행도\n",color:"gray",strikethrough:true}
+execute unless score #information_bank meta matches 150.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 고대 문명 발굴 장치 진행도\n",color:"gray"}
+data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 세계 업그레이드 (유황·진사)\n",color:"gray"}
+execute if score #time_bank meta matches 70.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 차원의 유적 복구\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 70.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 차원의 유적 복구\n",color:"gray"}
+execute if score #time_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 다리\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 다리\n",color:"gray"}
 execute if entity @a[advancements={1_frozen/10_shop=true}] run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 차원 상점\n",color:"gray",strikethrough:true}
 execute unless entity @a[advancements={1_frozen/10_shop=true}] run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 차원 상점\n",color:"gray"}
 execute if entity @a[advancements={1_frozen/12_maze=true}] run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 미로\n",color:"gray",strikethrough:true}

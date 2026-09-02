@@ -35,7 +35,7 @@ execute if score #vault_gem_unlocks tmp matches 1 if score #vault_unlock_lapis t
 # 복원된 강화 단계에 맞춰 얼어붙은 차원의 우는 흑요석 외형도 동기화한다.
 execute if score #special_second_lvl upgrade matches 2.. run function crying/frozen_reveal
 
-# 정보 75조각: 고대 문명 발굴 장치의 해금 및 강화 단계를 유지한다.
+# 정보 150조각: 고대 문명 발굴 장치의 해금 및 강화 단계를 유지한다.
 execute if score #vault_dried_relic tmp matches 1 run scoreboard players operation #dried_relic_level upgrade = #vault_dried_relic_level tmp
 execute if score #vault_dried_relic tmp matches 1 if score #dried_relic_level upgrade matches 1.. run function dried/relic/prepare
 execute if score #vault_dried_relic tmp matches 1 if score #dried_relic_level upgrade matches 1.. run scoreboard players operation #dried_relic_timer generate = #dried_relic_interval tmp
@@ -81,13 +81,9 @@ execute if score #time_bank meta matches 40.. run scoreboard players set #overwo
 execute if score #time_bank meta matches 80.. run scoreboard players set #overworld civilization_age 7
 execute if score #time_bank meta matches 200.. run scoreboard players set #overworld civilization_age 8
 
-# 시간 10조각: 이전 문명에서 개방한 얼어붙은 다리를 유지한다.
+# 시간 20조각: 이전 문명에서 개방한 얼어붙은 다리를 유지한다.
 execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run scoreboard players set #frozen_bridge unlock 1
 execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run function frozen/structure/bridge/on
-
-# 시간 20조각: 이전 문명에서 구매한 메마른 세계의 유황·진사 업그레이드를 유지한다.
-execute if score #vault_dried_structures tmp matches 1 if score #vault_dried_sulfur_owned tmp matches 1 run function dried/structure/sulfur/on
-execute if score #vault_dried_structures tmp matches 1 if score #vault_dried_cinnabar_owned tmp matches 1 run function dried/structure/cinnabar/on
 
 # 발전과제 보상: 한 번 해금한 얼어붙은 세계 상점과 미로는 문명이 바뀌어도 유지한다.
 execute if entity @a[advancements={1_frozen/10_shop=true}] run scoreboard players set #frozen_shop unlock 1
@@ -95,7 +91,7 @@ execute if entity @a[advancements={1_frozen/10_shop=true}] run function frozen/s
 execute if entity @a[advancements={1_frozen/12_maze=true}] run scoreboard players set #frozen_maze unlock 1
 execute if entity @a[advancements={1_frozen/12_maze=true}] run function frozen/structure/maze/on
 
-# 시간 35조각: 세 차원 유적지의 복구 상태를 각각 유지한다.
+# 시간 70조각: 세 차원 유적지의 복구 상태를 각각 유지한다.
 execute if score #vault_stronghold tmp matches 1 run scoreboard players operation #stronghold_overworld upgrade = #vault_stronghold_overworld tmp
 execute if score #vault_stronghold tmp matches 1 run scoreboard players operation #stronghold_frozen upgrade = #vault_stronghold_frozen tmp
 execute if score #vault_stronghold tmp matches 1 run scoreboard players operation #stronghold_dried upgrade = #vault_stronghold_dried tmp
@@ -108,7 +104,7 @@ execute if score #vault_elevator tmp matches 1 run scoreboard players operation 
 execute if score #vault_stick_progress tmp matches 1 run scoreboard players operation #wood_regen_lvl upgrade = #vault_wood_regen tmp
 execute if score #vault_stick_progress tmp matches 1 run scoreboard players operation #wood_lvl material_shop = #vault_wood_shop tmp
 
-# 시간 30/50/75조각: 석재/금속/보석 자원의 재생산 업그레이드를 유지한다.
+# 시간 60/100/150조각: 석재/금속/보석 자원의 재생산 업그레이드를 유지한다.
 execute if score #vault_stone_resources tmp matches 1 run scoreboard players operation #stone_regen_lvl upgrade = #vault_stone_regen tmp
 execute if score #vault_stone_resources tmp matches 1 run scoreboard players operation #coal_regen_lvl upgrade = #vault_coal_regen tmp
 execute if score #vault_metal_resources tmp matches 1 run scoreboard players operation #copper_regen_lvl upgrade = #vault_copper_regen tmp
@@ -118,7 +114,7 @@ execute if score #vault_metal_resources tmp matches 1 run scoreboard players ope
 execute if score #vault_gem_resources tmp matches 1 run scoreboard players operation #emerald_regen_lvl upgrade = #vault_emerald_regen tmp
 execute if score #vault_gem_resources tmp matches 1 run scoreboard players operation #lapis_regen_lvl upgrade = #vault_lapis_regen tmp
 
-# 시간 250조각: 정산에서 0으로 초기화한 뒤 이전 채굴 도구 강화 단계를 복원한다.
+# 시간 500조각: 정산에서 0으로 초기화한 뒤 이전 채굴 도구 강화 단계를 복원한다.
 execute if score #vault_tool tmp matches 1 run scoreboard players operation #tool upgrade = #vault_tool_level tmp
 
 # 시간 보관소 10조각 이상 보정은 상점·도구 보관 효과를 모두 복원한 뒤 적용한다.

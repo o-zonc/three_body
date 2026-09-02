@@ -11,3 +11,24 @@ execute if score #iron_lvl material_shop matches ..0 run scoreboard players set 
 
 # 고대 시작의 일회성 보급품입니다.
 execute as @a[tag=player,limit=1] run function item/give/heavenly_grace
+
+# 고대 진입까지 필수였던 일반 자원은 최소 해금 상태를 보장합니다.
+scoreboard players set #stone unlock 1
+scoreboard players set #coal unlock 1
+scoreboard players set #copper unlock 1
+scoreboard players set #iron unlock 1
+
+# 중세 시작은 고대→중세 진입 조건이었던 연금술 공방의 최소 상태를 보장합니다.
+execute if score #time_bank meta matches 40.. unless score #alchemy_workshop unlock matches 1.. run scoreboard players set #alchemy_workshop unlock 1
+execute if score #time_bank meta matches 40.. run function common/structure/alchemy_workshop/on
+
+# 근대 시작은 중세→근대 진입 조건이었던 공방 Lv. 1을 보장합니다.
+execute if score #time_bank meta matches 80.. if score #level alchemy_workshop matches ..0 run scoreboard players set #level alchemy_workshop 1
+
+# 현대 시작은 근대→현대 진입 조건이었던 공장과 네 생산선의 최소 해금을 보장합니다.
+execute if score #time_bank meta matches 200.. if score #GLOBAL factory_build_stage matches ..0 run scoreboard players set #GLOBAL factory_build_stage 1
+execute if score #time_bank meta matches 200.. run function common/structure/factory/on
+execute if score #time_bank meta matches 200.. run scoreboard players set #wood factory_unlocked 1
+execute if score #time_bank meta matches 200.. run scoreboard players set #stone factory_unlocked 1
+execute if score #time_bank meta matches 200.. run scoreboard players set #coal factory_unlocked 1
+execute if score #time_bank meta matches 200.. run scoreboard players set #copper factory_unlocked 1
