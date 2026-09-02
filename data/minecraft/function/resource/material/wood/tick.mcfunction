@@ -1,27 +1,44 @@
-# 플레이어 채굴은 oak_log 채굴 통계로, 공장 채굴은 기존 자동 채굴 플래그로 구분합니다.
-execute unless score #wood unlock matches 1 run return 0
+# 참고 구현의 핵심 상태 머신을 유지합니다.
+# - 노드가 존재하면 remain 점수를 비워 idle 상태로 둡니다.
+# - 노드가 air이고 remain 점수가 없으면 방금 파괴된 것으로 보고 정확히 한 번 수확합니다.
+# - 채굴 통계는 수확 발생 여부가 아니라 카탈리스트의 직접 채굴 여부만 판정합니다.
 scoreboard players set #wood_harvested_this_tick var 0
 scoreboard players set #wood_automated_harvest_this_tick var 0
+
+# restart/정산 등으로 잠긴 동안 이전 노드가 물리적으로 남지 않게 합니다.
+execute unless score #wood unlock matches 1 in minecraft:overworld run setblock 0 -59 35 air replace
+execute unless score #wood unlock matches 1 run scoreboard players reset #wood_remain generate
+execute unless score #wood unlock matches 1 run scoreboard players set #wood_automated_harvest var 0
+execute unless score #wood unlock matches 1 run return 0
+
+# 생산 정지 중에는 이전 자동 채굴 신호를 다음 활성화 시점까지 끌고 가지 않습니다.
+execute if score #disable_wood_production var matches 1 run scoreboard players set #wood_automated_harvest var 0
 execute if score #disable_wood_production var matches 1 run return 0
 
-# 자동 채굴을 먼저 소비해 같은 tick의 플레이어 통계와 중복되지 않게 합니다.
-execute if score #wood_automated_harvest var matches 1 in minecraft:overworld if block 0 -59 35 minecraft:air run scoreboard players set #wood_automated_harvest_this_tick var 1
-execute if score #wood_automated_harvest_this_tick var matches 1 run scoreboard players set #catalyst_active_harvest var 0
-execute if score #wood_automated_harvest_this_tick var matches 1 run scoreboard players set #wood_harvested_this_tick var 1
-execute if score #wood_automated_harvest_this_tick var matches 1 run function resource/material/wood/harvest
+# 노드 위치에 블록이 있으면 아직 채굴되지 않은 상태입니다.
+# 플레이어가 재생성 위치를 점유해 다른 블록이 있는 경우도 덮어쓰지 않습니다.
+execute in minecraft:overworld unless block 0 -59 35 minecraft:air run scoreboard players reset #wood_remain generate
+execute in minecraft:overworld unless block 0 -59 35 minecraft:air run scoreboard players set #wood_automated_harvest var 0
+execute in minecraft:overworld unless block 0 -59 35 minecraft:air run return 0
 
-# 실제 oak_log 채굴 통계가 증가했고 노드 주변에서 노드가 air가 된 경우만 플레이어 수확으로 처리합니다.
+# air + remain 미존재가 이번 채굴의 단일 edge 신호입니다.
+execute if score #wood_automated_harvest var matches 1 run scoreboard players set #wood_automated_harvest_this_tick var 1
+scoreboard players set #catalyst_active_harvest var 0
+
 tag @a remove resource_node_miner
-execute unless score #wood_automated_harvest var matches 1 unless score #wood_remain generate = #wood_remain generate in minecraft:overworld positioned 0 -59 35 if block 0 -59 35 minecraft:air as @a[tag=player,scores={wood_node_mined=1..},distance=..6,sort=nearest,limit=1] run tag @s add resource_node_miner
+execute unless score #wood_automated_harvest var matches 1 in minecraft:overworld positioned 0 -59 35 as @a[tag=player,scores={wood_node_mined=1..},distance=..6,sort=nearest,limit=1] run tag @s add resource_node_miner
 execute if entity @a[tag=resource_node_miner] run scoreboard players set #catalyst_active_harvest var 1
-execute if entity @a[tag=resource_node_miner] run scoreboard players set #wood_harvested_this_tick var 1
-execute as @a[tag=resource_node_miner,limit=1] run function resource/material/wood/harvest
-tag @a remove resource_node_miner
 
-execute in minecraft:overworld if block 0 -59 35 minecraft:air run scoreboard players set #catalyst_active_harvest var 0
+execute in minecraft:overworld if block 0 -59 35 minecraft:air unless score #wood_remain generate = #wood_remain generate run scoreboard players set #wood_harvested_this_tick var 1
+execute if score #wood_harvested_this_tick var matches 1 run function resource/material/wood/harvest
+
+tag @a remove resource_node_miner
+scoreboard players set #catalyst_active_harvest var 0
 scoreboard players set #wood_automated_harvest var 0
 
-# 채굴을 감지한 tick에는 재생 처리를 하지 않아 최소 한 번의 완전한 air tick을 보장합니다.
-# 다음 tick부터 카운트를 먼저 줄이고, 0이 된 즉시 설치해 설정된 대기 시간을 정확히 유지합니다.
-execute unless score #wood_harvested_this_tick var matches 1 in minecraft:overworld if block 0 -59 35 minecraft:air if score #wood_remain generate matches 1.. run scoreboard players remove #wood_remain generate 1
-execute unless score #wood_harvested_this_tick var matches 1 in minecraft:overworld if block 0 -59 35 minecraft:air if score #wood_remain generate matches ..0 run function resource/material/wood/place
+# 채굴을 처리한 tick에는 쿨다운을 줄이지 않습니다.
+execute if score #wood_harvested_this_tick var matches 1 run return 0
+
+# 이후 tick부터 쿨다운을 줄이고 0이 되면 즉시 재설치를 시도합니다.
+execute in minecraft:overworld if block 0 -59 35 minecraft:air if score #wood_remain generate matches 1.. run scoreboard players remove #wood_remain generate 1
+execute in minecraft:overworld if block 0 -59 35 minecraft:air if score #wood_remain generate matches ..0 run function resource/material/wood/place
