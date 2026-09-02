@@ -4,7 +4,7 @@ execute unless score #GLOBAL accelerator_disabled matches 1 run return 0
 data remove storage data tmp.cost
 data modify storage data tmp.cost set from storage data const.accelerator.repair.manual_cost
 execute store result score #accelerator_repair_cost_ok tmp run function resource/check_cost
-execute unless score #accelerator_repair_cost_ok tmp matches 1 run title @s actionbar {text:"수동 재가동에는 철 100,000과 소지한 시간 2가 필요합니다.",color:"red",italic:true}
+execute unless score #accelerator_repair_cost_ok tmp matches 1 run title @s actionbar {text:"수동 재가동에는 철 2,000,000, 금 50,000과 소지한 시간 2가 필요합니다.",color:"red",italic:true}
 execute unless score #accelerator_repair_cost_ok tmp matches 1 run return 0
 function resource/cost/take
 

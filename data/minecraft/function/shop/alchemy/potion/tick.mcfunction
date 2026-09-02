@@ -11,6 +11,10 @@ execute unless score #disaster_running run matches 1 if score #catalyst_timer va
 execute unless score #disaster_running run matches 1 if score #catalyst_timer var matches 1.. run scoreboard players remove #catalyst_timer var 1
 
 # 카탈리스트가 끝난 플레이어의 임시 효과와 채굴 속도 배율을 원래 값으로 돌립니다.
+execute if score #catalyst_timer var matches 1.. as @a[tag=player,tag=catalyst_effect_active] run effect give @s minecraft:speed 2 2 true
+execute if score #catalyst_timer var matches 1.. as @a[tag=player,tag=catalyst_effect_active] run effect clear @s minecraft:haste
+execute unless score #catalyst_timer var matches 1.. as @a[tag=player,tag=catalyst_effect_active] run effect clear @s minecraft:speed
+# 수정 전 카탈리스트가 남긴 성급함 효과도 종료 시 함께 정리합니다.
 execute unless score #catalyst_timer var matches 1.. as @a[tag=player,tag=catalyst_effect_active] run effect clear @s minecraft:haste
 execute unless score #catalyst_timer var matches 1.. as @a[tag=player,tag=catalyst_effect_active] run attribute @s minecraft:block_break_speed base set 1
 execute unless score #catalyst_timer var matches 1.. run tag @a[tag=catalyst_effect_active] remove catalyst_effect_active

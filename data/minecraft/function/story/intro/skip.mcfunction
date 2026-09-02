@@ -11,4 +11,4 @@ schedule clear story/intro/02_scroll_start
 # 인트로 마무리 함수를 직접 실행하여 게임을 즉시 시작합니다.
 function story/intro/96_end
 
-tellraw @a {"text":"[알림] 인트로를 건너뛰고 게임을 시작합니다.","color":"gray"}
+tellraw @a {"text":"[알림] 인트로를 건너뛰고 게임을 시작합니다. 제작자가 열심히 만든 인트로를 건너뛰어서 제작자는 정말 깊은 슬픔에 빠졌답니다.","color":"gray"}

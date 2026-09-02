@@ -134,6 +134,7 @@ scoreboard players set #frozen_maze_active var 0
 scoreboard players set #frozen_maze_cleared var 0
 scoreboard players set #frozen_maze_claimed var 0
 scoreboard players set #frozen_maze_started var 0
+scoreboard players set #frozen_maze_visit_clears var 0
 bossbar set bossbar_frozen_maze visible false
 
 function common/structure/observatory/off

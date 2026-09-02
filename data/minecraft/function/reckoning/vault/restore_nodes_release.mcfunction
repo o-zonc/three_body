@@ -1,3 +1,5 @@
+# 상시 로드 청크를 해제하지 않도록 남아 있는 예약 호출을 무해하게 처리한다.
+return 0
 # 단기 복원이 직접 확보한 실제 청크만 해제한다.
 execute if score #vault_restore_wood_coal_owned tmp matches 1 in minecraft:overworld run forceload remove 0 35
 execute if score #vault_restore_stone_owned tmp matches 1 in minecraft:overworld run forceload remove -3 35
@@ -17,3 +19,4 @@ scoreboard players set #vault_restore_diamond_owned tmp 0
 scoreboard players set #vault_restore_cold_owned tmp 0
 # 구조물 release와 실행 순서가 겹쳐도 장기 생산 소유권을 최종 상태에 맞춘다.
 function factory/chunk_load/sync
+return 0

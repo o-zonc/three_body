@@ -7,20 +7,33 @@
 # ------------------------------------------------------------
 
 schedule clear common/next
+schedule clear common/disaster/finish
 
 schedule clear story/intro/00_init
 schedule clear story/intro/01_quote1
 schedule clear story/intro/02_scroll_start
 schedule clear story/intro/03_scroll_tick
 schedule clear story/intro/96_end
+schedule clear story/intro/97_world_truth
+schedule clear story/intro/98_warning
 schedule clear story/intro/99_release_player
+schedule clear story/tutorial/01_tutorial
+schedule clear story/tutorial/02_tutorial
+schedule clear story/tutorial/03_tutorial
+schedule clear story/tutorial/04_tutorial
 schedule clear story/ending/01_answer
 schedule clear story/ending/02_epilogue
 schedule clear story/ending/03_credits
 schedule clear story/ending/04_credit_scroll
 schedule clear story/ending/05_return
 schedule clear crying/dawn_reset_finish
-execute if score #dawn_reset_forceload_owned var matches 1 in minecraft:dawn run forceload remove 0 0
+schedule clear frozen/maze/clone
+schedule clear frozen/maze/shake
+schedule clear frozen/maze/sfx/middle
+schedule clear frozen/maze/sfx/finish
+schedule clear reckoning/finish_dried_cleanup
+schedule clear reckoning/vault/restore_nodes_apply
+schedule clear reckoning/vault/restore_nodes_release
 scoreboard players set #dawn_reset_forceload_owned var 0
 scoreboard players set #dawn_reset_pending var 0
 schedule clear structure/dried_sulfur_apply
@@ -56,6 +69,40 @@ schedule clear structure/restart_polar_release
 
 effect clear @a
 clear @a
+
+# 인트로가 player 태그를 다시 부여하기 전까지 일반 게임 tick에서 제외합니다.
+tag @a remove player
+tag @a remove intro_seen
+tag @a remove overworld_escape_given
+tag @a remove maze
+tag @a remove accelerator_experiment_running
+tag @a remove dried_chaos_potion_pending
+tag @a remove dried_chaos_protected
+tag @a remove frozen_chaos_potion_pending
+tag @a remove frozen_chaos_protected
+tag @a remove frozen_chaos_tracking
+tag @a remove frozen_chaos_exposed
+tag @a remove frozen_chaos_fully_frozen_notified
+tag @a remove elevator_floor_1
+tag @a remove elevator_floor_2
+tag @a remove elevator_floor_3
+tag @a remove elevator_2_floor_1
+tag @a remove elevator_2_floor_2
+tag @a remove elevator_2_floor_3
+tag @a remove elevator_2_x_positive
+tag @a remove elevator_2_x_negative
+tag @a remove elevator_2_z_positive
+tag @a remove elevator_2_z_negative
+tag @a remove frozen_elevator_floor_1
+tag @a remove frozen_elevator_floor_2
+tag @a remove frozen_elevator_floor_3
+tag @a remove frozen_elevator_deep_lower
+tag @a remove frozen_elevator_deep_upper
+tag @a remove catalyst_effect_active
+tag @a remove alchemy_main_potion
+tag @a remove resource_node_miner
+tag @a remove unavailable_feedback_played
+tag @a remove shift
 tag @a remove ending_seen
 tag @a remove ending_active
 tag @a remove ending_from_overworld
@@ -69,16 +116,10 @@ gamemode adventure @a
 gamerule advance_time true
 
 # ------------------------------------------------------------
-# 2.5. 전체 초기화 대상 청크 임시 로드
+# 2.5. 고정 시스템 청크 확인
 # ------------------------------------------------------------
-# restart는 스코어뿐 아니라 각 차원의 실제 블록/구조물도 되돌립니다.
-# 플레이어를 오버월드로 이동한 뒤 다른 차원의 청크가 언로드되면
-# setblock/fill/structure block 갱신이 실패할 수 있으므로 초기화 동안만 강제로 로드합니다.
-execute in overworld run forceload add -64 -64 64 64
-execute in dried run forceload add -64 -64 64 64
-execute in frozen run forceload add -64 -64 64 64
-execute in polarnight run forceload add -64 -64 64 64
-execute in dawn run forceload add -64 -64 64 64
+# restart를 직접 호출해도 기반 설정이 유지되도록 멱등적으로 재등록합니다.
+function system_chunks/load
 
 # 취소된 개별 구조물 작업의 소유 상태는 위 광역 로드가 대신하므로 초기화합니다.
 scoreboard players set #alchemy_forceload_owned var 0
@@ -91,6 +132,11 @@ scoreboard players set #frozen_bridge_forceload_owned var 0
 scoreboard players set #frozen_maze_forceload_owned var 0
 scoreboard players set #frozen_shop_forceload_owned var 0
 scoreboard players set #polar_vault_forceload_owned var 0
+
+# 초기화 대상 청크가 모두 로드된 뒤, 아직 검사되지 않은 진행 아이템도
+# 기존 보호 드롭 분류기를 거쳐 같은 tick에 제거합니다.
+function mover/protect_drops
+kill @e[type=minecraft:item,tag=protected_drop]
 
 # ------------------------------------------------------------
 # 3. 플레이어를 오버월드로 복귀
@@ -105,6 +151,8 @@ execute in overworld run tp @a 0 100 0
 # 오프라인 플레이어를 포함해 다음 접속 시 trigger 초기화가 다시 수행되도록 합니다.
 scoreboard players reset * trigger_init
 
+# var_init/load의 구형 발전과제 마이그레이션이 이전 회차를 되살리지 않게 먼저 회수합니다.
+advancement revoke @a everything
 function reset_state
 # 전체 재시작 직후 기본 미로는 오리지널 유형(4)으로 시작합니다.
 scoreboard players set #maze_type var 4
@@ -165,8 +213,6 @@ kill @e[type=text_display,tag=story_intro]
 # 8. 도전과제 회수 및 레벨 초기화
 # ------------------------------------------------------------
 
-advancement revoke @a everything
-
 xp set @a 0 levels
 xp set @a 0 points
 
@@ -197,14 +243,9 @@ function frozen/structure/shop/off
 # - 여명 색유리/우는 흑요석 디스플레이
 
 # ------------------------------------------------------------
-# 9.5. 임시 청크 로드 해제
+# 9.5. 상시 로드 유지
 # ------------------------------------------------------------
-schedule function structure/restart_overworld_release 4t replace
-# 메마른 구조물 OFF 예약(2틱)이 적용된 뒤 광역 강제 로드를 해제합니다.
-schedule function structure/restart_dried_release 4t replace
-schedule function structure/restart_frozen_release 4t replace
-schedule function structure/restart_polar_release 4t replace
-execute in dawn run forceload remove -64 -64 64 64
+# 시스템 청크는 진행 상태와 무관한 기반이므로 restart에서도 해제하지 않습니다.
 
 # 여명 spear와 우는 흑요석 디스플레이도 중앙 청크 로드 후 다시 초기화합니다.
 function crying/dawn_reset_schedule
@@ -216,7 +257,6 @@ function crying/dawn_reset_schedule
 gamerule send_command_feedback false
 gamerule max_snow_accumulation_height 0
 
-attribute @s block_interaction_range base set 10
 attribute @s block_interaction_range base set 10
 attribute @s entity_interaction_range base set 10
 

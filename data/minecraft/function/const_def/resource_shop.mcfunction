@@ -17,9 +17,9 @@ data modify storage data const.resource_shop set value [\
       {lvl:0,value:1,cost:[{type:"wood",amount:40}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:160}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:800}]},\
-      {lvl:3,value:8,cost:[{type:"wood",amount:3200}]},\
-      {lvl:4,value:16,cost:[{type:"wood",amount:12000}]},\
-      {lvl:5,value:32,cost:[{type:"wood",amount:36000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:3,value:8,cost:[{type:"wood",amount:500000}]},\
+      {lvl:4,value:16,cost:[{type:"wood",amount:2000000}]},\
+      {lvl:5,value:32,cost:[{type:"wood",amount:8000000},{type:"information",amount:2},{type:"time",amount:1}]},\
       {lvl:6,value:64}\
     ]\
   },\
@@ -28,9 +28,9 @@ data modify storage data const.resource_shop set value [\
       {lvl:0,value:1,cost:[{type:"wood",amount:60},{type:"stone",amount:20}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:200},{type:"stone",amount:80}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:1000},{type:"stone",amount:300}]},\
-      {lvl:3,value:8,cost:[{type:"wood",amount:4000},{type:"stone",amount:1200}]},\
-      {lvl:4,value:16,cost:[{type:"wood",amount:14000},{type:"stone",amount:4500}]},\
-      {lvl:5,value:32,cost:[{type:"wood",amount:42000},{type:"stone",amount:14000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:3,value:8,cost:[{type:"wood",amount:300000},{type:"stone",amount:600000}]},\
+      {lvl:4,value:16,cost:[{type:"wood",amount:1200000},{type:"stone",amount:2400000}]},\
+      {lvl:5,value:32,cost:[{type:"wood",amount:4000000},{type:"stone",amount:10000000},{type:"information",amount:2},{type:"time",amount:1}]},\
       {lvl:6,value:64}\
     ]\
   },\
@@ -39,9 +39,9 @@ data modify storage data const.resource_shop set value [\
       {lvl:0,value:1,cost:[{type:"wood",amount:80},{type:"stone",amount:30}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:240},{type:"stone",amount:100}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:1200},{type:"stone",amount:400}]},\
-      {lvl:3,value:8,cost:[{type:"wood",amount:4800},{type:"stone",amount:1600}]},\
-      {lvl:4,value:16,cost:[{type:"wood",amount:16000},{type:"stone",amount:5200}]},\
-      {lvl:5,value:32,cost:[{type:"wood",amount:48000},{type:"stone",amount:16000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:3,value:8,cost:[{type:"wood",amount:400000},{type:"stone",amount:300000},{type:"coal",amount:200000}]},\
+      {lvl:4,value:16,cost:[{type:"wood",amount:1500000},{type:"stone",amount:1200000},{type:"coal",amount:800000}]},\
+      {lvl:5,value:32,cost:[{type:"wood",amount:5000000},{type:"stone",amount:4000000},{type:"coal",amount:3200000},{type:"information",amount:2},{type:"time",amount:1}]},\
       {lvl:6,value:64}\
     ]\
   },\
@@ -50,9 +50,9 @@ data modify storage data const.resource_shop set value [\
       {lvl:0,value:1,cost:[{type:"wood",amount:100},{type:"stone",amount:40},{type:"coal",amount:20}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:320},{type:"stone",amount:120},{type:"coal",amount:60}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:1500},{type:"stone",amount:500},{type:"coal",amount:240}]},\
-      {lvl:3,value:8,cost:[{type:"wood",amount:6000},{type:"stone",amount:2000},{type:"coal",amount:900},{type:"copper",amount:40}]},\
-      {lvl:4,value:16,cost:[{type:"wood",amount:20000},{type:"stone",amount:6500},{type:"coal",amount:3000},{type:"copper",amount:150}]},\
-      {lvl:5,value:32,cost:[{type:"wood",amount:60000},{type:"stone",amount:19000},{type:"coal",amount:9000},{type:"copper",amount:500},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:3,value:8,cost:[{type:"wood",amount:500000},{type:"stone",amount:400000},{type:"coal",amount:300000},{type:"copper",amount:150000}]},\
+      {lvl:4,value:16,cost:[{type:"wood",amount:2000000},{type:"stone",amount:1500000},{type:"coal",amount:1200000},{type:"copper",amount:600000}]},\
+      {lvl:5,value:32,cost:[{type:"wood",amount:7000000},{type:"stone",amount:5000000},{type:"coal",amount:4000000},{type:"copper",amount:2400000},{type:"information",amount:2},{type:"time",amount:1}]},\
       {lvl:6,value:64}\
     ]\
   },\
@@ -61,9 +61,9 @@ data modify storage data const.resource_shop set value [\
       {lvl:0,value:1,cost:[{type:"wood",amount:120},{type:"stone",amount:50},{type:"coal",amount:30},{type:"copper",amount:20}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:400},{type:"stone",amount:150},{type:"coal",amount:100},{type:"copper",amount:50}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:1800},{type:"stone",amount:600},{type:"coal",amount:400},{type:"copper",amount:160}]},\
-      {lvl:3,value:8,cost:[{type:"wood",amount:7000},{type:"stone",amount:2400},{type:"coal",amount:1500},{type:"copper",amount:600}]},\
-      {lvl:4,value:16,cost:[{type:"wood",amount:23000},{type:"stone",amount:7500},{type:"coal",amount:4800},{type:"copper",amount:1800}]},\
-      {lvl:5,value:32,cost:[{type:"wood",amount:68000},{type:"stone",amount:22000},{type:"coal",amount:14000},{type:"copper",amount:5200},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:3,value:8,cost:[{type:"wood",amount:600000},{type:"stone",amount:450000},{type:"coal",amount:350000},{type:"copper",amount:200000},{type:"iron",amount:200000}]},\
+      {lvl:4,value:16,cost:[{type:"wood",amount:2400000},{type:"stone",amount:1800000},{type:"coal",amount:1400000},{type:"copper",amount:800000},{type:"iron",amount:800000}]},\
+      {lvl:5,value:32,cost:[{type:"wood",amount:8000000},{type:"stone",amount:6000000},{type:"coal",amount:4500000},{type:"copper",amount:3000000},{type:"iron",amount:3200000},{type:"information",amount:2},{type:"time",amount:1}]},\
       {lvl:6,value:64}\
     ]\
   },\
@@ -72,9 +72,9 @@ data modify storage data const.resource_shop set value [\
       {lvl:0,value:1,cost:[{type:"wood",amount:100},{type:"stone",amount:40},{type:"coal",amount:20}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:320},{type:"stone",amount:120},{type:"coal",amount:60}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:1500},{type:"stone",amount:500},{type:"coal",amount:240}]},\
-      {lvl:3,value:8,cost:[{type:"wood",amount:6000},{type:"stone",amount:2000},{type:"coal",amount:900},{type:"copper",amount:100}]},\
-      {lvl:4,value:16,cost:[{type:"wood",amount:20000},{type:"stone",amount:6500},{type:"coal",amount:3000},{type:"copper",amount:300}]},\
-      {lvl:5,value:32,cost:[{type:"wood",amount:60000},{type:"stone",amount:19000},{type:"coal",amount:9000},{type:"copper",amount:900},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:3,value:8,cost:[{type:"iron",amount:300000},{type:"gold",amount:500000}]},\
+      {lvl:4,value:16,cost:[{type:"iron",amount:1200000},{type:"gold",amount:2000000}]},\
+      {lvl:5,value:32,cost:[{type:"iron",amount:5000000},{type:"gold",amount:8000000},{type:"information",amount:2},{type:"time",amount:1}]},\
       {lvl:6,value:64}\
     ]\
   },\
@@ -83,9 +83,9 @@ data modify storage data const.resource_shop set value [\
       {lvl:0,value:1,cost:[{type:"wood",amount:110},{type:"stone",amount:45},{type:"coal",amount:25}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:360},{type:"stone",amount:135},{type:"coal",amount:75}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:1650},{type:"stone",amount:550},{type:"coal",amount:280}]},\
-      {lvl:3,value:8,cost:[{type:"wood",amount:6500},{type:"stone",amount:2200},{type:"coal",amount:1050},{type:"copper",amount:120}]},\
-      {lvl:4,value:16,cost:[{type:"wood",amount:21500},{type:"stone",amount:7000},{type:"coal",amount:3400},{type:"copper",amount:360}]},\
-      {lvl:5,value:32,cost:[{type:"wood",amount:64000},{type:"stone",amount:20500},{type:"coal",amount:10000},{type:"copper",amount:1100},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:3,value:8,cost:[{type:"iron",amount:400000},{type:"diamond",amount:1000000}]},\
+      {lvl:4,value:16,cost:[{type:"iron",amount:1600000},{type:"diamond",amount:5000000}]},\
+      {lvl:5,value:32,cost:[{type:"iron",amount:6000000},{type:"diamond",amount:25000000},{type:"information",amount:2},{type:"time",amount:1}]},\
       {lvl:6,value:64}\
     ]\
   },\
@@ -94,9 +94,9 @@ data modify storage data const.resource_shop set value [\
       {lvl:0,value:1,cost:[{type:"wood",amount:100},{type:"stone",amount:40},{type:"coal",amount:30},{type:"copper",amount:20}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:320},{type:"stone",amount:120},{type:"coal",amount:100},{type:"copper",amount:50}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:1500},{type:"stone",amount:500},{type:"coal",amount:400},{type:"copper",amount:160}]},\
-      {lvl:3,value:8,cost:[{type:"wood",amount:6000},{type:"stone",amount:2000},{type:"coal",amount:1500},{type:"copper",amount:600}]},\
-      {lvl:4,value:16,cost:[{type:"wood",amount:20000},{type:"stone",amount:6500},{type:"coal",amount:4800},{type:"copper",amount:1800}]},\
-      {lvl:5,value:32,cost:[{type:"wood",amount:60000},{type:"stone",amount:19000},{type:"coal",amount:14000},{type:"copper",amount:5200},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:3,value:8,cost:[{type:"iron",amount:250000},{type:"emerald",amount:120000}]},\
+      {lvl:4,value:16,cost:[{type:"iron",amount:1000000},{type:"emerald",amount:450000}]},\
+      {lvl:5,value:32,cost:[{type:"iron",amount:4000000},{type:"emerald",amount:1800000},{type:"information",amount:2},{type:"time",amount:1}]},\
       {lvl:6,value:64}\
     ]\
   },\
@@ -105,9 +105,9 @@ data modify storage data const.resource_shop set value [\
       {lvl:0,value:1,cost:[{type:"wood",amount:120},{type:"stone",amount:50},{type:"coal",amount:40},{type:"copper",amount:20}]},\
       {lvl:1,value:2,cost:[{type:"wood",amount:400},{type:"stone",amount:150},{type:"coal",amount:120},{type:"copper",amount:60}]},\
       {lvl:2,value:4,cost:[{type:"wood",amount:1800},{type:"stone",amount:600},{type:"coal",amount:450},{type:"copper",amount:180}]},\
-      {lvl:3,value:8,cost:[{type:"wood",amount:7000},{type:"stone",amount:2400},{type:"coal",amount:1700},{type:"copper",amount:650}]},\
-      {lvl:4,value:16,cost:[{type:"wood",amount:23000},{type:"stone",amount:7500},{type:"coal",amount:5200},{type:"copper",amount:2000}]},\
-      {lvl:5,value:32,cost:[{type:"wood",amount:68000},{type:"stone",amount:22000},{type:"coal",amount:15000},{type:"copper",amount:6000},{type:"information",amount:2},{type:"time",amount:1}]},\
+      {lvl:3,value:8,cost:[{type:"iron",amount:300000},{type:"lapis",amount:200000}]},\
+      {lvl:4,value:16,cost:[{type:"iron",amount:1200000},{type:"lapis",amount:800000}]},\
+      {lvl:5,value:32,cost:[{type:"iron",amount:4500000},{type:"lapis",amount:3000000},{type:"information",amount:2},{type:"time",amount:1}]},\
       {lvl:6,value:64}\
     ]\
   }\

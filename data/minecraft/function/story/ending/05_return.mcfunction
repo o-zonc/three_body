@@ -19,6 +19,8 @@ tag @a remove ending_from_dawn
 
 # 엔딩 전의 시대 정지 상태를 그대로 복원하고, 보스바 표시를 다시 갱신합니다.
 scoreboard players operation #GLOBAL era_paused = #ending_era_paused era_paused
+execute if score #ending_advance_time var matches 1 run gamerule advance_time true
+execute unless score #ending_advance_time var matches 1 run gamerule advance_time false
 function ui/bossbar/update
 execute if score #catalyst_timer var matches 1.. run bossbar set catalyst_fever visible true
 execute unless score #catalyst_timer var matches 1.. run bossbar set catalyst_fever visible false

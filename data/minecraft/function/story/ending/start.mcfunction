@@ -11,6 +11,10 @@ scoreboard objectives setdisplay sidebar
 scoreboard players operation #ending_era_paused era_paused = #GLOBAL era_paused
 scoreboard players set #GLOBAL era_paused 1
 
+# 엔딩 전 daylight cycle 설정을 보관하고 오버월드 정오에 고정합니다.
+execute store result score #ending_advance_time var run gamerule advance_time
+gamerule advance_time false
+
 # 모든 플레이어의 현재 위치·시선과 차원을 저장합니다.
 tag @a add ending_active
 execute as @a[tag=ending_active] run function mover/local/save
@@ -35,7 +39,7 @@ bossbar set catalyst_fever visible false
 
 # 인트로와 같은 오버월드 전용 감상 무대를 생성합니다.
 kill @e[tag=story_ending]
-time set 6000
+execute in minecraft:overworld run time set 6000
 execute in minecraft:overworld run tp @a[tag=ending_active] 0 100 0
 gamemode spectator @a[tag=ending_active]
 execute in minecraft:overworld run summon item_display 0 100 0 {Tags:["ending_camera","story_ending"],teleport_duration:1,Rotation:[0.0f,0.0f],item:{id:"barrier",count:1}}

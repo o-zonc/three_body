@@ -17,7 +17,6 @@ advancement revoke @a only 0_overworld/25_green_time_machine
 function time_machine/calculate
 scoreboard players operation #time_machine_timer generate = #time_machine_interval_cached var
 
-execute in overworld run forceload add -32 16 -16 32
 execute in overworld run function time_machine/perimeter_setup/1
 scoreboard players set #time_machine_perimeter_loaded var 1
 scoreboard players set #time_machine_perimeter_initialized var 1

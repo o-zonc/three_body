@@ -2,19 +2,12 @@
 # 정사각형 범위: X=-32..-16, Y=-46, Z=16..32
 # 타임머신이 건설된 Lv.1부터 세대에 맞춰 표시합니다.
 
-# 기존 월드에 남은 중복 마커를 한 번 정리합니다. 청크가 내려가 있어도 모두 찾을 수 있도록 먼저 로드합니다.
-execute unless score #time_machine_perimeter_initialized var matches 1 in overworld run forceload add -32 16 -16 32
+# 기존 월드에 남은 중복 마커를 한 번 정리합니다. 궤도 청크는 상시 로드됩니다.
 execute unless score #time_machine_perimeter_initialized var matches 1 in overworld run kill @e[type=marker,tag=elevator_2_perimeter]
-execute unless score #time_machine_perimeter_initialized var matches 1 run scoreboard players set #time_machine_perimeter_loaded var 1
 execute unless score #time_machine_perimeter_initialized var matches 1 run scoreboard players set #time_machine_perimeter_initialized var 1
 
-# 타임머신 가동 중에는 궤도의 네 청크를 유지하여 마커가 청크 경계에서 멈추지 않게 합니다.
-execute if score #GLOBAL time_machine_level matches 1.. unless score #time_machine_perimeter_loaded var matches 1 in overworld run forceload add -32 16 -16 32
-execute if score #GLOBAL time_machine_level matches 1.. run scoreboard players set #time_machine_perimeter_loaded var 1
-
-# 타임머신이 없다면 마커와 강제 로드를 모두 정리합니다.
+# 타임머신이 없다면 마커만 정리합니다.
 execute unless score #GLOBAL time_machine_level matches 1.. in overworld run kill @e[type=marker,tag=elevator_2_perimeter]
-execute unless score #GLOBAL time_machine_level matches 1.. if score #time_machine_perimeter_loaded var matches 1 in overworld run forceload remove -32 16 -16 32
 execute unless score #GLOBAL time_machine_level matches 1.. run scoreboard players set #time_machine_perimeter_loaded var 0
 execute unless score #GLOBAL time_machine_level matches 1.. run return 0
 

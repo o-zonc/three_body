@@ -46,6 +46,7 @@ scoreboard players set #GLOBAL current_dim 0
 # 6. 문명 전환 시스템 관리 스코어보드 초기화
 scoreboard players set #GLOBAL era_paused 1
 scoreboard players set #disaster_running run 0
+scoreboard players set #maze_shake var 0
 scoreboard players set #GLOBAL era_observed 0
 scoreboard players set #frozen_shop unlock 0
 scoreboard players set #frozen_bridge unlock 0
@@ -55,6 +56,7 @@ scoreboard players set #frozen_maze_cleared var 0
 scoreboard players set #frozen_maze_claimed var 0
 scoreboard players set #frozen_maze_started var 0
 scoreboard players set #frozen_maze_announced var 0
+scoreboard players set #frozen_maze_visit_clears var 0
 scoreboard players set #maze_type var 0
 scoreboard players set #dried_relic unlock 0
 scoreboard players set #dried_relic_level upgrade 0
@@ -76,6 +78,8 @@ scoreboard players reset * second_timer
 tag @a remove second
 tag @a remove third
 tag @a remove time_machine_reset_confirm
+scoreboard players set @a experiment_delay 0
+scoreboard players set @a experiment_type 0
 scoreboard players set #time_machine_ever_yellow var 0
 scoreboard players set #time_machine_ever_blue var 0
 scoreboard players set #time_machine_ever_green var 0
@@ -101,6 +105,13 @@ scoreboard players set #GLOBAL reckoning_pending 0
 scoreboard players set #GLOBAL reckoning_count 0
 # 시간축 개방은 회차 진행에서는 유지되지만, 전체 게임 초기화에서는 다시 잠급니다.
 scoreboard players set #time_axis_open var 0
+scoreboard players set #color_resources_unlocked var 0
+scoreboard players set #spacetime_experiment_done var 0
+scoreboard players set #jewel_mode var 0
+scoreboard players set #jewel_cooldown var 0
+scoreboard players set #jewel_particle_timer var 0
+scoreboard players set #jewel_auto_enabled var 0
+scoreboard players set #jewel_auto_timer var 0
 
 # 우는 흑요석 수집 이벤트는 전체 reset_state에서만 초기화한다.
 scoreboard players set #crying_count var 0
@@ -145,6 +156,21 @@ execute as @e[type=minecraft:item] if items entity @s contents minecraft:brick[m
 scoreboard players set * material 0
 scoreboard players set * upgrade 0
 scoreboard players set * unlock 0
+
+# 잠긴 자원 노드는 각 material/place가 사용하는 단일 좌표를 기준으로 제거합니다.
+# 노랑/파랑은 자체 tick에서도 잠금 상태를 air로 유지합니다.
+execute in minecraft:overworld run setblock -3 -59 35 air replace
+execute in minecraft:overworld run setblock 3 -59 35 air replace
+execute in minecraft:overworld run setblock 3 -62 -35 air replace
+execute in minecraft:overworld run setblock 1 -62 -35 air replace
+execute in minecraft:overworld run setblock -1 -62 -35 air replace
+execute in minecraft:overworld run setblock -3 -62 -35 air replace
+execute in minecraft:dried run setblock 6 65 0 air replace
+execute in minecraft:dried run setblock -6 65 0 air replace
+execute in minecraft:frozen run setblock 0 68 -12 air replace
+execute in minecraft:frozen run setblock 0 68 48 air replace
+execute in minecraft:overworld run setblock -35 -62 -2 air replace
+execute in minecraft:overworld run setblock -35 -62 2 air replace
 # 깨진 파편 저장소는 문명 정산에서는 유지하지만, restart에서는 비웁니다.
 scoreboard players set #broken_quantum_storage var 0
 scoreboard players set #information_bank meta 0
@@ -259,6 +285,8 @@ scoreboard players reset * factory_status
 scoreboard players reset @a factory_trigger
 scoreboard players set #GLOBAL accelerator_level 0
 scoreboard players set #GLOBAL accelerator_timer 1200
+scoreboard players set #GLOBAL accelerator_disabled 0
+scoreboard players set #GLOBAL accelerator_repair_timer 0
 scoreboard players set #GLOBAL experiment_cooldown 0
 scoreboard players set #GLOBAL alien_interference 0
 scoreboard players set #GLOBAL alien_timer 1200

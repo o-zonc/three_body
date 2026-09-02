@@ -1,6 +1,9 @@
 # 날씨는 차원 이동 함수에서 직접 고정합니다.
 gamerule advance_weather false
 
+# 고정 시스템 청크는 진행 상태와 분리하여 /reload 때마다 멱등적으로 등록합니다.
+function system_chunks/load
+
 # 1. 각 차원별 시대 상태 스코어보드 (0: 항성기, 1: 난세기)
 scoreboard objectives add state_frozen dummy
 scoreboard objectives add frozen_chaos_freeze dummy

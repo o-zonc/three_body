@@ -5,7 +5,7 @@ $scoreboard players set #catalyst_multiplier var $(multiplier)
 $scoreboard players set #catalyst_timer var $(duration)
 tag @s add catalyst_effect_active
 $attribute @s minecraft:block_break_speed base set $(break_speed)
-effect give @s minecraft:haste infinite 2 true
+effect give @s minecraft:speed infinite 2 true
 $bossbar set catalyst_fever name {"text":"카탈리스트 $(roman)","color":"gold"}
 $bossbar set catalyst_fever max $(duration)
 $bossbar set catalyst_fever value $(duration)

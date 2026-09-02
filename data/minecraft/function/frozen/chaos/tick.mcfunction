@@ -2,6 +2,9 @@
 # 비보호 플레이어는 장소와 무관하게 채굴 피로 I을 받고, 실외에서는 점차 빙결됩니다.
 # 보온 물약을 마시면 현재 난세기 동안 두 패널티를 모두 받지 않습니다.
 
+# 엔딩 중에는 상태와 남은 진행을 그대로 보존합니다.
+execute if entity @a[tag=ending_active] run return 0
+
 # 보온 물약을 마신 뒤 남은 유리병 1개를 회수하고 보호 태그를 부여합니다.
 execute as @a[tag=frozen_chaos_potion_pending] unless items entity @s inventory.* minecraft:potion[minecraft:custom_data~{frozen_chaos_potion:1b}] run clear @s minecraft:glass_bottle 1
 execute as @a[tag=frozen_chaos_potion_pending] unless items entity @s inventory.* minecraft:potion[minecraft:custom_data~{frozen_chaos_potion:1b}] run tag @s add frozen_chaos_protected

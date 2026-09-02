@@ -7,9 +7,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:1,cost:[{type:"wood",amount:100},{type:"copper",amount:40}]},\
     {lvl:1,fuel:2,cost:[{type:"wood",amount:250},{type:"copper",amount:80}]},\
     {lvl:2,fuel:3,cost:[{type:"wood",amount:1250},{type:"copper",amount:200},{type:"iron",amount:200}]},\
-    {lvl:3,fuel:4,cost:[{type:"wood",amount:10000},{type:"iron",amount:3200}]},\
-    {lvl:4,fuel:5,cost:[{type:"wood",amount:80000},{type:"iron",amount:25600}]},\
-    {lvl:5,fuel:6,cost:[{type:"wood",amount:640000},{type:"iron",amount:204800}]},\
+    {lvl:3,fuel:4,cost:[{type:"wood",amount:1500000},{type:"iron",amount:300000}]},\
+    {lvl:4,fuel:5,cost:[{type:"wood",amount:6000000},{type:"iron",amount:1200000}]},\
+    {lvl:5,fuel:6,cost:[{type:"wood",amount:24000000},{type:"iron",amount:5000000}]},\
     {lvl:6,fuel:7}\
   ]\
 },\
@@ -18,9 +18,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:1,cost:[{type:"stone",amount:120},{type:"copper",amount:50}]},\
     {lvl:1,fuel:3,cost:[{type:"stone",amount:300},{type:"copper",amount:100}]},\
     {lvl:2,fuel:4,cost:[{type:"stone",amount:1500},{type:"copper",amount:250},{type:"iron",amount:250}]},\
-    {lvl:3,fuel:5,cost:[{type:"stone",amount:12000},{type:"iron",amount:4000}]},\
-    {lvl:4,fuel:6,cost:[{type:"stone",amount:96000},{type:"iron",amount:32000}]},\
-    {lvl:5,fuel:7,cost:[{type:"stone",amount:768000},{type:"iron",amount:256000}]},\
+    {lvl:3,fuel:5,cost:[{type:"stone",amount:2000000},{type:"iron",amount:350000}]},\
+    {lvl:4,fuel:6,cost:[{type:"stone",amount:8000000},{type:"iron",amount:1400000}]},\
+    {lvl:5,fuel:7,cost:[{type:"stone",amount:32000000},{type:"iron",amount:5500000}]},\
     {lvl:6,fuel:8}\
   ]\
 },\
@@ -29,9 +29,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:1,cost:[{type:"coal",amount:150},{type:"copper",amount:70}]},\
     {lvl:1,fuel:2,cost:[{type:"coal",amount:350},{type:"copper",amount:140}]},\
     {lvl:2,fuel:3,cost:[{type:"coal",amount:1750},{type:"copper",amount:350},{type:"iron",amount:350}]},\
-    {lvl:3,fuel:4,cost:[{type:"coal",amount:14000},{type:"iron",amount:5600}]},\
-    {lvl:4,fuel:5,cost:[{type:"coal",amount:112000},{type:"iron",amount:44800}]},\
-    {lvl:5,fuel:6,cost:[{type:"coal",amount:896000},{type:"iron",amount:358400}]},\
+    {lvl:3,fuel:4,cost:[{type:"coal",amount:1000000},{type:"iron",amount:400000}]},\
+    {lvl:4,fuel:5,cost:[{type:"coal",amount:5000000},{type:"iron",amount:1600000}]},\
+    {lvl:5,fuel:6,cost:[{type:"coal",amount:20000000},{type:"iron",amount:6000000}]},\
     {lvl:6,fuel:7}\
   ]\
 },\
@@ -40,9 +40,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:2,cost:[{type:"copper",amount:180}]},\
     {lvl:1,fuel:3,cost:[{type:"copper",amount:300}]},\
     {lvl:2,fuel:4,cost:[{type:"copper",amount:1500},{type:"iron",amount:100}]},\
-    {lvl:3,fuel:5,cost:[{type:"copper",amount:12000},{type:"iron",amount:500}]},\
-    {lvl:4,fuel:6,cost:[{type:"copper",amount:96000},{type:"iron",amount:2500}]},\
-    {lvl:5,fuel:7,cost:[{type:"copper",amount:768000},{type:"iron",amount:12000}]},\
+    {lvl:3,fuel:5,cost:[{type:"copper",amount:800000},{type:"iron",amount:400000}]},\
+    {lvl:4,fuel:6,cost:[{type:"copper",amount:4000000},{type:"iron",amount:1600000}]},\
+    {lvl:5,fuel:7,cost:[{type:"copper",amount:16000000},{type:"iron",amount:6000000}]},\
     {lvl:6,fuel:8}\
   ]\
 },\
@@ -51,9 +51,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:2,cost:[{type:"iron",amount:100},{type:"copper",amount:90}]},\
     {lvl:1,fuel:4,cost:[{type:"iron",amount:250},{type:"copper",amount:180}]},\
     {lvl:2,fuel:5,cost:[{type:"iron",amount:1700},{type:"copper",amount:450}]},\
-    {lvl:3,fuel:6,cost:[{type:"iron",amount:17200}]},\
-    {lvl:4,fuel:7,cost:[{type:"iron",amount:137600}]},\
-    {lvl:5,fuel:8,cost:[{type:"iron",amount:1100800}]},\
+    {lvl:3,fuel:6,cost:[{type:"iron",amount:1000000}]},\
+    {lvl:4,fuel:7,cost:[{type:"iron",amount:5000000}]},\
+    {lvl:5,fuel:8,cost:[{type:"iron",amount:20000000}]},\
     {lvl:6,fuel:9}\
   ]\
 },\
@@ -62,9 +62,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:3,cost:[{type:"gold",amount:70},{type:"copper",amount:120}]},\
     {lvl:1,fuel:5,cost:[{type:"gold",amount:180},{type:"copper",amount:240}]},\
     {lvl:2,fuel:7,cost:[{type:"gold",amount:900},{type:"copper",amount:600},{type:"iron",amount:600}]},\
-    {lvl:3,fuel:9,cost:[{type:"gold",amount:7200},{type:"iron",amount:9600}]},\
-    {lvl:4,fuel:11,cost:[{type:"gold",amount:57600},{type:"iron",amount:76800}]},\
-    {lvl:5,fuel:13,cost:[{type:"gold",amount:460800},{type:"iron",amount:614400}]},\
+    {lvl:3,fuel:9,cost:[{type:"gold",amount:2000000},{type:"iron",amount:800000}]},\
+    {lvl:4,fuel:11,cost:[{type:"gold",amount:10000000},{type:"iron",amount:3000000}]},\
+    {lvl:5,fuel:13,cost:[{type:"gold",amount:40000000},{type:"iron",amount:12000000}]},\
     {lvl:6,fuel:15}\
   ]\
 },\
@@ -73,9 +73,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:4,cost:[{type:"diamond",amount:30},{type:"copper",amount:180}]},\
     {lvl:1,fuel:7,cost:[{type:"diamond",amount:80},{type:"copper",amount:360}]},\
     {lvl:2,fuel:9,cost:[{type:"diamond",amount:400},{type:"copper",amount:900},{type:"iron",amount:900}]},\
-    {lvl:3,fuel:11,cost:[{type:"diamond",amount:3200},{type:"iron",amount:14400}]},\
-    {lvl:4,fuel:13,cost:[{type:"diamond",amount:25600},{type:"iron",amount:115200}]},\
-    {lvl:5,fuel:15,cost:[{type:"diamond",amount:204800},{type:"iron",amount:921600}]},\
+    {lvl:3,fuel:11,cost:[{type:"diamond",amount:4000000},{type:"iron",amount:1000000}]},\
+    {lvl:4,fuel:13,cost:[{type:"diamond",amount:20000000},{type:"iron",amount:4000000}]},\
+    {lvl:5,fuel:15,cost:[{type:"diamond",amount:80000000},{type:"iron",amount:16000000}]},\
     {lvl:6,fuel:17}\
   ]\
 },\
@@ -84,9 +84,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:4,cost:[{type:"emerald",amount:40},{type:"copper",amount:160}]},\
     {lvl:1,fuel:6,cost:[{type:"emerald",amount:100},{type:"copper",amount:320}]},\
     {lvl:2,fuel:8,cost:[{type:"emerald",amount:500},{type:"copper",amount:800},{type:"iron",amount:800}]},\
-    {lvl:3,fuel:10,cost:[{type:"emerald",amount:4000},{type:"iron",amount:12800}]},\
-    {lvl:4,fuel:12,cost:[{type:"emerald",amount:32000},{type:"iron",amount:102400}]},\
-    {lvl:5,fuel:14,cost:[{type:"emerald",amount:256000},{type:"iron",amount:819200}]},\
+    {lvl:3,fuel:10,cost:[{type:"emerald",amount:500000},{type:"iron",amount:800000}]},\
+    {lvl:4,fuel:12,cost:[{type:"emerald",amount:2000000},{type:"iron",amount:3000000}]},\
+    {lvl:5,fuel:14,cost:[{type:"emerald",amount:8000000},{type:"iron",amount:12000000}]},\
     {lvl:6,fuel:16}\
   ]\
 },\
@@ -95,9 +95,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:3,cost:[{type:"lapis",amount:70},{type:"copper",amount:130}]},\
     {lvl:1,fuel:5,cost:[{type:"lapis",amount:180},{type:"copper",amount:260}]},\
     {lvl:2,fuel:7,cost:[{type:"lapis",amount:900},{type:"copper",amount:650},{type:"iron",amount:650}]},\
-    {lvl:3,fuel:9,cost:[{type:"lapis",amount:7200},{type:"iron",amount:10400}]},\
-    {lvl:4,fuel:11,cost:[{type:"lapis",amount:57600},{type:"iron",amount:83200}]},\
-    {lvl:5,fuel:13,cost:[{type:"lapis",amount:460800},{type:"iron",amount:665600}]},\
+    {lvl:3,fuel:9,cost:[{type:"lapis",amount:800000},{type:"iron",amount:800000}]},\
+    {lvl:4,fuel:11,cost:[{type:"lapis",amount:3000000},{type:"iron",amount:3000000}]},\
+    {lvl:5,fuel:13,cost:[{type:"lapis",amount:12000000},{type:"iron",amount:12000000}]},\
     {lvl:6,fuel:15}\
   ]\
 },\
@@ -106,9 +106,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:4,cost:[{type:"cold",amount:40},{type:"copper",amount:180}]},\
     {lvl:1,fuel:7,cost:[{type:"cold",amount:100},{type:"copper",amount:360}]},\
     {lvl:2,fuel:9,cost:[{type:"cold",amount:500},{type:"copper",amount:900},{type:"iron",amount:900}]},\
-    {lvl:3,fuel:11,cost:[{type:"cold",amount:4000},{type:"iron",amount:14400}]},\
-    {lvl:4,fuel:13,cost:[{type:"cold",amount:32000},{type:"iron",amount:115200}]},\
-    {lvl:5,fuel:15,cost:[{type:"cold",amount:256000},{type:"iron",amount:921600}]},\
+    {lvl:3,fuel:11,cost:[{type:"cold",amount:25000},{type:"iron",amount:800000}]},\
+    {lvl:4,fuel:13,cost:[{type:"cold",amount:100000},{type:"iron",amount:3000000}]},\
+    {lvl:5,fuel:15,cost:[{type:"cold",amount:400000},{type:"iron",amount:12000000}]},\
     {lvl:6,fuel:17}\
   ]\
 },\
@@ -117,9 +117,9 @@ data modify storage data const.factory set value \
     {lvl:0,fuel:4,cost:[{type:"heat",amount:40},{type:"copper",amount:180}]},\
     {lvl:1,fuel:7,cost:[{type:"heat",amount:100},{type:"copper",amount:360}]},\
     {lvl:2,fuel:9,cost:[{type:"heat",amount:500},{type:"copper",amount:900},{type:"iron",amount:900}]},\
-    {lvl:3,fuel:11,cost:[{type:"heat",amount:4000},{type:"iron",amount:14400}]},\
-    {lvl:4,fuel:13,cost:[{type:"heat",amount:32000},{type:"iron",amount:115200}]},\
-    {lvl:5,fuel:15,cost:[{type:"heat",amount:256000},{type:"iron",amount:921600}]},\
+    {lvl:3,fuel:11,cost:[{type:"heat",amount:25000},{type:"iron",amount:800000}]},\
+    {lvl:4,fuel:13,cost:[{type:"heat",amount:100000},{type:"iron",amount:3000000}]},\
+    {lvl:5,fuel:15,cost:[{type:"heat",amount:400000},{type:"iron",amount:12000000}]},\
     {lvl:6,fuel:17}\
   ]\
 }]

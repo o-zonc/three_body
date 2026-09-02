@@ -19,10 +19,9 @@ function reckoning/snapshot_materials
 function reckoning/vault/snapshot
 function factory/vault_snapshot
 
-# 플레이어가 극야에 있어도 메마른 시설 철거가 실행되도록 시설 구역만 임시 로드합니다.
-execute in minecraft:dried run forceload add -32 -32 31 31
+# 메마른 시설 구역은 상시 로드되어 있으므로 즉시 정산 상태를 적용합니다.
 function reckoning/reset_progress
-# 구조물 갱신으로 생긴 엔티티를 다음 틱에 다시 정리한 뒤 임시 로드를 해제합니다.
+# 구조물 갱신으로 생긴 엔티티를 다음 틱에 다시 정리합니다.
 schedule function reckoning/finish_dried_cleanup 1t replace
 scoreboard players set #GLOBAL reckoning_pending 1
 

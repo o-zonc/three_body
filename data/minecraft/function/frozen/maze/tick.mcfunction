@@ -7,6 +7,7 @@ execute unless score #GLOBAL current_dim matches 2 run scoreboard players set #f
 execute unless score #GLOBAL current_dim matches 2 run scoreboard players set #frozen_maze_cleared var 0
 execute unless score #GLOBAL current_dim matches 2 run scoreboard players set #frozen_maze_started var 0
 execute unless score #GLOBAL current_dim matches 2 run scoreboard players set #frozen_maze_announced var 0
+execute unless score #GLOBAL current_dim matches 2 run scoreboard players set #frozen_maze_visit_clears var 0
 execute unless score #GLOBAL current_dim matches 2 run return 0
 
 # 긴급탈출장치는 별도 interaction 없이 왼손에 드는 즉시 사용합니다.
@@ -17,6 +18,8 @@ execute if score #frozen_maze unlock matches 1.. unless score #frozen_maze_activ
 execute if score #frozen_maze unlock matches 1.. unless score #frozen_maze_active var matches 1 if entity @a[x=-34,y=52,z=-34,dx=68,dy=7,dz=68] run scoreboard players set #frozen_maze_active var 1
 # 같은 틱에 함께 들어온 플레이어도 미로 참여자로 등록합니다.
 execute if score #frozen_maze_active var matches 1 run tag @a[x=-34,y=52,z=-34,dx=68,dy=7,dz=68] add maze
+# 랜덤 선택만으로는 관측하지 않으며, 실제 참가 플레이어에게 현재 유형 criterion을 지급합니다.
+execute if score #frozen_maze_active var matches 1 as @a[tag=maze] run function frozen/maze/observe
 execute if score #frozen_maze_active var matches 1 unless score #frozen_maze_started var matches 1 run scoreboard players set #frozen_maze_cleared var 0
 execute if score #frozen_maze_active var matches 1 unless score #frozen_maze_started var matches 1 run scoreboard players set #frozen_maze_claimed var 0
 execute if score #frozen_maze_active var matches 1 unless score #frozen_maze_started var matches 1 run scoreboard players set #frozen_maze_started var 1
@@ -32,7 +35,7 @@ scoreboard players operation #frozen_maze_distance tmp = #frozen_maze_x tmp
 scoreboard players operation #frozen_maze_distance tmp += #frozen_maze_z tmp
 
 # 중심 3x3 발판에 도달하면 미로를 클리어합니다.
-execute if score #frozen_maze_active var matches 1 if entity @a[tag=maze,x=-1,y=52,z=-1,dx=2,dy=7,dz=2] run scoreboard players set #frozen_maze_cleared var 1
+execute if score #frozen_maze_active var matches 1 unless score #frozen_maze_cleared var matches 1 if entity @a[tag=maze,x=-1,y=52,z=-1,dx=2,dy=7,dz=2] run function frozen/maze/complete
 
 # 미로 클리어 시 각 미로의 랜덤 문구가 표출됩니다.
 execute if score #maze_type var matches 0 if score #frozen_maze_cleared var matches 1 unless score #frozen_maze_announced var matches 1 run tellraw @a[tag=maze] "§7이곳은 먼 미래에 멸망했다. 아마도 차가운 겨울을 버티지 못한 것 같다..."

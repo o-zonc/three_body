@@ -1,3 +1,4 @@
+execute if entity @a[tag=ending_active] run return 0
 execute unless score #GLOBAL factory_build_stage matches 1.. run return 0
 
 function factory/run {id:"wood",dim:"overworld",block:"oak_log",x:0,y:-59,z:35}

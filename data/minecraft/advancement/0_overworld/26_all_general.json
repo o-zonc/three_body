@@ -1,5 +1,5 @@
 {
-  "parent": "0_overworld/24_time_machine",
+  "parent": "3_polarnight/00_root",
   "display": {
     "icon": "nether_star",
     "title": "모든 일반 발전과제 달성",
@@ -7,7 +7,7 @@
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false
+    "hidden": true
   },
   "criteria": {
     "all_general_advancements": {

@@ -1,0 +1,35 @@
+{
+  "parent": "1_frozen/03_maze_observer",
+  "display": {
+    "icon": "ender_eye",
+    "title": "미로 고수",
+    "description": "얼어붙은 세계의 미로 8종을 각각 한 번 이상 클리어하세요.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "maze_0": {"trigger": "impossible"},
+    "maze_1": {"trigger": "impossible"},
+    "maze_2": {"trigger": "impossible"},
+    "maze_3": {"trigger": "impossible"},
+    "maze_4": {"trigger": "impossible"},
+    "maze_5": {"trigger": "impossible"},
+    "maze_6": {"trigger": "impossible"},
+    "maze_7": {"trigger": "impossible"}
+  },
+  "requirements": [
+    ["maze_0"],
+    ["maze_1"],
+    ["maze_2"],
+    ["maze_3"],
+    ["maze_4"],
+    ["maze_5"],
+    ["maze_6"],
+    ["maze_7"]
+  ],
+  "rewards": {
+    "function": "advancement/general/check"
+  }
+}

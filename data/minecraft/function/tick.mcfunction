@@ -46,8 +46,9 @@ function frozen/chaos/tick
 function dried/chaos/tick
 
 # trigger 핸들러는 실제 입력이 들어온 플레이어에게만 실행합니다.
-# 기존 플레이어의 trigger_init 값이 남아 있어도 업그레이드 버튼을 항상 사용할 수 있도록 활성 상태를 복구합니다.
+# 기존 플레이어의 trigger_init 값이 남아 있어도 UI 버튼을 항상 사용할 수 있도록 활성 상태를 복구합니다.
 scoreboard players enable @a[tag=player] upgrade_trigger
+scoreboard players enable @a[tag=player] shop_trigger
 execute as @a[tag=player,scores={unlock_trigger=1..}] run function resource/unlock_trigger
 execute as @a[tag=player,scores={upgrade_trigger=1..}] run function resource/upgrade_trigger
 execute as @a[tag=player,scores={item_trigger=1..}] run function item/purchase_trigger

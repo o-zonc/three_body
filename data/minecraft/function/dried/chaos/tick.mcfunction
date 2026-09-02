@@ -2,6 +2,9 @@
 # 난세기 동안 실외 플레이어는 계속 불타며 실제 화염 피해를 받습니다.
 # 냉각 물약을 마시면 현재 난세기 동안 발화 효과 자체를 무시합니다.
 
+# 엔딩 중에는 화염 타이머와 보호 상태를 그대로 보존합니다.
+execute if entity @a[tag=ending_active] run return 0
+
 # 냉각 물약을 마신 뒤 남은 유리병 1개를 회수하고 보호 태그를 부여합니다.
 execute as @a[tag=dried_chaos_potion_pending] unless items entity @s inventory.* minecraft:potion[minecraft:custom_data~{dried_chaos_potion:1b}] run clear @s minecraft:glass_bottle 1
 execute as @a[tag=dried_chaos_potion_pending] unless items entity @s inventory.* minecraft:potion[minecraft:custom_data~{dried_chaos_potion:1b}] run tag @s add dried_chaos_protected

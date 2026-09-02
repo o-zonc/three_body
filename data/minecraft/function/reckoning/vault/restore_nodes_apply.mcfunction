@@ -10,4 +10,3 @@ execute if score #gold unlock matches 1 in minecraft:dried run function resource
 execute if score #heat unlock matches 1 in minecraft:dried run function resource/material/heat/place
 execute if score #diamond unlock matches 1 in minecraft:frozen run function resource/material/diamond/place
 execute if score #cold unlock matches 1 in minecraft:frozen run function resource/material/cold/place
-schedule function reckoning/vault/restore_nodes_release 1t replace
