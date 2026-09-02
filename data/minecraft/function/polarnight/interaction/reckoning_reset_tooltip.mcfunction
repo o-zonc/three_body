@@ -30,7 +30,7 @@ scoreboard players set #reckoning_age_preserved tmp 0
 execute if score #overworld civilization_age matches 5 if score #time_bank meta matches 10.. run scoreboard players set #reckoning_age_preserved tmp 1
 execute if score #overworld civilization_age matches 6 if score #time_bank meta matches 40.. run scoreboard players set #reckoning_age_preserved tmp 1
 execute if score #overworld civilization_age matches 7 if score #time_bank meta matches 80.. run scoreboard players set #reckoning_age_preserved tmp 1
-execute if score #overworld civilization_age matches 8.. if score #time_bank meta matches 200.. run scoreboard players set #reckoning_age_preserved tmp 1
+execute if score #overworld civilization_age matches 8 if score #time_bank meta matches 200.. run scoreboard players set #reckoning_age_preserved tmp 1
 execute if score #reckoning_age_preserved tmp matches 1 run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 문명 발전 단계\n",color:"gray",strikethrough:true}
 execute unless score #reckoning_age_preserved tmp matches 1 run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 문명 발전 단계\n",color:"gray"}
 
@@ -52,8 +52,8 @@ execute unless score #information_bank meta matches 2000.. run data modify stora
 execute if score #information_bank meta matches 150.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 고대 문명 발굴 장치 진행도\n",color:"gray",strikethrough:true}
 execute unless score #information_bank meta matches 150.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 고대 문명 발굴 장치 진행도\n",color:"gray"}
 data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 세계 업그레이드 (유황·진사)\n",color:"gray"}
-execute if score #time_bank meta matches 70.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 차원의 유적 복구\n",color:"gray",strikethrough:true}
-execute unless score #time_bank meta matches 70.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 메마른 차원의 유적 복구\n",color:"gray"}
+execute if score #time_bank meta matches 70.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 세 차원 유적지 복구\n",color:"gray",strikethrough:true}
+execute unless score #time_bank meta matches 70.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 세 차원 유적지 복구\n",color:"gray"}
 execute if score #time_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 다리\n",color:"gray",strikethrough:true}
 execute unless score #time_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 다리\n",color:"gray"}
 execute if entity @a[advancements={1_frozen/10_shop=true}] run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 얼어붙은 차원 상점\n",color:"gray",strikethrough:true}

@@ -113,10 +113,6 @@ scoreboard players set #vault_alchemy_owned tmp 0
 execute if score #alchemy_workshop unlock matches 1.. run scoreboard players set #vault_alchemy_owned tmp 1
 scoreboard players set #vault_frozen_bridge_owned tmp 0
 execute if score #frozen_bridge unlock matches 1.. run scoreboard players set #vault_frozen_bridge_owned tmp 1
-scoreboard players set #vault_dried_sulfur_owned tmp 0
-execute if score #dried_sulfur unlock matches 1.. run scoreboard players set #vault_dried_sulfur_owned tmp 1
-scoreboard players set #vault_dried_cinnabar_owned tmp 0
-execute if score #dried_cinnabar unlock matches 1.. run scoreboard players set #vault_dried_cinnabar_owned tmp 1
 
 # 영구 이동기 구매 상태는 시설 보존 임계치와 별도로 기록한다.
 scoreboard players set #vault_dimension_mover_owned tmp 0
