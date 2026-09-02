@@ -23,9 +23,9 @@ execute unless score #GLOBAL accelerator_disabled matches 1 as @a[tag=accelerato
 
 # 외계 간섭은 현대(문명 단계 8)에서만 발생하며, 미래에 진입하면 영구적으로 종료됩니다.
 # 극야(three_body:polar, current_dim 3)와 여명(three_body:dawn, current_dim 4)에서는 진행 중인 간섭을 정상 종료합니다.
-execute if score #GLOBAL current_dim matches 3..4 if score #GLOBAL alien_interference matches 1 run function alien/stop
+execute if score #GLOBAL current_dim matches 3..4 if score #GLOBAL alien_interference matches 1 run function alien/stop_silent
 # 얼어붙은 세계의 미로 이벤트가 진행 중일 때도 간섭을 정상 종료하고 새 간섭을 막습니다.
-execute if score #frozen_maze_active var matches 1 if score #GLOBAL alien_interference matches 1 run function alien/stop
+execute if score #frozen_maze_active var matches 1 if score #GLOBAL alien_interference matches 1 run function alien/stop_silent
 execute if score #overworld civilization_age matches 9.. run scoreboard players set #GLOBAL alien_interference 0
 execute if score #overworld civilization_age matches 9.. run scoreboard players set #GLOBAL alien_timer 1200
 execute unless score #GLOBAL current_dim matches 3..4 unless score #frozen_maze_active var matches 1 if score #overworld civilization_age matches 8 if score #GLOBAL alien_interference matches 0 run function alien/start

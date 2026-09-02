@@ -3,6 +3,22 @@ gamerule advance_weather false
 
 # 1. 각 차원별 시대 상태 스코어보드 (0: 항성기, 1: 난세기)
 scoreboard objectives add state_frozen dummy
+scoreboard objectives add frozen_chaos_freeze dummy
+scoreboard objectives add frozen_chaos_stage dummy
+scoreboard objectives add frozen_chaos_damage_timer dummy
+scoreboard objectives add wood_node_mined minecraft.mined:minecraft.oak_log
+scoreboard objectives add stone_node_mined minecraft.mined:minecraft.stone
+scoreboard objectives add coal_node_mined minecraft.mined:minecraft.coal_ore
+scoreboard objectives add copper_node_mined minecraft.mined:minecraft.copper_ore
+scoreboard objectives add iron_node_mined minecraft.mined:minecraft.iron_ore
+scoreboard objectives add gold_node_mined minecraft.mined:minecraft.raw_gold_block
+scoreboard objectives add diamond_node_mined minecraft.mined:minecraft.diamond_block
+scoreboard objectives add emerald_node_mined minecraft.mined:minecraft.emerald_ore
+scoreboard objectives add lapis_node_mined minecraft.mined:minecraft.lapis_ore
+scoreboard objectives add heat_node_mined minecraft.mined:minecraft.magma_block
+scoreboard objectives add cold_node_mined minecraft.mined:minecraft.blue_ice
+scoreboard objectives add yellow_node_mined minecraft.mined:minecraft.yellow_glazed_terracotta
+scoreboard objectives add blue_node_mined minecraft.mined:minecraft.blue_glazed_terracotta
 scoreboard objectives add state_dried dummy
 scoreboard objectives add state_overworld dummy
 scoreboard objectives add state_polar dummy

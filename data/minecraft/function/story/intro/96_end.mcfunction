@@ -13,7 +13,7 @@ kill @e[tag=story_intro]
 # 플레이어를 관전자 모드로 변경하고, 천천히 떨어지는 보이지 않는 아머 스탠드를 보도록 하여
 # 20초간 모든 조작(키보드, 마우스)을 완벽하게 막습니다.
 execute as @a at @s run gamemode spectator @s
-execute as @a at @s run summon armor_stand ~ ~ ~ {Tags:["fall_anchor"], Invisible:1b, CustomName:"세계의 진실", CustomNameVisible:1b}
+execute as @a at @s run summon armor_stand ~ ~ ~ {Tags:["fall_anchor"], Invisible:1b, CustomName:"세계의 진실: 169.9", CustomNameVisible:1b}
 effect give @e[type=armor_stand,tag=fall_anchor] slow_falling 19 2 true
 execute as @a at @s run spectate @e[type=armor_stand,tag=fall_anchor,sort=nearest,limit=1] @s
 

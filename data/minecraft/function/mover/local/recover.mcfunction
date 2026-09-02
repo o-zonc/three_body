@@ -5,6 +5,7 @@ clear @a minecraft:emerald[minecraft:custom_data~{shop_move:1b}]
 clear @a minecraft:purple_dye[minecraft:custom_data~{alchemy_move:1b}]
 
 # 차원별 난세기 환경 효과와 보호 상태는 차원을 이동하면 제거합니다.
+execute as @a[tag=frozen_chaos_tracking] run function frozen/chaos/cleanup
 effect clear @a minecraft:mining_fatigue
 effect clear @a minecraft:fire_resistance
 tag @a remove frozen_chaos_protected

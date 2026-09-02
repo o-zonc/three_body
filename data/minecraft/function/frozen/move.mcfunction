@@ -27,8 +27,13 @@ execute unless score #cold unlock matches 1 in minecraft:frozen positioned 0.5 6
 execute unless score #cold unlock matches 1 in frozen run function resource/material/cold/place
 scoreboard players set #cold unlock 1
 execute unless score #diamond unlock matches 1 in minecraft:frozen positioned 0.5 68.5 -11.5 as @a[tag=player,nbt={Dimension:"minecraft:frozen"}] run function resource/effect/unlock_success
-execute unless score #diamond unlock matches 1 run function resource/material/diamond/place
 scoreboard players set #diamond unlock 1
+# 얼어붙은 세계에 진입할 때마다 다이아몬드 고정 노드를 실제 블록으로 복구하고 상태를 동기화합니다.
+execute in minecraft:frozen run setblock 0 68 -12 minecraft:diamond_block replace
+scoreboard players reset #diamond_remain generate
+scoreboard players set #diamond_present_prev var 1
+scoreboard players set #diamond_automated_harvest var 0
+scoreboard players reset @a diamond_node_mined
 
 # 새 차원은 항상 항성기에서 시작하며, 첫 시대의 타이머를 1200틱으로 초기화합니다.
 scoreboard players set #GLOBAL state_frozen 0

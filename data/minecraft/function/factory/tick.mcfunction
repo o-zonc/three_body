@@ -1,3 +1,5 @@
+execute unless score #GLOBAL factory_build_stage matches 1.. run return 0
+
 function factory/run {id:"wood",dim:"overworld",block:"oak_log",x:0,y:-59,z:35}
 function factory/run {id:"stone",dim:"overworld",block:"stone",x:-3,y:-59,z:35}
 function factory/run {id:"coal",dim:"overworld",block:"coal_ore",x:3,y:-59,z:35}

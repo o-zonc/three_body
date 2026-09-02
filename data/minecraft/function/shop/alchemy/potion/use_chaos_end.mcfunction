@@ -16,6 +16,7 @@ execute if score #chaos_end_success tmp matches 1 if score #GLOBAL current_dim m
 execute if score #chaos_end_success tmp matches 1 if score #GLOBAL current_dim matches 2 run bossbar set bossbar_frozen max 6000
 
 execute if score #chaos_end_success tmp matches 1 run time rate 1
+execute if score #chaos_end_success tmp matches 1 as @a[tag=frozen_chaos_tracking] run function frozen/chaos/cleanup
 execute if score #chaos_end_success tmp matches 1 run effect clear @a minecraft:mining_fatigue
 execute if score #chaos_end_success tmp matches 1 run tag @a remove frozen_chaos_protected
 execute if score #chaos_end_success tmp matches 1 run tag @a remove dried_chaos_protected

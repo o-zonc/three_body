@@ -26,8 +26,13 @@ execute unless score #heat unlock matches 1 as @a at @s run function resource/ef
 execute unless score #heat unlock matches 1 in minecraft:dried run function resource/material/heat/place
 scoreboard players set #heat unlock 1
 execute unless score #gold unlock matches 1 as @a[tag=player,nbt={Dimension:"minecraft:dried"}] run function resource/effect/unlock_success
-execute unless score #gold unlock matches 1 in minecraft:dried run function resource/material/gold/place
 scoreboard players set #gold unlock 1
+# 메마른 세계에 진입할 때마다 금 고정 노드를 실제 블록으로 복구하고 상태를 동기화합니다.
+execute in minecraft:dried run setblock 6 65 0 minecraft:raw_gold_block replace
+scoreboard players reset #gold_remain generate
+scoreboard players set #gold_present_prev var 1
+scoreboard players set #gold_automated_harvest var 0
+scoreboard players reset @a gold_node_mined
 
 # 새 차원은 항상 항성기에서 시작하며, 첫 시대의 타이머를 1200틱으로 초기화합니다.
 scoreboard players set #GLOBAL state_dried 0

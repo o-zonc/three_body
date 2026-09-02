@@ -1,8 +1,8 @@
 # 시간 보관 효과는 모든 임계치와 보관 효과를 툴팁에 넣고, 버튼 컴포넌트만 준비한다.
 data modify storage data tmp.vault.time_tooltip set value [{text:"[ 시간 보관 효과 ]",color:"dark_aqua"}]
 
-execute if score #time_bank meta matches 10.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n10조각",color:"dark_aqua"},{text:" · 다음 문명을 고대 단계에서 시작합니다. (도구 Lv. 8, 나무~철 수급 ×2, 하늘의 은총)",color:"gray"}]
-execute unless score #time_bank meta matches 10.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n10조각 · 다음 문명을 고대 단계에서 시작합니다. (도구 Lv. 8, 나무~철 수급 ×2, 하늘의 은총)",color:"dark_gray"}
+execute if score #time_bank meta matches 10.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n10조각",color:"dark_aqua"},{text:" · 다음 문명을 고대 단계에서 시작합니다.",color:"gray"}]
+execute unless score #time_bank meta matches 10.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n10조각 · 다음 문명을 고대 단계에서 시작합니다.",color:"dark_gray"}
 
 execute if score #time_bank meta matches 20.. run data modify storage data tmp.vault.time_tooltip append value [{text:"\n20조각",color:"dark_aqua"},{text:" · 나무의 재생산 업그레이드와 얼어붙은 다리의 개방 상태를 유지합니다.",color:"gray"}]
 execute unless score #time_bank meta matches 20.. run data modify storage data tmp.vault.time_tooltip append value {text:"\n20조각 · 나무의 재생산 업그레이드와 얼어붙은 다리의 개방 상태를 유지합니다.",color:"dark_gray"}

@@ -171,6 +171,7 @@ xp set @a 0 levels
 xp set @a 0 points
 
 function resource/advancement_reward/wood/disable
+function resource/advancement_reward/stone/disable
 function resource/advancement_reward/coal/disable
 function resource/advancement_reward/copper/disable
 function resource/advancement_reward/iron/disable
