@@ -2,7 +2,7 @@ execute if score #era unlock matches 1.. run return 0
 
 data modify storage data tmp.cost set value [{type:"time",amount:2}]
 execute store result score #era_cost_check tmp run function resource/check_cost
-execute unless score #era_cost_check tmp matches 1 run title @s actionbar {text:"시간 조각이 부족합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #era_cost_check tmp matches 1 run title @s actionbar {text:"시간 조각이 부족합니다.",color:"red",italic:true}
 execute unless score #era_cost_check tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 execute unless score #era_cost_check tmp matches 1 run return 0
 

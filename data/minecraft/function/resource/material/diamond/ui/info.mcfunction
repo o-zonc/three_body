@@ -4,7 +4,7 @@ execute store result score #diamond_gain tmp run function resource/material/diam
 scoreboard players set #diamond_base_gain tmp 1
 function dawn/amplifier/prepare_resource_ui {dim:"frozen",final:150,final_multiplier:2.5}
 
-# 자원 상점 2층에서 다이아몬드 수급량에 더해지는 값을 계산합니다.
+# 자원 상점 2층에서 다이아몬드 수급량에 더해지는 값을 계산한다.
 scoreboard players set #diamond_second_bonus_ui tmp 0
 execute if score #diamond_second_lvl upgrade matches 1 run scoreboard players set #diamond_second_bonus_ui tmp 1
 execute if score #diamond_second_lvl upgrade matches 2 run scoreboard players set #diamond_second_bonus_ui tmp 2
@@ -17,7 +17,7 @@ scoreboard players operation #diamond_second_common_ui tmp *= #diamond_second_ex
 scoreboard players operation #diamond_second_bonus_ui tmp += #diamond_second_common_ui tmp
 scoreboard players operation #diamond_base_gain tmp += #diamond_second_bonus_ui tmp
 
-# 1층 자원 상점 배수도 일반 자원 UI와 같은 방식으로 표시합니다.
+# 1층 자원 상점 배수도 일반 자원 UI와 같은 방식으로 표시한다.
 execute store result score #diamond_shop_multiplier_ui tmp run function resource/shop/value {id:"diamond"}
 function resource/upgrade/prepare_ui {id:"diamond",trigger:1115}
 

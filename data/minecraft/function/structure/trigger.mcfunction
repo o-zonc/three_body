@@ -1,5 +1,5 @@
 # 구조물 비동기 작업 디스패처
-# 각 번호의 끝자리 0/1은 OFF/ON을 뜻합니다.
+# 각 번호의 끝자리 0/1은 off/ON을 뜻한다.
 
 execute if score #structure_trigger var matches 2000 run scoreboard players set #alchemy_structure_pending var 0
 execute if score #structure_trigger var matches 2001 run scoreboard players set #alchemy_structure_pending var 1

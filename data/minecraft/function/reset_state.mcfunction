@@ -103,7 +103,7 @@ scoreboard players set #GLOBAL dawn_time_shop 0
 scoreboard players set #GLOBAL dawn_reactor_purchased 0
 scoreboard players set #GLOBAL reckoning_pending 0
 scoreboard players set #GLOBAL reckoning_count 0
-# 시간축 개방은 회차 진행에서는 유지되지만, 전체 게임 초기화에서는 다시 잠급니다.
+# 시간축 개방은 회차 진행에서는 유지되지만, 전체 게임 초기화에서는 다시 잠근다.
 scoreboard players set #time_axis_open var 0
 scoreboard players set #color_resources_unlocked var 0
 scoreboard players set #color_event_timer var -1
@@ -133,7 +133,7 @@ function crying/dawn_reset
 
 execute in polarnight run kill @e[type=end_crystal]
 
-# 얼어붙은 세계의 일회성 푸른 얼음을 restart 때만 복원합니다.
+# 얼어붙은 세계의 일회성 푸른 얼음을 restart 때만 복원한다.
 execute in minecraft:frozen run setblock 0 74 -4 minecraft:blue_ice
 execute in minecraft:frozen run setblock 0 74 4 minecraft:blue_ice
 scoreboard players set #cold_alt_north generate 1
@@ -143,7 +143,7 @@ scoreboard players set #cold_alt_south generate 1
 scoreboard players set #hole_level upgrade 0
 scoreboard players set #hole_claims var 0
 clear @a minecraft:paper[minecraft:custom_data~{three_body:{meta:"obsidian"}}]
-# 마이그레이션하지 않은 구형 드래곤 알 기반 흑요석도 전체 초기화 때 제거합니다.
+# 마이그레이션하지 않은 구형 드래곤 알 기반 흑요석도 전체 초기화 때 제거한다.
 clear @a minecraft:dragon_egg[minecraft:custom_data~{three_body:{meta:"obsidian"}}]
 
 # 청동기 일회성 보상 아이템 제거
@@ -158,9 +158,11 @@ execute as @e[type=minecraft:item] if items entity @s contents minecraft:brick[m
 scoreboard players set * material 0
 scoreboard players set * upgrade 0
 scoreboard players set * unlock 0
+scoreboard objectives add sidebar_visible dummy
+scoreboard players reset * sidebar_visible
 
-# 잠긴 자원 노드는 각 material/place가 사용하는 단일 좌표를 기준으로 제거합니다.
-# 노랑/파랑은 자체 tick에서도 잠금 상태를 air로 유지합니다.
+# 잠긴 자원 노드는 각 material/place가 사용하는 단일 좌표를 기준으로 제거한다.
+# 노랑/파랑은 자체 tick에서도 잠금 상태를 air로 유지한다.
 execute in minecraft:overworld run setblock -3 -59 35 air replace
 execute in minecraft:overworld run setblock 3 -59 35 air replace
 execute in minecraft:overworld run setblock 3 -62 -35 air replace
@@ -173,7 +175,7 @@ execute in minecraft:frozen run setblock 0 68 -12 air replace
 execute in minecraft:frozen run setblock 0 68 48 air replace
 execute in minecraft:overworld run setblock -35 -62 -2 air replace
 execute in minecraft:overworld run setblock -35 -62 2 air replace
-# 깨진 파편 저장소는 문명 정산에서는 유지하지만, restart에서는 비웁니다.
+# 깨진 파편 저장소는 문명 정산에서는 유지하지만, restart에서는 비운다.
 scoreboard players set #broken_quantum_storage var 0
 scoreboard players set #information_bank meta 0
 scoreboard players set #time_bank meta 0
@@ -184,7 +186,7 @@ scoreboard players set #time_capacity meta 2
 scoreboard players set #information_synced meta 0
 scoreboard players set #time_synced meta 0
 
-# 여명 차원의 영구 자원 증폭 진행도는 문명 정산에서는 유지하고 전체 초기화에서만 제거합니다.
+# 여명 차원의 영구 자원 증폭 진행도는 문명 정산에서는 유지하고 전체 초기화에서만 제거한다.
 scoreboard players set #dawn_overworld_amp meta 0
 scoreboard players set #dawn_dried_amp meta 0
 scoreboard players set #dawn_frozen_amp meta 0
@@ -217,7 +219,6 @@ scoreboard players set #seen_yellow var 0
 scoreboard players set #seen_blue var 0
 scoreboard players set #seen_information var 0
 scoreboard players set #seen_time var 0
-scoreboard players set #seen_world_eye var 0
 scoreboard players set #seen_obsidian var 0
 scoreboard players set #alchemy_gem_cooldown var 0
 scoreboard players set #alchemy_metal_cooldown var 0
@@ -266,11 +267,11 @@ scoreboard objectives remove material_display
 
 data remove storage data tmp
 
-# 메마른 차원 시설을 잠긴 상태로 되돌립니다.
+# 메마른 차원 시설을 잠긴 상태로 되돌린다.
 function dried/structure/sulfur/off
 function dried/structure/cinnabar/off
 
-# 얼어붙은 차원 시설을 잠긴 상태로 되돌립니다.
+# 얼어붙은 차원 시설을 잠긴 상태로 되돌린다.
 execute in minecraft:frozen run function frozen/structure/shop/off
 execute in minecraft:frozen run function frozen/structure/bridge/off
 execute in minecraft:frozen run function frozen/structure/maze/off
@@ -292,6 +293,7 @@ scoreboard players set #GLOBAL accelerator_repair_timer 0
 scoreboard players set #GLOBAL experiment_cooldown 0
 scoreboard players set #GLOBAL alien_interference 0
 scoreboard players set #GLOBAL alien_timer 1200
+scoreboard players set #alien_maze_paused var 0
 scoreboard players set #GLOBAL shield_charge 0
 scoreboard players set #GLOBAL shield_maintenance 6000
 scoreboard players set #information_auto_withdraw meta 0
@@ -299,9 +301,9 @@ scoreboard players set #time_auto_withdraw meta 0
 scoreboard players reset @a accelerator_trigger
 bossbar set shield_charge visible false
 
-# 타임머신 연구/세대/타이머/트리거를 전체 초기 상태로 되돌립니다.
+# 타임머신 연구/세대/타이머/트리거를 전체 초기 상태로 되돌린다.
 function time_machine/reset
-# 숨겨진 발전과제 자동 채굴 타이머도 새 게임 기준으로 초기화합니다.
+# 숨겨진 발전과제 자동 채굴 타이머도 새 게임 기준으로 초기화한다.
 scoreboard players set #yellow_auto_mine_timer generate 20
 scoreboard players set #blue_auto_mine_timer generate 20
 

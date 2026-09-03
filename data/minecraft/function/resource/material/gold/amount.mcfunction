@@ -1,4 +1,4 @@
-# 금은 공통 생산량 보너스에 극한 환경 수급 배수를 적용한 뒤 전용 보너스를 더합니다.
+# 금은 공통 생산량 보너스에 극한 환경 수급 배수를 적용한 뒤 전용 보너스를 더한다.
 scoreboard players set #production_amount tmp 1
 execute store result score #production_common_bonus tmp run function resource/production/base
 scoreboard players remove #production_common_bonus tmp 1

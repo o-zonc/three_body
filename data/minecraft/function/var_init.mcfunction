@@ -1,4 +1,4 @@
-# tick
+# tick 처리
 # 매 틱 실행
 scoreboard objectives add var dummy
 scoreboard objectives add tmp dummy
@@ -12,6 +12,7 @@ scoreboard objectives add material dummy
 scoreboard objectives add meta dummy
 
 scoreboard objectives add unlock dummy
+scoreboard objectives add sidebar_visible dummy
 
 scoreboard objectives add upgrade dummy
 scoreboard objectives add material_shop dummy
@@ -70,7 +71,17 @@ execute unless score #information_bank_unlocked meta = #information_bank_unlocke
 execute unless score #time_bank_unlocked meta = #time_bank_unlocked meta run scoreboard players set #time_bank_unlocked meta 0
 execute unless score #information_storage_lvl upgrade = #information_storage_lvl upgrade run scoreboard players set #information_storage_lvl upgrade 0
 execute unless score #time_storage_lvl upgrade = #time_storage_lvl upgrade run scoreboard players set #time_storage_lvl upgrade 0
-execute unless score #world_eye_shop_lvl upgrade = #world_eye_shop_lvl upgrade run scoreboard players set #world_eye_shop_lvl upgrade 0
+# 제거된 세계의 눈과 divider 엔트리가 기존 세이브에 남지 않도록 정리
+scoreboard players reset #world_eye material
+scoreboard players reset world_eye material_display
+scoreboard players reset divider material_display
+scoreboard players reset #world_eye unlock
+scoreboard players reset #world_eye_shop_lvl upgrade
+scoreboard players reset #seen_world_eye var
+scoreboard players reset #reckoning_world_eye tmp
+scoreboard players reset #reckoning_world_eye_unlock tmp
+scoreboard players reset #cost_world_eye cost
+kill @e[type=minecraft:interaction,tag=world_eye]
 function shop/third/update_capacities
 execute if score #information_bank meta matches 2000.. run scoreboard players set #information_bank_unlocked meta 1
 execute if score #time_bank meta matches 1000.. run scoreboard players set #time_bank_unlocked meta 1
@@ -106,7 +117,7 @@ execute unless score #catalyst_cooldown var = #catalyst_cooldown var run scorebo
 execute unless score #catalyst_timer var = #catalyst_timer var run scoreboard players set #catalyst_timer var 0
 execute unless score #catalyst_level var = #catalyst_level var run scoreboard players set #catalyst_level var 0
 execute unless score #catalyst_multiplier var = #catalyst_multiplier var run scoreboard players set #catalyst_multiplier var 1
-# 우는 흑요석의 네 수집 플래그는 0(미수집) 또는 1(수집)만 사용합니다.
+# 우는 흑요석의 네 수집 플래그는 0(미수집) 또는 1(수집)만 사용한다.
 execute unless score #crying_overworld var = #crying_overworld var run scoreboard players set #crying_overworld var 0
 execute unless score #crying_dried var = #crying_dried var run scoreboard players set #crying_dried var 0
 execute unless score #crying_frozen var = #crying_frozen var run scoreboard players set #crying_frozen var 0
@@ -144,11 +155,11 @@ execute unless score #color_resources_unlocked var = #color_resources_unlocked v
 execute unless score #color_event_timer var = #color_event_timer var run scoreboard players set #color_event_timer var -1
 execute unless score #color_event_pending var = #color_event_pending var run scoreboard players set #color_event_pending var 0
 
-# 타임머신 레벨은 항상 0~4 범위로 유지합니다.
+# 타임머신 레벨은 항상 0~4 범위로 유지한다.
 execute unless score #GLOBAL factory_elevator_unlocked = #GLOBAL factory_elevator_unlocked run scoreboard players set #GLOBAL factory_elevator_unlocked 0
 execute if score #GLOBAL factory_elevator_unlocked matches ..-1 run scoreboard players set #GLOBAL factory_elevator_unlocked 0
 execute if score #GLOBAL factory_elevator_unlocked matches 3.. run scoreboard players set #GLOBAL factory_elevator_unlocked 2
-execute unless score #GLOBAL factory_build_stage = #GLOBAL factory_build_stage run scoreboard players set #GLOBAL factory_build_stage 0
+execute if entity @a unless score #GLOBAL factory_build_stage = #GLOBAL factory_build_stage run function migration/factory_build_stage
 execute if score #GLOBAL factory_build_stage matches ..-1 run scoreboard players set #GLOBAL factory_build_stage 0
 execute if score #GLOBAL factory_build_stage matches 4.. run scoreboard players set #GLOBAL factory_build_stage 3
 execute unless score #heat_second_lvl upgrade = #heat_second_lvl upgrade run scoreboard players set #heat_second_lvl upgrade 0
@@ -163,7 +174,7 @@ execute unless score #GLOBAL time_machine_level = #GLOBAL time_machine_level run
 execute if score #GLOBAL time_machine_level matches ..-1 run scoreboard players set #GLOBAL time_machine_level 0
 execute if score #GLOBAL time_machine_level matches 5.. run scoreboard players set #GLOBAL time_machine_level 4
 
-# 입자가속기와 보호막 상태는 기존 월드에서도 안전하게 초기화합니다.
+# 입자가속기와 보호막 상태는 기존 월드에서도 안전하게 초기화한다.
 execute unless score #GLOBAL accelerator_level = #GLOBAL accelerator_level run scoreboard players set #GLOBAL accelerator_level 0
 execute if score #GLOBAL accelerator_level matches ..-1 run scoreboard players set #GLOBAL accelerator_level 0
 execute if score #GLOBAL accelerator_level matches 5.. run scoreboard players set #GLOBAL accelerator_level 4
@@ -171,6 +182,7 @@ execute unless score #GLOBAL accelerator_timer = #GLOBAL accelerator_timer run s
 execute unless score #GLOBAL experiment_cooldown = #GLOBAL experiment_cooldown run scoreboard players set #GLOBAL experiment_cooldown 0
 execute unless score #GLOBAL alien_interference = #GLOBAL alien_interference run scoreboard players set #GLOBAL alien_interference 0
 execute unless score #GLOBAL alien_timer = #GLOBAL alien_timer run scoreboard players set #GLOBAL alien_timer 1200
+execute unless score #alien_maze_paused var = #alien_maze_paused var run scoreboard players set #alien_maze_paused var 0
 execute unless score #GLOBAL shield_charge = #GLOBAL shield_charge run scoreboard players set #GLOBAL shield_charge 0
 execute unless score #GLOBAL shield_maintenance = #GLOBAL shield_maintenance run scoreboard players set #GLOBAL shield_maintenance 6000
 execute unless score #dried_relic_level upgrade = #dried_relic_level upgrade run scoreboard players set #dried_relic_level upgrade 0

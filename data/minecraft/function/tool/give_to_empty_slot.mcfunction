@@ -1,4 +1,4 @@
-# 완성된 임시 도구를 핫바 우선, 이후 메인 인벤토리의 첫 빈 슬롯에 복사합니다.
+# 완성된 임시 도구를 핫바 우선, 이후 메인 인벤토리의 첫 빈 슬롯에 복사한다.
 execute unless items entity @s hotbar.0 * run return run item replace entity @s hotbar.0 from entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] contents
 execute unless items entity @s hotbar.1 * run return run item replace entity @s hotbar.1 from entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] contents
 execute unless items entity @s hotbar.2 * run return run item replace entity @s hotbar.2 from entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] contents

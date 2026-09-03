@@ -1,4 +1,4 @@
-# Macro args: id, name, color, effect, unit, trigger
+# 매크로 인수: id, name, color, effect, unit, trigger
 $function shop/second/prepare {id:"$(id)"}
 function resource/convert_discount_cost_to_text_named {id:"second_shop",insertion:", "}
 data modify storage data tmp.second_shop.button set value {text:"[ 강화 완료 ]",color:"dark_gray",bold:true}

@@ -1,4 +1,4 @@
-# 해금한 공장의 자원 블록 바로 위에 가동 상태를 표시하는 모닥불을 둡니다.
+# 해금한 공장의 자원 블록 바로 위에 가동 상태를 표시하는 모닥불을 둔다.
 execute in overworld unless score #wood factory_unlocked matches 1 if block 0 -58 35 #campfires run setblock 0 -58 35 air
 execute in overworld unless score #stone factory_unlocked matches 1 if block -3 -58 35 #campfires run setblock -3 -58 35 air
 execute in overworld unless score #coal factory_unlocked matches 1 if block 3 -58 35 #campfires run setblock 3 -58 35 air
@@ -33,6 +33,6 @@ execute in overworld if score #lapis factory_unlocked matches 1 unless score #la
 execute in minecraft:dried if score #heat factory_unlocked matches 1 if score #heat factory_enabled matches 1 run setblock -6 66 0 campfire[lit=true]
 execute in minecraft:dried if score #heat factory_unlocked matches 1 unless score #heat factory_enabled matches 1 run setblock -6 66 0 campfire[lit=false]
 
-# 공장 상태가 실제로 바뀌는 순간에만 표시등을 갱신합니다.
-# 기존 dirty 플래그 재시도는 공장 interaction이 없는 세이브에서 영구적인 전수 검색을 만들 수 있어 제거합니다.
+# 공장 상태가 실제로 바뀌는 순간에만 표시등을 갱신한다.
+# 기존 dirty 플래그 재시도는 공장 interaction이 없는 세이브에서 영구적인 전수 검색을 만들 수 있어 제거한다.
 execute in overworld if entity @e[type=interaction,tag=factory] run function factory/refresh_lights

@@ -6,5 +6,5 @@ playsound entity.player.levelup master @s ~ ~ ~ 0.8 1.0
 
 function resource/advancement_reward/stone/enable
 
-# 보존된 자원 상점 레벨이 이미 조건을 만족할 수 있으므로 철기 진입 즉시 고대 조건을 검사합니다.
+# 보존된 자원 상점 레벨이 이미 조건을 만족할 수 있으므로 철기 진입 즉시 고대 조건을 검사한다.
 function story/overworld/age/check_ancient_age

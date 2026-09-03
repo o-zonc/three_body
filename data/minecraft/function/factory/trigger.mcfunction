@@ -1,4 +1,4 @@
-# 이 함수는 tick에서 factory_trigger 값이 들어온 플레이어를 @s로 지정한 뒤 호출합니다.
+# 이 함수는 tick에서 factory_trigger 값이 들어온 플레이어를 @s로 지정한 뒤 호출한다.
 
 execute if score @s factory_trigger matches 1701 run function factory/purchase {id:"wood",unlock:"wood",name:"나무",color:"yellow",purchase:1701,toggle:1711}
 execute if score @s factory_trigger matches 1702 run function factory/purchase {id:"stone",unlock:"stone",name:"돌",color:"gray",purchase:1702,toggle:1712}
@@ -26,6 +26,6 @@ execute if score @s factory_trigger matches 1723 run function factory/toggle {id
 execute if score @s factory_trigger matches 1731 run function factory/recycle/purchase
 execute if score @s factory_trigger matches 1732 run function factory/energy/purchase
 
-# 처리한 플레이어만 초기화하고 다음 /trigger 입력을 허용합니다.
+# 처리한 플레이어만 초기화하고 다음 /trigger 입력을 허용한다.
 scoreboard players reset @s factory_trigger
 scoreboard players enable @s factory_trigger

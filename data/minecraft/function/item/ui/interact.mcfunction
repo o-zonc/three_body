@@ -1,4 +1,4 @@
-# Macro args: id, name, color, description, trigger
+# 매크로 인수: id, name, color, description, trigger
 $function item/value/$(id)_cost
 $function resource/convert_cost_to_text_named {id:"item_$(id)",insertion:", "}
 

@@ -1,5 +1,5 @@
 # 여명 차원 자원 증폭 적용
-# Macro args: score, dim, final
+# 매크로 인수: score, dim, final
 # meta 상태: 0=잠김, 1=Lv.0(+20%), 2=Lv.1(+50%), 3=Lv.2(최종)
 
 scoreboard players set #dawn_amp_percent tmp 0

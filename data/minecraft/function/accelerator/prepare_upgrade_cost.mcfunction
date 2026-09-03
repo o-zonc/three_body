@@ -7,8 +7,8 @@ execute if score #GLOBAL accelerator_level matches 2 run data modify storage dat
 execute if score #GLOBAL accelerator_level matches 3 run data modify storage data tmp.cost set from storage data const.accelerator.upgrade."3".cost
 execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
 
-# 깨진 양자 얽힘 파편도 공용 비용 표기 양식에 포함합니다.
-# 실제 보유량 확인과 차감은 전용 아이템 로직에서 처리합니다.
+# 깨진 양자 얽힘 파편도 공용 비용 표기 양식에 포함한다.
+# 실제 보유량 확인과 차감은 전용 아이템 로직에서 처리한다.
 execute if score #GLOBAL accelerator_level matches 1..3 run data modify storage data tmp.cost append value {type:"broken_cost",amount:0}
 execute if score #GLOBAL accelerator_level matches 1 store result storage data tmp.cost[-1].amount int 1 run data get storage data const.accelerator.upgrade."1".broken
 execute if score #GLOBAL accelerator_level matches 2 store result storage data tmp.cost[-1].amount int 1 run data get storage data const.accelerator.upgrade."2".broken

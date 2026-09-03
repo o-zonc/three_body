@@ -2,7 +2,7 @@ execute if score #dried_relic_level upgrade matches 5.. run return 0
 function dried/relic/prepare
 data modify storage data tmp.cost set from storage data tmp.dried_relic.cost
 execute store result score #dried_relic_cost_ok tmp run function resource/check_cost
-execute unless score #dried_relic_cost_ok tmp matches 1 run title @s actionbar {text:"업그레이드 재료가 부족합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #dried_relic_cost_ok tmp matches 1 run title @s actionbar {text:"업그레이드 재료가 부족합니다.",color:"red",italic:true}
 execute unless score #dried_relic_cost_ok tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 execute unless score #dried_relic_cost_ok tmp matches 1 run return 0
 function resource/cost/take

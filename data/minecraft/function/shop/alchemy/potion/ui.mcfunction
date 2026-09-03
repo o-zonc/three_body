@@ -1,5 +1,5 @@
 # 연금술 공방 물약 상점
-execute unless score #alchemy_workshop unlock matches 1 run title @s actionbar {text:"연금술 공방을 먼저 해금해야 합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #alchemy_workshop unlock matches 1 run title @s actionbar {text:"연금술 공방을 먼저 해금해야 합니다.",color:"red",italic:true}
 execute unless score #alchemy_workshop unlock matches 1 run return 0
 
 function shop/alchemy/potion/value/fever_cost
@@ -12,7 +12,7 @@ execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
 tellraw @s ["",{text:"  [ 연금술 물약 상점 ]",color:"light_purple",bold:true,shadow_color:-16777216}]
 
-# 공방 단계에 따라 현재 구매 가능한 카탈리스트 등급을 자동으로 표시합니다.
+# 공방 단계에 따라 현재 구매 가능한 카탈리스트 등급을 자동으로 표시한다.
 execute if score #level alchemy_workshop matches 0 run tellraw @s ["",{text:"\n  "},{text:"[ 카탈리스트 I ]",color:"gold",bold:true,hover_event:{action:"show_text",value:[{text:"등급: I\n",color:"gold"},{text:"채굴 자원 획득량: ×2\n",color:"yellow"},{text:"채굴 속도: ×2\n",color:"aqua"},{text:"신속 III\n",color:"green"},{text:"지속 시간: 1분\n",color:"gray"},{text:"능동 채굴로 직접 획득하는 자원에만 자원 배율이 적용됩니다.\n\n",color:"dark_gray"},{text:"[ 필요한 재료 ]\n",color:"gold"},{storage:"data",nbt:"tmp.cost_text.alchemy_fever_potion.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1541"}},{text:"\n  짧은 시간 동안 직접 채굴 효율을 크게 끌어올립니다.",color:"gray",bold:false}]
 execute if score #level alchemy_workshop matches 1 run tellraw @s ["",{text:"\n  "},{text:"[ 카탈리스트 II ]",color:"gold",bold:true,hover_event:{action:"show_text",value:[{text:"등급: II\n",color:"gold"},{text:"채굴 자원 획득량: ×3\n",color:"yellow"},{text:"채굴 속도: ×4\n",color:"aqua"},{text:"신속 III\n",color:"green"},{text:"지속 시간: 1분 30초\n",color:"gray"},{text:"능동 채굴로 직접 획득하는 자원에만 자원 배율이 적용됩니다.\n\n",color:"dark_gray"},{text:"[ 필요한 재료 ]\n",color:"gold"},{storage:"data",nbt:"tmp.cost_text.alchemy_fever_potion.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1541"}},{text:"\n  짧은 시간 동안 직접 채굴 효율을 크게 끌어올립니다.",color:"gray",bold:false}]
 execute if score #level alchemy_workshop matches 2.. run tellraw @s ["",{text:"\n  "},{text:"[ 카탈리스트 III ]",color:"gold",bold:true,hover_event:{action:"show_text",value:[{text:"등급: III\n",color:"gold"},{text:"채굴 자원 획득량: ×5\n",color:"yellow"},{text:"채굴 속도: ×8\n",color:"aqua"},{text:"신속 III\n",color:"green"},{text:"지속 시간: 2분\n",color:"gray"},{text:"능동 채굴로 직접 획득하는 자원에만 자원 배율이 적용됩니다.\n\n",color:"dark_gray"},{text:"[ 필요한 재료 ]\n",color:"gold"},{storage:"data",nbt:"tmp.cost_text.alchemy_fever_potion.text",interpret:true}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 1541"}},{text:"\n  짧은 시간 동안 직접 채굴 효율을 크게 끌어올립니다.",color:"gray",bold:false}]

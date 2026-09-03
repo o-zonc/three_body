@@ -1,6 +1,4 @@
-# ============================================================
-#  엔딩 크레딧 - 모든 문구가 화면 위로 사라질 때까지 스크롤
-# ============================================================
+# 엔딩 크레딧 - 모든 문구가 화면 위로 사라질 때까지 스크롤
 
 execute as @a[tag=ending_active] run spectate @e[tag=ending_camera,limit=1]
 execute as @e[tag=ending_credit_text] at @s run tp @s ~ ~0.04 ~

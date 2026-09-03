@@ -1,4 +1,4 @@
-# 타임머신 건설과 최초 엔딩 이전에 달성 가능한 발전과제를 설정합니다.
+# 타임머신 건설과 최초 엔딩 이전에 달성 가능한 발전과제를 설정한다.
 advancement grant @a only 0_overworld/00_root
 advancement grant @a only 0_overworld/10_wood_age
 advancement grant @a only 0_overworld/11_stone_age

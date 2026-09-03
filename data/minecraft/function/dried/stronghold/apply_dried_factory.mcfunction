@@ -1,4 +1,4 @@
-# Macro arg: id
+# 매크로 인수: id
 execute unless score #stronghold_dried upgrade matches 1.. run return 0
 scoreboard players set #stronghold_multiplier tmp 80
 $scoreboard players operation #$(id) factory_timer *= #stronghold_multiplier tmp

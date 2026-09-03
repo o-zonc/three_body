@@ -1,4 +1,4 @@
-# 타임머신 건설과 엔딩 직전의 최대 테스트 상태로 설정합니다.
+# 타임머신 건설과 엔딩 직전의 최대 테스트 상태로 설정한다.
 # /function test/max_upgrades_pre_ending
 
 # 자원 및 시설 해금
@@ -15,7 +15,6 @@ scoreboard players set #heat unlock 1
 scoreboard players set #cold unlock 1
 scoreboard players set #yellow unlock 1
 scoreboard players set #blue unlock 1
-scoreboard players set #world_eye unlock 1
 scoreboard players set #nether unlock 1
 scoreboard players set #cave unlock 1
 scoreboard players set #mob unlock 1
@@ -37,12 +36,12 @@ scoreboard players set #overworld civilization_age 9
 scoreboard players set #level alchemy_workshop 2
 scoreboard players set #GLOBAL elevator_unlocked 2
 
-# 영구 이동기는 해금 상태뿐 아니라 실제 아이템도 지급합니다.
+# 영구 이동기는 해금 상태뿐 아니라 실제 아이템도 지급한다.
 execute as @a run function item/give/dimension_mover
 execute as @a run function item/give/shop_mover
 execute as @a run function item/give/alchemy_mover
 
-# 해금된 구조물을 실제 월드에도 설치합니다. 각 함수는 필요한 청크를 비동기로 불러옵니다.
+# 해금된 구조물을 실제 월드에도 설치한다. 각 함수는 필요한 청크를 비동기로 불러온다.
 function common/structure/alchemy_workshop/on
 function common/structure/beacon/on
 function common/structure/factory/on
@@ -86,13 +85,12 @@ execute in minecraft:dried run setblock 18 65 6 minecraft:sandstone
 # 3층 상점과 연금술 공방
 scoreboard players set #information_storage_lvl upgrade 3
 scoreboard players set #time_storage_lvl upgrade 3
-scoreboard players set #world_eye_shop_lvl upgrade 3
 scoreboard players set #alchemy_lab_level upgrade 15
 scoreboard players set #hole_level upgrade 2
 function shop/third/update_capacities
 function shop/alchemy/lab/rates
 
-# 공장과 후반 시설. 타임머신은 구매 테스트가 가능하도록 미건설 상태로 둡니다.
+# 공장과 후반 시설. 타임머신은 구매 테스트가 가능하도록 미건설 상태로 둔다.
 scoreboard players set #GLOBAL factory_build_stage 2
 scoreboard players set #GLOBAL factory_elevator_unlocked 1
 scoreboard players set #factory_recycle_level upgrade 4
@@ -112,7 +110,7 @@ scoreboard players set #heat factory_level 6
 scoreboard players set #cold factory_level 6
 function factory/init_state
 
-# 우는 흑요석 저장고도 완전 개방 상태로 맞춥니다.
+# 우는 흑요석 저장고도 완전 개방 상태로 맞춘다.
 scoreboard players set #crying_overworld var 1
 scoreboard players set #crying_dried var 1
 scoreboard players set #crying_frozen var 1
@@ -121,10 +119,10 @@ scoreboard players set #crying_count var 4
 scoreboard players set #crying_vault_opened var 1
 execute as @a run function crying/advancement_sync
 
-# 타임머신 건설 이전에 달성 가능한 데이터팩 발전과제를 설정합니다.
+# 타임머신 건설 이전에 달성 가능한 데이터팩 발전과제를 설정한다.
 function test/grant_advancements_pre_ending
 
-# 타임머신은 아직 건설되지 않았으므로 연구 상태도 시작 전으로 되돌립니다.
+# 타임머신은 아직 건설되지 않았으므로 연구 상태도 시작 전으로 되돌린다.
 scoreboard players set #time_machine_yellow upgrade 0
 scoreboard players set #time_machine_blue upgrade 0
 scoreboard players set #time_machine_path_yellow upgrade 0
@@ -133,7 +131,7 @@ scoreboard players set #time_machine_path_green upgrade 0
 scoreboard players set #time_machine_green_discovered upgrade 0
 function time_machine/calculate
 
-# 이미 본 엔딩 상태가 남아 있더라도 테스트 기준을 엔딩 이전으로 되돌립니다.
+# 이미 본 엔딩 상태가 남아 있더라도 테스트 기준을 엔딩 이전으로 되돌린다.
 schedule clear story/ending/01_answer
 schedule clear story/ending/02_epilogue
 schedule clear story/ending/03_credits

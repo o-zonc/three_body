@@ -1,5 +1,5 @@
 # 수동 세공 작업대 UI
-execute unless score #alchemy_workshop unlock matches 1 run title @s actionbar {text:"연금술 공방을 먼저 해금해야 합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #alchemy_workshop unlock matches 1 run title @s actionbar {text:"연금술 공방을 먼저 해금해야 합니다.",color:"red",italic:true}
 execute unless score #alchemy_workshop unlock matches 1 run return 0
 execute unless score #jewel_mode var = #jewel_mode var run scoreboard players set #jewel_mode var 0
 execute if score #jewel_mode var matches ..-1 run scoreboard players set #jewel_mode var 0

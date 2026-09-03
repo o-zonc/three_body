@@ -3,7 +3,7 @@
   "display": {
     "icon": "chiseled_sandstone",
     "title": "세 세계의 유산",
-    "description": "오버월드, 얼어붙은 세계, 메마른 세계의 유적지를 모두 복구했습니다.\n\n§6•§7 보상: 여명 차원에서 일반 자원을 사용할 수 있습니다.",
+    "description": "오버월드, 얼어붙은 세계, 메마른 세계의 유적지를 모두 복구했습니다.\n\n§6•§7 보상: 자원 보유량이 유지됩니다.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

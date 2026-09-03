@@ -1,8 +1,8 @@
-# Macro args: id, name, color, trigger, x, y, z, cost
+# 매크로 인수: id, name, color, trigger, x, y, z, cost
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
 
-# 구버전 저장 상태를 unlock 스코어로 승계합니다.
+# 구버전 저장 상태를 unlock 스코어로 승계한다.
 $execute in dried if data block $(x) $(y) $(z) {name:"$(id)"} run scoreboard players set #dried_$(id) unlock 1
 
 $execute if score #dried_$(id) unlock matches 1 run tellraw @s ["",{text:"  [ $(name) ]",color:"$(color)",bold:true},{text:"\n\n  시설 해금이 완료되었습니다.",color:"gray"},{text:"\n"}]

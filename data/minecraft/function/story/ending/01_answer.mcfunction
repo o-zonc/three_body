@@ -1,4 +1,4 @@
-title @a[tag=ending_active] clear
+execute unless entity @a[tag=accelerator_experiment_running] run title @a[tag=ending_active] clear
 title @a[tag=ending_active] times 10 80 20
 execute as @a[tag=ending_active] at @s run playsound ambient.cave master @s ~ ~ ~ 0.7 0.6
 title @a[tag=ending_active] title {text:"세계의 진실: §kunwn",color:"dark_red"}

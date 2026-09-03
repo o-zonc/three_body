@@ -1,7 +1,7 @@
 # tmp.cost 의 목록에 있는 자원 요구 목록만큼 자원을 차감
-# 특수 콘텐츠가 직접 요청한 기존 전체 대체 경로를 유지합니다.
+# 특수 콘텐츠가 직접 요청한 기존 전체 대체 경로를 유지한다.
 execute if score #obsidian_cost_bypass tmp matches 1 if score #obsidian_substitution_count tmp matches 0 run return run function resource/cost/take_obsidian_bypass
-# resource/check_cost가 준비한 정상/부분 대체 비용을 그대로 차감합니다.
+# resource/check_cost가 준비한 정상/부분 대체 비용을 그대로 차감한다.
 execute if score #cost_prepared tmp matches 1 run return run function resource/cost/take_prepared
 
 scoreboard players set #cost_wood cost 0
@@ -16,7 +16,6 @@ scoreboard players set #cost_heat cost 0
 scoreboard players set #cost_cold cost 0
 scoreboard players set #cost_information cost 0
 scoreboard players set #cost_time cost 0
-scoreboard players set #cost_world_eye cost 0
 scoreboard players set #cost_obsidian cost 0
 scoreboard players set #cost_gold cost 0
 
@@ -32,7 +31,6 @@ execute if data storage data tmp.cost[{type:"heat"}].amount store result score #
 execute if data storage data tmp.cost[{type:"cold"}].amount store result score #cost_cold cost run data get storage data tmp.cost[{type:"cold"}].amount
 execute if data storage data tmp.cost[{type:"information"}].amount store result score #cost_information cost run data get storage data tmp.cost[{type:"information"}].amount
 execute if data storage data tmp.cost[{type:"time"}].amount store result score #cost_time cost run data get storage data tmp.cost[{type:"time"}].amount
-execute if data storage data tmp.cost[{type:"world_eye"}].amount store result score #cost_world_eye cost run data get storage data tmp.cost[{type:"world_eye"}].amount
 execute if data storage data tmp.cost[{type:"obsidian"}].amount store result score #cost_obsidian cost run data get storage data tmp.cost[{type:"obsidian"}].amount
 execute if data storage data tmp.cost[{type:"gold"}].amount store result score #cost_gold cost run data get storage data tmp.cost[{type:"gold"}].amount
 
@@ -48,7 +46,6 @@ scoreboard players operation #heat material -= #cost_heat cost
 scoreboard players operation #cold material -= #cost_cold cost
 function meta/information/take_cost
 function meta/time/take_cost
-scoreboard players operation #world_eye material -= #cost_world_eye cost
 function meta/obsidian/take_cost
 scoreboard players operation #gold material -= #cost_gold cost
 

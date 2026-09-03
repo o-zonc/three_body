@@ -7,7 +7,7 @@ scoreboard players set #cold_base_gain tmp 1
 function dawn/amplifier/prepare_resource_ui {dim:"frozen",final:150,final_multiplier:2.5}
 execute store result score #cold_environment_interval tmp run function resource/environment/cold_interval
 
-# 자원 상점 2층에서 냉기 수급량에 더해지는 값을 계산합니다.
+# 자원 상점 2층에서 냉기 수급량에 더해지는 값을 계산한다.
 execute store result score #cold_second_bonus_ui tmp run function resource/production/base
 scoreboard players remove #cold_second_bonus_ui tmp 1
 execute if score #special_second_lvl upgrade matches 1 run scoreboard players add #cold_second_bonus_ui tmp 1

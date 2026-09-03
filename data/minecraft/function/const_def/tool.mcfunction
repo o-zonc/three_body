@@ -1,5 +1,5 @@
-# load
-# Tool constants
+# load 시 상수 정의
+# 도구 상수 정의
 
 data modify storage data const.tool set value [\
       {\
@@ -134,7 +134,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 5,\
-        cost: [{ type: "wood", amount: 25 }, { type: "stone", amount: 6 }, { type: "copper", amount: 3 }],\
+        cost: [{ type: "wood", amount: 35 }, { type: "stone", amount: 10 }],\
         components: {\
           custom_name: "§f좋은 돌 곡괭이",\
           item_model: "stone_pickaxe",\
@@ -372,7 +372,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 10,\
-        cost: [{ type: "wood", amount: 6000 }, { type: "iron", amount: 500 }, { type: "gold", amount: 5 }],\
+        cost: [{ type: "iron", amount: 1000 }, { type: "gold", amount: 10 }],\
         components: {\
           custom_name: "§f훌륭한 철 곡괭이",\
           item_model: "iron_pickaxe",\
@@ -423,7 +423,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 11,\
-        cost: [{ type: "wood", amount: 15000 }, { type: "iron", amount: 1000 }, { type: "gold", amount: 15 }, { type: "diamond", amount: 5 }],\
+        cost: [{ type: "iron", amount: 4000 }, { type: "gold", amount: 25 }, { type: "diamond", amount: 10 }],\
         components: {\
           custom_name: "§f신성 철 곡괭이",\
           item_model: "iron_pickaxe",\
@@ -472,7 +472,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 12,\
-        cost: [{ type: "wood", amount: 30000 }, { type: "iron", amount: 2000 }, { type: "gold", amount: 30 }, { type: "heat", amount: 5 }, { type: "cold", amount: 5 }],\
+        cost: [{ type: "iron", amount: 10000 }, { type: "gold", amount: 60 }, { type: "heat", amount: 15 }],\
         components: {\
           custom_name: "§f수동 드릴",\
           item_model: "netherite_spear",\
@@ -515,7 +515,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 13,\
-        cost: [{ type: "wood", amount: 60000 }, { type: "iron", amount: 4000 }, { type: "diamond", amount: 30 }, { type: "heat", amount: 10 }, { type: "cold", amount: 10 }],\
+        cost: [{ type: "iron", amount: 15000 }, { type: "diamond", amount: 60 }, { type: "cold", amount: 25 }],\
         components: {\
           custom_name: "§f전동 드릴",\
           item_model: "mace",\
@@ -556,7 +556,7 @@ data modify storage data const.tool set value [\
       },\
       {\
         lvl: 14,\
-        cost: [{ type: "wood", amount: 120000 }, { type: "iron", amount: 8000 }, { type: "diamond", amount: 80 }, { type: "heat", amount: 20 }, { type: "cold", amount: 20 }],\
+        cost: [{ type: "diamond", amount: 160 }, { type: "heat", amount: 50 }, { type: "cold", amount: 50 }],\
         components: {\
           custom_name: "§f굴착기",\
           item_model: "mace",\
@@ -688,13 +688,12 @@ data modify storage data const.tool set value [\
 ]
 
 # 로드 시 기존 세이브 보정 및 도구 규칙 확장
-# -----------------------------------------------------------------------------
 execute unless score #yellow material = #yellow material run scoreboard players set #yellow material 0
 execute unless score #blue material = #blue material run scoreboard players set #blue material 0
 execute unless score #yellow_regen_lvl upgrade = #yellow_regen_lvl upgrade run scoreboard players set #yellow_regen_lvl upgrade 0
 execute unless score #blue_regen_lvl upgrade = #blue_regen_lvl upgrade run scoreboard players set #blue_regen_lvl upgrade 0
 
-# 구리 곡괭이(Lv.6)부터 노랑/파랑을 채굴할 수 있습니다.
+# 구리 곡괭이(Lv.6)부터 노랑/파랑을 채굴할 수 있다.
 data modify storage data const.tool[{lvl:6}].components.can_break.blocks append value "yellow_glazed_terracotta"
 data modify storage data const.tool[{lvl:6}].components.can_break.blocks append value "blue_glazed_terracotta"
 data modify storage data const.tool[{lvl:6}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
@@ -725,10 +724,8 @@ data modify storage data const.tool[{lvl:11}].components.can_break.blocks append
 data modify storage data const.tool[{lvl:11}].components.tool.rules append value {blocks:"yellow_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
 data modify storage data const.tool[{lvl:11}].components.tool.rules append value {blocks:"blue_glazed_terracotta",correct_for_drops:1b,speed:0.2625f}
 
-# Active tool balance values
-# -----------------------------------------------------------------------------
-# 초반 채굴 도구 밸런스 상수
-# -----------------------------------------------------------------------------
+# 현재 적용되는 도구 밸런스 값
+# --- 초반 채굴 도구 밸런스 상수 ---
 # 돌/석탄은 같은 채굴 시간, 구리/철은 같은 채굴 시간이 되도록 맞춘다.
 # 노랑/파랑은 숨김용 append(Lv6~11) 및 본문 규칙(Lv12+)에 별도로 존재하며 이번 변경 대상 자원과 중복되지 않는다.
 

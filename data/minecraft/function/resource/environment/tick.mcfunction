@@ -1,4 +1,4 @@
-# 차원이 바뀐 순간에만 현재 업그레이드 기준의 환경 자원 타이머를 다시 계산합니다.
+# 차원이 바뀐 순간에만 현재 업그레이드 기준의 환경 자원 타이머를 다시 계산한다.
 execute unless score #GLOBAL current_dim = #environment_dim_prev var run function resource/environment/reset_timers
 scoreboard players operation #environment_dim_prev var = #GLOBAL current_dim
 

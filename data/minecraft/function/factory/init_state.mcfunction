@@ -75,5 +75,5 @@ execute unless score #heat factory_status = #heat factory_status run scoreboard 
 # 로드 시 기존 월드의 캐시도 현재 레벨·발전·성채 상태로 초기화한다.
 function factory/cache_all
 
-# 기존 월드도 리로드 시 공장 모닥불을 현재 가동 상태에 맞춥니다.
+# 기존 월드도 리로드 시 공장 모닥불을 현재 가동 상태에 맞춘다.
 function factory/campfires

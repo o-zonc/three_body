@@ -10,5 +10,5 @@ scoreboard players operation #information material += #information_bank meta
 scoreboard players operation #time material = #time_wallet tmp
 scoreboard players operation #time material += #time_bank meta
 
-# 흑요석은 보관소 없이 인벤토리 소지량 자체가 원장입니다.
+# 흑요석은 보관소 없이 인벤토리 소지량 자체가 원장이다.
 scoreboard players operation #obsidian material = #obsidian_wallet tmp

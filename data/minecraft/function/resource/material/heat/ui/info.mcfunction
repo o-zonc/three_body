@@ -7,7 +7,7 @@ scoreboard players set #heat_base_gain tmp 1
 function dawn/amplifier/prepare_resource_ui {dim:"dried",final:150,final_multiplier:2.5}
 execute store result score #heat_environment_interval tmp run function resource/environment/heat_interval
 
-# 자원 상점 2층에서 열기 수급량에 더해지는 값을 계산합니다.
+# 자원 상점 2층에서 열기 수급량에 더해지는 값을 계산한다.
 execute store result score #heat_second_bonus_ui tmp run function resource/production/base
 scoreboard players remove #heat_second_bonus_ui tmp 1
 execute if score #special_second_lvl upgrade matches 1 run scoreboard players add #heat_second_bonus_ui tmp 1

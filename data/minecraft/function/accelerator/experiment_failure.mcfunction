@@ -1,4 +1,4 @@
-# 실패 시 정상 보상 대신 많은 양의 깨진 양자 얽힘 파편을 지급합니다.
+# 실패 시 정상 보상 대신 많은 양의 깨진 양자 얽힘 파편을 지급한다.
 # 양자 충돌: 레벨 상승에 따라 실패 부산물도 증가
 execute if score @s experiment_type matches 10 if score #GLOBAL accelerator_level matches 1 run function quantum/give_broken {amount:12}
 execute if score @s experiment_type matches 10 if score #GLOBAL accelerator_level matches 2 run function quantum/give_broken {amount:18}
@@ -9,10 +9,10 @@ execute if score @s experiment_type matches 10 if score #GLOBAL accelerator_leve
 execute if score @s experiment_type matches 11 if score #GLOBAL accelerator_level matches 2 run function quantum/give_broken {amount:45}
 execute if score @s experiment_type matches 11 if score #GLOBAL accelerator_level matches 3 run function quantum/give_broken {amount:60}
 execute if score @s experiment_type matches 11 if score #GLOBAL accelerator_level matches 4 run function quantum/give_broken {amount:80}
-# 실패하더라도 충돌 자체에서 미지 물질 반응을 관측했으므로 발견 발전과제를 달성합니다.
+# 실패하더라도 충돌 자체에서 미지 물질 반응을 관측했으므로 발견 발전과제를 달성한다.
 execute if score @s experiment_type matches 11 unless entity @s[advancements={0_overworld/22_heavy_ion_experiment=true}] run advancement grant @s only 0_overworld/22_heavy_ion_experiment
 
-# 시공간 붕괴: 실패하더라도 균열 관측 자체는 완료된 실험으로 기록합니다.
+# 시공간 붕괴: 실패하더라도 균열 관측 자체는 완료된 실험으로 기록한다.
 execute if score @s experiment_type matches 12 run scoreboard players set #spacetime_experiment_done var 1
 execute if score @s experiment_type matches 12 run function quantum/give_broken {amount:160}
 execute if score @s experiment_type matches 12 run data remove storage data tmp.cost
@@ -22,7 +22,7 @@ execute if score @s experiment_type matches 12 if score #spacetime_failure_loss_
 execute if score @s experiment_type matches 12 if score #spacetime_failure_loss_ok tmp matches 1 run tellraw @s {text:"시공간 붕괴의 여파로 정보 16과 소지한 시간 1을 잃었습니다.",color:"dark_purple"}
 execute if score @s experiment_type matches 12 unless score #spacetime_failure_loss_ok tmp matches 1 run function accelerator/breakdown
 
-# 실패 시 재정비 시간은 정상의 절반만 적용합니다. 장기 고장 상태에서는 별도 수리 타이머를 사용합니다.
+# 실패 시 재정비 시간은 정상의 절반만 적용한다. 장기 고장 상태에서는 별도 수리 타이머를 사용한다.
 execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 1 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."1".failure_cooldown
 execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 2 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."2".failure_cooldown
 execute unless score #GLOBAL accelerator_disabled matches 1 if score #GLOBAL accelerator_level matches 3 store result score #GLOBAL experiment_cooldown run data get storage data const.accelerator.level."3".failure_cooldown

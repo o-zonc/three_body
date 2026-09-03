@@ -1,11 +1,11 @@
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function util/blank
 
-# 아직 현대에 도달하지 않았다면 시설을 잠금 상태로 안내합니다.
+# 아직 현대에 도달하지 않았다면 시설을 잠금 상태로 안내한다.
 execute if score #GLOBAL accelerator_level matches 0 unless score #overworld civilization_age matches 8.. run tellraw @s ["",{text:"  [ 입자가속기 ]",color:"aqua",bold:true},{text:"\n\n  입자의 충돌을 관측해 정보와 양자 얽힘 파편을 생성하는 시설입니다.",color:"gray",bold:false},{text:"\n\n  현대에 도달해야 가동할 수 있습니다.",color:"red",bold:false},{text:"\n"}]
 execute if score #GLOBAL accelerator_level matches 0 unless score #overworld civilization_age matches 8.. run return 0
 
-# 시공간 붕괴 실험 실패로 장기 고장 상태가 된 경우 수리 UI만 표시합니다.
+# 시공간 붕괴 실험 실패로 장기 고장 상태가 된 경우 수리 UI만 표시한다.
 execute if score #GLOBAL accelerator_disabled matches 1 run tellraw @s [{text:"  [ 입자가속기 - 손상 ]",color:"dark_red",bold:true},{text:"\n\n  • 자동 수리까지: ",color:"gray",bold:false},{score:{name:"#GLOBAL",objective:"accelerator_repair_timer"},color:"white",bold:false},{text:"틱",color:"gray",bold:false},{text:"\n\n  [ 수동 재가동 ]",color:"green",bold:true,hover_event:{action:"show_text",value:[{text:"손상된 입자가속기를 즉시 재가동합니다.",color:"gray",bold:false},{text:"\n\n필요 자원: ",color:"yellow",bold:false},{text:"철 100,000",color:"white",bold:false},{text:", 시간 2",color:"dark_aqua",bold:false}]},click_event:{action:"run_command",command:"/trigger accelerator_trigger set 2"}},{text:"\n"}]
 execute if score #GLOBAL accelerator_disabled matches 1 run return 0
 

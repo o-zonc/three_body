@@ -1,4 +1,4 @@
-# 실험 종류는 accelerator_trigger 값으로 선택합니다.
+# 실험 종류는 accelerator_trigger 값으로 선택한다.
 # 10: 양자 충돌 실험 / 11: 중입자 충돌 실험 / 12: 시공간 붕괴 실험
 
 execute if entity @s[tag=accelerator_experiment_running] run title @s actionbar {text:"이미 실험이 진행 중입니다.",color:"red",italic:true}

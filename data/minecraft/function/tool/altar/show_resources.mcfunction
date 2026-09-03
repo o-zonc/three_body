@@ -40,7 +40,6 @@ data modify storage data tmp.altar_resource_info append value {text:"\n\n  ◆ �
 data modify storage data tmp.altar_resource_info append value {text:"\n  문명과 시공간의 진행에 직접 관여하는 희귀 자원.",color:"gray"}
 execute if score #seen_information var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 정보",color:"light_purple"}
 execute if score #seen_time var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 시간",color:"dark_aqua"}
-execute if score #seen_world_eye var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 세계의 눈",color:"dark_green"}
 execute if score #seen_obsidian var matches 1 run data modify storage data tmp.altar_resource_info append value {text:"\n  • 흑요석",color:"dark_purple"}
 
 data modify storage data tmp.altar_resource_info append value {text:"\n"}

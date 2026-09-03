@@ -1,5 +1,5 @@
 # 연금술 공방의 우주 이동기 단말
-# 시간축 개방 이전에는 소리, UI, 메시지 없이 완전히 무반응입니다.
+# 시간축 개방 이전에는 소리, UI, 메시지 없이 완전히 무반응이다.
 execute unless score #time_axis_open var matches 1 run return 0
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 1.4

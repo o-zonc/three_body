@@ -22,5 +22,5 @@ scoreboard players set #time_machine_perimeter_loaded var 1
 scoreboard players set #time_machine_perimeter_initialized var 1
 
 execute at @s run playsound block.respawn_anchor.deplete master @s ~ ~ ~ 0.8 1.2
-title @s actionbar {"text":"타임머신 발전이 Lv.1 기준으로 초기화되었습니다.","color":"aqua","italic":false}
+execute unless entity @a[tag=accelerator_experiment_running] run title @s actionbar {"text":"타임머신 발전이 Lv.1 기준으로 초기화되었습니다.","color":"aqua","italic":false}
 function time_machine/ui

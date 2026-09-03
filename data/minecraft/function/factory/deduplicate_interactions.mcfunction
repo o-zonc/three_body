@@ -1,6 +1,6 @@
 # 공장 interaction 중복 복구용 일회성 함수
-# /function factory/deduplicate_interactions
-# 공장에서 사용하는 역할 태그별로 하나만 남기고 나머지를 제거합니다.
+# 실행 명령: /function factory/deduplicate_interactions
+# 공장에서 사용하는 역할 태그별로 하나만 남기고 나머지를 제거한다.
 
 execute in overworld run tag @e[type=interaction,tag=factory,tag=factory_dedup_keep] remove factory_dedup_keep
 execute in overworld store result score #factory_dedup_before tmp run execute if entity @e[type=interaction,tag=factory,tag=!shop,x=-36,y=-64,z=0,dx=44,dy=32,dz=40]

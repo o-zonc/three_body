@@ -1,7 +1,7 @@
 # 냉각 물약 구매: 냉기 1개
 data modify storage data tmp.cost set value [{type:"cold",amount:1}]
 execute store result score #dried_purchase_check tmp run function resource/check_cost
-execute unless score #dried_purchase_check tmp matches 1 run title @s actionbar {text:"냉기가 부족합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #dried_purchase_check tmp matches 1 run title @s actionbar {text:"냉기가 부족합니다.",color:"red",italic:true}
 execute unless score #dried_purchase_check tmp matches 1 run return 0
 
 function resource/cost/take

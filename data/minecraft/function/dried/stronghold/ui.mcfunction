@@ -1,4 +1,4 @@
-# Macro args: id, name, color, trigger, effect, block, x, z
+# 매크로 인수: id, name, color, trigger, effect, block, x, z
 $execute unless score #stronghold_$(id) upgrade = #stronghold_$(id) upgrade run scoreboard players set #stronghold_$(id) upgrade 0
 function dried/stronghold/complete
 $execute if score #stronghold_$(id) upgrade matches 1.. in dried run setblock $(x) 66 $(z) air

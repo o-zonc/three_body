@@ -1,5 +1,5 @@
-# load
-# Structure constants
+# load 시 상수 정의
+# 구조물 상수 정의
 
 data modify storage data const.structure set value {\
       alchemy_workshop: [\
@@ -7,29 +7,26 @@ data modify storage data const.structure set value {\
           stage: 0,\
           required_age: 5,\
           cost: [\
-            { type: "copper", amount: 80 },\
-            { type: "iron", amount: 50 },\
-            { type: "emerald", amount: 1 }\
+            { type: "iron", amount: 80 },\
+            { type: "emerald", amount: 2 }\
           ]\
         },\
         {\
           stage: 1,\
           required_age: 6,\
           cost: [\
-            { type: "copper", amount: 150 },\
-            { type: "iron", amount: 100 },\
-            { type: "emerald", amount: 2 },\
-            { type: "lapis", amount: 3 }\
+            { type: "copper", amount: 200 },\
+            { type: "iron", amount: 150 },\
+            { type: "lapis", amount: 5 }\
           ]\
         },\
         {\
           stage: 2,\
           required_age: 7,\
           cost: [\
-            { type: "copper", amount: 300 },\
-            { type: "iron", amount: 320 },\
-            { type: "emerald", amount: 4 },\
-            { type: "lapis", amount: 6 },\
+            { type: "copper", amount: 450 },\
+            { type: "iron", amount: 450 },\
+            { type: "lapis", amount: 10 },\
             { type: "information", amount: 8 }\
           ]\
         }\

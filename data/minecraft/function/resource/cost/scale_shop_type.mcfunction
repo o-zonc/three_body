@@ -1,4 +1,4 @@
-# Macro args: type
+# 매크로 인수: type
 # #shop_cost_discount_percent의 현재 할인율을 tmp.cost의 지정 자원 비용에 적용한다.
 # 결과는 올림 처리하며, 양수 비용은 최소 1개를 유지한다.
 $execute unless data storage data tmp.cost[{type:"$(type)"}].amount run return 0

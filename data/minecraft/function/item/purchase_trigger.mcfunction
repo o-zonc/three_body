@@ -1,4 +1,4 @@
-# 이 함수는 tick에서 item_trigger 값이 들어온 플레이어를 @s로 지정한 뒤 호출합니다.
+# 이 함수는 tick에서 item_trigger 값이 들어온 플레이어를 @s로 지정한 뒤 호출한다.
 
 execute if score @s item_trigger matches 2101 run function item/purchase_permanent {id:"dimension",name:"차원 이동기",color:"dark_red",description:"현재 차원을 끝내고 다음 차원으로 이동합니다.",trigger:2101}
 execute if score @s item_trigger matches 2102 if score #level alchemy_workshop matches 2.. run function item/purchase {id:"dried"}
@@ -15,6 +15,6 @@ execute if score @s item_trigger matches 2192 run function quantum/storage/withd
 # 미래 진입 단말
 execute if score @s item_trigger matches 2193 run function future/enter
 
-# 처리한 플레이어만 초기화하고 다음 /trigger 입력을 허용합니다.
+# 처리한 플레이어만 초기화하고 다음 /trigger 입력을 허용한다.
 scoreboard players reset @s item_trigger
 scoreboard players enable @s item_trigger

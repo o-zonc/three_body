@@ -1,5 +1,5 @@
-# load
-# Resource constants
+# load 시 상수 정의
+# 자원 상수 정의
 
 data modify storage data const.resource set value {\
       wood: {item:"oak_log",\
@@ -43,7 +43,7 @@ data modify storage data const.resource set value {\
         ]\
       },\
       iron: {item:"deepslate_iron_ore",\
-        unlock_cost:[{type:"wood",amount:180},{type:"coal",amount:15},{type:"copper",amount:15}],\
+        unlock_cost:[{type:"coal",amount:120},{type:"copper",amount:60}],\
         regen:[\
           {lvl:0,value:225,cost:[{type:"wood",amount:240},{type:"copper",amount:100}]},\
           {lvl:1,value:180,cost:[{type:"coal",amount:300}]},\
@@ -71,23 +71,27 @@ data modify storage data const.resource set value {\
         ]\
       },\
       emerald: {item:"deepslate_emerald_ore",\
-        unlock_cost:[{type:"wood",amount:400},{type:"iron",amount:40},{type:"copper",amount:40}],\
+        unlock_cost:[{type:"coal",amount:200},{type:"copper",amount:100}],\
         regen:[\
-          {lvl:0,value:700},\
+          {lvl:0,value:490},\
           {lvl:1,value:420},\
-          {lvl:2,value:220},\
-          {lvl:3,value:70},\
-          {lvl:4,value:10}\
+          {lvl:2,value:340},\
+          {lvl:3,value:270},\
+          {lvl:4,value:210},\
+          {lvl:5,value:160},\
+          {lvl:6,value:120}\
         ]\
       },\
       lapis: {item:"deepslate_lapis_ore",\
-        unlock_cost:[{type:"wood",amount:320},{type:"copper",amount:50},{type:"coal",amount:50}],\
+        unlock_cost:[{type:"iron",amount:120},{type:"copper",amount:160}],\
         regen:[\
-          {lvl:0,value:600},\
-          {lvl:1,value:380},\
-          {lvl:2,value:180},\
-          {lvl:3,value:60},\
-          {lvl:4,value:10}\
+          {lvl:0,value:420},\
+          {lvl:1,value:360},\
+          {lvl:2,value:300},\
+          {lvl:3,value:240},\
+          {lvl:4,value:190},\
+          {lvl:5,value:145},\
+          {lvl:6,value:110}\
         ]\
       },\
       heat: {item:"magma_block",\
@@ -98,13 +102,12 @@ data modify storage data const.resource set value {\
       },\
       information: {item:"amethyst_shard"},\
       time: {item:"echo_shard"},\
-      world_eye: {item:"ender_eye"},\
       yellow: {item:"yellow_glazed_terracotta",\
         regen:[\
           {lvl:0,value:1200,cost:[{type:"information",amount:4}]},\
           {lvl:1,value:800,cost:[{type:"information",amount:8},{type:"time",amount:1}]},\
           {lvl:2,value:500,cost:[{type:"information",amount:16},{type:"time",amount:3}]},\
-          {lvl:3,value:300,cost:[{type:"information",amount:32},{type:"time",amount:6},{type:"world_eye",amount:1}]},\
+          {lvl:3,value:300,cost:[{type:"information",amount:32},{type:"time",amount:6}]},\
           {lvl:4,value:160}\
         ]\
       },\
@@ -113,24 +116,20 @@ data modify storage data const.resource set value {\
           {lvl:0,value:1400,cost:[{type:"information",amount:4}]},\
           {lvl:1,value:900,cost:[{type:"information",amount:8},{type:"time",amount:1}]},\
           {lvl:2,value:600,cost:[{type:"information",amount:16},{type:"time",amount:3}]},\
-          {lvl:3,value:350,cost:[{type:"information",amount:32},{type:"time",amount:6},{type:"world_eye",amount:1}]},\
+          {lvl:3,value:350,cost:[{type:"information",amount:32},{type:"time",amount:6}]},\
           {lvl:4,value:180}\
         ]\
       }\
 }
 
-# -----------------------------------------------------------------------------
-# 로드 시 기존 세이브 보정 및 도구 규칙 확장
-# -----------------------------------------------------------------------------
+# --- 로드 시 기존 세이브 보정 및 도구 규칙 확장 ---
 execute unless score #yellow material = #yellow material run scoreboard players set #yellow material 0
 execute unless score #blue material = #blue material run scoreboard players set #blue material 0
 execute unless score #yellow_regen_lvl upgrade = #yellow_regen_lvl upgrade run scoreboard players set #yellow_regen_lvl upgrade 0
 execute unless score #blue_regen_lvl upgrade = #blue_regen_lvl upgrade run scoreboard players set #blue_regen_lvl upgrade 0
 
-# Active resource balance values
-# -----------------------------------------------------------------------------
-# 초반 자원 밸런스 상수
-# -----------------------------------------------------------------------------
+# 현재 적용되는 자원 밸런스 값
+# --- 초반 자원 밸런스 상수 ---
 # 오버월드 광산 자원 7종의 초기 재생 쿨타임은 최대 500틱으로 제한한다.
 
 # 돌
@@ -176,12 +175,10 @@ data modify storage data const.resource.emerald.regen[{lvl:0}].value set value 4
 data modify storage data const.resource.lapis.regen[{lvl:0}].value set value 420
 
 # 에메랄드 / 청금석 해금 비용
-data modify storage data const.resource.emerald.unlock_cost set value [{type:"coal",amount:100},{type:"copper",amount:50},{type:"wood",amount:300}]
-data modify storage data const.resource.lapis.unlock_cost set value [{type:"iron",amount:40},{type:"copper",amount:80},{type:"wood",amount:400}]
+data modify storage data const.resource.emerald.unlock_cost set value [{type:"coal",amount:200},{type:"copper",amount:100}]
+data modify storage data const.resource.lapis.unlock_cost set value [{type:"iron",amount:120},{type:"copper",amount:160}]
 
-# -----------------------------------------------------------------------------
-# 오버월드 자원 비용 진행 보정
-# -----------------------------------------------------------------------------
+# --- 오버월드 자원 비용 진행 보정 ---
 # 나무/돌 자체의 재생 및 상점 업그레이드 비용은 변경하지 않는다.
 # 그 외 재생 업그레이드는 나무+돌 -> 석탄 -> 구리 순서로 상위 자원을 추가한다.
 
@@ -189,28 +186,28 @@ data modify storage data const.resource.lapis.unlock_cost set value [{type:"iron
 data modify storage data const.resource.coal.regen[{lvl:0}].cost set value [{type:"wood",amount:120},{type:"stone",amount:60}]
 data modify storage data const.resource.coal.regen[{lvl:1}].cost set value [{type:"wood",amount:300},{type:"stone",amount:150}]
 data modify storage data const.resource.coal.regen[{lvl:2}].cost set value [{type:"wood",amount:1000},{type:"stone",amount:500},{type:"coal",amount:25}]
-data modify storage data const.resource.coal.regen[{lvl:3}].cost set value [{type:"wood",amount:2000},{type:"stone",amount:1000},{type:"coal",amount:500},{type:"copper",amount:100}]
+data modify storage data const.resource.coal.regen[{lvl:3}].cost set value [{type:"wood",amount:2500},{type:"stone",amount:1500}]
 
 # 구리
 data modify storage data const.resource.copper.regen[{lvl:0}].cost set value [{type:"wood",amount:160},{type:"stone",amount:60}]
 data modify storage data const.resource.copper.regen[{lvl:1}].cost set value [{type:"wood",amount:400},{type:"stone",amount:200}]
 data modify storage data const.resource.copper.regen[{lvl:2}].cost set value [{type:"wood",amount:1000},{type:"stone",amount:500},{type:"coal",amount:200}]
-data modify storage data const.resource.copper.regen[{lvl:3}].cost set value [{type:"wood",amount:2000},{type:"stone",amount:1000},{type:"coal",amount:350},{type:"copper",amount:100}]
+data modify storage data const.resource.copper.regen[{lvl:3}].cost set value [{type:"stone",amount:2500},{type:"coal",amount:950}]
 
 # 철
 data modify storage data const.resource.iron.regen[{lvl:0}].cost set value [{type:"wood",amount:240},{type:"stone",amount:120}]
 data modify storage data const.resource.iron.regen[{lvl:1}].cost set value [{type:"wood",amount:600},{type:"stone",amount:300}]
 data modify storage data const.resource.iron.regen[{lvl:2}].cost set value [{type:"wood",amount:2000},{type:"stone",amount:1000},{type:"coal",amount:250}]
-data modify storage data const.resource.iron.regen[{lvl:3}].cost set value [{type:"wood",amount:4000},{type:"stone",amount:2000},{type:"coal",amount:1000},{type:"copper",amount:250}]
+data modify storage data const.resource.iron.regen[{lvl:3}].cost set value [{type:"coal",amount:5000},{type:"copper",amount:1500}]
 
 # 금
 data modify storage data const.resource.gold.regen[{lvl:0}].cost set value [{type:"wood",amount:300},{type:"stone",amount:150}]
 data modify storage data const.resource.gold.regen[{lvl:1}].cost set value [{type:"wood",amount:1000},{type:"stone",amount:500}]
 data modify storage data const.resource.gold.regen[{lvl:2}].cost set value [{type:"wood",amount:3000},{type:"stone",amount:1500},{type:"coal",amount:500}]
-data modify storage data const.resource.gold.regen[{lvl:3}].cost set value [{type:"wood",amount:6000},{type:"stone",amount:3000},{type:"coal",amount:1000},{type:"copper",amount:500}]
+data modify storage data const.resource.gold.regen[{lvl:3}].cost set value [{type:"iron",amount:8000},{type:"gold",amount:1500}]
 
 # 다이아몬드
 data modify storage data const.resource.diamond.regen[{lvl:0}].cost set value [{type:"wood",amount:400},{type:"stone",amount:200}]
 data modify storage data const.resource.diamond.regen[{lvl:1}].cost set value [{type:"wood",amount:1500},{type:"stone",amount:750}]
 data modify storage data const.resource.diamond.regen[{lvl:2}].cost set value [{type:"wood",amount:4000},{type:"stone",amount:2000},{type:"coal",amount:750}]
-data modify storage data const.resource.diamond.regen[{lvl:3}].cost set value [{type:"wood",amount:8000},{type:"stone",amount:4000},{type:"coal",amount:1500},{type:"copper",amount:750}]
+data modify storage data const.resource.diamond.regen[{lvl:3}].cost set value [{type:"iron",amount:12000},{type:"diamond",amount:2500}]

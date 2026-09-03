@@ -1,4 +1,4 @@
-# Macro args: id, name, title, color, unit, bank_max, trigger, withdraw_trigger
+# 매크로 인수: id, name, title, color, unit, bank_max, trigger, withdraw_trigger
 function meta/sync
 $function shop/third/storage_prepare {id:"$(id)"}
 data modify storage data tmp.third_shop.button set value {text:"[ 확장 완료 ]",color:"dark_gray"}

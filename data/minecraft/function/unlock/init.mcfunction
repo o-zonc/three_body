@@ -3,6 +3,8 @@
 # 0 = 미해금, 1 = 해금
 
 scoreboard objectives add unlock dummy
+scoreboard objectives add sidebar_visible dummy
+scoreboard players reset * sidebar_visible
 
 # 일반 자원
 scoreboard players set #wood unlock 0
@@ -18,4 +20,3 @@ scoreboard players set #lapis unlock 0
 # 특수 자원
 scoreboard players set #heat unlock 0
 scoreboard players set #cold unlock 0
-scoreboard players set #world_eye unlock 0

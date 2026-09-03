@@ -1,6 +1,6 @@
 # 자동 세공 1회
-# Macro args: id, reward
-# Lv.1 초기형은 철 2 + 구리 2, Lv.2 완성형은 철 1 + 구리 1을 소비합니다.
+# 매크로 인수: id, reward
+# Lv.1 초기형은 철 2 + 구리 2, Lv.2 완성형은 철 1 + 구리 1을 소비한다.
 scoreboard players set #jewel_auto_success tmp 0
 scoreboard players set #jewel_auto_iron_cost tmp 2
 scoreboard players set #jewel_auto_copper_cost tmp 2

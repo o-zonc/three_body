@@ -1,4 +1,4 @@
-# 얼어붙은 세계 엘리베이터는 jump edge 기준값을 갱신하기 전에 먼저 처리합니다.
+# 얼어붙은 세계 엘리베이터는 jump edge 기준값을 갱신하기 전에 먼저 처리한다.
 execute in minecraft:frozen run function frozen/elevator/tick
 
 # 3층 엘리베이터
@@ -7,15 +7,15 @@ execute in minecraft:frozen run function frozen/elevator/tick
 # 1층 바닥: 24 -64 -24 / 플레이어: Y=-63
 # 2층 바닥: 24 -50 -24 / 플레이어: Y=-49
 # 3층 바닥: 24 -42 -24 / 플레이어: Y=-41
-# Shift는 tick에서 생성되는 edge tag를 사용합니다.
-# Jump는 minecraft.custom:minecraft.jump 통계의 증가를 감지합니다.
+# Shift는 tick에서 생성되는 edge tag를 사용한다.
+# Jump는 minecraft.custom:minecraft.jump 통계의 증가를 감지한다.
 
-# 엘리베이터는 오버월드 전용입니다. 다른 차원에서는 점프 기준값만 동기화하고 나머지 영역 검사를 생략합니다.
+# 엘리베이터는 오버월드 전용이다. 다른 차원에서는 점프 기준값만 동기화하고 나머지 영역 검사를 생략한다.
 execute unless score #GLOBAL current_dim matches 0 as @a run scoreboard players operation @s elevator_jump_prev = @s elevator_jump
 execute unless score #GLOBAL current_dim matches 0 run return 0
 
-# 현재 층을 먼저 판정합니다.
-# 이동 후 같은 tick에 다음 층으로 연속 이동하는 것을 방지하기 위해 현재 층을 임시 태그로 고정한 뒤 이동합니다.
+# 현재 층을 먼저 판정한다.
+# 이동 후 같은 tick에 다음 층으로 연속 이동하는 것을 방지하기 위해 현재 층을 임시 태그로 고정한 뒤 이동한다.
 tag @a remove elevator_floor_1
 tag @a remove elevator_floor_2
 tag @a remove elevator_floor_3

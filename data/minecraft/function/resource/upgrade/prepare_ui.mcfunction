@@ -1,4 +1,4 @@
-# Macro args: id, trigger
+# 매크로 인수: id, trigger
 $execute unless score #$(id)_regen_lvl upgrade = #$(id)_regen_lvl upgrade run scoreboard players set #$(id)_regen_lvl upgrade 0
 $execute store result storage data tmp.resource.upgrade_ui.lvl int 1 run scoreboard players get #$(id)_regen_lvl upgrade
 $data modify storage data tmp.resource.upgrade_ui.id set value "$(id)"

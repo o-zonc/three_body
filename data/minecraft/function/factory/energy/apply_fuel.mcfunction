@@ -1,4 +1,4 @@
-# Macro args: id, fuel. 모든 연료 할인을 100배 정밀도로 누적한 뒤 반올림한다.
+# 매크로 인수: id, fuel. 모든 연료 할인을 100배 정밀도로 누적한 뒤 반올림한다.
 $scoreboard players set #factory_energy_fuel tmp $(fuel)
 scoreboard players set #factory_energy_scale tmp 100
 scoreboard players operation #factory_energy_fuel tmp *= #factory_energy_scale tmp

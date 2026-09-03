@@ -16,5 +16,4 @@ execute if score #yellow unlock matches 1 if entity @s[type=interaction,tag=prod
 execute if score #blue unlock matches 1 if entity @s[type=interaction,tag=product,tag=frozen] on target run function resource/material/blue/ui/info
 execute if entity @s[type=interaction,tag=product,tag=information] on target run function resource/material/information/ui/interact
 execute if entity @s[type=interaction,tag=product,tag=time] on target run function resource/material/time/ui/interact
-execute if entity @s[type=interaction,tag=product,tag=world_eye] on target run function resource/material/world_eye/ui/interact
 execute if entity @s[type=interaction,tag=product,tag=end] on target run function resource/material/end/ui/interact

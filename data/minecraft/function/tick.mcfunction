@@ -1,5 +1,5 @@
 # 플레이어 상태
-# shift는 웅크리기 시작 순간에만 1틱 동안 유지되는 edge 신호입니다.
+# shift는 웅크리기 시작 순간에만 1틱 동안 유지되는 edge 신호이다.
 tag @a remove shift
 tag @a remove unavailable_feedback_played
 execute as @a if predicate player/sneaking unless score @s sneaking_prev matches 1 run tag @s add shift
@@ -9,7 +9,7 @@ execute as @a if predicate player/sneaking run scoreboard players set @s sneakin
 execute as @a unless predicate player/sneaking run scoreboard players set @s sneaking_prev 0
 
 # 차원 이동기 API
-# 엘리베이터가 플레이어를 옮기기 전에 승강장 내부 사용 제한을 먼저 판정합니다.
+# 엘리베이터가 플레이어를 옮기기 전에 승강장 내부 사용 제한을 먼저 판정한다.
 function mover/tick
 
 # 엘리베이터
@@ -23,7 +23,7 @@ function crying/discovery_tick
 
 # 자원 API
 function var_init/runtime
-# 메타 원장 동기화는 5틱마다, 레거시 자원 상한 안전망은 20틱마다 실행합니다.
+# 메타 원장 동기화는 5틱마다, 레거시 자원 상한 안전망은 20틱마다 실행한다.
 function meta/tick
 function resource/limit_tick
 
@@ -46,8 +46,8 @@ function frozen/chaos/tick
 # 메마른 세계 난세기 환경 효과
 function dried/chaos/tick
 
-# trigger 핸들러는 실제 입력이 들어온 플레이어에게만 실행합니다.
-# 기존 플레이어의 trigger_init 값이 남아 있어도 UI 버튼을 항상 사용할 수 있도록 활성 상태를 복구합니다.
+# trigger 핸들러는 실제 입력이 들어온 플레이어에게만 실행한다.
+# 기존 플레이어의 trigger_init 값이 남아 있어도 UI 버튼을 항상 사용할 수 있도록 활성 상태를 복구한다.
 scoreboard players enable @a[tag=player] upgrade_trigger
 scoreboard players enable @a[tag=player] shop_trigger
 execute as @a[tag=player,scores={unlock_trigger=1..}] run function resource/unlock_trigger

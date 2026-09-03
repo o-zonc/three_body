@@ -1,3 +1,3 @@
-# Macro arg: id
+# 매크로 인수: id
 $function factory/cache {id:"$(id)"}
 $scoreboard players operation #$(id) factory_timer = #$(id)_factory_interval tmp

@@ -1,4 +1,4 @@
-# 시공간 붕괴 실험의 후속 손실을 감당하지 못하면 입자가속기가 장기 고장 상태가 됩니다.
+# 시공간 붕괴 실험의 후속 손실을 감당하지 못하면 입자가속기가 장기 고장 상태가 된다.
 scoreboard players set #GLOBAL accelerator_disabled 1
 execute store result score #GLOBAL accelerator_repair_timer run data get storage data const.accelerator.repair.automatic_time
 scoreboard players set #GLOBAL experiment_cooldown 0

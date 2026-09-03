@@ -1,4 +1,4 @@
-# 개발용 인트로 우회도 이후 접속에서 다시 restart되지 않도록 완료 처리합니다.
+# 개발용 인트로 우회도 이후 접속에서 다시 restart되지 않도록 완료 처리한다.
 tag @a add intro_seen
 
 function common/move

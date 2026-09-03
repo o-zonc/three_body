@@ -1,5 +1,5 @@
-# Macro args: id, unlock, name, color, purchase, toggle
-$execute unless score #$(unlock) unlock matches 1 run title @s actionbar {text:"$(name) 자원을 먼저 해금해야 합니다.",color:"red",italic:true}
+# 매크로 인수: id, unlock, name, color, purchase, toggle
+$execute unless entity @a[tag=accelerator_experiment_running] unless score #$(unlock) unlock matches 1 run title @s actionbar {text:"$(name) 자원을 먼저 해금해야 합니다.",color:"red",italic:true}
 $execute unless score #$(unlock) unlock matches 1 run return 0
 
 # 자원은 해금됐지만 공장이 아직 건설되지 않았다면 상세 성능을 숨기고 건설 안내만 표시한다.

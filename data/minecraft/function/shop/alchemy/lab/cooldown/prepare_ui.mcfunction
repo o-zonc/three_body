@@ -1,5 +1,5 @@
 # 마법 연구소 쿨타임 감소 UI 준비
-# Macro args: id, rate
+# 매크로 인수: id, rate
 # 입력: #$(id)_cooldown tmp = 최종 쿨타임, #regen_base_cooldown tmp = 모든 외부 보정 적용 전 쿨타임
 $scoreboard players operation #$(id)_base_cooldown tmp = #regen_base_cooldown tmp
 $data modify storage data tmp.alchemy_lab_cooldown_ui.$(id) set value {text:""}

@@ -1,23 +1,17 @@
-# ==========================================
 # 보스바 갱신
-# ==========================================
-# 상태 변경은 각 시스템 tick에서 처리하고, 이 파일은 표시만 담당합니다.
-# 차원 판정은 이동 시스템이 유지하는 #GLOBAL current_dim을 사용합니다.
+# 상태 변경은 각 시스템 tick에서 처리하고, 이 파일은 표시만 담당한다.
+# 차원 판정은 이동 시스템이 유지하는 #GLOBAL current_dim을 사용한다.
 
-# 엔딩의 검은 화면 연출 중에는 보스바가 다시 나타나지 않게 합니다.
+# 엔딩의 검은 화면 연출 중에는 보스바가 다시 나타나지 않게 한다.
 execute if entity @a[tag=ending_active] run return 0
 
-# ==========================================
-# 0. 양자 보호막
-# ==========================================
+# --- 0. 양자 보호막 ---
 execute store result bossbar shield_charge value run scoreboard players get #GLOBAL shield_charge
 bossbar set shield_charge players @a
 execute if score #GLOBAL shield_charge matches 1.. run bossbar set shield_charge visible true
 execute unless score #GLOBAL shield_charge matches 1.. run bossbar set shield_charge visible false
 
-# ==========================================
-# 1. 얼음 차원 (frozen, current_dim=2)
-# ==========================================
+# --- 1. 얼음 차원 (frozen, current_dim=2) ---
 execute store result bossbar bossbar_frozen value run scoreboard players get #GLOBAL timer_frozen
 bossbar set bossbar_frozen visible false
 bossbar set bossbar_frozen players @a
@@ -31,7 +25,7 @@ execute if score #GLOBAL current_dim matches 2 if score #GLOBAL state_frozen mat
 execute if score #GLOBAL current_dim matches 2 if score #GLOBAL user_disaster matches 1 run bossbar set bossbar_frozen name {"text":"[ 얼어붙은 세계 ] 지속 포기","color":"white"}
 execute if score #GLOBAL current_dim matches 2 if score #GLOBAL user_disaster matches 1 run bossbar set bossbar_frozen color white
 
-# 지하 미로 이벤트 중에는 시대 보스바 대신 중심까지의 격자 거리를 표시합니다.
+# 지하 미로 이벤트 중에는 시대 보스바 대신 중심까지의 격자 거리를 표시한다.
 bossbar set bossbar_frozen_maze players @a
 bossbar set bossbar_frozen_maze visible false
 execute if score #GLOBAL current_dim matches 2 if score #frozen_maze_active var matches 1 run bossbar set bossbar_frozen_maze visible true
@@ -42,9 +36,7 @@ execute if score #frozen_maze_active var matches 1 if score #frozen_maze_cleared
 execute if score #frozen_maze_active var matches 1 if score #frozen_maze_cleared var matches 1 run bossbar set bossbar_frozen_maze color green
 execute if score #frozen_maze_active var matches 1 if score #frozen_maze_cleared var matches 1 run bossbar set bossbar_frozen_maze value 68
 
-# ==========================================
-# 2. 건조 차원 (dried, current_dim=1)
-# ==========================================
+# --- 2. 건조 차원 (dried, current_dim=1) ---
 execute store result bossbar bossbar_dried value run scoreboard players get #GLOBAL timer_dried
 bossbar set bossbar_dried visible false
 bossbar set bossbar_dried players @a
@@ -58,9 +50,7 @@ execute if score #GLOBAL current_dim matches 1 if score #GLOBAL state_dried matc
 execute if score #GLOBAL current_dim matches 1 if score #GLOBAL user_disaster matches 1 run bossbar set bossbar_dried name {"text":"[ 메마른 세계 ] 지속 포기","color":"white"}
 execute if score #GLOBAL current_dim matches 1 if score #GLOBAL user_disaster matches 1 run bossbar set bossbar_dried color white
 
-# ==========================================
-# 3. 오버월드 (current_dim=0)
-# ==========================================
+# --- 3. 오버월드 (current_dim=0) ---
 execute store result bossbar bossbar_overworld value run scoreboard players get #GLOBAL timer_overworld
 bossbar set bossbar_overworld visible false
 bossbar set bossbar_overworld players @a

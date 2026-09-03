@@ -2,7 +2,7 @@
 # 1번째 자리: 자리 수 유지용 숫자
 # 2번째 자리: 상점 종류 - 자원 상점 1, 결정 상점 2
 # 3~4번째 자리: 업그레이드 요소 순서
-# 이 함수는 tick에서 shop_trigger 값이 들어온 플레이어를 @s로 지정한 뒤 호출합니다.
+# 이 함수는 tick에서 shop_trigger 값이 들어온 플레이어를 @s로 지정한 뒤 호출한다.
 
 # 자원 상점 (11XX)
 execute if score @s shop_trigger matches 1101 run function resource/shop/purchase {id:"wood",unlock:"wood",name:"나무",color:"yellow",trigger:1101,unit:"배"}
@@ -13,8 +13,8 @@ execute if score @s shop_trigger matches 1105 run function resource/shop/purchas
 execute if score @s shop_trigger matches 1106 run function resource/shop/purchase {id:"copper",unlock:"copper",name:"구리",color:"gold",trigger:1106,unit:"배"}
 execute if score @s shop_trigger matches 1107 run function resource/shop/purchase {id:"gold",unlock:"gold",name:"금",color:"gold",trigger:1107,unit:"배"}
 execute if score @s shop_trigger matches 1108 run function resource/shop/purchase {id:"diamond",unlock:"diamond",name:"다이아몬드",color:"aqua",trigger:1108,unit:"배"}
-execute if score @s shop_trigger matches 1109 run function resource/shop/purchase {id:"emerald",unlock:"emerald",name:"에메랄드",color:"green",trigger:1109,unit:"배"}
-execute if score @s shop_trigger matches 1110 run function resource/shop/purchase {id:"lapis",unlock:"lapis",name:"청금석",color:"blue",trigger:1110,unit:"배"}
+execute if score @s shop_trigger matches 1109 run function resource/shop/purchase {id:"emerald",unlock:"emerald",name:"에메랄드",color:"green",trigger:1109,unit:"틱"}
+execute if score @s shop_trigger matches 1110 run function resource/shop/purchase {id:"lapis",unlock:"lapis",name:"청금석",color:"blue",trigger:1110,unit:"틱"}
 
 # 엘리베이터 제어 단말 (14XX)
 execute if score @s shop_trigger matches 1401 run function elevator/purchase_unlock
@@ -64,8 +64,6 @@ execute if score @s shop_trigger matches 1816 run function shop/second/purchase 
 # 자원 상점 3층 / 여명 상호작용 (182X~183X)
 execute if score @s shop_trigger matches 1821 run function shop/third/storage_purchase {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:2000,trigger:1821,withdraw_trigger:1825}
 execute if score @s shop_trigger matches 1822 run function shop/third/storage_purchase {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:1000,trigger:1822,withdraw_trigger:1826}
-execute if score @s shop_trigger matches 1823 run function shop/third/world_eye/purchase
-execute if score @s shop_trigger matches 1824 run function shop/third/world_eye/synthesize
 execute if score @s shop_trigger matches 1825 run function meta/manual_withdraw {id:"information",name:"정보",color:"light_purple",unit:"조각",bank_max:2000,trigger:1821,withdraw_trigger:1825}
 execute if score @s shop_trigger matches 1826 run function meta/manual_withdraw {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:1000,trigger:1822,withdraw_trigger:1826}
 execute if score @s shop_trigger matches 1827 run function shop/third/expansion/information
@@ -121,6 +119,6 @@ execute if score @s shop_trigger matches 2102 run function crying/vault_open
 execute if score @s shop_trigger matches 2111 run function shop/hole/collect
 execute if score @s shop_trigger matches 2112 run function shop/hole/upgrade
 
-# 처리한 플레이어만 초기화하고 다음 /trigger 입력을 허용합니다.
+# 처리한 플레이어만 초기화하고 다음 /trigger 입력을 허용한다.
 scoreboard players reset @s shop_trigger
 scoreboard players enable @s shop_trigger

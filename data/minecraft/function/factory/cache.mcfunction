@@ -1,4 +1,4 @@
-# Macro args: id. Store the final production settings; refresh only when a related state changes.
+# 매크로 인수: id. Store the final production settings; refresh only when a related state changes.
 $execute store result storage data tmp.factory.cache.lvl int 1 run scoreboard players get #$(id) factory_level
 $data modify storage data tmp.factory.cache.id set value "$(id)"
 function factory/read with storage data tmp.factory.cache

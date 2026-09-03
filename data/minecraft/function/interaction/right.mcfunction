@@ -60,15 +60,14 @@ execute if entity @s[tag=shop,tag=gold] on target run function shop/second/ui {i
 execute if entity @s[tag=shop,tag=diamond] on target run function shop/second/ui {id:"diamond",name:"다이아몬드 생산",color:"aqua",effect:"기본 생산량 보너스",unit:"개",trigger:1814}
 execute if entity @s[tag=shop,tag=special] on target run function shop/second/ui {id:"special",name:"극한 환경 수급",color:"light_purple",effect:"열기·냉기 수급량 보너스",unit:"개",trigger:1815}
 execute if entity @s[tag=shop,tag=get] on target run function shop/second/ui {id:"get",name:"기초 생산 공정",color:"dark_aqua",effect:"모든 기본 생산량 보너스",unit:"개",trigger:1816}
-# 노랑/파랑 변환 단말은 중입자 충돌 발전과제 이전에는 UI 함수가 조용히 종료합니다.
+# 노랑/파랑 변환 단말은 중입자 충돌 발전과제 이전에는 UI 함수가 조용히 종료한다.
 execute if entity @s[tag=shop,tag=yellow] on target run function shop/color/yellow_ui
 execute if entity @s[tag=shop,tag=blue] on target run function shop/color/blue_ui
 execute if entity @s[tag=shop,tag=time,tag=!polarnight] on target run function shop/third/storage_ui {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:1000,trigger:1822,withdraw_trigger:1826}
 execute if entity @s[tag=shop,tag=time,tag=polarnight] on target run function shop/third/storage_ui {id:"time",name:"시간",title:"보관소",color:"dark_aqua",unit:"조각",bank_max:1000,trigger:1822,withdraw_trigger:1826}
 execute if entity @s[tag=shop,tag=information,tag=!polarnight] on target run function shop/third/storage_ui {id:"information",name:"정보",title:"보관소",color:"light_purple",unit:"조각",bank_max:2000,trigger:1821,withdraw_trigger:1825}
 execute if entity @s[tag=shop,tag=information,tag=polarnight] on target run function shop/third/storage_ui {id:"information",name:"정보",title:"보관소",color:"light_purple",unit:"조각",bank_max:2000,trigger:1821,withdraw_trigger:1825}
-execute if entity @s[tag=shop,tag=world_eye] on target run function shop/third/world_eye/ui
-execute if entity @s[tag=shop,tag=!check,tag=!factory,tag=!heat,tag=!gold,tag=!cold,tag=!diamond,tag=!special,tag=!get,tag=!yellow,tag=!blue,tag=!time,tag=!information,tag=!world_eye,tag=!era,tag=!alchemy,tag=!elevator,tag=!observatory,tag=!item,tag=!entrance,tag=!frozen,tag=!vault,tag=!hole] run function resource/shop/interact
+execute if entity @s[tag=shop,tag=!check,tag=!factory,tag=!heat,tag=!gold,tag=!cold,tag=!diamond,tag=!special,tag=!get,tag=!yellow,tag=!blue,tag=!time,tag=!information,tag=!era,tag=!alchemy,tag=!elevator,tag=!observatory,tag=!item,tag=!entrance,tag=!frozen,tag=!vault,tag=!hole] run function resource/shop/interact
 execute if entity @s[tag=factory,tag=!shop] run function factory/interact
 execute if entity @s[tag=factory,tag=accelerator] on target run function accelerator/ui
 execute if entity @s[tag=factory,tag=shield] on target run function shield/ui

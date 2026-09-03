@@ -1,4 +1,4 @@
-# 발굴 우선 탐색 모드의 차원별 가중치를 적용합니다.
+# 발굴 우선 탐색 모드의 차원별 가중치를 적용한다.
 # #dried_relic_focus var: 1 overworld, 2 dried, 3 frozen
 execute store result score #dried_relic_probability tmp run random value 0..99
 

@@ -1,4 +1,4 @@
-# Macro args: id, name, color
+# 매크로 인수: id, name, color
 $execute unless score #$(id) factory_unlocked matches 1 run data modify storage data tmp.factory.check_lines append value {text:"  • $(name)  🔒 해금되지 않음!\n",color:"red",bold:false}
 $execute if score #$(id) factory_unlocked matches 1 if score #$(id) factory_status matches 0 run data modify storage data tmp.factory.check_lines append value {text:"  • $(name)",color:"$(color)",bold:false,extra:[{text:"  Lv.",color:"dark_gray"},{score:{name:"#$(id)",objective:"factory_level"},color:"white"},{text:"  ■ 정지\n",color:"gray"}]}
 $execute if score #$(id) factory_unlocked matches 1 if score #$(id) factory_status matches 1 run data modify storage data tmp.factory.check_lines append value {text:"  • $(name)",color:"$(color)",bold:false,extra:[{text:"  Lv.",color:"dark_gray"},{score:{name:"#$(id)",objective:"factory_level"},color:"white"},{text:"  ▶ 가동 중\n",color:"green"}]}

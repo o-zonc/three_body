@@ -1,4 +1,4 @@
-# Macro args: id
+# 매크로 인수: id
 scoreboard players set #material_max tmp 999999999
 execute if score #material_add_value tmp matches ..0 run return 0
 function resource/catalyst/apply_multiplier

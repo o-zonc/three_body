@@ -1,7 +1,7 @@
 # 공허의 구멍 UI
-# 우는 흑요석 비밀 금고가 열린 뒤 접근 가능한 극야 전용 후반 상호작용입니다.
+# 우는 흑요석 비밀 금고가 열린 뒤 접근 가능한 극야 전용 후반 상호작용이다.
 execute unless score #GLOBAL current_dim matches 3 run return 0
-execute unless score #GLOBAL reckoning_ready matches 1.. run title @s actionbar {text:"문명 정산이 끝나 공허의 구멍이 닫혔습니다.",color:"dark_gray",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #GLOBAL reckoning_ready matches 1.. run title @s actionbar {text:"문명 정산이 끝나 공허의 구멍이 닫혔습니다.",color:"dark_gray",italic:true}
 execute unless score #GLOBAL reckoning_ready matches 1.. run return 0
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 
@@ -24,16 +24,19 @@ execute if score #hole_claims var matches 1 run scoreboard players set #hole_tim
 execute if score #hole_claims var matches 2 run scoreboard players set #hole_info_cost tmp 64
 execute if score #hole_claims var matches 2 run scoreboard players set #hole_time_cost tmp 4
 
-# 균열 확장 비용: Lv.1은 세계의 눈 16개, Lv.2는 96개를 요구합니다.
-scoreboard players set #hole_upgrade_cost tmp 0
-execute if score #hole_level upgrade matches 0 run scoreboard players set #hole_upgrade_cost tmp 16
-execute if score #hole_level upgrade matches 1 run scoreboard players set #hole_upgrade_cost tmp 96
+# 균열 확장 비용은 후반 보관소의 정보/시간을 사용한다.
+scoreboard players set #hole_upgrade_info_cost tmp 0
+scoreboard players set #hole_upgrade_time_cost tmp 0
+execute if score #hole_level upgrade matches 0 run scoreboard players set #hole_upgrade_info_cost tmp 48
+execute if score #hole_level upgrade matches 0 run scoreboard players set #hole_upgrade_time_cost tmp 12
+execute if score #hole_level upgrade matches 1 run scoreboard players set #hole_upgrade_info_cost tmp 192
+execute if score #hole_level upgrade matches 1 run scoreboard players set #hole_upgrade_time_cost tmp 48
 
 # 버튼 준비
 data modify storage data tmp.hole.claim_button set value {text:"§8[ 이번 문명 수급 완료 ]"}
 data modify storage data tmp.hole.upgrade_button set value {text:"§8[ 최대 단계 ]"}
 execute if score #hole_claims var < #hole_max_claims tmp run data modify storage data tmp.hole.claim_button set value {text:"[ 흑요석 수급 ]",color:"dark_purple",bold:true,hover_event:{action:"show_text",value:["",{text:"정보 ",color:"light_purple"},{score:{name:"#hole_info_cost",objective:"tmp"},color:"light_purple"},{text:"조각",color:"light_purple"},{text:", ",color:"gray"},{text:"시간 ",color:"dark_aqua"},{score:{name:"#hole_time_cost",objective:"tmp"},color:"dark_aqua"},{text:"조각",color:"dark_aqua"},{text:"을 소모합니다.",color:"gray"}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 2111"}}
-execute if score #hole_level upgrade matches 0..1 run data modify storage data tmp.hole.upgrade_button set value {text:"[ 균열 확장 ]",color:"dark_green",bold:true,hover_event:{action:"show_text",value:["",{text:"세계의 눈 ",color:"dark_green"},{score:{name:"#hole_upgrade_cost",objective:"tmp"},color:"dark_green"},{text:"개",color:"dark_green"},{text:"를 소모해 이번 문명의 수급 가능 횟수를 1회 늘립니다.",color:"gray"}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 2112"}}
+execute if score #hole_level upgrade matches 0..1 run data modify storage data tmp.hole.upgrade_button set value {text:"[ 균열 확장 ]",color:"dark_green",bold:true,hover_event:{action:"show_text",value:["",{text:"정보 ",color:"light_purple"},{score:{name:"#hole_upgrade_info_cost",objective:"tmp"},color:"light_purple"},{text:"조각",color:"light_purple"},{text:", ",color:"gray"},{text:"시간 ",color:"dark_aqua"},{score:{name:"#hole_upgrade_time_cost",objective:"tmp"},color:"dark_aqua"},{text:"조각",color:"dark_aqua"},{text:"을 소모해 이번 문명의 수급 가능 횟수를 1회 늘립니다.",color:"gray"}]},click_event:{action:"run_command",command:"/trigger shop_trigger set 2112"}}
 
 execute at @s run playsound minecraft:block.respawn_anchor.ambient master @s ~ ~ ~ 0.35 0.7
 function util/blank

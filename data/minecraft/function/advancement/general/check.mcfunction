@@ -1,5 +1,5 @@
-# 일반 발전과제 whitelist. root, 개발/test, story progression, 타임머신 분기 완료 항목은 제외합니다.
-# 서로 양립 불가능한 세 분기는 현재 advancement 보유 여부 대신 과거 완료 기록으로 확인합니다.
+# 일반 발전과제 whitelist. root, 개발/test, story progression, 타임머신 분기 완료 항목은 제외한다.
+# 서로 양립 불가능한 세 분기는 현재 advancement 보유 여부 대신 과거 완료 기록으로 확인한다.
 execute unless score #time_machine_ever_yellow var matches 1 run return 0
 execute unless score #time_machine_ever_blue var matches 1 run return 0
 execute unless score #time_machine_ever_green var matches 1 run return 0

@@ -17,7 +17,6 @@ $scoreboard players set #cost_$(id)_heat cost 0
 $scoreboard players set #cost_$(id)_cold cost 0
 $scoreboard players set #cost_$(id)_information cost 0
 $scoreboard players set #cost_$(id)_time cost 0
-$scoreboard players set #cost_$(id)_world_eye cost 0
 $scoreboard players set #cost_$(id)_obsidian cost 0
 $scoreboard players set #cost_$(id)_quartz cost 0
 $scoreboard players set #cost_$(id)_gold cost 0
@@ -38,7 +37,6 @@ $execute if data storage data tmp.cost[{type:"heat"}].amount store result score 
 $execute if data storage data tmp.cost[{type:"cold"}].amount store result score #cost_$(id)_cold cost run data get storage data tmp.cost[{type:"cold"}].amount
 $execute if data storage data tmp.cost[{type:"information"}].amount store result score #cost_$(id)_information cost run data get storage data tmp.cost[{type:"information"}].amount
 $execute if data storage data tmp.cost[{type:"time"}].amount store result score #cost_$(id)_time cost run data get storage data tmp.cost[{type:"time"}].amount
-$execute if data storage data tmp.cost[{type:"world_eye"}].amount store result score #cost_$(id)_world_eye cost run data get storage data tmp.cost[{type:"world_eye"}].amount
 $execute if data storage data tmp.cost[{type:"obsidian"}].amount store result score #cost_$(id)_obsidian cost run data get storage data tmp.cost[{type:"obsidian"}].amount
 $execute if data storage data tmp.cost[{type:"gold"}].amount store result score #cost_$(id)_gold cost run data get storage data tmp.cost[{type:"gold"}].amount
 $execute if data storage data tmp.cost[{type:"broken_cost"}].amount store result score #cost_$(id)_broken_cost cost run data get storage data tmp.cost[{type:"broken_cost"}].amount
@@ -66,7 +64,6 @@ $execute if score #cost_$(id)_heat cost matches 1.. run data modify storage data
 $execute if score #cost_$(id)_cold cost matches 1.. run data modify storage data tmp.cost_text.$(id).cost append value { text: "냉기 ", color:aqua, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_cold",objective:"cost"}}, "개"] }
 $execute if score #cost_$(id)_information cost matches 1.. run data modify storage data tmp.cost_text.$(id).cost append value { text: "정보 ", color:light_purple, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_information",objective:"cost"}}, "조각"] }
 $execute if score #cost_$(id)_time cost matches 1.. run data modify storage data tmp.cost_text.$(id).cost append value { text: "시간 ", color:dark_aqua, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_time",objective:"cost"}}, "조각"] }
-$execute if score #cost_$(id)_world_eye cost matches 1.. run data modify storage data tmp.cost_text.$(id).cost append value { text: "세계의 눈 ", color:dark_green, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_world_eye",objective:"cost"}}, "개"] }
 $execute if score #cost_$(id)_obsidian cost matches 1.. run data modify storage data tmp.cost_text.$(id).cost append value { text: "흑요석 ", color:dark_purple, shadow_color:-16777216, extra: [{score:{name:"#cost_$(id)_obsidian",objective:"cost"}}, "개"] }
 $execute if score #cost_$(id)_gold cost matches 1.. unless score #cost_$(id)_2_1_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "금 ", color:gold, bold:false, extra: [{score:{name:"#cost_$(id)_gold",objective:"cost"}}, "개"], shadow_color:-7710208 }
 $execute if score #cost_$(id)_gold cost matches 1.. if score #cost_$(id)_2_1_effective tmp matches 1 run data modify storage data tmp.cost_text.$(id).cost append value { text: "금 ", color:gold, bold:false, extra: [{score:{name:"#cost_$(id)_gold",objective:"cost"}}, "개 ", { text: "§6🍀", hover_event: { action: "show_text", value: ["", { text: "§6🍀 " }, { text: "발전성 중화", color:aqua, bold:true, shadow_color:-1426128896 }, { text: "§7 효과로 인해 구매 시 금을 소모하지 않습니다.\n§8(요구량은 소지해야 함)" }] } }], shadow_color:-7710208 }

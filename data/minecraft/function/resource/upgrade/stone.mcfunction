@@ -6,12 +6,12 @@ data remove storage data tmp.cost_original
 function resource/material/stone/value/regen_upgrade_cost
 execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
 execute unless data storage data tmp.cost at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
-execute unless data storage data tmp.cost run title @s actionbar {text:"더 이상 업그레이드 할 수 없습니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless data storage data tmp.cost run title @s actionbar {text:"더 이상 업그레이드 할 수 없습니다.",color:"red",italic:true}
 execute unless data storage data tmp.cost run return 0
 
 execute store result score #stone_regen_upgrade_cost_check tmp run function resource/check_cost
 execute unless score #stone_regen_upgrade_cost_check tmp matches 1 at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
-execute unless score #stone_regen_upgrade_cost_check tmp matches 1 run title @s actionbar {text:"재료가 부족합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #stone_regen_upgrade_cost_check tmp matches 1 run title @s actionbar {text:"재료가 부족합니다.",color:"red",italic:true}
 execute unless score #stone_regen_upgrade_cost_check tmp matches 1 run return 0
 
 function resource/cost/take

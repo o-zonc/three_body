@@ -14,14 +14,14 @@ scoreboard players add #heat material 100
 scoreboard players add #diamond material 100
 scoreboard players add #cold material 100
 
-# 정보/시간은 자동 인출이 가능한 보관 임계치까지 올립니다.
-# 이미 임계치를 넘었다면 기존 보관량은 유지합니다.
+# 정보/시간은 자동 인출이 가능한 보관 임계치까지 올린다.
+# 이미 임계치를 넘었다면 기존 보관량은 유지한다.
 execute unless score #information_bank meta matches 500.. run scoreboard players set #information_bank meta 500
 execute unless score #time_bank meta matches 250.. run scoreboard players set #time_bank meta 250
 scoreboard players set #information_auto_withdraw meta 1
 scoreboard players set #time_auto_withdraw meta 1
 
-# 세 증폭기의 공통 메타 자원 누적 비용은 즉시 결제 테스트가 가능하도록 실제 소지 아이템으로도 지급합니다.
+# 세 증폭기의 공통 메타 자원 누적 비용은 즉시 결제 테스트가 가능하도록 실제 소지 아이템으로도 지급한다.
 function meta/information/give_item {amount:72}
 function meta/time/give_item {amount:18}
 function meta/sync

@@ -5,6 +5,6 @@ execute in minecraft:dried run data modify block -8 62 -10 name set value "sulfu
 execute in minecraft:dried run setblock -8 61 -10 redstone_block
 execute in minecraft:dried run setblock -8 61 -10 air
 
-# 중복 생성을 막은 뒤 유리병 디스플레이를 하나만 배치합니다.
+# 중복 생성을 막은 뒤 유리병 디스플레이를 하나만 배치한다.
 execute in minecraft:dried positioned -20 65.5 0 run kill @e[type=minecraft:item_display,distance=..2]
 execute in minecraft:dried run summon minecraft:item_display -20 65.5 0 {item:{count:1,id:"minecraft:glass_bottle"},item_display:"fixed",transformation:{left_rotation:[0.0f,-0.70090926f,0.0f,0.71325046f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.0f,1.0f,1.0f],translation:[0.0f,0.0f,0.0f]}}

@@ -1,10 +1,8 @@
-# ==========================================
 # TEST: 멸망 연출
-# ==========================================
 
-# 현재 플레이어가 있는 차원을 대상으로 멸망을 강제로 시작합니다.
+# 현재 플레이어가 있는 차원을 대상으로 멸망을 강제로 시작한다.
 # 멸망 테스트에서는 해당 차원의 타이머를 0으로 만들어
-# 실제 타이머 만료 직후의 상태를 재현합니다.
+# 실제 타이머 만료 직후의 상태를 재현한다.
 
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run scoreboard players set #GLOBAL state_overworld 2
 execute if entity @a[nbt={Dimension:"minecraft:overworld"}] run scoreboard players set #GLOBAL timer_overworld 0

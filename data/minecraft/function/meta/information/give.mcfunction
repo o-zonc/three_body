@@ -1,5 +1,5 @@
 # 입력: #material_add_value tmp
-# 초록 발전 트리 완성 보상: 모든 정보 획득량을 2배로 적용합니다.
+# 초록 발전 트리 완성 보상: 모든 정보 획득량을 2배로 적용한다.
 execute if entity @s[advancements={0_overworld/25_green_time_machine=true}] run scoreboard players operation #material_add_value tmp += #material_add_value tmp
 execute if score #material_add_value tmp matches ..0 run return 0
 
@@ -34,5 +34,5 @@ execute if score #meta_to_wallet tmp matches 1.. run function meta/information/g
 function meta/sync
 
 # 정보 수량은 이름/수치 모두 같은 자원 색으로 표시한다.
-title @s actionbar [{text:"",italic:false},{text:"정보 +",color:"light_purple"},{score:{name:"#meta_requested",objective:"tmp"},color:"light_purple"},{text:"  (소지 +",color:"dark_gray"},{score:{name:"#meta_to_wallet",objective:"tmp"},color:"light_purple"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#meta_bank_added",objective:"tmp"},color:"light_purple"},{text:")",color:"dark_gray"}]
+execute unless entity @a[tag=accelerator_experiment_running] run title @s actionbar [{text:"",italic:false},{text:"정보 +",color:"light_purple"},{score:{name:"#meta_requested",objective:"tmp"},color:"light_purple"},{text:"  (소지 +",color:"dark_gray"},{score:{name:"#meta_to_wallet",objective:"tmp"},color:"light_purple"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#meta_bank_added",objective:"tmp"},color:"light_purple"},{text:")",color:"dark_gray"}]
 return 1

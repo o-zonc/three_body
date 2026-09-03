@@ -1,4 +1,4 @@
-# Macro args: id, name, color, description, trigger
+# 매크로 인수: id, name, color, description, trigger
 # 영구 구매한 이동기는 다시 결제할 수 없도록 구매 버튼을 비활성화한다.
 $execute if score #$(id)_mover unlock matches 1.. at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 $execute if score #$(id)_mover unlock matches 1.. run function util/blank

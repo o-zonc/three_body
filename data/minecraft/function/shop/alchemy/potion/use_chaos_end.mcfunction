@@ -1,4 +1,4 @@
-# potion_used 스코어와 직전 소지 태그로 섭취가 확인된 뒤 호출됩니다.
+# potion_used 스코어와 직전 소지 태그로 섭취가 확인된 뒤 호출된다.
 scoreboard players set #chaos_end_success tmp 0
 execute if score #GLOBAL current_dim matches 0 if score #GLOBAL state_overworld matches 1 run scoreboard players set #chaos_end_success tmp 1
 execute if score #GLOBAL current_dim matches 0 if score #GLOBAL state_overworld matches 1 run scoreboard players set #GLOBAL state_overworld 0

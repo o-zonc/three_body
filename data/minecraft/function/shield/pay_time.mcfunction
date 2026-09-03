@@ -1,4 +1,4 @@
-# 보호막은 5분마다 플레이어가 소지한 시간 1개를 소비합니다.
+# 보호막은 5분마다 플레이어가 소지한 시간 1개를 소비한다.
 execute store result score #shield_time_paid tmp run clear @s minecraft:echo_shard[minecraft:custom_data~{three_body:{meta:"time"}}] 1
 execute if score #shield_time_paid tmp matches 1 run scoreboard players set #GLOBAL shield_maintenance 6000
 execute if score #shield_time_paid tmp matches 1 run function meta/sync

@@ -19,5 +19,5 @@ function resource/material/cold/tick
 function resource/material/cold/alt_tick
 function resource/environment/tick
 
-# 잠긴 자원과 다른 장소에서 발생한 채굴 통계도 같은 tick 끝에 폐기합니다.
+# 잠긴 자원과 다른 장소에서 발생한 채굴 통계도 같은 tick 끝에 폐기한다.
 function resource/block/reset_mined_stats

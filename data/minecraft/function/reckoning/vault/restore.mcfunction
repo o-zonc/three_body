@@ -117,7 +117,7 @@ execute if score #vault_gem_resources tmp matches 1 run scoreboard players opera
 # 시간 500조각: 정산에서 0으로 초기화한 뒤 이전 채굴 도구 강화 단계를 복원한다.
 execute if score #vault_tool tmp matches 1 run scoreboard players operation #tool upgrade = #vault_tool_level tmp
 
-# 시간 보관소 10조각 이상 보정은 상점·도구 보관 효과를 모두 복원한 뒤 적용한다.
+# 고대 이상 시작의 채굴 도구 최소 단계는 보관 효과를 모두 복원한 뒤 적용한다.
 execute if score #time_bank meta matches 10.. run function reckoning/vault/apply_ancient_start
 
 # clear로 사라진 채굴 도구를 최종 강화 단계에 맞춰 다시 발급한다.

@@ -8,7 +8,7 @@ data remove storage data tmp.alchemy_lab.next_effect
 data remove storage data tmp.alchemy_lab.lock
 scoreboard players set #alchemy_lab_available tmp 1
 
-# 비용: 보석은 소량 게이트로만 사용하고 후반부는 정보/시간으로 제어합니다.
+# 비용: 보석은 소량 게이트로만 사용하고 후반부는 정보/시간으로 제어한다.
 execute if score #alchemy_lab_next tmp matches 1 run data modify storage data tmp.cost set value [{type:"lapis",amount:2},{type:"emerald",amount:1}]
 execute if score #alchemy_lab_next tmp matches 2 run data modify storage data tmp.cost set value [{type:"lapis",amount:3},{type:"emerald",amount:1}]
 execute if score #alchemy_lab_next tmp matches 3 run data modify storage data tmp.cost set value [{type:"lapis",amount:4},{type:"emerald",amount:2}]
@@ -25,8 +25,8 @@ execute if score #alchemy_lab_next tmp matches 13 run data modify storage data t
 execute if score #alchemy_lab_next tmp matches 14 run data modify storage data tmp.cost set value [{type:"lapis",amount:40},{type:"information",amount:48},{type:"time",amount:12}]
 execute if score #alchemy_lab_next tmp matches 15 run data modify storage data tmp.cost set value [{type:"lapis",amount:48},{type:"information",amount:64},{type:"time",amount:16}]
 
-# 발전과제 보상의 상점 비용 할인을 연구 비용에도 적용합니다.
-# 정보/시간 같은 메타 자원은 기존 할인 규칙대로 제외됩니다.
+# 발전과제 보상의 상점 비용 할인을 연구 비용에도 적용한다.
+# 정보/시간 같은 메타 자원은 기존 할인 규칙대로 제외된다.
 execute if data storage data tmp.cost run function resource/cost/apply_shop_advancement_discount
 
 # 다음 단계에서 증가하는 효과

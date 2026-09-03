@@ -1,7 +1,7 @@
 # 새 차원 진입 시 이전 멸망 효과가 남아 있지 않도록 안전하게 제거
 effect clear @a blindness
 effect clear @a darkness
-title @a clear
+execute unless entity @a[tag=accelerator_experiment_running] run title @a clear
 function mover/local/recover
 
 execute in dawn run tp @a 0 64 0
@@ -18,6 +18,4 @@ scoreboard players set #GLOBAL visited_polar 0
 scoreboard players set #GLOBAL current_dim 4
 # 세 세계의 유산 보상만 여명 진입 즉시 처리한다. 시설과 발전 단계는 리액터 제작 때 복원한다.
 function reckoning/restore_materials
-execute unless score #world_eye unlock matches 1 as @a at @s run function resource/effect/unlock_success
-scoreboard players set #world_eye unlock 1
 execute if score #GLOBAL dawn_bonus_shop matches 1.. as @a[tag=player,limit=1] run function dawn/bonus_shop/unlock

@@ -3,10 +3,10 @@ execute unless score #GLOBAL current_dim matches 4 run return 0
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 function meta/sync
 
-# 기존 진행 세이브도 리액터 제작 완료 상태라면 시각 상태를 동기화합니다.
+# 기존 진행 세이브도 리액터 제작 완료 상태라면 시각 상태를 동기화한다.
 execute if score #GLOBAL dawn_reactor_purchased matches 1.. in minecraft:dawn run setblock 0 64 0 minecraft:pink_stained_glass
 
-execute if score #GLOBAL dawn_reactor_purchased matches 1.. run title @s actionbar {text:"이미 리액터를 제작했습니다.",color:"#F971BE",bold:false,italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] if score #GLOBAL dawn_reactor_purchased matches 1.. run title @s actionbar {text:"이미 리액터를 제작했습니다.",color:"#F971BE",bold:false,italic:true}
 execute if score #GLOBAL dawn_reactor_purchased matches 1.. run return 0
 
 function util/blank

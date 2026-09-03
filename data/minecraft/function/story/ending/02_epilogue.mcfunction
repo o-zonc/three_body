@@ -1,4 +1,4 @@
-title @a[tag=ending_active] clear
+execute unless entity @a[tag=accelerator_experiment_running] run title @a[tag=ending_active] clear
 title @a[tag=ending_active] times 10 80 20
 execute as @a[tag=ending_active] at @s run playsound entity.ender_dragon.growl master @s ~ ~ ~ 0.35 1.3
 title @a[tag=ending_active] title {text:"그들은 당신에게 선택지를 제시했습니다.",color:"aqua"}

@@ -1,22 +1,18 @@
 # 현재 위치 목록
-#
-# 아래 목록에 직육면체 공간을 추가하면 사이드바의 "현재 위치"에 자동으로 표시됩니다.
-# 먼저 적힌 공간이 우선 적용됩니다. 작은 공간을 큰 공간보다 위에 적어 주세요.
-#
+# --- 아래 목록에 직육면체 공간을 추가하면 사이드바의 "현재 위치"에 자동으로 표시된다. ---
+# 먼저 적힌 공간이 우선 적용된다. 작은 공간을 큰 공간보다 위에 적는다.
 # 필드:
 # - dimension: 차원 ID
 # - x, y, z: 직육면체의 최소 꼭짓점
 # - dx, dy, dz: 최소 꼭짓점에서 각 축으로 늘어나는 블록 수
 # - name: 사이드바에 표시할 JSON 텍스트를 문자열로 기록
-#
-# 두 꼭짓점이 (10, 20, 30), (19, 24, 39)라면
-# x:10, y:20, z:30, dx:9, dy:4, dz:9입니다.
-# 음의 방향으로 범위를 적고 싶다면 dx/dy/dz에 음수를 사용할 수도 있습니다.
-#
+# --- 두 꼭짓점이 (10, 20, 30), (19, 24, 39)라면 ---
+# x:10, y:20, z:30, dx:9, dy:4, dz:9이다.
+# 음의 방향으로 범위를 적고 싶다면 dx/dy/dz에 음수를 사용할 수도 있다.
 # 예시:
 # data modify storage data location.areas set value [\
-#   {dimension:"minecraft:overworld",x:-10,y:60,z:-10,dx:20,dy:20,dz:20,name:'{"text":"중앙 광장","color":"aqua"}'},\
-#   {dimension:"minecraft:frozen",x:-34,y:51,z:-34,dx:68,dy:8,dz:68,name:'{"text":"지하 미로","color":"light_purple"}'}\
+# {dimension:"minecraft:overworld",x:-10,y:60,z:-10,dx:20,dy:20,dz:20,name:'{"text":"중앙 광장","color":"aqua"}'},\
+# {dimension:"minecraft:frozen",x:-34,y:51,z:-34,dx:68,dy:8,dz:68,name:'{"text":"지하 미로","color":"light_purple"}'}\
 # ]
 
 data modify storage data location.areas set value [\

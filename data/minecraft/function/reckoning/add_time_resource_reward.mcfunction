@@ -1,4 +1,4 @@
-# Macro args: id
+# 매크로 인수: id
 # 첫 100개는 20개당 시간 1조각, 100개 초과분은 100개당 시간 1조각으로 환산한다.
 $scoreboard players operation #reckoning_time_resource_amount tmp = #$(id) material
 

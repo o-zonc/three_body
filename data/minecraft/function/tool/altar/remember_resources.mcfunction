@@ -12,7 +12,6 @@ execute if score #heat unlock matches 1 run scoreboard players set #seen_heat va
 execute if score #cold unlock matches 1 run scoreboard players set #seen_cold var 1
 execute if score #yellow unlock matches 1 run scoreboard players set #seen_yellow var 1
 execute if score #blue unlock matches 1 run scoreboard players set #seen_blue var 1
-execute if score #world_eye unlock matches 1 run scoreboard players set #seen_world_eye var 1
 
 # 별도 unlock 점수가 없는 인벤토리형 메타 자원은 원장에 한 번이라도 잡히면 발견 처리한다.
 execute if score #information_wallet tmp matches 1.. run scoreboard players set #seen_information var 1

@@ -1,9 +1,9 @@
 # 수동 세공 실행
-# Macro args: id, name, color
+# 매크로 인수: id, name, color
 
-execute unless score #alchemy_workshop unlock matches 1 run title @s actionbar {text:"연금술 공방을 먼저 해금해야 합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #alchemy_workshop unlock matches 1 run title @s actionbar {text:"연금술 공방을 먼저 해금해야 합니다.",color:"red",italic:true}
 execute unless score #alchemy_workshop unlock matches 1 run return 0
-$execute unless score #$(id) unlock matches 1 run title @s actionbar {text:"아직 해금되지 않은 자원입니다.",color:"red",italic:true}
+$execute unless entity @a[tag=accelerator_experiment_running] unless score #$(id) unlock matches 1 run title @s actionbar {text:"아직 해금되지 않은 자원입니다.",color:"red",italic:true}
 $execute unless score #$(id) unlock matches 1 run playsound block.note_block.bass master @s ~ ~ ~ 0.7 0.7
 $execute unless score #$(id) unlock matches 1 run return 0
 
@@ -13,7 +13,7 @@ execute if score #jewel_mode var matches 3.. run scoreboard players set #jewel_m
 execute if score #jewel_mode var > #level alchemy_workshop run scoreboard players set #jewel_mode var 0
 
 execute unless score #jewel_cooldown var = #jewel_cooldown var run scoreboard players set #jewel_cooldown var 0
-execute if score #jewel_cooldown var matches 1.. run title @s actionbar [{text:"다시 세공하려면 ",color:"red",italic:true},{score:{name:"#jewel_cooldown",objective:"var"},color:"yellow",italic:true},{text:"틱 기다려야 합니다.",color:"red",italic:true}]
+execute unless entity @a[tag=accelerator_experiment_running] if score #jewel_cooldown var matches 1.. run title @s actionbar [{text:"다시 세공하려면 ",color:"red",italic:true},{score:{name:"#jewel_cooldown",objective:"var"},color:"yellow",italic:true},{text:"틱 기다려야 합니다.",color:"red",italic:true}]
 execute if score #jewel_cooldown var matches 1.. run playsound block.note_block.bass master @s ~ ~ ~ 0.7 0.7
 execute if score #jewel_cooldown var matches 1.. run return 0
 
@@ -33,7 +33,7 @@ execute if score #jewel_mode var matches 2 run data modify storage data tmp.cost
 data modify storage data tmp.cost append value {type:"no_obsidian",amount:1}
 
 execute store result score #jewel_can_pay tmp run function resource/check_cost
-execute unless score #jewel_can_pay tmp matches 1 run title @s actionbar {text:"세공에 필요한 자원이 부족합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #jewel_can_pay tmp matches 1 run title @s actionbar {text:"세공에 필요한 자원이 부족합니다.",color:"red",italic:true}
 execute unless score #jewel_can_pay tmp matches 1 run playsound block.note_block.bass master @s ~ ~ ~ 0.7 0.7
 execute unless score #jewel_can_pay tmp matches 1 run return 0
 
@@ -42,13 +42,13 @@ scoreboard players operation #material_add_value tmp = #jewel_reward tmp
 $function resource/add {id:"$(id)"}
 
 # 수동 세공 대기: 초급 100틱 / 중급 60틱 / 고급 20틱.
-# 얼어붙은 세계 유적의 기존 세공 시간 감소 효과를 그대로 적용합니다.
+# 얼어붙은 세계 유적의 기존 세공 시간 감소 효과를 그대로 적용한다.
 scoreboard players set #jewel_cooldown var 100
 execute if score #jewel_mode var matches 1 run scoreboard players set #jewel_cooldown var 60
 execute if score #jewel_mode var matches 2 run scoreboard players set #jewel_cooldown var 20
 function dried/stronghold/apply_frozen
 
-# 고급 금/다이아몬드 세공 부산물은 기존 효과를 유지합니다.
+# 고급 금/다이아몬드 세공 부산물은 기존 효과를 유지한다.
 scoreboard players set #jewel_byproduct_factor tmp 2
 execute if score #jewel_mode var matches 2 if score #cost_gold cost matches 1.. run scoreboard players operation #jewel_byproduct tmp = #cost_gold cost
 execute if score #jewel_mode var matches 2 if score #cost_gold cost matches 1.. run scoreboard players operation #jewel_byproduct tmp *= #jewel_byproduct_factor tmp
@@ -61,4 +61,4 @@ execute if score #jewel_mode var matches 2 if score #cost_diamond cost matches 1
 
 function shop/alchemy/jewel/effect
 execute at @s run playsound block.amethyst_block.chime master @s ~ ~ ~ 0.8 1.3
-$title @s actionbar [{text:"",italic:false},{text:"$(name) 세공 완료! ",color:"$(color)"},{text:"×",color:"gray",bold:false},{score:{name:"#jewel_reward",objective:"tmp"},color:"white"}]
+$execute unless entity @a[tag=accelerator_experiment_running] run title @s actionbar [{text:"",italic:false},{text:"$(name) 세공 완료! ",color:"$(color)"},{text:"×",color:"gray",bold:false},{score:{name:"#jewel_reward",objective:"tmp"},color:"white"}]

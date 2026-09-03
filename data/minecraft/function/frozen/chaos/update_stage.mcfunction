@@ -1,5 +1,5 @@
-# 빙결 단계가 바뀔 때만 전용 이동 속도 modifier를 갱신합니다.
-# add_multiplied_total을 사용하므로 석기 시대 등 base movement_speed 보상과 함께 동작합니다.
+# 빙결 단계가 바뀔 때만 전용 이동 속도 modifier를 갱신한다.
+# add_multiplied_total을 사용하므로 석기 시대 등 base movement_speed 보상과 함께 동작한다.
 execute if score @s frozen_chaos_freeze matches ..39 unless score @s frozen_chaos_stage matches 0 run attribute @s minecraft:movement_speed modifier remove three_body:frozen_chaos
 execute if score @s frozen_chaos_freeze matches ..39 unless score @s frozen_chaos_stage matches 0 run scoreboard players set @s frozen_chaos_stage 0
 

@@ -1,5 +1,5 @@
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
-execute unless score #frozen_shop unlock matches 1.. run title @s actionbar {text:"얼어붙은 세계의 상점이 잠겨 있습니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #frozen_shop unlock matches 1.. run title @s actionbar {text:"얼어붙은 세계의 상점이 잠겨 있습니다.",color:"red",italic:true}
 execute unless score #frozen_shop unlock matches 1.. run return 0
 
 function util/blank

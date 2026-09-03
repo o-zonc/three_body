@@ -1,4 +1,4 @@
-# Macro arg: type. Lv.4의 40% 환급.
+# 매크로 인수: type. Lv.4의 40% 환급.
 scoreboard players operation #factory_refund_amount tmp = #time_machine_color_cost tmp
 scoreboard players set #factory_refund_multiplier tmp 4
 scoreboard players operation #factory_refund_amount tmp *= #factory_refund_multiplier tmp

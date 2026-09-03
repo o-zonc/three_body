@@ -1,6 +1,6 @@
-# 소지한 유리병을 모두 회수합니다.
+# 소지한 유리병을 모두 회수한다.
 execute store result score #recycle_bottles tmp run clear @s minecraft:glass_bottle 0
-execute unless score #recycle_bottles tmp matches 1.. run title @s actionbar {text:"재활용할 유리병이 없습니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #recycle_bottles tmp matches 1.. run title @s actionbar {text:"재활용할 유리병이 없습니다.",color:"red",italic:true}
 execute unless score #recycle_bottles tmp matches 1.. at @s run playsound block.note_block.bass weather @s ~ ~ ~ 0.8 0.5
 execute unless score #recycle_bottles tmp matches 1.. run return 0
 clear @s minecraft:glass_bottle
@@ -18,7 +18,7 @@ execute store result storage data tmp.recycle.min int 1 run scoreboard players g
 execute store result storage data tmp.recycle.max int 1 run scoreboard players get #recycle_max tmp
 function dried/recycle/random_amount with storage data tmp.recycle
 
-# 0.1% 흑요석, 1% 정보, 0.5% 시간, 나머지는 세 차원군에 균등 배분합니다.
+# 0.1% 흑요석, 1% 정보, 0.5% 시간, 나머지는 세 차원군에 균등 배분한다.
 execute store result score #recycle_rare_roll tmp run random value 0..999
 execute if score #recycle_rare_roll tmp matches 0 run function dried/recycle/reward_obsidian
 execute if score #recycle_rare_roll tmp matches 1..10 run function dried/recycle/reward_information

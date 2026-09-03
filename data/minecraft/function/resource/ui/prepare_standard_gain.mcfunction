@@ -1,11 +1,14 @@
-# 일반 자원의 "기초 생산량 → 실제 수급량 ★" UI를 준비합니다.
-# Macro args: id, color, shop_color, advancement, advancement_multiplier, advancement_label
+# 일반 자원의 "기초 생산량 → 실제 수급량 ★" UI를 준비한다.
+# 매크로 인수: id, color, shop_color, advancement, advancement_multiplier, advancement_label
 
 $execute store result score #gain_shop_multiplier tmp run function resource/shop/value {id:"$(id)"}
+$data modify storage data tmp.resource_gain_id set value "$(id)"
+execute if data storage data tmp{resource_gain_id:"emerald"} run scoreboard players set #gain_shop_multiplier tmp 1
+execute if data storage data tmp{resource_gain_id:"lapis"} run scoreboard players set #gain_shop_multiplier tmp 1
 $scoreboard players operation #gain_base_bonus tmp = #$(id)_base_gain tmp
 scoreboard players remove #gain_base_bonus tmp 1
 
-# 실제 생산량 증가 효과가 하나라도 있는 경우에만 실제 수급량과 ★를 표시합니다.
+# 실제 생산량 증가 효과가 하나라도 있는 경우에만 실제 수급량과 ★를 표시한다.
 scoreboard players set #gain_effect_active tmp 0
 execute if score #gain_base_bonus tmp matches 1.. run scoreboard players set #gain_effect_active tmp 1
 execute if score #gain_shop_multiplier tmp matches 2.. run scoreboard players set #gain_effect_active tmp 1

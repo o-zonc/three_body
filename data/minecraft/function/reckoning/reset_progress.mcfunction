@@ -18,19 +18,19 @@ scoreboard players set #heat material 0
 scoreboard players set #cold material 0
 scoreboard players set #yellow material 0
 scoreboard players set #blue material 0
-scoreboard players set #world_eye material 0
 scoreboard players set #information material 0
 scoreboard players set #time material 0
 scoreboard players set #obsidian material 0
 
 scoreboard players set * unlock 0
+scoreboard players reset * sidebar_visible
 # 나무는 문명 단계와 관계없이 항상 해금된 기본 자원이다.
 scoreboard players set #wood unlock 1
 scoreboard players set * material_shop 0
 
-# 영구 이동기 구매 기록은 연금술 공방과 무관하게 문명 정산을 통과합니다.
+# 영구 이동기 구매 기록은 연금술 공방과 무관하게 문명 정산을 통과한다.
 # 차원 이동기는 즉시 복원하고, 오버월드 전용인 상점·공방 이동기는
-# 오버월드 복귀 시 mover/local/restore에서 제단 이동기와 함께 재지급합니다.
+# 오버월드 복귀 시 mover/local/restore에서 제단 이동기와 함께 재지급한다.
 execute if score #vault_dimension_mover_owned tmp matches 1 run scoreboard players set #dimension_mover unlock 1
 execute if score #vault_shop_mover_owned tmp matches 1 run scoreboard players set #shop_mover unlock 1
 execute if score #vault_alchemy_mover_owned tmp matches 1 run scoreboard players set #alchemy_mover unlock 1
@@ -92,7 +92,7 @@ scoreboard players set #cold_environment_timer generate 1200
 scoreboard players set #dried_relic_timer generate 1200
 
 scoreboard players set #overworld civilization_age 0
-# 정산 후 시대가 직접 복원되더라도 새 문명의 첫 장기 항성기가 누락되지 않게 합니다.
+# 정산 후 시대가 직접 복원되더라도 새 문명의 첫 장기 항성기가 누락되지 않게 한다.
 function common/era/start_overworld
 scoreboard players set #level alchemy_workshop 0
 scoreboard players set #alchemy_workshop unlock 0
@@ -150,5 +150,5 @@ execute if entity @a[advancements={1_frozen/10_shop=true}] run function frozen/s
 function frozen/structure/bridge/off
 function frozen/structure/maze/off
 
-# 원자로는 문명마다 다시 제작하되, 영구 증폭기의 진행도와 색유리는 유지합니다.
+# 원자로는 문명마다 다시 제작하되, 영구 증폭기의 진행도와 색유리는 유지한다.
 function dawn/reactor/off

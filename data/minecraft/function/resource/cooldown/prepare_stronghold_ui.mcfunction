@@ -1,5 +1,5 @@
-# Macro args: id, score, unit
-# 오버월드 유적지만 적용되는 자원의 재생산 대기 시간 UI를 준비합니다.
+# 매크로 인수: id, score, unit
+# 오버월드 유적지만 적용되는 자원의 재생산 대기 시간 UI를 준비한다.
 $scoreboard players operation #$(score)_base tmp = #regen_base_cooldown tmp
 $scoreboard players operation #$(score)_final tmp = #$(score) tmp
 $data modify storage data tmp.alchemy_lab_cooldown_ui.$(id) set value {text:""}

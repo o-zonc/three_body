@@ -1,4 +1,4 @@
-# Macro args: type, id
+# 매크로 인수: type, id
 data remove storage data tmp.cost_original
 data remove storage data tmp.shop_advancement_cost_original
 $data modify storage data tmp.cost set from storage data const.accelerator.experiment.$(type).cost

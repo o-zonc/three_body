@@ -12,7 +12,7 @@ execute if score #lapis factory_unlocked matches 1 run scoreboard players set #f
 execute if score #cold factory_unlocked matches 1 run scoreboard players set #factory_any_unlocked tmp 1
 execute if score #heat factory_unlocked matches 1 run scoreboard players set #factory_any_unlocked tmp 1
 
-execute unless score #factory_any_unlocked tmp matches 1 run title @s actionbar {text:"해금된 공장이 없습니다.",color:"gray",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #factory_any_unlocked tmp matches 1 run title @s actionbar {text:"해금된 공장이 없습니다.",color:"gray",italic:true}
 execute unless score #factory_any_unlocked tmp matches 1 run function factory/check
 execute unless score #factory_any_unlocked tmp matches 1 run return 0
 

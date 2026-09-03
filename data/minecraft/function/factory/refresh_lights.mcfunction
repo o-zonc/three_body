@@ -1,5 +1,5 @@
-# 공장 해금/가동 상태가 바뀐 순간에만 표시등을 갱신합니다.
-# 매 tick의 interaction/블록 상태 스캔을 피하기 위한 이벤트 기반 갱신입니다.
+# 공장 해금/가동 상태가 바뀐 순간에만 표시등을 갱신한다.
+# 매 tick의 interaction/블록 상태 스캔을 피하기 위한 이벤트 기반 갱신이다.
 function factory/light {id:"wood"}
 function factory/light {id:"stone"}
 function factory/light {id:"coal"}

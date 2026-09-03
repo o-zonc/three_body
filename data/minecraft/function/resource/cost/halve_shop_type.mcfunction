@@ -1,4 +1,4 @@
-# Macro args: type
+# 매크로 인수: type
 # tmp.cost 안의 지정 자원 비용을 절반으로 줄인다. 홀수 비용은 올림 처리하여 최소 1개를 유지한다.
 $execute unless data storage data tmp.cost[{type:"$(type)"}].amount run return 0
 

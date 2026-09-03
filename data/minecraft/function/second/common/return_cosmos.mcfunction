@@ -1,5 +1,5 @@
-# Macro args: next_story
-# 1~4장 종료 시 공통으로 사용하는 우주 복귀 처리입니다.
+# 매크로 인수: next_story
+# 1~4장 종료 시 공통으로 사용하는 우주 복귀 처리이다.
 function cosmos/move
 tag @s remove second
 tag @s remove third

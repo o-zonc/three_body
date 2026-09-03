@@ -1,5 +1,5 @@
-# load
-# Constant definition entry point
+# load 시 상수 정의
+# 상수 정의 진입점
 
 data remove storage data const
 data merge storage data {const:{}}

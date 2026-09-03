@@ -1,7 +1,7 @@
 # Deduct the exact costs populated by resource/check_cost.
-# 특수 콘텐츠가 직접 요청한 기존 전체 대체 경로를 유지합니다.
+# 특수 콘텐츠가 직접 요청한 기존 전체 대체 경로를 유지한다.
 execute if score #obsidian_cost_bypass tmp matches 1 if score #obsidian_substitution_count tmp matches 0 run return run function resource/cost/take_obsidian_bypass
-# resource/check_cost가 준비한 정상/부분 대체 비용을 그대로 차감합니다.
+# resource/check_cost가 준비한 정상/부분 대체 비용을 그대로 차감한다.
 execute if score #cost_prepared tmp matches 1 run return run function resource/cost/take_prepared
 
 scoreboard players operation #wood material -= #cost_wood cost
@@ -19,7 +19,6 @@ scoreboard players operation #yellow material -= #yellow cost
 scoreboard players operation #blue material -= #blue cost
 function meta/information/take_cost
 function meta/time/take_cost
-scoreboard players operation #world_eye material -= #cost_world_eye cost
 function meta/obsidian/take_cost
 scoreboard players set #obsidian_cost_bypass tmp 0
 scoreboard players set #obsidian_substitution_count tmp 0

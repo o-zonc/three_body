@@ -1,10 +1,10 @@
 # 보온 물약 구매: 열기 1개
-execute unless score #frozen_shop unlock matches 1.. run title @s actionbar {text:"얼어붙은 세계의 상점이 잠겨 있습니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #frozen_shop unlock matches 1.. run title @s actionbar {text:"얼어붙은 세계의 상점이 잠겨 있습니다.",color:"red",italic:true}
 execute unless score #frozen_shop unlock matches 1.. run return 0
 
 data modify storage data tmp.cost set value [{type:"heat",amount:1}]
 execute store result score #frozen_purchase_check tmp run function resource/check_cost
-execute unless score #frozen_purchase_check tmp matches 1 run title @s actionbar {text:"열기가 부족합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #frozen_purchase_check tmp matches 1 run title @s actionbar {text:"열기가 부족합니다.",color:"red",italic:true}
 execute unless score #frozen_purchase_check tmp matches 1 run return 0
 
 function resource/cost/take

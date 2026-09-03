@@ -1,34 +1,3 @@
-# 시간 보관소 10조각 이상 시작 보정입니다.
-# 이미 보관·복원된 단계가 더 높으면 유지하고, 부족한 경우에만 최소치를 보장합니다.
+# 고대 이상 시작의 유일한 진행 보정으로 채굴 도구 최소 단계를 보장한다.
+# 보관소에서 더 높은 단계를 복원했다면 낮추지 않는다.
 execute if score #tool upgrade matches ..7 run scoreboard players set #tool upgrade 8
-
-# 자원 상점 Lv. 1은 해당 자원 수급량 ×2입니다.
-execute if score #wood_lvl material_shop matches ..0 run scoreboard players set #wood_lvl material_shop 1
-execute if score #stone_lvl material_shop matches ..0 run scoreboard players set #stone_lvl material_shop 1
-execute if score #coal_lvl material_shop matches ..0 run scoreboard players set #coal_lvl material_shop 1
-execute if score #copper_lvl material_shop matches ..0 run scoreboard players set #copper_lvl material_shop 1
-execute if score #iron_lvl material_shop matches ..0 run scoreboard players set #iron_lvl material_shop 1
-
-# 고대 시작의 일회성 보급품입니다.
-execute as @a[tag=player,limit=1] run function item/give/heavenly_grace
-
-# 고대 진입까지 필수였던 일반 자원은 최소 해금 상태를 보장합니다.
-scoreboard players set #stone unlock 1
-scoreboard players set #coal unlock 1
-scoreboard players set #copper unlock 1
-scoreboard players set #iron unlock 1
-
-# 중세 시작은 고대→중세 진입 조건이었던 연금술 공방의 최소 상태를 보장합니다.
-execute if score #time_bank meta matches 40.. unless score #alchemy_workshop unlock matches 1.. run scoreboard players set #alchemy_workshop unlock 1
-execute if score #time_bank meta matches 40.. run function common/structure/alchemy_workshop/on
-
-# 근대 시작은 중세→근대 진입 조건이었던 공방 Lv. 1을 보장합니다.
-execute if score #time_bank meta matches 80.. if score #level alchemy_workshop matches ..0 run scoreboard players set #level alchemy_workshop 1
-
-# 현대 시작은 근대→현대 진입 조건이었던 공장과 네 생산선의 최소 해금을 보장합니다.
-execute if score #time_bank meta matches 200.. if score #GLOBAL factory_build_stage matches ..0 run scoreboard players set #GLOBAL factory_build_stage 1
-execute if score #time_bank meta matches 200.. run function common/structure/factory/on
-execute if score #time_bank meta matches 200.. run scoreboard players set #wood factory_unlocked 1
-execute if score #time_bank meta matches 200.. run scoreboard players set #stone factory_unlocked 1
-execute if score #time_bank meta matches 200.. run scoreboard players set #coal factory_unlocked 1
-execute if score #time_bank meta matches 200.. run scoreboard players set #copper factory_unlocked 1

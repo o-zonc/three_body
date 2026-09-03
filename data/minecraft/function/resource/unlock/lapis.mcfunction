@@ -1,11 +1,11 @@
 execute if score #lapis unlock matches 1 run return 0
-execute unless score #overworld civilization_age matches 5.. run title @s actionbar {text:"고대 시대에 도달해야 합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #overworld civilization_age matches 5.. run title @s actionbar {text:"고대 시대에 도달해야 합니다.",color:"red",italic:true}
 execute unless score #overworld civilization_age matches 5.. run function resource/effect/failure
 execute unless score #overworld civilization_age matches 5.. run return 0
 data remove storage data tmp.cost
 data modify storage data tmp.cost set from storage data const.resource.lapis.unlock_cost
 execute store result score #lapis_unlock_cost_check tmp run function resource/check_cost
-execute unless score #lapis_unlock_cost_check tmp matches 1 run title @s actionbar {text:"재료가 부족합니다.",color:"red",italic:true}
+execute unless entity @a[tag=accelerator_experiment_running] unless score #lapis_unlock_cost_check tmp matches 1 run title @s actionbar {text:"재료가 부족합니다.",color:"red",italic:true}
 execute unless score #lapis_unlock_cost_check tmp matches 1 run function resource/effect/failure
 execute unless score #lapis_unlock_cost_check tmp matches 1 run return 0
 function resource/cost/take

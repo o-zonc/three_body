@@ -1,4 +1,4 @@
-# 각 위치에서 푸른 얼음이 공기로 바뀌는 순간만 감지합니다.
+# 각 위치에서 푸른 얼음이 공기로 바뀌는 순간만 감지한다.
 execute in minecraft:frozen if block 0 74 -4 blue_ice run scoreboard players set #cold_alt_north generate 1
 execute in minecraft:frozen if block 0 74 4 blue_ice run scoreboard players set #cold_alt_south generate 1
 

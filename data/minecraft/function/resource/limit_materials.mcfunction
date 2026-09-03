@@ -13,7 +13,6 @@ execute if score #heat material matches ..-1 run scoreboard players set #heat ma
 execute if score #cold material matches ..-1 run scoreboard players set #cold material 0
 execute if score #information material matches ..-1 run scoreboard players set #information material 0
 execute if score #time material matches ..-1 run scoreboard players set #time material 0
-execute if score #world_eye material matches ..-1 run scoreboard players set #world_eye material 0
 execute if score #yellow material matches ..-1 run scoreboard players set #yellow material 0
 execute if score #blue material matches ..-1 run scoreboard players set #blue material 0
 
@@ -30,6 +29,5 @@ execute if score #heat material > #material_max tmp run scoreboard players opera
 execute if score #cold material > #material_max tmp run scoreboard players operation #cold material = #material_max tmp
 execute if score #information material > #material_max tmp run scoreboard players operation #information material = #material_max tmp
 execute if score #time material > #material_max tmp run scoreboard players operation #time material = #material_max tmp
-execute if score #world_eye material > #material_max tmp run scoreboard players operation #world_eye material = #material_max tmp
 execute if score #yellow material > #material_max tmp run scoreboard players operation #yellow material = #material_max tmp
 execute if score #blue material > #material_max tmp run scoreboard players operation #blue material = #material_max tmp

@@ -1,4 +1,4 @@
-# Macro args: id, name, trigger
+# 매크로 인수: id, name, trigger
 data remove storage data tmp.cost
 data remove storage data tmp.cost_original
 $data modify storage data tmp.cost set from storage data const.resource.$(id).unlock_cost

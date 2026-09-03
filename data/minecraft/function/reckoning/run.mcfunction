@@ -19,9 +19,9 @@ function reckoning/snapshot_materials
 function reckoning/vault/snapshot
 function factory/vault_snapshot
 
-# 메마른 시설 구역은 상시 로드되어 있으므로 즉시 정산 상태를 적용합니다.
+# 메마른 시설 구역은 상시 로드되어 있으므로 즉시 정산 상태를 적용한다.
 function reckoning/reset_progress
-# 구조물 갱신으로 생긴 엔티티를 다음 틱에 다시 정리합니다.
+# 구조물 갱신으로 생긴 엔티티를 다음 틱에 다시 정리한다.
 schedule function reckoning/finish_dried_cleanup 1t replace
 scoreboard players set #GLOBAL reckoning_pending 1
 
@@ -47,7 +47,7 @@ scoreboard players operation #reckoning_time_to_bank tmp = #meta_bank_added tmp
 function item/give/epiphany
 # 첫 문명 정산 완료 시 깨달음 발전과제를 달성한다.
 advancement grant @a only 3_polarnight/03_enlightenment
-title @s actionbar [{"text":"정보 +","color":"light_purple"},{"score":{"name":"#reckoning_information_reward","objective":"tmp"},"color":"light_purple"},{"text":" (소지 +","color":"dark_gray"},{"score":{"name":"#reckoning_information_to_wallet","objective":"tmp"},"color":"light_purple"},{"text":" / 보관 +","color":"dark_gray"},{"score":{"name":"#reckoning_information_to_bank","objective":"tmp"},"color":"light_purple"},{"text":") | ","color":"dark_gray"},{"text":"시간 +","color":"dark_aqua"},{"score":{"name":"#reckoning_time_reward","objective":"tmp"},"color":"dark_aqua"},{"text":" (소지 +","color":"dark_gray"},{"score":{"name":"#reckoning_time_to_wallet","objective":"tmp"},"color":"dark_aqua"},{"text":" / 보관 +","color":"dark_gray"},{"score":{"name":"#reckoning_time_to_bank","objective":"tmp"},"color":"dark_aqua"},{"text":")","color":"dark_gray"}]
+execute unless entity @a[tag=accelerator_experiment_running] run title @s actionbar [{"text":"정보 +","color":"light_purple"},{"score":{"name":"#reckoning_information_reward","objective":"tmp"},"color":"light_purple"},{"text":" (소지 +","color":"dark_gray"},{"score":{"name":"#reckoning_information_to_wallet","objective":"tmp"},"color":"light_purple"},{"text":" / 보관 +","color":"dark_gray"},{"score":{"name":"#reckoning_information_to_bank","objective":"tmp"},"color":"light_purple"},{"text":") | ","color":"dark_gray"},{"text":"시간 +","color":"dark_aqua"},{"score":{"name":"#reckoning_time_reward","objective":"tmp"},"color":"dark_aqua"},{"text":" (소지 +","color":"dark_gray"},{"score":{"name":"#reckoning_time_to_wallet","objective":"tmp"},"color":"dark_aqua"},{"text":" / 보관 +","color":"dark_gray"},{"score":{"name":"#reckoning_time_to_bank","objective":"tmp"},"color":"dark_aqua"},{"text":")","color":"dark_gray"}]
 
 playsound entity.player.levelup master @s ~ ~ ~ 1 0.7
 function util/blank

@@ -1,14 +1,14 @@
 # 여명 차원 자원 증폭기 UI
-# Macro args: id, name, color, trigger
+# 매크로 인수: id, name, color, trigger
 
 execute at @s run playsound ui.button.click weather @s ~ ~ ~ 1 2
 
-# 기존 월드에서는 새 meta 점수가 없을 수 있으므로 최초 접근 시 잠김(0)으로 생성합니다.
+# 기존 월드에서는 새 meta 점수가 없을 수 있으므로 최초 접근 시 잠김(0)으로 생성한다.
 $execute unless score #dawn_$(id)_amp meta matches 0.. run scoreboard players set #dawn_$(id)_amp meta 0
 
-# 기존 진행 세이브도 해금 상태이면 시각 상태를 동기화합니다.
+# 기존 진행 세이브도 해금 상태이면 시각 상태를 동기화한다.
 $execute if score #dawn_$(id)_amp meta matches 1.. run function dawn/amplifier/visual/$(id)
-# 기존 진행 세이브도 Lv.1 이상이면 증폭기 발전과제를 동기화합니다.
+# 기존 진행 세이브도 Lv.1 이상이면 증폭기 발전과제를 동기화한다.
 $execute if score #dawn_$(id)_amp meta matches 2.. run function dawn/amplifier/advancement/$(id)
 
 # 리액터를 제작해 탈출 수단을 확보한 뒤에는 더 이상 증폭기에 투자할 수 없다.

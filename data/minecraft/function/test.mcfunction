@@ -1,17 +1,11 @@
-# ==========================================
 # THREE BODY TEST ENTRY
-# ==========================================
-#
-# 기본 테스트 진입점입니다.
-# 실제 게임 상태를 변경하지 않고 현재 시대 상태를 확인합니다.
-#
+# --- 기본 테스트 진입점이다. ---
+# 실제 게임 상태를 변경하지 않고 현재 시대 상태를 확인한다.
 # 개별 테스트:
-#   /function test/pause
-#   /function test/disaster
-#   /function test/transition
-#
-# pause 테스트는 5초 후 자동으로 pause_check를 실행합니다.
-#
+# /function test/pause
+# /function test/disaster
+# /function test/transition
+# --- pause 테스트는 5초 후 자동으로 pause_check를 실행한다. ---
 
 # 현재 상태 출력
 tellraw @a {"text":"========== THREE BODY TEST ==========" ,"color":"gold"}

@@ -1,6 +1,6 @@
 playsound entity.generic.drink master @s ~ ~ ~ 1.0 0.1
 
 title @a subtitle [{"text": "제 ", "color": "gray"}, {"score": {name: "#GLOBAL", objective: "n_civil"}, color: blue, bold: true}, {"text": "문명은 파크모가 홀라당 마셔버렸습니다.", "color": "gray"}]
-title @a actionbar [{text:"",italic:false},{"text": "숨겨진 메세지를 발견!", "color": "gray"}]
+execute unless entity @a[tag=accelerator_experiment_running] run title @a actionbar [{text:"",italic:false},{"text": "숨겨진 메세지를 발견!", "color": "gray"}]
 
 execute if entity @a[advancements={6_disaster/21_frozen_message=false}] run advancement grant @a only 6_disaster/21_frozen_message

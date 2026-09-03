@@ -1,4 +1,4 @@
-# 실제 회차 타이머를 건드리지 않고 20개 표본의 범위와 값 변화를 검사합니다.
+# 실제 회차 타이머를 건드리지 않고 20개 표본의 범위와 값 변화를 검사한다.
 scoreboard players set #color_sample_count tmp 0
 scoreboard players set #color_sample_min tmp 72001
 scoreboard players set #color_sample_max tmp 35999

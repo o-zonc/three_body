@@ -1,7 +1,7 @@
 # 공장·입자가속기·타임머신 건물 성능 진단용 일회성 스냅샷
 # /function test/performance_snapshot
-# 엔티티마다 명령을 실행하지 않고 execute if entity의 결과값(매칭 수)만 저장합니다.
-# 따라서 엔티티가 수만 개 누적되어 있어도 command execution limit에 걸리지 않습니다.
+# 엔티티마다 명령을 실행하지 않고 execute if entity의 결과값(매칭 수)만 저장한다.
+# 따라서 엔티티가 수만 개 누적되어 있어도 command execution limit에 걸리지 않는다.
 # 공장 건물 범위: X=-36..8, Y=-64..-32, Z=0..40
 
 scoreboard players set #perf_total tmp 0

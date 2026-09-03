@@ -1,6 +1,9 @@
 # 원래 초기화되지만 보관소 효과 또는 발전과제로 보존할 수 있는 항목만 표시한다.
 data modify storage data tmp.reckoning_reset_tooltip set value ["",{text:"[ 문명 정산 시 초기화 ]\n",color:"red",bold:true}]
 
+execute if entity @a[advancements={2_dried/04_three_ruins=true}] run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 보유량\n",color:"gray",strikethrough:true}
+execute unless entity @a[advancements={2_dried/04_three_ruins=true}] run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 보유량\n",color:"gray"}
+
 # 자원 상점과 생산 업그레이드
 execute if score #information_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 1층 진행도\n",color:"gray",strikethrough:true}
 execute unless score #information_bank meta matches 20.. run data modify storage data tmp.reckoning_reset_tooltip append value {text:"• 자원 상점 1층 진행도\n",color:"gray"}

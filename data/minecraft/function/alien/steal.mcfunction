@@ -8,7 +8,7 @@ scoreboard players operation #alien_lapis tmp = #lapis material
 scoreboard players operation #alien_gold tmp = #gold material
 scoreboard players operation #alien_diamond tmp = #diamond material
 
-# 보유량을 100으로 나눈 몹과 나머지를 각각 계산해 오버플로 없이 floor(보유량 * 탈취율 / 100)을 구합니다.
+# 보유량을 100으로 나눈 몹과 나머지를 각각 계산해 오버플로 없이 floor(보유량 * 탈취율 / 100)을 구한다.
 scoreboard players operation #alien_iron_remainder tmp = #alien_iron tmp
 scoreboard players operation #alien_lapis_remainder tmp = #alien_lapis tmp
 scoreboard players operation #alien_gold_remainder tmp = #alien_gold tmp
