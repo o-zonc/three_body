@@ -15,7 +15,6 @@ execute if score #dimension_mover_count tmp matches 1.. run return 0
 execute if entity @s[tag=overworld_escape_given] run return 0
 
 function item/give/overworld_escape
-tag @s add overworld_escape_given
 function mover/unauthorized/warn_start
 
 # 위반 횟수는 문명 공용 상태이며, 두 번째 위반에서만 재난을 한 번 예약한다.
