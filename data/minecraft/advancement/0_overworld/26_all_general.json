@@ -1,5 +1,5 @@
 {
-  "parent": "3_polarnight/00_root",
+  "parent": "3_polarnight/01_ending",
   "display": {
     "icon": "nether_star",
     "title": "모든 일반 발전과제 달성",

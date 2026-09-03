@@ -137,6 +137,7 @@ schedule clear story/ending/02_epilogue
 schedule clear story/ending/03_credits
 schedule clear story/ending/04_credit_scroll
 schedule clear story/ending/05_return
+schedule clear story/ending/first_finish
 kill @e[tag=story_ending]
 scoreboard players set #ending_credit_tick var 0
 tag @a remove ending_seen
@@ -150,6 +151,11 @@ advancement revoke @a only 0_overworld/25_yellow_time_machine
 advancement revoke @a only 0_overworld/25_blue_time_machine
 advancement revoke @a only 0_overworld/25_green_time_machine
 advancement revoke @a only 0_overworld/26_all_general
+advancement revoke @a only 3_polarnight/01_ending
+execute in minecraft:overworld run setblock 35 -59 0 air replace
+scoreboard players set #world_star_state var 0
+scoreboard players reset @a world_star_node_mined
+clear @a minecraft:nether_star[minecraft:custom_data~{three_body:{world_star:1b}}]
 scoreboard players set #time_machine_ever_yellow var 0
 scoreboard players set #time_machine_ever_blue var 0
 scoreboard players set #time_machine_ever_green var 0

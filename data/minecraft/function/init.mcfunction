@@ -22,6 +22,7 @@ scoreboard objectives add heat_node_mined minecraft.mined:minecraft.magma_block
 scoreboard objectives add cold_node_mined minecraft.mined:minecraft.blue_ice
 scoreboard objectives add yellow_node_mined minecraft.mined:minecraft.yellow_glazed_terracotta
 scoreboard objectives add blue_node_mined minecraft.mined:minecraft.blue_glazed_terracotta
+scoreboard objectives add world_star_node_mined minecraft.mined:minecraft.quartz_block
 scoreboard objectives add state_dried dummy
 scoreboard objectives add state_overworld dummy
 scoreboard objectives add state_polar dummy

@@ -13,3 +13,4 @@ scoreboard players reset @a heat_node_mined
 scoreboard players reset @a cold_node_mined
 scoreboard players reset @a yellow_node_mined
 scoreboard players reset @a blue_node_mined
+scoreboard players reset @a world_star_node_mined

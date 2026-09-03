@@ -116,6 +116,11 @@ advancement revoke @a only 0_overworld/25_yellow_time_machine
 advancement revoke @a only 0_overworld/25_blue_time_machine
 advancement revoke @a only 0_overworld/25_green_time_machine
 advancement revoke @a only 0_overworld/26_all_general
+advancement revoke @a only 3_polarnight/01_ending
+execute in minecraft:overworld run setblock 35 -59 0 air replace
+scoreboard players set #world_star_state var 0
+scoreboard players reset @a world_star_node_mined
+clear @a minecraft:nether_star[minecraft:custom_data~{three_body:{world_star:1b}}]
 
 # 일반 자원은 Material 원장을 정확히 1,000,000으로 설정한다.
 scoreboard players set #wood material 1000000

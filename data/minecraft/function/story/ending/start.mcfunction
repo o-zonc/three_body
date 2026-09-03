@@ -11,4 +11,4 @@ title @a[tag=ending_active] subtitle {"text":"3 Body Problem","color":"gray","it
 schedule function story/ending/01_answer 5s
 schedule function story/ending/02_epilogue 11s
 schedule function story/ending/03_credits 17s
-schedule function story/ending/finish 25s
+schedule function story/ending/first_finish 25s

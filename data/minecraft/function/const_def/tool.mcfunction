@@ -664,6 +664,7 @@ data modify storage data const.tool set value [\
               "blue_ice",\
               "yellow_glazed_terracotta",\
               "blue_glazed_terracotta",\
+              "quartz_block",\
             ]\
           },\
           tool: {\
@@ -681,6 +682,7 @@ data modify storage data const.tool set value [\
               { blocks: "blue_ice", correct_for_drops: 1b, speed: 84.0f },\
               { blocks: "yellow_glazed_terracotta", correct_for_drops: 1b, speed: 42.0f },\
               { blocks: "blue_glazed_terracotta", correct_for_drops: 1b, speed: 42.0f },\
+              { blocks: "quartz_block", correct_for_drops: 1b, speed: 90.0f },\
             ]\
           },\
         }\

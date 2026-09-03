@@ -78,6 +78,7 @@ scoreboard players reset * second_timer
 tag @a remove second
 tag @a remove third
 tag @a remove time_machine_reset_confirm
+tag @a remove world_star_miner
 scoreboard players set @a experiment_delay 0
 scoreboard players set @a experiment_type 0
 scoreboard players set #time_machine_ever_yellow var 0
@@ -175,6 +176,11 @@ execute in minecraft:frozen run setblock 0 68 -12 air replace
 execute in minecraft:frozen run setblock 0 68 48 air replace
 execute in minecraft:overworld run setblock -35 -62 -2 air replace
 execute in minecraft:overworld run setblock -35 -62 2 air replace
+execute in minecraft:overworld run setblock 35 -59 0 air replace
+scoreboard players set #world_star_state var 0
+scoreboard players reset @a world_star_node_mined
+clear @a minecraft:nether_star[minecraft:custom_data~{three_body:{world_star:1b}}]
+execute as @e[type=minecraft:item] if items entity @s contents minecraft:nether_star[minecraft:custom_data~{three_body:{world_star:1b}}] run kill @s
 # 깨진 파편 저장소는 문명 정산에서는 유지하지만, restart에서는 비운다.
 scoreboard players set #broken_quantum_storage var 0
 scoreboard players set #information_bank meta 0

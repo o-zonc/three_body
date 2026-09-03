@@ -1,0 +1,17 @@
+{
+  "parent": "3_polarnight/00_root",
+  "display": {
+    "icon": "clock",
+    "title": "엔딩?",
+    "description": "첫 번째 엔딩을 보았습니다.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "first_ending": {
+      "trigger": "impossible"
+    }
+  }
+}

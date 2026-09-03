@@ -24,6 +24,7 @@ schedule clear story/ending/03_credits
 schedule clear story/ending/04_credit_scroll
 schedule clear story/ending/05_return
 schedule clear story/ending/finish
+schedule clear story/ending/first_finish
 schedule clear crying/dawn_reset_finish
 schedule clear frozen/maze/clone
 schedule clear frozen/maze/shake
