@@ -748,42 +748,42 @@ data modify storage data const.tool[{lvl:6}].components.tool.rules[{blocks:"ston
 data modify storage data const.tool[{lvl:6}].components.tool.rules[{blocks:"coal_ore"}].speed set value 2.25f
 data modify storage data const.tool[{lvl:6}].components.tool.rules[{blocks:"copper_ore"}].speed set value 1.125f
 data modify storage data const.tool[{lvl:6}].components.tool.rules[{blocks:"iron_ore"}].speed set value 1.125f
-data modify storage data const.tool[{lvl:6}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7 즉시 파괴 가능","§6* §7돌§7, §8석탄§7을 파괴하기까지 §f2§7초 소요됨","§6* §6구리§7, §f철§7을 파괴하기까지 §f4§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7, ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f6.4§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f8§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f3.2§7초 소요됨"]
+data modify storage data const.tool[{lvl:6}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7 즉시 파괴 가능","§6* §7돌§7, §8석탄§7을 파괴하기까지 §f2§7초 소요됨","§6* §6구리§7, §f철§7을 파괴하기까지 §f4§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7, ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f6.4§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f8§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f3.2§7초 소요됨","§6* §8외계 자원§7을 파괴하기까지 §f8§7초 소요됨"]
 
 # Lv7 좋은 구리 곡괭이: 돌/석탄 1초, 구리/철 3초
 data modify storage data const.tool[{lvl:7}].components.tool.rules[{blocks:"stone"}].speed set value 2.25f
 data modify storage data const.tool[{lvl:7}].components.tool.rules[{blocks:"coal_ore"}].speed set value 4.5f
 data modify storage data const.tool[{lvl:7}].components.tool.rules[{blocks:"copper_ore"}].speed set value 1.5f
 data modify storage data const.tool[{lvl:7}].components.tool.rules[{blocks:"iron_ore"}].speed set value 1.5f
-data modify storage data const.tool[{lvl:7}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7 즉시 파괴 가능","§6* §7돌§7, §8석탄§7을 파괴하기까지 §f1§7초 소요됨","§6* §6구리§7, §f철§7을 파괴하기까지 §f3§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7, ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f3.2§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f7§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f8§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f2.4§7초 소요됨"]
+data modify storage data const.tool[{lvl:7}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7 즉시 파괴 가능","§6* §7돌§7, §8석탄§7을 파괴하기까지 §f1§7초 소요됨","§6* §6구리§7, §f철§7을 파괴하기까지 §f3§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7, ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f3.2§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f7§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f8§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f2.4§7초 소요됨","§6* §8외계 자원§7을 파괴하기까지 §f8§7초 소요됨"]
 
 # Lv8 철 곡괭이: 돌/석탄 1초, 구리/철 2초
 data modify storage data const.tool[{lvl:8}].components.tool.rules[{blocks:"stone"}].speed set value 2.25f
 data modify storage data const.tool[{lvl:8}].components.tool.rules[{blocks:"coal_ore"}].speed set value 4.5f
 data modify storage data const.tool[{lvl:8}].components.tool.rules[{blocks:"copper_ore"}].speed set value 2.25f
 data modify storage data const.tool[{lvl:8}].components.tool.rules[{blocks:"iron_ore"}].speed set value 2.25f
-data modify storage data const.tool[{lvl:8}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7 즉시 파괴 가능","§6* §7돌§7, §8석탄§7을 파괴하기까지 §f1§7초 소요됨","§6* §6구리§7, §f철§7을 파괴하기까지 §f2§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7, ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f3.2§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f6§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f7§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f2.4§7초 소요됨"]
+data modify storage data const.tool[{lvl:8}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7 즉시 파괴 가능","§6* §7돌§7, §8석탄§7을 파괴하기까지 §f1§7초 소요됨","§6* §6구리§7, §f철§7을 파괴하기까지 §f2§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7, ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f3.2§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f6§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f7§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f2.4§7초 소요됨","§6* §8외계 자원§7을 파괴하기까지 §f8§7초 소요됨"]
 
 # Lv9 좋은 철 곡괭이: 돌/석탄 즉시, 구리/철 2초
 data modify storage data const.tool[{lvl:9}].components.tool.rules[{blocks:"stone"}].speed set value 45.0f
 data modify storage data const.tool[{lvl:9}].components.tool.rules[{blocks:"coal_ore"}].speed set value 90.0f
 data modify storage data const.tool[{lvl:9}].components.tool.rules[{blocks:"copper_ore"}].speed set value 2.25f
 data modify storage data const.tool[{lvl:9}].components.tool.rules[{blocks:"iron_ore"}].speed set value 2.25f
-data modify storage data const.tool[{lvl:9}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7, §7돌§7, §8석탄§7 즉시 파괴 가능","§6* §6구리§7, §f철§7을 파괴하기까지 §f2§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7을 파괴하기까지 §f2.4§7초 소요됨"],["§6* ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f3.2§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f4§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f6§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f1.6§7초 소요됨"]
+data modify storage data const.tool[{lvl:9}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7, §7돌§7, §8석탄§7 즉시 파괴 가능","§6* §6구리§7, §f철§7을 파괴하기까지 §f2§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7을 파괴하기까지 §f2.4§7초 소요됨"],["§6* ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f3.2§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f4§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f6§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f1.6§7초 소요됨","§6* §8외계 자원§7을 파괴하기까지 §f8§7초 소요됨"]
 
 # Lv10 훌륭한 철 곡괭이: 돌/석탄 즉시, 구리/철 2초
 data modify storage data const.tool[{lvl:10}].components.tool.rules[{blocks:"stone"}].speed set value 45.0f
 data modify storage data const.tool[{lvl:10}].components.tool.rules[{blocks:"coal_ore"}].speed set value 90.0f
 data modify storage data const.tool[{lvl:10}].components.tool.rules[{blocks:"copper_ore"}].speed set value 2.25f
 data modify storage data const.tool[{lvl:10}].components.tool.rules[{blocks:"iron_ore"}].speed set value 2.25f
-data modify storage data const.tool[{lvl:10}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7, §7돌§7, §8석탄§7 즉시 파괴 가능","§6* §6구리§7, §f철§7을 파괴하기까지 §f2§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7을 파괴하기까지 §f1.6§7초 소요됨"],["§6* ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f2.4§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f3§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f4§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f1.6§7초 소요됨"]
+data modify storage data const.tool[{lvl:10}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7, §7돌§7, §8석탄§7 즉시 파괴 가능","§6* §6구리§7, §f철§7을 파괴하기까지 §f2§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7을 파괴하기까지 §f1.6§7초 소요됨"],["§6* ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f2.4§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f3§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f4§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f1.6§7초 소요됨","§6* §8외계 자원§7을 파괴하기까지 §f8§7초 소요됨"]
 
 # Lv11 신성 철 곡괭이: 돌/석탄 즉시, 구리/철 1초
 data modify storage data const.tool[{lvl:11}].components.tool.rules[{blocks:"stone"}].speed set value 45.0f
 data modify storage data const.tool[{lvl:11}].components.tool.rules[{blocks:"coal_ore"}].speed set value 90.0f
 data modify storage data const.tool[{lvl:11}].components.tool.rules[{blocks:"copper_ore"}].speed set value 4.5f
 data modify storage data const.tool[{lvl:11}].components.tool.rules[{blocks:"iron_ore"}].speed set value 4.5f
-data modify storage data const.tool[{lvl:11}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7, §7돌§7, §8석탄§7 즉시 파괴 가능","§6* §6구리§7, §f철§7을 파괴하기까지 §f1§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7, ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f1.6§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f2§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f3§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f0.8§7초 소요됨"]
+data modify storage data const.tool[{lvl:11}].components.lore set value ["§4도구 - 파괴","","§6* §e나무§7, §7돌§7, §8석탄§7 즉시 파괴 가능","§6* §6구리§7, §f철§7을 파괴하기까지 §f1§7초 소요됨",["§6* ",{text:"금",color:"gold",shadow_color:-7710208,italic:false},"§7, ",{text:"다이아몬드",color:"aqua",shadow_color:-16741750,italic:false},"§7를 파괴하기까지 §f1.6§7초 소요됨"],"§6* §a에메랄드§7를 파괴하기까지 §f2§7초 소요됨","§6* §9청금석§7을 파괴하기까지 §f3§7초 소요됨","§6* §d특수 자원§7을 파괴하기까지 §f0.8§7초 소요됨","§6* §8외계 자원§7을 파괴하기까지 §f8§7초 소요됨"]
 
 # Lv12 수동 드릴: 돌/석탄/구리/철 즉시
 data modify storage data const.tool[{lvl:12}].components.tool.rules[{blocks:"stone"}].speed set value 45.0f

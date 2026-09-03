@@ -48,6 +48,10 @@ scoreboard players set #GLOBAL era_paused 1
 scoreboard players set #disaster_running run 0
 scoreboard players set #maze_shake var 0
 scoreboard players set #GLOBAL era_observed 0
+scoreboard players set #unauthorized_dim_moves var 0
+scoreboard players set #unauthorized_disaster_done var 0
+scoreboard players set #unauthorized_warning_timer var 0
+tag @a remove unauthorized_dim_warning
 scoreboard players set #frozen_shop unlock 0
 scoreboard players set #frozen_bridge unlock 0
 scoreboard players set #frozen_maze unlock 0

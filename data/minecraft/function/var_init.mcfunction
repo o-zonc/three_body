@@ -155,6 +155,9 @@ execute unless score #color_resources_unlocked var = #color_resources_unlocked v
 execute unless score #color_event_timer var = #color_event_timer var run scoreboard players set #color_event_timer var -1
 execute unless score #color_event_pending var = #color_event_pending var run scoreboard players set #color_event_pending var 0
 execute unless score #world_star_state var = #world_star_state var run scoreboard players set #world_star_state var 0
+execute unless score #unauthorized_dim_moves var = #unauthorized_dim_moves var run scoreboard players set #unauthorized_dim_moves var 0
+execute unless score #unauthorized_disaster_done var = #unauthorized_disaster_done var run scoreboard players set #unauthorized_disaster_done var 0
+execute unless score #unauthorized_warning_timer var = #unauthorized_warning_timer var run scoreboard players set #unauthorized_warning_timer var 0
 
 # 타임머신 레벨은 항상 0~4 범위로 유지한다.
 execute unless score #GLOBAL factory_elevator_unlocked = #GLOBAL factory_elevator_unlocked run scoreboard players set #GLOBAL factory_elevator_unlocked 0

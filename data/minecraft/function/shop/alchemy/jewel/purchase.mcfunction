@@ -22,13 +22,14 @@ scoreboard players set #jewel_reward tmp 2
 execute if score #jewel_mode var matches 1 run scoreboard players set #jewel_reward tmp 3
 execute if score #jewel_mode var matches 2 run scoreboard players set #jewel_reward tmp 5
 
-# 비용: 대상 보석 1개 + 모드별 촉매
-# 초급: 돌 2 / 중급: 돌 2 + 구리 1 / 고급: 구리 2 + 철 1
+# 비용: 대상 1개 + 모드별 촉매
+# 초급: 돌 10 / 중급: 돌 5 + 구리 3 / 고급: 구리 5 + 철 1
 data remove storage data tmp.cost
 $data modify storage data tmp.cost append value {type:"$(id)",amount:1}
-execute if score #jewel_mode var matches 0..1 run data modify storage data tmp.cost append value {type:"stone",amount:2}
-execute if score #jewel_mode var matches 1 run data modify storage data tmp.cost append value {type:"copper",amount:1}
-execute if score #jewel_mode var matches 2 run data modify storage data tmp.cost append value {type:"copper",amount:2}
+execute if score #jewel_mode var matches 0 run data modify storage data tmp.cost append value {type:"stone",amount:10}
+execute if score #jewel_mode var matches 1 run data modify storage data tmp.cost append value {type:"stone",amount:5}
+execute if score #jewel_mode var matches 1 run data modify storage data tmp.cost append value {type:"copper",amount:3}
+execute if score #jewel_mode var matches 2 run data modify storage data tmp.cost append value {type:"copper",amount:5}
 execute if score #jewel_mode var matches 2 run data modify storage data tmp.cost append value {type:"iron",amount:1}
 data modify storage data tmp.cost append value {type:"no_obsidian",amount:1}
 

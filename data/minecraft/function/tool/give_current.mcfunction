@@ -15,8 +15,8 @@ data modify entity @e[type=minecraft:item,tag=creating_resource_tool,sort=neares
 execute if score #tool upgrade matches 6.. unless score #color_resources_unlocked var matches 1 run data remove entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:can_break".blocks[-1]
 execute if score #tool upgrade matches 6.. unless score #color_resources_unlocked var matches 1 run data remove entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:can_break".blocks[-1]
 
-# 외계 자원 설명이 있는 Lv.12 이상 도구에서는 해금 전까지 lore의 마지막 항목도 숨긴다.
-execute if score #tool upgrade matches 12.. unless score #color_resources_unlocked var matches 1 run data remove entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:lore"[-1]
+# 외계 자원을 채굴할 수 있는 Lv.6 이상 도구에서는 해금 전까지 lore의 마지막 항목도 숨긴다.
+execute if score #tool upgrade matches 6.. unless score #color_resources_unlocked var matches 1 run data remove entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:lore"[-1]
 
 # 시스템 도구 식별자와 레벨을 기록한 완성품을 빈 인벤토리 슬롯으로 전달한다.
 data modify entity @e[type=minecraft:item,tag=creating_resource_tool,sort=nearest,limit=1,distance=..2] Item.components."minecraft:custom_data" set value {tool:{}}

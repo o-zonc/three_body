@@ -3,6 +3,14 @@
 # #broken_quantum_storage var는 시공간의 틈에 보관된 영구 자원으로 문명 정산에서 유지한다.
 clear @a
 
+# 시간 정지 중 인위적 차원 이동 제재는 문명 단위로 다시 시작한다.
+scoreboard players set #unauthorized_dim_moves var 0
+scoreboard players set #unauthorized_disaster_done var 0
+scoreboard players set #unauthorized_warning_timer var 0
+tag @a remove unauthorized_dim_warning
+schedule clear mover/unauthorized/warn_tick
+schedule clear mover/unauthorized/do_disaster
+
 # 문명 정산에서는 일반 자원 보유량을 항상 0으로 초기화한다.
 # 와일드카드에만 의존하지 않고 실제 Material score holder를 명시적으로 초기화한다.
 scoreboard players set #wood material 0

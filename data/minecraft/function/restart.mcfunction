@@ -4,6 +4,8 @@
 
 schedule clear common/next
 schedule clear common/disaster/finish
+schedule clear mover/unauthorized/warn_tick
+schedule clear mover/unauthorized/do_disaster
 schedule clear resource/color/event/meteor_finish
 
 schedule clear story/intro/00_init

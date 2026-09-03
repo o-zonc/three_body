@@ -14,5 +14,5 @@ execute if score #jewel_mode var > #level alchemy_workshop run scoreboard player
 execute unless score #level alchemy_workshop matches 1.. if score #jewel_auto_enabled var matches 1 run scoreboard players set #jewel_auto_enabled var 0
 execute unless score #level alchemy_workshop matches 1.. if score #jewel_auto_timer var matches 1.. run scoreboard players set #jewel_auto_timer var 0
 
-# Lv.1부터 자동 세공을 사용할 수 있으며, Lv.2에서 속도와 연료 효율이 향상된다.
+# Lv.1부터 자동 세공을 사용할 수 있으며, Lv.2에서 고급 자동 세공으로 전환된다.
 execute if score #level alchemy_workshop matches 1.. run function shop/alchemy/jewel/auto/tick
