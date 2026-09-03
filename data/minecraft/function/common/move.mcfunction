@@ -24,3 +24,7 @@ scoreboard players set #GLOBAL current_dim 0
 scoreboard players set #GLOBAL state_overworld 0
 scoreboard players set #GLOBAL timer_overworld 1200
 bossbar set bossbar_overworld max 1200
+
+# 무단 이동 관련 상태 초기화
+scoreboard players reset #unauthorized_dim_moves var
+scoreboard players reset #unauthorized_disaster_done var
