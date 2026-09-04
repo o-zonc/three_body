@@ -1,7 +1,7 @@
 {
 	"pack": {
 		"description": "삼체 - 그것은 또 다른 세계",
-		"min_format": 107.1,
-		"max_format": 107.1
+        "min_format": [107, 1],
+        "max_format": 107
 	}
 }
