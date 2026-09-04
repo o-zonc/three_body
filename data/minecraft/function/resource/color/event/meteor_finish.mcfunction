@@ -15,6 +15,10 @@ execute as @a[tag=player,limit=1] run function reckoning/run
 # reset_progress가 모든 일반 unlock을 지운 뒤에 영구 해금과 노드를 확정한다.
 function resource/color/unlock
 scoreboard players set #color_event_pending var 0
+scoreboard players set #color_event_meteor var 0
 function ui/sidebar/refresh
 scoreboard objectives setdisplay sidebar material_display
 tellraw @a [{text:"오버월드의 어딘가를 둘러보는 것이 좋을 것 같습니다.",color:"gray",italic:true}]
+
+# 운석 전용 정산도 일반 멸망과 동일한 최종 안전 검사를 통과한다.
+function common/disaster/post_finish

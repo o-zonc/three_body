@@ -31,7 +31,7 @@ scoreboard players operation #heat sidebar_visible = #reckoning_heat_unlock tmp
 scoreboard players operation #cold sidebar_visible = #reckoning_cold_unlock tmp
 # 노랑/파랑은 영구 해금 정책이 먼저 복원한 상태를 다시 잠그지 않는다.
 execute if score #reckoning_yellow_unlock tmp matches 1 run scoreboard players set #yellow unlock 1
-execute if score #reckoning_blue_unlock tmp matches 1 run scoreboard players set #blue unlock 1
+execute if score #reckoning_blue_unlock tmp matches 1 run scoreboard players set #blue unlock 1 
 
 scoreboard players set #GLOBAL reckoning_materials_restored 1
 execute unless entity @a[tag=accelerator_experiment_running] run title @a actionbar {"text":"세 세계의 유산이 정산 전의 자원 보유량을 복원했습니다.","color":"gold"}

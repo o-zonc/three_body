@@ -35,3 +35,6 @@ execute unless score #GLOBAL era_observed matches 1 run scoreboard players set #
 scoreboard players set #GLOBAL era_observed 0
 scoreboard players set #GLOBAL user_disaster 0
 scoreboard players set #disaster_running run 0
+
+# 목적지와 모든 멸망 상태가 확정된 뒤 진행 불가능 여부를 공통 검사한다.
+function common/disaster/post_finish

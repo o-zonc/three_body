@@ -113,6 +113,7 @@ scoreboard players set #time_axis_open var 0
 scoreboard players set #color_resources_unlocked var 0
 scoreboard players set #color_event_timer var -1
 scoreboard players set #color_event_pending var 0
+scoreboard players set #color_event_meteor var 0
 scoreboard players set #spacetime_experiment_done var 0
 scoreboard players set #jewel_mode var 0
 scoreboard players set #jewel_cooldown var 0

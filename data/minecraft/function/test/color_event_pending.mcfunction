@@ -3,4 +3,5 @@ execute if score #color_resources_unlocked var matches 1 run tellraw @s {text:"[
 execute if score #color_resources_unlocked var matches 1 run return 0
 scoreboard players set #color_event_timer var 0
 scoreboard players set #color_event_pending var 1
+scoreboard players set #color_event_meteor var 0
 function test/color_event_status

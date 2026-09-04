@@ -74,6 +74,16 @@ Tags:["ending_credit_text","story_ending"],brightness:{sky:15,block:15},Rotation
 transformation:[1.0f,0f,0f,0f, 0f,1.0f,0f,0f, 0f,0f,1f,0f, 0f,0f,0f,1f],\
 text:{text:"만천화우 님",color:"white"}}
 
+execute if score #ending_credit_tick var matches 1380 as @e[tag=ending_camera,limit=1] at @s run summon text_display ~ ~-3 ~9 {\
+Tags:["ending_credit_text","story_ending"],brightness:{sky:15,block:15},Rotation:[180,0],background:0,\
+transformation:[1.0f,0f,0f,0f, 0f,1.0f,0f,0f, 0f,0f,1f,0f, 0f,0f,0f,1f],\
+text:{text:"cosine226 님",color:"white"}}
+
+execute if score #ending_credit_tick var matches 1395 as @e[tag=ending_camera,limit=1] at @s run summon text_display ~ ~-3 ~9 {\
+Tags:["ending_credit_text","story_ending"],brightness:{sky:15,block:15},Rotation:[180,0],background:0,\
+transformation:[1.0f,0f,0f,0f, 0f,1.0f,0f,0f, 0f,0f,1f,0f, 0f,0f,0f,1f],\
+text:{text:"부산앞바다 님",color:"white"}}
+
 execute if score #ending_credit_tick var matches 1755 as @e[tag=ending_camera,limit=1] at @s run summon text_display ~ ~-3 ~9 {\
 Tags:["ending_credit_text","story_ending"],brightness:{sky:15,block:15},Rotation:[180,0],background:0,\
 transformation:[1.5f,0f,0f,0f, 0f,1.5f,0f,0f, 0f,0f,1f,0f, 0f,0f,0f,1f],\

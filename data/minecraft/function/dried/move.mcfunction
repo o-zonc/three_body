@@ -12,8 +12,8 @@ execute in dried run weather clear
 execute in dried run time rate 1
 # 도착 경로와 관계없이 이 차원에서 채굴 가능한 자원이 없다면 긴급 귀환 수단을 지급한다.
 # 이 조건이 성립하면 같은 진입의 시간 정지 인위적 이동 조건은 처리하지 않는다.
-execute if score #tool upgrade matches ..3 as @a[tag=player,gamemode=adventure,nbt={Dimension:"minecraft:dried"}] run function item/give/overworld_escape
-execute unless score #tool upgrade matches ..3 as @a[tag=player,gamemode=adventure,nbt={Dimension:"minecraft:dried"}] run function item/give/overworld_escape_paused
+function item/give/check_overworld_escape_unmineable
+execute unless score #tool upgrade matches ..6 as @a[tag=player,gamemode=adventure,nbt={Dimension:"minecraft:dried"}] run function item/give/overworld_escape_paused
 function mover/items/arrive_other
 gamerule advance_time true
 

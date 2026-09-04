@@ -22,11 +22,12 @@ effect give @a darkness 7 1 true
 title @a times 20 60 20
 
 # --- 현재 차원의 플레이어를 executor로 지정한 뒤 멸망 이벤트 실행 ---
-execute as @a[nbt={Dimension:"minecraft:overworld"},limit=1] at @s run function common/disaster/overworld/random
-execute as @a[nbt={Dimension:"minecraft:frozen"},limit=1] at @s run function common/disaster/frozen/random
-execute as @a[nbt={Dimension:"minecraft:dried"},limit=1] at @s run function common/disaster/dried/random
-execute as @a[nbt={Dimension:"minecraft:polarnight"},limit=1] at @s run function common/disaster/polar
-execute as @a[nbt={Dimension:"minecraft:dawn"},limit=1] at @s run function common/disaster/dawn
+execute if score #color_event_meteor var matches 1 run function resource/color/event/meteor_effect
+execute unless score #color_event_meteor var matches 1 as @a[nbt={Dimension:"minecraft:overworld"},limit=1] at @s run function common/disaster/overworld/random
+execute unless score #color_event_meteor var matches 1 as @a[nbt={Dimension:"minecraft:frozen"},limit=1] at @s run function common/disaster/frozen/random
+execute unless score #color_event_meteor var matches 1 as @a[nbt={Dimension:"minecraft:dried"},limit=1] at @s run function common/disaster/dried/random
+execute unless score #color_event_meteor var matches 1 as @a[nbt={Dimension:"minecraft:polarnight"},limit=1] at @s run function common/disaster/polar
+execute unless score #color_event_meteor var matches 1 as @a[nbt={Dimension:"minecraft:dawn"},limit=1] at @s run function common/disaster/dawn
 
 # 극야를 제외하고는 문명 수 1 증가
 execute unless entity @a[nbt={Dimension:"minecraft:polarnight"}] run scoreboard players add #GLOBAL n_civil 1
@@ -40,4 +41,5 @@ execute if entity @a[nbt={Dimension:"minecraft:dried"}] run advancement grant @a
 # state_* 초기화는 disaster/finish에서 다음 차원으로 이동한 뒤 처리한다.
 
 # --- 멸망 연출 종료 예약 ---
-schedule function common/disaster/finish 120t
+execute if score #color_event_meteor var matches 1 run schedule function resource/color/event/meteor_finish 120t replace
+execute unless score #color_event_meteor var matches 1 run schedule function common/disaster/finish 120t
