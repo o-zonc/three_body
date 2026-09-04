@@ -21,6 +21,8 @@ execute if score #jewel_cooldown var matches 1.. run return 0
 scoreboard players set #jewel_reward tmp 2
 execute if score #jewel_mode var matches 1 run scoreboard players set #jewel_reward tmp 3
 execute if score #jewel_mode var matches 2 run scoreboard players set #jewel_reward tmp 5
+$data modify storage data tmp.jewel_resource_id set value "$(id)"
+execute if data storage data tmp{jewel_resource_id:"lapis"} if score #lapis_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #jewel_reward tmp += #jewel_reward tmp
 
 # 비용: 대상 1개 + 모드별 촉매
 # 초급: 돌 10 / 중급: 돌 5 + 구리 3 / 고급: 구리 5 + 철 1

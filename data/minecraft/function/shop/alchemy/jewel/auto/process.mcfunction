@@ -21,6 +21,8 @@ scoreboard players operation #copper material -= #jewel_auto_copper_cost tmp
 scoreboard players operation #iron material -= #jewel_auto_iron_cost tmp
 
 $scoreboard players set #material_add_value tmp $(reward)
+$data modify storage data tmp.jewel_resource_id set value "$(id)"
+execute if data storage data tmp{jewel_resource_id:"lapis"} if score #lapis_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 run scoreboard players operation #material_add_value tmp += #material_add_value tmp
 $function resource/add {id:"$(id)"}
 scoreboard players set #jewel_auto_success tmp 1
 return 1

@@ -33,6 +33,9 @@ function tool/tick
 # 청동기 일회성 보상 아이템
 function heavenly_grace/tick
 
+# 모든 일반 발전과제 완료 보상 아이템
+function resource/material/end/world_star/use_tick
+
 # 현대 일회성 보상 아이템
 function investment_series_a/tick
 

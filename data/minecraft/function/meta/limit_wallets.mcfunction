@@ -9,7 +9,7 @@ execute if score #meta_wallet_overflow tmp matches 1.. store result storage data
 execute if score #meta_wallet_overflow tmp matches 1.. run function meta/information/clear_item with storage data tmp.meta
 execute if score #meta_wallet_overflow tmp matches 1.. run scoreboard players operation #information_bank meta += #meta_wallet_overflow tmp
 execute if score #information_bank meta matches 2000.. run scoreboard players set #information_bank_unlocked meta 1
-execute if score #information_bank meta matches 2001.. run scoreboard players set #information_bank meta 2000
+execute unless score #information_bank_unlocked meta matches 1.. if score #information_bank meta matches 2001.. run scoreboard players set #information_bank meta 2000
 
 # 시간 초과분을 보관소로 이관
 scoreboard players operation #meta_wallet_overflow tmp = #time_wallet tmp
@@ -19,4 +19,4 @@ execute if score #meta_wallet_overflow tmp matches 1.. store result storage data
 execute if score #meta_wallet_overflow tmp matches 1.. run function meta/time/clear_item with storage data tmp.meta
 execute if score #meta_wallet_overflow tmp matches 1.. run scoreboard players operation #time_bank meta += #meta_wallet_overflow tmp
 execute if score #time_bank meta matches 1000.. run scoreboard players set #time_bank_unlocked meta 1
-execute if score #time_bank meta matches 1001.. run scoreboard players set #time_bank meta 1000
+execute unless score #time_bank_unlocked meta matches 1.. if score #time_bank meta matches 1001.. run scoreboard players set #time_bank meta 1000

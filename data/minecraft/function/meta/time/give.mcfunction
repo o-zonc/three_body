@@ -19,11 +19,11 @@ execute if score #meta_to_wallet tmp > #meta_wallet_space tmp run scoreboard pla
 scoreboard players operation #meta_to_bank tmp = #meta_requested tmp
 scoreboard players operation #meta_to_bank tmp -= #meta_to_wallet tmp
 
-# 시간 보관소는 최대 1000조각까지만 저장한다.
+# 시간 보관소는 1000조각 달성 전까지만 상한을 적용한다.
 scoreboard players operation #meta_bank_before tmp = #time_bank meta
 execute if score #meta_to_bank tmp matches 1.. run scoreboard players operation #time_bank meta += #meta_to_bank tmp
 execute if score #time_bank meta matches 1000.. run scoreboard players set #time_bank_unlocked meta 1
-execute if score #time_bank meta matches 1001.. run scoreboard players set #time_bank meta 1000
+execute unless score #time_bank_unlocked meta matches 1.. if score #time_bank meta matches 1001.. run scoreboard players set #time_bank meta 1000
 scoreboard players operation #meta_bank_added tmp = #time_bank meta
 scoreboard players operation #meta_bank_added tmp -= #meta_bank_before tmp
 

@@ -11,9 +11,7 @@ execute if score #overworld_mover_count tmp matches 1.. run return 0
 execute if score #overworld_escape_count tmp matches 1.. run return 0
 execute if score #dimension_mover_count tmp matches 1.. run return 0
 
-# 이 플레이어가 이미 이번 문명에서 탈출기를 받았다면 더 이상 지급하지 않는다.
-execute if entity @s[tag=overworld_escape_given] run return 0
-
+# 지급 성공 여부와 무관하게, 이동기 없이 시간 정지 세계에 진입한 행위 자체를 기록한다.
 function item/give/overworld_escape
 function mover/unauthorized/warn_start
 

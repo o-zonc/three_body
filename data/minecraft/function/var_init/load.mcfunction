@@ -24,6 +24,9 @@ execute if entity @a[tag=player] run function resource/color/event/init
 # 기존 세이브가 이미 whitelist를 모두 충족한 경우 reload 시 한 번 보정한다.
 execute as @a[tag=player] run function advancement/general/check
 
+# 보상 함수가 추가되기 전에 모든 일반 발전과제를 달성한 기존 세이브를 보정한다.
+execute as @a[tag=player,advancements={0_overworld/26_all_general=true},limit=1] if score #world_star_state var matches 0 run function resource/material/end/world_star/place
+
 # 기존 플레이어도 최적화된 이벤트형 story trigger를 즉시 사용할 수 있게 한 번 활성화한다.
 scoreboard players enable @a intro_skip
 scoreboard players enable @a tutorial

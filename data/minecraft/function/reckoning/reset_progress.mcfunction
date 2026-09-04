@@ -158,5 +158,5 @@ execute if entity @a[advancements={1_frozen/10_shop=true}] run function frozen/s
 function frozen/structure/bridge/off
 function frozen/structure/maze/off
 
-# 원자로는 문명마다 다시 제작하되, 영구 증폭기의 진행도와 색유리는 유지한다.
+# 원자로는 문명마다 다시 제작하되, 리액터·증폭기의 색유리는 영구 보존한다.
 function dawn/reactor/off

@@ -38,6 +38,27 @@ execute if entity @s[advancements={4_dawn/01_overworld_amplifier=true}] run scor
 execute if entity @s[advancements={4_dawn/02_dried_amplifier=true}] run scoreboard players add #dawn_reactor_reward_count tmp 1
 execute if entity @s[advancements={4_dawn/03_frozen_amplifier=true}] run scoreboard players add #dawn_reactor_reward_count tmp 1
 execute if entity @s[advancements={3_polarnight/94_obsidian_vault=true}] run scoreboard players add #dawn_reactor_reward_count tmp 1
+scoreboard players set #dawn_reactor_green_reward tmp 0
+execute if entity @s[advancements={0_overworld/25_green_time_machine=true}] run scoreboard players set #dawn_reactor_green_reward tmp 1
+
+# 다른 자원 UI와 같은 ★ hover에 시공간 반응 수급량 증가 효과를 표시한다.
+scoreboard players operation #dawn_reactor_reward_percent tmp = #dawn_reactor_reward_count tmp
+scoreboard players set #dawn_reactor_reward_percent_unit tmp 25
+scoreboard players operation #dawn_reactor_reward_percent tmp *= #dawn_reactor_reward_percent_unit tmp
+data modify storage data tmp.dawn_reactor_gain_star set value {text:""}
+data modify storage data tmp.dawn_reactor_gain_hover set value [{text:"시공간 반응 수급량 증가 효과",color:"gold"}]
+execute if entity @s[advancements={4_dawn/01_overworld_amplifier=true}] run data modify storage data tmp.dawn_reactor_gain_hover append value {text:"\n오버월드 자원 증폭기: +25%",color:"gray"}
+execute if entity @s[advancements={4_dawn/02_dried_amplifier=true}] run data modify storage data tmp.dawn_reactor_gain_hover append value {text:"\n메마른 세계 자원 증폭기: +25%",color:"gray"}
+execute if entity @s[advancements={4_dawn/03_frozen_amplifier=true}] run data modify storage data tmp.dawn_reactor_gain_hover append value {text:"\n얼어붙은 세계 자원 증폭기: +25%",color:"gray"}
+execute if entity @s[advancements={3_polarnight/94_obsidian_vault=true}] run data modify storage data tmp.dawn_reactor_gain_hover append value {text:"\n흑요석 저장고: +25%",color:"gray"}
+execute if score #dawn_reactor_green_reward tmp matches 1 run data modify storage data tmp.dawn_reactor_gain_hover append value {text:"\n초록 발전과제 보상: ×2",color:"green"}
+execute if score #dawn_reactor_reward_count tmp matches 1.. run data modify storage data tmp.dawn_reactor_gain_hover append value {text:"\n총 메타 자원 수급량: +",color:"green"}
+execute if score #dawn_reactor_reward_count tmp matches 1.. run data modify storage data tmp.dawn_reactor_gain_hover append value {score:{name:"#dawn_reactor_reward_percent",objective:"tmp"},color:"green"}
+execute if score #dawn_reactor_reward_count tmp matches 1.. run data modify storage data tmp.dawn_reactor_gain_hover append value {text:"%",color:"green"}
+execute if score #dawn_reactor_reward_count tmp matches 1.. run data modify storage data tmp.dawn_reactor_gain_star set value {text:" ★",color:"gold",hover_event:{action:"show_text",value:[]}}
+execute if score #dawn_reactor_green_reward tmp matches 1 run data modify storage data tmp.dawn_reactor_gain_star set value {text:" ★",color:"gold",hover_event:{action:"show_text",value:[]}}
+execute if score #dawn_reactor_reward_count tmp matches 1.. run data modify storage data tmp.dawn_reactor_gain_star.hover_event.value set from storage data tmp.dawn_reactor_gain_hover
+execute if score #dawn_reactor_green_reward tmp matches 1 run data modify storage data tmp.dawn_reactor_gain_star.hover_event.value set from storage data tmp.dawn_reactor_gain_hover
 
 # 기본 산출량에 (100 + 발전과제 보상 25 * 달성 수)%를 적용한다.
 scoreboard players set #dawn_reactor_reward_multiplier tmp 4
@@ -63,12 +84,18 @@ execute if score #dawn_reactor_time_bonus tmp matches 1.. run function meta/time
 execute if score #dawn_reactor_time_bonus tmp matches 1.. run scoreboard players operation #dawn_reactor_time_to_wallet tmp = #meta_to_wallet tmp
 execute if score #dawn_reactor_time_bonus tmp matches 1.. run scoreboard players operation #dawn_reactor_time_to_bank tmp = #meta_bank_added tmp
 
+# 초록 발전과제의 2배 효과와 보관소 상한을 반영한 실제 획득량을 결과 UI에 표시한다.
+scoreboard players operation #dawn_reactor_info_bonus tmp = #dawn_reactor_info_to_wallet tmp
+scoreboard players operation #dawn_reactor_info_bonus tmp += #dawn_reactor_info_to_bank tmp
+scoreboard players operation #dawn_reactor_time_bonus tmp = #dawn_reactor_time_to_wallet tmp
+scoreboard players operation #dawn_reactor_time_bonus tmp += #dawn_reactor_time_to_bank tmp
+
 # 정산 당시 기록한 시설·발전 단계는 최종 보관량이 확정된 이 시점에 복원한다.
 execute if score #GLOBAL reckoning_pending matches 1.. run function reckoning/finalize
 function item/give/reactor
 # 문명 정산과 같은 형식으로 리액터의 정보·시간 획득량을 표시한다.
-execute unless entity @a[tag=accelerator_experiment_running] run title @s actionbar [{"text":"정보 +","color":"light_purple"},{"score":{"name":"#dawn_reactor_info_bonus","objective":"tmp"},"color":"light_purple"},{"text":" (소지 +","color":"dark_gray"},{"score":{"name":"#dawn_reactor_info_to_wallet","objective":"tmp"},"color":"light_purple"},{"text":" / 보관 +","color":"dark_gray"},{"score":{"name":"#dawn_reactor_info_to_bank","objective":"tmp"},"color":"light_purple"},{"text":") | ","color":"dark_gray"},{"text":"시간 +","color":"dark_aqua"},{"score":{"name":"#dawn_reactor_time_bonus","objective":"tmp"},"color":"dark_aqua"},{"text":" (소지 +","color":"dark_gray"},{"score":{"name":"#dawn_reactor_time_to_wallet","objective":"tmp"},"color":"dark_aqua"},{"text":" / 보관 +","color":"dark_gray"},{"score":{"name":"#dawn_reactor_time_to_bank","objective":"tmp"},"color":"dark_aqua"},{"text":")","color":"dark_gray"}]
+execute unless entity @a[tag=accelerator_experiment_running] run title @s actionbar [{"text":"정보 +","color":"light_purple"},{"score":{"name":"#dawn_reactor_info_bonus","objective":"tmp"},"color":"light_purple"},{"storage":"data","nbt":"tmp.dawn_reactor_gain_star","interpret":true},{"text":" (소지 +","color":"dark_gray"},{"score":{"name":"#dawn_reactor_info_to_wallet","objective":"tmp"},"color":"light_purple"},{"text":" / 보관 +","color":"dark_gray"},{"score":{"name":"#dawn_reactor_info_to_bank","objective":"tmp"},"color":"light_purple"},{"text":") | ","color":"dark_gray"},{"text":"시간 +","color":"dark_aqua"},{"score":{"name":"#dawn_reactor_time_bonus","objective":"tmp"},"color":"dark_aqua"},{"storage":"data","nbt":"tmp.dawn_reactor_gain_star","interpret":true},{"text":" (소지 +","color":"dark_gray"},{"score":{"name":"#dawn_reactor_time_to_wallet","objective":"tmp"},"color":"dark_aqua"},{"text":" / 보관 +","color":"dark_gray"},{"score":{"name":"#dawn_reactor_time_to_bank","objective":"tmp"},"color":"dark_aqua"},{"text":")","color":"dark_gray"}]
 playsound entity.player.levelup master @s ~ ~ ~ 1 1.2
 function util/blank
-tellraw @s ["",{text:"  [ 시공간 반응 ]",color:"#F971BE",bold:true},{text:"\n\n  리액터가 정보와 시간을 반응시켜 시공간의 균열을 만들어 냈습니다.",color:"gray"},{text:"\n  정보 +",color:"light_purple"},{score:{name:"#dawn_reactor_info_bonus",objective:"tmp"},color:"light_purple"},{text:" (소지 +",color:"dark_gray"},{score:{name:"#dawn_reactor_info_to_wallet",objective:"tmp"},color:"light_purple"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#dawn_reactor_info_to_bank",objective:"tmp"},color:"light_purple"},{text:")",color:"dark_gray"},{text:"\n  시간 +",color:"dark_aqua"},{score:{name:"#dawn_reactor_time_bonus",objective:"tmp"},color:"dark_aqua"},{text:" (소지 +",color:"dark_gray"},{score:{name:"#dawn_reactor_time_to_wallet",objective:"tmp"},color:"dark_aqua"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#dawn_reactor_time_to_bank",objective:"tmp"},color:"dark_aqua"},{text:")",color:"dark_gray"},{text:"\n"}]
+tellraw @s ["",{text:"  [ 시공간 반응 ]",color:"#F971BE",bold:true},{text:"\n\n  리액터가 정보와 시간을 반응시켜 시공간의 균열을 만들어 냈습니다.",color:"gray"},{text:"\n  정보 +",color:"light_purple"},{score:{name:"#dawn_reactor_info_bonus",objective:"tmp"},color:"light_purple"},{storage:"data",nbt:"tmp.dawn_reactor_gain_star",interpret:true},{text:" (소지 +",color:"dark_gray"},{score:{name:"#dawn_reactor_info_to_wallet",objective:"tmp"},color:"light_purple"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#dawn_reactor_info_to_bank",objective:"tmp"},color:"light_purple"},{text:")",color:"dark_gray"},{text:"\n  시간 +",color:"dark_aqua"},{score:{name:"#dawn_reactor_time_bonus",objective:"tmp"},color:"dark_aqua"},{storage:"data",nbt:"tmp.dawn_reactor_gain_star",interpret:true},{text:" (소지 +",color:"dark_gray"},{score:{name:"#dawn_reactor_time_to_wallet",objective:"tmp"},color:"dark_aqua"},{text:" / 보관 +",color:"dark_gray"},{score:{name:"#dawn_reactor_time_to_bank",objective:"tmp"},color:"dark_aqua"},{text:")",color:"dark_gray"},{text:"\n"}]
 return 1

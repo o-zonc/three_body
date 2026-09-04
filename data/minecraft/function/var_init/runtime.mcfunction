@@ -11,8 +11,6 @@ execute as @a unless score @s trigger_init matches 1 run function var_init/playe
 execute as @a unless score @s leave_game matches 0.. run scoreboard players set @s leave_game 0
 execute as @a unless score @s leave_game_prev = @s leave_game run function player/on_join
 
-# 보관소를 최대치까지 채운 달성 상태를 기록한다.
+# 보관소를 최대치까지 채운 달성 상태를 영구 기록한다.
 execute if score #information_bank meta matches 2000.. unless score #information_bank_unlocked meta matches 1.. run scoreboard players set #information_bank_unlocked meta 1
 execute if score #time_bank meta matches 1000.. unless score #time_bank_unlocked meta matches 1.. run scoreboard players set #time_bank_unlocked meta 1
-execute unless score #information_bank meta matches 2000.. run scoreboard players set #information_bank_unlocked meta 0
-execute unless score #time_bank meta matches 1000.. run scoreboard players set #time_bank_unlocked meta 0

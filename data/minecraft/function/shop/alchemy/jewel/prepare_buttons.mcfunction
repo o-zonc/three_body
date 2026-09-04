@@ -32,3 +32,8 @@ execute if score #jewel_mode var matches 2 if score #emerald unlock matches 1 ru
 execute if score #jewel_mode var matches 2 if score #lapis unlock matches 1 run data modify storage data tmp.jewel_ui.lapis.hover_event.value.text set value "청금석 1개 + 구리 5개 + 철 1개 → 청금석 5개"
 execute if score #jewel_mode var matches 2 if score #gold unlock matches 1 run data modify storage data tmp.jewel_ui.gold.hover_event.value.text set value "금 1개 + 구리 5개 + 철 1개 → 금 5개 + 열기 2개"
 execute if score #jewel_mode var matches 2 if score #diamond unlock matches 1 run data modify storage data tmp.jewel_ui.diamond.hover_event.value.text set value "다이아몬드 1개 + 구리 5개 + 철 1개 → 다이아몬드 5개 + 냉기 2개"
+
+# 청금석 수급량 발전과제는 세공 결과에도 ×2로 적용한다.
+execute if score #lapis unlock matches 1 if score #lapis_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 if score #jewel_mode var matches 0 run data modify storage data tmp.jewel_ui.lapis.hover_event.value.text set value "청금석 1개 + 돌 10개 → 청금석 4개 (수급량 발전과제 ×2)"
+execute if score #lapis unlock matches 1 if score #lapis_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 if score #jewel_mode var matches 1 run data modify storage data tmp.jewel_ui.lapis.hover_event.value.text set value "청금석 1개 + 돌 5개 + 구리 3개 → 청금석 6개 (수급량 발전과제 ×2)"
+execute if score #lapis unlock matches 1 if score #lapis_advancement_reward var matches 1 unless score #overworld_advancement_reward_disabled var matches 1 if score #jewel_mode var matches 2 run data modify storage data tmp.jewel_ui.lapis.hover_event.value.text set value "청금석 1개 + 구리 5개 + 철 1개 → 청금석 10개 (수급량 발전과제 ×2)"

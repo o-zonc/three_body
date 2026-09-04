@@ -50,6 +50,12 @@ execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp 
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players operation #alchemy_lab_level upgrade = #vault_alchemy_lab_level tmp
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run function common/structure/alchemy_workshop/on
 
+# 메마른 세계의 핵심 시설 해금 상태는 문명 정산 후에도 유지한다.
+execute if score #vault_dried_sulfur_owned tmp matches 1 run scoreboard players set #dried_sulfur unlock 1
+execute if score #vault_dried_sulfur_owned tmp matches 1 run function dried/structure/sulfur/on
+execute if score #vault_dried_cinnabar_owned tmp matches 1 run scoreboard players set #dried_cinnabar unlock 1
+execute if score #vault_dried_cinnabar_owned tmp matches 1 run function dried/structure/cinnabar/on
+
 # 영구 구매한 이동기는 시설 보존 임계치와 무관하게 구매 상태를 유지한다.
 # 아이템은 reset_progress에서 이미 복원하며, 상점·공방·제단 이동기는
 # 오버월드 복귀 시 mover/local/restore에서만 지급한다.

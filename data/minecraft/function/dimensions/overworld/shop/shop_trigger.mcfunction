@@ -80,18 +80,24 @@ execute if score @s shop_trigger matches 1843 run function shop/color/convert {s
 execute if score @s shop_trigger matches 1844 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"iron",target_name:"철",target_color:"white",base:100,amount:1}
 execute if score @s shop_trigger matches 1845 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",target_color:"aqua",base:10,amount:1}
 execute if score @s shop_trigger matches 1846 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"cold",target_name:"냉기",target_color:"aqua",base:50,amount:1}
+execute if score @s shop_trigger matches 1847 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"emerald",target_name:"에메랄드",target_color:"green",base:20,amount:1}
+execute if score @s shop_trigger matches 1848 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"lapis",target_name:"청금석",target_color:"blue",base:20,amount:1}
 execute if score @s shop_trigger matches 1851 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"copper",target_name:"구리",target_color:"gold",base:100,amount:10}
 execute if score @s shop_trigger matches 1852 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"gold",target_name:"금",target_color:"gold",base:20,amount:10}
 execute if score @s shop_trigger matches 1853 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"heat",target_name:"열기",target_color:"red",base:50,amount:10}
 execute if score @s shop_trigger matches 1854 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"iron",target_name:"철",target_color:"white",base:100,amount:10}
 execute if score @s shop_trigger matches 1855 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",target_color:"aqua",base:10,amount:10}
 execute if score @s shop_trigger matches 1856 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"cold",target_name:"냉기",target_color:"aqua",base:50,amount:10}
+execute if score @s shop_trigger matches 1857 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"emerald",target_name:"에메랄드",target_color:"green",base:20,amount:10}
+execute if score @s shop_trigger matches 1858 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"lapis",target_name:"청금석",target_color:"blue",base:20,amount:10}
 execute if score @s shop_trigger matches 1861 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"copper",target_name:"구리",target_color:"gold",base:100,amount:0}
 execute if score @s shop_trigger matches 1862 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"gold",target_name:"금",target_color:"gold",base:20,amount:0}
 execute if score @s shop_trigger matches 1863 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"heat",target_name:"열기",target_color:"red",base:50,amount:0}
 execute if score @s shop_trigger matches 1864 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"iron",target_name:"철",target_color:"white",base:100,amount:0}
 execute if score @s shop_trigger matches 1865 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"diamond",target_name:"다이아몬드",target_color:"aqua",base:10,amount:0}
 execute if score @s shop_trigger matches 1866 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"cold",target_name:"냉기",target_color:"aqua",base:50,amount:0}
+execute if score @s shop_trigger matches 1867 run function shop/color/convert {source:"yellow",source_name:"노랑",source_color:"yellow",target:"emerald",target_name:"에메랄드",target_color:"green",base:20,amount:0}
+execute if score @s shop_trigger matches 1868 run function shop/color/convert {source:"blue",source_name:"파랑",source_color:"blue",target:"lapis",target_name:"청금석",target_color:"blue",base:20,amount:0}
 
 # 얼어붙은 차원 시설 (19XX)
 execute if score @s shop_trigger matches 1901 run function frozen/interaction/purchase_shop

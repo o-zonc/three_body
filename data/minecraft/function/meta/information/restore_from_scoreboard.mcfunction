@@ -9,7 +9,7 @@ execute if score #meta_restore_wallet tmp > #information_capacity meta run score
 scoreboard players operation #information_bank meta = #information material
 scoreboard players operation #information_bank meta -= #meta_restore_wallet tmp
 execute if score #information_bank meta matches 2000.. run scoreboard players set #information_bank_unlocked meta 1
-execute if score #information_bank meta matches 2001.. run scoreboard players set #information_bank meta 2000
+execute unless score #information_bank_unlocked meta matches 1.. if score #information_bank meta matches 2001.. run scoreboard players set #information_bank meta 2000
 
 execute if score #meta_restore_wallet tmp matches 1.. store result storage data tmp.meta.amount int 1 run scoreboard players get #meta_restore_wallet tmp
 execute if score #meta_restore_wallet tmp matches 1.. run function meta/information/give_item with storage data tmp.meta

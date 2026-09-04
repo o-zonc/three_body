@@ -10,10 +10,6 @@ scoreboard players set #time_machine_path_blue upgrade 0
 scoreboard players set #time_machine_path_green upgrade 0
 scoreboard players set #time_machine_green_discovered upgrade 0
 
-advancement revoke @a only 0_overworld/25_yellow_time_machine
-advancement revoke @a only 0_overworld/25_blue_time_machine
-advancement revoke @a only 0_overworld/25_green_time_machine
-
 function time_machine/calculate
 scoreboard players operation #time_machine_timer generate = #time_machine_interval_cached var
 

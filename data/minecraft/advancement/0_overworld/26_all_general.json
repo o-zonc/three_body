@@ -2,8 +2,8 @@
   "parent": "3_polarnight/01_ending",
   "display": {
     "icon": "nether_star",
-    "title": "모든 일반 발전과제 달성",
-    "description": "엔딩을 다시 시청.",
+    "title": "이걸 진짜 다 하다니",
+    "description": "모든 발전과제를 달성했습니다.\n\n§6•§7 보상: 최종 엔딩을 볼 수 있습니다.",
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
@@ -13,5 +13,8 @@
     "all_general_advancements": {
       "trigger": "impossible"
     }
+  },
+  "rewards": {
+    "function": "advancement/general/all_complete"
   }
 }

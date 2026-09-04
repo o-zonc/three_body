@@ -27,8 +27,8 @@ function reckoning/add_resource_reward {id:"copper",amount:20000,reward:"informa
 function reckoning/add_resource_reward {id:"iron",amount:15000,reward:"information"}
 function reckoning/add_resource_reward {id:"emerald",amount:10000,reward:"information"}
 
-# 청금석·금·다이아몬드는 첫 50개까지 10개당 1조각,
-# 이후 초과분은 50개당 1조각으로 환산한다.
+# 청금석·금·다이아몬드는 첫 1000개까지 20개당 1조각,
+# 이후 초과분은 1000개당 1조각으로 환산한다.
 function reckoning/add_time_resource_reward {id:"lapis"}
 function reckoning/add_time_resource_reward {id:"gold"}
 function reckoning/add_time_resource_reward {id:"diamond"}
