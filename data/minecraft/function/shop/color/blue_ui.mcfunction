@@ -1,9 +1,9 @@
 execute unless score #color_resources_unlocked var matches 1 run tellraw @s {"text":"…","color":"gray","bold":false}
 execute unless score #color_resources_unlocked var matches 1 run return 0
-execute store result score #blue_to_iron tmp run function shop/color/calculate {target:"iron",base:100}
-execute store result score #blue_to_diamond tmp run function shop/color/calculate {target:"diamond",base:10}
+execute store result score #blue_to_iron tmp run function shop/color/calculate {target:"iron",base:200}
+execute store result score #blue_to_diamond tmp run function shop/color/calculate {target:"diamond",base:25}
 execute store result score #blue_to_cold tmp run function shop/color/calculate {target:"cold",base:50}
-execute store result score #blue_to_lapis tmp run function shop/color/calculate {target:"lapis",base:20}
+execute store result score #blue_to_lapis tmp run function shop/color/calculate {target:"lapis",base:40}
 scoreboard players set #color_ui_ten tmp 10
 scoreboard players operation #blue_ten_to_iron tmp = #blue_to_iron tmp
 scoreboard players operation #blue_ten_to_iron tmp *= #color_ui_ten tmp
