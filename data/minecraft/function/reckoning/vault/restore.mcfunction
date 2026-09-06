@@ -44,7 +44,6 @@ execute if score #vault_dried_relic tmp matches 1 if score #dried_relic_level up
 execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run scoreboard players set #observatory unlock 1
 execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 run function common/structure/observatory/on
 execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 if score #vault_era_owned tmp matches 1 run scoreboard players set #era unlock 1
-execute if score #vault_observatory tmp matches 1 if score #vault_observatory_owned tmp matches 1 if score #vault_era_owned tmp matches 1 at @e[type=interaction,tag=era,limit=1] run setblock ~ ~ ~ respawn_anchor[charges=4] replace
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players operation #level alchemy_workshop = #vault_alchemy_level tmp
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players set #alchemy_workshop unlock 1
 execute if score #vault_alchemy tmp matches 1 if score #vault_alchemy_owned tmp matches 1 run scoreboard players operation #alchemy_lab_level upgrade = #vault_alchemy_lab_level tmp
@@ -105,6 +104,7 @@ execute if score #vault_stronghold tmp matches 1 if score #stronghold_overworld 
 execute if score #vault_stronghold tmp matches 1 if score #stronghold_frozen upgrade matches 1.. in minecraft:dried run setblock 12 65 0 minecraft:packed_ice
 execute if score #vault_stronghold tmp matches 1 if score #stronghold_dried upgrade matches 1.. in minecraft:dried run setblock 18 65 6 minecraft:sandstone
 execute if score #vault_elevator tmp matches 1 run scoreboard players operation #GLOBAL elevator_unlocked = #vault_elevator_level tmp
+execute if score #vault_elevator tmp matches 1 if score #GLOBAL elevator_unlocked matches 1.. run function common/structure/beacon/on
 
 # 막대기 발전 단계는 첫 상점/생산 단계로 취급해 별도 보호한다.
 execute if score #vault_stick_progress tmp matches 1 run scoreboard players operation #wood_regen_lvl upgrade = #vault_wood_regen tmp
