@@ -73,6 +73,9 @@ function dried/advancement/tick
 # 스토리
 function story/story
 function second/tick
+execute if score #overworld civilization_age matches 1 run function story/overworld/age/check_stone_age
+execute if score #overworld civilization_age matches 2 run function story/overworld/age/check_bronze_age
+execute if score #overworld civilization_age matches 3 run function story/overworld/age/check_iron_age
 execute if score #overworld civilization_age matches 6 run function story/overworld/age/check_modern_age
 execute if score #overworld civilization_age matches 7 run function story/overworld/age/check_contemporary_age
 

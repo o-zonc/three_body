@@ -9,7 +9,6 @@ execute unless score #stone_unlock_cost_check tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players set #stone unlock 1
 function resource/material/stone/place
-function story/overworld/age/20_stone_age
 execute in minecraft:overworld positioned -2.5 -58.5 35.5 run function resource/effect/unlock_success
 function resource/material/stone/ui/info
 return 1

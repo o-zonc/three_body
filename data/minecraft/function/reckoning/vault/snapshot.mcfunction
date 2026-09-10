@@ -83,7 +83,6 @@ scoreboard players operation #vault_dried_relic_level tmp = #dried_relic_level u
 scoreboard players operation #vault_stronghold_overworld tmp = #stronghold_overworld upgrade
 scoreboard players operation #vault_stronghold_frozen tmp = #stronghold_frozen upgrade
 scoreboard players operation #vault_stronghold_dried tmp = #stronghold_dried upgrade
-scoreboard players operation #vault_age tmp = #overworld civilization_age
 scoreboard players operation #vault_alchemy_level tmp = #level alchemy_workshop
 scoreboard players set #vault_alchemy_lab_level tmp 0
 execute if score #alchemy_lab_level upgrade = #alchemy_lab_level upgrade run scoreboard players operation #vault_alchemy_lab_level tmp = #alchemy_lab_level upgrade

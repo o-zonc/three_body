@@ -11,7 +11,6 @@ execute unless score #iron_unlock_cost_check tmp matches 1 run return 0
 function resource/cost/take
 scoreboard players set #iron unlock 1
 execute in overworld run function resource/material/iron/place
-function story/overworld/age/22_iron_age
 execute in minecraft:overworld positioned 1.5 -61.5 -34.5 run function resource/effect/unlock_success
 function resource/material/iron/ui/info
 return 1
