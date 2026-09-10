@@ -13,8 +13,10 @@ $execute unless score #$(source) material >= #color_conversion_source_amount tmp
 $execute store result score #color_conversion_result tmp run function shop/color/calculate {target:"$(target)",base:$(base)}
 scoreboard players operation #color_conversion_result tmp *= #color_conversion_source_amount tmp
 $scoreboard players operation #$(source) material -= #color_conversion_source_amount tmp
+$scoreboard players operation #color_conversion_target_before tmp = #$(target) material
 scoreboard players operation #material_add_value tmp = #color_conversion_result tmp
 $function resource/add_material/$(target)
+$execute if score #$(target) material > #color_conversion_target_before tmp run function resource/unlock/acquired {id:"$(target)"}
 
 playsound block.amethyst_block.chime weather @s ~ ~ ~ 0.8 1.5
 $execute unless entity @a[tag=accelerator_experiment_running] run title @s actionbar [{text:"",italic:false},{text:"$(source_name) ",color:"$(source_color)",bold:false},{score:{name:"#color_conversion_source_amount",objective:"tmp"},color:"$(source_color)",bold:false},{text:"개",color:"$(source_color)",bold:false},{text:" → ",color:"gray",bold:false},{text:"$(target_name) ",color:"$(target_color)",bold:false},{score:{name:"#color_conversion_result",objective:"tmp"},color:"$(target_color)",bold:false},{text:"개",color:"gray",bold:false}]

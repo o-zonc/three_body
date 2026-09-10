@@ -85,6 +85,7 @@ execute if score #time_bank meta matches 10.. run scoreboard players set #overwo
 execute if score #time_bank meta matches 40.. run scoreboard players set #overworld civilization_age 6
 execute if score #time_bank meta matches 80.. run scoreboard players set #overworld civilization_age 7
 execute if score #time_bank meta matches 200.. run scoreboard players set #overworld civilization_age 8
+function reckoning/vault/sync_age_advancements
 
 # 시간 20조각: 이전 문명에서 개방한 얼어붙은 다리를 유지한다.
 execute if score #vault_frozen_bridge tmp matches 1 if score #vault_frozen_bridge_owned tmp matches 1 run scoreboard players set #frozen_bridge unlock 1
